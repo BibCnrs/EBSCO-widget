@@ -1,0 +1,29 @@
+node:
+  image: node:4.1.2
+  volumes:
+    - .:/app
+  working_dir: /app
+
+install:
+  extends:
+    file: ./docker-compose.yml
+    service: node
+  environment:
+    http_proxy: http://proxyout.inist.fr:8080
+  command: npm install
+
+mock:
+  extends:
+    file: ./docker-compose.yml
+    service: node
+  command: node mock/launcher.js
+  ports:
+    - 3001:3001
+
+watch:
+  extends:
+    file: ./docker-compose.yml
+    service: node
+  links:
+    - mock
+  command: node node_modules/webpack/bin/webpack.js --watch
