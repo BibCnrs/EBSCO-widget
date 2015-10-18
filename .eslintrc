@@ -31,4 +31,7 @@
     "plugins": [
         "react"
     ],
+    "globals": {
+        "__DEVELOPMENT__": true
+    }
 }

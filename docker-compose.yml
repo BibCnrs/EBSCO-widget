@@ -8,8 +8,8 @@ install:
   extends:
     file: ./docker-compose.yml
     service: node
-  environment:
-    http_proxy: http://proxyout.inist.fr:8080
+  # environment:
+  #   http_proxy: http://proxyout.inist.fr:8080
   command: npm install
 
 mock:
@@ -18,12 +18,18 @@ mock:
     service: node
   command: node mock/launcher.js
   ports:
-    - 3001:3001
+    - 3000:3000
 
-watch:
+devserver:
   extends:
     file: ./docker-compose.yml
     service: node
-  links:
-    - mock
-  command: node node_modules/webpack/bin/webpack.js --watch
+  ports:
+    - 3001:3001
+  command: node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js --port 3001 --host 0.0.0.0
+
+build:
+  extends:
+    file: ./docker-compose.yml
+    service: node
+  command: node node_modules/webpack/bin/webpack.js --config webpack.config.prod.js -p
