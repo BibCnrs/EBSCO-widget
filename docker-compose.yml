@@ -8,8 +8,8 @@ install:
   extends:
     file: ./docker-compose.yml
     service: node
-  # environment:
-  #   http_proxy: http://proxyout.inist.fr:8080
+  environment:
+    http_proxy: http://proxyout.inist.fr:8080
   command: npm install
 
 mock:

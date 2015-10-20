@@ -1,0 +1,13 @@
+input[type="text"] {
+    display: inline-block;
+    margin: 0;
+    font-size: 18px;
+    padding: 5px 10px 5px 10px;
+    font-family: sans-serif;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    &:focus {
+        outline: none;
+    }
+}

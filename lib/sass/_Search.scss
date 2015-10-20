@@ -1,0 +1,9 @@
+
+@import "./variables.scss";
+@import "./button.scss";
+
+.search_button {
+    @extend .button;
+    font-size: 18px;
+    font-weight: normal;
+}

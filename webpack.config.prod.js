@@ -1,6 +1,20 @@
 'use strict';
 
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var sassOptions = [
+    'includePaths[]=./lib/sass/',
+    'outputStyle=expanded'
+].join('&');
+
+var sassLoader = { test: /\.scss/g, exclude: /node_modules/ };
+if (['development', 'test'].indexOf(process.env.NODE_ENV) !== -1) {
+    sassLoader.loaders = ['style', 'css', 'sass?' + sassOptions];
+} else {
+    sassLoader.loader = ExtractTextPlugin.extract('css!sass?' + sassOptions);
+}
 
 module.exports = {
     devtool: 'eval',
@@ -10,17 +24,27 @@ module.exports = {
                 test: /\.js?$/,
                 exclude: /node_modules/,
                 loaders: ['babel-loader']
-            }
+            },
+            { test: /\.(woff2?|svg|ttf|eot|png|jpe?g|gif|ico)?$/, loader: 'file?name=[path][hash].[ext]&context=./src', exclude: /node_modules/ },
+            sassLoader
         ]
     },
-    entry: './lib/index.js',
+    entry: {
+        app: [
+            './lib/index.js',
+            './sass/style.scss'
+        ]
+    },
     output: {
         // Make sure to use [name] or [id] in output.filename
         //  when using multiple entry points
-        filename: 'build/main.js',
+        path: './build',
+        filename: '[name].js',
         chunkFilename: '[id].bundle.js'
     },
     plugins: [
+        new HtmlWebpackPlugin(),
+        new ExtractTextPlugin('[name].css'),
         new webpack.DefinePlugin({
             __DEVELOPMENT__: false
         })
