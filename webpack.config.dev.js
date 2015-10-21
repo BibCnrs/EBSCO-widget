@@ -1,11 +1,13 @@
 'use strict';
 
+var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var sassOptions = [
-    'includePaths[]=./lib/sass/',
+    'includePaths[]='+ path.resolve(__dirname, './lib/sass/'),
+    'includePaths[]='+ path.resolve(__dirname, './node_modules/compass-mixins/lib'),
     'outputStyle=expanded'
 ].join('&');
 

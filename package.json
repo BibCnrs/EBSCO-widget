@@ -35,6 +35,7 @@
     "webpack-dev-server": "1.12.0"
   },
   "dependencies": {
+    "compass-mixins": "^0.12.7",
     "config": "1.16.0",
     "isomorphic-fetch": "2.1.1",
     "react": "0.13.3",
