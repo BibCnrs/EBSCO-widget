@@ -33,3 +33,11 @@ build:
     file: ./docker-compose.yml
     service: node
   command: node node_modules/webpack/bin/webpack.js --config webpack.config.prod.js -p
+
+test:
+  extends:
+    file: ./docker-compose.yml
+    service: node
+  environment:
+    NODE_ENV: test
+  command: node_modules/mocha/bin/mocha test/mocha test/mocha/**/*.js

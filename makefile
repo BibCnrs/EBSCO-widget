@@ -8,3 +8,6 @@ build:
 
 dev:
 	docker-compose up --force-recreate devserver
+
+test:
+	docker-compose run test
