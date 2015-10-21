@@ -3,37 +3,39 @@
 import Icon from 'react-fa';
 import Search from '../../../lib/components/Search';
 
-describe('Search', function () {
+describe.only('Search', function () {
     let component;
 
-    describe('props.state=NONE', function () {
+    describe('props.state={status: NONE}', function () {
         before(function () {
             const click = function click() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={click} state="NONE" />);
+            shallowRenderer.render(<Search onClick={click} search={{ status: 'NONE' }} />);
 
             component = shallowRenderer.getRenderOutput();
         });
 
-        it ('should display input with button', function () {
+        it ('should display input with button and search icon', function () {
             assert.equal(component.type, 'div');
             const children = component.props.children;
-            assert.equal(children.length, 2);
-            const [ input, button ] = children;
+            assert.equal(children.length, 3);
+            const [ input, button, error ] = children;
             assert.equal(input.type, 'input');
             assert.equal(input.props.type, 'text');
             assert.equal(button.type, 'button');
             assert.isFalse(button.props.disabled);
             const [icon] = button.props.children;
-            assert.isNull(icon);
+            assert.equal(icon.type, Icon);
+            assert.equal(icon.props.name, 'search');
+            assert.isNull(error);
         });
     });
 
-    describe('props.state=PENDING', function () {
+    describe('props.state={status: PENDING}', function () {
         before(function () {
             const click = function click() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={click} state="PENDING" />);
+            shallowRenderer.render(<Search onClick={click} search={{ status: 'PENDING' }} />);
 
             shallowRenderer.state = { term: 'search' };
 
@@ -43,8 +45,8 @@ describe('Search', function () {
         it ('should disable search and display spinner if props.state is PENDING', function () {
             assert.equal(component.type, 'div');
             const children = component.props.children;
-            assert.equal(children.length, 2);
-            const [ input, button ] = children;
+            assert.equal(children.length, 3);
+            const [ input, button, error ] = children;
             assert.equal(input.type, 'input');
             assert.equal(input.props.type, 'text');
             assert.equal(button.type, 'button');
@@ -53,6 +55,39 @@ describe('Search', function () {
             assert.equal(icon.type, Icon);
             assert.equal(icon.props.name, 'spinner');
             assert.isTrue(icon.props.spin);
+            assert.isNull(error);
+        });
+    });
+
+    describe('props.state={status: ERROR}', function () {
+        before(function () {
+            const click = function click() {};
+            const shallowRenderer = TestUtils.createRenderer();
+            shallowRenderer.render(<Search onClick={click} search={{ status: 'ERROR', error: 'boom' }} />);
+
+            shallowRenderer.state = { term: 'search' };
+
+            component = shallowRenderer.getRenderOutput();
+        });
+
+        it ('should display error', function () {
+            assert.equal(component.type, 'div');
+            const children = component.props.children;
+            assert.equal(children.length, 3);
+            const [ input, button, error ] = children;
+            assert.equal(input.type, 'input');
+            assert.equal(input.props.type, 'text');
+            assert.equal(button.type, 'button');
+            assert.isFalse(button.props.disabled);
+            const [icon] = button.props.children;
+            assert.equal(icon.type, Icon);
+            assert.equal(icon.props.name, 'search');
+            assert.equal(error.type, 'p');
+            const [errorIcon, , message ] = error.props.children;
+
+            assert.equal(errorIcon.type, Icon);
+            assert.equal(errorIcon.props.name, 'exclamation-triangle');
+            assert.equal(message, 'boom');
         });
     });
 
@@ -63,7 +98,7 @@ describe('Search', function () {
             const onClick = (t) => (term = t);
             const props = {
                 onClick,
-                state: 'NONE'
+                search: {status: 'NONE' }
             };
             component = TestUtils.renderIntoDocument(React.createElement(Search, props));
         });

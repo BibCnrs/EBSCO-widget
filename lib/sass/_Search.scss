@@ -2,8 +2,19 @@
 @import "./variables.scss";
 @import "./button.scss";
 
-.search_button {
-    @extend .button;
-    font-size: 18px;
-    font-weight: normal;
+.search {
+    .search_button {
+        @extend .button;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    .error {
+        margin: 0;
+        margin-left: 20px;
+        padding: 5px 10px;
+        display: inline-block;
+        border: solid red 1px;
+        background-color: #FFBABA;
+        color: red;
+    }
 }
