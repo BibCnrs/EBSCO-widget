@@ -27,7 +27,12 @@ module.exports = {
                 exclude: /node_modules/,
                 loaders: ['babel-loader']
             },
-            sassLoader
+            sassLoader,
+            { test: /\.css$/, loader: 'style-loader!css-loader?importLoaders=1' },
+            {
+                test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+                loader: 'url-loader?limit=8192'
+            }
         ]
     },
     entry: {

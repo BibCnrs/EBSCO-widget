@@ -7,4 +7,4 @@ build:
 	docker-compose run build
 
 dev:
-	docker-compose up devserver
+	docker-compose up --force-recreate devserver
