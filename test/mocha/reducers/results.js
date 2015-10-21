@@ -2,7 +2,7 @@
 
 import { List, Map } from 'immutable';
 import results from '../../../lib/reducers/results';
-import { SEARCH_SUCCESS, SEARCH_ERROR, SHOW_ABSTRACT } from '../../../lib/actions';
+import { SEARCH_SUCCESS, SEARCH_ERROR, SEARCH_PENDING, SHOW_ABSTRACT } from '../../../lib/actions';
 
 describe('reducers results', function () {
     const resultList = List([
@@ -25,6 +25,10 @@ describe('reducers results', function () {
 
     it ('should return empty array if action type is SEARCH_ERROR', function () {
         assert.deepEqual(results(resultList, { type: SEARCH_ERROR, error: 'error' }), List());
+    });
+
+    it ('should return empty array if action type is SEARCH_PENDING', function () {
+        assert.deepEqual(results(resultList, { type: SEARCH_PENDING }), List());
     });
 
     it ('should replace action.index item in result with result modified with abstractShown boolean equal to action.visibility', function () {

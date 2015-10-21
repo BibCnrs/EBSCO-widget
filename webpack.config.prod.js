@@ -29,12 +29,7 @@ module.exports = {
             },
             { test: /\.(woff2?|svg|ttf|eot|png|jpe?g|gif|ico)?$/, loader: 'file?name=[path][hash].[ext]&context=./src', exclude: /node_modules/ },
             sassLoader,
-            { test: /\.css$/, loader: "style-loader!css-loader?importLoaders=1" },
-            // {
-            //     test: /\.(css)(\?.+)$/,
-            //     exclude: /node_modules/,
-            //     loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-            // },
+            { test: /\.css$/, loader: 'style-loader!css-loader?importLoaders=1' },
             {
                 test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
                 // exclude: /node_modules/,
