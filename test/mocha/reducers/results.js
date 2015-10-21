@@ -1,17 +1,18 @@
 'use strict';
 
+import { List, Map } from 'immutable';
 import results from '../../../lib/reducers/results';
 import { SEARCH_SUCCESS, SEARCH_ERROR, SHOW_ABSTRACT } from '../../../lib/actions';
 
 describe('reducers results', function () {
-    const resultList = [
-        { name: 'result1' },
-        { name: 'result2' },
-        { name: 'result3' }
-    ];
+    const resultList = List([
+        Map({ name: 'result1' }),
+        Map({ name: 'result2' }),
+        Map({ name: 'result3' })
+    ]);
 
     it ('should default state to empty arrray if none given', function () {
-        assert.deepEqual(results(undefined, { type: 'OTHER_ACTION_TYPE' }), []);
+        assert.deepEqual(results(undefined, { type: 'OTHER_ACTION_TYPE' }), List());
     });
 
     it ('should return given state if not concernerd by ACTION', function () {
@@ -23,12 +24,12 @@ describe('reducers results', function () {
     });
 
     it ('should return empty array if action type is SEARCH_ERROR', function () {
-        assert.deepEqual(results(resultList, { type: SEARCH_ERROR, error: 'error' }), []);
+        assert.deepEqual(results(resultList, { type: SEARCH_ERROR, error: 'error' }), List());
     });
 
     it ('should replace action.index item in result with result modified with abstractShown boolean equal to action.visibility', function () {
         const action = { type: SHOW_ABSTRACT, index: 1, visibility: true };
-        assert.deepEqual(results(resultList, action), [ resultList[0], { ...resultList[action.index], abstractShown: action.visibility }, resultList[2] ]);
+        assert.deepEqual(results(resultList, action), resultList.set(action.index, resultList.get(action.index).set('abstractShown', action.visibility)));
     });
 
 });
