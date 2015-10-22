@@ -3,14 +3,15 @@
 import Icon from 'react-fa';
 import Search from '../../../lib/components/Search';
 
-describe.only('Search', function () {
+describe('Search', function () {
     let component;
 
     describe('props.state={status: NONE}', function () {
         before(function () {
-            const click = function click() {};
+            const onClick = function onClick() {};
+            const onChange = function onClick() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={click} search={{ status: 'NONE' }} />);
+            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} search={{ term: 'word', status: 'NONE' }} />);
 
             component = shallowRenderer.getRenderOutput();
         });
@@ -33,9 +34,10 @@ describe.only('Search', function () {
 
     describe('props.state={status: PENDING}', function () {
         before(function () {
-            const click = function click() {};
+            const onClick = function onClick() {};
+            const onChange = function onChange() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={click} search={{ status: 'PENDING' }} />);
+            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} search={{ status: 'PENDING' }} />);
 
             shallowRenderer.state = { term: 'search' };
 
@@ -61,9 +63,10 @@ describe.only('Search', function () {
 
     describe('props.state={status: ERROR}', function () {
         before(function () {
-            const click = function click() {};
+            const onClick = function onClick() {};
+            const onChange = function onChange() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={click} search={{ status: 'ERROR', error: 'boom' }} />);
+            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} search={{ term: 't', status: 'ERROR', error: 'boom' }} />);
 
             shallowRenderer.state = { term: 'search' };
 
@@ -96,26 +99,20 @@ describe.only('Search', function () {
 
         before(function () {
             const onClick = (t) => (term = t);
+            const onChange = (t) => (term = t);
             const props = {
                 onClick,
-                search: {status: 'NONE' }
+                onChange,
+                search: { term: 'searched term', status: 'NONE' }
             };
             component = TestUtils.renderIntoDocument(React.createElement(Search, props));
         });
 
         describe('handleClick', function () {
-            beforeEach(function () {
-                component.setState({term: 'searched term'});
-            });
 
             it('should call onClick with state.term value', function () {
                 component.handleClick();
                 assert.equal(term, 'searched term');
-            });
-
-            it('should set state.term value to ""', function () {
-                component.handleClick();
-                assert.deepEqual(component.state, { term: '' });
             });
         });
 
@@ -125,8 +122,8 @@ describe.only('Search', function () {
                 component.handleChange({ target: { value: 'searched term'}});
             });
 
-            it('should set state.term to onChange event.target.value', function () {
-                assert.deepEqual(component.state, { term: 'searched term' });
+            it('should set term to onChange event.target.value', function () {
+                assert.equal(term, 'searched term');
             });
 
             it('should set input value to onChange event.target.value', function () {
