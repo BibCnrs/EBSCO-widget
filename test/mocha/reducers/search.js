@@ -6,7 +6,7 @@ import { SEARCH_PENDING, SEARCH_SUCCESS, SEARCH_ERROR, TERM_CHANGE } from '../..
 
 describe('reducers search', function () {
     it ('should return PENDING if action is SEARCH_PENDING', function () {
-        assert.deepEqual(search(Map({ term: '', status: 'NONE' }), { type: SEARCH_PENDING }).toJS(), { term: '', status: 'PENDING' });
+        assert.deepEqual(search(Map({ term: 'my search', status: 'NONE' }), { type: SEARCH_PENDING }).toJS(), { term: 'my search', status: 'PENDING' });
     });
 
     it ('should return SUCCESS if action is SEARCH_SUCCESS', function () {
