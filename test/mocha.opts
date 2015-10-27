@@ -1,0 +1,5 @@
+--reporter spec
+--ui bdd
+--timeout 5000
+--compilers js:babel/register
+--require test/setupJsdom

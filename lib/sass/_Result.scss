@@ -1,0 +1,13 @@
+
+@import "./variables.scss";
+
+.result {
+    text-align: left;
+    .title {
+        color: $title;
+    }
+    margin: 20px;
+    padding: 20px;
+    padding-top: 5px;
+    background-color: $back;
+}
