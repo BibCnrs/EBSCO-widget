@@ -2,7 +2,7 @@
 
 import Authentication from '../../../lib/containers/Authentication';
 
-describe.only('Authentication', function () {
+describe('Authentication', function () {
     let component;
 
     describe('event', function () {
@@ -12,7 +12,10 @@ describe.only('Authentication', function () {
             data = undefined;
             const onSubmit = (d) => (data = d);
             const props = {
-                onSubmit
+                onSubmit,
+                login: {
+                    status: 'NONE'
+                }
             };
             component = TestUtils.renderIntoDocument(React.createElement(Authentication, props));
         });
