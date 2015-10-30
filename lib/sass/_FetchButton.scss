@@ -1,12 +1,10 @@
+@import "./_button.scss";
 
-@import "./variables.scss";
-@import "./button.scss";
-
-.search {
-    .search_button {
+.fetch-button {
+    button {
         @extend .button;
-        font-size: 18px;
         font-weight: normal;
+        font-size: 18px;
     }
     .error {
         margin: 0;
