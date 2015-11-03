@@ -2,6 +2,7 @@
 
 import Icon from 'react-fa';
 import Search from '../../../lib/components/Search';
+import FetchButton from '../../../lib/components/FetchButton';
 
 describe('Search', function () {
     let component;
@@ -14,21 +15,6 @@ describe('Search', function () {
             shallowRenderer.render(<Search onClick={onClick} onChange={onChange} search={{ term: 'word', status: 'NONE' }} />);
 
             component = shallowRenderer.getRenderOutput();
-        });
-
-        it ('should display input with button and search icon', function () {
-            assert.equal(component.type, 'div');
-            const children = component.props.children;
-            assert.equal(children.length, 3);
-            const [ input, button, error ] = children;
-            assert.equal(input.type, 'input');
-            assert.equal(input.props.type, 'text');
-            assert.equal(button.type, 'button');
-            assert.isFalse(button.props.disabled);
-            const [icon] = button.props.children;
-            assert.equal(icon.type, Icon);
-            assert.equal(icon.props.name, 'search');
-            assert.isNull(error);
         });
     });
 
@@ -44,20 +30,15 @@ describe('Search', function () {
             component = shallowRenderer.getRenderOutput();
         });
 
-        it ('should disable search and display spinner if props.state is PENDING', function () {
+        it ('fetchButton props.status should be PENDING if props.search.status is PENDING', function () {
             assert.equal(component.type, 'div');
             const children = component.props.children;
-            assert.equal(children.length, 3);
-            const [ input, button, error ] = children;
+            assert.equal(children.length, 2);
+            const [ input, fetchButton ] = children;
             assert.equal(input.type, 'input');
             assert.equal(input.props.type, 'text');
-            assert.equal(button.type, 'button');
-            assert.isTrue(button.props.disabled);
-            const [icon] = button.props.children;
-            assert.equal(icon.type, Icon);
-            assert.equal(icon.props.name, 'spinner');
-            assert.isTrue(icon.props.spin);
-            assert.isNull(error);
+            assert.equal(fetchButton.type, FetchButton);
+            assert.equal(fetchButton.props.status, 'PENDING');
         });
     });
 
@@ -76,21 +57,13 @@ describe('Search', function () {
         it ('should display error', function () {
             assert.equal(component.type, 'div');
             const children = component.props.children;
-            assert.equal(children.length, 3);
-            const [ input, button, error ] = children;
+            assert.equal(children.length, 2);
+            const [ input, fetchButton ] = children;
             assert.equal(input.type, 'input');
             assert.equal(input.props.type, 'text');
-            assert.equal(button.type, 'button');
-            assert.isFalse(button.props.disabled);
-            const [icon] = button.props.children;
-            assert.equal(icon.type, Icon);
-            assert.equal(icon.props.name, 'search');
-            assert.equal(error.type, 'p');
-            const [errorIcon, , message ] = error.props.children;
-
-            assert.equal(errorIcon.type, Icon);
-            assert.equal(errorIcon.props.name, 'exclamation-triangle');
-            assert.equal(message, 'boom');
+            assert.equal(fetchButton.type, FetchButton);
+            assert.equal(fetchButton.props.status, 'ERROR');
+            assert.equal(fetchButton.props.error, 'boom');
         });
     });
 
