@@ -1,3 +1,11 @@
+.view_notice {
+    .fetch-button {
+        button {
+            @extend .button;
+        }
+    }
+}
+
 .ReactModal__Content {
     .notice {
         dt {
