@@ -20,19 +20,19 @@ describe('Authentication', function () {
             component = TestUtils.renderIntoDocument(React.createElement(Authentication, props));
         });
 
-        it ('should be initialised with empty input and disabled submit', function () {
+        it('should be initialised with empty input and disabled submit', function () {
             const { username, password, submit } = component.refs;
-            assert.equal(username.props.value, '');
-            assert.equal(password.props.value, '');
+            assert.equal(username.getAttribute('value'), '');
+            assert.equal(password.getAttribute('value'), '');
             assert.isTrue(submit.props.disabled);
         });
 
         it('should not call onSubmit with default state value if state was not changed when submitting', function () {
             const { username, password } = component.refs;
-            username.props.value = 'john';
+            username.setAttribute('value', 'john');
             TestUtils.Simulate.change(username, { target: { name: 'username', value: 'john'} });
             assert.deepEqual(component.state, { username: 'john', password: '' });
-            password.props.value = 'secret';
+            password.setAttribute('value', 'secret');
             TestUtils.Simulate.change(username, { target: { name: 'password', value: 'secret'} });
             assert.deepEqual(component.state, { username: 'john', password: 'secret' });
 
