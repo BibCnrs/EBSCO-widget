@@ -1,6 +1,5 @@
 'use strict';
 
-import Icon from 'react-fa';
 import Search from '../../../lib/components/Search';
 import FetchButton from '../../../lib/components/FetchButton';
 
@@ -100,7 +99,7 @@ describe('Search', function () {
             });
 
             it('should set input value to onChange event.target.value', function () {
-                const inputNode = TestUtils.findRenderedDOMComponentWithTag(component, 'input').getDOMNode();
+                const inputNode = TestUtils.findRenderedDOMComponentWithTag(component, 'input');
                 assert.equal(inputNode.value, 'searched term');
             });
         });

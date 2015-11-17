@@ -6,9 +6,9 @@ import { SEARCH_SUCCESS, SEARCH_ERROR, SEARCH_PENDING, SHOW_ABSTRACT } from '../
 
 describe('reducers results', function () {
     const resultList = List([
-        Map({ name: 'result1' }),
-        Map({ name: 'result2' }),
-        Map({ name: 'result3' })
+        Map({ name: 'result1', notice: Map() }),
+        Map({ name: 'result2', notice: Map() }),
+        Map({ name: 'result3', notice: Map() })
     ]);
 
     it ('should default state to empty arrray if none given', function () {
