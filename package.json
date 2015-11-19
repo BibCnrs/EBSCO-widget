@@ -39,6 +39,7 @@
   "dependencies": {
     "compass-mixins": "^0.12.7",
     "config": "1.16.0",
+    "es5-shim": "4.3.1",
     "immutable": "^3.7.5",
     "isomorphic-fetch": "2.1.1",
     "react": "0.13.3",
