@@ -50,7 +50,7 @@
     "react-modal": "0.6.1",
     "react-redux": "4.0.0",
     "redux": "3.0.4",
-    "rc-calendar": "4.0.0",
+    "react-input-calendar": "0.1.19",
     "rc-checkbox": "1.2.0",
     "rc-slider": "3.1.0"
   }
