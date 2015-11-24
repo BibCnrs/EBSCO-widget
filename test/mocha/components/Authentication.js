@@ -1,18 +1,19 @@
 'use strict';
 
-import Authentication from '../../../lib/containers/Authentication';
+import Authentication from '../../../lib/components/Authentication';
 
 describe('Authentication', function () {
     let component;
 
     describe('event', function () {
-        let data;
+        let data, receivedUrl;
 
         beforeEach(function () {
             data = undefined;
-            const onSubmit = (d) => (data = d);
+            const onSubmit = (url, d) => (data = d, receivedUrl = url);
             const props = {
                 onSubmit,
+                'url': '/api',
                 login: {
                     status: 'NONE'
                 }
@@ -21,10 +22,9 @@ describe('Authentication', function () {
         });
 
         it('should be initialised with empty input and disabled submit', function () {
-            const { username, password, submit } = component.refs;
+            const { username, password } = component.refs;
             assert.equal(username.getAttribute('value'), '');
             assert.equal(password.getAttribute('value'), '');
-            assert.isTrue(submit.props.disabled);
         });
 
         it('should not call onSubmit with default state value if state was not changed when submitting', function () {
@@ -38,6 +38,7 @@ describe('Authentication', function () {
 
             component.handleSubmit({ preventDefault: () => null});
             assert.deepEqual(data, { username: 'john', password: 'secret' });
+            assert.equal(receivedUrl, '/api');
         });
 
         it('should call onSubmit with state value', function () {
@@ -48,6 +49,7 @@ describe('Authentication', function () {
             component.setState(state);
             component.handleSubmit({ preventDefault: () => null});
             assert.deepEqual(data, state);
+            assert.equal(receivedUrl, '/api');
         });
 
         it('should set input value with corresponding state value', function () {
