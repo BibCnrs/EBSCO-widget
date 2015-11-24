@@ -11,47 +11,60 @@
     width: 25px;
     top: 0;
     bottom: 0;
-    background-color: white;
+    // background-color: white;
 }
-.limiters {
-    margin-left: 25px;
-    padding: 10px;
-    width: 250px;
-    .publication-date-limiter {
-        .input-calendar {
-            display: flex;
-            padding: 5px;
-            .input-calendar-wrapper {
-                top: 30px;
-                left:4px;
-            }
+.sidebar {
+    .limiters {
+        margin-left: 25px;
+        padding: 10px;
+        width: 250px;
+        h5 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+        .publication-date-limiter {
+            .input-calendar {
+                display: inline-block;
+                padding: 5px;
+                .input-calendar-wrapper {
+                    z-index: 999;
+                    position: fixed;
+                    left:45px;
+                }
 
-            .navigation-title:hover {
-                color: $hover;
-            }
-            .icon:hover,
-            .today-btn:not(.disabled):hover,
-            .icon-wrapper:hover {
-                color: $hover;
-            }
-            .input-calendar-value {
-                &:focus {
+                .navigation-title:hover {
+                    color: $hover;
+                }
+                .icon:hover,
+                .today-btn:not(.disabled):hover,
+                .icon-wrapper:hover {
+                    color: $hover;
+                }
+                .input-calendar-value {
+                    width: 60px;
+                    &:focus {
+                        border: 1px solid $hover;
+                    }
+                }
+                .cell:not(.disabled):hover {
+                    color: $hover;
                     border: 1px solid $hover;
                 }
+                .cell.current {
+                    background: $hover;
+                }
             }
-            .cell:not(.disabled):hover {
-                color: $hover;
-                border: 1px solid $hover;
-            }
-            .cell.current {
-                background: $hover;
+            .slider {
+                padding-right: 20px;
+                padding-left: 10px;
+                .rc-slider {
+                    margin: 5px;
+                }
             }
         }
-        .slider {
-            padding-right: 20px;
-            padding-left: 10px;
-            .rc-slider {
-                margin: 5px;
+        .full-text-limiter {
+            .rc-checkbox {
+                margin-left: 5px;
             }
         }
     }
