@@ -1,0 +1,12 @@
+.main {
+    margin-left: 25px;
+    padding: 20px;
+}
+
+.hidden-sidebar {
+    z-index: 3;
+    position: absolute;
+    width: 25px;
+    top: 0;
+    bottom: 0;
+}
