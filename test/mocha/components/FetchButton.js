@@ -10,7 +10,7 @@ describe('FetchButton', function () {
         before(function () {
             const onClick = function onClick() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<FetchButton onClick={onClick} status="NONE" icon="test" />);
+            shallowRenderer.render(<FetchButton onClick={onClick} status="NONE" icon="test" label="test" />);
 
             component = shallowRenderer.getRenderOutput();
         });
@@ -33,7 +33,7 @@ describe('FetchButton', function () {
         before(function () {
             const onClick = function onClick() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<FetchButton onClick={onClick} status='PENDING' disabled={true} />);
+            shallowRenderer.render(<FetchButton onClick={onClick} status='PENDING' disabled={true} label="test" icon="test" />);
 
             component = shallowRenderer.getRenderOutput();
         });
@@ -58,7 +58,7 @@ describe('FetchButton', function () {
             const onClick = function onClick() {};
             const onChange = function onChange() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<FetchButton onClick={onClick} onChange={onChange} status="ERROR" error="boom" icon="test" />);
+            shallowRenderer.render(<FetchButton onClick={onClick} onChange={onChange} status="ERROR" error="boom" icon="test" label="test" />);
 
             component = shallowRenderer.getRenderOutput();
         });

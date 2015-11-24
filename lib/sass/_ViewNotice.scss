@@ -1,0 +1,35 @@
+.view_notice {
+    .fetch-button {
+        button {
+            @extend .button;
+        }
+    }
+}
+
+.ReactModal__Content {
+    .notice {
+        dt {
+            display: block;
+            float: left;
+            clear: left;
+            width: 200px;
+            text-align: right;
+            font-weight: bold;
+            padding: 5px 10px 5px 10px
+        }
+        dt::after {
+            content: ":"
+        }
+        dd {
+            display: block;
+            margin: 0 0 0 200px;
+            padding: 5px 0 5px 10px;
+        }
+    }
+
+    .close_notice {
+        display: block;
+        float: right;
+        margin: 5px;
+    }
+}
