@@ -13,14 +13,18 @@
     bottom: 0;
     background-color: white;
 }
-
 .limiters {
     margin-left: 25px;
     padding: 10px;
+    width: 250px;
     .publication-date-limiter {
         .input-calendar {
             display: flex;
             padding: 5px;
+            .input-calendar-wrapper {
+                top: 30px;
+                left:4px;
+            }
 
             .navigation-title:hover {
                 color: $hover;
