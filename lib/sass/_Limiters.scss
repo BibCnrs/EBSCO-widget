@@ -1,8 +1,22 @@
 @import "./_variables.scss";
 
+.main {
+    margin-left: 25px;
+    padding: 20px;
+}
+
+.hidden-sidebar {
+    z-index: 3;
+    position: absolute;
+    width: 25px;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+}
 
 .limiters {
-    background-color: white;
+    margin-left: 25px;
+    padding: 10px;
     .publication-date-limiter {
         .input-calendar {
             display: flex;
@@ -29,9 +43,12 @@
                 background: $hover;
             }
         }
-        .rc-slider {
-            width: 100%;
-            margin: 5px;
+        .slider {
+            padding-right: 20px;
+            padding-left: 10px;
+            .rc-slider {
+                margin: 5px;
+            }
         }
     }
 }
