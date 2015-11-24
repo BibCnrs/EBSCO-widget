@@ -1,0 +1,38 @@
+@import "./_variables.scss";
+
+.publication-date-limiter {
+    max-width: 500px;
+    .pickers {
+        display: flex;
+        align-items: center;
+    }
+    .input-calendar {
+        display: inline-block;
+        padding: 5px;
+
+        .navigation-title:hover {
+            color: $hover;
+        }
+        .icon:hover,
+        .today-btn:not(.disabled):hover,
+        .icon-wrapper:hover {
+            color: $hover;
+        }
+        .input-calendar-value {
+            &:focus {
+                border: 1px solid $hover;
+            }
+        }
+        .cell:not(.disabled):hover {
+            color: $hover;
+            border: 1px solid $hover;
+        }
+        .cell.current {
+            background: $hover;
+        }
+    }
+    .rc-slider {
+        width: 100%;
+        margin: 5px;
+    }
+}
