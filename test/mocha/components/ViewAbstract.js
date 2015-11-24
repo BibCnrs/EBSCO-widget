@@ -4,17 +4,17 @@ import Icon from 'react-fa';
 import ViewAbstract from '../../../lib/components/ViewAbstract';
 
 describe('ViewAbstract', function () {
-    let component, click;
+    let component, onShowAbstract;
 
-    describe('visibility prop set to true', function () {
-        let index, visibility;
+    describe('abstractShown prop set to true', function () {
+        let index, abstractShown;
         before(function () {
-            click = function click(i, v) {
+            onShowAbstract = function onShowAbstract(i, v) {
                 index = i;
-                visibility = v;
+                abstractShown = v;
             };
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<ViewAbstract index={7} onClick={click} visibility={true} abstract="To summmarize this is all of it." />);
+            shallowRenderer.render(<ViewAbstract index={7} onShowAbstract={onShowAbstract} abstractShown={true} abstract="To summmarize this is all of it." />);
 
             component = shallowRenderer.getRenderOutput();
         });
@@ -32,22 +32,22 @@ describe('ViewAbstract', function () {
             assert.equal(p.props.children, 'To summmarize this is all of it.');
         });
 
-        it ('should call click with index props and false', function () {
+        it ('should call onShowAbstract with index props and false', function () {
             component.props.children[0].props.onClick();
             assert.equal(index, 7);
-            assert.equal(visibility, false);
+            assert.equal(abstractShown, false);
         });
     });
 
-    describe('visibility prop set to false', function () {
-        let index, visibility;
+    describe('abstractShown prop set to false', function () {
+        let index, abstractShown;
         before(function () {
-            click = function click(i, v) {
+            onShowAbstract = function onShowAbstract(i, v) {
                 index = i;
-                visibility = v;
+                abstractShown = v;
             };
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<ViewAbstract index={7} onClick={click} visibility={false} abstract="To summmarize this is all of it." />);
+            shallowRenderer.render(<ViewAbstract index={7} onShowAbstract={onShowAbstract} abstractShown={false} abstract="To summmarize this is all of it." />);
 
             component = shallowRenderer.getRenderOutput();
         });
@@ -64,18 +64,18 @@ describe('ViewAbstract', function () {
             assert.isNull(p);
         });
 
-        it ('should call click with index props and true', function () {
+        it ('should call onShowAbstract with index props and true', function () {
             component.props.children[0].props.onClick();
             assert.equal(index, 7);
-            assert.equal(visibility, true);
+            assert.equal(abstractShown, true);
         });
     });
 
     describe('no abstract provided', function () {
         before(function () {
-            click = function click() {};
+            onShowAbstract = function onShowAbstract() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<ViewAbstract index={7} onClick={click} visibility={false} />);
+            shallowRenderer.render(<ViewAbstract index={7} onShowAbstract={onShowAbstract} abstractShown={false} />);
 
             component = shallowRenderer.getRenderOutput();
         });

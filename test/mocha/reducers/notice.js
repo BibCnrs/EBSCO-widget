@@ -4,7 +4,7 @@ import { Map, List } from 'immutable';
 import notice from '../../../lib/reducers/notice';
 import { SHOW_NOTICE, RETRIEVE_SUCCESS, RETRIEVE_ERROR, RETRIEVE_PENDING } from '../../../lib/actions';
 
-describe.only('reducers notice', function () {
+describe('reducers notice', function () {
 
     it ('should default state to empty object if none given', function () {
         assert.deepEqual(notice(undefined, Map({ type: 'OTHER_ACTION_TYPE' })), Map({status: 'NONE', data: List()}));

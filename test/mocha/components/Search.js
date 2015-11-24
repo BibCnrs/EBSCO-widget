@@ -11,7 +11,7 @@ describe('Search', function () {
             const onClick = function onClick() {};
             const onChange = function onClick() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} search={{ term: 'word', status: 'NONE' }} />);
+            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} term="word" status="NONE" />);
 
             component = shallowRenderer.getRenderOutput();
         });
@@ -22,7 +22,7 @@ describe('Search', function () {
             const onClick = function onClick() {};
             const onChange = function onChange() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} search={{ status: 'PENDING' }} />);
+            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} status="PENDING" />);
 
             shallowRenderer.state = { term: 'search' };
 
@@ -46,7 +46,7 @@ describe('Search', function () {
             const onClick = function onClick() {};
             const onChange = function onChange() {};
             const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} search={{ term: 't', status: 'ERROR', error: 'boom' }} />);
+            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} term="t" status="ERROR" error="boom" />);
 
             shallowRenderer.state = { term: 'search' };
 
@@ -67,24 +67,31 @@ describe('Search', function () {
     });
 
     describe('event', function () {
-        let term;
+        let url, token, term, limiters;
 
         before(function () {
-            const onClick = (t) => (term = t);
-            const onChange = (t) => (term = t);
+            const onSearch = (u, to, te, l) => (url = u, token = to, term = te, limiters = l );
+            const onChangeTerm = (t) => (term = t);
             const props = {
-                onClick,
-                onChange,
-                search: { term: 'searched term', status: 'NONE' }
+                url: '/api',
+                token: 'token',
+                limiters: {},
+                onSearch,
+                onChangeTerm,
+                term: 'searched term',
+                status: 'NONE'
             };
             component = TestUtils.renderIntoDocument(React.createElement(Search, props));
         });
 
         describe('handleClick', function () {
 
-            it('should call onClick with state.term value', function () {
+            it('should call onSearch with state.term value', function () {
                 component.handleClick();
                 assert.equal(term, 'searched term');
+                assert.equal(url, '/api');
+                assert.equal(token, 'token');
+                assert.deepEqual(limiters, {});
             });
         });
 

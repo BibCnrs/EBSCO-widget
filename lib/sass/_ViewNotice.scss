@@ -6,6 +6,10 @@
     }
 }
 
+.ReactModal__Overlay {
+    z-index: 999;
+}
+
 .ReactModal__Content {
     .notice {
         dt {
