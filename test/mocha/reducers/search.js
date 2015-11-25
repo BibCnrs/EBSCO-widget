@@ -10,7 +10,7 @@ describe('reducers search', function () {
     });
 
     it ('should return SUCCESS if action is SEARCH_SUCCESS', function () {
-        assert.deepEqual(search(Map({ status: 'NONE' }), { type: SEARCH_SUCCESS }).toJS(), { status: 'SUCCESS' });
+        assert.deepEqual(search(Map({ status: 'NONE', term: 'aids' }), { type: SEARCH_SUCCESS }).toJS(), { status: 'SUCCESS', term: 'aids', searchedTerm: 'aids' });
     });
 
     it ('should return ERROR and error message if action is SEARCH_ERROR', function () {
