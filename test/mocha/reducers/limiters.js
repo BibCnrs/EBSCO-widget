@@ -2,7 +2,7 @@
 
 import { Map } from 'immutable';
 import limiters from '../../../lib/reducers/limiters';
-import { FULLTEXT_CHANGE, PUBLICATION_DATE_CHANGE, SHOW_LIMITER } from '../../../lib/actions';
+import { FULLTEXT_CHANGE, CHANGE_PUBLICATION_DATE, SHOW_LIMITER } from '../../../lib/actions';
 
 describe('reducers limiters', function () {
 
@@ -40,12 +40,12 @@ describe('reducers limiters', function () {
         });
     });
 
-    describe('PUBLICATION_DATE_CHANGE', function () {
+    describe('CHANGE_PUBLICATION_DATE', function () {
         const newState = limiters({
             fromPublicationDate: '1000-01',
             toPublicationDate: '2016-01'
         }, {
-            type: PUBLICATION_DATE_CHANGE,
+            type: CHANGE_PUBLICATION_DATE,
             from: '2000-01', to: '2012-05'
         }).toJS();
         assert.equal(newState.fromPublicationDate, '2000-01');
