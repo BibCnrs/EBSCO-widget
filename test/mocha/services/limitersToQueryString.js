@@ -46,6 +46,10 @@ describe('limitersToQueryString', function () {
         assert.equal(limitersToQueryString({ title: 'lord' }), 'TI=lord');
     });
 
+    it ('should return LA99=language, if language is set', function () {
+        assert.equal(limitersToQueryString({ language: 'Javanais' }), 'LA99=Javanais');
+    });
+
     it ('should separate different delimiter with "&"', function () {
         assert.equal(limitersToQueryString({
             fullText: true,

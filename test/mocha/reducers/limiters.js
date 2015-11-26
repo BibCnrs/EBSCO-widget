@@ -20,7 +20,8 @@ describe('reducers limiters', function () {
                 peerReviewed: false,
                 author: null,
                 journalName: null,
-                title: null
+                title: null,
+                language: null
             }));
         });
 
