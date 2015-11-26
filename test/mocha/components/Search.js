@@ -67,16 +67,16 @@ describe('Search', function () {
     });
 
     describe('event', function () {
-        let url, token, term, limiters;
+        let term;
 
         before(function () {
-            const onSearch = (u, to, te, l) => (url = u, token = to, term = te, limiters = l );
+            const onSearchTerm = (t) => ( term = t );
             const onChangeTerm = (t) => (term = t);
             const props = {
                 url: '/api',
                 token: 'token',
                 limiters: {},
-                onSearch,
+                onSearchTerm,
                 onChangeTerm,
                 term: 'searched term',
                 status: 'NONE'
@@ -86,12 +86,9 @@ describe('Search', function () {
 
         describe('handleClick', function () {
 
-            it('should call onSearch with state.term value', function () {
+            it('should call onSearchTerm with state.term value', function () {
                 component.handleClick();
                 assert.equal(term, 'searched term');
-                assert.equal(url, '/api');
-                assert.equal(token, 'token');
-                assert.deepEqual(limiters, {});
             });
         });
 
