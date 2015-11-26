@@ -12,8 +12,10 @@ describe('reducers limiters', function () {
             assert.deepEqual(limiters(undefined, { type: 'OTHER_ACTION_TYPE' }), Map({
                 limiterShown: false,
                 fullText: true,
-                fromPublicationDate: '1000-01',
-                toPublicationDate: `${new Date().getFullYear() + 1}-01`
+                publicationDate: Map({
+                    from: '1000-01',
+                    to: `${new Date().getFullYear() + 1}-01`
+                })
             }));
         });
 
@@ -42,14 +44,16 @@ describe('reducers limiters', function () {
 
     describe('CHANGE_PUBLICATION_DATE', function () {
         const newState = limiters({
-            fromPublicationDate: '1000-01',
-            toPublicationDate: '2016-01'
+            publicationDate: {
+                from: '1000-01',
+                to: '2016-01'
+            }
         }, {
             type: CHANGE_PUBLICATION_DATE,
             from: '2000-01', to: '2012-05'
         }).toJS();
-        assert.equal(newState.fromPublicationDate, '2000-01');
-        assert.equal(newState.toPublicationDate, '2012-05');
+        assert.equal(newState.publicationDate.from, '2000-01');
+        assert.equal(newState.publicationDate.to, '2012-05');
     });
 
 });
