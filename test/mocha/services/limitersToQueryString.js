@@ -38,6 +38,10 @@ describe('limitersToQueryString', function () {
         assert.equal(limitersToQueryString({ author: 'Isaac Asimov' }), 'AU=Isaac Asimov');
     });
 
+    it ('should return SO=journalName, if journalName is set', function () {
+        assert.equal(limitersToQueryString({ journalName: 'Picsou magazine' }), 'SO=Picsou magazine');
+    });
+
     it ('should separate different delimiter wit "&"', function () {
         assert.equal(limitersToQueryString({
             fullText: true,

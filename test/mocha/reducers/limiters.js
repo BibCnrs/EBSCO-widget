@@ -2,7 +2,7 @@
 
 import { Map } from 'immutable';
 import limiters from '../../../lib/reducers/limiters';
-import { CHANGE_LIMITER, SHOW_LIMITER } from '../../../lib/actions';
+import { CHANGE_LIMITER, SHOW_LIMITER, LIMIT_SEARCH } from '../../../lib/actions';
 
 describe('reducers limiters', function () {
 
@@ -11,13 +11,15 @@ describe('reducers limiters', function () {
         it ('should default state to default limiter value', function () {
             assert.deepEqual(limiters(undefined, { type: 'OTHER_ACTION_TYPE' }), Map({
                 limiterShown: false,
+                hasChanged: false,
                 fullText: true,
                 publicationDate: Map({
                     from: '1000-01',
                     to: `${new Date().getFullYear() + 1}-01`
                 }),
                 peerReviewed: false,
-                author: null
+                author: null,
+                journalName: null
             }));
         });
 
@@ -53,6 +55,12 @@ describe('reducers limiters', function () {
             }).toJS();
             assert.equal(newState.publicationDate.from, '2000-01');
             assert.equal(newState.publicationDate.to, '2012-05');
+        });
+    });
+
+    describe('LIMIT_SEARCH', function() {
+        it('should set hasChanged to false', function () {
+            assert.equal(limiters({ hasChanged: true }, { type: LIMIT_SEARCH }).get('hasChanged'), false);
         });
     });
 
