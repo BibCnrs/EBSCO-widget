@@ -16,7 +16,8 @@ describe('reducers limiters', function () {
                     from: '1000-01',
                     to: `${new Date().getFullYear() + 1}-01`
                 }),
-                peerReviewed: false
+                peerReviewed: false,
+                author: null
             }));
         });
 

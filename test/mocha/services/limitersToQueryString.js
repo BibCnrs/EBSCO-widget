@@ -27,11 +27,15 @@ describe('limitersToQueryString', function () {
         assert.equal(limitersToQueryString({ peerReviewed: true }), 'RV=Y');
     });
 
-    it ('should return DT1=${to}/${from}, if fullText is true', function () {
+    it ('should return DT1=${to}/${from}, if publicationDate is set', function () {
         assert.equal(limitersToQueryString({ publicationDate: {
             from: 'from',
             to: 'to'
         } }), 'DT1=from/to');
+    });
+
+    it ('should return AU=author, if author is set', function () {
+        assert.equal(limitersToQueryString({ author: 'Isaac Asimov' }), 'AU=Isaac Asimov');
     });
 
     it ('should separate different delimiter wit "&"', function () {
