@@ -38,7 +38,7 @@ describe('search middleware', function () {
         };
     });
 
-    it('should only trigger received action if it is not one of FULLTEXT_CHANGE SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
+    it('should only trigger received action if it is not one of CHANGE_FULLTEXT SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
         const action = {
             type: 'DONT_CARE'
         };
@@ -48,7 +48,7 @@ describe('search middleware', function () {
         assert.deepEqual(dispatchedAction, []);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is one of FULLTEXT_CHANGE SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
+    it('should trigger received action and SEARCH action with info gotten from store if it is one of CHANGE_FULLTEXT SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
         const action = {
             type: 'SEARCH_TERM'
         };

@@ -2,7 +2,7 @@
 
 import { Map } from 'immutable';
 import limiters from '../../../lib/reducers/limiters';
-import { FULLTEXT_CHANGE, CHANGE_PUBLICATION_DATE, SHOW_LIMITER } from '../../../lib/actions';
+import { CHANGE_FULLTEXT, CHANGE_PEER_REVIEWED, CHANGE_PUBLICATION_DATE, SHOW_LIMITER } from '../../../lib/actions';
 
 describe('reducers limiters', function () {
 
@@ -15,7 +15,8 @@ describe('reducers limiters', function () {
                 publicationDate: Map({
                     from: '1000-01',
                     to: `${new Date().getFullYear() + 1}-01`
-                })
+                }),
+                peerReviewed: false
             }));
         });
 
@@ -36,9 +37,15 @@ describe('reducers limiters', function () {
         });
     });
 
-    describe('FULLTEXT_CHANGE', function () {
+    describe('CHANGE_FULLTEXT', function () {
         it('should set fulltext to action.fulltext', function () {
-            assert.equal(limiters({ fullText: true }, { type: FULLTEXT_CHANGE, fullText: false }).get('fullText'), false);
+            assert.equal(limiters({ fullText: true }, { type: CHANGE_FULLTEXT, fullText: false }).get('fullText'), false);
+        });
+    });
+
+    describe('CHANGE_PEER_REVIEWED', function () {
+        it('should set peerReviewed to action.peerReviewed', function () {
+            assert.equal(limiters({ peerReviewed: true }, { type: CHANGE_PEER_REVIEWED, peerReviewed: false }).get('peerReviewed'), false);
         });
     });
 

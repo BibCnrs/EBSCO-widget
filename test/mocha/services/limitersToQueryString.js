@@ -11,12 +11,20 @@ describe('limitersToQueryString', function () {
         assert.equal(limitersToQueryString({ fullText: false }), '');
     });
 
+    it('should ignore peerReviewed if it is false', function () {
+        assert.equal(limitersToQueryString({ peerReviewed: false }), '');
+    });
+
     it('should ignore unknown limiters', function () {
         assert.equal(limitersToQueryString({ whatever: 'yop' }), '');
     });
 
     it ('should return FT=Y, if fullText is true', function () {
         assert.equal(limitersToQueryString({ fullText: true }), 'FT=Y');
+    });
+
+    it ('should return RV=Y, if peerReviewed is true', function () {
+        assert.equal(limitersToQueryString({ peerReviewed: true }), 'RV=Y');
     });
 
     it ('should return DT1=${to}/${from}, if fullText is true', function () {
