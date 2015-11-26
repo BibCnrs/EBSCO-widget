@@ -19,7 +19,8 @@ describe('reducers limiters', function () {
                 }),
                 peerReviewed: false,
                 author: null,
-                journalName: null
+                journalName: null,
+                title: null
             }));
         });
 
