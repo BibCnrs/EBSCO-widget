@@ -3,6 +3,10 @@
     padding: 20px;
 }
 
+.ReactModal__Overlay {
+    z-index: 999999;
+}
+
 .hidden-sidebar {
     z-index: 3;
     position: absolute;
