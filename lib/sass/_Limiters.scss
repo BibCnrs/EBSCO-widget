@@ -18,8 +18,8 @@
             cursor: pointer;
         }
         .more-limit {
-            @include single-transition(max-height, 0.2s, ease-in, 0s)
             overflow: hidden;
+            @include single-transition(max-height, 0.5s, ease-in, 0s)
             &.shown {
                 max-height: 2000px;
             }
