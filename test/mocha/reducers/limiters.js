@@ -10,7 +10,7 @@ describe('reducers limiters', function () {
 
         it ('should default state to default limiter value', function () {
             assert.deepEqual(limiters(undefined, { type: 'OTHER_ACTION_TYPE' }), Map({
-                limiterShown: false,
+                limiterShown: true,
                 moreShown: false,
                 hasChanged: false,
                 fullText: true,
