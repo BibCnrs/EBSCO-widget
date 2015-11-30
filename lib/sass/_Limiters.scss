@@ -4,6 +4,12 @@
     width: 300px;
     overflow: hidden;
     .limiters {
+        h4 {
+            font-size: 22px;
+        }
+        h5 {
+            font-size: 16px;
+        }
         margin-left: 25px;
         padding: 10px;
         width: 250px;
@@ -12,6 +18,7 @@
         }
         .reset {
             cursor: pointer;
+            float: right;
             button {
                 padding: 2px;
             }
@@ -21,7 +28,7 @@
         }
         .more-limit {
             overflow: hidden;
-            @include single-transition(max-height, 0.5s, ease-in, 0s)
+            @include transition(max-height, 0.5s, ease-in);
             &.shown {
                 max-height: 2000px;
             }
