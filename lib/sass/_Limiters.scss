@@ -1,6 +1,8 @@
 @import "./_variables.scss";
 
 .sidebar {
+    width: 300px;
+    overflow: hidden;
     .limiters {
         margin-left: 25px;
         padding: 10px;
