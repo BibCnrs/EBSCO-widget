@@ -3,12 +3,27 @@
     padding: 20px;
 }
 
-.hidden-sidebar {
+.ReactModal__Overlay {
+    z-index: 999999;
+}
+
+.sidebar-handler {
     z-index: 3;
-    position: absolute;
+    position: fixed;
     width: 25px;
     top: 0;
     bottom: 0;
+    box-shadow: rgba(0, 0, 0, 0.14902) 2px 2px 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: dotted 1px #ccc;
+    color: #ccc;
+    &:hover {
+        background-color: #f0f0f0;
+        color: #999;
+    }
 }
 
 .close_modal {

@@ -1,13 +1,33 @@
 @import "./_variables.scss";
 
 .sidebar {
+    width: 300px;
+    overflow: hidden;
     .limiters {
         margin-left: 25px;
         padding: 10px;
         width: 250px;
-        h5 {
-            margin-top: 0px;
-            margin-bottom: 10px;
+        input {
+            width: 220px;
+        }
+        .reset {
+            cursor: pointer;
+            button {
+                padding: 2px;
+            }
+        }
+        .more-limit-toggle {
+            cursor: pointer;
+        }
+        .more-limit {
+            overflow: hidden;
+            @include single-transition(max-height, 0.5s, ease-in, 0s)
+            &.shown {
+                max-height: 2000px;
+            }
+            &.hidden {
+                max-height: 0px;
+            }
         }
         .publication-date-limiter {
             .input-calendar {
