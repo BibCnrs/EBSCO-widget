@@ -1,6 +1,7 @@
 @import "./_variables.scss";
 
 .button {
+    display: inline-block;
     @include background(linear-gradient(#ffffff, #F2F2F2));
     font-family: Arial;
     color: #005AAB;
