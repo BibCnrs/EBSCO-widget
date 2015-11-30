@@ -1,6 +1,6 @@
 {
   "name": "ebsco-widget",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,10 +10,13 @@
     "type": "git",
     "url": "https://github.com/BibCnrs/EBSCO-widget.git"
   },
-  "author": "",
+  "author": "ThieryMichel",
   "license": "CeCILL",
   "bugs": {
     "url": "https://github.com/BibCnrs/EBSCO-widget/issues"
+  },
+  "scripts": {
+    "install": "make build"
   },
   "homepage": "https://github.com/BibCnrs/EBSCO-widget",
   "devDependencies": {

@@ -4,13 +4,13 @@ node:
     - .:/app
   working_dir: /app
 
-install:
+npm:
   extends:
     file: ./docker-compose.yml
     service: node
   environment:
     http_proxy: ${http_proxy}
-  command: npm install
+  entrypoint: ['npm']
 
 mock:
   extends:
