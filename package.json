@@ -1,6 +1,6 @@
 {
   "name": "ebsco-widget",
-  "version": "0.2.2",
+  "version": "0.2.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,8 @@
     "url": "https://github.com/BibCnrs/EBSCO-widget/issues"
   },
   "scripts": {
-    "prepublish": "make build"
+    "prepublish": "make build",
+    "test": "make test"
   },
   "homepage": "https://github.com/BibCnrs/EBSCO-widget",
   "devDependencies": {
