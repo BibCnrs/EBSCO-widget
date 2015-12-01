@@ -1,5 +1,3 @@
-'use strict';
-
 import Icon from 'react-fa';
 import ViewAbstract from '../../../lib/components/ViewAbstract';
 

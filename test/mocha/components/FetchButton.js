@@ -1,5 +1,3 @@
-'use strict';
-
 import Icon from 'react-fa';
 import FetchButton from '../../../lib/components/FetchButton';
 

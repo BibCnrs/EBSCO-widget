@@ -1,5 +1,3 @@
-'use strict';
-
 import { Map } from 'immutable';
 import getSearch from '../../../lib/reducers/search';
 import { SEARCH_PENDING, SEARCH_SUCCESS, SEARCH_ERROR, TERM_CHANGE } from '../../../lib/actions';

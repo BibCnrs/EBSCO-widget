@@ -1,5 +1,3 @@
-'use strict';
-
 import { assert } from 'chai';
 var React = require('react/addons');
 

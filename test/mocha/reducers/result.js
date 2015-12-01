@@ -1,5 +1,3 @@
-'use strict';
-
 import { Map } from 'immutable';
 import result from '../../../lib/reducers/result';
 import { SHOW_ABSTRACT } from '../../../lib/actions';

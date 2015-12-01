@@ -1,5 +1,3 @@
-'use strict';
-
 import limitersToQueryString from '../../../lib/services/limitersToQueryString';
 
 describe('limitersToQueryString', function () {

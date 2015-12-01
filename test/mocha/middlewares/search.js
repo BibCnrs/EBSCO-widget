@@ -1,5 +1,3 @@
-'use strict';
-
 import { Map } from 'immutable';
 import { search } from '../../../lib/middlewares/search';
 import actions from '../../../lib/actions';

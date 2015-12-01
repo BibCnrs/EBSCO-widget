@@ -1,5 +1,3 @@
-'use strict';
-
 import { Map, List } from 'immutable';
 import notice from '../../../lib/reducers/notice';
 import { SHOW_NOTICE, RETRIEVE_SUCCESS, RETRIEVE_ERROR, RETRIEVE_PENDING } from '../../../lib/actions';

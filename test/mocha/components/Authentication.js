@@ -1,5 +1,3 @@
-'use strict';
-
 import Authentication from '../../../lib/components/Authentication';
 
 describe('Authentication', function () {
