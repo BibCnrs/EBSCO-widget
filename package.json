@@ -54,7 +54,7 @@
     "react-modal": "0.6.1",
     "react-redux": "4.0.0",
     "react-sidebar": "2.0.0",
-    "react-select": "0.9.1",
+    "react-select": "1.0.0-beta6",
     "redux": "3.0.4",
     "react-input-calendar": "0.1.19",
     "rc-checkbox": "1.2.0",
