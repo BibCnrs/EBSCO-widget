@@ -24,8 +24,12 @@ module.exports = {
         loaders: [
             {
                 test: /\.js?$/,
-                exclude: /node_modules/,
-                loaders: ['babel-loader']
+                loader: 'babel',
+                query: {
+                    cacheDirectory: true,
+                    presets: ['react', 'es2015', 'stage-2']
+                },
+                exclude: /node_modules/
             },
             sassLoader,
             { test: /\.css$/, loader: 'style-loader!css-loader?importLoaders=1' },
