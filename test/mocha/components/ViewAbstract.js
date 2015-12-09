@@ -19,15 +19,18 @@ describe('ViewAbstract', function () {
             component = shallowRenderer.getRenderOutput();
         });
 
-        it ('should display abstract', function () {
+        it('should display abstract', function () {
             assert.equal(component.type, 'span');
             const children = component.props.children;
             assert.equal(children.length, 2);
-            const [ button, p ] = children;
+            const [ button, div ] = children;
             assert.equal(button.type, 'button');
             const icon = button.props.children[1];
             assert.deepEqual(icon.type, Icon);
             assert.equal(icon.props.name, 'eye-slash');
+            assert.equal(div.type, 'div');
+            assert.equal(div.props.className, 'abstract shown');
+            const p = div.props.children;
             assert.equal(p.type, 'p');
             assert.equal(p.props.children, 'To summmarize this is all of it.');
         });
@@ -56,12 +59,12 @@ describe('ViewAbstract', function () {
             assert.equal(component.type, 'span');
             const children = component.props.children;
             assert.equal(children.length, 2);
-            const [ button, p ] = children;
+            const [ button, div ] = children;
             assert.equal(button.type, 'button');
             const icon = button.props.children[1];
             assert.deepEqual(icon.type, Icon);
             assert.equal(icon.props.name, 'eye');
-            assert.isNull(p);
+            assert.equal(div.props.className, 'abstract hidden');
         });
 
         it ('should call onShowAbstract with index props and true', function () {
