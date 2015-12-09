@@ -18,8 +18,9 @@ describe('FetchButton', function () {
             assert.equal(button.type(), Button);
             const {disabled, icon} = button.props();
             assert.isFalse(disabled);
-            assert.equal(icon.type, Icon);
-            assert.equal(icon.props.name, 'test');
+            assert.deepEqual(icon, {
+                name: 'test'
+            });
             assert.equal(error.length, 0);
         });
     });
@@ -37,9 +38,10 @@ describe('FetchButton', function () {
             assert.equal(button.type(), Button);
             const {disabled, icon} = button.props();
             assert.isTrue(disabled);
-            assert.equal(icon.type, Icon);
-            assert.equal(icon.props.name, 'spinner');
-            assert.isTrue(icon.props.spin);
+            assert.deepEqual(icon, {
+                name: 'spinner',
+                spin: true
+            });
             assert.equal(error.length, 0);
         });
     });
@@ -58,8 +60,9 @@ describe('FetchButton', function () {
             assert.equal(button.type(), Button);
             const {disabled, icon} = button.props();
             assert.isFalse(disabled);
-            assert.equal(icon.type, Icon);
-            assert.equal(icon.props.name, 'test');
+            assert.deepEqual(icon, {
+                name: 'test'
+            });
             assert.equal(error.type(), 'p');
             const [errorIcon, , message ] = error.props().children;
 
