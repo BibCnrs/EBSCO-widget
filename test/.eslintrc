@@ -11,5 +11,6 @@
         "TestUtils": true,
         "document": true,
         "window": true,
+        "enzyme": true
     }
 }
