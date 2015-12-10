@@ -1,5 +1,3 @@
-'use strict';
-
 import Search from '../../../lib/components/Search';
 import FetchButton from '../../../lib/components/FetchButton';
 

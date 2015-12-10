@@ -1,5 +1,3 @@
-'use strict';
-
 import { Map } from 'immutable';
 import limiters from '../../../lib/reducers/limiters';
 import { CHANGE_LIMITER, SHOW_LIMITER, LIMIT_SEARCH, RESET_LIMITER } from '../../../lib/actions';
