@@ -14,12 +14,14 @@ describe('search middleware', function () {
             })
         }),
         search: Map({
-            term: 'searched term'
+            term: 'searched term',
+            currentDomain: 'vie'
         }),
         login: Map({
             token: 'token'
         })
     };
+
     beforeEach(function () {
         dispatchedAction = [];
         store = {
@@ -57,6 +59,6 @@ describe('search middleware', function () {
             action
         ]);
 
-        assert.deepEqual(dispatchedAction, [actions.search(`${state.url}/search/${state.search.get('term')}?FT=Y&DT1=${from}/${to}`, state.login.get('token'))]);
+        assert.deepEqual(dispatchedAction, [actions.search(`${state.url}/search/${state.search.get('currentDomain')}/${state.search.get('term')}?FT=Y&DT1=${from}/${to}`, state.login.get('token'))]);
     });
 });
