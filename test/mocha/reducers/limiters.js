@@ -1,6 +1,12 @@
 import { Map } from 'immutable';
 import limiters from '../../../lib/reducers/limiters';
-import { CHANGE_LIMITER, SHOW_LIMITER, LIMIT_SEARCH, RESET_LIMITER } from '../../../lib/actions';
+import {
+    CHANGE_LIMITER,
+    SHOW_LIMITER,
+    LIMIT_SEARCH,
+    RESET_LIMITER,
+    LOGOUT
+} from '../../../lib/actions';
 
 describe('reducers limiters', function () {
 
@@ -22,6 +28,42 @@ describe('reducers limiters', function () {
                 title: null,
                 language: null
             }));
+        });
+
+        it ('should return default state if action type is LOGOUT', function () {
+            assert.deepEqual(
+                limiters(
+                    Map({
+                        limiterShown: true,
+                        moreShown: true,
+                        hasChanged: true,
+                        fullText: false,
+                        publicationDate: Map({
+                            from: '2000-01',
+                            to: `2015-01`
+                        }),
+                        peerReviewed: true,
+                        author: 'Aasimov',
+                        journalName: 'science',
+                        title: 'robotic law',
+                        language: 'english'
+                    }),
+                    { type: LOGOUT }),
+                Map({
+                    limiterShown: true,
+                    moreShown: false,
+                    hasChanged: false,
+                    fullText: true,
+                    publicationDate: Map({
+                        from: '1000-01',
+                        to: `${new Date().getFullYear() + 1}-01`
+                    }),
+                    peerReviewed: false,
+                    author: null,
+                    journalName: null,
+                    title: null,
+                    language: null
+                }));
         });
 
         it ('should return state unchanged if one was passed', function () {

@@ -1,6 +1,6 @@
 import { Map } from 'immutable';
 import getSearch from '../../../lib/reducers/search';
-import { SEARCH_PENDING, SEARCH_SUCCESS, SEARCH_ERROR, TERM_CHANGE, DOMAIN_CHANGE } from '../../../lib/actions';
+import { SEARCH_PENDING, SEARCH_SUCCESS, SEARCH_ERROR, TERM_CHANGE, DOMAIN_CHANGE, LOGOUT } from '../../../lib/actions';
 
 describe('reducers search', function () {
     let search;
@@ -55,6 +55,18 @@ describe('reducers search', function () {
         assert.deepEqual(searchState, { status: 'state', currentDomain: 'test' });
     });
 
+    it('should return default state if action is LOGOUT', function () {
+        window.sessionStorage = {
+            getItem: () => null
+        };
+        const searchState = search(
+            Map({ status: 'state' }),
+            { type: LOGOUT }
+        ).toJS();
+        assert.deepEqual(searchState, { term: '', status: 'NONE', currentDomain: '', domains: [] });
+        delete window.sessionStorage;
+    });
+
     it('should return passed state if action is none of the above', function () {
         const searchState = search(
             Map({ status: 'state' }),
@@ -64,12 +76,18 @@ describe('reducers search', function () {
     });
 
     it('should default status to NONE and term to "" if none given', function () {
+        window.sessionStorage = {
+            getItem: () => null
+        };
         const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
-        assert.deepEqual(searchState, Map({ term: '', status: 'NONE', currentDomain: '' }));
+        assert.deepEqual(searchState, Map({ term: '', status: 'NONE', currentDomain: '', domains: [] }));
+        delete window.sessionStorage;
     });
 
     it('default term and domain to passed term and domain', function () {
         search = getSearch('geronimo', 'test');
-        assert.deepEqual(search(undefined, { type: 'OTHER_ACTION_TYPE' }).toJS(), { term: 'geronimo', currentDomain: 'test', status: 'NONE' });
+        assert.deepEqual(
+            search(undefined, { type: 'OTHER_ACTION_TYPE' }).toJS(),
+            { term: 'geronimo', currentDomain: 'test', status: 'NONE', domains: [] });
     });
 });

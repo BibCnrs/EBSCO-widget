@@ -1,6 +1,12 @@
 import { List, Map } from 'immutable';
 import results from '../../../lib/reducers/results';
-import { SEARCH_SUCCESS, SEARCH_ERROR, SEARCH_PENDING, SHOW_ABSTRACT } from '../../../lib/actions';
+import {
+    SEARCH_SUCCESS,
+    SEARCH_ERROR,
+    SEARCH_PENDING,
+    SHOW_ABSTRACT,
+    LOGOUT
+} from '../../../lib/actions';
 
 describe('reducers results', function () {
     const resultList = List([
@@ -11,6 +17,10 @@ describe('reducers results', function () {
 
     it ('should default state to empty arrray if none given', function () {
         assert.deepEqual(results(undefined, { type: 'OTHER_ACTION_TYPE' }), List());
+    });
+
+    it ('should return default state if action type is LOGOUT', function () {
+        assert.deepEqual(results([ 'result1', 'result2' ], { type: 'LOGOUT' }), List());
     });
 
     it ('should return given state if not concernerd by ACTION', function () {
