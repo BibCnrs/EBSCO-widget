@@ -37,18 +37,24 @@ describe('loginToken middleware', function () {
     it('should save action.token in sessionStorage if action type is LOGIN_SUCCESS', function () {
         const action = {
             type: LOGIN_SUCCESS,
-            response: { token: 'tokenValue' }
+            response: {
+                token: 'tokenValue',
+                domains: ['vie', 'shs']
+            }
         };
 
         let storedItem;
         window.sessionStorage = {
-            setItem: (name, value) => {storedItem = {[name]: value};}
+            setItem: (name, value) => {storedItem = {...storedItem, [name]: value};}
         };
 
         loginToken(store, next, action);
         assert.deepEqual(nextAction, [action]);
         assert.deepEqual(dispatchedAction, []);
-        assert.deepEqual(storedItem, {token: 'tokenValue'});
+        assert.deepEqual(storedItem, {
+            domains: '["vie","shs"]',
+            token: 'tokenValue'
+        });
 
         delete window.sessionStorage;
     });
@@ -61,13 +67,13 @@ describe('loginToken middleware', function () {
         ];
 
         actions.forEach((action) => {
-            let removedItem;
+            let removedItems = [];
             window.sessionStorage = {
-                removeItem: (item) => {removedItem = item;}
+                removeItem: (item) => {removedItems.push(item);}
             };
 
             loginToken(store, next, action);
-            assert.equal(removedItem, 'token');
+            assert.deepEqual(removedItems, ['token', 'domains']);
             assert.deepEqual(dispatchedAction, []);
 
             delete window.sessionStorage;

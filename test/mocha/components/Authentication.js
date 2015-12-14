@@ -17,15 +17,13 @@ describe('Authentication', function () {
     });
 
     it('should call onSubmit with input values', function () {
-        const {username, password, profile} = component.node;
+        const {username, password} = component.node;
         username.value = 'john';
         password.value = 'secret';
-        profile.value = 'vie';
         component.find('button').simulate('click');
         assert.deepEqual(data, {
             username: 'john',
-            password: 'secret',
-            profile: 'vie'
+            password: 'secret'
         });
     });
 });

@@ -4,105 +4,170 @@ import FetchButton from '../../../lib/components/FetchButton';
 describe('Search', function () {
     let component;
 
-    describe('props.state={status: NONE}', function () {
+    describe('status: NONE', function () {
+        let props;
         before(function () {
-            const onClick = function onClick() {};
-            const onChange = function onClick() {};
-            const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} term="word" status="NONE" />);
+            props = {
+                onClick: function onClick() {},
+                onChangeTerm: function onChangeTerm() {},
+                onChangeDomain: function onChangeDomain() {},
+                term: 'word',
+                status: 'NONE',
+                domains: ['vie', 'shs'],
+                currentDomain: 'vie'
+            };
 
-            component = shallowRenderer.getRenderOutput();
+            component = enzyme.shallow(<Search {...props} />);
+        });
+
+        it ('should set input value to term props', function () {
+            const input = component.find('input');
+
+            assert.equal(input.props().value, props.term);
+        });
+
+        it ('should set fetchButton to ', function () {
+            const fetchButton = component.find('FetchButton');
+            const { icon, status, error } = fetchButton.props();
+            assert.equal(icon, 'search');
+            assert.equal(status, 'NONE');
+            assert.equal(error, undefined);
+        });
+
+        it('should set select value to currentDomain', function () {
+            const select = component.find('select');
+            assert.equal(select.props().value, props.currentDomain);
+            const options = component.find('option');
+            assert.equal(options.length, 2);
+            options.map((option, index) => assert.equal(option.props().value, props.domains[index]));
         });
     });
 
-    describe('props.state={status: PENDING}', function () {
+    describe('status: PENDING', function () {
         before(function () {
-            const onClick = function onClick() {};
-            const onChange = function onChange() {};
-            const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} status="PENDING" />);
+            const props = {
+                onSearchTerm: function onSearchTerm() {},
+                onChangeTerm: function onChangeTerm() {},
+                onChangeDomain: function onChangeDomain() {},
+                term: 'search',
+                status: 'PENDING',
+                domains: ['vie', 'shs'],
+                currentDomain: 'vie'
+            };
 
-            shallowRenderer.state = { term: 'search' };
-
-            component = shallowRenderer.getRenderOutput();
+            component = enzyme.shallow(<Search {...props} />);
         });
 
-        it ('fetchButton props.status should be PENDING if props.search.status is PENDING', function () {
-            assert.equal(component.type, 'div');
-            const children = component.props.children;
-            assert.equal(children.length, 2);
-            const [ input, fetchButton ] = children;
-            assert.equal(input.type, 'input');
-            assert.equal(input.props.type, 'text');
-            assert.equal(fetchButton.type, FetchButton);
-            assert.equal(fetchButton.props.status, 'PENDING');
+        it ('fetchButton should be PENDING if props.search.status is PENDING', function () {
+            const fetchButton = component.find('FetchButton');
+            assert.equal(fetchButton.type(), FetchButton);
+            const { status, error } = fetchButton.props();
+            assert.equal(status, 'PENDING');
+            assert.equal(error, undefined);
         });
     });
 
-    describe('props.state={status: ERROR}', function () {
+    describe('status: ERROR', function () {
         before(function () {
-            const onClick = function onClick() {};
-            const onChange = function onChange() {};
-            const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<Search onClick={onClick} onChange={onChange} term="t" status="ERROR" error="boom" />);
+            const props = {
+                onSearchTerm: function onSearchTerm() {},
+                onChangeTerm: function onChangeTerm() {},
+                onChangeDomain: function onChangeDomain() {},
+                term: 'search',
+                status: 'ERROR',
+                error: 'boom',
+                domains: ['vie', 'shs'],
+                currentDomain: 'vie'
+            };
 
-            shallowRenderer.state = { term: 'search' };
-
-            component = shallowRenderer.getRenderOutput();
+            component = enzyme.shallow(<Search {...props} />);
         });
 
-        it ('should display error', function () {
-            assert.equal(component.type, 'div');
-            const children = component.props.children;
-            assert.equal(children.length, 2);
-            const [ input, fetchButton ] = children;
-            assert.equal(input.type, 'input');
-            assert.equal(input.props.type, 'text');
-            assert.equal(fetchButton.type, FetchButton);
-            assert.equal(fetchButton.props.status, 'ERROR');
-            assert.equal(fetchButton.props.error, 'boom');
+        it ('fetchButton should be ERROR if props.search.status is ERROR', function () {
+            const fetchButton = component.find('FetchButton');
+            assert.equal(fetchButton.type(), FetchButton);
+            const { status, error } = fetchButton.props();
+            assert.equal(status, 'ERROR');
+            assert.equal(error, 'boom');
         });
     });
 
     describe('event', function () {
-        let term;
+        let term, domain;
 
-        before(function () {
-            const onSearchTerm = (t) => ( term = t );
+        beforeEach(function () {
+            term = null;
+            domain = null;
+            const onSearchTerm = (t, d) => {term = t, domain = d;};
             const onChangeTerm = (t) => (term = t);
+            const onChangeDomain = (d) => (domain = d);
             const props = {
                 url: '/api',
                 token: 'token',
                 limiters: {},
                 onSearchTerm,
                 onChangeTerm,
+                onChangeDomain,
+                domains: [ 'vie', 'shs'],
+                currentDomain: 'vie',
                 term: 'searched term',
                 status: 'NONE'
             };
-            component = TestUtils.renderIntoDocument(React.createElement(Search, props));
+            component = enzyme.mount(<Search {...props}/>);
         });
 
-        describe('handleClick', function () {
+        describe('onSearchTerm', function () {
 
-            it('should call onSearchTerm with state.term value', function () {
-                component.handleClick();
+            it('should call onSearchTerm with term and currentDomain value', function () {
+                component.find('button').simulate('click');
                 assert.equal(term, 'searched term');
+                assert.equal(domain, 'vie');
+            });
+
+            it('should not call onSearchTerm with term and currentDomain value if seachedTerm did not change', function () {
+
+                const onSearchTerm = (t, d) => {term = t, domain = d;};
+                const onChangeTerm = (t) => (term = t);
+                const onChangeDomain = (d) => (domain = d);
+                const props = {
+                    url: '/api',
+                    token: 'token',
+                    limiters: {},
+                    onSearchTerm,
+                    onChangeTerm,
+                    onChangeDomain,
+                    domains: [ 'vie', 'shs'],
+                    currentDomain: 'vie',
+                    term: 'searched term',
+                    seachedTerm: 'searched term',
+                    status: 'NONE'
+                };
+                component = enzyme.mount(<Search {...props}/>);
+                component.find('button').simulate('click');
+                assert.equal(term, 'searched term');
+                assert.equal(domain, 'vie');
             });
         });
 
-        describe('handleChange', function () {
+        describe('onChangeTerm', function () {
 
             beforeEach(function () {
-                component.handleChange({ target: { value: 'searched term'}});
+                component.find('input').simulate('change', {target: {value: 'other searched term'}});
             });
 
             it('should set term to onChange event.target.value', function () {
-                assert.equal(term, 'searched term');
+                assert.equal(term, 'other searched term');
+            });
+        });
+
+        describe('onChangeDomain', function () {
+
+            beforeEach(function () {
+                component.find('select').simulate('change', {target: {value: 'shs'}});
             });
 
-            it('should set input value to onChange event.target.value', function () {
-                const inputNode = TestUtils.findRenderedDOMComponentWithTag(component, 'input');
-                assert.equal(inputNode.value, 'searched term');
+            it('should set term to onChange event.target.value', function () {
+                assert.equal(domain, 'shs');
             });
         });
     });
