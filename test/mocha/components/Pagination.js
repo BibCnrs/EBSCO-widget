@@ -1,6 +1,6 @@
 import Pagination from '../../../lib/components/Pagination';
 
-describe.only('Pagination', function () {
+describe('Pagination', function () {
     let changePageCall;
 
     const getComponent = (currentPage, maxPage) =>  {
