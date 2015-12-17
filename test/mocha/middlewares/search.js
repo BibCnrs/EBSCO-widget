@@ -19,6 +19,9 @@ describe('search middleware', function () {
         }),
         login: Map({
             token: 'token'
+        }),
+        searchResult: Map({
+            currentPage: 5
         })
     };
 
@@ -59,6 +62,6 @@ describe('search middleware', function () {
             action
         ]);
 
-        assert.deepEqual(dispatchedAction, [actions.search(`${state.url}/search/${state.search.get('currentDomain')}/${state.search.get('term')}?FT=Y&DT1=${from}/${to}`, state.login.get('token'))]);
+        assert.deepEqual(dispatchedAction, [actions.search(`${state.url}/search/${state.search.get('currentDomain')}/${state.search.get('term')}?FT=Y&DT1=${from}/${to}&currentPage=5`, state.login.get('token'))]);
     });
 });
