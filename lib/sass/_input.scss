@@ -1,6 +1,7 @@
 @import "./_variables.scss";
 
 input[type=text],
+input[type=number],
 input[type=password] {
     display: inline-block;
     margin: 0;
