@@ -52,6 +52,7 @@ describe('Pagination', function () {
 
         it('should call loadPage with input value when bluring input', function () {
             const input = component.find('input');
+            input.simulate('change', { target: { value: 7 } });
             input.simulate('blur', { target: { value: 7 } });
             assert.equal(changePageCall, 7);
         });
