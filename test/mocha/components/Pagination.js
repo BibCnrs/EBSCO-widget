@@ -63,18 +63,6 @@ describe('Pagination', function () {
             assert.equal(loadPageCall, 4);
         });
 
-        it('should call loadPage with 1 when clicking first', function () {
-            const first = component.find('.first');
-            first.simulate('click');
-            assert.equal(loadPageCall, 1);
-        });
-
-        it('should call loadPage with maxPage(10) when clicking last', function () {
-            const last = component.find('.last');
-            last.simulate('click');
-            assert.equal(loadPageCall, 10);
-        });
-
         it('should call loadPage with currentPage +1 when clicking next', function () {
             const next = component.find('.next');
             next.simulate('click');
@@ -102,23 +90,12 @@ describe('Pagination', function () {
             assert.isNull(loadPageCall);
         });
 
-        it('should not call loadPage when clicking first', function () {
-            const first = component.find('.first');
-            first.simulate('click');
-            assert.isNull(loadPageCall);
-        });
-
         it('should call loadPage with currentPage +1 when clicking next', function () {
             const next = component.find('.next');
             next.simulate('click');
             assert.equal(loadPageCall, 2);
         });
 
-        it('should call loadPage with maxPage(10) when clicking last', function () {
-            const last = component.find('.last');
-            last.simulate('click');
-            assert.equal(loadPageCall, 10);
-        });
     });
 
     describe('when on last page', function () {
@@ -141,22 +118,11 @@ describe('Pagination', function () {
             assert.equal(loadPageCall, 9);
         });
 
-        it('should call loadPage with 1 when clicking first', function () {
-            const first = component.find('.first');
-            first.simulate('click');
-            assert.equal(loadPageCall, 1);
-        });
-
         it('should not call loadPage when clicking next', function () {
             const next = component.find('.next');
             next.simulate('click');
             assert.isNull(loadPageCall);
         });
 
-        it('should not call loadPage when clicking last', function () {
-            const last = component.find('.last');
-            last.simulate('click');
-            assert.isNull(loadPageCall);
-        });
     });
 });
