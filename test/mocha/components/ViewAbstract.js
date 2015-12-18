@@ -11,30 +11,23 @@ describe('ViewAbstract', function () {
                 index = i;
                 abstractShown = v;
             };
-            const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<ViewAbstract index={7} onShowAbstract={onShowAbstract} abstractShown={true} abstract="To summmarize this is all of it." />);
 
-            component = shallowRenderer.getRenderOutput();
+            component = enzyme.shallow(<ViewAbstract index={7} onShowAbstract={onShowAbstract} abstractShown={true} abstract="To summmarize this is all of it." />);
         });
 
         it('should display abstract', function () {
-            assert.equal(component.type, 'span');
-            const children = component.props.children;
-            assert.equal(children.length, 2);
-            const [ button, div ] = children;
-            assert.equal(button.type, 'button');
-            const icon = button.props.children[1];
-            assert.deepEqual(icon.type, Icon);
-            assert.equal(icon.props.name, 'eye-slash');
-            assert.equal(div.type, 'div');
-            assert.equal(div.props.className, 'abstract shown');
-            const p = div.props.children;
-            assert.equal(p.type, 'p');
-            assert.equal(p.props.children, 'To summmarize this is all of it.');
+            const button = component.find('button');
+            const icon = button.find('Icon');
+            assert.deepEqual(icon.type(), Icon);
+            assert.equal(icon.props().name, 'eye-slash');
+            const div = component.find('div');
+            assert.equal(div.props().className, 'abstract shown');
+            const p = div.find('p');
+            assert.equal(p.text(), 'To summmarize this is all of it.');
         });
 
-        it ('should call onShowAbstract with index props and false', function () {
-            component.props.children[0].props.onClick();
+        it('should call onShowAbstract with index props and false', function () {
+            component.find('button').simulate('click');
             assert.equal(index, 7);
             assert.equal(abstractShown, false);
         });
@@ -47,26 +40,28 @@ describe('ViewAbstract', function () {
                 index = i;
                 abstractShown = v;
             };
-            const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<ViewAbstract index={7} onShowAbstract={onShowAbstract} abstractShown={false} abstract="To summmarize this is all of it." />);
 
-            component = shallowRenderer.getRenderOutput();
+            component = enzyme.shallow(
+                <ViewAbstract
+                    index={7}
+                    onShowAbstract={onShowAbstract}
+                    abstractShown={false}
+                    abstract="To summmarize this is all of it."
+                />
+            );
         });
 
-        it ('should not display abstract', function () {
-            assert.equal(component.type, 'span');
-            const children = component.props.children;
-            assert.equal(children.length, 2);
-            const [ button, div ] = children;
-            assert.equal(button.type, 'button');
-            const icon = button.props.children[1];
-            assert.deepEqual(icon.type, Icon);
-            assert.equal(icon.props.name, 'eye');
-            assert.equal(div.props.className, 'abstract hidden');
+        it('should not display abstract', function () {
+            const button = component.find('button');
+            const icon = button.find('Icon');
+            assert.deepEqual(icon.type(), Icon);
+            assert.equal(icon.props().name, 'eye');
+            const div = component.find('div');
+            assert.equal(div.props().className, 'abstract hidden');
         });
 
-        it ('should call onShowAbstract with index props and true', function () {
-            component.props.children[0].props.onClick();
+        it('should call onShowAbstract with index props and true', function () {
+            component.find('button').simulate('click');
             assert.equal(index, 7);
             assert.equal(abstractShown, true);
         });
@@ -75,19 +70,19 @@ describe('ViewAbstract', function () {
     describe('no abstract provided', function () {
         before(function () {
             onShowAbstract = function onShowAbstract() {};
-            const shallowRenderer = TestUtils.createRenderer();
-            shallowRenderer.render(<ViewAbstract index={7} onShowAbstract={onShowAbstract} abstractShown={false} />);
 
-            component = shallowRenderer.getRenderOutput();
+            component = enzyme.shallow(
+                <ViewAbstract
+                    index={7}
+                    onShowAbstract={onShowAbstract}
+                    abstractShown={false}
+                />
+            );
         });
 
-        it ('should disable button', function () {
-            assert.equal(component.type, 'span');
-            const children = component.props.children;
-            assert.equal(children.length, 2);
-            const [ button ] = children;
-            assert.equal(button.type, 'button');
-            assert.isTrue(button.props.disabled, 'button');
+        it('should disable button', function () {
+            const button = component.find('button');
+            assert.isTrue(button.props().disabled, 'button');
         });
     });
 });
