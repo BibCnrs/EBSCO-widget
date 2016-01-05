@@ -6,16 +6,16 @@ describe('search middleware', function () {
     let store, dispatchedAction, next, nextAction;
     const state = {
         url: 'http://apiroute',
-        limiters: Map({
-            fullText: true,
-            publicationDate: Map({
-                from: '1000-01',
-                to: '2016-01'
-            })
-        }),
         search: Map({
             term: 'searched term',
-            currentDomain: 'vie'
+            currentDomain: 'vie',
+            limiters: Map({
+                fullText: true,
+                publicationDate: Map({
+                    from: '1000-01',
+                    to: '2016-01'
+                })
+            })
         }),
         login: Map({
             token: 'token'
@@ -57,7 +57,7 @@ describe('search middleware', function () {
         };
 
         search(store, next, action);
-        const { from, to } = state.limiters.get('publicationDate').toJS();
+        const { from, to } = state.search.get('limiters').get('publicationDate').toJS();
         assert.deepEqual(nextAction, [
             action
         ]);

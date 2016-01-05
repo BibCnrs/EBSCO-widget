@@ -1,5 +1,6 @@
 import { Map } from 'immutable';
 import getSearch, { getDefaultState } from '../../../lib/reducers/search';
+import { defaultState as defaultLimiters } from '../../../lib/reducers/limiters';
 import { SEARCH_PENDING, SEARCH_SUCCESS, SEARCH_ERROR, TERM_CHANGE, DOMAIN_CHANGE, LOGOUT } from '../../../lib/actions';
 
 describe('reducers search', function () {
@@ -19,7 +20,8 @@ describe('reducers search', function () {
                 currentDomain: '',
                 domains: [],
                 status: 'NONE',
-                term: ''
+                term: '',
+                limiters: defaultLimiters.toJS()
             });
         });
 
@@ -32,7 +34,8 @@ describe('reducers search', function () {
                 currentDomain: '',
                 domains: [],
                 status: 'NONE',
-                term: 'term'
+                term: 'term',
+                limiters: defaultLimiters.toJS()
             });
         });
 
@@ -45,7 +48,8 @@ describe('reducers search', function () {
                 currentDomain: 'list',
                 domains: ['list', 'of', 'domains'],
                 status: 'NONE',
-                term: ''
+                term: '',
+                limiters: defaultLimiters.toJS()
             });
         });
 
@@ -58,7 +62,8 @@ describe('reducers search', function () {
                 currentDomain: 'currentDomain',
                 domains: ['list', 'of', 'domains', 'currentDomain'],
                 status: 'NONE',
-                term: ''
+                term: '',
+                limiters: defaultLimiters.toJS()
             });
         });
 
@@ -71,7 +76,8 @@ describe('reducers search', function () {
                 currentDomain: 'list',
                 domains: ['list', 'of', 'domains'],
                 status: 'NONE',
-                term: ''
+                term: '',
+                limiters: defaultLimiters.toJS()
             });
         });
 
@@ -132,24 +138,30 @@ describe('reducers search', function () {
             Map({ status: 'state' }),
             { type: LOGOUT }
         ).toJS();
-        assert.deepEqual(searchState, { term: '', status: 'NONE', currentDomain: '', domains: [] });
+        assert.deepEqual(searchState, getDefaultState().toJS());
         delete window.sessionStorage;
     });
 
-    it('should return passed state if action is none of the above', function () {
+    it('should return passed state with default limiter if action is none of the above', function () {
         const searchState = search(
             Map({ status: 'state' }),
             { type: 'OTHER_ACTION_TYPE' }
         );
-        assert.deepEqual(searchState, Map({ status: 'state' }));
+        assert.deepEqual(searchState.toJS(), { status: 'state', limiters: defaultLimiters.toJS() });
     });
 
     it('should default status to NONE and term to "" if none given', function () {
         window.sessionStorage = {
             getItem: () => null
         };
-        const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
-        assert.deepEqual(searchState, Map({ term: '', status: 'NONE', currentDomain: '', domains: [] }));
+        const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' }).toJS();
+        assert.deepEqual(searchState, {
+            term: '',
+            status: 'NONE',
+            currentDomain: '',
+            domains: [],
+            limiters: defaultLimiters.toJS()
+        });
         delete window.sessionStorage;
     });
 
@@ -160,6 +172,6 @@ describe('reducers search', function () {
         search = getSearch('geronimo', 'test');
         assert.deepEqual(
             search(undefined, { type: 'OTHER_ACTION_TYPE' }).toJS(),
-            { term: 'geronimo', currentDomain: 'test', status: 'NONE', domains: ['test'] });
+            { term: 'geronimo', currentDomain: 'test', status: 'NONE', domains: ['test'], limiters: defaultLimiters.toJS() });
     });
 });
