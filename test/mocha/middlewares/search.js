@@ -8,7 +8,7 @@ describe('search middleware', function () {
         url: 'http://apiroute',
         search: Map({
             term: 'searched term',
-            currentDomain: 'vie',
+            domain: 'vie',
             limiters: Map({
                 fullText: true,
                 publicationDate: Map({
@@ -62,6 +62,6 @@ describe('search middleware', function () {
             action
         ]);
 
-        assert.deepEqual(dispatchedAction, [actions.search(`${state.url}/search/${state.search.get('currentDomain')}/${state.search.get('term')}?FT=Y&DT1=${from}/${to}&currentPage=5`, state.login.get('token'))]);
+        assert.deepEqual(dispatchedAction, [actions.search(`${state.url}/search/${state.search.get('domain')}/${state.search.get('term')}?FT=Y&DT1=${from}/${to}&currentPage=5`, state.login.get('token'))]);
     });
 });

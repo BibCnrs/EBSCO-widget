@@ -14,7 +14,7 @@ describe('Search', function () {
                 term: 'word',
                 status: 'NONE',
                 domains: ['vie', 'shs'],
-                currentDomain: 'vie'
+                domain: 'vie'
             };
 
             component = enzyme.shallow(<Search {...props} />);
@@ -34,9 +34,9 @@ describe('Search', function () {
             assert.equal(error, undefined);
         });
 
-        it('should set select value to currentDomain', function () {
+        it('should set select value to domain', function () {
             const select = component.find('select');
-            assert.equal(select.props().value, props.currentDomain);
+            assert.equal(select.props().value, props.domain);
             const options = component.find('option');
             assert.equal(options.length, 2);
             options.map((option, index) => assert.equal(option.props().value, props.domains[index]));
@@ -52,7 +52,7 @@ describe('Search', function () {
                 term: 'search',
                 status: 'PENDING',
                 domains: ['vie', 'shs'],
-                currentDomain: 'vie'
+                domain: 'vie'
             };
 
             component = enzyme.shallow(<Search {...props} />);
@@ -77,7 +77,7 @@ describe('Search', function () {
                 status: 'ERROR',
                 error: 'boom',
                 domains: ['vie', 'shs'],
-                currentDomain: 'vie'
+                domain: 'vie'
             };
 
             component = enzyme.shallow(<Search {...props} />);
@@ -109,7 +109,7 @@ describe('Search', function () {
                 onChangeTerm,
                 onChangeDomain,
                 domains: [ 'vie', 'shs'],
-                currentDomain: 'vie',
+                domain: 'vie',
                 term: 'searched term',
                 status: 'NONE'
             };
@@ -118,13 +118,13 @@ describe('Search', function () {
 
         describe('onSearchTerm', function () {
 
-            it('should call onSearchTerm with term and currentDomain value', function () {
+            it('should call onSearchTerm with term and domain value', function () {
                 component.find('button').simulate('click');
                 assert.equal(term, 'searched term');
                 assert.equal(domain, 'vie');
             });
 
-            it('should not call onSearchTerm with term and currentDomain value if seachedTerm did not change', function () {
+            it('should not call onSearchTerm with term and domain value if seachedTerm did not change', function () {
 
                 const onSearchTerm = (t, d) => {term = t, domain = d;};
                 const onChangeTerm = (t) => (term = t);
@@ -137,7 +137,7 @@ describe('Search', function () {
                     onChangeTerm,
                     onChangeDomain,
                     domains: [ 'vie', 'shs'],
-                    currentDomain: 'vie',
+                    domain: 'vie',
                     term: 'searched term',
                     seachedTerm: 'searched term',
                     status: 'NONE'

@@ -11,14 +11,13 @@ describe('reducers search', function () {
 
     describe('getDefaultState', function () {
 
-        it ('should return default state', function () {
+        it('should return default state', function () {
             window.sessionStorage = {
                 getItem: () => null
             };
             const defaultState = getDefaultState().toJS();
             assert.deepEqual(defaultState, {
-                currentDomain: '',
-                domains: [],
+                domain: undefined,
                 status: 'NONE',
                 term: '',
                 limiters: defaultLimiters.toJS()
@@ -31,50 +30,20 @@ describe('reducers search', function () {
             };
             const defaultState = getDefaultState('term').toJS();
             assert.deepEqual(defaultState, {
-                currentDomain: '',
-                domains: [],
+                domain: undefined,
                 status: 'NONE',
                 term: 'term',
                 limiters: defaultLimiters.toJS()
             });
         });
 
-        it ('should use sessionStorage for domains if set and first domain as currentDomain', function () {
+        it('should use domain, if given and present in domains', function () {
             window.sessionStorage = {
-                getItem: (name) => name === 'domains' ? '["list", "of", "domains"]' : null
+                getItem: (name) => name === 'domains' ? '["list", "of", "domains", "domain"]' : null
             };
-            const defaultState = getDefaultState().toJS();
+            const defaultState = getDefaultState(null, 'domain').toJS();
             assert.deepEqual(defaultState, {
-                currentDomain: 'list',
-                domains: ['list', 'of', 'domains'],
-                status: 'NONE',
-                term: '',
-                limiters: defaultLimiters.toJS()
-            });
-        });
-
-        it ('should use currentDomain, if given and present in domains', function () {
-            window.sessionStorage = {
-                getItem: (name) => name === 'domains' ? '["list", "of", "domains", "currentDomain"]' : null
-            };
-            const defaultState = getDefaultState(null, 'currentDomain').toJS();
-            assert.deepEqual(defaultState, {
-                currentDomain: 'currentDomain',
-                domains: ['list', 'of', 'domains', 'currentDomain'],
-                status: 'NONE',
-                term: '',
-                limiters: defaultLimiters.toJS()
-            });
-        });
-
-        it ('should ignore currentDomain, if given but not present in domains', function () {
-            window.sessionStorage = {
-                getItem: (name) => name === 'domains' ? '["list", "of", "domains"]' : null
-            };
-            const defaultState = getDefaultState(null, 'currentDomain').toJS();
-            assert.deepEqual(defaultState, {
-                currentDomain: 'list',
-                domains: ['list', 'of', 'domains'],
+                domain: 'domain',
                 status: 'NONE',
                 term: '',
                 limiters: defaultLimiters.toJS()
@@ -127,7 +96,7 @@ describe('reducers search', function () {
             Map({ status: 'state' }),
             { type: DOMAIN_CHANGE, domain: 'test' }
         ).toJS();
-        assert.deepEqual(searchState, { status: 'state', currentDomain: 'test' });
+        assert.deepEqual(searchState, { status: 'state', domain: 'test' });
     });
 
     it('should return default state if action is LOGOUT', function () {
@@ -158,20 +127,21 @@ describe('reducers search', function () {
         assert.deepEqual(searchState, {
             term: '',
             status: 'NONE',
-            currentDomain: '',
-            domains: [],
+            domain: undefined,
             limiters: defaultLimiters.toJS()
         });
         delete window.sessionStorage;
     });
 
     it('default term and domain to passed term and domain', function () {
-        window.sessionStorage = {
-            getItem: (name) => name === 'domains' ? '["test"]' : null
-        };
         search = getSearch('geronimo', 'test');
         assert.deepEqual(
             search(undefined, { type: 'OTHER_ACTION_TYPE' }).toJS(),
-            { term: 'geronimo', currentDomain: 'test', status: 'NONE', domains: ['test'], limiters: defaultLimiters.toJS() });
+            {
+                term: 'geronimo',
+                domain: 'test',
+                status: 'NONE',
+                limiters: defaultLimiters.toJS()
+            });
     });
 });
