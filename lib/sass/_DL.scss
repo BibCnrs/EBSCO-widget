@@ -1,0 +1,18 @@
+
+.dl {
+    dt {
+        // display: block;
+        float: left;
+        clear: left;
+        text-align: right;
+        font-weight: bold;
+        padding-right: 5px;
+    }
+    dt::after {
+        content: ":"
+    }
+    dd {
+        display: block;
+        // padding: 5px 0 5px 10px;
+    }
+}
