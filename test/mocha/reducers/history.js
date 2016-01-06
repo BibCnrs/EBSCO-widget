@@ -1,7 +1,7 @@
 import { SEARCH_SUCCESS } from '../../../lib/actions';
 import history, { getHistoryFromStorage } from '../../../lib/reducers/history';
 
-describe.only('reducer history', function () {
+describe('reducer history', function () {
     it('should return empty array as default state', function () {
         window.localStorage = {
             length: 0
@@ -13,7 +13,7 @@ describe.only('reducer history', function () {
     describe('action SEARCH_SUCCESS', function () {
 
         it('should add action.query to state', function () {
-            assert.deepEqual(history([{ term: 'phylloxera' }], { type: SEARCH_SUCCESS, query: { term: 'aids' }}), [{ term: 'phylloxera' }, { term: 'aids' }]);
+            assert.deepEqual(history([{ term: 'phylloxera' }], { type: SEARCH_SUCCESS, query: { term: 'aids' }}), [{ term: 'aids' }, { term: 'phylloxera' }]);
         });
 
         it('should not add action.query to state if it is already present in state', function () {
