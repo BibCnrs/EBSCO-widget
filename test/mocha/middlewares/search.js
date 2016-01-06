@@ -62,7 +62,17 @@ describe('search middleware', function () {
         ]);
 
         assert.deepEqual(dispatchedAction, [
-            actions.search(`${state.url}/search/${state.search.domain}/${state.search.term}?FT=Y&DT1=${from}/${to}&currentPage=5`,state.login.token)
+            actions.search(
+                `${state.url}/search/${state.search.domain}/${state.search.term}?FT=Y&DT1=${from}/${to}&currentPage=5`,
+                state.login.token,
+                { term: 'searched term', domain: 'vie', limiters: {
+                    fullText: true,
+                    publicationDate: {
+                        from: '1000-01',
+                        to: '2016-01'
+                    }
+                } }
+            )
         ]);
     });
 });
