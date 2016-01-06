@@ -1,5 +1,5 @@
-import { Map } from 'immutable';
 import getSearch, { getDefaultState } from '../../../lib/reducers/search';
+import { defaultState as defaultLimiters } from '../../../lib/reducers/limiters';
 import { SEARCH_PENDING, SEARCH_SUCCESS, SEARCH_ERROR, TERM_CHANGE, DOMAIN_CHANGE, LOGOUT } from '../../../lib/actions';
 
 describe('reducers search', function () {
@@ -10,16 +10,16 @@ describe('reducers search', function () {
 
     describe('getDefaultState', function () {
 
-        it ('should return default state', function () {
+        it('should return default state', function () {
             window.sessionStorage = {
                 getItem: () => null
             };
-            const defaultState = getDefaultState().toJS();
+            const defaultState = getDefaultState();
             assert.deepEqual(defaultState, {
-                currentDomain: '',
-                domains: [],
+                domain: undefined,
                 status: 'NONE',
-                term: ''
+                term: '',
+                limiters: defaultLimiters
             });
         });
 
@@ -27,51 +27,25 @@ describe('reducers search', function () {
             window.sessionStorage = {
                 getItem: () => null
             };
-            const defaultState = getDefaultState('term').toJS();
+            const defaultState = getDefaultState('term');
             assert.deepEqual(defaultState, {
-                currentDomain: '',
-                domains: [],
+                domain: undefined,
                 status: 'NONE',
-                term: 'term'
+                term: 'term',
+                limiters: defaultLimiters
             });
         });
 
-        it ('should use sessionStorage for domains if set and first domain as currentDomain', function () {
+        it('should use domain, if given and present in domains', function () {
             window.sessionStorage = {
-                getItem: (name) => name === 'domains' ? '["list", "of", "domains"]' : null
+                getItem: (name) => name === 'domains' ? '["list", "of", "domains", "domain"]' : null
             };
-            const defaultState = getDefaultState().toJS();
+            const defaultState = getDefaultState(null, 'domain');
             assert.deepEqual(defaultState, {
-                currentDomain: 'list',
-                domains: ['list', 'of', 'domains'],
+                domain: 'domain',
                 status: 'NONE',
-                term: ''
-            });
-        });
-
-        it ('should use currentDomain, if given and present in domains', function () {
-            window.sessionStorage = {
-                getItem: (name) => name === 'domains' ? '["list", "of", "domains", "currentDomain"]' : null
-            };
-            const defaultState = getDefaultState(null, 'currentDomain').toJS();
-            assert.deepEqual(defaultState, {
-                currentDomain: 'currentDomain',
-                domains: ['list', 'of', 'domains', 'currentDomain'],
-                status: 'NONE',
-                term: ''
-            });
-        });
-
-        it ('should ignore currentDomain, if given but not present in domains', function () {
-            window.sessionStorage = {
-                getItem: (name) => name === 'domains' ? '["list", "of", "domains"]' : null
-            };
-            const defaultState = getDefaultState(null, 'currentDomain').toJS();
-            assert.deepEqual(defaultState, {
-                currentDomain: 'list',
-                domains: ['list', 'of', 'domains'],
-                status: 'NONE',
-                term: ''
+                term: '',
+                limiters: defaultLimiters
             });
         });
 
@@ -79,49 +53,60 @@ describe('reducers search', function () {
 
     it('should return PENDING if action is SEARCH_PENDING', function () {
         const searchState = search(
-            Map({ term: 'my search', status: 'NONE' }),
+            { term: 'my search', status: 'NONE' },
             { type: SEARCH_PENDING }
-        ).toJS();
-        assert.deepEqual(searchState, { term: 'my search', status: 'PENDING' });
+        );
+        assert.deepEqual(searchState, {
+            term: 'my search',
+            status: 'PENDING',
+            searchedTerm: undefined,
+            error: undefined
+        });
     });
 
     it('should return SUCCESS if action is SEARCH_SUCCESS', function () {
         const searchState = search(
-            Map({ status: 'NONE', term: 'aids' }),
+            { status: 'NONE', term: 'aids' },
             { type: SEARCH_SUCCESS }
-        ).toJS();
+        );
         assert.deepEqual(searchState, {
             status: 'SUCCESS',
             term: 'aids',
-            searchedTerm: 'aids'
+            searchedTerm: 'aids',
+            error: undefined
         });
     });
 
     it('should return ERROR and error message if action is SEARCH_ERROR', function () {
         const searchState = search(
-            Map({ status: 'NONE' }),
+            { status: 'NONE' },
             { type: SEARCH_ERROR, error: { message: 'boom' } }
-        ).toJS();
+        );
         assert.deepEqual(searchState, {
             status: 'ERROR',
-            error: 'boom'
+            error: 'boom',
+            searchedTerm: undefined
         });
     });
 
     it('should update term with action.term if action is TERM_CHANGE', function () {
         const searchState = search(
-            Map({ status: 'state' }),
+            { status: 'state' },
             { type: TERM_CHANGE, term: 'searched term' }
-        ).toJS();
+        );
         assert.deepEqual(searchState, { status: 'state', term: 'searched term' });
     });
 
     it('should update domain with action.domain if action is DOMAIN_CHANGE', function () {
         const searchState = search(
-            Map({ status: 'state' }),
+            { status: 'state' },
             { type: DOMAIN_CHANGE, domain: 'test' }
-        ).toJS();
-        assert.deepEqual(searchState, { status: 'state', currentDomain: 'test' });
+        );
+        assert.deepEqual(searchState, {
+            status: 'state',
+            domain: 'test',
+            searchedTerm: undefined
+        });
     });
 
     it('should return default state if action is LOGOUT', function () {
@@ -129,19 +114,19 @@ describe('reducers search', function () {
             getItem: () => null
         };
         const searchState = search(
-            Map({ status: 'state' }),
+            { status: 'state' },
             { type: LOGOUT }
-        ).toJS();
-        assert.deepEqual(searchState, { term: '', status: 'NONE', currentDomain: '', domains: [] });
+        );
+        assert.deepEqual(searchState, getDefaultState());
         delete window.sessionStorage;
     });
 
-    it('should return passed state if action is none of the above', function () {
+    it('should return passed state with default limiter if action is none of the above', function () {
         const searchState = search(
-            Map({ status: 'state' }),
+            { status: 'state' },
             { type: 'OTHER_ACTION_TYPE' }
         );
-        assert.deepEqual(searchState, Map({ status: 'state' }));
+        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters });
     });
 
     it('should default status to NONE and term to "" if none given', function () {
@@ -149,7 +134,12 @@ describe('reducers search', function () {
             getItem: () => null
         };
         const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
-        assert.deepEqual(searchState, Map({ term: '', status: 'NONE', currentDomain: '', domains: [] }));
+        assert.deepEqual(searchState, {
+            term: '',
+            status: 'NONE',
+            domain: undefined,
+            limiters: defaultLimiters
+        });
         delete window.sessionStorage;
     });
 
@@ -159,7 +149,14 @@ describe('reducers search', function () {
         };
         search = getSearch('geronimo', 'test');
         assert.deepEqual(
-            search(undefined, { type: 'OTHER_ACTION_TYPE' }).toJS(),
-            { term: 'geronimo', currentDomain: 'test', status: 'NONE', domains: ['test'] });
+            search(undefined, { type: 'OTHER_ACTION_TYPE' }),
+            {
+                term: 'geronimo',
+                domain: 'test',
+                status: 'NONE',
+                limiters: defaultLimiters
+            }
+        );
+        delete window.sessionStorage;
     });
 });

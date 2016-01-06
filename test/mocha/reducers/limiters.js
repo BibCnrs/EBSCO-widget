@@ -1,4 +1,3 @@
-import { Map } from 'immutable';
 import limiters from '../../../lib/reducers/limiters';
 import {
     CHANGE_LIMITER,
@@ -13,79 +12,83 @@ describe('reducers limiters', function () {
     describe('default action', function () {
 
         it ('should default state to default limiter value', function () {
-            assert.deepEqual(limiters(undefined, { type: 'OTHER_ACTION_TYPE' }), Map({
+            assert.deepEqual(limiters(undefined, { type: 'OTHER_ACTION_TYPE' }), {
                 limiterShown: true,
                 moreShown: false,
                 hasChanged: false,
                 fullText: true,
-                publicationDate: Map({
+                publicationDate: {
                     from: '1000-01',
                     to: `${new Date().getFullYear() + 1}-01`
-                }),
+                },
                 peerReviewed: false,
                 author: null,
                 journalName: null,
                 title: null,
                 language: null
-            }));
+            });
         });
 
         it ('should return default state if action type is LOGOUT', function () {
             assert.deepEqual(
                 limiters(
-                    Map({
+                    {
                         limiterShown: true,
                         moreShown: true,
                         hasChanged: true,
                         fullText: false,
-                        publicationDate: Map({
+                        publicationDate: {
                             from: '2000-01',
                             to: `2015-01`
-                        }),
+                        },
                         peerReviewed: true,
                         author: 'Aasimov',
                         journalName: 'science',
                         title: 'robotic law',
                         language: 'english'
-                    }),
-                    { type: LOGOUT }),
-                Map({
+                    },
+                    { type: LOGOUT }
+                ),
+                {
                     limiterShown: true,
                     moreShown: false,
                     hasChanged: false,
                     fullText: true,
-                    publicationDate: Map({
+                    publicationDate: {
                         from: '1000-01',
                         to: `${new Date().getFullYear() + 1}-01`
-                    }),
+                    },
                     peerReviewed: false,
                     author: null,
                     journalName: null,
                     title: null,
                     language: null
-                }));
+                });
         });
 
         it ('should return state unchanged if one was passed', function () {
-            assert.deepEqual(limiters({ state: 'state'}, { type: 'OTHER_ACTION_TYPE' }), Map({
+            assert.deepEqual(limiters({ state: 'state'}, { type: 'OTHER_ACTION_TYPE' }), {
                 state: 'state'
-            }));
+            });
         });
     });
 
     describe('SHOW_LIMITER', function () {
         it('should set limiterShown to true if action.visibility is true', function () {
-            assert.equal(limiters({ limiterShown: false }, { type: SHOW_LIMITER, visibility: true }).get('limiterShown'), true);
+            assert.equal(
+                limiters({ limiterShown: false }, { type: SHOW_LIMITER, visibility: true }).limiterShown,
+                true
+            );
         });
 
         it('should set limiterShown to false if action.visibility is false', function () {
-            assert.equal(limiters({ limiterShown: true }, { type: SHOW_LIMITER, visibility: false }).get('limiterShown'), false);
+            assert.equal(limiters({ limiterShown: true }, { type: SHOW_LIMITER, visibility: false }).limiterShown, false);
         });
     });
 
     describe('CHANGE_LIMITER', function () {
         it('should set action.limiter to action.value', function () {
-            assert.equal(limiters({ fullText: true }, { type: CHANGE_LIMITER, limiter: 'fullText', value: false }).get('fullText'), false);
+            assert.equal(limiters({ fullText: true }, { type: CHANGE_LIMITER, limiter: 'fullText', value: false }).fullText, false);
             const newState = limiters({
                 publicationDate: {
                     from: '1000-01',
@@ -95,7 +98,7 @@ describe('reducers limiters', function () {
                 type: CHANGE_LIMITER,
                 limiter: 'publicationDate',
                 value: { from: '2000-01', to: '2012-05' }
-            }).toJS();
+            });
             assert.equal(newState.publicationDate.from, '2000-01');
             assert.equal(newState.publicationDate.to, '2012-05');
         });
@@ -103,7 +106,7 @@ describe('reducers limiters', function () {
 
     describe('LIMIT_SEARCH', function() {
         it('should set hasChanged to false', function () {
-            assert.equal(limiters({ hasChanged: true }, { type: LIMIT_SEARCH }).get('hasChanged'), false);
+            assert.equal(limiters({ hasChanged: true }, { type: LIMIT_SEARCH }).hasChanged, false);
         });
     });
 
@@ -117,7 +120,7 @@ describe('reducers limiters', function () {
                 author: 'Asimov',
                 limiterShown: true,
                 moreShown: true
-            }, { type: RESET_LIMITER }).toJS(), {
+            }, { type: RESET_LIMITER }), {
                 limiterShown: true,
                 moreShown: true,
                 hasChanged: false,
@@ -135,8 +138,8 @@ describe('reducers limiters', function () {
         });
 
         it('should let moreShown value unchanged', function () {
-            assert.equal(limiters({ moreShown: true }, { type: RESET_LIMITER }).get('moreShown'), true);
-            assert.equal(limiters({ moreShown: false }, { type: RESET_LIMITER }).get('moreShown'), false);
+            assert.equal(limiters({ moreShown: true }, { type: RESET_LIMITER }).moreShown, true);
+            assert.equal(limiters({ moreShown: false }, { type: RESET_LIMITER }).moreShown, false);
         });
     });
 
