@@ -19,13 +19,13 @@ describe('reducers domains', function () {
 
     it('should return domains stored in sessionStorage as default state ', function () {
         storedDomains = '["list", "of", "domains"]';
-        assert.deepEqual(domains(undefined, {}).toJS(), ['list', 'of', 'domains']);
+        assert.deepEqual(domains(undefined, {}), ['list', 'of', 'domains']);
 
         delete window.sessionStorage;
     });
 
     it('should return empty list as default state ', function () {
-        assert.deepEqual(domains(undefined, {}).toJS(), []);
+        assert.deepEqual(domains(undefined, {}), []);
 
         delete window.sessionStorage;
     });
@@ -35,13 +35,13 @@ describe('reducers domains', function () {
             domains('state', {
                 type: LOGIN_SUCCESS,
                 response: { domains: ['list', 'of', 'domains'] } }
-            ).toJS(),
+            ),
             ['list', 'of', 'domains']
         );
     });
 
     it('should return empty list when action.type is LOGOUT', function () {
-        assert.deepEqual(domains('state', { type: LOGOUT }).toJS(), []);
+        assert.deepEqual(domains('state', { type: LOGOUT }), []);
     });
 
     after(function () {

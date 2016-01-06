@@ -1,4 +1,3 @@
-import { Map } from 'immutable';
 import getSearch, { getDefaultState } from '../../../lib/reducers/search';
 import { defaultState as defaultLimiters } from '../../../lib/reducers/limiters';
 import { SEARCH_PENDING, SEARCH_SUCCESS, SEARCH_ERROR, TERM_CHANGE, DOMAIN_CHANGE, LOGOUT } from '../../../lib/actions';
@@ -15,12 +14,12 @@ describe('reducers search', function () {
             window.sessionStorage = {
                 getItem: () => null
             };
-            const defaultState = getDefaultState().toJS();
+            const defaultState = getDefaultState();
             assert.deepEqual(defaultState, {
                 domain: undefined,
                 status: 'NONE',
                 term: '',
-                limiters: defaultLimiters.toJS()
+                limiters: defaultLimiters
             });
         });
 
@@ -28,12 +27,12 @@ describe('reducers search', function () {
             window.sessionStorage = {
                 getItem: () => null
             };
-            const defaultState = getDefaultState('term').toJS();
+            const defaultState = getDefaultState('term');
             assert.deepEqual(defaultState, {
                 domain: undefined,
                 status: 'NONE',
                 term: 'term',
-                limiters: defaultLimiters.toJS()
+                limiters: defaultLimiters
             });
         });
 
@@ -41,12 +40,12 @@ describe('reducers search', function () {
             window.sessionStorage = {
                 getItem: (name) => name === 'domains' ? '["list", "of", "domains", "domain"]' : null
             };
-            const defaultState = getDefaultState(null, 'domain').toJS();
+            const defaultState = getDefaultState(null, 'domain');
             assert.deepEqual(defaultState, {
                 domain: 'domain',
                 status: 'NONE',
                 term: '',
-                limiters: defaultLimiters.toJS()
+                limiters: defaultLimiters
             });
         });
 
@@ -54,49 +53,60 @@ describe('reducers search', function () {
 
     it('should return PENDING if action is SEARCH_PENDING', function () {
         const searchState = search(
-            Map({ term: 'my search', status: 'NONE' }),
+            { term: 'my search', status: 'NONE' },
             { type: SEARCH_PENDING }
-        ).toJS();
-        assert.deepEqual(searchState, { term: 'my search', status: 'PENDING' });
+        );
+        assert.deepEqual(searchState, {
+            term: 'my search',
+            status: 'PENDING',
+            searchedTerm: undefined,
+            error: undefined
+        });
     });
 
     it('should return SUCCESS if action is SEARCH_SUCCESS', function () {
         const searchState = search(
-            Map({ status: 'NONE', term: 'aids' }),
+            { status: 'NONE', term: 'aids' },
             { type: SEARCH_SUCCESS }
-        ).toJS();
+        );
         assert.deepEqual(searchState, {
             status: 'SUCCESS',
             term: 'aids',
-            searchedTerm: 'aids'
+            searchedTerm: 'aids',
+            error: undefined
         });
     });
 
     it('should return ERROR and error message if action is SEARCH_ERROR', function () {
         const searchState = search(
-            Map({ status: 'NONE' }),
+            { status: 'NONE' },
             { type: SEARCH_ERROR, error: { message: 'boom' } }
-        ).toJS();
+        );
         assert.deepEqual(searchState, {
             status: 'ERROR',
-            error: 'boom'
+            error: 'boom',
+            searchedTerm: undefined
         });
     });
 
     it('should update term with action.term if action is TERM_CHANGE', function () {
         const searchState = search(
-            Map({ status: 'state' }),
+            { status: 'state' },
             { type: TERM_CHANGE, term: 'searched term' }
-        ).toJS();
+        );
         assert.deepEqual(searchState, { status: 'state', term: 'searched term' });
     });
 
     it('should update domain with action.domain if action is DOMAIN_CHANGE', function () {
         const searchState = search(
-            Map({ status: 'state' }),
+            { status: 'state' },
             { type: DOMAIN_CHANGE, domain: 'test' }
-        ).toJS();
-        assert.deepEqual(searchState, { status: 'state', domain: 'test' });
+        );
+        assert.deepEqual(searchState, {
+            status: 'state',
+            domain: 'test',
+            searchedTerm: undefined
+        });
     });
 
     it('should return default state if action is LOGOUT', function () {
@@ -104,44 +114,49 @@ describe('reducers search', function () {
             getItem: () => null
         };
         const searchState = search(
-            Map({ status: 'state' }),
+            { status: 'state' },
             { type: LOGOUT }
-        ).toJS();
-        assert.deepEqual(searchState, getDefaultState().toJS());
+        );
+        assert.deepEqual(searchState, getDefaultState());
         delete window.sessionStorage;
     });
 
     it('should return passed state with default limiter if action is none of the above', function () {
         const searchState = search(
-            Map({ status: 'state' }),
+            { status: 'state' },
             { type: 'OTHER_ACTION_TYPE' }
         );
-        assert.deepEqual(searchState.toJS(), { status: 'state', limiters: defaultLimiters.toJS() });
+        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters });
     });
 
     it('should default status to NONE and term to "" if none given', function () {
         window.sessionStorage = {
             getItem: () => null
         };
-        const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' }).toJS();
+        const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
             term: '',
             status: 'NONE',
             domain: undefined,
-            limiters: defaultLimiters.toJS()
+            limiters: defaultLimiters
         });
         delete window.sessionStorage;
     });
 
     it('default term and domain to passed term and domain', function () {
+        window.sessionStorage = {
+            getItem: (name) => name === 'domains' ? '["test"]' : null
+        };
         search = getSearch('geronimo', 'test');
         assert.deepEqual(
-            search(undefined, { type: 'OTHER_ACTION_TYPE' }).toJS(),
+            search(undefined, { type: 'OTHER_ACTION_TYPE' }),
             {
                 term: 'geronimo',
                 domain: 'test',
                 status: 'NONE',
-                limiters: defaultLimiters.toJS()
-            });
+                limiters: defaultLimiters
+            }
+        );
+        delete window.sessionStorage;
     });
 });

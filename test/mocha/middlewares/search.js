@@ -1,4 +1,3 @@
-import { Map } from 'immutable';
 import { search } from '../../../lib/middlewares/search';
 import actions from '../../../lib/actions';
 
@@ -6,23 +5,23 @@ describe('search middleware', function () {
     let store, dispatchedAction, next, nextAction;
     const state = {
         url: 'http://apiroute',
-        search: Map({
+        search: {
             term: 'searched term',
             domain: 'vie',
-            limiters: Map({
+            limiters: {
                 fullText: true,
-                publicationDate: Map({
+                publicationDate: {
                     from: '1000-01',
                     to: '2016-01'
-                })
-            })
-        }),
-        login: Map({
+                }
+            }
+        },
+        login: {
             token: 'token'
-        }),
-        searchResult: Map({
+        },
+        searchResult: {
             currentPage: 5
-        })
+        }
     };
 
     beforeEach(function () {
@@ -57,11 +56,13 @@ describe('search middleware', function () {
         };
 
         search(store, next, action);
-        const { from, to } = state.search.get('limiters').get('publicationDate').toJS();
+        const { from, to } = state.search.limiters.publicationDate;
         assert.deepEqual(nextAction, [
             action
         ]);
 
-        assert.deepEqual(dispatchedAction, [actions.search(`${state.url}/search/${state.search.get('domain')}/${state.search.get('term')}?FT=Y&DT1=${from}/${to}&currentPage=5`, state.login.get('token'))]);
+        assert.deepEqual(dispatchedAction, [
+            actions.search(`${state.url}/search/${state.search.domain}/${state.search.term}?FT=Y&DT1=${from}/${to}&currentPage=5`,state.login.token)
+        ]);
     });
 });

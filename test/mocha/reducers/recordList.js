@@ -1,4 +1,3 @@
-import { List, Map } from 'immutable';
 import recordList from '../../../lib/reducers/recordList';
 import {
     SEARCH_SUCCESS,
@@ -8,18 +7,18 @@ import {
 } from '../../../lib/actions';
 
 describe('reducers recordList', function () {
-    const resultList = List([
-        Map({ name: 'result1', notice: Map() }),
-        Map({ name: 'result2', notice: Map() }),
-        Map({ name: 'result3', notice: Map() })
-    ]);
+    const resultList = [
+        { name: 'result1', notice: {} },
+        { name: 'result2', notice: {} },
+        { name: 'result3', notice: {} }
+    ];
 
     it ('should default state to empty arrray if none given', function () {
-        assert.deepEqual(recordList(undefined, { type: 'OTHER_ACTION_TYPE' }), List());
+        assert.deepEqual(recordList(undefined, { type: 'OTHER_ACTION_TYPE' }), []);
     });
 
     it ('should return default state if action type is LOGOUT', function () {
-        assert.deepEqual(recordList([ 'result1', 'result2' ], { type: 'LOGOUT' }), List());
+        assert.deepEqual(recordList([ 'result1', 'result2' ], { type: 'LOGOUT' }), []);
     });
 
     it ('should return given state if not concernerd by ACTION', function () {
@@ -31,16 +30,23 @@ describe('reducers recordList', function () {
     });
 
     it ('should return empty array if action type is SEARCH_ERROR', function () {
-        assert.deepEqual(recordList(resultList, { type: SEARCH_ERROR, error: 'error' }), List());
+        assert.deepEqual(recordList(resultList, { type: SEARCH_ERROR, error: 'error' }), []);
     });
 
     it ('should return empty array if action type is SEARCH_PENDING', function () {
-        assert.deepEqual(recordList(resultList, { type: SEARCH_PENDING }), List());
+        assert.deepEqual(recordList(resultList, { type: SEARCH_PENDING }), []);
     });
 
     it ('should replace action.index item in result with result modified with abstractShown boolean equal to action.visibility', function () {
         const action = { type: SHOW_ABSTRACT, index: 1, visibility: true };
-        assert.deepEqual(recordList(resultList, action), resultList.set(action.index, resultList.get(action.index).set('abstractShown', action.visibility)));
+        assert.deepEqual(
+            recordList(resultList, action),
+            [
+                ...resultList.slice(0, action.index),
+                { ...resultList[action.index], abstractShown: action.visibility},
+                ...resultList.slice(action.index + 1)
+            ]
+        );
     });
 
 });
