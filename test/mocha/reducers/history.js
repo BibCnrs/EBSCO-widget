@@ -1,10 +1,14 @@
-import { SEARCH_SUCCESS } from '../../../lib/actions';
+import {
+    SEARCH_SUCCESS,
+    DELETE_HISTORY,
+    LOGOUT
+} from '../../../lib/actions';
 import history, { getHistoryFromStorage } from '../../../lib/reducers/history';
 
 describe('reducer history', function () {
     it('should return empty array as default state', function () {
         window.localStorage = {
-            length: 0
+            getItem: () => null
         };
         assert.deepEqual(history(undefined, {}), []);
         delete window.localStorage;
@@ -12,23 +16,78 @@ describe('reducer history', function () {
 
     describe('action SEARCH_SUCCESS', function () {
 
-        it('should add action.query to state', function () {
-            assert.deepEqual(history([{ term: 'phylloxera' }], { type: SEARCH_SUCCESS, query: { term: 'aids' }}), [{ term: 'aids' }, { term: 'phylloxera' }]);
+        it('should add action.query to state along with response.totalHits', function () {
+            assert.deepEqual(
+                history([{ term: 'phylloxera' }], {
+                    type: SEARCH_SUCCESS,
+                    query: { term: 'aids' },
+                    response: { totalHits: 7 }
+                }),
+                [{ term: 'aids', totalHits: 7 }, { term: 'phylloxera' }]
+            );
         });
 
-        it('should not add action.query to state if it is already present in state', function () {
-            assert.deepEqual(history([{ term: 'phylloxera' }, { term: 'aids' }], { type: SEARCH_SUCCESS, query: { term: 'aids' }}), [{ term: 'phylloxera' }, { term: 'aids' }]);
+        it('should not add action.query to state if itis already present in state but update its totalHits instead', function () {
+            assert.deepEqual(
+                history([{ term: 'phylloxera' }, { term: 'aids' }], {
+                    type: SEARCH_SUCCESS,
+                    query: { term: 'aids' },
+                    response: { totalHits: 5 }
+                }),
+                [{ term: 'phylloxera' }, { term: 'aids', totalHits: 5 }]
+            );
+        });
+    });
+
+    describe('action DELETE_HISTORY', function () {
+        it('should remove query from history', function () {
+            assert.deepEqual(
+                history([{ term: 'phylloxera' }, { term: 'aids' }, { term: 'horton' }], {
+                    type: DELETE_HISTORY,
+                    query: { term: 'aids' }
+                }),
+                [{ term: 'phylloxera' }, { term: 'horton' }]
+            );
+        });
+
+        it('should do nothing if query is not in history', function () {
+            assert.deepEqual(
+                history([{ term: 'phylloxera' }, { term: 'horton' }], {
+                    type: DELETE_HISTORY,
+                    query: { term: 'aids' }
+                }),
+                [{ term: 'phylloxera' }, { term: 'horton' }]
+            );
+        });
+
+        it('should remove query from history even if totalHits does not match', function () {
+            assert.deepEqual(
+                history([{ term: 'phylloxera', totalHits: 5 }, { term: 'aids', totalHits: 5 }, { term: 'horton', totalHits: 5 }], {
+                    type: DELETE_HISTORY,
+                    query: { term: 'aids', totalHits: 7 }
+                }),
+                [{ term: 'phylloxera', totalHits: 5 }, { term: 'horton', totalHits: 5 }]
+            );
+        });
+    });
+
+    describe('action LOGOUT', function () {
+        it('should return an empty array', function () {
+            assert.deepEqual(
+                history([{ term: 'phylloxera' }, { term: 'horton' }], {
+                    type: LOGOUT
+                }),
+                []
+            );
         });
     });
 
     describe('getHistoryFromStorage', function () {
-        const keys = [ 'debug', 'query{ "a": 1 }', 'query{ "b": 2 }', '{ "c": 3 }' ];
         it('should return history stored in localStorage', function () {
             window.localStorage = {
-                length: 4,
-                key: (i) => keys[i]
+                getItem: (name) => name === 'history' ? '[{ "a": "1" }, { "b": "2"}]' : null
             };
-            assert.deepEqual(getHistoryFromStorage(), [{ a: 1 }, { b: 2}]);
+            assert.deepEqual(getHistoryFromStorage(), [{ a: '1' }, { b: '2'}]);
             delete window.localStorage;
         });
     });

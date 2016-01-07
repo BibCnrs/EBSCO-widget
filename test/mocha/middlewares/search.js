@@ -1,5 +1,11 @@
 import { search } from '../../../lib/middlewares/search';
-import actions from '../../../lib/actions';
+import actions, {
+    SEARCH_TERM,
+    LIMIT_SEARCH,
+    RESET_LIMITER,
+    RELOAD_HISTORY,
+    PAGE_LOAD
+} from '../../../lib/actions';
 
 describe('search middleware', function () {
     let store, dispatchedAction, next, nextAction;
@@ -13,10 +19,7 @@ describe('search middleware', function () {
                 publicationDate: {
                     from: '1000-01',
                     to: '2016-01'
-                },
-                hasChanged: true,
-                limiterShown: true,
-                moreShown: true
+                }
             }
         },
         login: {
@@ -53,9 +56,9 @@ describe('search middleware', function () {
         assert.deepEqual(dispatchedAction, []);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is one of CHANGE_FULLTEXT SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
+    const testType = (type) => {
         const action = {
-            type: 'SEARCH_TERM'
+            type
         };
 
         search(store, next, action);
@@ -73,12 +76,47 @@ describe('search middleware', function () {
                     publicationDate: {
                         from: '1000-01',
                         to: '2016-01'
-                    },
-                    hasChanged: undefined,
-                    limiterShown: undefined,
-                    moreShown: undefined
+                    }
                 } }
             )
         ]);
+    };
+
+    it('should trigger received action and SEARCH action with info gotten from store if it is SEARCH_TERM', function () {
+        testType(SEARCH_TERM);
+    });
+
+    it('should trigger received action and SEARCH action with info gotten from store if it is LIMIT_SEARCH', function () {
+        testType(LIMIT_SEARCH);
+    });
+
+    it('should trigger received action and SEARCH action with info gotten from store if it is RESET_LIMITER', function () {
+        testType(RESET_LIMITER);
+    });
+
+    it('should trigger received action and SEARCH action with info gotten from store if it is RELOAD_HISTORY', function () {
+        testType(RELOAD_HISTORY);
+    });
+
+    it('should trigger received action and SEARCH action with info gotten from store if it is PAGE_LOAD', function () {
+        testType(PAGE_LOAD);
+    });
+
+    it('should trigger only received action if it is PAGE_LOAD and the currentPage is in the store', function () {
+        store.getState = () => ({
+            ...state,
+            searchResult: {
+                currentPage: 5,
+                5: { page: 'data' }
+            }
+        });
+        const action = {
+            type: PAGE_LOAD,
+            page: 5
+        };
+
+        search(store, next, action);
+        assert.deepEqual(nextAction, [action]);
+        assert.deepEqual(dispatchedAction, []);
     });
 });
