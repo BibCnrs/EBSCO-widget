@@ -13,7 +13,10 @@ describe('search middleware', function () {
                 publicationDate: {
                     from: '1000-01',
                     to: '2016-01'
-                }
+                },
+                hasChanged: true,
+                limiterShown: true,
+                moreShown: true
             }
         },
         login: {
@@ -70,7 +73,10 @@ describe('search middleware', function () {
                     publicationDate: {
                         from: '1000-01',
                         to: '2016-01'
-                    }
+                    },
+                    hasChanged: undefined,
+                    limiterShown: undefined,
+                    moreShown: undefined
                 } }
             )
         ]);

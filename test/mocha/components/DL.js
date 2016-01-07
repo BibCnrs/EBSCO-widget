@@ -1,6 +1,6 @@
 import DL from '../../../lib/components/DL';
 
-describe.only('DL', function () {
+describe('DL', function () {
     const getComponent = (data) => enzyme.shallow(<DL data={data} />);
 
     it('should display object as definition list', function () {
