@@ -18,23 +18,27 @@ describe('reducer history', function () {
 
         it('should add action.query to state along with response.totalHits', function () {
             assert.deepEqual(
-                history([{ term: 'phylloxera' }], {
+                history([{ term: 'phylloxera' }, { term: 'horton' }], {
                     type: SEARCH_SUCCESS,
                     query: { term: 'aids' },
                     response: { totalHits: 7 }
                 }),
-                [{ term: 'aids', totalHits: 7 }, { term: 'phylloxera' }]
+                [
+                    { term: 'aids', totalHits: 7 },
+                    { term: 'phylloxera' },
+                    { term: 'horton' }
+                ]
             );
         });
 
-        it('should not add action.query to state if itis already present in state but update its totalHits instead', function () {
+        it('should not add action.query to state if it is already present in state but update its totalHits instead', function () {
             assert.deepEqual(
-                history([{ term: 'phylloxera' }, { term: 'aids' }], {
+                history([{ term: 'phylloxera' }, { term: 'aids' }, { term: 'horton' }], {
                     type: SEARCH_SUCCESS,
                     query: { term: 'aids' },
                     response: { totalHits: 5 }
                 }),
-                [{ term: 'phylloxera' }, { term: 'aids', totalHits: 5 }]
+                [{ term: 'phylloxera' }, { term: 'aids', totalHits: 5 }, { term: 'horton' }]
             );
         });
     });
