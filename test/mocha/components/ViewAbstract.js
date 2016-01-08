@@ -16,10 +16,8 @@ describe('ViewAbstract', function () {
         });
 
         it('should display abstract', function () {
-            const button = component.find('button');
-            const icon = button.find('Icon');
-            assert.deepEqual(icon.type(), Icon);
-            assert.equal(icon.props().name, 'eye-slash');
+            const button = component.find('Button');
+            assert.deepEqual(button.props().icon, { name: 'eye-slash'});
             const div = component.find('div');
             assert.equal(div.props().className, 'abstract shown');
             const p = div.find('p');
@@ -27,7 +25,7 @@ describe('ViewAbstract', function () {
         });
 
         it('should call onShowAbstract with index props and false', function () {
-            component.find('button').simulate('click');
+            component.find('Button').simulate('click');
             assert.equal(index, 7);
             assert.equal(abstractShown, false);
         });
@@ -52,16 +50,14 @@ describe('ViewAbstract', function () {
         });
 
         it('should not display abstract', function () {
-            const button = component.find('button');
-            const icon = button.find('Icon');
-            assert.deepEqual(icon.type(), Icon);
-            assert.equal(icon.props().name, 'eye');
+            const button = component.find('Button');
+            assert.deepEqual(button.props().icon, { name: 'eye'});
             const div = component.find('div');
             assert.equal(div.props().className, 'abstract hidden');
         });
 
         it('should call onShowAbstract with index props and true', function () {
-            component.find('button').simulate('click');
+            component.find('Button').simulate('click');
             assert.equal(index, 7);
             assert.equal(abstractShown, true);
         });
@@ -81,7 +77,7 @@ describe('ViewAbstract', function () {
         });
 
         it('should disable button', function () {
-            const button = component.find('button');
+            const button = component.find('Button');
             assert.isTrue(button.props().disabled, 'button');
         });
     });

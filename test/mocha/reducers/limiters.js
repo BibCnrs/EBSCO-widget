@@ -1,8 +1,6 @@
 import limiters from '../../../lib/reducers/limiters';
 import {
     CHANGE_LIMITER,
-    SHOW_LIMITER,
-    LIMIT_SEARCH,
     RESET_LIMITER,
     LOGOUT
 } from '../../../lib/actions';
@@ -13,9 +11,6 @@ describe('reducers limiters', function () {
 
         it ('should default state to default limiter value', function () {
             assert.deepEqual(limiters(undefined, { type: 'OTHER_ACTION_TYPE' }), {
-                limiterShown: true,
-                moreShown: false,
-                hasChanged: false,
                 fullText: true,
                 publicationDate: {
                     from: '1000-01',
@@ -33,9 +28,6 @@ describe('reducers limiters', function () {
             assert.deepEqual(
                 limiters(
                     {
-                        limiterShown: true,
-                        moreShown: true,
-                        hasChanged: true,
                         fullText: false,
                         publicationDate: {
                             from: '2000-01',
@@ -50,9 +42,6 @@ describe('reducers limiters', function () {
                     { type: LOGOUT }
                 ),
                 {
-                    limiterShown: true,
-                    moreShown: false,
-                    hasChanged: false,
                     fullText: true,
                     publicationDate: {
                         from: '1000-01',
@@ -70,19 +59,6 @@ describe('reducers limiters', function () {
             assert.deepEqual(limiters({ state: 'state'}, { type: 'OTHER_ACTION_TYPE' }), {
                 state: 'state'
             });
-        });
-    });
-
-    describe('SHOW_LIMITER', function () {
-        it('should set limiterShown to true if action.visibility is true', function () {
-            assert.equal(
-                limiters({ limiterShown: false }, { type: SHOW_LIMITER, visibility: true }).limiterShown,
-                true
-            );
-        });
-
-        it('should set limiterShown to false if action.visibility is false', function () {
-            assert.equal(limiters({ limiterShown: true }, { type: SHOW_LIMITER, visibility: false }).limiterShown, false);
         });
     });
 
@@ -104,26 +80,21 @@ describe('reducers limiters', function () {
         });
     });
 
-    describe('LIMIT_SEARCH', function() {
-        it('should set hasChanged to false', function () {
-            assert.equal(limiters({ hasChanged: true }, { type: LIMIT_SEARCH }).hasChanged, false);
-        });
-    });
+    describe('RESET_LIMITER', function () {
 
-    describe('RESET_LIMITER', function() {
-        it('should return default state except for limiterShown and moreShown', function () {
+        it ('should retrun default state', function () {
             assert.deepEqual(limiters({
+                fullText: false,
                 publicationDate: {
-                    from: '1000-01',
-                    to: '2016-01'
+                    from: '2010-01',
+                    to: '2012-01'
                 },
-                author: 'Asimov',
-                limiterShown: true,
-                moreShown: true
+                peerReviewed: true,
+                author: 'author',
+                journalName: 'the journal',
+                title: 'a title',
+                language: 'javanese'
             }, { type: RESET_LIMITER }), {
-                limiterShown: true,
-                moreShown: true,
-                hasChanged: false,
                 fullText: true,
                 publicationDate: {
                     from: '1000-01',
@@ -135,11 +106,6 @@ describe('reducers limiters', function () {
                 title: null,
                 language: null
             });
-        });
-
-        it('should let moreShown value unchanged', function () {
-            assert.equal(limiters({ moreShown: true }, { type: RESET_LIMITER }).moreShown, true);
-            assert.equal(limiters({ moreShown: false }, { type: RESET_LIMITER }).moreShown, false);
         });
     });
 

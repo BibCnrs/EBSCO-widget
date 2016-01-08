@@ -1,6 +1,16 @@
 import getSearch, { getDefaultState } from '../../../lib/reducers/search';
 import { defaultState as defaultLimiters } from '../../../lib/reducers/limiters';
-import { SEARCH_PENDING, SEARCH_SUCCESS, SEARCH_ERROR, TERM_CHANGE, DOMAIN_CHANGE, LOGOUT } from '../../../lib/actions';
+import {
+    SEARCH_PENDING,
+    SEARCH_SUCCESS,
+    SEARCH_ERROR,
+    TERM_CHANGE,
+    DOMAIN_CHANGE,
+    LOGOUT,
+    LOGIN_SUCCESS,
+    RESTORE_HISTORY,
+    RELOAD_HISTORY
+} from '../../../lib/actions';
 
 describe('reducers search', function () {
     let search;
@@ -119,6 +129,31 @@ describe('reducers search', function () {
         );
         assert.deepEqual(searchState, getDefaultState());
         delete window.sessionStorage;
+    });
+
+    it('should add first domains to state if action is LOGIN_SUCCESS', function () {
+        const searchState = search(
+            { status: 'state' },
+            { type: LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
+        );
+        assert.deepEqual(searchState, { status: 'state', domain: 'first'});
+    });
+
+    it('should return action.query if action is RESTORE_HISTORY or RELOAD_HISTORY', function () {
+        assert.deepEqual(
+            search(
+                { status: 'state' },
+                { type: RESTORE_HISTORY, query: 'replace' }
+            ),
+            'replace'
+        );
+        assert.deepEqual(
+            search(
+                { status: 'state' },
+                { type: RELOAD_HISTORY, query: 'replace' }
+            ),
+            'replace'
+        );
     });
 
     it('should return passed state with default limiter if action is none of the above', function () {
