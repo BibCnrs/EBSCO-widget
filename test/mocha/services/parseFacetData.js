@@ -18,6 +18,7 @@ describe('activeFacetsParser', function () {
 
             const activeFacets = {
                 SourceType: {
+                    filterId: 2,
                     clear: 'removefacetfilter(2)',
                     values: [
                         {
@@ -29,6 +30,7 @@ describe('activeFacetsParser', function () {
             };
             assert.deepEqual(mergeFacets(facets, activeFacets), {
                 SourceType: {
+                    filterId: 2,
                     label: 'Source Type',
                     choices: [
                         {
@@ -83,6 +85,7 @@ describe('activeFacetsParser', function () {
 
             const activeFacets = {
                 SourceType: {
+                    filterId: 2,
                     clear: 'removefacetfilter(2)',
                     values: [
                         {
@@ -94,6 +97,7 @@ describe('activeFacetsParser', function () {
             };
             assert.deepEqual(mergeFacets(facets, activeFacets), {
                 SourceType: {
+                    filterId: 2,
                     label: 'SourceType',
                     choices: [
                         {
@@ -137,11 +141,13 @@ describe('activeFacetsParser', function () {
             ]
         };
 
-        assert.deepEqual(parseFacet({}, data), {
-            SourceType: {
-                label: 'Source Type',
-                choices: data.AvailableFacetValues.map(parseFacetValue)
-            }
+        it('should parse facet', function () {
+            assert.deepEqual(parseFacet({}, data), {
+                SourceType: {
+                    label: 'Source Type',
+                    choices: data.AvailableFacetValues.map(parseFacetValue)
+                }
+            });
         });
     });
 
@@ -176,7 +182,7 @@ describe('activeFacetsParser', function () {
 
     describe('parseActiveFacet', function () {
 
-        it('should parse facet filter', function () {
+        it('should parse active facet filter', function () {
             const data = {
                 FilterId: 2,
                 FacetValuesWithAction: [
@@ -198,6 +204,7 @@ describe('activeFacetsParser', function () {
             };
             assert.deepEqual(parseActiveFacet({}, data), {
                 Language: {
+                    filterId: 2,
                     clear: 'removefacetfilter(2)',
                     values: data.FacetValuesWithAction.map(parseActiveFacetValue)
                 }

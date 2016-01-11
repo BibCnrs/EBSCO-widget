@@ -65,6 +65,8 @@ describe('reducers facets', function () {
             }
         }), {
             Language: {
+                filterId: 2,
+                label: 'Language',
                 choices: [
                     {
                         label: 'french',
@@ -76,7 +78,6 @@ describe('reducers facets', function () {
                     }
                 ],
                 clear: 'removefacetfilter(2)',
-                label: 'Language',
                 values: [
                     {
                         label: 'french',
@@ -89,6 +90,7 @@ describe('reducers facets', function () {
                 ]
             },
             SourceType: {
+                label: 'Source Type',
                 choices: [
                     {
                         label: 'Academic Journals (32850)',
@@ -104,7 +106,6 @@ describe('reducers facets', function () {
                     }
                 ],
                 clear: undefined,
-                label: 'Source Type',
                 values: []
             }
         });
