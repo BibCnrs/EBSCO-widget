@@ -27,7 +27,9 @@ describe('search middleware', function () {
         },
         searchResult: {
             currentPage: 5
-        }
+        },
+        facets: {},
+        activeFacets: {}
     };
 
     beforeEach(function () {

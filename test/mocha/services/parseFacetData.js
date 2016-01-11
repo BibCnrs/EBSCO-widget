@@ -1,19 +1,6 @@
-import parseFacetData, { parseFacet, parseFacetValue, parseActiveFacetValue, parseActiveFacet, mergeFacets } from '../../../lib/services/parseFacetData';
+import { parseFacet, parseFacetValue, parseActiveFacetValue, parseActiveFacet, mergeFacets } from '../../../lib/services/parseFacetData';
 
-describe.only('activeFacetsParser', function () {
-    describe('debug', function () {
-
-        it('debug', function () {
-            assert.deepEqual({
-                ...{ a: 1, b: 2 },
-                ...{ b: 'override', c: 3 }
-            }, {
-                a: 1,
-                b: 'override',
-                c: 3
-            });
-        });
-    });
+describe('activeFacetsParser', function () {
 
     describe('mergeFacets', function  () {
         it('should merge facet with activeFacet', function () {
