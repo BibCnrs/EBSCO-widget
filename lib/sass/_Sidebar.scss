@@ -3,13 +3,19 @@
 .sidebar {
     font-size: 16px;
     width: 300px;
-    overflow: hidden;
-    .limiters {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-x: show;
+    .limiters, .facet_list {
         h4 {
             font-size: 1.3em;
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
         h5 {
             font-size: 1.1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
         margin-left: 25px;
         padding: 10px;
@@ -29,7 +35,8 @@
             cursor: pointer;
         }
         .more-limit {
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: visible;
             @include transition(max-height, 0.5s, ease-in);
             &.shown {
                 max-height: 2000px;
