@@ -27,7 +27,9 @@ describe('search middleware', function () {
         },
         searchResult: {
             currentPage: 5
-        }
+        },
+        facets: {},
+        activeFacets: {}
     };
 
     beforeEach(function () {
@@ -71,13 +73,18 @@ describe('search middleware', function () {
             actions.search(
                 `${state.url}/search/${state.search.domain}/${state.search.term}?FT=Y&DT1=${from}/${to}&currentPage=5`,
                 state.login.token,
-                { term: 'searched term', domain: 'vie', limiters: {
-                    fullText: true,
-                    publicationDate: {
-                        from: '1000-01',
-                        to: '2016-01'
+                {
+                    term: 'searched term',
+                    domain: 'vie',
+                    facets: undefined,
+                    limiters: {
+                        fullText: true,
+                        publicationDate: {
+                            from: '1000-01',
+                            to: '2016-01'
+                        }
                     }
-                } }
+                }
             )
         ]);
     };
