@@ -210,5 +210,46 @@ describe('activeFacetsParser', function () {
                 }
             });
         });
+
+        it('should regroup facet filter by their id', function () {
+            const previousValues = [{
+                label: 'english',
+                value: 'removefacetfiltervalue(2,Language:english)'
+            }];
+            const data = {
+                FilterId: 2,
+                FacetValuesWithAction: [
+                    {
+                        FacetValue: {
+                            Id: 'Language',
+                            Value: 'french'
+                        },
+                        RemoveAction: 'removefacetfiltervalue(2,Language:french)'
+                    }
+                ],
+                RemoveAction: 'removefacetfilter(2)'
+            };
+            assert.deepEqual(parseActiveFacet({
+                Language: {
+                    filterId: 2,
+                    clear: 'removefacetfilter(2)',
+                    values: previousValues
+                }
+            }, data), {
+                Language: {
+                    filterId: 2,
+                    clear: 'removefacetfilter(2)',
+                    values: [
+                        {
+                            label: 'english',
+                            value: 'removefacetfiltervalue(2,Language:english)'
+                        }, {
+                            label: 'french',
+                            value: 'removefacetfiltervalue(2,Language:french)'
+                        }
+                    ]
+                }
+            });
+        });
     });
 });
