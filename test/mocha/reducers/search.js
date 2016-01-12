@@ -29,7 +29,8 @@ describe('reducers search', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: '',
-                limiters: defaultLimiters
+                limiters: defaultLimiters,
+                facets: {}
             });
         });
 
@@ -42,7 +43,8 @@ describe('reducers search', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: 'term',
-                limiters: defaultLimiters
+                limiters: defaultLimiters,
+                facets: {}
             });
         });
 
@@ -55,7 +57,8 @@ describe('reducers search', function () {
                 domain: 'domain',
                 status: 'NONE',
                 term: '',
-                limiters: defaultLimiters
+                limiters: defaultLimiters,
+                facets: {}
             });
         });
 
@@ -76,13 +79,19 @@ describe('reducers search', function () {
 
     it('should return SUCCESS if action is SEARCH_SUCCESS', function () {
         const searchState = search(
-            { status: 'NONE', term: 'aids' },
-            { type: SEARCH_SUCCESS }
+            { status: 'NONE', term: 'aids', facets: {} },
+            {
+                type: SEARCH_SUCCESS,
+                response: {
+                    facets: []
+                }
+            }
         );
         assert.deepEqual(searchState, {
             status: 'SUCCESS',
             term: 'aids',
             searchedTerm: 'aids',
+            facets: {},
             error: undefined
         });
     });
@@ -161,7 +170,7 @@ describe('reducers search', function () {
             { status: 'state' },
             { type: 'OTHER_ACTION_TYPE' }
         );
-        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters });
+        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, facets: {} });
     });
 
     it('should default status to NONE and term to "" if none given', function () {
@@ -173,7 +182,8 @@ describe('reducers search', function () {
             term: '',
             status: 'NONE',
             domain: undefined,
-            limiters: defaultLimiters
+            limiters: defaultLimiters,
+            facets: {}
         });
         delete window.sessionStorage;
     });
@@ -189,7 +199,8 @@ describe('reducers search', function () {
                 term: 'geronimo',
                 domain: 'test',
                 status: 'NONE',
-                limiters: defaultLimiters
+                limiters: defaultLimiters,
+                facets: {}
             }
         );
         delete window.sessionStorage;

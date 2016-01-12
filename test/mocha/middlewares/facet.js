@@ -11,20 +11,14 @@ describe('facet middleware', function () {
     beforeEach(function () {
         dispatchedAction = [];
         state = {
-            facets: {
-                Language: {
-                    label: 'Language',
-                    values: [
-                        {
-                            label: 'french',
-                            value: 'removeFacetValue(Language:french)'
-                        }, {
-                            label: 'english',
-                            value: 'removeFacetValue(Language:english)'
-                        }
-                    ],
-                    choices: [],
-                    clear: 'removeFacet(1)'
+            search: {
+                facets: {
+                    Language: {
+                        label: 'Language',
+                        values: [],
+                        choices: [],
+                        clear: 'removeFacet(1)'
+                    }
                 }
             }
         };
@@ -47,7 +41,16 @@ describe('facet middleware', function () {
             facet(store, next, {
                 type: CHANGE_FACET,
                 name: 'Language',
-                facets: []
+                newValues: [],
+                currentValues: [
+                    {
+                        label: 'french',
+                        value: 'removeFacetValue(Language:french)'
+                    }, {
+                        label: 'english',
+                        value: 'removeFacetValue(Language:english)'
+                    }
+                ]
             });
 
             assert.deepEqual(dispatchedAction, [
@@ -59,20 +62,11 @@ describe('facet middleware', function () {
         });
 
         it('should not trigger TRIGGER_EBSCO_ACTION action when action.facets is [] if corresponding facet value is already empty', function () {
-            state = {
-                facets: {
-                    Language: {
-                        label: 'Language',
-                        values: [],
-                        choices: [],
-                        clear: undefined
-                    }
-                }
-            };
             facet(store, next, {
                 type: CHANGE_FACET,
                 name: 'Language',
-                facets: []
+                newValues: [],
+                currentValues: []
             });
 
             assert.deepEqual(dispatchedAction, []);
@@ -82,7 +76,7 @@ describe('facet middleware', function () {
             facet(store, next, {
                 type: CHANGE_FACET,
                 name: 'Language',
-                facets: [
+                newValues: [
                     {
                         label: 'english',
                         value: 'removeFacetValue(Language:english)'
@@ -92,6 +86,15 @@ describe('facet middleware', function () {
                     }, {
                         label: 'deutsch',
                         value: 'addFacetValue(Language:deutsch)'
+                    }
+                ],
+                currentValues:[
+                    {
+                        label: 'french',
+                        value: 'removeFacetValue(Language:french)'
+                    }, {
+                        label: 'english',
+                        value: 'removeFacetValue(Language:english)'
                     }
                 ]
             });
@@ -107,8 +110,17 @@ describe('facet middleware', function () {
             facet(store, next, {
                 type: CHANGE_FACET,
                 name: 'Language',
-                facets: [ // french was removed
+                newValues: [ // french was removed
                     {
+                        label: 'english',
+                        value: 'removeFacetValue(Language:english)'
+                    }
+                ],
+                currentValues: [
+                    {
+                        label: 'french',
+                        value: 'removeFacetValue(Language:french)'
+                    }, {
                         label: 'english',
                         value: 'removeFacetValue(Language:english)'
                     }
