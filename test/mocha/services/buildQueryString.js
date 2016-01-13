@@ -29,7 +29,7 @@ describe('buildQueryString', function () {
         assert.equal(buildQueryString({ publicationDate: {
             from: 'from',
             to: 'to'
-        } }), 'DT1=from/to');
+        } }), 'DT1=from-01/to-01');
     });
 
     it('should return AU=author, if author is set', function () {
@@ -67,6 +67,6 @@ describe('buildQueryString', function () {
                 from: 'from',
                 to: 'to'
             }
-        }), 'FT=Y&DT1=from/to');
+        }), 'FT=Y&DT1=from-01/to-01');
     });
 });

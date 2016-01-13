@@ -2,8 +2,7 @@ import recordList from '../../../lib/reducers/recordList';
 import {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
-    SEARCH_PENDING,
-    SHOW_ABSTRACT
+    SEARCH_PENDING
 } from '../../../lib/actions';
 
 describe('reducers recordList', function () {
@@ -35,18 +34,6 @@ describe('reducers recordList', function () {
 
     it ('should return empty array if action type is SEARCH_PENDING', function () {
         assert.deepEqual(recordList(resultList, { type: SEARCH_PENDING }), []);
-    });
-
-    it ('should replace action.index item in result with result modified with abstractShown boolean equal to action.visibility', function () {
-        const action = { type: SHOW_ABSTRACT, index: 1, visibility: true };
-        assert.deepEqual(
-            recordList(resultList, action),
-            [
-                ...resultList.slice(0, action.index),
-                { ...resultList[action.index], abstractShown: action.visibility},
-                ...resultList.slice(action.index + 1)
-            ]
-        );
     });
 
 });
