@@ -4,6 +4,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var version = require('./package.json').version;
 
 var sassOptions = [
     'includePaths[]='+ path.resolve(__dirname, './lib/sass/'),
@@ -57,7 +58,8 @@ module.exports = {
         new HtmlWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            __DEVELOPMENT__: true
+            __DEVELOPMENT__: true,
+            __VERSION__: JSON.stringify(version)
         }),
         new ExtractTextPlugin('build/app.css', {
             allChunks: true

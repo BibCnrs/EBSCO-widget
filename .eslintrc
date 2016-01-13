@@ -32,6 +32,7 @@
         "react"
     ],
     "globals": {
-        "__DEVELOPMENT__": true
+        "__DEVELOPMENT__": true,
+        "__VERSION__": true
     }
 }
