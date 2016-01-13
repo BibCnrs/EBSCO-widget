@@ -46,38 +46,19 @@
             }
         }
         .publication-date-limiter {
-            .input-calendar {
-                display: inline-block;
-                padding: 5px;
-                .input-calendar-wrapper {
-                    z-index: 999;
-                    position: fixed;
-                    left:45px;
+            .boundaries {
+                display: block;
+                .from, .to {
+                    display: inline-block;
+                    padding: 5px;
+                    width: 50px;
                 }
-
-                .navigation-title:hover {
-                    color: $hover;
-                }
-                .icon:hover,
-                .today-btn:not(.disabled):hover,
-                .icon-wrapper:hover {
-                    color: $hover;
-                }
-                .input-calendar-value {
-                    width: 75px;
-                    &:focus {
-                        border: 1px solid $hover;
-                    }
-                }
-                .cell:not(.disabled):hover {
-                    color: $hover;
-                    border: 1px solid $hover;
-                }
-                .cell.current {
-                    background: $hover;
+                .to {
+                    float: right;
                 }
             }
             .slider {
+                margin-top: 10px;
                 padding-right: 20px;
                 padding-left: 10px;
                 .rc-slider {

@@ -13,8 +13,8 @@ describe('reducers limiters', function () {
             assert.deepEqual(limiters(undefined, { type: 'OTHER_ACTION_TYPE' }), {
                 fullText: true,
                 publicationDate: {
-                    from: '1000-01',
-                    to: `${new Date().getFullYear() + 1}-01`
+                    from: 1000,
+                    to: new Date().getFullYear() + 1
                 },
                 peerReviewed: false,
                 author: null,
@@ -30,8 +30,8 @@ describe('reducers limiters', function () {
                     {
                         fullText: false,
                         publicationDate: {
-                            from: '2000-01',
-                            to: `2015-01`
+                            from: 2000,
+                            to: 2015
                         },
                         peerReviewed: true,
                         author: 'Aasimov',
@@ -44,8 +44,8 @@ describe('reducers limiters', function () {
                 {
                     fullText: true,
                     publicationDate: {
-                        from: '1000-01',
-                        to: `${new Date().getFullYear() + 1}-01`
+                        from: 1000,
+                        to: new Date().getFullYear() + 1
                     },
                     peerReviewed: false,
                     author: null,
@@ -67,16 +67,16 @@ describe('reducers limiters', function () {
             assert.equal(limiters({ fullText: true }, { type: CHANGE_LIMITER, limiter: 'fullText', value: false }).fullText, false);
             const newState = limiters({
                 publicationDate: {
-                    from: '1000-01',
-                    to: '2016-01'
+                    from: 1000,
+                    to: 2016
                 }
             }, {
                 type: CHANGE_LIMITER,
                 limiter: 'publicationDate',
-                value: { from: '2000-01', to: '2012-05' }
+                value: { from: 2000, to: 2012 }
             });
-            assert.equal(newState.publicationDate.from, '2000-01');
-            assert.equal(newState.publicationDate.to, '2012-05');
+            assert.equal(newState.publicationDate.from, 2000);
+            assert.equal(newState.publicationDate.to, 2012);
         });
     });
 
@@ -86,8 +86,8 @@ describe('reducers limiters', function () {
             assert.deepEqual(limiters({
                 fullText: false,
                 publicationDate: {
-                    from: '2010-01',
-                    to: '2012-01'
+                    from: 2010,
+                    to: 2012
                 },
                 peerReviewed: true,
                 author: 'author',
@@ -97,8 +97,8 @@ describe('reducers limiters', function () {
             }, { type: RESET }), {
                 fullText: true,
                 publicationDate: {
-                    from: '1000-01',
-                    to: `${new Date().getFullYear() + 1}-01`
+                    from: 1000,
+                    to: new Date().getFullYear() + 1
                 },
                 peerReviewed: false,
                 author: null,
