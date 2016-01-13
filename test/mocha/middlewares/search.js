@@ -2,7 +2,7 @@ import { search } from '../../../lib/middlewares/search';
 import actions, {
     SEARCH_TERM,
     LIMIT_SEARCH,
-    RESET_LIMITER,
+    RESET,
     RELOAD_HISTORY,
     PAGE_LOAD
 } from '../../../lib/actions';
@@ -97,8 +97,8 @@ describe('search middleware', function () {
         testType(LIMIT_SEARCH);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is RESET_LIMITER', function () {
-        testType(RESET_LIMITER);
+    it('should trigger received action and SEARCH action with info gotten from store if it is RESET', function () {
+        testType(RESET);
     });
 
     it('should trigger received action and SEARCH action with info gotten from store if it is RELOAD_HISTORY', function () {

@@ -1,7 +1,7 @@
 import limiters from '../../../lib/reducers/limiters';
 import {
     CHANGE_LIMITER,
-    RESET_LIMITER,
+    RESET,
     LOGOUT
 } from '../../../lib/actions';
 
@@ -80,7 +80,7 @@ describe('reducers limiters', function () {
         });
     });
 
-    describe('RESET_LIMITER', function () {
+    describe('RESET', function () {
 
         it ('should retrun default state', function () {
             assert.deepEqual(limiters({
@@ -94,7 +94,7 @@ describe('reducers limiters', function () {
                 journalName: 'the journal',
                 title: 'a title',
                 language: 'javanese'
-            }, { type: RESET_LIMITER }), {
+            }, { type: RESET }), {
                 fullText: true,
                 publicationDate: {
                     from: '1000-01',
