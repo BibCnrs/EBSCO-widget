@@ -1,7 +1,8 @@
 .view_notice {
-    .fetch-button {
-        button {
-            @extend .button;
+    .fetch-link {
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
         }
     }
 }
