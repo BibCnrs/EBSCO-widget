@@ -76,7 +76,8 @@ describe('search middleware', function () {
                 {
                     term: 'searched term',
                     domain: 'vie',
-                    facets: undefined,
+                    activeFacets: undefined,
+                    action: undefined,
                     limiters: {
                         fullText: true,
                         publicationDate: {

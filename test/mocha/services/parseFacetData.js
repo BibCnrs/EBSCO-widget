@@ -10,7 +10,7 @@ describe('activeFacetsParser', function () {
                     choices: [
                         {
                             label: 'Academic Journals (32850)',
-                            value: 'addfacetfilter(SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ]
                 }
@@ -19,11 +19,10 @@ describe('activeFacetsParser', function () {
             const activeFacets = {
                 SourceType: {
                     filterId: 2,
-                    clear: 'removefacetfilter(2)',
                     values: [
                         {
                             label: 'Academic Journals',
-                            value: 'removefacetfiltervalue(2,SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ]
                 }
@@ -35,14 +34,13 @@ describe('activeFacetsParser', function () {
                     choices: [
                         {
                             label: 'Academic Journals (32850)',
-                            value: 'addfacetfilter(SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ],
-                    clear: 'removefacetfilter(2)',
                     values: [
                         {
                             label: 'Academic Journals',
-                            value: 'removefacetfiltervalue(2,SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ]
                 }
@@ -56,7 +54,7 @@ describe('activeFacetsParser', function () {
                     choices: [
                         {
                             label: 'Academic Journals (32850)',
-                            value: 'addfacetfilter(SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ]
                 }
@@ -70,10 +68,9 @@ describe('activeFacetsParser', function () {
                     choices: [
                         {
                             label: 'Academic Journals (32850)',
-                            value: 'addfacetfilter(SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ],
-                    clear: undefined,
                     values: []
                 }
             });
@@ -86,11 +83,10 @@ describe('activeFacetsParser', function () {
             const activeFacets = {
                 SourceType: {
                     filterId: 2,
-                    clear: 'removefacetfilter(2)',
                     values: [
                         {
                             label: 'Academic Journals',
-                            value: 'removefacetfiltervalue(2,SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ]
                 }
@@ -102,14 +98,13 @@ describe('activeFacetsParser', function () {
                     choices: [
                         {
                             label: 'Academic Journals',
-                            value: 'removefacetfiltervalue(2,SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ],
-                    clear: 'removefacetfilter(2)',
                     values: [
                         {
                             label: 'Academic Journals',
-                            value: 'removefacetfiltervalue(2,SourceType:Academic Journals)'
+                            value: 'Academic Journals'
                         }
                     ]
                 }
@@ -159,7 +154,7 @@ describe('activeFacetsParser', function () {
                 AddAction: 'addfacetfilter(SourceType:Academic Journals)'
             }), {
                 label: 'Academic Journals (32850)',
-                value: 'addfacetfilter(SourceType:Academic Journals)'
+                value: 'Academic Journals'
             });
         });
 
@@ -168,14 +163,11 @@ describe('activeFacetsParser', function () {
     describe('parseActiveFacetValue', function () {
         it('should parse activeFacet value', function () {
             assert.deepEqual(parseActiveFacetValue({
-                FacetValue: {
-                    Id: 'Language',
-                    Value: 'french'
-                },
-                RemoveAction: 'removefacetfiltervalue(2,Language:french)'
+                Id: 'Language',
+                Value: 'french'
             }), {
                 label: 'french',
-                value: 'removefacetfiltervalue(2,Language:french)'
+                value: 'french'
             });
         });
     });
@@ -185,28 +177,20 @@ describe('activeFacetsParser', function () {
         it('should parse active facet filter', function () {
             const data = {
                 FilterId: 2,
-                FacetValuesWithAction: [
+                FacetValues: [
                     {
-                        FacetValue: {
-                            Id: 'Language',
-                            Value: 'french'
-                        },
-                        RemoveAction: 'removefacetfiltervalue(2,Language:french)'
+                        Id: 'Language',
+                        Value: 'french'
                     }, {
-                        FacetValue: {
-                            Id: 'Language',
-                            Value: 'english'
-                        },
-                        RemoveAction: 'removefacetfiltervalue(2,Language:english)'
+                        Id: 'Language',
+                        Value: 'english'
                     }
-                ],
-                RemoveAction: 'removefacetfilter(2)'
+                ]
             };
             assert.deepEqual(parseActiveFacet({}, data), {
                 Language: {
                     filterId: 2,
-                    clear: 'removefacetfilter(2)',
-                    values: data.FacetValuesWithAction.map(parseActiveFacetValue)
+                    values: data.FacetValues.map(parseActiveFacetValue)
                 }
             });
         });
@@ -214,38 +198,32 @@ describe('activeFacetsParser', function () {
         it('should regroup facet filter by their id', function () {
             const previousValues = [{
                 label: 'english',
-                value: 'removefacetfiltervalue(2,Language:english)'
+                value: 'english'
             }];
             const data = {
                 FilterId: 2,
-                FacetValuesWithAction: [
+                FacetValues: [
                     {
-                        FacetValue: {
-                            Id: 'Language',
-                            Value: 'french'
-                        },
-                        RemoveAction: 'removefacetfiltervalue(2,Language:french)'
+                        Id: 'Language',
+                        Value: 'french'
                     }
-                ],
-                RemoveAction: 'removefacetfilter(2)'
+                ]
             };
             assert.deepEqual(parseActiveFacet({
                 Language: {
                     filterId: 2,
-                    clear: 'removefacetfilter(2)',
                     values: previousValues
                 }
             }, data), {
                 Language: {
                     filterId: 2,
-                    clear: 'removefacetfilter(2)',
                     values: [
                         {
                             label: 'english',
-                            value: 'removefacetfiltervalue(2,Language:english)'
+                            value: 'english'
                         }, {
                             label: 'french',
-                            value: 'removefacetfiltervalue(2,Language:french)'
+                            value: 'french'
                         }
                     ]
                 }

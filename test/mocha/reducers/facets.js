@@ -45,22 +45,15 @@ describe('reducers facets', function () {
                 }],
                 activeFacets: [{
                     FilterId: 2,
-                    FacetValuesWithAction: [
+                    FacetValues: [
                         {
-                            FacetValue: {
-                                Id: 'Language',
-                                Value: 'french'
-                            },
-                            RemoveAction: 'removefacetfiltervalue(2,Language:french)'
+                            Id: 'Language',
+                            Value: 'french'
                         }, {
-                            FacetValue: {
-                                Id: 'Language',
-                                Value: 'english'
-                            },
-                            RemoveAction: 'removefacetfiltervalue(2,Language:english)'
+                            Id: 'Language',
+                            Value: 'english'
                         }
-                    ],
-                    RemoveAction: 'removefacetfilter(2)'
+                    ]
                 }]
             }
         }), {
@@ -70,22 +63,21 @@ describe('reducers facets', function () {
                 choices: [
                     {
                         label: 'french',
-                        value: 'removefacetfiltervalue(2,Language:french)'
+                        value: 'french'
                     },
                     {
                         label: 'english',
-                        value: 'removefacetfiltervalue(2,Language:english)'
+                        value: 'english'
                     }
                 ],
-                clear: 'removefacetfilter(2)',
                 values: [
                     {
                         label: 'french',
-                        value: 'removefacetfiltervalue(2,Language:french)'
+                        value: 'french'
                     },
                     {
                         label: 'english',
-                        value: 'removefacetfiltervalue(2,Language:english)'
+                        value: 'english'
                     }
                 ]
             },
@@ -94,18 +86,17 @@ describe('reducers facets', function () {
                 choices: [
                     {
                         label: 'Academic Journals (32850)',
-                        value: 'addfacetfilter(SourceType:Academic Journals)'
+                        value: 'Academic Journals'
                     },
                     {
                         label: 'Magazines (5939)',
-                        value: 'addfacetfilter(SourceType:Magazines)'
+                        value: 'Magazines'
                     },
                     {
                         label: 'Reports (1651)',
-                        value: 'addfacetfilter(SourceType:Reports)'
+                        value: 'Reports'
                     }
                 ],
-                clear: undefined,
                 values: []
             }
         });
