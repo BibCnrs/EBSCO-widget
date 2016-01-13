@@ -16,15 +16,18 @@ describe('reducer history', function () {
 
     describe('action SEARCH_SUCCESS', function () {
 
-        it('should add action.query to state along with response.totalHits', function () {
+        it('should add action.query to state along with response.totalHits and response.activeFacets', function () {
             assert.deepEqual(
                 history([{ term: 'phylloxera' }, { term: 'horton' }], {
                     type: SEARCH_SUCCESS,
                     query: { term: 'aids' },
-                    response: { totalHits: 7 }
+                    response: {
+                        totalHits: 7,
+                        activeFacets: ['active', 'facets']
+                    }
                 }),
                 [
-                    { term: 'aids', totalHits: 7 },
+                    { term: 'aids', totalHits: 7, activeFacets: ['active', 'facets'] },
                     { term: 'phylloxera' },
                     { term: 'horton' }
                 ]
@@ -33,12 +36,16 @@ describe('reducer history', function () {
 
         it('should not add action.query to state if it is already present in state but update its totalHits instead', function () {
             assert.deepEqual(
-                history([{ term: 'phylloxera' }, { term: 'aids' }, { term: 'horton' }], {
+                history([{ term: 'phylloxera', activeFacets: [] }, { term: 'aids', activeFacets: [] }, { term: 'horton', activeFacets: [] }], {
                     type: SEARCH_SUCCESS,
                     query: { term: 'aids' },
                     response: { totalHits: 5 }
                 }),
-                [{ term: 'phylloxera' }, { term: 'aids', totalHits: 5 }, { term: 'horton' }]
+                [
+                    { term: 'phylloxera', activeFacets: [] },
+                    { term: 'aids', activeFacets: [], totalHits: 5 },
+                    { term: 'horton', activeFacets: [] }
+                ]
             );
         });
     });

@@ -30,7 +30,7 @@ describe('reducers search', function () {
                 status: 'NONE',
                 term: '',
                 limiters: defaultLimiters,
-                facets: {}
+                activeFacets: []
             });
         });
 
@@ -44,7 +44,7 @@ describe('reducers search', function () {
                 status: 'NONE',
                 term: 'term',
                 limiters: defaultLimiters,
-                facets: {}
+                activeFacets: []
             });
         });
 
@@ -58,7 +58,7 @@ describe('reducers search', function () {
                 status: 'NONE',
                 term: '',
                 limiters: defaultLimiters,
-                facets: {}
+                activeFacets: []
             });
         });
 
@@ -79,11 +79,12 @@ describe('reducers search', function () {
 
     it('should return SUCCESS if action is SEARCH_SUCCESS', function () {
         const searchState = search(
-            { status: 'NONE', term: 'aids', facets: {} },
+            { status: 'NONE', term: 'aids', activeFacets: [] },
             {
                 type: SEARCH_SUCCESS,
                 response: {
-                    facets: []
+                    facets: [],
+                    activeFacets: []
                 }
             }
         );
@@ -91,7 +92,7 @@ describe('reducers search', function () {
             status: 'SUCCESS',
             term: 'aids',
             searchedTerm: 'aids',
-            facets: {},
+            activeFacets: [],
             error: undefined
         });
     });
@@ -170,7 +171,7 @@ describe('reducers search', function () {
             { status: 'state' },
             { type: 'OTHER_ACTION_TYPE' }
         );
-        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, facets: {} });
+        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, activeFacets: [] });
     });
 
     it('should default status to NONE and term to "" if none given', function () {
@@ -183,7 +184,7 @@ describe('reducers search', function () {
             status: 'NONE',
             domain: undefined,
             limiters: defaultLimiters,
-            facets: {}
+            activeFacets: []
         });
         delete window.sessionStorage;
     });
@@ -200,7 +201,7 @@ describe('reducers search', function () {
                 domain: 'test',
                 status: 'NONE',
                 limiters: defaultLimiters,
-                facets: {}
+                activeFacets: []
             }
         );
         delete window.sessionStorage;

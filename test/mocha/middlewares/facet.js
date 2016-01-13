@@ -11,14 +11,12 @@ describe('facet middleware', function () {
     beforeEach(function () {
         dispatchedAction = [];
         state = {
-            search: {
-                facets: {
-                    Language: {
-                        label: 'Language',
-                        values: [],
-                        choices: [],
-                        clear: 'removeFacet(1)'
-                    }
+            facets: {
+                Language: {
+                    label: 'Language',
+                    filterId: 1,
+                    values: [],
+                    choices: []
                 }
             }
         };
@@ -45,10 +43,10 @@ describe('facet middleware', function () {
                 currentValues: [
                     {
                         label: 'french',
-                        value: 'removeFacetValue(Language:french)'
+                        value: 'french'
                     }, {
                         label: 'english',
-                        value: 'removeFacetValue(Language:english)'
+                        value: 'english'
                     }
                 ]
             });
@@ -56,7 +54,7 @@ describe('facet middleware', function () {
             assert.deepEqual(dispatchedAction, [
                 {
                     type: TRIGGER_EBSCO_ACTION,
-                    value: 'removeFacet(1)'
+                    value: 'removefacetfilter(1)'
                 }
             ]);
         });
@@ -72,64 +70,99 @@ describe('facet middleware', function () {
             assert.deepEqual(dispatchedAction, []);
         });
 
-        it('should trigger TRIGGER_EBSCO_ACTION action with addFacetValue(<new value>) when action.facets contain one more facet than state', function () {
+        it('should trigger TRIGGER_EBSCO_ACTION action with addFacetValue(<idFilter>,<new value>) when action.facets contain one more facet than state', function () {
             facet(store, next, {
                 type: CHANGE_FACET,
                 name: 'Language',
                 newValues: [
                     {
                         label: 'english',
-                        value: 'removeFacetValue(Language:english)'
+                        value: 'english'
                     }, {
                         label: 'french',
-                        value: 'removeFacetValue(Language:french)'
+                        value: 'french'
                     }, {
                         label: 'deutsch',
-                        value: 'addFacetValue(Language:deutsch)'
+                        value: 'deutsch'
                     }
                 ],
                 currentValues:[
                     {
                         label: 'french',
-                        value: 'removeFacetValue(Language:french)'
+                        value: 'french'
                     }, {
                         label: 'english',
-                        value: 'removeFacetValue(Language:english)'
+                        value: 'english'
                     }
                 ]
             });
 
             assert.deepEqual(dispatchedAction, [{
                 type: TRIGGER_EBSCO_ACTION,
-                value: 'addFacetValue(Language:deutsch)'
+                value: 'addfacetfilter(1,Language:deutsch)'
             }]);
 
         });
 
-        it('should trigger TRIGGER_EBSCO_ACTION action with removeFacetValue(<removed value>) when action.facets contain one less facet than state', function () {
+        it('should trigger TRIGGER_EBSCO_ACTION action with addFacetValue(<new value>) when action.facets contain one more facet than state but has no filterId', function () {
+            delete state.facets.Language.filterId;
+            facet(store, next, {
+                type: CHANGE_FACET,
+                name: 'Language',
+                newValues: [
+                    {
+                        label: 'english',
+                        value: 'english'
+                    }, {
+                        label: 'french',
+                        value: 'french'
+                    }, {
+                        label: 'deutsch',
+                        value: 'deutsch'
+                    }
+                ],
+                currentValues:[
+                    {
+                        label: 'french',
+                        value: 'french'
+                    }, {
+                        label: 'english',
+                        value: 'english'
+                    }
+                ]
+            });
+
+            assert.deepEqual(dispatchedAction, [{
+                type: TRIGGER_EBSCO_ACTION,
+                value: 'addfacetfilter(Language:deutsch)'
+            }]);
+
+        });
+
+        it('should trigger TRIGGER_EBSCO_ACTION action with removeFacetValue(<idFilter><removed value>) when action.facets contain one less facet than state', function () {
             facet(store, next, {
                 type: CHANGE_FACET,
                 name: 'Language',
                 newValues: [ // french was removed
                     {
                         label: 'english',
-                        value: 'removeFacetValue(Language:english)'
+                        value: 'english'
                     }
                 ],
                 currentValues: [
                     {
                         label: 'french',
-                        value: 'removeFacetValue(Language:french)'
+                        value: 'french'
                     }, {
                         label: 'english',
-                        value: 'removeFacetValue(Language:english)'
+                        value: 'english'
                     }
                 ]
             });
 
             assert.deepEqual(dispatchedAction, [{
                 type: TRIGGER_EBSCO_ACTION,
-                value: 'removeFacetValue(Language:french)'
+                value: 'removefacetfiltervalue(1,Language:french)'
             }]);
 
         });
