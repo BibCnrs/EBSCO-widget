@@ -1,7 +1,9 @@
 import facets from '../../../lib/reducers/facets';
 import {
     SEARCH_SUCCESS,
-    LOGOUT
+    LOGOUT,
+    RELOAD_HISTORY,
+    RESTORE_HISTORY
 } from '../../../lib/actions';
 
 describe('reducers facets', function () {
@@ -102,4 +104,52 @@ describe('reducers facets', function () {
         });
     });
 
+    it('should return parsed action.query.activeFacets if action.type is RESTORE_HISTORY', function () {
+        const testType = (type) => {
+            assert.deepEqual(facets({}, {
+                type: type,
+                query: {
+                    activeFacets: [{
+                        FilterId: 2,
+                        FacetValues: [
+                            {
+                                Id: 'Language',
+                                Value: 'french'
+                            }, {
+                                Id: 'Language',
+                                Value: 'english'
+                            }
+                        ]
+                    }]
+                }
+            }), {
+                Language: {
+                    filterId: 2,
+                    label: 'Language',
+                    choices: [
+                        {
+                            label: 'french',
+                            value: 'french'
+                        },
+                        {
+                            label: 'english',
+                            value: 'english'
+                        }
+                    ],
+                    values: [
+                        {
+                            label: 'french',
+                            value: 'french'
+                        },
+                        {
+                            label: 'english',
+                            value: 'english'
+                        }
+                    ]
+                }
+            });
+        };
+        testType(RELOAD_HISTORY);
+        testType(RESTORE_HISTORY);
+    });
 });
