@@ -47,14 +47,14 @@
         }
         .publication-date-limiter {
             .boundaries {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 .from, .to {
-                    display: inline-block;
-                    padding: 5px;
                     width: 50px;
                 }
-                .to {
-                    float: right;
+                .title {
+                    text-align: center;
                 }
             }
             .slider {
