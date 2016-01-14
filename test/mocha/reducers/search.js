@@ -72,12 +72,11 @@ describe('reducers search', function () {
         assert.deepEqual(searchState, {
             term: 'my search',
             status: 'PENDING',
-            searchedTerm: undefined,
-            error: undefined
+            searchedTerm: undefined
         });
     });
 
-    it('should return SUCCESS if action is SEARCH_SUCCESS', function () {
+    it('should return DONE if action is SEARCH_SUCCESS', function () {
         const searchState = search(
             { status: 'NONE', term: 'aids', activeFacets: [] },
             {
@@ -89,7 +88,7 @@ describe('reducers search', function () {
             }
         );
         assert.deepEqual(searchState, {
-            status: 'SUCCESS',
+            status: 'DONE',
             term: 'aids',
             searchedTerm: 'aids',
             activeFacets: [],
@@ -97,15 +96,13 @@ describe('reducers search', function () {
         });
     });
 
-    it('should return ERROR and error message if action is SEARCH_ERROR', function () {
+    it('should return DONE if action is SEARCH_ERROR', function () {
         const searchState = search(
             { status: 'NONE' },
             { type: SEARCH_ERROR, error: { message: 'boom' } }
         );
         assert.deepEqual(searchState, {
-            status: 'ERROR',
-            error: 'boom',
-            searchedTerm: undefined
+            status: 'DONE'
         });
     });
 
