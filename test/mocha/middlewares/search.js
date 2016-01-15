@@ -17,8 +17,8 @@ describe('search middleware', function () {
             limiters: {
                 fullText: true,
                 publicationDate: {
-                    from: '1000-01',
-                    to: '2016-01'
+                    from: 1000,
+                    to: 2016
                 }
             }
         },
@@ -71,7 +71,7 @@ describe('search middleware', function () {
 
         assert.deepEqual(dispatchedAction, [
             actions.search(
-                `${state.url}/search/${state.search.domain}/${state.search.term}?FT=Y&DT1=${from}/${to}&currentPage=5`,
+                `${state.url}/search/${state.search.domain}/${state.search.term}?FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
                 state.login.token,
                 {
                     term: 'searched term',
@@ -81,8 +81,8 @@ describe('search middleware', function () {
                     limiters: {
                         fullText: true,
                         publicationDate: {
-                            from: '1000-01',
-                            to: '2016-01'
+                            from: 1000,
+                            to: 2016
                         }
                     }
                 }
