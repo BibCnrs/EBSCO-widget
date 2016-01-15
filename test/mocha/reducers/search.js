@@ -91,8 +91,7 @@ describe('reducers search', function () {
             status: 'DONE',
             term: 'aids',
             searchedTerm: 'aids',
-            activeFacets: [],
-            error: undefined
+            activeFacets: []
         });
     });
 
