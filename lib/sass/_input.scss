@@ -16,6 +16,6 @@ input[type=password] {
     border-radius: 4px;
     &:focus {
         outline: none;
-    border: 1px solid $hover;
+        border: 1px solid $hover;
     }
 }
