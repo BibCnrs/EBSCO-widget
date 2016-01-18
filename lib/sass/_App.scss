@@ -11,15 +11,15 @@
 .sidebar-handler {
     z-index: 3;
     position: fixed;
+    top: 20px;
+    bottom: 20px;
     width: 25px;
-    top: 0;
-    bottom: 0;
-    box-shadow: rgba(0, 0, 0, 0.14902) 2px 2px 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     border-left: dotted 1px #ccc;
+    border-right: solid 1px #ccc;
     color: #ccc;
     &:hover {
         background-color: #f0f0f0;
