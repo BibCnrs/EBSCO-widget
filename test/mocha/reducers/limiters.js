@@ -82,7 +82,7 @@ describe('reducers limiters', function () {
 
     describe('RESET', function () {
 
-        it ('should retrun default state', function () {
+        it ('should return all value to default except for fullText', function () {
             assert.deepEqual(limiters({
                 fullText: false,
                 publicationDate: {
@@ -95,7 +95,7 @@ describe('reducers limiters', function () {
                 title: 'a title',
                 language: 'javanese'
             }, { type: RESET }), {
-                fullText: true,
+                fullText: false,
                 publicationDate: {
                     from: 1000,
                     to: new Date().getFullYear() + 1
