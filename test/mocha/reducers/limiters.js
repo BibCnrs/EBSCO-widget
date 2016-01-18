@@ -20,7 +20,7 @@ describe('reducers limiters', function () {
                 author: null,
                 journalName: null,
                 title: null,
-                language: null
+                language: []
             });
         });
 
@@ -37,7 +37,7 @@ describe('reducers limiters', function () {
                         author: 'Aasimov',
                         journalName: 'science',
                         title: 'robotic law',
-                        language: 'english'
+                        language: ['english']
                     },
                     { type: LOGOUT }
                 ),
@@ -51,7 +51,7 @@ describe('reducers limiters', function () {
                     author: null,
                     journalName: null,
                     title: null,
-                    language: null
+                    language: []
                 });
         });
 
@@ -93,7 +93,7 @@ describe('reducers limiters', function () {
                 author: 'author',
                 journalName: 'the journal',
                 title: 'a title',
-                language: 'javanese'
+                language: ['javanese']
             }, { type: RESET }), {
                 fullText: false,
                 publicationDate: {
@@ -104,7 +104,7 @@ describe('reducers limiters', function () {
                 author: null,
                 journalName: null,
                 title: null,
-                language: null
+                language: []
             });
         });
     });

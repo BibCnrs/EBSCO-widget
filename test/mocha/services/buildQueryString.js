@@ -45,7 +45,7 @@ describe('buildQueryString', function () {
     });
 
     it('should return LA99=language, if language is set', function () {
-        assert.equal(buildQueryString({ language: 'Javanais' }), 'LA99=Javanais');
+        assert.equal(buildQueryString({ language: ['Javanese', 'Ni'] }), 'LA99=Javanese&LA99=Ni');
     });
 
     it('should return currentPage=currentPage, if currentPage is set', function () {
