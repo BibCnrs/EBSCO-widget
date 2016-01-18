@@ -1,7 +1,7 @@
 import Search from '../../../lib/components/Search';
 import FetchButton from '../../../lib/components/FetchButton';
 
-describe('Search', function () {
+describe.only('Search', function () {
     let component;
 
     describe('status: NONE', function () {
