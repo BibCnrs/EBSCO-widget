@@ -3,10 +3,9 @@ import Pagination from '../../../lib/components/Pagination';
 describe('Pagination', function () {
     let loadPageCall;
 
-    const getComponent = (currentPage, targetPage = currentPage) =>  {
+    const getComponent = (currentPage) =>  {
         const props = {
             currentPage,
-            targetPage,
             loadPage: (value) => {
                 loadPageCall = value;
             }
