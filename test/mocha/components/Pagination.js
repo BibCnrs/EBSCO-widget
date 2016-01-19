@@ -1,16 +1,11 @@
 import Pagination from '../../../lib/components/Pagination';
 
 describe('Pagination', function () {
-    let changePageCall, loadPageCall;
+    let loadPageCall;
 
-    const getComponent = (currentPage, maxPage, targetPage = currentPage) =>  {
+    const getComponent = (currentPage) =>  {
         const props = {
             currentPage,
-            targetPage,
-            maxPage,
-            changePage: (value) => {
-                changePageCall = value;
-            },
             loadPage: (value) => {
                 loadPageCall = value;
             }
@@ -19,7 +14,6 @@ describe('Pagination', function () {
     };
 
     beforeEach(function () {
-        changePageCall = null;
         loadPageCall = null;
     });
 
@@ -27,34 +21,21 @@ describe('Pagination', function () {
         let component;
 
         before(function () {
-            component = getComponent(5, 10);
+            component = getComponent(5);
         });
 
         it('should render pagination', function () {
-            const current = component.find('.current');
-            assert.equal(current.text(), '/10');
-            const input = current.find('input');
-            assert.equal(input.props().value, 5);
+            const pages = component.find('.page').map((page) => page.text());
+            assert.deepEqual(pages, ['1', '2', '3', '4', '5']);
+            const currentPage = component.find('.page.current');
+            assert.equal(currentPage.text(), 5);
         });
 
-        it('should call changePage with entered value when editing input', function () {
-            const input = component.find('input');
-            input.simulate('change', { target: { value: 7 } });
-            assert.equal(changePageCall, 7);
-        });
-
-        it('should call loadPage with input value when pressing enter on input', function () {
-            const input = component.find('input');
-            input.simulate('change', { target: { value: 7 } });
-            input.simulate('keyPress', { key: 'Enter' });
-            assert.equal(changePageCall, 7);
-        });
-
-        it('should call loadPage with input value when bluring input', function () {
-            const input = component.find('input');
-            input.simulate('change', { target: { value: 7 } });
-            input.simulate('blur', { target: { value: 7 } });
-            assert.equal(changePageCall, 7);
+        it('should call loadPage with link label when clicking on a page', function () {
+            const page4 = component.find('.page').at(3);
+            assert.equal(page4.text(), 4);
+            page4.simulate('click');
+            assert.equal(loadPageCall, 4);
         });
 
         it('should call loadPage with currentPage -1 when clicking previous', function () {
@@ -74,14 +55,12 @@ describe('Pagination', function () {
         let component;
 
         before(function () {
-            component = getComponent(1, 10);
+            component = getComponent(1);
         });
 
         it ('should render pagination', function () {
             const current = component.find('.current');
-            assert.equal(current.text(), '/10');
-            const input = current.find('input');
-            assert.equal(input.props().value, 1);
+            assert.equal(current.text(), '1');
         });
 
         it('should not call loadPage when clicking previous', function () {
@@ -98,31 +77,4 @@ describe('Pagination', function () {
 
     });
 
-    describe('when on last page', function () {
-        let component;
-
-        before(function () {
-            component = getComponent(10, 10);
-        });
-
-        it ('should render pagination', function () {
-            const current = component.find('.current');
-            assert.equal(current.text(), '/10');
-            const input = current.find('input');
-            assert.equal(input.props().value, 10);
-        });
-
-        it('should call loadPage with currentPage -1 when clicking previous', function () {
-            const previous = component.find('.previous');
-            previous.simulate('click');
-            assert.equal(loadPageCall, 9);
-        });
-
-        it('should not call loadPage when clicking next', function () {
-            const next = component.find('.next');
-            next.simulate('click');
-            assert.isNull(loadPageCall);
-        });
-
-    });
 });

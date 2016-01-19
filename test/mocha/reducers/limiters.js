@@ -20,7 +20,7 @@ describe('reducers limiters', function () {
                 author: null,
                 journalName: null,
                 title: null,
-                language: null
+                language: []
             });
         });
 
@@ -37,7 +37,7 @@ describe('reducers limiters', function () {
                         author: 'Aasimov',
                         journalName: 'science',
                         title: 'robotic law',
-                        language: 'english'
+                        language: ['english']
                     },
                     { type: LOGOUT }
                 ),
@@ -51,7 +51,7 @@ describe('reducers limiters', function () {
                     author: null,
                     journalName: null,
                     title: null,
-                    language: null
+                    language: []
                 });
         });
 
@@ -82,7 +82,7 @@ describe('reducers limiters', function () {
 
     describe('RESET', function () {
 
-        it ('should retrun default state', function () {
+        it ('should return all value to default except for fullText', function () {
             assert.deepEqual(limiters({
                 fullText: false,
                 publicationDate: {
@@ -93,9 +93,9 @@ describe('reducers limiters', function () {
                 author: 'author',
                 journalName: 'the journal',
                 title: 'a title',
-                language: 'javanese'
+                language: ['javanese']
             }, { type: RESET }), {
-                fullText: true,
+                fullText: false,
                 publicationDate: {
                     from: 1000,
                     to: new Date().getFullYear() + 1
@@ -104,7 +104,7 @@ describe('reducers limiters', function () {
                 author: null,
                 journalName: null,
                 title: null,
-                language: null
+                language: []
             });
         });
     });
