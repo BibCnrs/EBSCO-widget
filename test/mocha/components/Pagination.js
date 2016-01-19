@@ -3,9 +3,10 @@ import Pagination from '../../../lib/components/Pagination';
 describe('Pagination', function () {
     let loadPageCall;
 
-    const getComponent = (currentPage) =>  {
+    const getComponent = (currentPage, maxPage) =>  {
         const props = {
             currentPage,
+            maxPage,
             loadPage: (value) => {
                 loadPageCall = value;
             }
@@ -21,7 +22,7 @@ describe('Pagination', function () {
         let component;
 
         before(function () {
-            component = getComponent(5);
+            component = getComponent(5, 10);
         });
 
         it('should render pagination', function () {
@@ -55,7 +56,7 @@ describe('Pagination', function () {
         let component;
 
         before(function () {
-            component = getComponent(1);
+            component = getComponent(1, 5);
         });
 
         it ('should render pagination', function () {
@@ -73,6 +74,60 @@ describe('Pagination', function () {
             const next = component.find('.next');
             next.simulate('click');
             assert.equal(loadPageCall, 2);
+        });
+
+    });
+
+    describe('when limited by maxPage', function () {
+        let component;
+
+        before(function () {
+            component = getComponent(2, 3);
+        });
+
+        it('should render pagination', function () {
+            const pages = component.find('.page').map((page) => page.text());
+            assert.deepEqual(pages, ['1', '2', '3']);
+            const currentPage = component.find('.page.current');
+            assert.equal(currentPage.text(), 2);
+        });
+
+        it('should call loadPage with currentPage -1 when clicking previous', function () {
+            const previous = component.find('.previous');
+            previous.simulate('click');
+            assert.equal(loadPageCall, 1);
+        });
+
+        it('should call loadPage with currentPage +1 when clicking next', function () {
+            const next = component.find('.next');
+            next.simulate('click');
+            assert.equal(loadPageCall, 3);
+        });
+
+    });
+
+    describe('when on last page', function () {
+        let component;
+
+        before(function () {
+            component = getComponent(5, 5);
+        });
+
+        it ('should render pagination', function () {
+            const current = component.find('.current');
+            assert.equal(current.text(), '5');
+        });
+
+        it('should call loadPage whith currentPage -1 when clicking previous', function () {
+            const previous = component.find('.previous');
+            previous.simulate('click');
+            assert.equal(loadPageCall, 4);
+        });
+
+        it('should call not loadPage when clicking next', function () {
+            const next = component.find('.next');
+            next.simulate('click');
+            assert.isNull(loadPageCall);
         });
 
     });

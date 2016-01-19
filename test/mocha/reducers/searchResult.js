@@ -12,7 +12,7 @@ import {
     PAGE_LOAD
 } from '../../../lib/actions';
 
-describe.only('reducers searchResult', function () {
+describe('reducers searchResult', function () {
 
     it('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
