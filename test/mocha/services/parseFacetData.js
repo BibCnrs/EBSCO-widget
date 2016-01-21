@@ -71,7 +71,8 @@ describe('activeFacetsParser', function () {
                             value: 'Academic Journals'
                         }
                     ],
-                    values: []
+                    values: [],
+                    newValues: []
                 }
             });
         });
@@ -190,7 +191,8 @@ describe('activeFacetsParser', function () {
             assert.deepEqual(parseActiveFacet({}, data), {
                 Language: {
                     filterId: 2,
-                    values: data.FacetValues.map(parseActiveFacetValue)
+                    values: data.FacetValues.map(parseActiveFacetValue),
+                    newValues: data.FacetValues.map(parseActiveFacetValue)
                 }
             });
         });
@@ -218,6 +220,15 @@ describe('activeFacetsParser', function () {
                 Language: {
                     filterId: 2,
                     values: [
+                        {
+                            label: 'english',
+                            value: 'english'
+                        }, {
+                            label: 'french',
+                            value: 'french'
+                        }
+                    ],
+                    newValues: [
                         {
                             label: 'english',
                             value: 'english'

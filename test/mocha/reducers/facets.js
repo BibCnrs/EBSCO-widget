@@ -81,6 +81,16 @@ describe('reducers facets', function () {
                         label: 'english',
                         value: 'english'
                     }
+                ],
+                newValues: [
+                    {
+                        label: 'french',
+                        value: 'french'
+                    },
+                    {
+                        label: 'english',
+                        value: 'english'
+                    }
                 ]
             },
             SourceType: {
@@ -99,7 +109,8 @@ describe('reducers facets', function () {
                         value: 'Reports'
                     }
                 ],
-                values: []
+                values: [],
+                newValues: []
             }
         });
     });
@@ -137,6 +148,16 @@ describe('reducers facets', function () {
                         }
                     ],
                     values: [
+                        {
+                            label: 'french',
+                            value: 'french'
+                        },
+                        {
+                            label: 'english',
+                            value: 'english'
+                        }
+                    ],
+                    newValues: [
                         {
                             label: 'french',
                             value: 'french'

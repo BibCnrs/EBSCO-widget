@@ -1,6 +1,6 @@
 import { facet } from '../../../lib/middlewares/facet';
 import {
-    CHANGE_FACET,
+    APPLY_FACET,
     TRIGGER_EBSCO_ACTION
 } from '../../../lib/actions';
 
@@ -16,6 +16,7 @@ describe('facet middleware', function () {
                     label: 'Language',
                     filterId: 1,
                     values: [],
+                    newValues: [],
                     choices: []
                 }
             }
@@ -34,10 +35,30 @@ describe('facet middleware', function () {
         };
     });
 
-    describe('action: CHANGE_FACET', function () {
+    describe('action: APPLY_FACET', function () {
         it('should trigger TRIGGER_EBSCO_ACTION with removeFacet(<facetId>) action when action.facets is []', function () {
+            state = {
+                facets: {
+                    Language: {
+                        label: 'Language',
+                        filterId: 1,
+                        values: [
+                            {
+                                label: 'french',
+                                value: 'french'
+                            }, {
+                                label: 'english',
+                                value: 'english'
+                            }
+                        ],
+                        newValues: [],
+                        choices: []
+                    }
+                }
+            };
+
             facet(store, next, {
-                type: CHANGE_FACET,
+                type: APPLY_FACET,
                 name: 'Language',
                 newValues: [],
                 currentValues: [
@@ -61,7 +82,7 @@ describe('facet middleware', function () {
 
         it('should not trigger TRIGGER_EBSCO_ACTION action when action.facets is [] if corresponding facet value is already empty', function () {
             facet(store, next, {
-                type: CHANGE_FACET,
+                type: APPLY_FACET,
                 name: 'Language',
                 newValues: [],
                 currentValues: []
@@ -71,30 +92,39 @@ describe('facet middleware', function () {
         });
 
         it('should trigger TRIGGER_EBSCO_ACTION action with addFacetValue(<idFilter>,<new value>) when action.facets contain one more facet than state', function () {
+            state = {
+                facets: {
+                    Language: {
+                        label: 'Language',
+                        filterId: 1,
+                        values: [
+                            {
+                                label: 'french',
+                                value: 'french'
+                            }, {
+                                label: 'english',
+                                value: 'english'
+                            }
+                        ],
+                        newValues: [
+                            {
+                                label: 'english',
+                                value: 'english'
+                            }, {
+                                label: 'french',
+                                value: 'french'
+                            }, {
+                                label: 'deutsch',
+                                value: 'deutsch'
+                            }
+                        ],
+                        choices: []
+                    }
+                }
+            };
             facet(store, next, {
-                type: CHANGE_FACET,
-                name: 'Language',
-                newValues: [
-                    {
-                        label: 'english',
-                        value: 'english'
-                    }, {
-                        label: 'french',
-                        value: 'french'
-                    }, {
-                        label: 'deutsch',
-                        value: 'deutsch'
-                    }
-                ],
-                currentValues:[
-                    {
-                        label: 'french',
-                        value: 'french'
-                    }, {
-                        label: 'english',
-                        value: 'english'
-                    }
-                ]
+                type: APPLY_FACET,
+                name: 'Language'
             });
 
             assert.deepEqual(dispatchedAction, [{
@@ -105,31 +135,39 @@ describe('facet middleware', function () {
         });
 
         it('should trigger TRIGGER_EBSCO_ACTION action with addFacetValue(<new value>) when action.facets contain one more facet than state but has no filterId', function () {
-            delete state.facets.Language.filterId;
+            state = {
+                facets: {
+                    Language: {
+                        label: 'Language',
+                        values: [
+                            {
+                                label: 'french',
+                                value: 'french'
+                            }, {
+                                label: 'english',
+                                value: 'english'
+                            }
+                        ],
+                        newValues: [
+                            {
+                                label: 'english',
+                                value: 'english'
+                            }, {
+                                label: 'french',
+                                value: 'french'
+                            }, {
+                                label: 'deutsch',
+                                value: 'deutsch'
+                            }
+                        ],
+                        choices: []
+                    }
+                }
+            };
+
             facet(store, next, {
-                type: CHANGE_FACET,
-                name: 'Language',
-                newValues: [
-                    {
-                        label: 'english',
-                        value: 'english'
-                    }, {
-                        label: 'french',
-                        value: 'french'
-                    }, {
-                        label: 'deutsch',
-                        value: 'deutsch'
-                    }
-                ],
-                currentValues:[
-                    {
-                        label: 'french',
-                        value: 'french'
-                    }, {
-                        label: 'english',
-                        value: 'english'
-                    }
-                ]
+                type: APPLY_FACET,
+                name: 'Language'
             });
 
             assert.deepEqual(dispatchedAction, [{
@@ -140,24 +178,33 @@ describe('facet middleware', function () {
         });
 
         it('should trigger TRIGGER_EBSCO_ACTION action with removeFacetValue(<idFilter><removed value>) when action.facets contain one less facet than state', function () {
+            state = {
+                facets: {
+                    Language: {
+                        label: 'Language',
+                        filterId: 1,
+                        values: [
+                            {
+                                label: 'french',
+                                value: 'french'
+                            }, {
+                                label: 'english',
+                                value: 'english'
+                            }
+                        ],
+                        newValues: [
+                            {
+                                label: 'english',
+                                value: 'english'
+                            }
+                        ],
+                        choices: []
+                    }
+                }
+            };
             facet(store, next, {
-                type: CHANGE_FACET,
-                name: 'Language',
-                newValues: [ // french was removed
-                    {
-                        label: 'english',
-                        value: 'english'
-                    }
-                ],
-                currentValues: [
-                    {
-                        label: 'french',
-                        value: 'french'
-                    }, {
-                        label: 'english',
-                        value: 'english'
-                    }
-                ]
+                type: APPLY_FACET,
+                name: 'Language'
             });
 
             assert.deepEqual(dispatchedAction, [{
