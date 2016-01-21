@@ -1,0 +1,29 @@
+.article-link {
+    .Select {
+        display: inline-block;
+        min-width: 200px;
+        .Select-placeholder {
+            color: #005AAB;
+        }
+        .Select-control {
+            @include background(linear-gradient(#ffffff, #F2F2F2));
+            font-family: Arial;
+            .Select-value {
+                .Select-value-label {
+                    color: #005AAB;
+                }
+            }
+            margin: 0;
+            border: solid #BBBBBB 1px;
+            cursor: pointer;
+            &:hover {
+                @include background(linear-gradient(#F2F2F2, #ffffff));
+                text-decoration: none;
+            }
+            &:active {
+                background: #F2F2F2;
+                text-decoration: none;
+            }
+        }
+    }
+}
