@@ -6,6 +6,13 @@
             color: #005AAB;
         }
         .Select-control {
+            border: solid #BBBBBB 1px;
+        }
+        .Select-option {
+            border-top: solid #BBBBBB 1px;
+            color: #005AAB;
+        }
+        .Select-control,.Select-option {
             @include background(linear-gradient(#ffffff, #F2F2F2));
             font-family: Arial;
             .Select-value {
@@ -14,7 +21,6 @@
                 }
             }
             margin: 0;
-            border: solid #BBBBBB 1px;
             cursor: pointer;
             &:hover {
                 @include background(linear-gradient(#F2F2F2, #ffffff));
