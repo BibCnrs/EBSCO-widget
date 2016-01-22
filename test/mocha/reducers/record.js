@@ -1,5 +1,6 @@
 import {
-    RETRIEVE_SUCCESS
+    RETRIEVE_SUCCESS,
+    RETRIEVE_LINK_SUCCESS
 } from '../../../lib/actions';
 import record from '../../../lib/reducers/record';
 
@@ -18,6 +19,20 @@ describe('reducers record', function () {
         }), {
             author: 'john doe',
             notice: 'notice content'
+        });
+    });
+
+    it('should set state.articleLink action.response.url if action is RETRIEVE_LINK_SUCCESS', function () {
+        assert.deepEqual(record({
+            author: 'john doe'
+        }, {
+            type: RETRIEVE_LINK_SUCCESS,
+            response: {
+                url: 'http://linkToArticle.com'
+            }
+        }), {
+            author: 'john doe',
+            articleLink: 'http://linkToArticle.com'
         });
     });
 

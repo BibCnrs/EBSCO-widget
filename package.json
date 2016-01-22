@@ -1,6 +1,6 @@
 {
   "name": "ebsco-widget",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -56,11 +56,11 @@
     "react": "0.14.3",
     "react-dom": "0.14.3",
     "react-fa": "4.0.0",
-    "react-input-autosize": "^0.6.6",
+    "react-input-autosize": "0.6.8",
     "react-input-calendar": "0.1.19",
     "react-modal": "0.6.1",
     "react-redux": "4.0.0",
-    "react-select": "1.0.0-beta6",
+    "react-select": "1.0.0-beta8",
     "react-sidebar": "2.0.0",
     "redux": "3.0.4",
     "redux-localstorage": "1.0.0-rc4",
