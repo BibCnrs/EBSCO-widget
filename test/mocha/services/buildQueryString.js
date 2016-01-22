@@ -33,11 +33,11 @@ describe('buildQueryString', function () {
     });
 
     it('should return AU=author, if author is set', function () {
-        assert.equal(buildQueryString({ author: 'Isaac Asimov' }), 'AU=Isaac Asimov');
+        assert.equal(buildQueryString({ author: 'Isaac Asimov' }), 'AU=Isaac%20Asimov');
     });
 
     it('should return SO=journalName, if journalName is set', function () {
-        assert.equal(buildQueryString({ journalName: 'Picsou magazine' }), 'SO=Picsou magazine');
+        assert.equal(buildQueryString({ journalName: 'Picsou magazine' }), 'SO=Picsou%20magazine');
     });
 
     it('should return Ti=title, if title is set', function () {
