@@ -5,9 +5,14 @@ describe('buildQueryString', function () {
         assert.equal(buildQueryString({}), '');
     });
 
+    it('should add term=value', function () {
+        assert.equal(buildQueryString({ term: 'my search' }), 'term=my%20search');
+    });
+
     it('should ignore fullText if itis false', function () {
         assert.equal(buildQueryString({ fullText: false }), '');
     });
+
 
     it('should ignore peerReviewed if itis false', function () {
         assert.equal(buildQueryString({ peerReviewed: false }), '');
