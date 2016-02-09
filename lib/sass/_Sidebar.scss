@@ -69,5 +69,16 @@
                 margin-left: 5px;
             }
         }
+        .select {
+            .selector {
+                display: flex;
+                .Select {
+                    min-width: 200px;
+                }
+                .Button {
+                    // display: inline-block;
+                }
+            }
+        }
     }
 }
