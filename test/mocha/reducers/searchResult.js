@@ -34,13 +34,12 @@ describe('reducers searchResult', function () {
         );
     });
 
-    it('should return default state if action is SEARCH_TERM, LIMIT_SEARCH, RELOAD_HISTORY, LOGOUT, RESET or TRIGGER_EBSCO_ACTION', function () {
+    it('should return default state if action is SEARCH_TERM, LIMIT_SEARCH, RELOAD_HISTORY, LOGOUT or TRIGGER_EBSCO_ACTION', function () {
         const actionTypes = [
             SEARCH_TERM,
             LIMIT_SEARCH,
             RELOAD_HISTORY,
             LOGOUT,
-            RESET,
             TRIGGER_EBSCO_ACTION
         ];
 

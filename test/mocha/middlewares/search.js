@@ -98,10 +98,6 @@ describe('search middleware', function () {
         testType(LIMIT_SEARCH);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is RESET', function () {
-        testType(RESET);
-    });
-
     it('should trigger received action and SEARCH action with info gotten from store if it is RELOAD_HISTORY', function () {
         testType(RELOAD_HISTORY);
     });
