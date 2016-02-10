@@ -1,6 +1,6 @@
 import Etc from '../../../lib/components/Etc';
 
-describe.only('Etc', function () {
+describe('Etc', function () {
     const getComponent = (list, limit) => enzyme.shallow(<Etc list={list} limit={limit} />);
 
     it('should display list separated with ";"', function () {
