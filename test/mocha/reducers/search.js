@@ -9,7 +9,8 @@ import {
     LOGOUT,
     LOGIN_SUCCESS,
     RESTORE_HISTORY,
-    RELOAD_HISTORY
+    RELOAD_HISTORY,
+    RESET
 } from '../../../lib/actions';
 
 describe('reducers search', function () {
@@ -143,6 +144,19 @@ describe('reducers search', function () {
             { type: LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
         );
         assert.deepEqual(searchState, { status: 'state', domain: 'first'});
+    });
+
+    it('should set searchedTerm to undefined and return default limiter and facet if action is RESET', function () {
+        const searchState = search(
+            { status: 'state' },
+            { type: RESET, response: { domains: [ 'first', 'second' ] } }
+        );
+        assert.deepEqual(searchState, {
+            status: 'state',
+            limiters: defaultLimiters,
+            activeFacets: [],
+            searchedTerm: undefined
+        });
     });
 
     it('should return action.query if action is RESTORE_HISTORY or RELOAD_HISTORY', function () {

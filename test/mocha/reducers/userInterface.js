@@ -12,7 +12,8 @@ import {
     SHOW_HISTORY,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
-    SHOW_NOTICE
+    SHOW_NOTICE,
+    RESET
 } from '../../../lib/actions';
 import userInterface, {defaultState} from '../../../lib/reducers/userInterface';
 
@@ -72,9 +73,13 @@ describe('reducers userInterface', function () {
         );
     });
 
-    it('should set limiterHasChanged to true if action is CHANGE_LIMITER', function () {
+    it('should set limiterHasChanged to true if action is CHANGE_LIMITER or RESET', function () {
         assert.deepEqual(
             userInterface({ limiterHasChanged: false, other: 'data' }, { type: CHANGE_LIMITER }),
+            { limiterHasChanged: true, other: 'data' }
+        );
+        assert.deepEqual(
+            userInterface({ limiterHasChanged: false, other: 'data' }, { type: RESET }),
             { limiterHasChanged: true, other: 'data' }
         );
     });
