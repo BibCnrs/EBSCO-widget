@@ -55,7 +55,10 @@ module.exports = {
         chunkFilename: '[id].bundle.js'
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './lib/index.html',
+            inject: 'body'
+        }),
         new ExtractTextPlugin('[name].css'),
         new webpack.DefinePlugin({
             __DEVELOPMENT__: false,

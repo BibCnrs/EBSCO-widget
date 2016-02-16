@@ -55,7 +55,10 @@ module.exports = {
         publicPath: 'http://localhost:3001/'
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: './lib/index.html',
+            inject: 'body'
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             __DEVELOPMENT__: true,

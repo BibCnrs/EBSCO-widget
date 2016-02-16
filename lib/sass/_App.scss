@@ -15,9 +15,9 @@
 
 .sidebar-handler {
     z-index: 3;
-    position: fixed;
-    top: 20px;
-    bottom: 20px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
     width: 25px;
     cursor: pointer;
     display: flex;

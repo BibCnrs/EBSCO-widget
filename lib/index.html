@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+
+  </head>
+  <body>
+    <div id="ebsco_widget" style="border:solid #BBBBBB 1px; position: absolute; top: 200px; bottom: 200px; left: 200px; right: 200px;"></div>
+    <script>
+'use strict';
+document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+        var rootElement = document.getElementById('ebsco_widget');
+        window.ReactDom.render(React.createElement(window.EbscoWidget, { url: 'http://localhost:3000/ebsco' }), rootElement);
+    }
+};
+    </script>
+  </body>
+</html>
