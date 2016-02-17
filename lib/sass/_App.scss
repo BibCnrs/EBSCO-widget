@@ -4,32 +4,8 @@
     font-size: 14px;
 }
 
-.main {
-    margin-left: 25px;
-    padding: 20px;
-}
-
 .ReactModal__Overlay {
     z-index: 999999;
-}
-
-.sidebar-handler {
-    z-index: 3;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    width: 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: dotted 1px #ccc;
-    border-right: solid 1px #ccc;
-    color: #ccc;
-    &:hover {
-        background-color: #f0f0f0;
-        color: #999;
-    }
 }
 
 .close_modal {

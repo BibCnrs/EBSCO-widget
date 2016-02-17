@@ -6,4 +6,30 @@
     right: 0px;
     background-color: white;
     z-index: 999999;
+    .main {
+        margin-left: 25px;
+        padding: 20px;
+    }
+    .sidebar-handler {
+        z-index: 3;
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        width: 25px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: dotted 1px #ccc;
+        border-right: solid 1px #ccc;
+        color: #ccc;
+        &:hover {
+            background-color: #f0f0f0;
+            color: #999;
+        }
+    }
+}
+
+.eds {
+    
 }
