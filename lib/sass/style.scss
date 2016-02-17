@@ -1,10 +1,10 @@
 @import "compass";
+@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../../node_modules/rc-checkbox/assets/index.css";
 @import "../../node_modules/rc-slider/assets/index.css";
 @import "../../node_modules/react-input-calendar/styles/input-calendar.css";
 @import "../../node_modules/react-select/dist/react-select.min.css";
 @import "./_Search.scss";
-@import "./_FetchButton.scss";
 @import "./_input.scss";
 @import "./_RecordList.scss";
 @import "./_Record.scss";

@@ -42,6 +42,9 @@
             }
         }
         .publication-date-limiter {
+            .to, .from {
+                width: 80px;
+            }
             .boundaries {
                 display: flex;
                 align-items: center;
@@ -68,8 +71,15 @@
             .selector {
                 display: flex;
                 .Select {
-                    min-width: 200px;
+                    .Select-control {
+                        border-top-right-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                    }
+                    min-width: 180px;
                 }
+            }
+            .button {
+                width: 40px;
             }
         }
     }

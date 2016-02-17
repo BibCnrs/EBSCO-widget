@@ -47,6 +47,7 @@
     "webpack-dev-server": "1.12.0"
   },
   "dependencies": {
+    "bootstrap": "3.3.6",
     "compass-mixins": "0.12.7",
     "config": "1.16.0",
     "es5-shim": "4.3.1",
@@ -54,6 +55,7 @@
     "rc-checkbox": "1.2.0",
     "rc-slider": "3.1.0",
     "react": "0.14.3",
+    "react-bootstrap": "0.28.3",
     "react-dom": "0.14.3",
     "react-fa": "4.0.0",
     "react-input-autosize": "0.6.8",

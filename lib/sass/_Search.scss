@@ -9,27 +9,6 @@
         display: inline-block;
         height: 23px;
         width: 60px;
-
-        .Select-control {
-            @include background(linear-gradient(#ffffff, #F2F2F2));
-            font-family: Arial;
-            .Select-value {
-                .Select-value-label {
-                    color: #005AAB;
-                }
-            }
-            margin: 0;
-            border: solid #BBBBBB 1px;
-            cursor: pointer;
-            &:hover {
-                @include background(linear-gradient(#F2F2F2, #ffffff));
-                text-decoration: none;
-            }
-            &:active {
-                background: #F2F2F2;
-                text-decoration: none;
-            }
-        }
         .Select-menu-outer {
             top: 37px;
         }
