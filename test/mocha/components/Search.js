@@ -21,7 +21,7 @@ describe('Search', function () {
         });
 
         it('should set input value to term props', function () {
-            const input = component.find('.input');
+            const input = component.find('Input');
 
             assert.equal(input.props().value, props.term);
         });
@@ -35,9 +35,10 @@ describe('Search', function () {
         });
 
         it('should set select value to domain', function () {
-            const select = component.find('Select');
-            assert.equal(select.props().value, props.domain);
-            assert.deepEqual(select.props().options, props.domains.map(d => ({ label: d, value: d })));
+            const input = component.find('Input');
+            const select = input.props().buttonAfter;
+            assert.equal(select.props.title, props.domain);
+            assert.deepEqual(select.props.children.map((c) => c.props.value), props.domains);
         });
     });
 
@@ -117,7 +118,7 @@ describe('Search', function () {
         describe('onSearchTerm', function () {
 
             it('should call onSearchTerm with term and domain value', function () {
-                component.find('button').simulate('click');
+                component.find('.fetch-button').find('button').simulate('click');
                 assert.equal(term, 'searched term');
                 assert.equal(domain, 'vie');
             });
@@ -141,7 +142,7 @@ describe('Search', function () {
                     status: 'NONE'
                 };
                 component = enzyme.mount(<Search {...props}/>);
-                component.find('button').simulate('click');
+                component.find('.fetch-button').find('button').simulate('click');
                 assert.equal(term, 'searched term');
                 assert.equal(domain, 'vie');
             });
