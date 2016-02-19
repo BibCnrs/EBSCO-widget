@@ -10,6 +10,7 @@ describe('Search', function () {
             props = {
                 onClick: function onClick() {},
                 onChangeTerm: function onChangeTerm() {},
+                onSearchTerm: function onSearchTerm() {},
                 onChangeDomain: function onChangeDomain() {},
                 term: 'word',
                 status: 'NONE',
