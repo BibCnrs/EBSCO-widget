@@ -30,6 +30,7 @@ describe('reducers search', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: '',
+                defaultTerm: undefined,
                 limiters: defaultLimiters,
                 activeFacets: []
             });
@@ -44,6 +45,7 @@ describe('reducers search', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: 'term',
+                defaultTerm: 'term',
                 limiters: defaultLimiters,
                 activeFacets: []
             });
@@ -58,6 +60,7 @@ describe('reducers search', function () {
                 domain: 'domain',
                 status: 'NONE',
                 term: '',
+                defaultTerm: null,
                 limiters: defaultLimiters,
                 activeFacets: []
             });
@@ -191,6 +194,7 @@ describe('reducers search', function () {
         const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
             term: '',
+            defaultTerm: undefined,
             status: 'NONE',
             domain: undefined,
             limiters: defaultLimiters,
@@ -208,6 +212,7 @@ describe('reducers search', function () {
             search(undefined, { type: 'OTHER_ACTION_TYPE' }),
             {
                 term: 'geronimo',
+                defaultTerm: 'geronimo',
                 domain: 'test',
                 status: 'NONE',
                 limiters: defaultLimiters,
