@@ -1,9 +1,0 @@
-@import "./_button.scss";
-
-.fetch-button {
-    button {
-        @extend .button;
-        font-weight: normal;
-        font-size: 1em;
-    }
-}

@@ -24,3 +24,6 @@ test:
 
 npm:
 	docker-compose run --rm npm $(COMMAND_ARGS)
+
+serve:
+	docker-compose -f docker-compose.serve.yml up;

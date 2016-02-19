@@ -1,0 +1,7 @@
+server:
+  image: cannin/nodejs-http-server
+  volumes:
+    - ./build:/public
+  working_dir: /public
+  ports:
+    - 3002:8080

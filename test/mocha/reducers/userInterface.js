@@ -27,24 +27,6 @@ describe('reducers userInterface', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: LOGOUT }), defaultState);
     });
 
-    it('should set open to true if action is SEARCH_PENDING or LOGIN_PENDING', function () {
-        assert.deepEqual(
-            userInterface({ open: false, other: 'data' }, { type: SEARCH_PENDING }),
-            { open: true, other: 'data' }
-        );
-        assert.deepEqual(
-            userInterface({ open: false, other: 'data' }, { type: LOGIN_PENDING }),
-            { open: true, other: 'data' }
-        );
-    });
-
-    it('should set open to action.value if action is OPEN_SEARCH', function () {
-        assert.deepEqual(
-            userInterface({ open: false, other: 'data' }, { type: OPEN_SEARCH, value: 'value' }),
-            { open: 'value', other: 'data' }
-        );
-    });
-
     it('should set loading to true if action is LOADING', function () {
         assert.deepEqual(
             userInterface({ loading: false, other: 'data' }, { type: LOADING }),

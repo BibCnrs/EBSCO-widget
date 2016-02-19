@@ -17,7 +17,7 @@ describe('ArticleLink', function () {
         };
         const component = enzyme.shallow(<ArticleLink { ...props } />);
 
-        const button = component.find('Button');
+        const button = component.find('BibButton');
         assert.equal(button.props().label, 'Ouvrir l\'article');
         assert.isFalse(button.props().disabled);
 
@@ -41,7 +41,7 @@ describe('ArticleLink', function () {
         };
         const component = enzyme.shallow(<ArticleLink { ...props } />);
 
-        const button = component.find('Button');
+        const button = component.find('BibButton');
         assert.equal(button.props().label, 'Ouvrir l\'article');
         assert.isTrue(button.props().disabled);
 
@@ -78,7 +78,7 @@ describe('ArticleLink', function () {
             value: 'http://link2ToArticle.com'
         }]);
 
-        const button = component.find('Button');
+        const button = component.find('BibButton');
         assert.equal(button.length, 0);
 
         const fetchButton = component.find('FetchButton');
@@ -102,7 +102,7 @@ describe('ArticleLink', function () {
         assert.equal(fetchButton.props().label, 'Accéder à l\'article');
         const select = component.find('Select');
         assert.equal(select.length, 0);
-        const button = component.find('Button');
+        const button = component.find('BibButton');
         assert.equal(button.length, 0);
     });
 });
