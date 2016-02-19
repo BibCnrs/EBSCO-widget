@@ -1,8 +1,5 @@
 import {
     LOGOUT,
-    SEARCH_PENDING,
-    LOGIN_PENDING,
-    OPEN_SEARCH,
     LOADING,
     LOADED,
     SHOW_LIMITER,
@@ -13,6 +10,7 @@ import {
     RELOAD_HISTORY,
     RESTORE_HISTORY,
     SHOW_NOTICE,
+    SHOW_RESULT,
     RESET
 } from '../../../lib/actions';
 import userInterface, {defaultState} from '../../../lib/reducers/userInterface';
@@ -102,6 +100,20 @@ describe('reducers userInterface', function () {
         assert.deepEqual(
             userInterface({ notice: 5, other: 'data' }, { type: SHOW_NOTICE, visibility: false, index: 5 }),
             { notice: null, other: 'data' }
+        );
+    });
+
+    it('should set resultShown to false if action.visibility is false and action is SHOW_RESULT', function () {
+        assert.deepEqual(
+            userInterface({ other: 'data' }, { type: SHOW_RESULT, visibility: false }),
+            { resultShown: false, other: 'data' }
+        );
+    });
+
+    it('should set resultShown to true if action.visibility is true and action is SHOW_RESULT', function () {
+        assert.deepEqual(
+            userInterface({ other: 'data' }, { type: SHOW_RESULT, visibility: true }),
+            { resultShown: true, other: 'data' }
         );
     });
 
