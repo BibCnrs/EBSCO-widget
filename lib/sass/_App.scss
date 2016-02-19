@@ -5,7 +5,17 @@
     .container {
         max-width: 100%;
     }
-    .eds, .advanced-eds {
+    .eds, .full-screen {
         padding: 25px;
+    }
+    .full-screen {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: white;
+        z-index: 999999;
+        overflow: auto;
     }
 }
