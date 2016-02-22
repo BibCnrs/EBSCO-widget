@@ -1,6 +1,6 @@
 import SearchResultWithSidebar from '../../../lib/components/SearchResultWithSidebar';
 
-describe.only('SearchResultWithSidebar', function () {
+describe('SearchResultWithSidebar', function () {
     it('render a div instead of a sidebar if resultShown is false', function () {
         const props = {
             resultShown: false,
