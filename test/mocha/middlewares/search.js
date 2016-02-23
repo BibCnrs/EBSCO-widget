@@ -1,8 +1,7 @@
 import { search } from '../../../lib/middlewares/search';
 import actions, {
     ARTICLE,
-    RELOAD_HISTORY,
-    PAGE_LOAD
+    RELOAD_HISTORY
 } from '../../../lib/actions';
 
 describe('search middleware', function () {
@@ -103,7 +102,7 @@ describe('search middleware', function () {
     });
 
     it('should trigger received action and SEARCH action with info gotten from store if it is PAGE_LOAD', function () {
-        testType(PAGE_LOAD);
+        testType(ARTICLE.PAGE_LOAD);
     });
 
     it('should trigger only received action if it is PAGE_LOAD and the currentPage is in the store', function () {
@@ -118,7 +117,7 @@ describe('search middleware', function () {
             }
         });
         const action = {
-            type: PAGE_LOAD,
+            type: ARTICLE.PAGE_LOAD,
             page: 5
         };
 

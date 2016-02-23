@@ -6,8 +6,7 @@ import {
     ARTICLE,
     RELOAD_HISTORY,
     TRIGGER_EBSCO_ACTION,
-    LOGOUT,
-    PAGE_LOAD
+    LOGOUT
 } from '../../../lib/actions';
 
 describe('reducers articleSearchResult', function () {
@@ -55,7 +54,7 @@ describe('reducers articleSearchResult', function () {
     it('should set currentPage to action.page if action is PAGE_LOAD', function () {
         assert.deepEqual(
             articleSearchResult({ maxPage: 0 }, {
-                type: PAGE_LOAD,
+                type: ARTICLE.PAGE_LOAD,
                 page: 7
             }),
             {
