@@ -3,7 +3,7 @@ import {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
     SEARCH_PENDING
-} from '../../../lib/actions';
+} from '../../../lib/actions/article';
 
 describe('reducers articleRecordList', function () {
     const resultList = [

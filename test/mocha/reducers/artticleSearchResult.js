@@ -2,7 +2,6 @@ import articleSearchResult, { defaultState } from '../../../lib/reducers/article
 import articleRecordList from '../../../lib/reducers/articleRecordList';
 
 import {
-    SEARCH_SUCCESS,
     ARTICLE,
     RELOAD_HISTORY,
     TRIGGER_EBSCO_ACTION,
@@ -14,7 +13,7 @@ describe('reducers articleSearchResult', function () {
     it('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
             articleSearchResult({ maxPage: 0 }, {
-                type: SEARCH_SUCCESS,
+                type: ARTICLE.SEARCH_SUCCESS,
                 response: {
                     maxPage: 10,
                     totalHits: 200,

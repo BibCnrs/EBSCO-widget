@@ -1,5 +1,5 @@
 import {
-    SEARCH_SUCCESS,
+    ARTICLE,
     DELETE_HISTORY,
     LOGOUT
 } from '../../../lib/actions';
@@ -19,7 +19,7 @@ describe('reducer history', function () {
         it('should add action.query to state along with response.totalHits and response.activeFacets', function () {
             assert.deepEqual(
                 history([{ term: 'phylloxera' }, { term: 'horton' }], {
-                    type: SEARCH_SUCCESS,
+                    type: ARTICLE.SEARCH_SUCCESS,
                     query: { term: 'aids' },
                     response: {
                         totalHits: 7,
@@ -37,7 +37,7 @@ describe('reducer history', function () {
         it('should not add action.query to state if it is already present in state but update its totalHits instead', function () {
             assert.deepEqual(
                 history([{ term: 'phylloxera', activeFacets: [] }, { term: 'aids', activeFacets: [] }, { term: 'horton', activeFacets: [] }], {
-                    type: SEARCH_SUCCESS,
+                    type: ARTICLE.SEARCH_SUCCESS,
                     query: { term: 'aids' },
                     response: { totalHits: 5 }
                 }),

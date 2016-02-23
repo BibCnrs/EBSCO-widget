@@ -1,6 +1,6 @@
 import facets from '../../../lib/reducers/facets';
 import {
-    SEARCH_SUCCESS,
+    ARTICLE,
     LOGOUT,
     RELOAD_HISTORY,
     RESTORE_HISTORY
@@ -22,7 +22,7 @@ describe('reducers facets', function () {
 
     it('should return parsed action.reponse.facets and action.response.activeFacets if action type is SEARCH_SUCCESS', function () {
         assert.deepEqual(facets({}, {
-            type: SEARCH_SUCCESS,
+            type: ARTICLE.SEARCH_SUCCESS,
             response: {
                 facets: [{
                     Id: 'SourceType',

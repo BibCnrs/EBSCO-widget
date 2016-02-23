@@ -1,9 +1,6 @@
 import getSearch, { getDefaultState } from '../../../lib/reducers/articleSearch';
 import { defaultState as defaultLimiters } from '../../../lib/reducers/limiters';
 import {
-    SEARCH_PENDING,
-    SEARCH_SUCCESS,
-    SEARCH_ERROR,
     ARTICLE,
     LOGOUT,
     LOGIN_SUCCESS,
@@ -70,7 +67,7 @@ describe('reducers search', function () {
     it('should return PENDING if action is SEARCH_PENDING', function () {
         const searchState = search(
             { term: 'my search', status: 'NONE' },
-            { type: SEARCH_PENDING }
+            { type: ARTICLE.SEARCH_PENDING }
         );
         assert.deepEqual(searchState, {
             term: 'my search',
@@ -83,7 +80,7 @@ describe('reducers search', function () {
         const searchState = search(
             { status: 'NONE', term: 'aids', activeFacets: [] },
             {
-                type: SEARCH_SUCCESS,
+                type: ARTICLE.SEARCH_SUCCESS,
                 response: {
                     facets: [],
                     activeFacets: []
@@ -101,7 +98,7 @@ describe('reducers search', function () {
     it('should return DONE if action is SEARCH_ERROR', function () {
         const searchState = search(
             { status: 'NONE' },
-            { type: SEARCH_ERROR, error: { message: 'boom' } }
+            { type: ARTICLE.SEARCH_ERROR, error: { message: 'boom' } }
         );
         assert.deepEqual(searchState, {
             status: 'DONE'
