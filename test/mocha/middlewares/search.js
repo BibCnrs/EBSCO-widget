@@ -64,14 +64,14 @@ describe('search middleware', function () {
         };
 
         search(store, next, action);
-        const { from, to } = state.search.limiters.publicationDate;
+        const { from, to } = state.articleSearch.limiters.publicationDate;
         assert.deepEqual(nextAction, [
             action
         ]);
 
         assert.deepEqual(dispatchedAction, [
             actions.search(
-                `${state.url}/${state.search.domain}/search/article?term=${encodeURIComponent(state.search.term)}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
+                `${state.url}/${state.articleSearch.domain}/search/article?term=${encodeURIComponent(state.articleSearch.term)}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
                 state.login.token,
                 {
                     term: 'searched term',
