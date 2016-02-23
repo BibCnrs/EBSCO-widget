@@ -1,5 +1,5 @@
 import articleSearchResult, { defaultState } from '../../../lib/reducers/articleSearchResult';
-import recordList from '../../../lib/reducers/recordList';
+import articleRecordList from '../../../lib/reducers/articleRecordList';
 
 import {
     SEARCH_SUCCESS,
@@ -74,7 +74,7 @@ describe('reducers articleSearchResult', function () {
         );
     });
 
-    it('should pass action to recordList if state has currentPage set', function () {
+    it('should pass action to articleRecordList if state has currentPage set', function () {
         const action = {
             type: 'OTHER_ACTION'
         };
@@ -87,7 +87,7 @@ describe('reducers articleSearchResult', function () {
             {
                 some: 'state',
                 currentPage: 7,
-                '7': recordList(state[7], action)
+                '7': articleRecordList(state[7], action)
             }
         );
     });
