@@ -5,7 +5,7 @@ import {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
     ARTICLE_CHANGE_TERM,
-    DOMAIN_CHANGE,
+    ARTICLE_DOMAIN_CHANGE,
     LOGOUT,
     LOGIN_SUCCESS,
     RESTORE_HISTORY,
@@ -117,10 +117,10 @@ describe('reducers search', function () {
         assert.deepEqual(searchState, { status: 'state', term: 'searched term' });
     });
 
-    it('should update domain with action.domain if action is DOMAIN_CHANGE', function () {
+    it('should update domain with action.domain if action is ARTICLE_DOMAIN_CHANGE', function () {
         const searchState = search(
             { status: 'state' },
-            { type: DOMAIN_CHANGE, domain: 'test' }
+            { type: ARTICLE_DOMAIN_CHANGE, domain: 'test' }
         );
         assert.deepEqual(searchState, {
             status: 'state',
