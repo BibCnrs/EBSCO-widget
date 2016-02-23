@@ -1,10 +1,9 @@
-import searchResult, { defaultState } from '../../../lib/reducers/searchResult';
+import articleSearchResult, { defaultState } from '../../../lib/reducers/articleSearchResult';
 import recordList from '../../../lib/reducers/recordList';
 
 import {
     SEARCH_SUCCESS,
     SEARCH_TERM,
-    RESET,
     RELOAD_HISTORY,
     LIMIT_SEARCH,
     TRIGGER_EBSCO_ACTION,
@@ -12,11 +11,11 @@ import {
     PAGE_LOAD
 } from '../../../lib/actions';
 
-describe('reducers searchResult', function () {
+describe('reducers articleSearchResult', function () {
 
     it('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
-            searchResult({ maxPage: 0 }, {
+            articleSearchResult({ maxPage: 0 }, {
                 type: SEARCH_SUCCESS,
                 response: {
                     maxPage: 10,
@@ -44,7 +43,7 @@ describe('reducers searchResult', function () {
         ];
 
         actionTypes.map((type) => assert.deepEqual(
-            searchResult({
+            articleSearchResult({
                 maxPage: 10,
                 totalHits: 200,
                 2: ['results data'],
@@ -56,7 +55,7 @@ describe('reducers searchResult', function () {
 
     it('should set currentPage to action.page if action is PAGE_LOAD', function () {
         assert.deepEqual(
-            searchResult({ maxPage: 0 }, {
+            articleSearchResult({ maxPage: 0 }, {
                 type: PAGE_LOAD,
                 page: 7
             }),
@@ -69,7 +68,7 @@ describe('reducers searchResult', function () {
 
     it('should return state on other action', function () {
         assert.deepEqual(
-            searchResult({ some: 'state' }, {
+            articleSearchResult({ some: 'state' }, {
                 type: 'OTHER_ACTION'
             }),
             { some: 'state' }
@@ -85,7 +84,7 @@ describe('reducers searchResult', function () {
             currentPage: 7
         };
         assert.deepEqual(
-            searchResult(state, action),
+            articleSearchResult(state, action),
             {
                 some: 'state',
                 currentPage: 7,

@@ -4,7 +4,7 @@ import {
     SEARCH_PENDING,
     SEARCH_SUCCESS,
     SEARCH_ERROR,
-    TERM_CHANGE,
+    ARTICLE_TERM_CHANGE,
     DOMAIN_CHANGE,
     LOGOUT,
     LOGIN_SUCCESS,
@@ -109,10 +109,10 @@ describe('reducers search', function () {
         });
     });
 
-    it('should update term with action.term if action is TERM_CHANGE', function () {
+    it('should update term with action.term if action is ARTICLE_TERM_CHANGE', function () {
         const searchState = search(
             { status: 'state' },
-            { type: TERM_CHANGE, term: 'searched term' }
+            { type: ARTICLE_TERM_CHANGE, term: 'searched term' }
         );
         assert.deepEqual(searchState, { status: 'state', term: 'searched term' });
     });

@@ -2,7 +2,6 @@ import { search } from '../../../lib/middlewares/search';
 import actions, {
     SEARCH_TERM,
     LIMIT_SEARCH,
-    RESET,
     RELOAD_HISTORY,
     PAGE_LOAD
 } from '../../../lib/actions';
@@ -11,7 +10,7 @@ describe('search middleware', function () {
     let store, dispatchedAction, next, nextAction;
     const state = {
         url: 'http://apiroute',
-        search: {
+        articleSearch: {
             term: 'searched term',
             domain: 'vie',
             limiters: {
@@ -25,7 +24,7 @@ describe('search middleware', function () {
         login: {
             token: 'token'
         },
-        searchResult: {
+        articleSearchResult: {
             currentPage: 5
         },
         facets: {},
@@ -109,7 +108,7 @@ describe('search middleware', function () {
     it('should trigger only received action if it is PAGE_LOAD and the currentPage is in the store', function () {
         store.getState = () => ({
             ...state,
-            searchResult: {
+            articleSearchResult: {
                 currentPage: 5,
                 5: { page: 'data' }
             }
