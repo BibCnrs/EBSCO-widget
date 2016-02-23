@@ -10,25 +10,27 @@ describe('search middleware', function () {
     let store, dispatchedAction, next, nextAction;
     const state = {
         url: 'http://apiroute',
-        articleSearch: {
-            term: 'searched term',
-            domain: 'vie',
-            limiters: {
-                fullText: true,
-                publicationDate: {
-                    from: 1000,
-                    to: 2016
+        article: {
+            search: {
+                term: 'searched term',
+                domain: 'vie',
+                limiters: {
+                    fullText: true,
+                    publicationDate: {
+                        from: 1000,
+                        to: 2016
+                    }
                 }
-            }
+            },
+            searchResult: {
+                currentPage: 5
+            },
+            facets: {},
+            activeFacets: {}
         },
         login: {
             token: 'token'
-        },
-        articleSearchResult: {
-            currentPage: 5
-        },
-        facets: {},
-        activeFacets: {}
+        }
     };
 
     beforeEach(function () {
@@ -63,14 +65,14 @@ describe('search middleware', function () {
         };
 
         search(store, next, action);
-        const { from, to } = state.articleSearch.limiters.publicationDate;
+        const { from, to } = state.article.search.limiters.publicationDate;
         assert.deepEqual(nextAction, [
             action
         ]);
 
         assert.deepEqual(dispatchedAction, [
             actions.search(
-                `${state.url}/${state.articleSearch.domain}/search/article?term=${encodeURIComponent(state.articleSearch.term)}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
+                `${state.url}/${state.article.search.domain}/search/article?term=${encodeURIComponent(state.article.search.term)}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
                 state.login.token,
                 {
                     term: 'searched term',
@@ -108,9 +110,12 @@ describe('search middleware', function () {
     it('should trigger only received action if it is PAGE_LOAD and the currentPage is in the store', function () {
         store.getState = () => ({
             ...state,
-            articleSearchResult: {
-                currentPage: 5,
-                5: { page: 'data' }
+            article: {
+                ...state.article,
+                searchResult: {
+                    currentPage: 5,
+                    5: { page: 'data' }
+                }
             }
         });
         const action = {

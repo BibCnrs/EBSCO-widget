@@ -11,13 +11,15 @@ describe('facet middleware', function () {
     beforeEach(function () {
         dispatchedAction = [];
         state = {
-            facets: {
-                Language: {
-                    label: 'Language',
-                    filterId: 1,
-                    values: [],
-                    newValues: [],
-                    choices: []
+            article: {
+                facets: {
+                    Language: {
+                        label: 'Language',
+                        filterId: 1,
+                        values: [],
+                        newValues: [],
+                        choices: []
+                    }
                 }
             }
         };
@@ -38,21 +40,23 @@ describe('facet middleware', function () {
     describe('action: APPLY_FACET', function () {
         it('should trigger TRIGGER_EBSCO_ACTION with removeFacet(<facetId>) action when action.facets is []', function () {
             state = {
-                facets: {
-                    Language: {
-                        label: 'Language',
-                        filterId: 1,
-                        values: [
-                            {
-                                label: 'french',
-                                value: 'french'
-                            }, {
-                                label: 'english',
-                                value: 'english'
-                            }
-                        ],
-                        newValues: [],
-                        choices: []
+                article: {
+                    facets: {
+                        Language: {
+                            label: 'Language',
+                            filterId: 1,
+                            values: [
+                                {
+                                    label: 'french',
+                                    value: 'french'
+                                }, {
+                                    label: 'english',
+                                    value: 'english'
+                                }
+                            ],
+                            newValues: [],
+                            choices: []
+                        }
                     }
                 }
             };
@@ -93,32 +97,34 @@ describe('facet middleware', function () {
 
         it('should trigger TRIGGER_EBSCO_ACTION action with addFacetValue(<idFilter>,<new value>) when action.facets contain one more facet than state', function () {
             state = {
-                facets: {
-                    Language: {
-                        label: 'Language',
-                        filterId: 1,
-                        values: [
-                            {
-                                label: 'french',
-                                value: 'french'
-                            }, {
-                                label: 'english',
-                                value: 'english'
-                            }
-                        ],
-                        newValues: [
-                            {
-                                label: 'english',
-                                value: 'english'
-                            }, {
-                                label: 'french',
-                                value: 'french'
-                            }, {
-                                label: 'deutsch',
-                                value: 'deutsch'
-                            }
-                        ],
-                        choices: []
+                article: {
+                    facets: {
+                        Language: {
+                            label: 'Language',
+                            filterId: 1,
+                            values: [
+                                {
+                                    label: 'french',
+                                    value: 'french'
+                                }, {
+                                    label: 'english',
+                                    value: 'english'
+                                }
+                            ],
+                            newValues: [
+                                {
+                                    label: 'english',
+                                    value: 'english'
+                                }, {
+                                    label: 'french',
+                                    value: 'french'
+                                }, {
+                                    label: 'deutsch',
+                                    value: 'deutsch'
+                                }
+                            ],
+                            choices: []
+                        }
                     }
                 }
             };
@@ -136,31 +142,33 @@ describe('facet middleware', function () {
 
         it('should trigger TRIGGER_EBSCO_ACTION action with addFacetValue(<new value>) when action.facets contain one more facet than state but has no filterId', function () {
             state = {
-                facets: {
-                    Language: {
-                        label: 'Language',
-                        values: [
-                            {
-                                label: 'french',
-                                value: 'french'
-                            }, {
-                                label: 'english',
-                                value: 'english'
-                            }
-                        ],
-                        newValues: [
-                            {
-                                label: 'english',
-                                value: 'english'
-                            }, {
-                                label: 'french',
-                                value: 'french'
-                            }, {
-                                label: 'deutsch',
-                                value: 'deutsch'
-                            }
-                        ],
-                        choices: []
+                article: {
+                    facets: {
+                        Language: {
+                            label: 'Language',
+                            values: [
+                                {
+                                    label: 'french',
+                                    value: 'french'
+                                }, {
+                                    label: 'english',
+                                    value: 'english'
+                                }
+                            ],
+                            newValues: [
+                                {
+                                    label: 'english',
+                                    value: 'english'
+                                }, {
+                                    label: 'french',
+                                    value: 'french'
+                                }, {
+                                    label: 'deutsch',
+                                    value: 'deutsch'
+                                }
+                            ],
+                            choices: []
+                        }
                     }
                 }
             };
@@ -179,26 +187,28 @@ describe('facet middleware', function () {
 
         it('should trigger TRIGGER_EBSCO_ACTION action with removeFacetValue(<idFilter><removed value>) when action.facets contain one less facet than state', function () {
             state = {
-                facets: {
-                    Language: {
-                        label: 'Language',
-                        filterId: 1,
-                        values: [
-                            {
-                                label: 'french',
-                                value: 'french'
-                            }, {
-                                label: 'english',
-                                value: 'english'
-                            }
-                        ],
-                        newValues: [
-                            {
-                                label: 'english',
-                                value: 'english'
-                            }
-                        ],
-                        choices: []
+                article: {
+                    facets: {
+                        Language: {
+                            label: 'Language',
+                            filterId: 1,
+                            values: [
+                                {
+                                    label: 'french',
+                                    value: 'french'
+                                }, {
+                                    label: 'english',
+                                    value: 'english'
+                                }
+                            ],
+                            newValues: [
+                                {
+                                    label: 'english',
+                                    value: 'english'
+                                }
+                            ],
+                            choices: []
+                        }
                     }
                 }
             };
