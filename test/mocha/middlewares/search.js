@@ -1,6 +1,6 @@
 import { search } from '../../../lib/middlewares/search';
 import actions, {
-    SEARCH_TERM,
+    ARTICLE_SEARCH_TERM,
     LIMIT_SEARCH,
     RELOAD_HISTORY,
     PAGE_LOAD
@@ -47,7 +47,7 @@ describe('search middleware', function () {
         };
     });
 
-    it('should only trigger received action if it is not one of CHANGE_FULLTEXT SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
+    it('should only trigger received action if it is not one of CHANGE_FULLTEXT ARTICLE_SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
         const action = {
             type: 'DONT_CARE'
         };
@@ -89,8 +89,8 @@ describe('search middleware', function () {
         ]);
     };
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is SEARCH_TERM', function () {
-        testType(SEARCH_TERM);
+    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_SEARCH_TERM', function () {
+        testType(ARTICLE_SEARCH_TERM);
     });
 
     it('should trigger received action and SEARCH action with info gotten from store if it is LIMIT_SEARCH', function () {
