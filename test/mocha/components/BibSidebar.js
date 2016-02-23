@@ -1,13 +1,15 @@
-import SearchResultWithSidebar from '../../../lib/components/SearchResultWithSidebar';
+import BibSidebar from '../../../lib/components/BibSidebar';
 
-describe('SearchResultWithSidebar', function () {
+describe('BibSidebar', function () {
     it('render a div instead of a sidebar if resultShown is false', function () {
         const props = {
+            mainContent: <div>main content</div>,
+            sidebarContent: <div>sidebarContent content</div>,
             resultShown: false,
             limiterShown: true,
             showLimiter: () => null
         };
-        const component = enzyme.shallow(<SearchResultWithSidebar {...props} />);
+        const component = enzyme.shallow(<BibSidebar {...props} />);
         const sidebar = component.find('Sidebar');
         assert.equal(sidebar.length, 0);
         const div = component.find('div');
@@ -16,11 +18,13 @@ describe('SearchResultWithSidebar', function () {
 
     it('render set Sidebar isOpen props to true if limiterShown is true', function () {
         const props = {
+            mainContent: <div>main content</div>,
+            sidebarContent: <div>sidebarContent content</div>,
             resultShown: true,
             limiterShown: true,
             showLimiter: () => null
         };
-        const component = enzyme.shallow(<SearchResultWithSidebar {...props} />);
+        const component = enzyme.shallow(<BibSidebar {...props} />);
         const sidebar = component.find('Sidebar');
         assert.equal(sidebar.length, 1);
         assert.equal(sidebar.props().isOpen, true);
@@ -29,11 +33,13 @@ describe('SearchResultWithSidebar', function () {
 
     it('render set Sidebar isOpen props to false if limiterShown is false', function () {
         const props = {
+            mainContent: <div>main content</div>,
+            sidebarContent: <div>sidebarContent content</div>,
             resultShown: true,
             limiterShown: false,
             showLimiter: () => null
         };
-        const component = enzyme.shallow(<SearchResultWithSidebar {...props} />);
+        const component = enzyme.shallow(<BibSidebar {...props} />);
         const sidebar = component.find('Sidebar');
         assert.equal(sidebar.length, 1);
         assert.equal(sidebar.props().isOpen, false);

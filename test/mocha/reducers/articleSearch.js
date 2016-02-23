@@ -1,11 +1,10 @@
-import getSearch, { getDefaultState } from '../../../lib/reducers/search';
+import getSearch, { getDefaultState } from '../../../lib/reducers/articleSearch';
 import { defaultState as defaultLimiters } from '../../../lib/reducers/limiters';
 import {
     SEARCH_PENDING,
     SEARCH_SUCCESS,
     SEARCH_ERROR,
-    ARTICLE_CHANGE_TERM,
-    ARTICLE_DOMAIN_CHANGE,
+    ARTICLE,
     LOGOUT,
     LOGIN_SUCCESS,
     RESTORE_HISTORY,
@@ -112,7 +111,7 @@ describe('reducers search', function () {
     it('should update term with action.term if action is ARTICLE_CHANGE_TERM', function () {
         const searchState = search(
             { status: 'state' },
-            { type: ARTICLE_CHANGE_TERM, term: 'searched term' }
+            { type: ARTICLE.CHANGE_TERM, term: 'searched term' }
         );
         assert.deepEqual(searchState, { status: 'state', term: 'searched term' });
     });
@@ -120,7 +119,7 @@ describe('reducers search', function () {
     it('should update domain with action.domain if action is ARTICLE_DOMAIN_CHANGE', function () {
         const searchState = search(
             { status: 'state' },
-            { type: ARTICLE_DOMAIN_CHANGE, domain: 'test' }
+            { type: ARTICLE.DOMAIN_CHANGE, domain: 'test' }
         );
         assert.deepEqual(searchState, {
             status: 'state',

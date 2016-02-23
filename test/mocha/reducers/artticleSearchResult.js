@@ -3,7 +3,7 @@ import recordList from '../../../lib/reducers/recordList';
 
 import {
     SEARCH_SUCCESS,
-    ARTICLE_SEARCH_TERM,
+    ARTICLE,
     RELOAD_HISTORY,
     LIMIT_SEARCH,
     TRIGGER_EBSCO_ACTION,
@@ -35,7 +35,7 @@ describe('reducers articleSearchResult', function () {
 
     it('should return default state if action is ARTICLE_SEARCH_TERM, LIMIT_SEARCH, RELOAD_HISTORY, LOGOUT or TRIGGER_EBSCO_ACTION', function () {
         const actionTypes = [
-            ARTICLE_SEARCH_TERM,
+            ARTICLE.SEARCH_TERM,
             LIMIT_SEARCH,
             RELOAD_HISTORY,
             LOGOUT,
