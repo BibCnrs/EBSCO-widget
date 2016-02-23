@@ -1,7 +1,6 @@
 import { search } from '../../../lib/middlewares/search';
 import actions, {
     ARTICLE,
-    LIMIT_SEARCH,
     RELOAD_HISTORY,
     PAGE_LOAD
 } from '../../../lib/actions';
@@ -95,8 +94,8 @@ describe('search middleware', function () {
         testType(ARTICLE.SEARCH_TERM);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is LIMIT_SEARCH', function () {
-        testType(LIMIT_SEARCH);
+    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_LIMIT_SEARCH', function () {
+        testType(ARTICLE.LIMIT_SEARCH);
     });
 
     it('should trigger received action and SEARCH action with info gotten from store if it is RELOAD_HISTORY', function () {

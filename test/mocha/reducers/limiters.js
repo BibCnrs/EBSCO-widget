@@ -1,6 +1,6 @@
 import limiters from '../../../lib/reducers/limiters';
 import {
-    CHANGE_LIMITER,
+    ARTICLE,
     RESET,
     LOGOUT
 } from '../../../lib/actions';
@@ -62,16 +62,16 @@ describe('reducers limiters', function () {
         });
     });
 
-    describe('CHANGE_LIMITER', function () {
+    describe('ARTICLE_CHANGE_LIMITER', function () {
         it('should set action.limiter to action.value', function () {
-            assert.equal(limiters({ fullText: true }, { type: CHANGE_LIMITER, limiter: 'fullText', value: false }).fullText, false);
+            assert.equal(limiters({ fullText: true }, { type: ARTICLE.CHANGE_LIMITER, limiter: 'fullText', value: false }).fullText, false);
             const newState = limiters({
                 publicationDate: {
                     from: 1000,
                     to: 2016
                 }
             }, {
-                type: CHANGE_LIMITER,
+                type: ARTICLE.CHANGE_LIMITER,
                 limiter: 'publicationDate',
                 value: { from: 2000, to: 2012 }
             });

@@ -7,7 +7,7 @@ describe('BibSidebar', function () {
             sidebarContent: <div>sidebarContent content</div>,
             resultShown: false,
             limiterShown: true,
-            showLimiter: () => null
+            showSidebar: () => null
         };
         const component = enzyme.shallow(<BibSidebar {...props} />);
         const sidebar = component.find('Sidebar');
@@ -22,13 +22,13 @@ describe('BibSidebar', function () {
             sidebarContent: <div>sidebarContent content</div>,
             resultShown: true,
             limiterShown: true,
-            showLimiter: () => null
+            showSidebar: () => null
         };
         const component = enzyme.shallow(<BibSidebar {...props} />);
         const sidebar = component.find('Sidebar');
         assert.equal(sidebar.length, 1);
         assert.equal(sidebar.props().isOpen, true);
-        assert.deepEqual(sidebar.props().open, props.showLimiter);
+        assert.deepEqual(sidebar.props().open, props.showSidebar);
     });
 
     it('render set Sidebar isOpen props to false if limiterShown is false', function () {
@@ -37,12 +37,12 @@ describe('BibSidebar', function () {
             sidebarContent: <div>sidebarContent content</div>,
             resultShown: true,
             limiterShown: false,
-            showLimiter: () => null
+            showSidebar: () => null
         };
         const component = enzyme.shallow(<BibSidebar {...props} />);
         const sidebar = component.find('Sidebar');
         assert.equal(sidebar.length, 1);
         assert.equal(sidebar.props().isOpen, false);
-        assert.deepEqual(sidebar.props().open, props.showLimiter);
+        assert.deepEqual(sidebar.props().open, props.showSidebar);
     });
 });

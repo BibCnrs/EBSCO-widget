@@ -5,7 +5,6 @@ import {
     SEARCH_SUCCESS,
     ARTICLE,
     RELOAD_HISTORY,
-    LIMIT_SEARCH,
     TRIGGER_EBSCO_ACTION,
     LOGOUT,
     PAGE_LOAD
@@ -33,10 +32,10 @@ describe('reducers articleSearchResult', function () {
         );
     });
 
-    it('should return default state if action is ARTICLE_SEARCH_TERM, LIMIT_SEARCH, RELOAD_HISTORY, LOGOUT or TRIGGER_EBSCO_ACTION', function () {
+    it('should return default state if action is ARTICLE_SEARCH_TERM, ARTICLE_LIMIT_SEARCH, RELOAD_HISTORY, LOGOUT or TRIGGER_EBSCO_ACTION', function () {
         const actionTypes = [
             ARTICLE.SEARCH_TERM,
-            LIMIT_SEARCH,
+            ARTICLE.LIMIT_SEARCH,
             RELOAD_HISTORY,
             LOGOUT,
             TRIGGER_EBSCO_ACTION

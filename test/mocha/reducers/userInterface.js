@@ -2,10 +2,8 @@ import {
     LOGOUT,
     LOADING,
     LOADED,
-    SHOW_LIMITER,
-    SHOW_MORE_LIMITER,
-    CHANGE_LIMITER,
-    LIMIT_SEARCH,
+    SHOW_SIDEBAR,
+    ARTICLE,
     SHOW_HISTORY,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
@@ -39,23 +37,23 @@ describe('reducers userInterface', function () {
         );
     });
 
-    it('should set limiterShown to action.visibility if action is SHOW_LIMITER', function () {
+    it('should set limiterShown to action.visibility if action is SHOW_SIDEBAR', function () {
         assert.deepEqual(
-            userInterface({ limiterShown: false, other: 'data' }, { type: SHOW_LIMITER, visibility: 'value' }),
+            userInterface({ limiterShown: false, other: 'data' }, { type: SHOW_SIDEBAR, visibility: 'value' }),
             { limiterShown: 'value', other: 'data' }
         );
     });
 
-    it('should set limiterMoreShown to action.visibility if action is SHOW_MORE_LIMITER', function () {
+    it('should set limiterMoreShown to action.visibility if action is ARTCILE_SHOW_MORE_LIMITER', function () {
         assert.deepEqual(
-            userInterface({ limiterMoreShown: false, other: 'data' }, { type: SHOW_MORE_LIMITER, visibility: 'value' }),
+            userInterface({ limiterMoreShown: false, other: 'data' }, { type: ARTICLE.SHOW_MORE_LIMITER, visibility: 'value' }),
             { limiterMoreShown: 'value', other: 'data' }
         );
     });
 
-    it('should set limiterHasChanged to true if action is CHANGE_LIMITER or RESET', function () {
+    it('should set limiterHasChanged to true if action is ARTICLE_CHANGE_LIMITER or RESET', function () {
         assert.deepEqual(
-            userInterface({ limiterHasChanged: false, other: 'data' }, { type: CHANGE_LIMITER }),
+            userInterface({ limiterHasChanged: false, other: 'data' }, { type: ARTICLE.CHANGE_LIMITER }),
             { limiterHasChanged: true, other: 'data' }
         );
         assert.deepEqual(
@@ -64,9 +62,9 @@ describe('reducers userInterface', function () {
         );
     });
 
-    it('should set limiterHasChanged to false if action is LIMIT_SEARCH', function () {
+    it('should set limiterHasChanged to false if action is ARTICLE_LIMIT_SEARCH', function () {
         assert.deepEqual(
-            userInterface({ limiterHasChanged: true, other: 'data' }, { type: LIMIT_SEARCH }),
+            userInterface({ limiterHasChanged: true, other: 'data' }, { type: ARTICLE.LIMIT_SEARCH }),
             { limiterHasChanged: false, other: 'data' }
         );
     });
