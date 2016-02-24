@@ -8,8 +8,7 @@ import {
     RELOAD_HISTORY,
     RESTORE_HISTORY,
     SHOW_NOTICE,
-    SHOW_RESULT,
-    RESET
+    SHOW_RESULT
 } from '../../../lib/actions';
 import userInterface, {defaultState} from '../../../lib/reducers/userInterface';
 
@@ -48,24 +47,6 @@ describe('reducers userInterface', function () {
         assert.deepEqual(
             userInterface({ limiterMoreShown: false, other: 'data' }, { type: ARTICLE.SHOW_MORE_LIMITER, visibility: 'value' }),
             { limiterMoreShown: 'value', other: 'data' }
-        );
-    });
-
-    it('should set limiterHasChanged to true if action is ARTICLE_CHANGE_LIMITER or RESET', function () {
-        assert.deepEqual(
-            userInterface({ limiterHasChanged: false, other: 'data' }, { type: ARTICLE.CHANGE_LIMITER }),
-            { limiterHasChanged: true, other: 'data' }
-        );
-        assert.deepEqual(
-            userInterface({ limiterHasChanged: false, other: 'data' }, { type: RESET }),
-            { limiterHasChanged: true, other: 'data' }
-        );
-    });
-
-    it('should set limiterHasChanged to false if action is ARTICLE_LIMIT_SEARCH', function () {
-        assert.deepEqual(
-            userInterface({ limiterHasChanged: true, other: 'data' }, { type: ARTICLE.LIMIT_SEARCH }),
-            { limiterHasChanged: false, other: 'data' }
         );
     });
 

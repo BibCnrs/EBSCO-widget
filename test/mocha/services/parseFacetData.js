@@ -1,4 +1,4 @@
-import { parseFacet, parseFacetValue, parseActiveFacetValue, parseActiveFacet, mergeFacets } from '../../../lib/services/parseFacetData';
+import { parseFacet, parseFacetValue, parseActiveFacetValue, parseActiveFacets, mergeFacets } from '../../../lib/services/parseFacetData';
 
 describe('activeFacetsParser', function () {
 
@@ -163,10 +163,7 @@ describe('activeFacetsParser', function () {
 
     describe('parseActiveFacetValue', function () {
         it('should parse activeFacet value', function () {
-            assert.deepEqual(parseActiveFacetValue({
-                Id: 'Language',
-                Value: 'french'
-            }), {
+            assert.deepEqual(parseActiveFacetValue('french'), {
                 label: 'french',
                 value: 'french'
             });
@@ -177,64 +174,54 @@ describe('activeFacetsParser', function () {
 
         it('should parse active facet filter', function () {
             const data = {
-                FilterId: 2,
-                FacetValues: [
-                    {
-                        Id: 'Language',
-                        Value: 'french'
-                    }, {
-                        Id: 'Language',
-                        Value: 'english'
-                    }
-                ]
+                Language: ['french', 'english']
             };
-            assert.deepEqual(parseActiveFacet({}, data), {
+            assert.deepEqual(parseActiveFacets(data), {
                 Language: {
-                    filterId: 2,
-                    values: data.FacetValues.map(parseActiveFacetValue),
-                    newValues: data.FacetValues.map(parseActiveFacetValue)
+                    values: data.Language.map(parseActiveFacetValue),
+                    newValues: data.Language.map(parseActiveFacetValue)
                 }
             });
         });
 
         it('should regroup facet filter by their id', function () {
-            const previousValues = [{
-                label: 'english',
-                value: 'english'
-            }];
             const data = {
-                FilterId: 2,
-                FacetValues: [
-                    {
-                        Id: 'Language',
-                        Value: 'french'
-                    }
-                ]
+                SourceType: ['magazine'],
+                Language: ['french', 'english']
             };
-            assert.deepEqual(parseActiveFacet({
+
+            assert.deepEqual(parseActiveFacets(data), {
                 Language: {
-                    filterId: 2,
-                    values: previousValues
-                }
-            }, data), {
-                Language: {
-                    filterId: 2,
                     values: [
                         {
-                            label: 'english',
-                            value: 'english'
-                        }, {
                             label: 'french',
                             value: 'french'
+                        }, {
+                            label: 'english',
+                            value: 'english'
                         }
                     ],
                     newValues: [
                         {
-                            label: 'english',
-                            value: 'english'
-                        }, {
                             label: 'french',
                             value: 'french'
+                        }, {
+                            label: 'english',
+                            value: 'english'
+                        }
+                    ]
+                },
+                SourceType: {
+                    values: [
+                        {
+                            label: 'magazine',
+                            value: 'magazine'
+                        }
+                    ],
+                    newValues: [
+                        {
+                            label: 'magazine',
+                            value: 'magazine'
                         }
                     ]
                 }

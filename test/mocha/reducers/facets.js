@@ -45,22 +45,12 @@ describe('reducers facets', function () {
                         }
                     ]
                 }],
-                activeFacets: [{
-                    FilterId: 2,
-                    FacetValues: [
-                        {
-                            Id: 'Language',
-                            Value: 'french'
-                        }, {
-                            Id: 'Language',
-                            Value: 'english'
-                        }
-                    ]
-                }]
+                activeFacets: {
+                    Language: ['french', 'english']
+                }
             }
         }), {
             Language: {
-                filterId: 2,
                 label: 'Language',
                 choices: [
                     {
@@ -120,22 +110,12 @@ describe('reducers facets', function () {
             assert.deepEqual(facets({}, {
                 type: type,
                 query: {
-                    activeFacets: [{
-                        FilterId: 2,
-                        FacetValues: [
-                            {
-                                Id: 'Language',
-                                Value: 'french'
-                            }, {
-                                Id: 'Language',
-                                Value: 'english'
-                            }
-                        ]
-                    }]
+                    activeFacets: {
+                        Language: ['french', 'english']
+                    }
                 }
             }), {
                 Language: {
-                    filterId: 2,
                     label: 'Language',
                     choices: [
                         {
