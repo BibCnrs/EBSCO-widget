@@ -4,7 +4,6 @@ import articleRecordList from '../../../lib/reducers/articleRecordList';
 import {
     ARTICLE,
     RELOAD_HISTORY,
-    TRIGGER_EBSCO_ACTION,
     LOGOUT
 } from '../../../lib/actions';
 
@@ -35,8 +34,7 @@ describe('reducers articleSearchResult', function () {
             ARTICLE.SEARCH_TERM,
             ARTICLE.LIMIT_SEARCH,
             RELOAD_HISTORY,
-            LOGOUT,
-            TRIGGER_EBSCO_ACTION
+            LOGOUT
         ];
 
         actionTypes.map((type) => assert.deepEqual(

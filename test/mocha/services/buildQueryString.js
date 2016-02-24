@@ -69,7 +69,7 @@ describe('buildQueryString', function () {
     });
 
     it('should return ignore activeFacets is it is set but empty', function () {
-        assert.equal(buildQueryString({ activeFacets: [] }), '');
+        assert.equal(buildQueryString({ activeFacets: {} }), '');
     });
 
     it('should separate different delimiter with "&"', function () {
