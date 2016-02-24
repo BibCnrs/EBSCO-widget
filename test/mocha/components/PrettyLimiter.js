@@ -6,7 +6,7 @@ describe('PrettyLimiter', function () {
     it('should display limiter', function () {
         const data = {
             fullText: true,
-            peerReviewed: true,
+            peerReviewedArticle: true,
             language: 'french',
             publicationDate: {
                 from: '1000-01',
@@ -41,7 +41,7 @@ describe('PrettyLimiter', function () {
     it('should ignore undefined value', function () {
         const component = getComponent({
             fullText: true,
-            peerReviewed: undefined
+            peerReviewedArticle: undefined
         });
         const span = component.find('span');
         assert.deepEqual(span.text(), 'Texte intégral');
@@ -50,7 +50,7 @@ describe('PrettyLimiter', function () {
     it('should ignore null value', function () {
         const component = getComponent({
             fullText: true,
-            peerReviewed: null
+            peerReviewedArticle: null
         });
         const span = component.find('span');
         assert.deepEqual(span.text(), 'Texte intégral');
@@ -59,7 +59,7 @@ describe('PrettyLimiter', function () {
     it('should ignore false value', function () {
         const component = getComponent({
             fullText: true,
-            peerReviewed: false
+            peerReviewedArticle: false
         });
         const span = component.find('span');
         assert.deepEqual(span.text(), 'Texte intégral');

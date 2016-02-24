@@ -1,22 +1,22 @@
-import limiters from '../../../lib/reducers/limiters';
+import articleLimiters from '../../../lib/reducers/articleLimiters';
 import {
     ARTICLE,
     RESET,
     LOGOUT
 } from '../../../lib/actions';
 
-describe('reducers limiters', function () {
+describe('reducers articleLimiters', function () {
 
     describe('default action', function () {
 
         it ('should default state to default limiter value', function () {
-            assert.deepEqual(limiters(undefined, { type: 'OTHER_ACTION_TYPE' }), {
+            assert.deepEqual(articleLimiters(undefined, { type: 'OTHER_ACTION_TYPE' }), {
                 fullText: true,
                 publicationDate: {
                     from: 1000,
                     to: new Date().getFullYear() + 1
                 },
-                peerReviewed: false,
+                peerReviewedArticle: false,
                 author: null,
                 journalName: null,
                 title: null,
@@ -26,14 +26,14 @@ describe('reducers limiters', function () {
 
         it ('should return default state if action type is LOGOUT', function () {
             assert.deepEqual(
-                limiters(
+                articleLimiters(
                     {
                         fullText: false,
                         publicationDate: {
                             from: 2000,
                             to: 2015
                         },
-                        peerReviewed: true,
+                        peerReviewedArticle: true,
                         author: 'Aasimov',
                         journalName: 'science',
                         title: 'robotic law',
@@ -47,7 +47,7 @@ describe('reducers limiters', function () {
                         from: 1000,
                         to: new Date().getFullYear() + 1
                     },
-                    peerReviewed: false,
+                    peerReviewedArticle: false,
                     author: null,
                     journalName: null,
                     title: null,
@@ -56,7 +56,7 @@ describe('reducers limiters', function () {
         });
 
         it ('should return state unchanged if one was passed', function () {
-            assert.deepEqual(limiters({ state: 'state'}, { type: 'OTHER_ACTION_TYPE' }), {
+            assert.deepEqual(articleLimiters({ state: 'state'}, { type: 'OTHER_ACTION_TYPE' }), {
                 state: 'state'
             });
         });
@@ -64,8 +64,8 @@ describe('reducers limiters', function () {
 
     describe('ARTICLE_CHANGE_LIMITER', function () {
         it('should set action.limiter to action.value', function () {
-            assert.equal(limiters({ fullText: true }, { type: ARTICLE.CHANGE_LIMITER, limiter: 'fullText', value: false }).fullText, false);
-            const newState = limiters({
+            assert.equal(articleLimiters({ fullText: true }, { type: ARTICLE.CHANGE_LIMITER, limiter: 'fullText', value: false }).fullText, false);
+            const newState = articleLimiters({
                 publicationDate: {
                     from: 1000,
                     to: 2016
@@ -83,13 +83,13 @@ describe('reducers limiters', function () {
     describe('RESET', function () {
 
         it ('should return all value to default except for fullText', function () {
-            assert.deepEqual(limiters({
+            assert.deepEqual(articleLimiters({
                 fullText: false,
                 publicationDate: {
                     from: 2010,
                     to: 2012
                 },
-                peerReviewed: true,
+                peerReviewedArticle: true,
                 author: 'author',
                 journalName: 'the journal',
                 title: 'a title',
@@ -100,7 +100,7 @@ describe('reducers limiters', function () {
                     from: 1000,
                     to: new Date().getFullYear() + 1
                 },
-                peerReviewed: false,
+                peerReviewedArticle: false,
                 author: null,
                 journalName: null,
                 title: null,

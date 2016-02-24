@@ -13,9 +13,12 @@ describe('buildQueryString', function () {
         assert.equal(buildQueryString({ fullText: false }), '');
     });
 
+    it('should ignore peerReviewedArticle if itis false', function () {
+        assert.equal(buildQueryString({ peerReviewedArticle: false }), '');
+    });
 
-    it('should ignore peerReviewed if itis false', function () {
-        assert.equal(buildQueryString({ peerReviewed: false }), '');
+    it('should ignore peerReviewedPublication if itis false', function () {
+        assert.equal(buildQueryString({ peerReviewedPublication: false }), '');
     });
 
     it('should ignore unknown limiters', function () {
@@ -26,8 +29,12 @@ describe('buildQueryString', function () {
         assert.equal(buildQueryString({ fullText: true }), 'FT=Y');
     });
 
-    it('should return RV=Y, if peerReviewed is true', function () {
-        assert.equal(buildQueryString({ peerReviewed: true }), 'RV=Y');
+    it('should return RV=Y, if peerReviewedArticle is true', function () {
+        assert.equal(buildQueryString({ peerReviewedArticle: true }), 'RV=Y');
+    });
+
+    it('should return RV3=Y, if peerReviewedPublication is true', function () {
+        assert.equal(buildQueryString({ peerReviewedPublication: true }), 'RV3=Y');
     });
 
     it('should return DT1=${to}/${from}, if publicationDate is set', function () {

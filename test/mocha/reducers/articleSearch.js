@@ -1,5 +1,5 @@
 import getSearch, { getDefaultState } from '../../../lib/reducers/articleSearch';
-import { defaultState as defaultLimiters } from '../../../lib/reducers/limiters';
+import { defaultState as defaultLimiters } from '../../../lib/reducers/articleLimiters';
 import {
     ARTICLE,
     LOGOUT,
