@@ -1,4 +1,4 @@
-import facets from '../../../lib/reducers/facets';
+import articleFacets from '../../../lib/reducers/articleFacets';
 import {
     ARTICLE,
     LOGOUT,
@@ -6,22 +6,22 @@ import {
     RESTORE_HISTORY
 } from '../../../lib/actions';
 
-describe('reducers facets', function () {
+describe('reducers articleFacets', function () {
 
     it ('should default state to empty literal if none given', function () {
-        assert.deepEqual(facets(undefined, { type: 'OTHER_ACTION_TYPE' }), {});
+        assert.deepEqual(articleFacets(undefined, { type: 'OTHER_ACTION_TYPE' }), {});
     });
 
     it ('should return default state if action type is LOGOUT', function () {
-        assert.deepEqual(facets({ facet1: 'facet1',  facet2: 'facet2' }, { type: LOGOUT }), {});
+        assert.deepEqual(articleFacets({ facet1: 'facet1',  facet2: 'facet2' }, { type: LOGOUT }), {});
     });
 
     it('should return given state if not concernerd by ACTION', function () {
-        assert.deepEqual(facets('currentState', { type: 'OTHER_ACTION_TYPE' }), 'currentState');
+        assert.deepEqual(articleFacets('currentState', { type: 'OTHER_ACTION_TYPE' }), 'currentState');
     });
 
-    it('should return parsed action.reponse.facets and action.response.activeFacets if action type is SEARCH_SUCCESS', function () {
-        assert.deepEqual(facets({}, {
+    it('should return parsed action.reponse.articleFacets and action.response.activeFacets if action type is SEARCH_SUCCESS', function () {
+        assert.deepEqual(articleFacets({}, {
             type: ARTICLE.SEARCH_SUCCESS,
             response: {
                 facets: [{
@@ -107,7 +107,7 @@ describe('reducers facets', function () {
 
     it('should return parsed action.query.activeFacets if action.type is RESTORE_HISTORY', function () {
         const testType = (type) => {
-            assert.deepEqual(facets({}, {
+            assert.deepEqual(articleFacets({}, {
                 type: type,
                 query: {
                     activeFacets: {
