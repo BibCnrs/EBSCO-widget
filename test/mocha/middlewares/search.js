@@ -1,35 +1,34 @@
 import { search } from '../../../lib/middlewares/search';
 import actions, {
-    SEARCH_TERM,
-    LIMIT_SEARCH,
-    RESET,
-    RELOAD_HISTORY,
-    PAGE_LOAD
+    ARTICLE,
+    RELOAD_HISTORY
 } from '../../../lib/actions';
 
 describe('search middleware', function () {
     let store, dispatchedAction, next, nextAction;
     const state = {
         url: 'http://apiroute',
-        search: {
-            term: 'searched term',
-            domain: 'vie',
-            limiters: {
-                fullText: true,
-                publicationDate: {
-                    from: 1000,
-                    to: 2016
+        article: {
+            search: {
+                term: 'searched term',
+                domain: 'vie',
+                limiters: {
+                    fullText: true,
+                    publicationDate: {
+                        from: 1000,
+                        to: 2016
+                    }
                 }
-            }
+            },
+            searchResult: {
+                currentPage: 5
+            },
+            facets: {},
+            activeFacets: {}
         },
         login: {
             token: 'token'
-        },
-        searchResult: {
-            currentPage: 5
-        },
-        facets: {},
-        activeFacets: {}
+        }
     };
 
     beforeEach(function () {
@@ -48,7 +47,7 @@ describe('search middleware', function () {
         };
     });
 
-    it('should only trigger received action if it is not one of CHANGE_FULLTEXT SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
+    it('should only trigger received action if it is not one of CHANGE_FULLTEXT ARTICLE_SEARCH_TERM LIMIT_PUBLICATION_DATE', function () {
         const action = {
             type: 'DONT_CARE'
         };
@@ -64,14 +63,14 @@ describe('search middleware', function () {
         };
 
         search(store, next, action);
-        const { from, to } = state.search.limiters.publicationDate;
+        const { from, to } = state.article.search.limiters.publicationDate;
         assert.deepEqual(nextAction, [
             action
         ]);
 
         assert.deepEqual(dispatchedAction, [
-            actions.search(
-                `${state.url}/${state.search.domain}/search?term=${encodeURIComponent(state.search.term)}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
+            actions.article.search(
+                `${state.url}/${state.article.search.domain}/search/article?term=${encodeURIComponent(state.article.search.term)}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
                 state.login.token,
                 {
                     term: 'searched term',
@@ -90,12 +89,12 @@ describe('search middleware', function () {
         ]);
     };
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is SEARCH_TERM', function () {
-        testType(SEARCH_TERM);
+    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_SEARCH_TERM', function () {
+        testType(ARTICLE.SEARCH_TERM);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is LIMIT_SEARCH', function () {
-        testType(LIMIT_SEARCH);
+    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_LIMIT_SEARCH', function () {
+        testType(ARTICLE.LIMIT_SEARCH);
     });
 
     it('should trigger received action and SEARCH action with info gotten from store if it is RELOAD_HISTORY', function () {
@@ -103,19 +102,22 @@ describe('search middleware', function () {
     });
 
     it('should trigger received action and SEARCH action with info gotten from store if it is PAGE_LOAD', function () {
-        testType(PAGE_LOAD);
+        testType(ARTICLE.PAGE_LOAD);
     });
 
     it('should trigger only received action if it is PAGE_LOAD and the currentPage is in the store', function () {
         store.getState = () => ({
             ...state,
-            searchResult: {
-                currentPage: 5,
-                5: { page: 'data' }
+            article: {
+                ...state.article,
+                searchResult: {
+                    currentPage: 5,
+                    5: { page: 'data' }
+                }
             }
         });
         const action = {
-            type: PAGE_LOAD,
+            type: ARTICLE.PAGE_LOAD,
             page: 5
         };
 
