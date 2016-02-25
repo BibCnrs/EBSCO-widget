@@ -1,7 +1,6 @@
 import articleLimiters from '../../../lib/reducers/articleLimiters';
 import {
     ARTICLE,
-    RESET,
     LOGOUT
 } from '../../../lib/actions';
 
@@ -94,7 +93,7 @@ describe('reducers articleLimiters', function () {
                 journalName: 'the journal',
                 title: 'a title',
                 language: ['javanese']
-            }, { type: RESET }), {
+            }, { type: ARTICLE.RESET }), {
                 fullText: false,
                 publicationDate: {
                     from: 1000,
