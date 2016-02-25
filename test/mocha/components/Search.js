@@ -21,25 +21,12 @@ describe('Search', function () {
             component = enzyme.shallow(<Search {...props} />);
         });
 
-        it('should set input value to term props', function () {
-            const input = component.find('Input');
-
-            assert.equal(input.props().value, props.term);
-        });
-
         it('should set fetchButton to ', function () {
             const fetchButton = component.find('FetchButton');
             const { icon, status, error } = fetchButton.props();
             assert.equal(icon, 'search');
             assert.equal(status, 'NONE');
             assert.equal(error, undefined);
-        });
-
-        it('should set select value to domain', function () {
-            const input = component.find('Input');
-            const select = input.props().buttonAfter;
-            assert.equal(select.props.title, props.domain);
-            assert.deepEqual(select.props.children.map((c) => c.props.value), props.domains);
         });
     });
 

@@ -71,8 +71,7 @@ describe('reducers search', function () {
         );
         assert.deepEqual(searchState, {
             term: 'my search',
-            status: 'PENDING',
-            searchedTerm: undefined
+            status: 'PENDING'
         });
     });
 
@@ -90,7 +89,6 @@ describe('reducers search', function () {
         assert.deepEqual(searchState, {
             status: 'DONE',
             term: 'aids',
-            searchedTerm: 'aids',
             activeFacets: []
         });
     });
@@ -120,8 +118,7 @@ describe('reducers search', function () {
         );
         assert.deepEqual(searchState, {
             status: 'state',
-            domain: 'test',
-            searchedTerm: undefined
+            domain: 'test'
         });
     });
 
@@ -145,7 +142,7 @@ describe('reducers search', function () {
         assert.deepEqual(searchState, { status: 'state', domain: 'first'});
     });
 
-    it('should set searchedTerm to undefined and return default limiter and facet if action is RESET', function () {
+    it('should return default limiter and facet if action is RESET', function () {
         const searchState = search(
             { status: 'state' },
             { type: RESET, response: { domains: [ 'first', 'second' ] } }
@@ -153,8 +150,7 @@ describe('reducers search', function () {
         assert.deepEqual(searchState, {
             status: 'state',
             limiters: defaultLimiters,
-            activeFacets: [],
-            searchedTerm: undefined
+            activeFacets: []
         });
     });
 
