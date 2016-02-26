@@ -70,7 +70,7 @@ describe('search middleware', function () {
 
         assert.deepEqual(dispatchedAction, [
             actions.article.search(
-                `${state.url}/${state.article.search.domain}/search/article?term=${encodeURIComponent(state.article.search.term)}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
+                `${state.url}/${state.article.search.domain}/article/search?term=${encodeURIComponent(state.article.search.term)}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
                 state.login.token,
                 {
                     term: 'searched term',
