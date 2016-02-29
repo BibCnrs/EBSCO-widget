@@ -7,7 +7,7 @@ describe('PrettyLimiter', function () {
         const data = {
             fullText: true,
             peerReviewedArticle: true,
-            language: 'french',
+            language: ['french', 'english'],
             publicationDate: {
                 from: '1000-01',
                 to: '2015-01'
@@ -21,7 +21,7 @@ describe('PrettyLimiter', function () {
         assert.deepEqual(span.text().split('; '), [
             'Texte intégral',
             'Relu par un comité de lecture',
-            'Langue: french',
+            'Langue: french, english',
             'Date de publication: 1000-01/2015-01',
             'Auteur: john',
             'Journal: le monde',
