@@ -17,14 +17,22 @@ describe('reducers articleSearchResult', function () {
                     maxPage: 10,
                     totalHits: 200,
                     results: ['results data'],
-                    currentPage: 2
+                    currentPage: 2,
+                    dateRange: {
+                        min: 1515,
+                        max: 2015
+                    }
                 }
             }),
             {
                 maxPage: 10,
                 totalHits: 200,
                 2: ['results data'],
-                currentPage: 2
+                currentPage: 2,
+                dateRange: {
+                    min: 1515,
+                    max: 2015
+                }
             }
         );
     });

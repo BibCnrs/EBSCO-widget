@@ -12,8 +12,8 @@ describe('reducers articleLimiters', function () {
             assert.deepEqual(articleLimiters(undefined, { type: 'OTHER_ACTION_TYPE' }), {
                 fullText: true,
                 publicationDate: {
-                    from: 1000,
-                    to: new Date().getFullYear() + 1
+                    from: null,
+                    to: null
                 },
                 peerReviewedArticle: false,
                 author: null,
@@ -43,8 +43,8 @@ describe('reducers articleLimiters', function () {
                 {
                     fullText: true,
                     publicationDate: {
-                        from: 1000,
-                        to: new Date().getFullYear() + 1
+                        from: null,
+                        to: null
                     },
                     peerReviewedArticle: false,
                     author: null,
@@ -96,8 +96,8 @@ describe('reducers articleLimiters', function () {
             }, { type: ARTICLE.RESET }), {
                 fullText: false,
                 publicationDate: {
-                    from: 1000,
-                    to: new Date().getFullYear() + 1
+                    from: null,
+                    to: null
                 },
                 peerReviewedArticle: false,
                 author: null,
