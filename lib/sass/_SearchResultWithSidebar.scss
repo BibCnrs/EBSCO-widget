@@ -9,6 +9,13 @@
         width: 300px;
         float: left;
     }
+    .search-result {
+        .sort-selector {
+            position: absolute;
+            right: 0;
+            margin-top: 15px;
+        }
+    }
     &.no-sidebar {
         .search-result {
             margin-left: 30px;
