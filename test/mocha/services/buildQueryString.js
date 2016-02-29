@@ -57,7 +57,7 @@ describe('buildQueryString', function () {
     });
 
     it('should return LA99=language, if language is set', function () {
-        assert.equal(buildQueryString({ language: [{ value: 'Javanese'}, { value: 'Ni' }] }), 'LA99=Javanese&LA99=Ni');
+        assert.equal(buildQueryString({ language: ['Javanese', 'Ni'] }), 'LA99=Javanese&LA99=Ni');
     });
 
     it('should return currentPage=currentPage, if currentPage is set', function () {
@@ -70,6 +70,10 @@ describe('buildQueryString', function () {
 
     it('should return ignore activeFacets is it is set but empty', function () {
         assert.equal(buildQueryString({ activeFacets: {} }), '');
+    });
+
+    it('should add sort=value if sort is set', function () {
+        assert.equal(buildQueryString({ sort: 'date' }), 'sort=date');
     });
 
     it('should separate different delimiter with "&"', function () {

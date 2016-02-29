@@ -15,7 +15,9 @@ describe('Search', function () {
                 term: 'word',
                 status: 'NONE',
                 domains: ['vie', 'shs'],
-                domain: 'vie'
+                domain: 'vie',
+                sort: 'relevance',
+                availableSort: ['relevance', 'date']
             };
 
             component = enzyme.shallow(<Search {...props} />);
@@ -39,7 +41,9 @@ describe('Search', function () {
                 term: 'search',
                 status: 'PENDING',
                 domains: ['vie', 'shs'],
-                domain: 'vie'
+                domain: 'vie',
+                sort: 'relevance',
+                availableSort: ['relevance', 'date']
             };
 
             component = enzyme.shallow(<Search {...props} />);
@@ -64,7 +68,9 @@ describe('Search', function () {
                 status: 'ERROR',
                 error: 'boom',
                 domains: ['vie', 'shs'],
-                domain: 'vie'
+                domain: 'vie',
+                sort: 'relevance',
+                availableSort: ['relevance', 'date']
             };
 
             component = enzyme.shallow(<Search {...props} />);
@@ -98,7 +104,9 @@ describe('Search', function () {
                 domains: [ 'vie', 'shs'],
                 domain: 'vie',
                 term: 'searched term',
-                status: 'NONE'
+                status: 'NONE',
+                sort: 'relevance',
+                availableSort: ['relevance', 'date']
             };
             component = enzyme.mount(<Search {...props}/>);
         });
@@ -127,7 +135,9 @@ describe('Search', function () {
                     domain: 'vie',
                     term: 'searched term',
                     seachedTerm: 'searched term',
-                    status: 'NONE'
+                    status: 'NONE',
+                    sort: 'relevance',
+                    availableSort: ['relevance', 'date']
                 };
                 component = enzyme.mount(<Search {...props}/>);
                 component.find('.fetch-button').find('button').simulate('click');

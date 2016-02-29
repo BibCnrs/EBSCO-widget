@@ -1,11 +1,9 @@
-import getSearch, { getDefaultState } from '../../../lib/reducers/articleSearch';
-import { defaultState as defaultLimiters } from '../../../lib/reducers/articleLimiters';
+import publicationSearch, { getDefaultState } from '../../../lib/reducers/publicationSearch';
+import { defaultState as defaultLimiters } from '../../../lib/reducers/publicationLimiters';
 import {
-    ARTICLE,
+    PUBLICATION,
     LOGOUT,
-    LOGIN_SUCCESS,
-    RESTORE_HISTORY,
-    RELOAD_HISTORY
+    LOGIN_SUCCESS
 } from '../../../lib/actions';
 
 const {
@@ -16,13 +14,9 @@ const {
     DOMAIN_CHANGE,
     RESET,
     CHANGE_SORT
-} = ARTICLE;
+} = PUBLICATION;
 
-describe('reducers articleSearch', function () {
-    let search;
-    before(function () {
-        search = getSearch();
-    });
+describe('reducers publicationSearch', function () {
 
     describe('getDefaultState', function () {
 
@@ -41,28 +35,13 @@ describe('reducers articleSearch', function () {
             });
         });
 
-        it('should use term if given', function () {
-            window.sessionStorage = {
-                getItem: () => null
-            };
-            const defaultState = getDefaultState('term');
-            assert.deepEqual(defaultState, {
-                domain: undefined,
-                status: 'NONE',
-                term: 'term',
-                limiters: defaultLimiters,
-                activeFacets: [],
-                sort: 'relevance'
-            });
-        });
-
-        it('should use domain, if given and present in domains', function () {
+        it('should use first domain of sessionStorage, if given and present in domains', function () {
             window.sessionStorage = {
                 getItem: (name) => name === 'domains' ? '["list", "of", "domains", "domain"]' : null
             };
-            const defaultState = getDefaultState(null, 'domain');
+            const defaultState = getDefaultState();
             assert.deepEqual(defaultState, {
-                domain: 'domain',
+                domain: 'list',
                 status: 'NONE',
                 term: '',
                 limiters: defaultLimiters,
@@ -73,8 +52,8 @@ describe('reducers articleSearch', function () {
 
     });
 
-    it('should return PENDING if action is ARTICLE_SEARCH_PENDING', function () {
-        const searchState = search(
+    it('should return PENDING if action is PUBLICATION_SEARCH_PENDING', function () {
+        const searchState = publicationSearch(
             { term: 'my search', status: 'NONE' },
             { type: SEARCH_PENDING }
         );
@@ -84,8 +63,8 @@ describe('reducers articleSearch', function () {
         });
     });
 
-    it('should return DONE if action is ARTICLE_SEARCH_SUCCESS', function () {
-        const searchState = search(
+    it('should return DONE if action is PUBLICATION_SEARCH_SUCCESS', function () {
+        const searchState = publicationSearch(
             { status: 'NONE', term: 'aids', activeFacets: [] },
             {
                 type: SEARCH_SUCCESS,
@@ -102,8 +81,8 @@ describe('reducers articleSearch', function () {
         });
     });
 
-    it('should return DONE if action is ARTICLE_SEARCH_ERROR', function () {
-        const searchState = search(
+    it('should return DONE if action is PUBLICATION_SEARCH_ERROR', function () {
+        const searchState = publicationSearch(
             { status: 'NONE' },
             { type: SEARCH_ERROR, error: { message: 'boom' } }
         );
@@ -112,16 +91,16 @@ describe('reducers articleSearch', function () {
         });
     });
 
-    it('should update term with action.term if action is ARTICLE_CHANGE_TERM', function () {
-        const searchState = search(
+    it('should update term with action.term if action is PUBLICATION_CHANGE_TERM', function () {
+        const searchState = publicationSearch(
             { status: 'state' },
             { type: CHANGE_TERM, term: 'searched term' }
         );
         assert.deepEqual(searchState, { status: 'state', term: 'searched term' });
     });
 
-    it('should update domain with action.domain if action is ARTICLE_DOMAIN_CHANGE', function () {
-        const searchState = search(
+    it('should update domain with action.domain if action is PUBLICATION_DOMAIN_CHANGE', function () {
+        const searchState = publicationSearch(
             { status: 'state' },
             { type: DOMAIN_CHANGE, domain: 'test' }
         );
@@ -135,7 +114,7 @@ describe('reducers articleSearch', function () {
         window.sessionStorage = {
             getItem: () => null
         };
-        const searchState = search(
+        const searchState = publicationSearch(
             { status: 'state' },
             { type: LOGOUT }
         );
@@ -144,15 +123,15 @@ describe('reducers articleSearch', function () {
     });
 
     it('should add first domains to state if action is LOGIN_SUCCESS', function () {
-        const searchState = search(
+        const searchState = publicationSearch(
             { status: 'state' },
             { type: LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
         );
         assert.deepEqual(searchState, { status: 'state', domain: 'first'});
     });
 
-    it('should return default sort, limiter and facet if action is ARTICLE_RESET', function () {
-        const searchState = search(
+    it('should return default sort, limiter and facet if action is PUBLICATION_RESET', function () {
+        const searchState = publicationSearch(
             { status: 'state' },
             { type: RESET, response: { domains: [ 'first', 'second' ] } }
         );
@@ -164,25 +143,8 @@ describe('reducers articleSearch', function () {
         });
     });
 
-    it('should return action.query if action is RESTORE_HISTORY or RELOAD_HISTORY', function () {
-        assert.deepEqual(
-            search(
-                { status: 'state' },
-                { type: RESTORE_HISTORY, query: 'replace' }
-            ),
-            'replace'
-        );
-        assert.deepEqual(
-            search(
-                { status: 'state' },
-                { type: RELOAD_HISTORY, query: 'replace' }
-            ),
-            'replace'
-        );
-    });
-
-    it('should return state with sort set as action.value if action is ARTICLE_CHANGE_SORT', function () {
-        const searchState = search(
+    it('should return state with sort set as action.value if action is PUBLICATION_CHANGE_SORT', function () {
+        const searchState = publicationSearch(
             { status: 'state' },
             { type: CHANGE_SORT, value: 'date' }
         );
@@ -190,18 +152,18 @@ describe('reducers articleSearch', function () {
     });
 
     it('should return passed state with default limiter if action is none of the above', function () {
-        const searchState = search(
+        const searchState = publicationSearch(
             { status: 'state' },
             { type: 'OTHER_ACTION_TYPE' }
         );
         assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, activeFacets: [] });
     });
 
-    it('should default status to NONE and term to "" if none given', function () {
+    it('should default status to NONE and term to ""', function () {
         window.sessionStorage = {
             getItem: () => null
         };
-        const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
+        const searchState = publicationSearch(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
             term: '',
             status: 'NONE',
@@ -210,25 +172,6 @@ describe('reducers articleSearch', function () {
             activeFacets: [],
             sort: 'relevance'
         });
-        delete window.sessionStorage;
-    });
-
-    it('default term and domain to passed term and domain', function () {
-        window.sessionStorage = {
-            getItem: (name) => name === 'domains' ? '["test"]' : null
-        };
-        search = getSearch('geronimo', 'test');
-        assert.deepEqual(
-            search(undefined, { type: 'OTHER_ACTION_TYPE' }),
-            {
-                term: 'geronimo',
-                domain: 'test',
-                status: 'NONE',
-                limiters: defaultLimiters,
-                activeFacets: [],
-                sort: 'relevance'
-            }
-        );
         delete window.sessionStorage;
     });
 });
