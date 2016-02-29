@@ -72,6 +72,10 @@ describe('buildQueryString', function () {
         assert.equal(buildQueryString({ activeFacets: {} }), '');
     });
 
+    it('should add sort=value if sort is set', function () {
+        assert.equal(buildQueryString({ sort: 'date' }), 'sort=date');
+    });
+
     it('should separate different delimiter with "&"', function () {
         assert.equal(buildQueryString({
             fullText: true,
