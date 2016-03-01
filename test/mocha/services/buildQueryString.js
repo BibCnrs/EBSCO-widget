@@ -5,8 +5,8 @@ describe('buildQueryString', function () {
         assert.equal(buildQueryString({}), '');
     });
 
-    it('should add term=value', function () {
-        assert.equal(buildQueryString({ term: 'my search' }), 'term=my%20search');
+    it('should add query=[{term: value}]', function () {
+        assert.equal(buildQueryString({ term: 'my search' }), `queries=${encodeURIComponent(JSON.stringify([{ term: 'my search' }]))}`);
     });
 
     it('should ignore fullText if itis false', function () {
