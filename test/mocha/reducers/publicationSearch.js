@@ -29,9 +29,52 @@ describe('reducers publicationSearch', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: '',
+                field: null,
                 limiters: defaultLimiters,
                 activeFacets: [],
-                sort: 'relevance'
+                sort: 'relevance',
+                availableFields: [
+                    {
+                        label: 'Tout',
+                        value: null
+                    }, {
+                        label: `Auteur`,
+                        value: 'AU'
+                    }, {
+                        label: `Titre`,
+                        value: 'TI'
+                    }, {
+                        label: `Sujet`,
+                        value: 'SU'
+                    }, {
+                        label: `ISSN`,
+                        value: 'IS'
+                    }, {
+                        label: `ISBN`,
+                        value: 'IB'
+                    }, {
+                        label: `Resource`,
+                        value: 'PT'
+                    }, {
+                        label: `Editeur`,
+                        value: 'PB'
+                    }
+                ],
+                availableSort: [
+                    {
+                        label: 'pertinence',
+                        value: 'relevance'
+                    }, {
+                        label: 'titre (A à Z)',
+                        value: 'title'
+                    }, {
+                        label: `date de publication décroissante`,
+                        value: 'date'
+                    }, {
+                        label: `date de publication croissante`,
+                        value: 'date2'
+                    }
+                ]
             });
         });
 
@@ -44,9 +87,52 @@ describe('reducers publicationSearch', function () {
                 domain: 'list',
                 status: 'NONE',
                 term: '',
+                field: null,
                 limiters: defaultLimiters,
                 activeFacets: [],
-                sort: 'relevance'
+                sort: 'relevance',
+                availableFields: [
+                    {
+                        label: 'Tout',
+                        value: null
+                    }, {
+                        label: `Auteur`,
+                        value: 'AU'
+                    }, {
+                        label: `Titre`,
+                        value: 'TI'
+                    }, {
+                        label: `Sujet`,
+                        value: 'SU'
+                    }, {
+                        label: `ISSN`,
+                        value: 'IS'
+                    }, {
+                        label: `ISBN`,
+                        value: 'IB'
+                    }, {
+                        label: `Resource`,
+                        value: 'PT'
+                    }, {
+                        label: `Editeur`,
+                        value: 'PB'
+                    }
+                ],
+                availableSort: [
+                    {
+                        label: 'pertinence',
+                        value: 'relevance'
+                    }, {
+                        label: 'titre (A à Z)',
+                        value: 'title'
+                    }, {
+                        label: `date de publication décroissante`,
+                        value: 'date'
+                    }, {
+                        label: `date de publication croissante`,
+                        value: 'date2'
+                    }
+                ]
             });
         });
 
@@ -166,11 +252,54 @@ describe('reducers publicationSearch', function () {
         const searchState = publicationSearch(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
             term: '',
+            field: null,
             status: 'NONE',
             domain: undefined,
             limiters: defaultLimiters,
             activeFacets: [],
-            sort: 'relevance'
+            sort: 'relevance',
+            availableFields: [
+                {
+                    label: 'Tout',
+                    value: null
+                }, {
+                    label: `Auteur`,
+                    value: 'AU'
+                }, {
+                    label: `Titre`,
+                    value: 'TI'
+                }, {
+                    label: `Sujet`,
+                    value: 'SU'
+                }, {
+                    label: `ISSN`,
+                    value: 'IS'
+                }, {
+                    label: `ISBN`,
+                    value: 'IB'
+                }, {
+                    label: `Resource`,
+                    value: 'PT'
+                }, {
+                    label: `Editeur`,
+                    value: 'PB'
+                }
+            ],
+            availableSort: [
+                {
+                    label: 'pertinence',
+                    value: 'relevance'
+                }, {
+                    label: 'titre (A à Z)',
+                    value: 'title'
+                }, {
+                    label: `date de publication décroissante`,
+                    value: 'date'
+                }, {
+                    label: `date de publication croissante`,
+                    value: 'date2'
+                }
+            ]
         });
         delete window.sessionStorage;
     });
