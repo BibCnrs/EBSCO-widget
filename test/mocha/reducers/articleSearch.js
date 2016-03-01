@@ -35,6 +35,7 @@ describe('reducers articleSearch', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: '',
+                field: null,
                 limiters: defaultLimiters,
                 activeFacets: [],
                 sort: 'relevance'
@@ -50,6 +51,7 @@ describe('reducers articleSearch', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: 'term',
+                field: null,
                 limiters: defaultLimiters,
                 activeFacets: [],
                 sort: 'relevance'
@@ -65,6 +67,7 @@ describe('reducers articleSearch', function () {
                 domain: 'domain',
                 status: 'NONE',
                 term: '',
+                field: null,
                 limiters: defaultLimiters,
                 activeFacets: [],
                 sort: 'relevance'
@@ -204,6 +207,7 @@ describe('reducers articleSearch', function () {
         const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
             term: '',
+            field: null,
             status: 'NONE',
             domain: undefined,
             limiters: defaultLimiters,
@@ -222,6 +226,7 @@ describe('reducers articleSearch', function () {
             search(undefined, { type: 'OTHER_ACTION_TYPE' }),
             {
                 term: 'geronimo',
+                field: null,
                 domain: 'test',
                 status: 'NONE',
                 limiters: defaultLimiters,
