@@ -1,7 +1,7 @@
-import Search from '../../../lib/components/Search';
+import PublicationSearch from '../../../lib/components/PublicationSearch';
 import FetchButton from '../../../lib/components/FetchButton';
 
-describe('Search', function () {
+describe('PublicationSearch', function () {
     let component;
 
     describe('status: NONE', function () {
@@ -20,7 +20,7 @@ describe('Search', function () {
                 availableSort: ['relevance', 'date']
             };
 
-            component = enzyme.shallow(<Search {...props} />);
+            component = enzyme.shallow(<PublicationSearch {...props} />);
         });
 
         it('should set fetchButton to ', function () {
@@ -46,7 +46,7 @@ describe('Search', function () {
                 availableSort: ['relevance', 'date']
             };
 
-            component = enzyme.shallow(<Search {...props} />);
+            component = enzyme.shallow(<PublicationSearch {...props} />);
         });
 
         it('fetchButton should be PENDING if props.search.status is PENDING', function () {
@@ -73,7 +73,7 @@ describe('Search', function () {
                 availableSort: ['relevance', 'date']
             };
 
-            component = enzyme.shallow(<Search {...props} />);
+            component = enzyme.shallow(<PublicationSearch {...props} />);
         });
 
         it('fetchButton should be ERROR if props.search.status is ERROR', function () {
@@ -108,7 +108,7 @@ describe('Search', function () {
                 sort: 'relevance',
                 availableSort: ['relevance', 'date']
             };
-            component = enzyme.mount(<Search {...props}/>);
+            component = enzyme.mount(<PublicationSearch {...props}/>);
         });
 
         describe('onSearchTerm', function () {
@@ -139,7 +139,7 @@ describe('Search', function () {
                     sort: 'relevance',
                     availableSort: ['relevance', 'date']
                 };
-                component = enzyme.mount(<Search {...props}/>);
+                component = enzyme.mount(<PublicationSearch {...props}/>);
                 component.find('.fetch-button').find('button').simulate('click');
                 assert.equal(term, 'searched term');
                 assert.equal(domain, 'vie');
