@@ -35,9 +35,49 @@ describe('reducers articleSearch', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: '',
+                field: null,
                 limiters: defaultLimiters,
                 activeFacets: [],
-                sort: 'relevance'
+                sort: 'relevance',
+                availableSort: [
+                    {
+                        label: 'pertinence',
+                        value: 'relevance'
+                    }, {
+                        label: `date de publication décroissante`,
+                        value: 'date'
+                    }, {
+                        label: `date de publication croissante`,
+                        value: 'date2'
+                    }
+                ],
+                availableFields: [
+                    {
+                        label: 'Tout',
+                        value: null
+                    }, {
+                        label: `Auteur`,
+                        value: 'AU'
+                    }, {
+                        label: `Titre`,
+                        value: 'TI'
+                    }, {
+                        label: `Sujet`,
+                        value: 'SU'
+                    }, {
+                        label: `Source`,
+                        value: 'S0'
+                    }, {
+                        label: `Résumé`,
+                        value: 'AB'
+                    }, {
+                        label: `ISSN`,
+                        value: 'IS'
+                    }, {
+                        label: `ISBN`,
+                        value: 'IB'
+                    }
+                ]
             });
         });
 
@@ -50,9 +90,49 @@ describe('reducers articleSearch', function () {
                 domain: undefined,
                 status: 'NONE',
                 term: 'term',
+                field: null,
+                availableFields: [
+                    {
+                        label: 'Tout',
+                        value: null
+                    }, {
+                        label: `Auteur`,
+                        value: 'AU'
+                    }, {
+                        label: `Titre`,
+                        value: 'TI'
+                    }, {
+                        label: `Sujet`,
+                        value: 'SU'
+                    }, {
+                        label: `Source`,
+                        value: 'S0'
+                    }, {
+                        label: `Résumé`,
+                        value: 'AB'
+                    }, {
+                        label: `ISSN`,
+                        value: 'IS'
+                    }, {
+                        label: `ISBN`,
+                        value: 'IB'
+                    }
+                ],
                 limiters: defaultLimiters,
                 activeFacets: [],
-                sort: 'relevance'
+                sort: 'relevance',
+                availableSort: [
+                    {
+                        label: 'pertinence',
+                        value: 'relevance'
+                    }, {
+                        label: `date de publication décroissante`,
+                        value: 'date'
+                    }, {
+                        label: `date de publication croissante`,
+                        value: 'date2'
+                    }
+                ]
             });
         });
 
@@ -65,9 +145,49 @@ describe('reducers articleSearch', function () {
                 domain: 'domain',
                 status: 'NONE',
                 term: '',
+                field: null,
+                availableFields: [
+                    {
+                        label: 'Tout',
+                        value: null
+                    }, {
+                        label: `Auteur`,
+                        value: 'AU'
+                    }, {
+                        label: `Titre`,
+                        value: 'TI'
+                    }, {
+                        label: `Sujet`,
+                        value: 'SU'
+                    }, {
+                        label: `Source`,
+                        value: 'S0'
+                    }, {
+                        label: `Résumé`,
+                        value: 'AB'
+                    }, {
+                        label: `ISSN`,
+                        value: 'IS'
+                    }, {
+                        label: `ISBN`,
+                        value: 'IB'
+                    }
+                ],
                 limiters: defaultLimiters,
                 activeFacets: [],
-                sort: 'relevance'
+                sort: 'relevance',
+                availableSort: [
+                    {
+                        label: 'pertinence',
+                        value: 'relevance'
+                    }, {
+                        label: `date de publication décroissante`,
+                        value: 'date'
+                    }, {
+                        label: `date de publication croissante`,
+                        value: 'date2'
+                    }
+                ]
             });
         });
 
@@ -204,11 +324,51 @@ describe('reducers articleSearch', function () {
         const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
             term: '',
+            field: null,
             status: 'NONE',
             domain: undefined,
             limiters: defaultLimiters,
             activeFacets: [],
-            sort: 'relevance'
+            sort: 'relevance',
+            availableSort: [
+                {
+                    label: 'pertinence',
+                    value: 'relevance'
+                }, {
+                    label: `date de publication décroissante`,
+                    value: 'date'
+                }, {
+                    label: `date de publication croissante`,
+                    value: 'date2'
+                }
+            ],
+            availableFields: [
+                {
+                    label: 'Tout',
+                    value: null
+                }, {
+                    label: `Auteur`,
+                    value: 'AU'
+                }, {
+                    label: `Titre`,
+                    value: 'TI'
+                }, {
+                    label: `Sujet`,
+                    value: 'SU'
+                }, {
+                    label: `Source`,
+                    value: 'S0'
+                }, {
+                    label: `Résumé`,
+                    value: 'AB'
+                }, {
+                    label: `ISSN`,
+                    value: 'IS'
+                }, {
+                    label: `ISBN`,
+                    value: 'IB'
+                }
+            ]
         });
         delete window.sessionStorage;
     });
@@ -222,11 +382,51 @@ describe('reducers articleSearch', function () {
             search(undefined, { type: 'OTHER_ACTION_TYPE' }),
             {
                 term: 'geronimo',
+                field: null,
                 domain: 'test',
                 status: 'NONE',
                 limiters: defaultLimiters,
                 activeFacets: [],
-                sort: 'relevance'
+                sort: 'relevance',
+                availableSort: [
+                    {
+                        label: 'pertinence',
+                        value: 'relevance'
+                    }, {
+                        label: `date de publication décroissante`,
+                        value: 'date'
+                    }, {
+                        label: `date de publication croissante`,
+                        value: 'date2'
+                    }
+                ],
+                availableFields: [
+                    {
+                        label: 'Tout',
+                        value: null
+                    }, {
+                        label: `Auteur`,
+                        value: 'AU'
+                    }, {
+                        label: `Titre`,
+                        value: 'TI'
+                    }, {
+                        label: `Sujet`,
+                        value: 'SU'
+                    }, {
+                        label: `Source`,
+                        value: 'S0'
+                    }, {
+                        label: `Résumé`,
+                        value: 'AB'
+                    }, {
+                        label: `ISSN`,
+                        value: 'IS'
+                    }, {
+                        label: `ISBN`,
+                        value: 'IB'
+                    }
+                ]
             }
         );
         delete window.sessionStorage;

@@ -1,6 +1,6 @@
 {
   "name": "ebsco-widget",
-  "version": "0.10.5",
+  "version": "0.10.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -65,6 +65,7 @@
     "react-select": "1.0.0-beta8",
     "redux": "3.0.4",
     "redux-localstorage": "1.0.0-rc4",
-    "redux-localstorage-debounce": "^0.1.0"
+    "redux-localstorage-debounce": "0.1.0",
+    "reselect": "2.0.3"
   }
 }
