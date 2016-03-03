@@ -45,6 +45,11 @@ describe('reducers articleQueryList', function () {
         ]);
     });
 
+    it ('should not remove query at action.index if it is the las query when action type is ARTICLE_REMOVE_QUERY', function () {
+        const queryList = [{ boolean: 'AND', term: 'last', field: 'TI' }];
+        assert.deepEqual(articleQueryList(queryList, { type: REMOVE_QUERY, index: 0 }), queryList);
+    });
+
     it('should set query[action.key] to action.value at index when action is ARTICLE_CHANGE_QUERY', function () {
         assert.deepEqual(articleQueryList(queryList, { type: CHANGE_QUERY, key: 'term', value: 'new term', index: 1 }), [
             queryList[0],
