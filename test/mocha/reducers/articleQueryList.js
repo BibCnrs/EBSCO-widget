@@ -7,7 +7,7 @@ import {
     RESET
 } from '../../../lib/actions/article';
 
-describe.only('reducers articleQueryList', function () {
+describe('reducers articleQueryList', function () {
     const queryList = [
         { boolean: 'AND', term: 'term1', field: 'TI' },
         { boolean: 'AND', term: 'term2', field: 'AU' },
