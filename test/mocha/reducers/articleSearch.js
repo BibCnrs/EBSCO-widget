@@ -18,7 +18,7 @@ const {
     CHANGE_SORT
 } = ARTICLE;
 
-describe('reducers articleSearch', function () {
+describe.only('reducers articleSearch', function () {
     let search;
     before(function () {
         search = getSearch();
@@ -34,8 +34,16 @@ describe('reducers articleSearch', function () {
             assert.deepEqual(defaultState, {
                 domain: undefined,
                 status: 'NONE',
-                term: '',
-                field: null,
+                queries: [{
+                    boolean: 'AND',
+                    term: '',
+                    field: null
+                }],
+                availableBoolean: [
+                    'AND',
+                    'OR',
+                    'NOT'
+                ],
                 limiters: defaultLimiters,
                 activeFacets: [],
                 sort: 'relevance',
@@ -44,10 +52,10 @@ describe('reducers articleSearch', function () {
                         label: 'pertinence',
                         value: 'relevance'
                     }, {
-                        label: `date de publication décroissante`,
+                        label: `date (récent - ancien)`,
                         value: 'date'
                     }, {
-                        label: `date de publication croissante`,
+                        label: `date (ancien - récent)`,
                         value: 'date2'
                     }
                 ],
@@ -89,8 +97,16 @@ describe('reducers articleSearch', function () {
             assert.deepEqual(defaultState, {
                 domain: undefined,
                 status: 'NONE',
-                term: 'term',
-                field: null,
+                queries: [{
+                    boolean: 'AND',
+                    term: 'term',
+                    field: null
+                }],
+                availableBoolean: [
+                    'AND',
+                    'OR',
+                    'NOT'
+                ],
                 availableFields: [
                     {
                         label: 'Tout',
@@ -126,10 +142,10 @@ describe('reducers articleSearch', function () {
                         label: 'pertinence',
                         value: 'relevance'
                     }, {
-                        label: `date de publication décroissante`,
+                        label: `date (récent - ancien)`,
                         value: 'date'
                     }, {
-                        label: `date de publication croissante`,
+                        label: `date (ancien - récent)`,
                         value: 'date2'
                     }
                 ]
@@ -144,8 +160,16 @@ describe('reducers articleSearch', function () {
             assert.deepEqual(defaultState, {
                 domain: 'domain',
                 status: 'NONE',
-                term: '',
-                field: null,
+                queries: [{
+                    boolean: 'AND',
+                    term: '',
+                    field: null
+                }],
+                availableBoolean: [
+                    'AND',
+                    'OR',
+                    'NOT'
+                ],
                 availableFields: [
                     {
                         label: 'Tout',
@@ -181,10 +205,10 @@ describe('reducers articleSearch', function () {
                         label: 'pertinence',
                         value: 'relevance'
                     }, {
-                        label: `date de publication décroissante`,
+                        label: `date (récent - ancien)`,
                         value: 'date'
                     }, {
-                        label: `date de publication croissante`,
+                        label: `date (ancien - récent)`,
                         value: 'date2'
                     }
                 ]
@@ -323,8 +347,16 @@ describe('reducers articleSearch', function () {
         };
         const searchState = search(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
-            term: '',
-            field: null,
+            queries: [{
+                boolean: 'AND',
+                term: '',
+                field: null
+            }],
+            availableBoolean: [
+                'AND',
+                'OR',
+                'NOT'
+            ],
             status: 'NONE',
             domain: undefined,
             limiters: defaultLimiters,
@@ -335,10 +367,10 @@ describe('reducers articleSearch', function () {
                     label: 'pertinence',
                     value: 'relevance'
                 }, {
-                    label: `date de publication décroissante`,
+                    label: `date (récent - ancien)`,
                     value: 'date'
                 }, {
-                    label: `date de publication croissante`,
+                    label: `date (ancien - récent)`,
                     value: 'date2'
                 }
             ],
@@ -381,8 +413,16 @@ describe('reducers articleSearch', function () {
         assert.deepEqual(
             search(undefined, { type: 'OTHER_ACTION_TYPE' }),
             {
-                term: 'geronimo',
-                field: null,
+                queries: [{
+                    boolean: 'AND',
+                    term: 'geronimo',
+                    field: null
+                }],
+                availableBoolean: [
+                    'AND',
+                    'OR',
+                    'NOT'
+                ],
                 domain: 'test',
                 status: 'NONE',
                 limiters: defaultLimiters,
@@ -393,10 +433,10 @@ describe('reducers articleSearch', function () {
                         label: 'pertinence',
                         value: 'relevance'
                     }, {
-                        label: `date de publication décroissante`,
+                        label: `date (récent - ancien)`,
                         value: 'date'
                     }, {
-                        label: `date de publication croissante`,
+                        label: `date (ancien - récent)`,
                         value: 'date2'
                     }
                 ],

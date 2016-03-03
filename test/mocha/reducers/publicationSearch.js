@@ -28,8 +28,10 @@ describe('reducers publicationSearch', function () {
             assert.deepEqual(defaultState, {
                 domain: undefined,
                 status: 'NONE',
-                term: '',
-                field: null,
+                queries: [{
+                    term: '',
+                    field: null
+                }],
                 limiters: defaultLimiters,
                 activeFacets: [],
                 sort: 'relevance',
@@ -68,10 +70,10 @@ describe('reducers publicationSearch', function () {
                         label: 'titre (A à Z)',
                         value: 'title'
                     }, {
-                        label: `date de publication décroissante`,
+                        label: `date (récent - ancien)`,
                         value: 'date'
                     }, {
-                        label: `date de publication croissante`,
+                        label: `date (ancien - récent)`,
                         value: 'date2'
                     }
                 ]
@@ -86,8 +88,10 @@ describe('reducers publicationSearch', function () {
             assert.deepEqual(defaultState, {
                 domain: 'list',
                 status: 'NONE',
-                term: '',
-                field: null,
+                queries: [{
+                    term: '',
+                    field: null
+                }],
                 limiters: defaultLimiters,
                 activeFacets: [],
                 sort: 'relevance',
@@ -126,10 +130,10 @@ describe('reducers publicationSearch', function () {
                         label: 'titre (A à Z)',
                         value: 'title'
                     }, {
-                        label: `date de publication décroissante`,
+                        label: `date (récent - ancien)`,
                         value: 'date'
                     }, {
-                        label: `date de publication croissante`,
+                        label: `date (ancien - récent)`,
                         value: 'date2'
                     }
                 ]
@@ -251,8 +255,10 @@ describe('reducers publicationSearch', function () {
         };
         const searchState = publicationSearch(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
-            term: '',
-            field: null,
+            queries: [{
+                term: '',
+                field: null
+            }],
             status: 'NONE',
             domain: undefined,
             limiters: defaultLimiters,
@@ -293,10 +299,10 @@ describe('reducers publicationSearch', function () {
                     label: 'titre (A à Z)',
                     value: 'title'
                 }, {
-                    label: `date de publication décroissante`,
+                    label: `date (récent - ancien)`,
                     value: 'date'
                 }, {
-                    label: `date de publication croissante`,
+                    label: `date (ancien - récent)`,
                     value: 'date2'
                 }
             ]
