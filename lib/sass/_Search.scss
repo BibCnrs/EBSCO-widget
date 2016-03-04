@@ -15,4 +15,14 @@
     .button {
         height: 36px;
     }
+    .article-search-input-list {
+        .open.dropdown.btn-group {
+            z-index: 3;
+        }
+        .action {
+            button {
+                margin: 0 5px 0 5px;
+            }
+        }
+    }
 }

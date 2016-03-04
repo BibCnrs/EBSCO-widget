@@ -9,16 +9,25 @@
         padding: 25px;
     }
     .full-screen {
+        z-index: 1;
         position: fixed;
         top: 0px;
         bottom: 0px;
         left: 0px;
         right: 0px;
         background-color: white;
-        z-index: 999999;
         overflow: auto;
     }
 }
-.ReactModal__Overlay {
-    z-index: 9999999;
+
+.ReactModalPortal:nth-last-child(1) {
+    .ReactModal__Overlay {
+        z-index: 3;
+    }
+}
+
+.ReactModalPortal:nth-last-child(2) {
+    .ReactModal__Overlay {
+        z-index: 4;
+    }
 }

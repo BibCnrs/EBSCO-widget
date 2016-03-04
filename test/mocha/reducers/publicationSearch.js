@@ -1,142 +1,24 @@
-import publicationSearch, { getDefaultState } from '../../../lib/reducers/publicationSearch';
+import publicationSearch, { defaultState } from '../../../lib/reducers/publicationSearch';
 import { defaultState as defaultLimiters } from '../../../lib/reducers/publicationLimiters';
 import {
-    PUBLICATION,
     LOGOUT,
-    LOGIN_SUCCESS
+    LOGIN_SUCCESS,
+    SET_AVAILABLE_DOMAINS,
+    PUBLICATION
 } from '../../../lib/actions';
 
 const {
+    CHANGE_TERM,
+    DOMAIN_CHANGE,
     SEARCH_PENDING,
     SEARCH_SUCCESS,
     SEARCH_ERROR,
-    CHANGE_TERM,
-    DOMAIN_CHANGE,
     RESET,
-    CHANGE_SORT
+    CHANGE_SORT,
+    CHANGE_FIELD
 } = PUBLICATION;
 
 describe('reducers publicationSearch', function () {
-
-    describe('getDefaultState', function () {
-
-        it('should return default state', function () {
-            window.sessionStorage = {
-                getItem: () => null
-            };
-            const defaultState = getDefaultState();
-            assert.deepEqual(defaultState, {
-                domain: undefined,
-                status: 'NONE',
-                term: '',
-                field: null,
-                limiters: defaultLimiters,
-                activeFacets: [],
-                sort: 'relevance',
-                availableFields: [
-                    {
-                        label: 'Tout',
-                        value: null
-                    }, {
-                        label: `Auteur`,
-                        value: 'AU'
-                    }, {
-                        label: `Titre`,
-                        value: 'TI'
-                    }, {
-                        label: `Sujet`,
-                        value: 'SU'
-                    }, {
-                        label: `ISSN`,
-                        value: 'IS'
-                    }, {
-                        label: `ISBN`,
-                        value: 'IB'
-                    }, {
-                        label: `Resource`,
-                        value: 'PT'
-                    }, {
-                        label: `Editeur`,
-                        value: 'PB'
-                    }
-                ],
-                availableSort: [
-                    {
-                        label: 'pertinence',
-                        value: 'relevance'
-                    }, {
-                        label: 'titre (A à Z)',
-                        value: 'title'
-                    }, {
-                        label: `date de publication décroissante`,
-                        value: 'date'
-                    }, {
-                        label: `date de publication croissante`,
-                        value: 'date2'
-                    }
-                ]
-            });
-        });
-
-        it('should use first domain of sessionStorage, if given and present in domains', function () {
-            window.sessionStorage = {
-                getItem: (name) => name === 'domains' ? '["list", "of", "domains", "domain"]' : null
-            };
-            const defaultState = getDefaultState();
-            assert.deepEqual(defaultState, {
-                domain: 'list',
-                status: 'NONE',
-                term: '',
-                field: null,
-                limiters: defaultLimiters,
-                activeFacets: [],
-                sort: 'relevance',
-                availableFields: [
-                    {
-                        label: 'Tout',
-                        value: null
-                    }, {
-                        label: `Auteur`,
-                        value: 'AU'
-                    }, {
-                        label: `Titre`,
-                        value: 'TI'
-                    }, {
-                        label: `Sujet`,
-                        value: 'SU'
-                    }, {
-                        label: `ISSN`,
-                        value: 'IS'
-                    }, {
-                        label: `ISBN`,
-                        value: 'IB'
-                    }, {
-                        label: `Resource`,
-                        value: 'PT'
-                    }, {
-                        label: `Editeur`,
-                        value: 'PB'
-                    }
-                ],
-                availableSort: [
-                    {
-                        label: 'pertinence',
-                        value: 'relevance'
-                    }, {
-                        label: 'titre (A à Z)',
-                        value: 'title'
-                    }, {
-                        label: `date de publication décroissante`,
-                        value: 'date'
-                    }, {
-                        label: `date de publication croissante`,
-                        value: 'date2'
-                    }
-                ]
-            });
-        });
-
-    });
 
     it('should return PENDING if action is PUBLICATION_SEARCH_PENDING', function () {
         const searchState = publicationSearch(
@@ -186,14 +68,33 @@ describe('reducers publicationSearch', function () {
     });
 
     it('should update domain with action.domain if action is PUBLICATION_DOMAIN_CHANGE', function () {
-        const searchState = publicationSearch(
-            { status: 'state' },
-            { type: DOMAIN_CHANGE, domain: 'test' }
-        );
-        assert.deepEqual(searchState, {
+        const state = {
             status: 'state',
-            domain: 'test'
-        });
+            availableDomains: ['vie', 'shs'],
+            domain: 'vie'
+        };
+        assert.deepEqual(
+            publicationSearch(
+                state,
+                { type: DOMAIN_CHANGE, domain: 'shs' }
+            ),
+            {
+                status: 'state',
+                availableDomains: ['vie', 'shs'],
+                domain: 'shs'
+            }
+        );
+    });
+
+    it('should not update domain with action.domain if domain is not in state.availableDomains if action is PUBLICATION_DOMAIN_CHANGE', function () {
+        const state = { status: 'state', domain: 'vie', availableDomains: [] };
+        assert.deepEqual(
+                publicationSearch(
+                state,
+                { type: DOMAIN_CHANGE, domain: 'shs' }
+            ),
+            state
+        );
     });
 
     it('should return default state if action is LOGOUT', function () {
@@ -204,7 +105,7 @@ describe('reducers publicationSearch', function () {
             { status: 'state' },
             { type: LOGOUT }
         );
-        assert.deepEqual(searchState, getDefaultState());
+        assert.deepEqual(searchState, defaultState);
         delete window.sessionStorage;
     });
 
@@ -213,13 +114,27 @@ describe('reducers publicationSearch', function () {
             { status: 'state' },
             { type: LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
         );
-        assert.deepEqual(searchState, { status: 'state', domain: 'first'});
+        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
+    });
+
+    it('should set availableDomains to action.value, and domain to action.value[0] id action is SET_AVAILABLE_DOMAINS', function () {
+        assert.deepEqual(
+            publicationSearch(
+                { status: 'state' },
+                { type: SET_AVAILABLE_DOMAINS, value: ['vie', 'shs'] }
+            ),
+            {
+                status: 'state',
+                domain: 'vie',
+                availableDomains: ['vie', 'shs']
+            }
+        );
     });
 
     it('should return default sort, limiter and facet if action is PUBLICATION_RESET', function () {
         const searchState = publicationSearch(
             { status: 'state' },
-            { type: RESET, response: { domains: [ 'first', 'second' ] } }
+            { type: RESET }
         );
         assert.deepEqual(searchState, {
             status: 'state',
@@ -245,16 +160,29 @@ describe('reducers publicationSearch', function () {
         assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, activeFacets: [] });
     });
 
+    it('should set field to action.value if type is PUBLICATION_CHANGE_FIELD', function () {
+        assert.deepEqual(
+            publicationSearch(
+                { status: 'state', field: 'TI' },
+                { type: CHANGE_FIELD, value: 'AU' }
+            ),
+            { status: 'state', field: 'AU' }
+        );
+    });
+
     it('should default status to NONE and term to ""', function () {
         window.sessionStorage = {
             getItem: () => null
         };
         const searchState = publicationSearch(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
-            term: '',
-            field: null,
+            queries: [{
+                term: '',
+                field: null
+            }],
             status: 'NONE',
-            domain: undefined,
+            domain: null,
+            availableDomains: [],
             limiters: defaultLimiters,
             activeFacets: [],
             sort: 'relevance',
@@ -293,10 +221,10 @@ describe('reducers publicationSearch', function () {
                     label: 'titre (A à Z)',
                     value: 'title'
                 }, {
-                    label: `date de publication décroissante`,
+                    label: `date (récent - ancien)`,
                     value: 'date'
                 }, {
-                    label: `date de publication croissante`,
+                    label: `date (ancien - récent)`,
                     value: 'date2'
                 }
             ]
