@@ -176,10 +176,8 @@ describe('reducers publicationSearch', function () {
         };
         const searchState = publicationSearch(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
-            queries: [{
-                term: '',
-                field: null
-            }],
+            term: '',
+            field: null,
             status: 'NONE',
             domain: null,
             availableDomains: [],
