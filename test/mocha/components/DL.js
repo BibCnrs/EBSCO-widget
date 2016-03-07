@@ -1,9 +1,9 @@
 import DL from '../../../lib/components/DL';
 
-describe('DL', function () {
+describe.only('DL', function () {
     const getComponent = (data) => enzyme.shallow(<DL data={data} />);
 
-    it('should display object as definition list', function () {
+    it('should display object as definition list like this (<dl><dt>key></dt><dd><Blob data={value}/></dd></dl>)', function () {
         const data = {
             a: '1',
             b: '2'
@@ -12,44 +12,12 @@ describe('DL', function () {
         const keys = component.find('dt');
         assert.deepEqual(keys.map((key) => key.text()), Object.keys(data));
         const values = component.find('dd');
-        assert.deepEqual(values.map((key) => key.text()), Object.keys(data).map(key => data[key]));
+        assert.deepEqual(values.map((value) => {
+            const blob = value.find('Blob');
+            return blob.props().data;
+        }), Object.keys(data).map(key => data[key]));
     });
 
-    it('should replace true boolean value with check icon', function () {
-        const component = getComponent({
-            true: true
-        });
-        const keys = component.find('dt');
-        assert.deepEqual(keys.map((key) => key.text()), ['true']);
-        const values = component.find('dd');
-        assert.deepEqual(values.map((key) => key.text()), ['<Icon />']);
-        const icon = values.find('Icon');
-        assert.equal(icon.props().name, 'check');
-    });
-
-    it('should replace false boolean value with close icon', function () {
-        const component = getComponent({
-            false: false
-        });
-        const keys = component.find('dt');
-        assert.deepEqual(keys.map((key) => key.text()), ['false']);
-        const values = component.find('dd');
-        assert.deepEqual(values.map((key) => key.text()), ['<Icon />']);
-        const icon = values.find('Icon');
-        assert.equal(icon.props().name, 'close');
-    });
-
-    it('should replace object value with a nested DL', function () {
-        const component = getComponent({
-            nested: { a: 1 }
-        });
-        const keys = component.find('dt');
-        assert.deepEqual(keys.map((key) => key.text()), ['nested']);
-        const values = component.find('dd');
-        assert.deepEqual(values.map((key) => key.text()), ['<DL />']);
-        const icon = values.find('DL');
-        assert.deepEqual(icon.props().data, { a: 1 });
-    });
 
     it('should ignore undefined value', function () {
         const component = getComponent({
@@ -59,7 +27,7 @@ describe('DL', function () {
         const keys = component.find('dt');
         assert.deepEqual(keys.map((key) => key.text()), ['a']);
         const values = component.find('dd');
-        assert.deepEqual(values.map((key) => key.text()), ['1']);
+        assert.deepEqual(values.map((key) => key.find('Blob').props().data), ['1']);
     });
 
     it('should ignore null value', function () {
@@ -70,7 +38,7 @@ describe('DL', function () {
         const keys = component.find('dt');
         assert.deepEqual(keys.map((key) => key.text()), ['a']);
         const values = component.find('dd');
-        assert.deepEqual(values.map((key) => key.text()), ['1']);
+        assert.deepEqual(values.map((key) => key.find('Blob').props().data), ['1']);
     });
 
     it('should ignore empty string value', function () {
@@ -81,7 +49,7 @@ describe('DL', function () {
         const keys = component.find('dt');
         assert.deepEqual(keys.map((key) => key.text()), ['a']);
         const values = component.find('dd');
-        assert.deepEqual(values.map((key) => key.text()), ['1']);
+        assert.deepEqual(values.map((key) => key.find('Blob').props().data), ['1']);
     });
 
 });
