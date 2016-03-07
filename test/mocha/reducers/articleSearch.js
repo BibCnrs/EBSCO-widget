@@ -17,7 +17,8 @@ const {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
     RESET,
-    CHANGE_SORT
+    CHANGE_SORT,
+    LINKED_SEARCH
 } = ARTICLE;
 
 describe('reducers articleSearch', function () {
@@ -158,6 +159,30 @@ describe('reducers articleSearch', function () {
             { type: CHANGE_SORT, value: 'date' }
         );
         assert.deepEqual(searchState, { status: 'state', sort: 'date' });
+    });
+
+    it('should change queries to a single query with term= `action.term action.field`', function () {
+        const state = { status: 'state', queries:  [1, 2, 3], availableFields: []};
+        const searchState = articleSearch(
+            state,
+            { type: LINKED_SEARCH, term: 'term', field: 'TI' }
+        );
+        assert.deepEqual(searchState, {
+            ...state,
+            queries: [{ boolean: 'AND', field: null, term: 'TI term' }]
+        });
+    });
+
+    it('should change queries to a single query with term=`action.term` and field=`action.field` if action.field is in the availableFields', function () {
+        const state = { status: 'state', queries:  [1, 2, 3], availableFields: ['TI']};
+        const searchState = articleSearch(
+            state,
+            { type: LINKED_SEARCH, term: 'term', field: 'TI' }
+        );
+        assert.deepEqual(searchState, {
+            ...state,
+            queries: [{ boolean: 'AND', field: 'TI', term: 'term' }]
+        });
     });
 
     it('should return passed state with default limiter and defaulQueryList if action is none of the above', function () {
