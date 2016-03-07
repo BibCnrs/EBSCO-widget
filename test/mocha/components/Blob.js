@@ -1,6 +1,6 @@
 import Blob from '../../../lib/components/Blob';
 
-describe.only('Blob', function () {
+describe('Blob', function () {
     const getComponent = (data) => enzyme.shallow(<Blob data={data} />);
 
     it('should display object with DL component', function () {
@@ -27,14 +27,25 @@ describe.only('Blob', function () {
         assert.equal(span.text(), data.lastValue);
     });
 
-    it('should display object with an url property with FullTextHolding', function () {
+    it('should display object with url  and name property with FullTextHolding', function () {
         const data = {
             url: 'http://google.com',
             name: 'google'
         };
         const component = getComponent(data);
         const fullTextHolding = component.find('FullTextHolding');
-        assert.deepEqual(fullTextHolding.props().data, data);
+        assert.deepEqual(fullTextHolding.props(), data);
+    });
+
+    it('should display object with searchable property with SearchableField', function () {
+        const data = {
+            firstValue: 'first',
+            searchable: [1, 2, 3],
+            lastValue: 'last'
+        };
+        const component = getComponent(data);
+        const searchableField = component.find('SearchableField');
+        assert.deepEqual(searchableField.props(), data);
     });
 
     it('should display true boolean with check Icon', function () {
