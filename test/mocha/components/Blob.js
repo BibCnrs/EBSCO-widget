@@ -19,11 +19,11 @@ describe('Blob', function () {
             lastValue: 'value'
         };
         const component = getComponent(data);
-        const p = component.find('p');
-        const sup = p.find('sup');
-        assert.equal(p.text(), 'indicevalue');
+        const div = component.find('div');
+        const sup = div.find('sup');
+        assert.equal(div.text(), 'indicevalue');
         assert.equal(sup.text(), data.indice);
-        const span = p.find('span');
+        const span = div.find('span');
         assert.equal(span.text(), data.lastValue);
     });
 
@@ -71,8 +71,8 @@ describe('Blob', function () {
     it('should display string with p component', function () {
         const data= 'hello';
         const component = getComponent(data);
-        const p = component.find('p');
-        assert.equal(p.text(), data);
+        const div = component.find('div');
+        assert.equal(div.text(), data);
     });
 
 });
