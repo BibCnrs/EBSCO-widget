@@ -1,0 +1,78 @@
+import Blob from '../../../lib/components/Blob';
+
+describe('Blob', function () {
+    const getComponent = (data) => enzyme.shallow(<Blob data={data} />);
+
+    it('should display object with DL component', function () {
+        const data = {
+            a: '1',
+            b: '2'
+        };
+        const component = getComponent(data);
+        const dl = component.find('DL');
+        assert.deepEqual(dl.props().data, data);
+    });
+
+    it('should display object with an indice property with <p><sup>indice</sup><span>value</span></p>', function () {
+        const data = {
+            indice: 'indice',
+            lastValue: 'value'
+        };
+        const component = getComponent(data);
+        const div = component.find('div');
+        const sup = div.find('sup');
+        assert.equal(div.text(), 'indicevalue');
+        assert.equal(sup.text(), data.indice);
+        const span = div.find('span');
+        assert.equal(span.text(), data.lastValue);
+    });
+
+    it('should display object with url  and name property with FullTextHolding', function () {
+        const data = {
+            url: 'http://google.com',
+            name: 'google'
+        };
+        const component = getComponent(data);
+        const fullTextHolding = component.find('FullTextHolding');
+        assert.deepEqual(fullTextHolding.props(), data);
+    });
+
+    it('should display object with searchable property with SearchableField', function () {
+        const data = {
+            firstValue: 'first',
+            searchable: [1, 2, 3],
+            lastValue: 'last'
+        };
+        const component = getComponent(data);
+        const searchableField = component.find('Connect');
+        assert.equal(searchableField.node.type.displayName, 'Connect(SearchableField)');
+        assert.deepEqual(searchableField.props(), data);
+    });
+
+    it('should display true boolean with check Icon', function () {
+        const component = getComponent(true);
+        const icon = component.find('Icon');
+        assert.equal(icon.props().name, 'check');
+    });
+
+    it('should display false boolean with close Icon', function () {
+        const component = getComponent(false);
+        const icon = component.find('Icon');
+        assert.equal(icon.props().name, 'close');
+    });
+
+    it('should display array with UL component', function () {
+        const data = [1, 2, 3];
+        const component = getComponent(data);
+        const ul = component.find('UL');
+        assert.deepEqual(ul.props().data, data);
+    });
+
+    it('should display string with p component', function () {
+        const data= 'hello';
+        const component = getComponent(data);
+        const div = component.find('div');
+        assert.equal(div.text(), data);
+    });
+
+});
