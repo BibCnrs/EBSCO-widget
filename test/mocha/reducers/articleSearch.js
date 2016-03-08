@@ -122,20 +122,26 @@ describe('reducers articleSearch', function () {
         });
     });
 
-    it('should return action.query if action is RESTORE_HISTORY or RELOAD_HISTORY', function () {
+    it('should return state completed by action.query if action is RESTORE_HISTORY or RELOAD_HISTORY', function () {
         assert.deepEqual(
             articleSearch(
-                { status: 'state' },
-                { type: RESTORE_HISTORY, query: 'replace' }
+                { status: 'state', queries: [1, 2, 3] },
+                { type: RESTORE_HISTORY, query: { queries: [{ term: 'term' }]} }
             ),
-            'replace'
+            {
+                status: 'state',
+                queries: [{ term: 'term' }]
+            }
         );
         assert.deepEqual(
             articleSearch(
-                { status: 'state' },
-                { type: RELOAD_HISTORY, query: 'replace' }
+                { status: 'state', queries: [1, 2, 3] },
+                { type: RELOAD_HISTORY, query: { queries: [{ term: 'term' }]} }
             ),
-            'replace'
+            {
+                status: 'state',
+                queries: [{ term: 'term' }]
+            }
         );
     });
 

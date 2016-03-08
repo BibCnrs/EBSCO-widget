@@ -44,7 +44,8 @@ describe('Blob', function () {
             lastValue: 'last'
         };
         const component = getComponent(data);
-        const searchableField = component.find('SearchableField');
+        const searchableField = component.find('Connect');
+        assert.equal(searchableField.node.type.displayName, 'Connect(SearchableField)');
         assert.deepEqual(searchableField.props(), data);
     });
 
