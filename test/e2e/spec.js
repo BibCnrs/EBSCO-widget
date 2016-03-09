@@ -7,6 +7,7 @@ module.exports = {
         .setValue('.password', 'password')
         .click('button')
         .waitForElementVisible('.error', 100)
+        .assert.containsText('.error', 'Unauthorized')
         .end();
     }
 };

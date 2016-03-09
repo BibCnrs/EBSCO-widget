@@ -12,18 +12,12 @@ npm:
     http_proxy: ${http_proxy}
   entrypoint: ['npm']
 
-mock:
-  extends:
-    file: ./docker-compose.yml
-    service: node
-  command: node mock/launcher.js
-  ports:
-    - 3000:3000
-
 devserver:
   extends:
     file: ./docker-compose.yml
     service: node
+  environment:
+    server_url: http://localhost:3000/ebsco
   ports:
     - 3001:3001
   command: node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js --port 3001 --host 0.0.0.0

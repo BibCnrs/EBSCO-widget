@@ -1,13 +1,26 @@
-
-
-import path from 'path';
-import koa from 'koa';
-import koaStatic from 'koa-static';
-import koaMount from 'koa-mount';
+const  koa = require('koa');
+const route = require('koa-route');
+const cobody = require('co-body');
+const cors = require('koa-cors');
 
 const app = koa();
 
-app.use(koaMount('/scripts', koaStatic(path.join(__dirname, '../build'))));
-app.use(koaMount('/', koaStatic(path.join(__dirname, '/public'), { maxage: 5 * 60 * 1000 })));
+app.use(cors({origin: '*', methods: ['GET', 'POST', 'PUT', 'DELETE'], headers: ['Content-Type', 'Authorization']}));
 
-export default app;
+app.use(route.post('/login', function* () {
+    const body = yield cobody(this);
+    const username = body.username;
+    const password = body.password;
+    if (username !== 'test' || password !== 'secret') {
+        this.status = 401;
+
+        return;
+    }
+    this.body = {
+        token: 'token',
+        domains: ['vie', 'shs']
+    };
+
+}));
+
+module.exports = app;

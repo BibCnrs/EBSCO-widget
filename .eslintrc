@@ -33,6 +33,7 @@
     ],
     "globals": {
         "__DEVELOPMENT__": true,
-        "__VERSION__": true
+        "__VERSION__": true,
+        "__SERVER_URL__": true
     }
 }

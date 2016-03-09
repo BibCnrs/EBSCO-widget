@@ -1,7 +1,19 @@
 app:
-  image: blueimp/nginx:1.8
-  volumes:
-    - ./build:/usr/share/nginx/html
+  extends:
+    file: ./docker-compose.yml
+    service: devserver
+  environment:
+    server_url: 'http://server'
+  links:
+    - server
+  command: node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.test.js --port 80 --host 0.0.0.0
+
+server:
+  extends:
+    file: ./docker-compose.yml
+    service: node
+  command: node mock/launcher.js
+
 hub:
   image: selenium/hub:2.48.2
 chrome:
@@ -9,25 +21,33 @@ chrome:
   links:
     - hub
     - app
+    - server
+
 firefox:
   image: selenium/node-firefox:2.48.2
   links:
     - hub
     - app
+    - server
+
 chromedebug:
   image: selenium/node-chrome-debug:2.48.2
   links:
     - hub
     - app
+    - server
   ports:
     - 5900:5900
+
 firefoxdebug:
   image: selenium/node-firefox-debug:2.48.2
   links:
     - hub
     - app
+    - server
   ports:
     - 5901:5900
+
 nightwatch:
   image: blueimp/nightwatch:0.8
   links:

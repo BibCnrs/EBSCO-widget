@@ -13,11 +13,7 @@ var sassOptions = [
 ].join('&');
 
 var sassLoader = { test: /\.scss/g, exclude: /node_modules/ };
-if (['development', 'test'].indexOf(process.env.NODE_ENV) !== -1) {
-    sassLoader.loaders = ['style', 'css', 'sass?' + sassOptions];
-} else {
-    sassLoader.loader = ExtractTextPlugin.extract('css!sass?' + sassOptions);
-}
+sassLoader.loaders = ['style', 'css', 'sass?' + sassOptions];
 
 module.exports = {
     devtool: 'eval',
@@ -44,7 +40,7 @@ module.exports = {
         app: [
             './lib/index.js',
             './lib/sass/style.scss',
-            'webpack-dev-server/client?http://localhost:3001'
+            'webpack-dev-server/client?http://app'
         ]
     },
     output: {
@@ -52,7 +48,7 @@ module.exports = {
         //  when using multiple entry points
         filename: 'main.js',
         chunkFilename: '[id].bundle.js',
-        publicPath: 'http://localhost:3001/'
+        publicPath: 'http://app/'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -61,7 +57,7 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            __DEVELOPMENT__: true,
+            __DEVELOPMENT__: false,
             __VERSION__: JSON.stringify(version),
             __SERVER_URL__: JSON.stringify(process.env.server_url)
         }),

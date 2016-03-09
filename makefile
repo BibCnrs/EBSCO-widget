@@ -35,7 +35,7 @@ cleanup-e2e:
 	docker-compose -f docker-compose.e2e.yml stop
 	docker-compose -f docker-compose.e2e.yml rm -vf
 
-test: test-mocha selenium test-e2e cleanup-e2e
+test: test-mocha selenium test-e2e
 
 npm:
 	docker-compose run --rm npm $(COMMAND_ARGS)
