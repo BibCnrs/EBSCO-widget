@@ -204,7 +204,7 @@ describe('reducers publicationSearch', function () {
                     label: `ISBN`,
                     value: 'IB'
                 }, {
-                    label: `Resource`,
+                    label: `Type de document`,
                     value: 'PT'
                 }, {
                     label: `Editeur`,

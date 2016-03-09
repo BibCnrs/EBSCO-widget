@@ -33,4 +33,10 @@
 .ul {
     list-style-type: none;
     padding-left: 0;
+    .ul{
+        li {
+            display: inline;
+            padding-right: 0.5rem;
+        }
+    }
 }
