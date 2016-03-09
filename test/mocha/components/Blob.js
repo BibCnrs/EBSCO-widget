@@ -13,18 +13,13 @@ describe('Blob', function () {
         assert.deepEqual(dl.props().data, data);
     });
 
-    it('should display object with an indice property with <p><sup>indice</sup><span>value</span></p>', function () {
+    it('should display object with an indice property with <sup>indice</sup>', function () {
         const data = {
-            indice: 'indice',
-            lastValue: 'value'
+            indice: 'indice'
         };
         const component = getComponent(data);
-        const div = component.find('div');
-        const sup = div.find('sup');
-        assert.equal(div.text(), 'indicevalue');
+        const sup = component.find('sup');
         assert.equal(sup.text(), data.indice);
-        const span = div.find('span');
-        assert.equal(span.text(), data.lastValue);
     });
 
     it('should display object with url  and name property with FullTextHolding', function () {
@@ -37,16 +32,16 @@ describe('Blob', function () {
         assert.deepEqual(fullTextHolding.props(), data);
     });
 
-    it('should display object with searchable property with SearchableField', function () {
+    it('should display object with term, field and value property with SearchableLink', function () {
         const data = {
-            firstValue: 'first',
-            searchable: [1, 2, 3],
-            lastValue: 'last'
+            term: 'a term',
+            value: 'a value',
+            field: 'a field'
         };
         const component = getComponent(data);
-        const searchableField = component.find('Connect');
-        assert.equal(searchableField.node.type.displayName, 'Connect(SearchableField)');
-        assert.deepEqual(searchableField.props(), data);
+        const searchLink = component.find('Connect');
+        assert.equal(searchLink.node.type.displayName, 'Connect(SearchLink)');
+        assert.deepEqual(searchLink.props(), data);
     });
 
     it('should display true boolean with check Icon', function () {
@@ -68,11 +63,11 @@ describe('Blob', function () {
         assert.deepEqual(ul.props().data, data);
     });
 
-    it('should display string with p component', function () {
+    it('should display string with span component', function () {
         const data= 'hello';
         const component = getComponent(data);
-        const div = component.find('div');
-        assert.equal(div.text(), data);
+        const span = component.find('span');
+        assert.equal(span.text(), data);
     });
 
 });
