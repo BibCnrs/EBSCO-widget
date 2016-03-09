@@ -57,7 +57,7 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            __DEVELOPMENT__: false,
+            __DEVELOPMENT__: true,
             __VERSION__: JSON.stringify(version),
             __SERVER_URL__: JSON.stringify(process.env.server_url)
         }),

@@ -1,7 +1,7 @@
 app:
   extends:
     file: ./docker-compose.yml
-    service: devserver
+    service: node
   environment:
     server_url: 'http://server'
   links:
