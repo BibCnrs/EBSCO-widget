@@ -1,5 +1,5 @@
-module.exports = {
-    'Nightwatch.js Test' : function (browser) {
+describe('login', function() {
+    it('should display Unauthorized error if wrong username and password', function (browser) {
         browser
         .url(browser.launch_url)
         .waitForElementVisible('body', 1000)
@@ -9,5 +9,5 @@ module.exports = {
         .waitForElementVisible('.error', 100)
         .assert.containsText('.error', 'Unauthorized')
         .end();
-    }
-};
+    });
+});
