@@ -1,7 +1,9 @@
 import nightwatch from 'nightwatch';
 import reducers from '../../lib/reducers';
+import { assert } from 'chai';
 
 before(function (done) {
+    global.assert = assert;
     global.reducers = reducers;
     global.defaultState = {
         ...reducers({}, {}),
@@ -12,6 +14,7 @@ before(function (done) {
         silent: true,
         src_folders: ['./test/e2e'],
         custom_commands_path: './test/e2e/command',
+        custom_assertions_path: './test/e2e/assertion',
         selenium_host: 'hub',
         desiredCapabilities: {
             browserName: 'chrome'

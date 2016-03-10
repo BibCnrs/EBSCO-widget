@@ -17,7 +17,7 @@ describe('login', function() {
         client.start(done);
     });
 
-    it('should display search article view if login is correct', function (done) {
+    it('should display search article view if login is correct with returned domain', function (done) {
         browser
         .clearValue('.username')
         .setValue('.username', 'test')
@@ -25,7 +25,13 @@ describe('login', function() {
         .setValue('.password', 'secret')
         .click('button.btn')
         .waitForElementVisible('.navbar.navbar-default', 100)
-        .assert.containsText('.navbar.navbar-default .active', 'Article');
+        .assert.containsText('.navbar.navbar-default .active', 'Article')
+        .assert.state('article.search.availableDomains', ['vie', 'shs'])
+        .assert.state('login.token', 'token')
+        .assert.containsText('#domain', 'vie')
+        .click('#domain')
+        .assert.containsText('ul[aria-labelledby=domain]', 'vie\nshs');
+
         client.start(done);
     });
 });
