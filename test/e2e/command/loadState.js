@@ -1,10 +1,17 @@
 
-exports.command = function(state) {
+exports.command = function(state, callback) {
     this.execute(
         function(state) {
-            return window.store.dispatch({ type: 'SET_STATE', state: state });
+            window.store.dispatch({ type: 'SET_STATE', state: state });
+
+            return true;
         },
-        [state]
+        [state],
+        function(result) {
+            if (typeof callback === 'function') {
+                callback(self, result);
+            }
+        }
     );
 
     return this;

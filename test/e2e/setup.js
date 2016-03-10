@@ -1,7 +1,7 @@
 import nightwatch from 'nightwatch';
 import reducers from '../../lib/reducers';
 
-before(function () {
+before(function (done) {
     global.reducers = reducers;
     global.defaultState = {
         ...reducers({}, {}),
@@ -11,8 +11,8 @@ before(function () {
     global.client = nightwatch.initClient({
         silent: true,
         src_folders: ['./test/e2e'],
-        custom_commands_path : './test/e2e/command',
-        selenium_host  : 'hub',
+        custom_commands_path: './test/e2e/command',
+        selenium_host: 'hub',
         desiredCapabilities: {
             browserName: 'chrome'
         },
@@ -20,6 +20,10 @@ before(function () {
     });
 
     global.browser = global.client.api();
+    global.browser
+    .url(browser.launch_url)
+    .waitForElementVisible('body', 1000);
+    global.client.start(done);
 });
 
 after(function (done) {

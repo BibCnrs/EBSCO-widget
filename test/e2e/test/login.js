@@ -1,10 +1,4 @@
-describe.only('login', function() {
-    before(function(done) {
-        browser
-        .url(browser.launch_url)
-        .waitForElementVisible('body', 1000);
-        client.start(done);
-    });
+describe('login', function() {
 
     beforeEach(function (done) {
         browser
@@ -32,11 +26,6 @@ describe.only('login', function() {
         .click('button.btn')
         .waitForElementVisible('.navbar.navbar-default', 100)
         .assert.containsText('.navbar.navbar-default .active', 'Article');
-        client.start(done);
-    });
-
-    after(function(done) {
-        browser.end();
         client.start(done);
     });
 });
