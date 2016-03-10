@@ -1,4 +1,5 @@
-// require('babel-core/register')({ blacklist: [ 'regenerator' ] });
+require('babel-register');
+require('babel-polyfill');
 
 var app = require('./server');
 

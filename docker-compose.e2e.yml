@@ -53,4 +53,4 @@ nightwatch:
   links:
     - hub
   volumes:
-    - ./test/e2e:/home/node
+    - .:/home/node
