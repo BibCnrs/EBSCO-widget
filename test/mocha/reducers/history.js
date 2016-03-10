@@ -1,17 +1,14 @@
 import {
     ARTICLE,
+    SET_HISTORY,
     DELETE_HISTORY,
     LOGOUT
 } from '../../../lib/actions';
-import history, { getHistoryFromStorage } from '../../../lib/reducers/history';
+import history from '../../../lib/reducers/history';
 
 describe('reducer history', function () {
     it('should return empty array as default state', function () {
-        window.localStorage = {
-            getItem: () => null
-        };
         assert.deepEqual(history(undefined, {}), []);
-        delete window.localStorage;
     });
 
     describe('action SEARCH_SUCCESS', function () {
@@ -93,13 +90,10 @@ describe('reducer history', function () {
         });
     });
 
-    describe('getHistoryFromStorage', function () {
-        it('should return history stored in localStorage', function () {
-            window.localStorage = {
-                getItem: (name) => name === 'history' ? '[{ "a": "1" }, { "b": "2"}]' : null
-            };
-            assert.deepEqual(getHistoryFromStorage(), [{ a: '1' }, { b: '2'}]);
-            delete window.localStorage;
+    describe('action SET_HISTORY', function () {
+        it('should set state with action.value', function () {
+            assert.deepEqual(history(['current', 'history'], { type: SET_HISTORY, value: ['new', 'history'] }), ['new', 'history']);
         });
     });
+
 });

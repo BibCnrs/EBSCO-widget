@@ -3,10 +3,11 @@ describe('login', function() {
         browser
         .url(browser.launch_url)
         .waitForElementVisible('body', 1000)
+        .keys('^(h)')
         .setValue('.username', 'nightwatch')
         .setValue('.password', 'password')
-        .click('button')
-        .waitForElementVisible('.error', 1000)
+        .click('button.btn')
+        .waitForElementVisible('.error', 100)
         .assert.containsText('.error', 'Unauthorized')
         .end();
     });
@@ -15,10 +16,11 @@ describe('login', function() {
         browser
         .url(browser.launch_url)
         .waitForElementVisible('body', 1000)
+        .keys('^(h)')
         .setValue('.username', 'test')
         .setValue('.password', 'secret')
-        .click('button')
-        .waitForElementVisible('.navbar.navbar-default', 1000)
+        .click('button.btn')
+        .waitForElementVisible('.navbar.navbar-default', 100)
         .assert.containsText('.navbar.navbar-default .active', 'Article')
         .end();
     });
