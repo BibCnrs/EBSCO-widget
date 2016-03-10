@@ -21,4 +21,8 @@ app.use(route.post('/login', function* () {
 
 }));
 
+app.use(route.get('/:domainName/article/search', function* articleSearch(domainName) {
+    this.body = require(`./jsonResponse/${domainName}/article/search/aids.json`);
+}));
+
 module.exports = app;

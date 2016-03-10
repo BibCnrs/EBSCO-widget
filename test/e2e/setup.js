@@ -3,6 +3,7 @@ import reducers from '../../lib/reducers';
 import { assert } from 'chai';
 
 before(function (done) {
+    this.timeout(20000);
     global.assert = assert;
     global.reducers = reducers;
     global.defaultState = {
