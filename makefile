@@ -23,7 +23,7 @@ test-mocha:
 	docker-compose run test
 
 test-e2e:
-	docker-compose -f docker-compose.e2e.yml run --rm nightwatch -e default,firefox
+	docker-compose -f docker-compose.e2e.yml run --rm test
 
 selenium:
 	docker-compose -f docker-compose.e2e.yml up -d chrome firefox

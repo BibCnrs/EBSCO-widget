@@ -1,0 +1,8 @@
+{
+    "globals": {
+        "browser": true,
+        "client": true,
+        "defaultState": true,
+        "reducers": true
+    }
+}

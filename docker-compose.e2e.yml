@@ -48,9 +48,12 @@ firefoxdebug:
   ports:
     - 5901:5900
 
-nightwatch:
-  image: blueimp/nightwatch:0.8
+test:
+  extends:
+    file: ./docker-compose.yml
+    service: node
   links:
     - hub
-  volumes:
-    - .:/home/node
+  environment:
+    NODE_ENV: test
+  command: node_modules/mocha/bin/mocha --config test/e2e/mocha.opts test/e2e test/e2e/test/*.js

@@ -7,7 +7,8 @@
                 "type": "mocha",
                 "options": {
                     "ui": "bdd",
-                    "reporter": "list"
+                    "reporter": "list",
+                    "timeout": 2000
                 }
             },
             "launch_url": "http://app",
