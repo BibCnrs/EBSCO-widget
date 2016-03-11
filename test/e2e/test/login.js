@@ -1,8 +1,10 @@
+import initialState from './login.json';
+
 describe('login', function() {
 
     beforeEach(function (done) {
         browser
-        .loadState(defaultState);
+        .loadState(initialState);
 
         client.start(done);
     });

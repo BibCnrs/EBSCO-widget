@@ -1,15 +1,9 @@
 import nightwatch from 'nightwatch';
-import reducers from '../../lib/reducers';
 import { assert } from 'chai';
 
 before(function (done) {
     this.timeout(20000);
     global.assert = assert;
-    global.reducers = reducers;
-
-    global.reducers.triggerActions = (actions, startingState = global.defaultState) => {
-        return actions.reduce((state, action) => reducers(state, action), startingState);
-    };
 
     global.client = nightwatch.initClient({
         silent: true,
@@ -24,15 +18,26 @@ before(function (done) {
     });
 
     global.browser = global.client.api();
+
     global.browser
-    .url(browser.launch_url)
-    .waitForElementVisible('.ebsco-widget', 1000)
-    .pause(500)
-    .getState((state) => global.defaultState = state);
+    .url(global.browser.launch_url);
+
     global.client.start(done);
 });
 
-after(function (done) {
+beforeEach(function (done) {
+    global.browser
+    .url(global.browser.launch_url)
+    .waitForElementVisible('.ebsco-widget', 1000);
+
+    global.client.start(done);
+});
+
+afterEach(function (done) {
     global.browser.end();
     global.client.start(done);
+});
+
+after(function () {
+    global.client.terminate();
 });

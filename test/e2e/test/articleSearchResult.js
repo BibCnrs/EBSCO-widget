@@ -12,8 +12,6 @@ describe('article Search result', function() {
         browser
         .waitForElementVisible('.record', 1000)
         .click('.record_list a.fetch-link')
-        .waitForElementPresent('.loader', 100)
-        .waitForElementNotPresent('.loader', 100)
         .waitForElementVisible('.notice', 1000)
         .assert.containsText('.notice h3', 'The Legislative and Policy Gaps in the National HIV and AIDS, STI Policy, 2004-2014, Ghana');
 
@@ -21,7 +19,6 @@ describe('article Search result', function() {
     });
 
     it('should change page', function (done) {
-        this.timeout(999999);
         browser
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 of 516730')

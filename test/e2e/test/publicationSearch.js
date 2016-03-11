@@ -1,17 +1,11 @@
-describe('publicationSearch', function() {
-    let publicationState;
+import initialState from './publicationSearch.json';
 
-    before(function () {
-        publicationState = reducers.triggerActions([
-            { type: 'LOGIN_SUCCESS', response: { token: 'token', domains: ['vie', 'shs'] } },
-            { type: 'NAVIGATE', location: 'publication' }
-        ]);
-    });
+describe('publicationSearch', function() {
 
     beforeEach(function (done) {
         browser
-        .loadState(publicationState)
-        .loadState(publicationState);
+        .loadState(initialState)
+        .loadState(initialState);
         client.start(done);
     });
 

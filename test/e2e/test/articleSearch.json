@@ -1,0 +1,145 @@
+{
+	"article": {
+		"search": {
+			"queries": [{
+				"boolean": "AND",
+				"term": "",
+				"field": null
+			}],
+			"availableFields": [{
+				"label": "Tout",
+				"value": null
+			}, {
+				"label": "Auteur",
+				"value": "AU"
+			}, {
+				"label": "Titre",
+				"value": "TI"
+			}, {
+				"label": "Sujet",
+				"value": "SU"
+			}, {
+				"label": "Source",
+				"value": "S0"
+			}, {
+				"label": "Résumé",
+				"value": "AB"
+			}, {
+				"label": "ISSN",
+				"value": "IS"
+			}, {
+				"label": "ISBN",
+				"value": "IB"
+			}],
+			"status": "NONE",
+			"domain": "vie",
+			"availableDomains": ["vie", "shs"],
+			"limiters": {
+				"fullText": true,
+				"publicationDate": {
+					"from": null,
+					"to": null
+				},
+				"peerReviewedArticle": false,
+				"author": null,
+				"journalName": null,
+				"title": null,
+				"language": []
+			},
+			"activeFacets": [],
+			"sort": "relevance",
+			"availableSort": [{
+				"label": "pertinence",
+				"value": "relevance"
+			}, {
+				"label": "date (récent - ancien)",
+				"value": "date"
+			}, {
+				"label": "date (ancien - récent)",
+				"value": "date2"
+			}],
+			"availableBoolean": ["AND", "OR", "NOT"]
+		},
+		"searchResult": {
+			"maxPage": 0,
+			"dateRange": {
+				"min": 1000,
+				"max": 2017
+			}
+		},
+		"history": [],
+		"facets": {}
+	},
+	"publication": {
+		"search": {
+			"term": "",
+			"field": null,
+			"availableFields": [{
+				"label": "Tout",
+				"value": null
+			}, {
+				"label": "Auteur",
+				"value": "AU"
+			}, {
+				"label": "Titre",
+				"value": "TI"
+			}, {
+				"label": "Sujet",
+				"value": "SU"
+			}, {
+				"label": "ISSN",
+				"value": "IS"
+			}, {
+				"label": "ISBN",
+				"value": "IB"
+			}, {
+				"label": "Type de document",
+				"value": "PT"
+			}, {
+				"label": "Editeur",
+				"value": "PB"
+			}],
+			"status": "NONE",
+			"domain": "vie",
+			"availableDomains": ["vie", "shs"],
+			"limiters": {
+				"peerReviewedPublication": false
+			},
+			"activeFacets": [],
+			"sort": "relevance",
+			"availableSort": [{
+				"label": "pertinence",
+				"value": "relevance"
+			}, {
+				"label": "titre (A à Z)",
+				"value": "title"
+			}, {
+				"label": "date (récent - ancien)",
+				"value": "date"
+			}, {
+				"label": "date (ancien - récent)",
+				"value": "date2"
+			}]
+		},
+		"searchResult": {
+			"maxPage": 0
+		},
+		"facets": {}
+	},
+	"login": {
+		"status": "SUCCESS",
+		"token": "token"
+	},
+	"userInterface": {
+		"limiterShown": true,
+		"limiterMoreShown": true,
+		"loading": false,
+		"resultShown": false,
+		"historyShown": false,
+		"location": "article",
+		"fullScreen": true,
+		"notice": null
+	},
+	"error": null,
+	"url": "http://server"
+}

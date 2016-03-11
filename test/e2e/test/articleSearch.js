@@ -1,8 +1,9 @@
+import initialState from './articleSearch.json';
+
 describe('articleSearch', function() {
 
     beforeEach(function (done) {
-        browser
-        .loadState(reducers.triggerActions([{ type: 'LOGIN_SUCCESS', response: { token: 'token', domains: ['vie', 'shs'] } }]));
+        browser.loadState(initialState);
 
         client.start(done);
     });
