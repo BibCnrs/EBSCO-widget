@@ -23,9 +23,8 @@ describe('article Search result', function() {
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 of 516730')
         .assert.containsText('.pagination .current.page', '1')
+        .assert.containsText('.pagination a.page', '2')
         .click('.pagination a.page')
-        .waitForElementPresent('.loader', 100)
-        .waitForElementNotPresent('.loader', 100)
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.pagination .current.page', '2')
         .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 of 516730');
