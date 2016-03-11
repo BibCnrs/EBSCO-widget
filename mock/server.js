@@ -22,7 +22,11 @@ app.use(route.post('/login', function* () {
 }));
 
 app.use(route.get('/:domainName/article/search', function* articleSearch(domainName) {
-    this.body = require(`./jsonResponse/${domainName}/article/search/aids.json`);
+    this.body = require(`./jsonResponse/${domainName}/article/search/aids${this.query.currentPage || 1}.json`);
+}));
+
+app.use(route.get('/:domainName/article/retrieve/:dbId/:an', function* articleSearch(domainName) {
+    this.body = require(`./jsonResponse/${domainName}/article/retrieve/aids01.json`);
 }));
 
 app.use(route.get('/:domainName/publication/search', function* publicationSearch(domainName) {

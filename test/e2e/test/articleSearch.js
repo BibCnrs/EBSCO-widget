@@ -2,7 +2,8 @@ describe('articleSearch', function() {
 
     beforeEach(function (done) {
         browser
-        .loadState(reducers(defaultState, { type: 'LOGIN_SUCCESS', response: { token: 'token', domains: ['vie', 'shs'] } }));
+        .loadState(reducers.triggerActions([{ type: 'LOGIN_SUCCESS', response: { token: 'token', domains: ['vie', 'shs'] } }]));
+
         client.start(done);
     });
 

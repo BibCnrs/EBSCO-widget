@@ -1,0 +1,112 @@
+[{
+	"name": "Title",
+	"label": "Title",
+	"value": ["The Legislative and Policy Gaps in the National HIV and AIDS, STI Policy, 2004-2014, Ghana"]
+}, {
+	"name": "Author",
+	"label": "Authors",
+	"value": [
+		[{
+			"term": "\"Ishmael D. Norman\"",
+			"field": "AR",
+			"value": "Ishmael D. Norman"
+		}],
+		[{
+			"term": "\"Margaret Kweku\"",
+			"field": "AR",
+			"value": "Margaret Kweku"
+		}],
+		[{
+			"term": "\"Gideon Kye-Duodu\"",
+			"field": "AR",
+			"value": "Gideon Kye-Duodu"
+		}],
+		[{
+			"term": "\"Joyce Der\"",
+			"field": "AR",
+			"value": "Joyce Der"
+		}],
+		[{
+			"term": "\"Blandina M. Awiah\"",
+			"field": "AR",
+			"value": "Blandina M. Awiah"
+		}],
+		[{
+			"term": "\"Fred N. Binka\"",
+			"field": "AR",
+			"value": "Fred N. Binka"
+		}]
+	]
+}, {
+	"name": "TitleSource",
+	"label": "Source",
+	"value": ["Beijing Law Review. Vol. 6 Issue 4, p311-319. 9 p."]
+}, {
+	"name": "DatePubCY",
+	"label": "Publication Year",
+	"value": ["2015"]
+}, {
+	"name": "Subject",
+	"label": "Subject Terms",
+	"value": [
+		[{
+			"term": "\"HIV/AIDS\"",
+			"field": "DE",
+			"value": "HIV/AIDS"
+		}],
+		[{
+			"term": "\"Legislative and Policy Gaps\"",
+			"field": "DE",
+			"value": "Legislative and Policy Gaps"
+		}],
+		[{
+			"term": "\"Partner Notification\"",
+			"field": "DE",
+			"value": "Partner Notification"
+		}],
+		[{
+			"term": "\"Names Reporting\"",
+			"field": "DE",
+			"value": "Names Reporting"
+		}],
+		[{
+			"term": "\"Expedited Partner Therapy\"",
+			"field": "DE",
+			"value": "Expedited Partner Therapy"
+		}],
+		[{
+			"term": "\"MSM\"",
+			"field": "DE",
+			"value": "MSM"
+		}],
+		[{
+			"term": "\"Ghana\"",
+			"field": "DE",
+			"value": "Ghana"
+		}]
+	]
+}, {
+	"name": "Abstract",
+	"label": "Description (Translated)",
+	"value": ["By 2003, 350,000 persons lived with HIV/AIDS in Ghana with an average drop of 15,640 over 8 years. In 2011, approximately 224,878 persons lived with HIV/AIDS, which is expected to drop to 221,884 by 2015. We think the estimated 2994 drop over 4 years is pedestrian. We attribute the lackluster performance to the haphazard HIV and AIDS, STI Policy from 2004 through 2013. We considered the Ghana HIV/AIDS and STI Policy published (NACP/GHS, 2013) “as is” to isolate the gaps in the policy, looking at the provision of judicial and legal mechanisms for testing, treatment and counseling. We also investigated the national policy on partner notification, names reporting, and expedited partner therapy, in the case of MSM and young people as provided for in the policy. Finally, we looked at issues affecting stigmatization and discrimination. The investigation consisted of the review of the Revised National HIV and AIDS, STI Policy of August 2004 through 2013. We also undertook a documentary review of publications on the topic. There are systemic problems in the policy design, which has weakened the thrust of the national control program. The policy is unsystematic and inconsistent with international best practice in combating communicable diseases. It may not maximize the number of persons who are aware of their HIV status. It may not increase the number of HIV infected persons who receive care, and may not prevent new infections. It is unlikely that by 2015 even the low 2994 drop over four years would be sustained particularly with the current rationing of ART drugs in the nation. Recommendations are made to, perhaps, inform policy."]
+}, {
+	"name": "TypeDocument",
+	"label": "Document Type",
+	"value": ["Article"]
+}, {
+	"name": "Language",
+	"label": "Language",
+	"value": ["英文"]
+}, {
+	"name": "ISSN",
+	"label": "ISSN",
+	"value": ["2159-4627"]
+}, {
+	"name": "AN",
+	"label": "Accession Number",
+	"value": ["edsarl.21594627.201512.201601150037.201601150037.311.319"]
+}, {
+	"name": "db",
+	"label": "Airiti Library eBooks & Journals - 華藝線上圖書館",
+	"value": "edsarl"
+}]

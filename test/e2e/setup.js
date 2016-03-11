@@ -7,6 +7,10 @@ before(function (done) {
     global.assert = assert;
     global.reducers = reducers;
 
+    global.reducers.triggerActions = (actions, startingState = global.defaultState) => {
+        return actions.reduce((state, action) => reducers(state, action), startingState);
+    };
+
     global.client = nightwatch.initClient({
         silent: true,
         src_folders: ['./test/e2e'],
@@ -24,8 +28,7 @@ before(function (done) {
     .url(browser.launch_url)
     .waitForElementVisible('.ebsco-widget', 1000)
     .pause(500)
-    .getState((state) => global.defaultState = state)
-    .loadState(global.defaultState);
+    .getState((state) => global.defaultState = state);
     global.client.start(done);
 });
 

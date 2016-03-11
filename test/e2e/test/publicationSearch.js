@@ -1,15 +1,14 @@
 describe('publicationSearch', function() {
+    let publicationState;
 
-    const triggerActions = (actions, startingState = defaultState) => {
-        return actions.reduce((state, action) => reducers(state, action), startingState);
-    };
-
-    beforeEach(function (done) {
-        const publicationState = triggerActions([
+    before(function () {
+        publicationState = reducers.triggerActions([
             { type: 'LOGIN_SUCCESS', response: { token: 'token', domains: ['vie', 'shs'] } },
             { type: 'NAVIGATE', location: 'publication' }
         ]);
+    });
 
+    beforeEach(function (done) {
         browser
         .loadState(publicationState)
         .loadState(publicationState);
