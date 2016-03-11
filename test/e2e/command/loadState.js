@@ -6,7 +6,7 @@ exports.command = function(state, callback) {
 
             return true;
         },
-        [state],
+        [state, callback],
         function(result) {
             if (typeof callback === 'function') {
                 callback(self, result);

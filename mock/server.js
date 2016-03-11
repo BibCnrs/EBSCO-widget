@@ -25,4 +25,8 @@ app.use(route.get('/:domainName/article/search', function* articleSearch(domainN
     this.body = require(`./jsonResponse/${domainName}/article/search/aids.json`);
 }));
 
+app.use(route.get('/:domainName/publication/search', function* publicationSearch(domainName) {
+    this.body = require(`./jsonResponse/${domainName}/publication/search/study.json`);
+}));
+
 module.exports = app;
