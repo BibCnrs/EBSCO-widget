@@ -26,6 +26,7 @@ before(function (done) {
 });
 
 beforeEach(function (done) {
+    this.timeout(20000);
     global.browser
     .url(global.browser.launch_url)
     .waitForElementVisible('.ebsco-widget', 1000);
