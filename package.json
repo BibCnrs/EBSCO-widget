@@ -1,6 +1,6 @@
 {
   "name": "ebsco-widget",
-  "version": "0.11.3",
+  "version": "0.11.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -36,11 +36,11 @@
     "file-loader": "^0.8.4",
     "html-webpack-plugin": "1.6.2",
     "jsdom": "7.0.2",
-    "koa": "^1.2.0",
+    "koa": "1.2.0",
     "koa-cors": "0.0.16",
-    "koa-route": "^2.4.2",
+    "koa-route": "2.4.2",
     "mocha": "2.3.3",
-    "nightwatch": "^0.8.18",
+    "nightwatch": "0.8.18",
     "node-sass": "3.3.3",
     "react-addons-test-utils": "0.14.3",
     "redux-devtools": "3.0.0",
