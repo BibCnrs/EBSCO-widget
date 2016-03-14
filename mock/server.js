@@ -1,13 +1,40 @@
-
-
-import path from 'path';
 import koa from 'koa';
-import koaStatic from 'koa-static';
-import koaMount from 'koa-mount';
+import route from 'koa-route';
+import cobody from 'co-body';
+import cors from 'koa-cors';
 
 const app = koa();
 
-app.use(koaMount('/scripts', koaStatic(path.join(__dirname, '../build'))));
-app.use(koaMount('/', koaStatic(path.join(__dirname, '/public'), { maxage: 5 * 60 * 1000 })));
+app.use(cors({origin: '*', methods: ['GET', 'POST', 'PUT', 'DELETE'], headers: ['Content-Type', 'Authorization']}));
 
-export default app;
+app.use(route.post('/login', function* () {
+    const { username, password} = yield cobody(this);
+    if (username !== 'test' || password !== 'secret') {
+        this.status = 401;
+
+        return;
+    }
+    this.body = {
+        token: 'token',
+        domains: ['vie', 'shs']
+    };
+
+}));
+
+app.use(route.get('/:domainName/article/search', function* articleSearch(domainName) {
+    this.body = require(`./jsonResponse/${domainName}/article/search/aids${this.query.currentPage || 1}.json`);
+}));
+
+app.use(route.get('/:domainName/article/retrieve/:dbId/:an', function* articleRetrieve(domainName) {
+    this.body = require(`./jsonResponse/${domainName}/article/retrieve/aids01.json`);
+}));
+
+app.use(route.get('/:domainName/publication/search', function* publicationSearch(domainName) {
+    this.body = require(`./jsonResponse/${domainName}/publication/search/study${this.query.currentPage || 1}.json`);
+}));
+
+app.use(route.get('/:domainName/publication/retrieve/:id', function* publicationRetrieve(domainName) {
+    this.body = require(`./jsonResponse/${domainName}/publication/retrieve/study01.json`);
+}));
+
+module.exports = app;

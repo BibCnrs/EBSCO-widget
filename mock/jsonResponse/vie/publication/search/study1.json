@@ -1,0 +1,872 @@
+{
+	"results": [{
+		"id": 1,
+		"publicationId": "edp500247",
+		"issnOnline": ["17572274"],
+		"issnPrint": ["15280748"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Romani Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=https://muse.jhu.edu/journals/romani_studies",
+			"name": "Project MUSE - Premium Collection",
+			"coverage": [{
+				"start": "01/01/2009",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 2,
+		"publicationId": "edp93180",
+		"issnOnline": ["19409095"],
+		"issnPrint": ["00086533"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Caribbean studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://www.jstor.org/journal/caristud",
+			"name": "JSTOR Arts & Sciences VI Archive Collection",
+			"coverage": [{
+				"start": "04/01/1961",
+				"end": "01/01/2014"
+			}]
+		}, {
+			"url": "http://gate1.inist.fr/login?url=https://muse.jhu.edu/journals/caribbean_studies",
+			"name": "Project MUSE - Premium Collection",
+			"coverage": [{
+				"start": "01/01/2008",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 3,
+		"publicationId": "edp68646",
+		"issnOnline": ["21549648"],
+		"issnPrint": ["1045991X"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Utopian Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=53D&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "06/01/1997",
+				"end": "06/01/2012"
+			}]
+		}]
+	}, {
+		"id": 4,
+		"publicationId": "edp62310",
+		"issnOnline": ["21638195"],
+		"issnPrint": ["00365637"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Scandinavian Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=SVT&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "09/01/1995",
+				"end": "présent"
+			}],
+			"embargo": {
+				"value": 1,
+				"unit": "Year"
+			}
+		}, {
+			"url": "http://gate1.inist.fr/login?url=https://muse.jhu.edu/journals/scandinavian_studies",
+			"name": "Project MUSE - Premium Collection",
+			"coverage": [{
+				"start": "01/01/2011",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 5,
+		"publicationId": "edp4186",
+		"issnOnline": ["21536856"],
+		"issnPrint": ["00263079"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "American Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=https://muse.jhu.edu/journals/american_studies",
+			"name": "Project MUSE - Premium Collection",
+			"coverage": [{
+				"start": "01/01/2007",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 6,
+		"publicationId": "edp1355255",
+		"issnOnline": ["20484887"],
+		"issnPrint": ["17504902"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Holocaust Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://www.tandfonline.com/loi/rhos20",
+			"name": "Taylor & Francis",
+			"coverage": [{
+				"start": "01/01/2005",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 7,
+		"publicationId": "edp56859",
+		"issnOnline": ["22224270"],
+		"issnPrint": ["02675315"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Portuguese Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=U29&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "01/01/2003",
+				"end": "11/01/2008"
+			}]
+		}]
+	}, {
+		"id": 8,
+		"publicationId": "edp44629",
+		"issnOnline": ["15291529"],
+		"issnPrint": ["0145840X"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Korean Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=6MA&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "01/01/2000",
+				"end": "présent"
+			}],
+			"embargo": {
+				"value": 1,
+				"unit": "Year"
+			}
+		}, {
+			"url": "http://gate1.inist.fr/login?url=https://muse.jhu.edu/journals/korean_studies",
+			"name": "Project MUSE - Premium Collection",
+			"coverage": [{
+				"start": "01/01/1977",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 9,
+		"publicationId": "edp2397",
+		"issnOnline": ["14692872"],
+		"issnPrint": ["00020184"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "African studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=35L&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "07/01/1999",
+				"end": "présent"
+			}],
+			"embargo": {
+				"value": 18,
+				"unit": "Month"
+			}
+		}, {
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=sih&jid=35L&scope=site",
+			"name": "SocINDEX with Full Text",
+			"coverage": [{
+				"start": "07/01/1999",
+				"end": "présent"
+			}],
+			"embargo": {
+				"value": 18,
+				"unit": "Month"
+			}
+		}]
+	}, {
+		"id": 10,
+		"publicationId": "edp130054",
+		"issnOnline": ["15482464"],
+		"issnPrint": ["03614441"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Cuban Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=https://muse.jhu.edu/journals/cuban_studies",
+			"name": "Project MUSE - Premium Collection",
+			"coverage": [{
+				"start": "01/01/2003",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 11,
+		"publicationId": "edp101042",
+		"issnOnline": ["17455227"],
+		"issnPrint": ["14778351"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Aramaic studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=P6Q&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "01/01/2003",
+				"end": "présent"
+			}],
+			"embargo": {
+				"value": 3,
+				"unit": "Year"
+			}
+		}, {
+			"url": "http://gate1.inist.fr/login?url=http://booksandjournals.brillonline.com/content/journals/17455227",
+			"name": "Brill Online Journals",
+			"coverage": [{
+				"start": "03/01/2003",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 12,
+		"publicationId": "edp94864",
+		"issnOnline": ["14754819"],
+		"issnPrint": ["00210862"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Iranian Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=J3X&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "03/01/2003",
+				"end": "présent"
+			}],
+			"embargo": {
+				"value": 18,
+				"unit": "Month"
+			}
+		}, {
+			"url": "http://gate1.inist.fr/login?url=http://www.jstor.org/journal/iranstudies",
+			"name": "JSTOR Arts & Sciences VII Archive Collection",
+			"coverage": [{
+				"start": "01/01/1968",
+				"end": "12/01/2008"
+			}]
+		}]
+	}, {
+		"id": 13,
+		"publicationId": "edp93073",
+		"issnOnline": [],
+		"issnPrint": ["05788072"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Islamic Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://www.jstor.org/journal/islamicstudies",
+			"name": "JSTOR Archive Collection",
+			"coverage": [{
+				"start": "01/01/1962",
+				"end": "12/31/2012"
+			}]
+		}]
+	}, {
+		"id": 14,
+		"publicationId": "edp89553",
+		"issnOnline": ["21581681"],
+		"issnPrint": ["01464094"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Hebrew Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=https://muse.jhu.edu/journals/hebrew_studies",
+			"name": "Project MUSE - Premium Collection",
+			"coverage": [{
+				"start": "01/01/1990",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 15,
+		"publicationId": "edp64247",
+		"issnOnline": [],
+		"issnPrint": ["00385859"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Soviet studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=25C&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "02/01/1990",
+				"end": "12/01/1992"
+			}]
+		}, {
+			"url": "http://gate1.inist.fr/login?url=http://www.jstor.org/journal/sovietstudies",
+			"name": "JSTOR Arts & Sciences II Archive Collection",
+			"coverage": [{
+				"start": "06/01/1949",
+				"end": "01/01/1992"
+			}]
+		}]
+	}, {
+		"id": 16,
+		"publicationId": "edp61689",
+		"issnOnline": ["17572274"],
+		"issnPrint": ["15280748"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Romani Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=8L0&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "12/01/2000",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 17,
+		"publicationId": "edp21793",
+		"issnOnline": ["14664348"],
+		"issnPrint": ["09502386"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Cultural Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=05G&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "07/01/1998",
+				"end": "présent"
+			}],
+			"embargo": {
+				"value": 18,
+				"unit": "Month"
+			}
+		}, {
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=sih&jid=05G&scope=site",
+			"name": "SocINDEX with Full Text",
+			"coverage": [{
+				"start": "01/01/1995",
+				"end": "présent"
+			}],
+			"embargo": {
+				"value": 18,
+				"unit": "Month"
+			}
+		}]
+	}, {
+		"id": 18,
+		"publicationId": "edp260004",
+		"issnOnline": ["15272052"],
+		"issnPrint": ["00425222"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Victorian Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=https://muse.jhu.edu/journals/victorian_studies",
+			"name": "Project MUSE - Premium Collection",
+			"coverage": [{
+				"start": "01/01/2000",
+				"end": "présent"
+			}]
+		}]
+	}, {
+		"id": 19,
+		"publicationId": "edp60072",
+		"issnOnline": ["14774658"],
+		"issnPrint": ["02691213"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Renaissance Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1477-4658/issues",
+			"name": "Wiley Online Library (ISTEX - Licences Nationales)",
+			"coverage": [{
+				"start": "01/01/1984",
+				"end": "12/31/2012"
+			}]
+		}]
+	}, {
+		"id": 20,
+		"publicationId": "edp59056",
+		"issnOnline": [],
+		"issnPrint": ["1363013X"],
+		"isbnOnline": [],
+		"isbnPrint": [],
+		"type": "Journal",
+		"title": "Quaker Studies",
+		"fullTextHoldings": [{
+			"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=EJS&scope=site",
+			"name": "Academic Search Complete",
+			"coverage": [{
+				"start": "09/01/2000",
+				"end": "09/01/2015"
+			}]
+		}]
+	}],
+	"totalHits": 4968,
+	"currentPage": 1,
+	"maxPage": 249,
+	"facets": [{
+		"Id": "SubjectPubDb",
+		"Label": "",
+		"AvailableFacetValues": [{
+			"Value": "social science / sociology / general",
+			"Count": 216,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / sociology / general)"
+		}, {
+			"Value": "language arts & disciplines / communication studies",
+			"Count": 205,
+			"AddAction": "addfacetfilter(SubjectPubDb:language arts & disciplines / communication studies)"
+		}, {
+			"Value": "science / study & teaching",
+			"Count": 152,
+			"AddAction": "addfacetfilter(SubjectPubDb:science / study & teaching)"
+		}, {
+			"Value": "social science / media studies",
+			"Count": 147,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / media studies)"
+		}, {
+			"Value": "social science / gender studies",
+			"Count": 131,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / gender studies)"
+		}, {
+			"Value": "political science & studies",
+			"Count": 121,
+			"AddAction": "addfacetfilter(SubjectPubDb:political science & studies)"
+		}, {
+			"Value": "political science / general",
+			"Count": 102,
+			"AddAction": "addfacetfilter(SubjectPubDb:political science / general)"
+		}, {
+			"Value": "social science / general",
+			"Count": 91,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / general)"
+		}, {
+			"Value": "ethnic & cultural studies",
+			"Count": 76,
+			"AddAction": "addfacetfilter(SubjectPubDb:ethnic & cultural studies)"
+		}, {
+			"Value": "social science / anthropology / general",
+			"Count": 74,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / anthropology / general)"
+		}, {
+			"Value": "social science / children's studies",
+			"Count": 70,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / children's studies)"
+		}, {
+			"Value": "religion & philosophy (general)",
+			"Count": 67,
+			"AddAction": "addfacetfilter(SubjectPubDb:religion & philosophy \\(general\\))"
+		}, {
+			"Value": "language arts & disciplines / linguistics / general",
+			"Count": 65,
+			"AddAction": "addfacetfilter(SubjectPubDb:language arts & disciplines / linguistics / general)"
+		}, {
+			"Value": "social science / regional studies",
+			"Count": 59,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / regional studies)"
+		}, {
+			"Value": "technology & engineering / chemical & biochemical",
+			"Count": 56,
+			"AddAction": "addfacetfilter(SubjectPubDb:technology & engineering / chemical & biochemical)"
+		}, {
+			"Value": "social science / minority studies",
+			"Count": 54,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / minority studies)"
+		}, {
+			"Value": "organizational studies",
+			"Count": 53,
+			"AddAction": "addfacetfilter(SubjectPubDb:organizational studies)"
+		}, {
+			"Value": "science / philosophy & social aspects",
+			"Count": 53,
+			"AddAction": "addfacetfilter(SubjectPubDb:science / philosophy & social aspects)"
+		}, {
+			"Value": "social science / discrimination & race relations",
+			"Count": 52,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / discrimination & race relations)"
+		}, {
+			"Value": "sociology",
+			"Count": 51,
+			"AddAction": "addfacetfilter(SubjectPubDb:sociology)"
+		}, {
+			"Value": "cultural studies",
+			"Count": 50,
+			"AddAction": "addfacetfilter(SubjectPubDb:cultural studies)"
+		}, {
+			"Value": "science / environmental science",
+			"Count": 49,
+			"AddAction": "addfacetfilter(SubjectPubDb:science / environmental science)"
+		}, {
+			"Value": "education / general",
+			"Count": 47,
+			"AddAction": "addfacetfilter(SubjectPubDb:education / general)"
+		}, {
+			"Value": "language arts & disciplines / grammar & punctuation",
+			"Count": 46,
+			"AddAction": "addfacetfilter(SubjectPubDb:language arts & disciplines / grammar & punctuation)"
+		}, {
+			"Value": "social sciences & humanities (general)",
+			"Count": 46,
+			"AddAction": "addfacetfilter(SubjectPubDb:social sciences & humanities \\(general\\))"
+		}, {
+			"Value": "african studies",
+			"Count": 44,
+			"AddAction": "addfacetfilter(SubjectPubDb:african studies)"
+		}, {
+			"Value": "law / international",
+			"Count": 44,
+			"AddAction": "addfacetfilter(SubjectPubDb:law / international)"
+		}, {
+			"Value": "education / educational psychology",
+			"Count": 43,
+			"AddAction": "addfacetfilter(SubjectPubDb:education / educational psychology)"
+		}, {
+			"Value": "business & economics / production & operations management",
+			"Count": 42,
+			"AddAction": "addfacetfilter(SubjectPubDb:business & economics / production & operations management)"
+		}, {
+			"Value": "middle eastern & islamic studies",
+			"Count": 41,
+			"AddAction": "addfacetfilter(SubjectPubDb:middle eastern & islamic studies)"
+		}, {
+			"Value": "science / general",
+			"Count": 40,
+			"AddAction": "addfacetfilter(SubjectPubDb:science / general)"
+		}, {
+			"Value": "science / chemistry / physical & theoretical",
+			"Count": 39,
+			"AddAction": "addfacetfilter(SubjectPubDb:science / chemistry / physical & theoretical)"
+		}, {
+			"Value": "women's studies",
+			"Count": 39,
+			"AddAction": "addfacetfilter(SubjectPubDb:women's studies)"
+		}, {
+			"Value": "business & economics / management",
+			"Count": 38,
+			"AddAction": "addfacetfilter(SubjectPubDb:business & economics / management)"
+		}, {
+			"Value": "business & economics / public relations",
+			"Count": 37,
+			"AddAction": "addfacetfilter(SubjectPubDb:business & economics / public relations)"
+		}, {
+			"Value": "gender studies",
+			"Count": 37,
+			"AddAction": "addfacetfilter(SubjectPubDb:gender studies)"
+		}, {
+			"Value": "asian studies",
+			"Count": 36,
+			"AddAction": "addfacetfilter(SubjectPubDb:asian studies)"
+		}, {
+			"Value": "education (general)",
+			"Count": 36,
+			"AddAction": "addfacetfilter(SubjectPubDb:education \\(general\\))"
+		}, {
+			"Value": "political science / public policy / social policy",
+			"Count": 36,
+			"AddAction": "addfacetfilter(SubjectPubDb:political science / public policy / social policy)"
+		}, {
+			"Value": "economics",
+			"Count": 35,
+			"AddAction": "addfacetfilter(SubjectPubDb:economics)"
+		}, {
+			"Value": "science / physics / general",
+			"Count": 35,
+			"AddAction": "addfacetfilter(SubjectPubDb:science / physics / general)"
+		}, {
+			"Value": "computers / intelligence (ai) & semantics",
+			"Count": 34,
+			"AddAction": "addfacetfilter(SubjectPubDb:computers / intelligence \\(ai\\) & semantics)"
+		}, {
+			"Value": "science / history",
+			"Count": 34,
+			"AddAction": "addfacetfilter(SubjectPubDb:science / history)"
+		}, {
+			"Value": "social science / anthropology / cultural & social",
+			"Count": 34,
+			"AddAction": "addfacetfilter(SubjectPubDb:social science / anthropology / cultural & social)"
+		}, {
+			"Value": "education / administration / general",
+			"Count": 32,
+			"AddAction": "addfacetfilter(SubjectPubDb:education / administration / general)"
+		}, {
+			"Value": "language arts & disciplines / journalism",
+			"Count": 32,
+			"AddAction": "addfacetfilter(SubjectPubDb:language arts & disciplines / journalism)"
+		}, {
+			"Value": "law",
+			"Count": 32,
+			"AddAction": "addfacetfilter(SubjectPubDb:law)"
+		}, {
+			"Value": "psychology",
+			"Count": 32,
+			"AddAction": "addfacetfilter(SubjectPubDb:psychology)"
+		}, {
+			"Value": "diplomacy & international relations",
+			"Count": 31,
+			"AddAction": "addfacetfilter(SubjectPubDb:diplomacy & international relations)"
+		}, {
+			"Value": "political science / public policy / economic policy",
+			"Count": 31,
+			"AddAction": "addfacetfilter(SubjectPubDb:political science / public policy / economic policy)"
+		}]
+	}, {
+		"Id": "TypePublicationPubD",
+		"Label": "",
+		"AvailableFacetValues": [{
+			"Value": "book",
+			"Count": 2478,
+			"AddAction": "addfacetfilter(TypePublicationPubD:book)"
+		}, {
+			"Value": "journal",
+			"Count": 2438,
+			"AddAction": "addfacetfilter(TypePublicationPubD:journal)"
+		}, {
+			"Value": "book series",
+			"Count": 29,
+			"AddAction": "addfacetfilter(TypePublicationPubD:book series)"
+		}, {
+			"Value": "report",
+			"Count": 18,
+			"AddAction": "addfacetfilter(TypePublicationPubD:report)"
+		}, {
+			"Value": "proceedings",
+			"Count": 5,
+			"AddAction": "addfacetfilter(TypePublicationPubD:proceedings)"
+		}]
+	}, {
+		"Id": "PublisherPubDb",
+		"Label": "",
+		"AvailableFacetValues": [{
+			"Value": "springer",
+			"Count": 524,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer)"
+		}, {
+			"Value": "springer netherlands",
+			"Count": 416,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer netherlands)"
+		}, {
+			"Value": "springer berlin heidelberg",
+			"Count": 303,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer berlin heidelberg)"
+		}, {
+			"Value": "springer fachmedien wiesbaden",
+			"Count": 259,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer fachmedien wiesbaden)"
+		}, {
+			"Value": "taylor & francis",
+			"Count": 213,
+			"AddAction": "addfacetfilter(PublisherPubDb:taylor & francis)"
+		}, {
+			"Value": "unspecified",
+			"Count": 180,
+			"AddAction": "addfacetfilter(PublisherPubDb:unspecified)"
+		}, {
+			"Value": "sage publications",
+			"Count": 147,
+			"AddAction": "addfacetfilter(PublisherPubDb:sage publications)"
+		}, {
+			"Value": "wiley-blackwell",
+			"Count": 141,
+			"AddAction": "addfacetfilter(PublisherPubDb:wiley-blackwell)"
+		}, {
+			"Value": "springer verlag",
+			"Count": 130,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer verlag)"
+		}, {
+			"Value": "springer international publishing",
+			"Count": 126,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer international publishing)"
+		}, {
+			"Value": "elsevier science limited",
+			"Count": 112,
+			"AddAction": "addfacetfilter(PublisherPubDb:elsevier science limited)"
+		}, {
+			"Value": "vs verlag fur sozialwissenschaften (gwv)",
+			"Count": 103,
+			"AddAction": "addfacetfilter(PublisherPubDb:vs verlag fur sozialwissenschaften \\(gwv\\))"
+		}, {
+			"Value": "taylor & francis group",
+			"Count": 97,
+			"AddAction": "addfacetfilter(PublisherPubDb:taylor & francis group)"
+		}, {
+			"Value": "hindawi publishing corporation",
+			"Count": 90,
+			"AddAction": "addfacetfilter(PublisherPubDb:hindawi publishing corporation)"
+		}, {
+			"Value": "brill academic publishers",
+			"Count": 76,
+			"AddAction": "addfacetfilter(PublisherPubDb:brill academic publishers)"
+		}, {
+			"Value": "elsevier",
+			"Count": 68,
+			"AddAction": "addfacetfilter(PublisherPubDb:elsevier)"
+		}, {
+			"Value": "sensepublishers",
+			"Count": 64,
+			"AddAction": "addfacetfilter(PublisherPubDb:sensepublishers)"
+		}, {
+			"Value": "taylor & francis group / books",
+			"Count": 51,
+			"AddAction": "addfacetfilter(PublisherPubDb:taylor & francis group / books)"
+		}, {
+			"Value": "wiley",
+			"Count": 50,
+			"AddAction": "addfacetfilter(PublisherPubDb:wiley)"
+		}, {
+			"Value": "oxford university press",
+			"Count": 49,
+			"AddAction": "addfacetfilter(PublisherPubDb:oxford university press)"
+		}, {
+			"Value": "michigan journal of asian studies",
+			"Count": 44,
+			"AddAction": "addfacetfilter(PublisherPubDb:michigan journal of asian studies)"
+		}, {
+			"Value": "springer science+business media b.v.",
+			"Count": 43,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer science+business media b.v.)"
+		}, {
+			"Value": "de gruyter",
+			"Count": 38,
+			"AddAction": "addfacetfilter(PublisherPubDb:de gruyter)"
+		}, {
+			"Value": "routledge",
+			"Count": 36,
+			"AddAction": "addfacetfilter(PublisherPubDb:routledge)"
+		}, {
+			"Value": "middle eastern studies journal (mesj)",
+			"Count": 30,
+			"AddAction": "addfacetfilter(PublisherPubDb:middle eastern studies journal \\(mesj\\))"
+		}, {
+			"Value": "springer verlag london ltd",
+			"Count": 30,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer verlag london ltd)"
+		}, {
+			"Value": "physica-verlag heidelberg",
+			"Count": 27,
+			"AddAction": "addfacetfilter(PublisherPubDb:physica-verlag heidelberg)"
+		}, {
+			"Value": "princeton university press",
+			"Count": 25,
+			"AddAction": "addfacetfilter(PublisherPubDb:princeton university press)"
+		}, {
+			"Value": "johns hopkins university press",
+			"Count": 24,
+			"AddAction": "addfacetfilter(PublisherPubDb:johns hopkins university press)"
+		}, {
+			"Value": "indiana university press",
+			"Count": 22,
+			"AddAction": "addfacetfilter(PublisherPubDb:indiana university press)"
+		}, {
+			"Value": "de gruyter open",
+			"Count": 19,
+			"AddAction": "addfacetfilter(PublisherPubDb:de gruyter open)"
+		}, {
+			"Value": "peter lang publishing group",
+			"Count": 16,
+			"AddAction": "addfacetfilter(PublisherPubDb:peter lang publishing group)"
+		}, {
+			"Value": "university of nebraska press",
+			"Count": 16,
+			"AddAction": "addfacetfilter(PublisherPubDb:university of nebraska press)"
+		}, {
+			"Value": "john wiley & sons incorporated",
+			"Count": 15,
+			"AddAction": "addfacetfilter(PublisherPubDb:john wiley & sons incorporated)"
+		}, {
+			"Value": "pennsylvania state university press",
+			"Count": 15,
+			"AddAction": "addfacetfilter(PublisherPubDb:pennsylvania state university press)"
+		}, {
+			"Value": "springer india",
+			"Count": 14,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer india)"
+		}, {
+			"Value": "springer japan",
+			"Count": 14,
+			"AddAction": "addfacetfilter(PublisherPubDb:springer japan)"
+		}, {
+			"Value": "university of chicago press",
+			"Count": 13,
+			"AddAction": "addfacetfilter(PublisherPubDb:university of chicago press)"
+		}, {
+			"Value": "university of toronto press",
+			"Count": 13,
+			"AddAction": "addfacetfilter(PublisherPubDb:university of toronto press)"
+		}, {
+			"Value": "birkhauser basel",
+			"Count": 12,
+			"AddAction": "addfacetfilter(PublisherPubDb:birkhauser basel)"
+		}, {
+			"Value": "edinburgh university press",
+			"Count": 12,
+			"AddAction": "addfacetfilter(PublisherPubDb:edinburgh university press)"
+		}, {
+			"Value": "syngress",
+			"Count": 12,
+			"AddAction": "addfacetfilter(PublisherPubDb:syngress)"
+		}, {
+			"Value": "gabler verlag",
+			"Count": 11,
+			"AddAction": "addfacetfilter(PublisherPubDb:gabler verlag)"
+		}, {
+			"Value": "humana press incorporated",
+			"Count": 11,
+			"AddAction": "addfacetfilter(PublisherPubDb:humana press incorporated)"
+		}, {
+			"Value": "medknow publications",
+			"Count": 11,
+			"AddAction": "addfacetfilter(PublisherPubDb:medknow publications)"
+		}, {
+			"Value": "north holland",
+			"Count": 11,
+			"AddAction": "addfacetfilter(PublisherPubDb:north holland)"
+		}, {
+			"Value": "us department of education",
+			"Count": 11,
+			"AddAction": "addfacetfilter(PublisherPubDb:us department of education)"
+		}, {
+			"Value": "berghahn books",
+			"Count": 10,
+			"AddAction": "addfacetfilter(PublisherPubDb:berghahn books)"
+		}, {
+			"Value": "palgrave macmillan ltd.",
+			"Count": 10,
+			"AddAction": "addfacetfilter(PublisherPubDb:palgrave macmillan ltd.)"
+		}, {
+			"Value": "plenum press",
+			"Count": 10,
+			"AddAction": "addfacetfilter(PublisherPubDb:plenum press)"
+		}]
+	}],
+	"activeFacets": {},
+	"dateRange": {
+		"min": 1,
+		"max": 1
+	}
+}

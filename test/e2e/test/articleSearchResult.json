@@ -1,0 +1,1656 @@
+{
+	"article": {
+		"search": {
+			"queries": [{
+				"boolean": "AND",
+				"term": "aids",
+				"field": null
+			}],
+			"availableFields": [{
+				"label": "Tout",
+				"value": null
+			}, {
+				"label": "Auteur",
+				"value": "AU"
+			}, {
+				"label": "Titre",
+				"value": "TI"
+			}, {
+				"label": "Sujet",
+				"value": "SU"
+			}, {
+				"label": "Source",
+				"value": "S0"
+			}, {
+				"label": "Résumé",
+				"value": "AB"
+			}, {
+				"label": "ISSN",
+				"value": "IS"
+			}, {
+				"label": "ISBN",
+				"value": "IB"
+			}],
+			"status": "DONE",
+			"domain": "vie",
+			"availableDomains": ["vie", "shs"],
+			"limiters": {
+				"fullText": true,
+				"publicationDate": {
+					"from": null,
+					"to": null
+				},
+				"peerReviewedArticle": false,
+				"author": null,
+				"journalName": null,
+				"title": null,
+				"language": []
+			},
+			"activeFacets": {},
+			"sort": "relevance",
+			"availableSort": [{
+				"label": "pertinence",
+				"value": "relevance"
+			}, {
+				"label": "date (récent - ancien)",
+				"value": "date"
+			}, {
+				"label": "date (ancien - récent)",
+				"value": "date2"
+			}],
+			"availableBoolean": ["AND", "OR", "NOT"]
+		},
+		"searchResult": {
+			"1": [{
+				"id": 1,
+				"an": "edsarl.21594627.201512.201601150037.201601150037.311.319",
+				"dbId": "edsarl",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=edsarl&AN=edsarl.21594627.201512.201601150037.201601150037.311.319"],
+				"title": "The Legislative and Policy Gaps in the National HIV and AIDS, STI Policy, 2004-2014, Ghana",
+				"source": "Beijing Law Review. Vol. 6 Issue 4, p311-319. 9 p.",
+				"authors": ["Ishmael D. Norman", "Margaret Kweku", "Gideon Kye-Duodu", "Joyce Der", "Blandina M. Awiah", "Fred N. Binka"],
+				"publicationDate": "2015-12-01T00:00:00.000Z",
+				"languages": ["英文"],
+				"database": "Airiti Library eBooks & Journals - 華藝線上圖書館",
+				"subjects": ["HIV/AIDS", "Legislative and Policy Gaps", "Partner Notification", "Names Reporting", "Expedited Partner Therapy", "MSM", "Ghana"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 2,
+				"an": "edssas.m.sahara.v13.n1.a4",
+				"dbId": "edssas",
+				"articleLink": ["http://hdl.handle.net/10520/EJC184146"],
+				"title": "Social support seeking and self-efficacy-building strategies in enhancing the emotional well-being of informal HIV/AIDS caregivers in Ibadan, Oyo state, Nigeria : original article",
+				"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2016, Vol 13, Issue 1, p. 35-40.",
+				"authors": ["Okeke, Bernedette Okwuchukwu"],
+				"publicationDate": "2016-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SA ePublications Service",
+				"subjects": ["HIV/AIDS", "Informal caregivers", "Enhancing emotional well being", "VIH/SIDA", "Les aidants naturels", "L'amelioration de bien etre emotionnel"],
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 3,
+				"an": "edssas.m.sahara.v13.n1.a1",
+				"dbId": "edssas",
+				"articleLink": ["http://hdl.handle.net/10520/EJC184149"],
+				"title": "Zimbabwe's national AIDS levy : a case study : original article",
+				"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2016, Vol 13, Issue 1, p. 1-7.",
+				"authors": ["Bhat, Nisha", "Kilmarx, Peter H.", "Dube, Freeman", "Manenji, Albert", "Dube, Medelina", "Magure, Tapuwa"],
+				"publicationDate": "2016-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SA ePublications Service",
+				"subjects": ["Health care financing", "HIV", "AIDS", "Zimbabwe", "Financement des soins de sante", "Le VIH", "Le sida", "Le Zimbabwe"],
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 4,
+				"an": "edssas.m.sahara.v13.n1.a2",
+				"dbId": "edssas",
+				"articleLink": ["http://hdl.handle.net/10520/EJC184148"],
+				"title": "'The mercurial piece of the puzzle' : understanding stigma and HIV/AIDS in South Africa : original article",
+				"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2016, Vol 13, Issue 1, p. 8-16.",
+				"authors": ["Gilbert, Leah"],
+				"publicationDate": "2016-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SA ePublications Service",
+				"subjects": ["Stigma", "HIV/AIDS", "South Africa", "Stigmatisation", "VIH/SIDA", "Afrique du Sud"],
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 5,
+				"an": "edsswe.oai.dspace.mah.se.2043.19888",
+				"dbId": "edsswe",
+				"articleLink": ["http://hdl.handle.net/2043/19888"],
+				"title": "Social representation of hearing aids : cross-cultural study in India, Iran, Portugal, and the United Kingdom",
+				"source": "Clinical interventions in aging;. 01/01/2015 10:1601-1615",
+				"authors": ["Manchaiah, Vinaya, Author", "Danermark, Berth, Author", "Ahmadi, Tayebeh, Author", "Tomé, David, Author", "Krishna, Rajalakshmi, Author", "Germundsson, Per, Author", "Malmö University, Faculty of Health and Society, Publisher"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SwePub",
+				"subjects": ["MEDICINE", "MEDICIN", "hearing aids", "hearing loss", "social representation", "cross-culture", "attitudes", "perception"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 6,
+				"an": "edssas.genbeh.v12.n2.a7",
+				"dbId": "edssas",
+				"articleLink": "pdflink",
+				"title": "Poverty, migration and the incidence of HIV/AIDS among rural women in Lesotho : a rights-based approach to public health strategies",
+				"source": "Gender and Behaviour, Dec 2014, Vol 12, Issue 2, p. 6317-6328.",
+				"authors": ["Olowu, Dejo"],
+				"publicationDate": "2014-12-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SA ePublications Service",
+				"subjects": ["Lesotho", "HIV/AIDS", "Rural women", "Gender-based discrimination", "Poverty", "Migration", "Public health"],
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 7,
+				"an": "edssas.sapsyc.v45.n1.a11",
+				"dbId": "edssas",
+				"articleLink": "pdflink",
+				"title": "Psycho-social experiences and coping among caregivers of people living with HIV/AIDS in the North-West province of South Africa",
+				"source": "South African Journal of Psychology, Mar 2015, Vol 45, Issue 1, p. 130-139.",
+				"authors": ["Amoateng, Acheampong Yaw", "Kalule-Sabiti, Ishmael", "Oladipo, Samuel E"],
+				"publicationDate": "2015-03-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SA ePublications Service",
+				"subjects": ["Caregivers", "Coping resources", "North-West province", "Psycho-social", "PWLHA"],
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 8,
+				"an": "edssas.jemba.v8.n2.a5",
+				"dbId": "edssas",
+				"articleLink": ["http://hdl.handle.net/10520/EJC183697"],
+				"title": "Combating HIV and/or AIDS : a challenge to millennium development goals for disaster managers in the Southern African development community : original research",
+				"source": "Jamba : Journal of Disaster Risk Studies,  2016, Vol 8, Issue 2, p. 1-10.",
+				"authors": ["Kunguma, Olivia", "Ncube, Alice"],
+				"publicationDate": "2016-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SA ePublications Service",
+				"subjects": null,
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 9,
+				"an": "EJ1079541",
+				"dbId": "eric",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1079541"],
+				"title": "Impact of Visual Aids in Enhancing the Learning Process Case Research: District Dera Ghazi Khan",
+				"source": "Journal of Education and Practice, v6 n19 p226-233 2015. 9 pp.",
+				"authors": ["Shabiralyani, Ghulam", "Hasan, Khuram Shahzad", "Hamad, Naqvi", "Iqbal, Nadeem"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Foreign Countries", "Visual Aids", "Teacher Attitudes", "Student Motivation", "Questionnaires", "Statistical Analysis", "Computer Software", "Student Attitudes", "Public Schools", "Private Schools", "College Students", "College Faculty", "Secondary School Students", "Secondary School Teachers", "Vocabulary Development", "Regression (Statistics)", "Correlation", "Learning Processes"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 10,
+				"an": "EJ1079154",
+				"dbId": "eric",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1079154"],
+				"title": "Trado-Cultural Practices, Situation, Analysis and Epidemiological Factors in the Spread of HIV/AIDS in Nigeria",
+				"source": "Journal of Education and Practice, v6 n21 p65-70 2015. 7 pp.",
+				"authors": ["Adesina, Modupe Olutayo"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Acquired Immunodeficiency Syndrome (AIDS)", "Foreign Countries", "Communicable Diseases", "Sexually Transmitted Diseases", "Cultural Influences", "At Risk Persons", "Public Health", "Rural Areas", "Sex Education", "Health Education", "Access to Information", "Access to Health Care", "Gender Bias"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 11,
+				"an": "EJ1078484",
+				"dbId": "eric",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1078484"],
+				"title": "Developing a Participatory Pedagogical and Multidisciplinary Approach for Integrating HIV/AIDS into University Curriculum",
+				"source": "Journal of Education and Practice, v6 n25 p6-15 2015. 11 pp.",
+				"authors": ["Mulwo, Abraham Kiprop", "Chemai, Lemmy"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Acquired Immunodeficiency Syndrome (AIDS)", "College Curriculum", "Interdisciplinary Approach", "Sexuality", "Health Promotion", "Questionnaires", "Surveys", "Student Attitudes", "College Students", "Interviews", "Observation", "Foreign Countries", "Access to Information", "Information Sources"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 12,
+				"an": "EJ1051131",
+				"dbId": "eric",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1051131"],
+				"title": "Students Talk about Their HIV/AIDS Education Courses: A Case of Addis Ababa, Ethiopia",
+				"source": "Journal of International Education Research, v11 n1 p35-46 2015. 12 pp.",
+				"authors": ["Sambe, Mariam M."],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Foreign Countries", "High School Students", "Acquired Immunodeficiency Syndrome (AIDS)", "Gender Differences", "Health Education", "Sex Education", "Sexually Transmitted Diseases", "Case Studies", "Focus Groups", "Student Attitudes", "Peer Teaching", "Parent Role", "Parents", "Interviews", "Mass Media Role", "Drug Use", "Drinking"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 13,
+				"an": "edsswe.oai.DiVA.org.liu.113490",
+				"dbId": "edsswe",
+				"articleLink": ["http://liu.diva-portal.org/smash/get/diva2:781963/FULLTEXT01.pdf"],
+				"title": "Benefit from, and acclimatization to, frequency compression hearing aids in experienced adult hearing-aid users",
+				"source": "International Journal of Audiology. 01/01/2015 54:37-47",
+				"authors": ["Ellis, Rachel, Author", "Munro, Kevin J., Author", "Linköpings universitet, Institutionen för beteendevetenskap och lärande, Handikappvetenskap, Originator", "Linköpings universitet, Filosofiska fakulteten, Originator"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SwePub",
+				"subjects": ["Medical and Health Sciences", "Basic Medicine", "Medicin och hälsovetenskap", "Medicinska grundvetenskaper", "Frequency compression", "auditory acclimatization", "speech perception", "cognition", "sensorineural hearing loss"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 14,
+				"an": "edsarl.03633640.201410.201504080029.201504080029.77.92",
+				"dbId": "edsarl",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=edsarl&AN=edsarl.03633640.201410.201504080029.201504080029.77.92"],
+				"title": "銀髮族眼戴式手機閱讀輔具雛型之設計開發與科技接受度調查 / Prototype Development and Technology Acceptance Survey on Glasses-Attached Mobile Reading Aids for Senior Citizens",
+				"source": "圖書館學與資訊科學. Vol. 40 Issue 2, p77-92. 16 p.",
+				"authors": ["邱子恒 / Tzu-Heng Chiu", "蔣以仁 / I-Jen Chiang", "黃泓彬王君逸 / Hong-Bin Huang"],
+				"publicationDate": "2014-10-01T00:00:00.000Z",
+				"languages": ["繁體中文"],
+				"database": "Airiti Library eBooks & Journals - 華藝線上圖書館",
+				"subjects": ["銀髮族", "眼載式手機閱讀輔具", "科技接受度調查", "Senior Citizens", "Glasses-Attached Mobile Reading Aids", "Technology Acceptance Survey"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 15,
+				"an": "26157079",
+				"dbId": "mnh",
+				"articleLink": "pdflink",
+				"title": "An unusual appearing skin lesion from Penicillium marneffei infection in an AIDS patient in central China.",
+				"source": "Publisher: American Society of Tropical Medicine and Hygiene Country of Publication: United States NLM ID: 0370507 Publication Model: Print Cited Medium: Internet ISSN: 1476-1645 (Electronic) Linking ISSN: 00029637 NLM ISO Abbreviation: Am. J. Trop. Med. Hyg. Subsets: Core Clinical (AIM); MEDLINE",
+				"authors": ["Xiang Y", "Guo W", "Liang K"],
+				"publicationDate": "2015-07-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "MEDLINE with Full Text",
+				"subjects": ["AIDS-Related Opportunistic Infections complications", "AIDS-Related Opportunistic Infections microbiology", "Culture Techniques", "Dermatomycoses complications", "Dermatomycoses microbiology", "Female", "Humans", "Middle Aged", "AIDS-Related Opportunistic Infections diagnosis", "Acquired Immunodeficiency Syndrome complications", "Dermatomycoses diagnosis", "Penicillium isolation & purification"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 16,
+				"an": "hsdc04p.249.11117.723076",
+				"dbId": "edspac",
+				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdc04p-249-11117-723076"],
+				"title": "Randall Tobias, Head of President's Emergency Plan for AIDS, Speech at 2004 International Conference on HIV/AIDS",
+				"source": "Historic Documents of 2004.",
+				"authors": ["CQ Press [Editor]"],
+				"publicationDate": "2005-01-01T00:00:00.000Z",
+				"languages": null,
+				"database": "CQ Press Public Affairs Collection",
+				"subjects": ["AIDS & HIV", "Human Rights, Democratization, & Humanitarian Aid", "Health", "Research & Advocacy", "International Affairs"],
+				"publicationType": "Primary Source",
+				"abstract": null
+			}, {
+				"id": 17,
+				"an": "edsswe.oai.DiVA.org.oru.45680",
+				"dbId": "edsswe",
+				"articleLink": ["http://oru.diva-portal.org/smash/get/diva2:850044/FULLTEXT01.pdf"],
+				"title": "Integration of Family Planning in HIV/AIDS Program in Solwezi District, Northwestern Zambia: Status and Perspectives",
+				"source": "Public Health Research. 01/01/2015 5:103-108",
+				"authors": ["Mulindwa Nsiyi, Tharcisse, Author", "Harrison, N’guni, Author", "Phiri, Ernest, Author", "Brezovsek, Andrea, Author", "Kaboru, Berthollet Bwira, Author"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SwePub",
+				"subjects": ["Medical and Health Sciences", "Health Sciences", "Public Health, Global Health, Social Medicine and Epidemiology", "Medicin och hälsovetenskap", "Hälsovetenskaper", "Folkhälsovetenskap, global hälsa, socialmedicin och epidemiologi", "Family planning", "HIV", "Integrated services", "Solwezi", "Zambia", "Public health", "Folkhälsovetenskap"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 18,
+				"an": "edsswe.oai.lup.lub.lu.se.7696278",
+				"dbId": "edsswe",
+				"articleLink": ["http://lup.lub.lu.se/record/7696278/file/7696343.pdf"],
+				"title": "The use of OECD commentaries as interpretative aids - The static/ambulatory-approaches debate considered from the perspective of international law",
+				"source": "Nordic Tax Journal. 01/01/2015 2015:34-59",
+				"authors": ["Hilling, Maria, Author", "Linderfalk, Ulf, Author", "Lunds universitet, Juridik, Juridiska institutionen, Publisher", "Lund University, Faculty of Law, Department of Law, Publisher"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SwePub",
+				"subjects": ["folkrätt", "finansrätt", "fiscal law", "public international law", "Samhällsvetenskap", "Juridik", "Juridik (exklusive juridik och samhälle)", "Social Sciences", "Law", "Law (excluding Law and Society)"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 19,
+				"an": "hsdcp03p.229.9847.634224",
+				"dbId": "edspac",
+				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdcp03p-229-9847-634224"],
+				"title": "Address by Stephen Lewis, UN Special Envoy for HIV/AIDS in Africa, at the Thirteenth International Conference on AIDS and STIs",
+				"source": "Historic Documents of 2003.",
+				"authors": null,
+				"publicationDate": "2004-01-01T00:00:00.000Z",
+				"languages": null,
+				"database": "CQ Press Public Affairs Collection",
+				"subjects": ["AIDS & HIV", "Health", "Research & Advocacy"],
+				"publicationType": "Primary Source",
+				"abstract": null
+			}, {
+				"id": 20,
+				"an": "26665360",
+				"dbId": "mnh",
+				"articleLink": "pdflink",
+				"title": "Use of Audio-Visual aids in teaching post operative exercises to person affected by Leprosy.",
+				"source": "Publisher: British Leprosy Relief Association Country of Publication: England NLM ID: 0243711 Publication Model: Print Cited Medium: Print ISSN: 0305-7518 (Print) Linking ISSN: 03057518 NLM ISO Abbreviation: Lepr Rev Subsets: MEDLINE",
+				"authors": ["Gupta P"],
+				"publicationDate": "2015-09-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "MEDLINE with Full Text",
+				"subjects": ["Humans", "Patient Education as Topic", "Teaching Materials", "Audiovisual Aids", "Hand surgery", "Leprosy complications", "Leprosy surgery", "Postoperative Care methods", "Tendon Transfer"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}],
+			"maxPage": 25837,
+			"dateRange": {
+				"min": 1761,
+				"max": 2017
+			},
+			"currentPage": 1,
+			"totalHits": 516730
+		},
+		"history": [{
+			"queries": [{
+				"boolean": "AND",
+				"term": "aids",
+				"field": null
+			}],
+			"domain": "vie",
+			"limiters": {
+				"fullText": true,
+				"publicationDate": {
+					"from": null,
+					"to": null
+				},
+				"peerReviewedArticle": false,
+				"author": null,
+				"journalName": null,
+				"title": null,
+				"language": []
+			},
+			"activeFacets": {},
+			"totalHits": 516749
+		}],
+		"facets": {
+			"SourceType": {
+				"label": "Source Type",
+				"choices": [{
+					"value": "Academic Journals",
+					"label": "Academic Journals (339961)"
+				}, {
+					"value": "Magazines",
+					"label": "Magazines (85758)"
+				}, {
+					"value": "Reports",
+					"label": "Reports (9410)"
+				}, {
+					"value": "Books",
+					"label": "Books (9143)"
+				}, {
+					"value": "Reviews",
+					"label": "Reviews (5904)"
+				}, {
+					"value": "News",
+					"label": "News (2554)"
+				}, {
+					"value": "Conference Materials",
+					"label": "Conference Materials (2483)"
+				}, {
+					"value": "Electronic Resources",
+					"label": "Electronic Resources (2436)"
+				}, {
+					"value": "Non-Print Resources",
+					"label": "Non-Print Resources (767)"
+				}, {
+					"value": "Dissertations",
+					"label": "Dissertations (499)"
+				}, {
+					"value": "eBooks",
+					"label": "eBooks (184)"
+				}, {
+					"value": "Primary Source Documents",
+					"label": "Primary Source Documents (74)"
+				}, {
+					"value": "Videos",
+					"label": "Videos (13)"
+				}, {
+					"value": "Biographies",
+					"label": "Biographies (2)"
+				}, {
+					"value": "Audio",
+					"label": "Audio (1)"
+				}],
+				"values": [],
+				"newValues": []
+			},
+			"SubjectEDS": {
+				"label": "Subject",
+				"choices": [{
+					"value": "hiv infections",
+					"label": "hiv infections (54693)"
+				}, {
+					"value": "acquired immunodeficiency syndrome",
+					"label": "acquired immunodeficiency syndrome (33614)"
+				}, {
+					"value": "aids (disease)",
+					"label": "aids (disease) (15733)"
+				}, {
+					"value": "hiv-1",
+					"label": "hiv-1 (13663)"
+				}, {
+					"value": "aids-related opportunistic infections",
+					"label": "aids-related opportunistic infections (13097)"
+				}, {
+					"value": "teaching aids & devices",
+					"label": "teaching aids & devices (11647)"
+				}, {
+					"value": "hiv",
+					"label": "hiv (10865)"
+				}, {
+					"value": "hiv (viruses)",
+					"label": "hiv (viruses) (7955)"
+				}, {
+					"value": "aids",
+					"label": "aids (7023)"
+				}, {
+					"value": "hearing aids",
+					"label": "hearing aids (6708)"
+				}, {
+					"value": "aids vaccines",
+					"label": "aids vaccines (6040)"
+				}, {
+					"value": "anti-hiv agents",
+					"label": "anti-hiv agents (5839)"
+				}, {
+					"value": "aids (disease) -- prevention",
+					"label": "aids (disease) -- prevention (5785)"
+				}, {
+					"value": "hiv-positive persons",
+					"label": "hiv-positive persons (5785)"
+				}, {
+					"value": "sexually transmitted diseases",
+					"label": "sexually transmitted diseases (5312)"
+				}, {
+					"value": "hiv/aids",
+					"label": "hiv/aids (5085)"
+				}, {
+					"value": "audiovisual aids",
+					"label": "audiovisual aids (4723)"
+				}, {
+					"value": "hiv seropositivity",
+					"label": "hiv seropositivity (4500)"
+				}, {
+					"value": "public health",
+					"label": "public health (4392)"
+				}, {
+					"value": "health knowledge, attitudes, practice",
+					"label": "health knowledge, attitudes, practice (4030)"
+				}, {
+					"value": "sexual behavior",
+					"label": "sexual behavior (3919)"
+				}, {
+					"value": "books -- book reviews",
+					"label": "books -- book reviews (3858)"
+				}, {
+					"value": "health education",
+					"label": "health education (3824)"
+				}, {
+					"value": "tuberculosis",
+					"label": "tuberculosis (3593)"
+				}, {
+					"value": "antiretroviral therapy, highly active",
+					"label": "antiretroviral therapy, highly active (3545)"
+				}, {
+					"value": "antiviral agents",
+					"label": "antiviral agents (3425)"
+				}, {
+					"value": "visual aids",
+					"label": "visual aids (3338)"
+				}, {
+					"value": "educational technology",
+					"label": "educational technology (3266)"
+				}, {
+					"value": "research -- finance",
+					"label": "research -- finance (3174)"
+				}, {
+					"value": "aids patients",
+					"label": "aids patients (3129)"
+				}, {
+					"value": "teaching methods",
+					"label": "teaching methods (3004)"
+				}, {
+					"value": "aids serodiagnosis",
+					"label": "aids serodiagnosis (2999)"
+				}, {
+					"value": "medical care",
+					"label": "medical care (2654)"
+				}, {
+					"value": "antiretroviral agents",
+					"label": "antiretroviral agents (2625)"
+				}, {
+					"value": "descriptive statistics",
+					"label": "descriptive statistics (2584)"
+				}, {
+					"value": "epidemiology",
+					"label": "epidemiology (2509)"
+				}, {
+					"value": "aids dementia complex",
+					"label": "aids dementia complex (2443)"
+				}, {
+					"value": "substance abuse, intravenous",
+					"label": "substance abuse, intravenous (2414)"
+				}, {
+					"value": "condoms",
+					"label": "condoms (2412)"
+				}, {
+					"value": "higher education",
+					"label": "higher education (2379)"
+				}, {
+					"value": "aids (disease) -- research",
+					"label": "aids (disease) -- research (2364)"
+				}, {
+					"value": "hiv infections -- prevention",
+					"label": "hiv infections -- prevention (2328)"
+				}, {
+					"value": "nonfiction",
+					"label": "nonfiction (2275)"
+				}, {
+					"value": "developing countries",
+					"label": "developing countries (2238)"
+				}, {
+					"value": "health promotion",
+					"label": "health promotion (2214)"
+				}, {
+					"value": "questionnaires",
+					"label": "questionnaires (2213)"
+				}, {
+					"value": "hiv infection -- research",
+					"label": "hiv infection -- research (2168)"
+				}, {
+					"value": "quality of life",
+					"label": "quality of life (2125)"
+				}, {
+					"value": "hiv infection -- prevention",
+					"label": "hiv infection -- prevention (2123)"
+				}, {
+					"value": "research",
+					"label": "research (2119)"
+				}],
+				"values": [],
+				"newValues": []
+			},
+			"Journal": {
+				"label": "Publication",
+				"choices": [{
+					"value": "aids care",
+					"label": "aids care (8944)"
+				}, {
+					"value": "aids and behavior",
+					"label": "aids and behavior (6647)"
+				}, {
+					"value": "plos one",
+					"label": "plos one (5479)"
+				}, {
+					"value": "nature",
+					"label": "nature (5338)"
+				}, {
+					"value": "aids patient care and stds",
+					"label": "aids patient care and stds (4900)"
+				}, {
+					"value": "lancet london england",
+					"label": "lancet london england (4602)"
+				}, {
+					"value": "american journal of public health",
+					"label": "american journal of public health (3749)"
+				}, {
+					"value": "journal of the international aids society",
+					"label": "journal of the international aids society (3734)"
+				}, {
+					"value": "journal of the association of nurses in aids care",
+					"label": "journal of the association of nurses in aids care (3019)"
+				}, {
+					"value": "clinical infectious diseases",
+					"label": "clinical infectious diseases (3017)"
+				}, {
+					"value": "vaccine",
+					"label": "vaccine (2534)"
+				}, {
+					"value": "journal of infectious diseases",
+					"label": "journal of infectious diseases (2447)"
+				}, {
+					"value": "science",
+					"label": "science (2347)"
+				}, {
+					"value": "library journal",
+					"label": "library journal (2247)"
+				}, {
+					"value": "virology",
+					"label": "virology (2207)"
+				}, {
+					"value": "annals of internal medicine",
+					"label": "annals of internal medicine (2101)"
+				}, {
+					"value": "science news",
+					"label": "science news (1801)"
+				}, {
+					"value": "bmc public health",
+					"label": "bmc public health (1663)"
+				}, {
+					"value": "bulletin of the world health organization",
+					"label": "bulletin of the world health organization (1474)"
+				}, {
+					"value": "nature medicine",
+					"label": "nature medicine (1473)"
+				}, {
+					"value": "sexually transmitted infections",
+					"label": "sexually transmitted infections (1282)"
+				}, {
+					"value": "international journal of audiology",
+					"label": "international journal of audiology (1134)"
+				}, {
+					"value": "retrovirology",
+					"label": "retrovirology (1101)"
+				}, {
+					"value": "cadernos de saude publica",
+					"label": "cadernos de saude publica (1082)"
+				}, {
+					"value": "bmc infectious diseases",
+					"label": "bmc infectious diseases (922)"
+				}, {
+					"value": "journal of medical virology",
+					"label": "journal of medical virology (910)"
+				}, {
+					"value": "aids research and therapy",
+					"label": "aids research and therapy (849)"
+				}, {
+					"value": "journal of school health",
+					"label": "journal of school health (791)"
+				}, {
+					"value": "infection",
+					"label": "infection (732)"
+				}, {
+					"value": "biochemical and biophysical research communications",
+					"label": "biochemical and biophysical research communications (727)"
+				}, {
+					"value": "plos medicine",
+					"label": "plos medicine (721)"
+				}, {
+					"value": "plos pathogens",
+					"label": "plos pathogens (703)"
+				}, {
+					"value": "revista de saude publica",
+					"label": "revista de saude publica (673)"
+				}, {
+					"value": "reproductive health matters",
+					"label": "reproductive health matters (661)"
+				}, {
+					"value": "revista do instituto de medicina tropical de sao paulo",
+					"label": "revista do instituto de medicina tropical de sao paulo (639)"
+				}, {
+					"value": "revista da sociedade brasileira de medicina tropical",
+					"label": "revista da sociedade brasileira de medicina tropical (613)"
+				}, {
+					"value": "african journal of reproductive health",
+					"label": "african journal of reproductive health (603)"
+				}, {
+					"value": "brazilian journal of infectious diseases",
+					"label": "brazilian journal of infectious diseases (487)"
+				}, {
+					"value": "publishers weekly",
+					"label": "publishers weekly (467)"
+				}, {
+					"value": "bmc health services research",
+					"label": "bmc health services research (443)"
+				}, {
+					"value": "new scientist",
+					"label": "new scientist (441)"
+				}, {
+					"value": "social work",
+					"label": "social work (426)"
+				}, {
+					"value": "emerging infectious diseases",
+					"label": "emerging infectious diseases (414)"
+				}, {
+					"value": "aba journal",
+					"label": "aba journal (362)"
+				}, {
+					"value": "chinese medical journal",
+					"label": "chinese medical journal (291)"
+				}, {
+					"value": "curationis",
+					"label": "curationis (288)"
+				}, {
+					"value": "human rights",
+					"label": "human rights (198)"
+				}, {
+					"value": "foreign affairs",
+					"label": "foreign affairs (141)"
+				}, {
+					"value": "environmental health perspectives",
+					"label": "environmental health perspectives (133)"
+				}, {
+					"value": "bioscience",
+					"label": "bioscience (52)"
+				}],
+				"values": [],
+				"newValues": []
+			},
+			"Language": {
+				"label": "Language",
+				"choices": [{
+					"value": "english",
+					"label": "english (419700)"
+				}, {
+					"value": "undetermined",
+					"label": "undetermined (15204)"
+				}, {
+					"value": "portuguese",
+					"label": "portuguese (6541)"
+				}, {
+					"value": "spanish",
+					"label": "spanish (3748)"
+				}, {
+					"value": "french",
+					"label": "french (3549)"
+				}, {
+					"value": "german",
+					"label": "german (2746)"
+				}, {
+					"value": "spanish; castilian",
+					"label": "spanish; castilian (1174)"
+				}, {
+					"value": "multiple languages",
+					"label": "multiple languages (716)"
+				}, {
+					"value": "swedish",
+					"label": "swedish (656)"
+				}, {
+					"value": "italian",
+					"label": "italian (277)"
+				}, {
+					"value": "afrikaans",
+					"label": "afrikaans (175)"
+				}, {
+					"value": "turkish",
+					"label": "turkish (174)"
+				}, {
+					"value": "russian",
+					"label": "russian (173)"
+				}, {
+					"value": "英文",
+					"label": "英文 (113)"
+				}, {
+					"value": "catalan; valencian",
+					"label": "catalan; valencian (106)"
+				}, {
+					"value": "mulmul",
+					"label": "mulmul (101)"
+				}, {
+					"value": "polish",
+					"label": "polish (78)"
+				}, {
+					"value": "dutch; flemish",
+					"label": "dutch; flemish (67)"
+				}, {
+					"value": "japanese",
+					"label": "japanese (66)"
+				}, {
+					"value": "hebrew",
+					"label": "hebrew (51)"
+				}, {
+					"value": "lithuanian",
+					"label": "lithuanian (43)"
+				}, {
+					"value": "persian",
+					"label": "persian (40)"
+				}, {
+					"value": "enen",
+					"label": "enen (37)"
+				}, {
+					"value": "other",
+					"label": "other (37)"
+				}, {
+					"value": "serbian",
+					"label": "serbian (36)"
+				}, {
+					"value": "dutch",
+					"label": "dutch (33)"
+				}, {
+					"value": "sven",
+					"label": "sven (32)"
+				}, {
+					"value": "croatian",
+					"label": "croatian (27)"
+				}, {
+					"value": "簡體中文",
+					"label": "簡體中文 (26)"
+				}, {
+					"value": "czech",
+					"label": "czech (25)"
+				}, {
+					"value": "chinese",
+					"label": "chinese (24)"
+				}, {
+					"value": "cht",
+					"label": "cht (24)"
+				}, {
+					"value": "arabic",
+					"label": "arabic (23)"
+				}, {
+					"value": "dutch/flemish",
+					"label": "dutch/flemish (19)"
+				}, {
+					"value": "en-1",
+					"label": "en-1 (19)"
+				}, {
+					"value": "korean",
+					"label": "korean (19)"
+				}, {
+					"value": "danish",
+					"label": "danish (15)"
+				}, {
+					"value": "sven-1",
+					"label": "sven-1 (15)"
+				}, {
+					"value": "繁體中文",
+					"label": "繁體中文 (15)"
+				}, {
+					"value": "sv-1",
+					"label": "sv-1 (14)"
+				}, {
+					"value": "中文繁體",
+					"label": "中文繁體 (14)"
+				}, {
+					"value": "greek",
+					"label": "greek (13)"
+				}, {
+					"value": "slovenian",
+					"label": "slovenian (13)"
+				}, {
+					"value": "hungarian",
+					"label": "hungarian (12)"
+				}, {
+					"value": "slovak",
+					"label": "slovak (12)"
+				}, {
+					"value": "romanian",
+					"label": "romanian (11)"
+				}, {
+					"value": "finnish",
+					"label": "finnish (10)"
+				}, {
+					"value": "svsv",
+					"label": "svsv (10)"
+				}, {
+					"value": "norwegian",
+					"label": "norwegian (9)"
+				}, {
+					"value": "estonian",
+					"label": "estonian (8)"
+				}, {
+					"value": "greek, modern (1453-)",
+					"label": "greek, modern (1453-) (8)"
+				}, {
+					"value": "indonesian",
+					"label": "indonesian (8)"
+				}, {
+					"value": "svenen",
+					"label": "svenen (8)"
+				}, {
+					"value": "영어(eng)",
+					"label": "영어(eng) (8)"
+				}, {
+					"value": "enin english",
+					"label": "enin english (7)"
+				}, {
+					"value": "engeng",
+					"label": "engeng (6)"
+				}, {
+					"value": "ensv",
+					"label": "ensv (6)"
+				}, {
+					"value": "latvian",
+					"label": "latvian (6)"
+				}, {
+					"value": "svensv",
+					"label": "svensv (6)"
+				}, {
+					"value": "ukranian",
+					"label": "ukranian (6)"
+				}, {
+					"value": "ende",
+					"label": "ende (5)"
+				}, {
+					"value": "iten",
+					"label": "iten (5)"
+				}, {
+					"value": "malay",
+					"label": "malay (5)"
+				}, {
+					"value": "maltese",
+					"label": "maltese (5)"
+				}, {
+					"value": "greek, ancient (to 1453)",
+					"label": "greek, ancient (to 1453) (4)"
+				}, {
+					"value": "mulen",
+					"label": "mulen (4)"
+				}, {
+					"value": "mulsprache nicht identifiziert",
+					"label": "mulsprache nicht identifiziert (4)"
+				}, {
+					"value": "bulgarian",
+					"label": "bulgarian (3)"
+				}, {
+					"value": "english, old (ca.450-1100)",
+					"label": "english, old (ca.450-1100) (3)"
+				}, {
+					"value": "modern greek",
+					"label": "modern greek (3)"
+				}, {
+					"value": "albanian",
+					"label": "albanian (2)"
+				}, {
+					"value": "aren",
+					"label": "aren (2)"
+				}, {
+					"value": "elen",
+					"label": "elen (2)"
+				}, {
+					"value": "irish",
+					"label": "irish (2)"
+				}, {
+					"value": "ita",
+					"label": "ita (2)"
+				}, {
+					"value": "pten",
+					"label": "pten (2)"
+				}, {
+					"value": "somali",
+					"label": "somali (2)"
+				}, {
+					"value": "sotho, southern",
+					"label": "sotho, southern (2)"
+				}, {
+					"value": "tagalog",
+					"label": "tagalog (2)"
+				}, {
+					"value": "tren",
+					"label": "tren (2)"
+				}, {
+					"value": "ukrainian",
+					"label": "ukrainian (2)"
+				}, {
+					"value": "arab",
+					"label": "arab (1)"
+				}, {
+					"value": "defr",
+					"label": "defr (1)"
+				}, {
+					"value": "enensv",
+					"label": "enensv (1)"
+				}, {
+					"value": "enggre",
+					"label": "enggre (1)"
+				}, {
+					"value": "enit",
+					"label": "enit (1)"
+				}, {
+					"value": "ensv-1",
+					"label": "ensv-1 (1)"
+				}, {
+					"value": "ensven",
+					"label": "ensven (1)"
+				}, {
+					"value": "ensvsv",
+					"label": "ensvsv (1)"
+				}, {
+					"value": "galician",
+					"label": "galician (1)"
+				}, {
+					"value": "haitian creole",
+					"label": "haitian creole (1)"
+				}, {
+					"value": "haitian french creole",
+					"label": "haitian french creole (1)"
+				}, {
+					"value": "hindi",
+					"label": "hindi (1)"
+				}, {
+					"value": "iranian languages",
+					"label": "iranian languages (1)"
+				}, {
+					"value": "laen",
+					"label": "laen (1)"
+				}, {
+					"value": "lao",
+					"label": "lao (1)"
+				}, {
+					"value": "maori",
+					"label": "maori (1)"
+				}, {
+					"value": "no linguistic content; not applicable",
+					"label": "no linguistic content; not applicable (1)"
+				}, {
+					"value": "scr",
+					"label": "scr (1)"
+				}, {
+					"value": "shen",
+					"label": "shen (1)"
+				}, {
+					"value": "singhalese",
+					"label": "singhalese (1)"
+				}, {
+					"value": "stellenbosch",
+					"label": "stellenbosch (1)"
+				}, {
+					"value": "svsv-1",
+					"label": "svsv-1 (1)"
+				}, {
+					"value": "thai",
+					"label": "thai (1)"
+				}, {
+					"value": "urdu",
+					"label": "urdu (1)"
+				}, {
+					"value": "vietnamese",
+					"label": "vietnamese (1)"
+				}],
+				"values": [],
+				"newValues": []
+			},
+			"Category": {
+				"label": "Category",
+				"choices": [{
+					"value": "medical / aids & hiv",
+					"label": "medical / aids & hiv (22)"
+				}, {
+					"value": "health & fitness / diseases / aids & hiv",
+					"label": "health & fitness / diseases / aids & hiv (21)"
+				}, {
+					"value": "medical / public health",
+					"label": "medical / public health (16)"
+				}, {
+					"value": "medical / infectious diseases",
+					"label": "medical / infectious diseases (14)"
+				}, {
+					"value": "education / computers & technology",
+					"label": "education / computers & technology (10)"
+				}, {
+					"value": "medical / general",
+					"label": "medical / general (8)"
+				}, {
+					"value": "medical / preventive medicine",
+					"label": "medical / preventive medicine (7)"
+				}, {
+					"value": "education / educational psychology",
+					"label": "education / educational psychology (6)"
+				}, {
+					"value": "education / evaluation & assessment",
+					"label": "education / evaluation & assessment (6)"
+				}, {
+					"value": "education / testing & measurement",
+					"label": "education / testing & measurement (5)"
+				}],
+				"values": [],
+				"newValues": []
+			},
+			"Publisher": {
+				"label": "Publisher",
+				"choices": [{
+					"value": "wiley-blackwell",
+					"label": "wiley-blackwell (15360)"
+				}, {
+					"value": "elsevier",
+					"label": "elsevier (14578)"
+				}, {
+					"value": "elsevier b.v.",
+					"label": "elsevier b.v. (11363)"
+				}, {
+					"value": "taylor & francis ltd",
+					"label": "taylor & francis ltd (11271)"
+				}, {
+					"value": "springer science & business media b.v.",
+					"label": "springer science & business media b.v. (11037)"
+				}, {
+					"value": "oxford university press",
+					"label": "oxford university press (10520)"
+				}, {
+					"value": "biomed central",
+					"label": "biomed central (9841)"
+				}, {
+					"value": "springer",
+					"label": "springer (9502)"
+				}, {
+					"value": "elsevier inc.",
+					"label": "elsevier inc. (8876)"
+				}, {
+					"value": "elsevier science",
+					"label": "elsevier science (8412)"
+				}, {
+					"value": "informa healthcare",
+					"label": "informa healthcare (8020)"
+				}, {
+					"value": "nature publishing group",
+					"label": "nature publishing group (7915)"
+				}, {
+					"value": "public library of science",
+					"label": "public library of science (7357)"
+				}, {
+					"value": "mary ann liebert, inc.",
+					"label": "mary ann liebert, inc. (5917)"
+				}, {
+					"value": "sage publications, ltd.",
+					"label": "sage publications, ltd. (5809)"
+				}, {
+					"value": "taylor & francis",
+					"label": "taylor & francis (5414)"
+				}, {
+					"value": "british medical association",
+					"label": "british medical association (4796)"
+				}, {
+					"value": "springer science + business media",
+					"label": "springer science + business media (4612)"
+				}, {
+					"value": "wiley",
+					"label": "wiley (4476)"
+				}, {
+					"value": "american public health association",
+					"label": "american public health association (4055)"
+				}, {
+					"value": "american association for the advancement of science",
+					"label": "american association for the advancement of science (3732)"
+				}, {
+					"value": "sage publications",
+					"label": "sage publications (3649)"
+				}, {
+					"value": "university of chicago press",
+					"label": "university of chicago press (3581)"
+				}, {
+					"value": "academic press",
+					"label": "academic press (3459)"
+				}, {
+					"value": "sage publications inc.",
+					"label": "sage publications inc. (3440)"
+				}, {
+					"value": "bmj publishing group",
+					"label": "bmj publishing group (3403)"
+				}, {
+					"value": "elsevier science publishers",
+					"label": "elsevier science publishers (2934)"
+				}, {
+					"value": "international aids society",
+					"label": "international aids society (2814)"
+				}, {
+					"value": "time inc.",
+					"label": "time inc. (2154)"
+				}, {
+					"value": "world health organization",
+					"label": "world health organization (1626)"
+				}, {
+					"value": "springer-verlag",
+					"label": "springer-verlag (1348)"
+				}, {
+					"value": "library journals, llc",
+					"label": "library journals, llc (1280)"
+				}, {
+					"value": "canadian medical association",
+					"label": "canadian medical association (1156)"
+				}, {
+					"value": "hindawi publishing corporation",
+					"label": "hindawi publishing corporation (962)"
+				}, {
+					"value": "american psychological association",
+					"label": "american psychological association (920)"
+				}, {
+					"value": "routledge",
+					"label": "routledge (856)"
+				}, {
+					"value": "johns hopkins university press",
+					"label": "johns hopkins university press (687)"
+				}, {
+					"value": "cambridge university press",
+					"label": "cambridge university press (561)"
+				}, {
+					"value": "american library association",
+					"label": "american library association (529)"
+				}, {
+					"value": "lambda literary foundation",
+					"label": "lambda literary foundation (413)"
+				}, {
+					"value": "university of california press",
+					"label": "university of california press (334)"
+				}, {
+					"value": "duke university press",
+					"label": "duke university press (311)"
+				}, {
+					"value": "indiana university press",
+					"label": "indiana university press (280)"
+				}, {
+					"value": "instituto nacional de salud publica",
+					"label": "instituto nacional de salud publica (273)"
+				}, {
+					"value": "pwxyz, llc",
+					"label": "pwxyz, llc (251)"
+				}, {
+					"value": "canadian public health association",
+					"label": "canadian public health association (222)"
+				}, {
+					"value": "institute for operations research and the management sciences",
+					"label": "institute for operations research and the management sciences (105)"
+				}, {
+					"value": "earl g. graves publishing co., inc.",
+					"label": "earl g. graves publishing co., inc. (93)"
+				}, {
+					"value": "universitat de barcelona",
+					"label": "universitat de barcelona (34)"
+				}, {
+					"value": "vs verl. fur sozialwiss.",
+					"label": "vs verl. fur sozialwiss. (14)"
+				}],
+				"values": [],
+				"newValues": []
+			},
+			"ContentProvider": {
+				"label": "Content Provider",
+				"choices": [{
+					"value": "MEDLINE with Full Text",
+					"label": "MEDLINE with Full Text (82736)"
+				}, {
+					"value": "MEDLINE",
+					"label": "MEDLINE (82573)"
+				}, {
+					"value": "Academic OneFile",
+					"label": "Academic OneFile (42088)"
+				}, {
+					"value": "ScienceDirect",
+					"label": "ScienceDirect (30154)"
+				}, {
+					"value": "General OneFile",
+					"label": "General OneFile (28633)"
+				}, {
+					"value": "Expanded Academic ASAP",
+					"label": "Expanded Academic ASAP (27932)"
+				}, {
+					"value": "British Library Document Supply Centre Inside Serials & Conference Proceedings",
+					"label": "British Library Document Supply Centre Inside Serials & Conference Proceedings (26129)"
+				}, {
+					"value": "InfoTrac Health Reference Center Academic",
+					"label": "InfoTrac Health Reference Center Academic (25713)"
+				}, {
+					"value": "JSTOR Journals",
+					"label": "JSTOR Journals (20216)"
+				}, {
+					"value": "Newswires",
+					"label": "Newswires (15339)"
+				}, {
+					"value": "General Reference Center Gold",
+					"label": "General Reference Center Gold (14721)"
+				}, {
+					"value": "Health & Wellness Resource Center",
+					"label": "Health & Wellness Resource Center (13692)"
+				}, {
+					"value": "ERIC",
+					"label": "ERIC (13396)"
+				}, {
+					"value": "Networked Digital Library of Theses & Dissertations",
+					"label": "Networked Digital Library of Theses & Dissertations (12346)"
+				}, {
+					"value": "InfoTrac Student Edition",
+					"label": "InfoTrac Student Edition (11434)"
+				}, {
+					"value": "RCAAP",
+					"label": "RCAAP (10166)"
+				}, {
+					"value": "Student Resources in Context",
+					"label": "Student Resources in Context (7671)"
+				}, {
+					"value": "Canada In Context",
+					"label": "Canada In Context (6717)"
+				}, {
+					"value": "USPTO Patent Grants",
+					"label": "USPTO Patent Grants (6561)"
+				}, {
+					"value": "Directory of Open Access Journals",
+					"label": "Directory of Open Access Journals (6213)"
+				}, {
+					"value": "Biography in Context",
+					"label": "Biography in Context (6013)"
+				}, {
+					"value": "SciELO",
+					"label": "SciELO (5114)"
+				}, {
+					"value": "Science In Context",
+					"label": "Science In Context (4812)"
+				}, {
+					"value": "USPTO Patent Applications",
+					"label": "USPTO Patent Applications (4259)"
+				}, {
+					"value": "Business Insights: Essentials",
+					"label": "Business Insights: Essentials (3279)"
+				}, {
+					"value": "Government Printing Office Catalog",
+					"label": "Government Printing Office Catalog (2454)"
+				}, {
+					"value": "Opposing Viewpoints in Context",
+					"label": "Opposing Viewpoints in Context (2194)"
+				}, {
+					"value": "InfoTrac Newsstand",
+					"label": "InfoTrac Newsstand (1955)"
+				}, {
+					"value": "ECONIS",
+					"label": "ECONIS (1919)"
+				}, {
+					"value": "AGRIS",
+					"label": "AGRIS (1779)"
+				}, {
+					"value": "Research Starters",
+					"label": "Research Starters (1564)"
+				}, {
+					"value": "U.S. History in Context",
+					"label": "U.S. History in Context (1560)"
+				}, {
+					"value": "Narcis",
+					"label": "Narcis (1451)"
+				}, {
+					"value": "Europeana",
+					"label": "Europeana (1229)"
+				}, {
+					"value": "SA ePublications Service",
+					"label": "SA ePublications Service (1161)"
+				}, {
+					"value": "World History in Context",
+					"label": "World History in Context (953)"
+				}, {
+					"value": "LexisNexis Academic: Law Reviews",
+					"label": "LexisNexis Academic: Law Reviews (840)"
+				}, {
+					"value": "SciTech Connect",
+					"label": "SciTech Connect (783)"
+				}, {
+					"value": "Energy Citations Database",
+					"label": "Energy Citations Database (709)"
+				}, {
+					"value": "Literature Resource Center",
+					"label": "Literature Resource Center (703)"
+				}, {
+					"value": "Project MUSE",
+					"label": "Project MUSE (625)"
+				}, {
+					"value": "InfoTrac LegalTrac",
+					"label": "InfoTrac LegalTrac (555)"
+				}, {
+					"value": "GreenFILE",
+					"label": "GreenFILE (539)"
+				}, {
+					"value": "InfoTrac Computer Database",
+					"label": "InfoTrac Computer Database (528)"
+				}, {
+					"value": "China Science & Technology Journal Database",
+					"label": "China Science & Technology Journal Database (504)"
+				}, {
+					"value": "InfoTrac Informe!",
+					"label": "InfoTrac Informe! (442)"
+				}, {
+					"value": "SwePub",
+					"label": "SwePub (414)"
+				}, {
+					"value": "InfoTrac Junior Edition",
+					"label": "InfoTrac Junior Edition (371)"
+				}, {
+					"value": "BioOne Online Journals",
+					"label": "BioOne Online Journals (358)"
+				}, {
+					"value": "Index New Zealand",
+					"label": "Index New Zealand (316)"
+				}, {
+					"value": "PsycCRITIQUES",
+					"label": "PsycCRITIQUES (285)"
+				}, {
+					"value": "Cairn.info",
+					"label": "Cairn.info (281)"
+				}, {
+					"value": "arXiv",
+					"label": "arXiv (244)"
+				}, {
+					"value": "J-STAGE",
+					"label": "J-STAGE (229)"
+				}, {
+					"value": "Persée",
+					"label": "Persée (214)"
+				}, {
+					"value": "Digital Access to Scholarship at Harvard (DASH)",
+					"label": "Digital Access to Scholarship at Harvard (DASH) (208)"
+				}, {
+					"value": "CQ Press Congress Collection",
+					"label": "CQ Press Congress Collection (191)"
+				}, {
+					"value": "HeinOnline",
+					"label": "HeinOnline (180)"
+				}, {
+					"value": "Openedition.org",
+					"label": "Openedition.org (155)"
+				}, {
+					"value": "EU Bookshop",
+					"label": "EU Bookshop (154)"
+				}, {
+					"value": "Airiti Library eBooks & Journals - 華藝線上圖書館",
+					"label": "Airiti Library eBooks & Journals - 華藝線上圖書館 (143)"
+				}, {
+					"value": "ELibrary.RU",
+					"label": "ELibrary.RU (134)"
+				}, {
+					"value": "SOLIS - Sozialwissenschaftliche Literatur",
+					"label": "SOLIS - Sozialwissenschaftliche Literatur (128)"
+				}, {
+					"value": "Informit Humanities & Social Sciences Collection",
+					"label": "Informit Humanities & Social Sciences Collection (118)"
+				}, {
+					"value": "Informit Health Collection",
+					"label": "Informit Health Collection (115)"
+				}, {
+					"value": "VLeBooks",
+					"label": "VLeBooks (114)"
+				}, {
+					"value": "Small Business Resource Center",
+					"label": "Small Business Resource Center (105)"
+				}, {
+					"value": "TDX",
+					"label": "TDX (87)"
+				}, {
+					"value": "Gale Virtual Reference Library",
+					"label": "Gale Virtual Reference Library (86)"
+				}, {
+					"value": "RECERCAT",
+					"label": "RECERCAT (85)"
+				}, {
+					"value": "TOXNET TOXLINE",
+					"label": "TOXNET TOXLINE (80)"
+				}, {
+					"value": "Harvard Library Bibliographic Dataset",
+					"label": "Harvard Library Bibliographic Dataset (78)"
+				}, {
+					"value": "HBO Kennisbank",
+					"label": "HBO Kennisbank (78)"
+				}, {
+					"value": "Bibliotheksverbund Bayern",
+					"label": "Bibliotheksverbund Bayern (74)"
+				}, {
+					"value": "China/Asia On Demand",
+					"label": "China/Asia On Demand (74)"
+				}, {
+					"value": "CQ Press Public Affairs Collection",
+					"label": "CQ Press Public Affairs Collection (55)"
+				}, {
+					"value": "Air University Library Index to Military Periodicals (AULIMP)",
+					"label": "Air University Library Index to Military Periodicals (AULIMP) (54)"
+				}, {
+					"value": "Knovel",
+					"label": "Knovel (52)"
+				}, {
+					"value": "RACO",
+					"label": "RACO (46)"
+				}, {
+					"value": "KoreaScience",
+					"label": "KoreaScience (43)"
+				}, {
+					"value": "Minority Health Archive",
+					"label": "Minority Health Archive (35)"
+				}, {
+					"value": "Gigaom Research",
+					"label": "Gigaom Research (27)"
+				}, {
+					"value": "Informit Indigenous Collection",
+					"label": "Informit Indigenous Collection (25)"
+				}, {
+					"value": "Japanese Periodical Index - 雑誌記事索引",
+					"label": "Japanese Periodical Index - 雑誌記事索引 (25)"
+				}, {
+					"value": "CogPrints",
+					"label": "CogPrints (21)"
+				}, {
+					"value": "HyRead Journal",
+					"label": "HyRead Journal (19)"
+				}, {
+					"value": "IndianJournals.com",
+					"label": "IndianJournals.com (17)"
+				}, {
+					"value": "SSOAR – Social Science Open Access Repository",
+					"label": "SSOAR – Social Science Open Access Repository (11)"
+				}, {
+					"value": "Informit Literature & Culture Collection",
+					"label": "Informit Literature & Culture Collection (10)"
+				}, {
+					"value": "BazEkon",
+					"label": "BazEkon (9)"
+				}, {
+					"value": "Credo Reference Collections",
+					"label": "Credo Reference Collections (9)"
+				}, {
+					"value": "RAMBI",
+					"label": "RAMBI (8)"
+				}, {
+					"value": "eArticle",
+					"label": "eArticle (8)"
+				}, {
+					"value": "Informit Business Collection",
+					"label": "Informit Business Collection (8)"
+				}, {
+					"value": "Korean Studies Information Service System (KISS)",
+					"label": "Korean Studies Information Service System (KISS) (7)"
+				}, {
+					"value": "Informit Engineering Collection",
+					"label": "Informit Engineering Collection (6)"
+				}, {
+					"value": "DBPIA",
+					"label": "DBPIA (6)"
+				}, {
+					"value": "Children's Literature Comprehensive Database",
+					"label": "Children's Literature Comprehensive Database (4)"
+				}, {
+					"value": "SciELO Books",
+					"label": "SciELO Books (3)"
+				}, {
+					"value": "CQ Press Voting & Elections Collection",
+					"label": "CQ Press Voting & Elections Collection (3)"
+				}, {
+					"value": "Books24x7",
+					"label": "Books24x7 (2)"
+				}, {
+					"value": "OECD iLibrary",
+					"label": "OECD iLibrary (1)"
+				}, {
+					"value": "CQ Press Supreme Court Collection",
+					"label": "CQ Press Supreme Court Collection (1)"
+				}, {
+					"value": "Books at JSTOR",
+					"label": "Books at JSTOR (1)"
+				}, {
+					"value": "ScholarVox",
+					"label": "ScholarVox (1)"
+				}, {
+					"value": "Publications New Zealand Metadata",
+					"label": "Publications New Zealand Metadata (1)"
+				}, {
+					"value": "CQ Press Encyclopedia of American Government",
+					"label": "CQ Press Encyclopedia of American Government (1)"
+				}],
+				"values": [],
+				"newValues": []
+			}
+		}
+	},
+	"publication": {
+		"search": {
+			"term": "",
+			"field": null,
+			"availableFields": [{
+				"label": "Tout",
+				"value": null
+			}, {
+				"label": "Auteur",
+				"value": "AU"
+			}, {
+				"label": "Titre",
+				"value": "TI"
+			}, {
+				"label": "Sujet",
+				"value": "SU"
+			}, {
+				"label": "ISSN",
+				"value": "IS"
+			}, {
+				"label": "ISBN",
+				"value": "IB"
+			}, {
+				"label": "Type de document",
+				"value": "PT"
+			}, {
+				"label": "Editeur",
+				"value": "PB"
+			}],
+			"status": "NONE",
+			"domain": "vie",
+			"availableDomains": ["vie", "shs"],
+			"limiters": {
+				"peerReviewedPublication": false
+			},
+			"activeFacets": [],
+			"sort": "relevance",
+			"availableSort": [{
+				"label": "pertinence",
+				"value": "relevance"
+			}, {
+				"label": "titre (A à Z)",
+				"value": "title"
+			}, {
+				"label": "date (récent - ancien)",
+				"value": "date"
+			}, {
+				"label": "date (ancien - récent)",
+				"value": "date2"
+			}]
+		},
+		"searchResult": {
+			"maxPage": 0
+		},
+		"facets": {}
+	},
+	"login": {
+		"status": "SUCCESS",
+		"token": "token"
+	},
+	"userInterface": {
+		"limiterShown": true,
+		"limiterMoreShown": true,
+		"loading": false,
+		"resultShown": true,
+		"historyShown": false,
+		"location": "article",
+		"fullScreen": true,
+		"notice": null
+	},
+	"error": null,
+	"url": "http://server"
+}

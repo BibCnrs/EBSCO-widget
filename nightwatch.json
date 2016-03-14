@@ -1,0 +1,31 @@
+{
+    "src_folders": ["./test/e2e"],
+    "custom_commands_path" : "./test/e2e/command",
+    "test_settings": {
+        "default": {
+            "test_runner": {
+                "type": "mocha",
+                "options": {
+                    "ui": "bdd",
+                    "reporter": "list",
+                    "timeout": 2000
+                }
+            },
+            "launch_url": "http://app",
+            "selenium_host"  : "hub",
+            "desiredCapabilities": {
+                "browserName": "chrome"
+            },
+            "screenshots": {
+                "enabled": true,
+                "on_failure": true,
+                "path": "tests_output"
+            }
+        },
+        "firefox": {
+            "desiredCapabilities": {
+                "browserName": "firefox"
+            }
+        }
+    }
+}

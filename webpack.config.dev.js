@@ -62,7 +62,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             __DEVELOPMENT__: true,
-            __VERSION__: JSON.stringify(version)
+            __VERSION__: JSON.stringify(version),
+            __SERVER_URL__: JSON.stringify(process.env.server_url)
         }),
         new ExtractTextPlugin('build/app.css', {
             allChunks: true
