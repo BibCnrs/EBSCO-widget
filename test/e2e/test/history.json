@@ -176,7 +176,7 @@
 		"limiterShown": true,
 		"limiterMoreShown": true,
 		"loading": false,
-		"resultShown": false,
+		"resultShown": true,
 		"historyShown": true,
 		"location": "article",
 		"fullScreen": false,
