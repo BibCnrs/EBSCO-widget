@@ -1,0 +1,47 @@
+[{
+	"name": "Title",
+	"label": "Title",
+	"value": ["Romani Studies"]
+}, {
+	"name": "ISSN",
+	"label": "ISSN",
+	"value": ["1528-0748 (print)", "1757-2274 (online)"]
+}, {
+	"name": "PublisherInfo",
+	"label": "Publisher Information",
+	"value": ["Liverpool University Press"]
+}, {
+	"name": "TypePub",
+	"label": "Resource Type",
+	"value": ["Journal"]
+}, {
+	"name": "Subject",
+	"label": "Subjects",
+	"value": ["Romani Studies"]
+}, {
+	"name": "NoteScope",
+	"label": "Description",
+	"value": ["Features articles on the cultures of groups traditionally known as Gypsies as well as Travellers and other peripatetic groups."]
+}, {
+	"name": "URL",
+	"label": "URL",
+	"value": [
+		[{
+			"$name": "link",
+			"$attrs": {
+				"linktarget": "URL",
+				"linkterm": "http://www.liverpool-unipress.co.uk/html/publication.asp?idProduct=3714",
+				"linkwindow": "_blank"
+			},
+			"$text": "http://www.liverpool-unipress.co.uk/html/publication.asp?idProduct=3714"
+		}]
+	]
+}, {
+	"name": "PubInfo",
+	"label": "Frequency",
+	"value": ["2"]
+}, {
+	"name": "PeerReviewed",
+	"label": "Peer Reviewed",
+	"value": ["Yes"]
+}]

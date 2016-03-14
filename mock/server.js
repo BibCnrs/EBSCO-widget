@@ -25,12 +25,16 @@ app.use(route.get('/:domainName/article/search', function* articleSearch(domainN
     this.body = require(`./jsonResponse/${domainName}/article/search/aids${this.query.currentPage || 1}.json`);
 }));
 
-app.use(route.get('/:domainName/article/retrieve/:dbId/:an', function* articleSearch(domainName) {
+app.use(route.get('/:domainName/article/retrieve/:dbId/:an', function* articleRetrieve(domainName) {
     this.body = require(`./jsonResponse/${domainName}/article/retrieve/aids01.json`);
 }));
 
 app.use(route.get('/:domainName/publication/search', function* publicationSearch(domainName) {
-    this.body = require(`./jsonResponse/${domainName}/publication/search/study.json`);
+    this.body = require(`./jsonResponse/${domainName}/publication/search/study${this.query.currentPage || 1}.json`);
+}));
+
+app.use(route.get('/:domainName/publication/retrieve/:id', function* publicationRetrieve(domainName) {
+    this.body = require(`./jsonResponse/${domainName}/publication/retrieve/study01.json`);
 }));
 
 module.exports = app;
