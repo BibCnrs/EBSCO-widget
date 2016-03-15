@@ -32,6 +32,17 @@ describe('Blob', function () {
         assert.deepEqual(fullTextHolding.props(), data);
     });
 
+    it('should display object with url  and value property with a', function () {
+        const data = {
+            url: 'http://google.com',
+            value: 'google'
+        };
+        const component = getComponent(data);
+        const a = component.find('a');
+        assert.deepEqual(a.props().href, data.url);
+        assert.deepEqual(a.text(), data.value);
+    });
+
     it('should display object with term, field and value property with SearchableLink', function () {
         const data = {
             term: 'a term',
