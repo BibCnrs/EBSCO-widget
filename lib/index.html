@@ -12,7 +12,7 @@
 document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
         var rootElement = document.getElementById('ebsco_widget');
-        window.ReactDom.render(React.createElement(window.EbscoWidget, { url: __SERVER_URL__ }), rootElement);
+        window.ReactDom.render(React.createElement(window.EbscoWidget, { url: window.__SERVER_URL__ }), rootElement);
     }
 };
     </script>
