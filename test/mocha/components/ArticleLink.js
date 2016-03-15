@@ -28,7 +28,7 @@ describe('ArticleLink', function () {
         assert.equal(fetchButton.length, 0);
     });
 
-    it('should display a "Ouvrir l\'article" disabled button if thereis  no link', function () {
+    it('should display an empty span if thereis no link', function () {
         const props = {
             link: null,
             url: 'http://host',
@@ -41,9 +41,12 @@ describe('ArticleLink', function () {
         };
         const component = enzyme.shallow(<ArticleLink { ...props } />);
 
-        const button = component.find('BibButton');
-        assert.equal(button.props().label, 'Ouvrir l\'article');
-        assert.isTrue(button.props().disabled);
+        const span = component.find('span');
+        assert.deepEqual(span.props(), {});
+        assert.equal(span.text(), '');
+
+        const bibButton = component.find('BibButton');
+        assert.equal(bibButton.length, 0);
 
         const select = component.find('Select');
         assert.equal(select.length, 0);
