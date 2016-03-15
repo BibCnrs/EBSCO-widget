@@ -122,13 +122,18 @@ describe('search middleware', function () {
         testArticleType(RELOAD_HISTORY);
     });
 
+    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_LINKED_SEARCH', function () {
+        testArticleType(ARTICLE.LINKED_SEARCH);
+    });
+
+    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_CHANGE_SORT', function () {
+        testArticleType(ARTICLE.CHANGE_SORT);
+    });
+
     it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_PAGE_LOAD', function () {
         testArticleType(ARTICLE.PAGE_LOAD);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_PAGE_LOAD', function () {
-        testArticleType(ARTICLE.LINKED_SEARCH);
-    });
 
     it('should not trigger received action if it is ARTICLE_PAGE_LOAD and the currentPage is in the store', function () {
         store.getState = () => ({
@@ -189,6 +194,10 @@ describe('search middleware', function () {
 
     it('should trigger received action and SEARCH action with info gotten from store if it is PUBLICATION_LIMIT_SEARCH', function () {
         testPublicationType(PUBLICATION.APPLY_FACET);
+    });
+
+    it('should trigger received action and SEARCH action with info gotten from store if it is PUBLICATION_CHANGE_SORT', function () {
+        testPublicationType(PUBLICATION.CHANGE_SORT);
     });
 
     it('should trigger received action and SEARCH action with info gotten from store if it is PUBLICATION_PAGE_LOAD', function () {
