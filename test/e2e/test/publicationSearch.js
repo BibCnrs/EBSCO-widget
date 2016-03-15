@@ -12,7 +12,7 @@ describe('publicationSearch', function() {
     it('should display article search result when triggering search', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 100)
-        .assert.containsText('.navbar.navbar-default .active', 'Publication')
+        .assert.containsText('.navbar.navbar-default .active', 'Titre')
         .setValue('.search-input', 'study')
         .click('.fetch-button button')
         .waitForElementVisible('.search-result', 1000)
