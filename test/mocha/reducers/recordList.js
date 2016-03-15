@@ -16,6 +16,17 @@ describe('reducers articleRecordList', function () {
         assert.deepEqual(articleRecordList(undefined, { type: 'OTHER_ACTION_TYPE' }), []);
     });
 
+    it('should not add a result when action action point to an empty index', function () {
+        const state = [ 'first' ];
+        assert.deepEqual(
+            articleRecordList(state, {
+                type: 'WHATEVER',
+                index: 1
+            }),
+            state
+        );
+    });
+
     it ('should return default state if action type is LOGOUT', function () {
         assert.deepEqual(articleRecordList([ 'result1', 'result2' ], { type: 'LOGOUT' }), []);
     });
