@@ -15,11 +15,7 @@ describe('reducers articleLimiters', function () {
                     from: null,
                     to: null
                 },
-                peerReviewedArticle: false,
-                author: null,
-                journalName: null,
-                title: null,
-                language: []
+                peerReviewedArticle: false
             });
         });
 
@@ -32,11 +28,7 @@ describe('reducers articleLimiters', function () {
                             from: 2000,
                             to: 2015
                         },
-                        peerReviewedArticle: true,
-                        author: 'Aasimov',
-                        journalName: 'science',
-                        title: 'robotic law',
-                        language: ['english']
+                        peerReviewedArticle: true
                     },
                     { type: LOGOUT }
                 ),
@@ -46,11 +38,7 @@ describe('reducers articleLimiters', function () {
                         from: null,
                         to: null
                     },
-                    peerReviewedArticle: false,
-                    author: null,
-                    journalName: null,
-                    title: null,
-                    language: []
+                    peerReviewedArticle: false
                 });
         });
 
@@ -88,22 +76,14 @@ describe('reducers articleLimiters', function () {
                     from: 2010,
                     to: 2012
                 },
-                peerReviewedArticle: true,
-                author: 'author',
-                journalName: 'the journal',
-                title: 'a title',
-                language: ['javanese']
+                peerReviewedArticle: true
             }, { type: ARTICLE.RESET }), {
                 fullText: false,
                 publicationDate: {
                     from: null,
                     to: null
                 },
-                peerReviewedArticle: false,
-                author: null,
-                journalName: null,
-                title: null,
-                language: []
+                peerReviewedArticle: false
             });
         });
     });

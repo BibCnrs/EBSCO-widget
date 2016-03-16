@@ -42,13 +42,6 @@ describe('reducers userInterface', function () {
         );
     });
 
-    it('should set limiterMoreShown to action.visibility if action is ARTCILE_SHOW_MORE_LIMITER', function () {
-        assert.deepEqual(
-            userInterface({ limiterMoreShown: false, other: 'data' }, { type: ARTICLE.SHOW_MORE_LIMITER, visibility: 'value' }),
-            { limiterMoreShown: 'value', other: 'data' }
-        );
-    });
-
     it('should set historyShown to action.visibility if action is SHOW_HISTORY', function () {
         assert.deepEqual(
             userInterface({ historyShown: false, other: 'data' }, { type: SHOW_HISTORY, visibility: 'value' }),
