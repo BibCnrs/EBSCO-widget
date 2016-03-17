@@ -168,19 +168,19 @@ describe('reducers articleSearch', function () {
     });
 
     it('should change queries to a single query with term= `action.term action.field`', function () {
-        const state = { status: 'state', queries:  [1, 2, 3], availableFields: []};
+        const state = { status: 'state', queries:  [1, 2, 3]};
         const searchState = articleSearch(
             state,
-            { type: LINKED_SEARCH, term: 'term', field: 'TI' }
+            { type: LINKED_SEARCH, term: 'term', field: 'EX' }
         );
         assert.deepEqual(searchState, {
             ...state,
-            queries: [{ boolean: 'AND', field: null, term: 'TI term' }]
+            queries: [{ boolean: 'AND', field: null, term: 'EX term' }]
         });
     });
 
     it('should change queries to a single query with term=`action.term` and field=`action.field` if action.field is in the availableFields', function () {
-        const state = { status: 'state', queries:  [1, 2, 3], availableFields: ['TI']};
+        const state = { status: 'state', queries:  [1, 2, 3] };
         const searchState = articleSearch(
             state,
             { type: LINKED_SEARCH, term: 'term', field: 'TI' }
@@ -207,56 +207,12 @@ describe('reducers articleSearch', function () {
                 term: '',
                 field: null
             }],
-            availableBoolean: [
-                'AND',
-                'OR',
-                'NOT'
-            ],
             status: 'NONE',
             domain: null,
             availableDomains: [],
             limiters: defaultLimiters,
             activeFacets: [],
-            sort: 'relevance',
-            availableSort: [
-                {
-                    label: 'pertinence',
-                    value: 'relevance'
-                }, {
-                    label: `date (récent - ancien)`,
-                    value: 'date'
-                }, {
-                    label: `date (ancien - récent)`,
-                    value: 'date2'
-                }
-            ],
-            availableFields: [
-                {
-                    label: 'Tout',
-                    value: null
-                }, {
-                    label: `Auteur`,
-                    value: 'AU'
-                }, {
-                    label: `Titre`,
-                    value: 'TI'
-                }, {
-                    label: `Sujet`,
-                    value: 'SU'
-                }, {
-                    label: `Source`,
-                    value: 'S0'
-                }, {
-                    label: `Résumé`,
-                    value: 'AB'
-                }, {
-                    label: `ISSN`,
-                    value: 'IS'
-                }, {
-                    label: `ISBN`,
-                    value: 'IB'
-                }
-            ]
+            sort: 'relevance'
         });
     });
 });
