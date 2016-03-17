@@ -40,11 +40,7 @@
 					"from": null,
 					"to": null
 				},
-				"peerReviewedArticle": false,
-				"author": null,
-				"journalName": null,
-				"title": null,
-				"language": []
+				"peerReviewedArticle": false
 			},
 			"activeFacets": [],
 			"sort": "relevance",
@@ -77,14 +73,10 @@
 			"limiters": {
 				"fullText": true,
 				"publicationDate": {
-					"from": null,
-					"to": null
+					"from": 1914,
+					"to": 1918
 				},
-				"peerReviewedArticle": false,
-				"author": null,
-				"journalName": null,
-				"title": null,
-				"language": ["English"]
+				"peerReviewedArticle": false
 			},
 			"activeFacets": {},
 			"totalHits": 253975
@@ -101,11 +93,7 @@
 					"from": null,
 					"to": null
 				},
-				"peerReviewedArticle": false,
-				"author": null,
-				"journalName": null,
-				"title": null,
-				"language": []
+				"peerReviewedArticle": false
 			},
 			"activeFacets": {},
 			"totalHits": 1193
@@ -174,7 +162,6 @@
 	},
 	"userInterface": {
 		"limiterShown": true,
-		"limiterMoreShown": true,
 		"loading": false,
 		"resultShown": true,
 		"historyShown": true,

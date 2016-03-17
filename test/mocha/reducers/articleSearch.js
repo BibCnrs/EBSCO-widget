@@ -126,21 +126,21 @@ describe('reducers articleSearch', function () {
         assert.deepEqual(
             articleSearch(
                 { status: 'state', queries: [1, 2, 3] },
-                { type: RESTORE_HISTORY, query: { queries: [{ term: 'term' }]} }
+                { type: RELOAD_HISTORY, query: { queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]} }
             ),
             {
                 status: 'state',
-                queries: [{ term: 'term' }]
+                queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]
             }
         );
         assert.deepEqual(
             articleSearch(
                 { status: 'state', queries: [1, 2, 3] },
-                { type: RELOAD_HISTORY, query: { queries: [{ term: 'term' }]} }
+                { type: RESTORE_HISTORY, query: { queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]} }
             ),
             {
                 status: 'state',
-                queries: [{ term: 'term' }]
+                queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]
             }
         );
     });

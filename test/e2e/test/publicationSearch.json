@@ -40,11 +40,7 @@
 					"from": null,
 					"to": null
 				},
-				"peerReviewedArticle": false,
-				"author": null,
-				"journalName": null,
-				"title": null,
-				"language": []
+				"peerReviewedArticle": false
 			},
 			"activeFacets": [],
 			"sort": "relevance",
@@ -132,7 +128,6 @@
 	},
 	"userInterface": {
 		"limiterShown": true,
-		"limiterMoreShown": true,
 		"loading": false,
 		"resultShown": false,
 		"historyShown": false,

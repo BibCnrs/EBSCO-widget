@@ -12,7 +12,7 @@ describe('history', function() {
         browser
         .waitForElementVisible('.history', 100)
         .assert.containsText('tr', 'Terme recherchés Domaine Limites Facettes Actions')
-        .assert.containsText('tr:nth-child(2)', 'Tout: aids vie Texte intégral; Langue: English 253975 résultats')
+        .assert.containsText('tr:nth-child(2)', 'Tout: aids vie Texte intégral; Date de publication: 1914/1918 253975 résultats')
         .assert.containsText('tr:nth-child(3)', 'Tout: phylloxera vie Texte intégral 1193 résultats');
 
         client.start(done);
@@ -24,7 +24,9 @@ describe('history', function() {
         .click('tr:nth-child(2) .edit')
         .assert.value('.article-search-input-list input', 'aids')
         .assert.value('.fullText input', 'on')
-        .assert.containsText('.language .Select-value-label', 'English')
+        .waitForElementVisible('.publication-date-limiter')
+        .assert.value('.publication-date-limiter .from', '1914')
+        .assert.value('.publication-date-limiter .to', '1918')
         .assert.elementCount('.record', 0);
 
         client.start(done);
@@ -36,7 +38,9 @@ describe('history', function() {
         .click('tr:nth-child(2) .refresh')
         .assert.value('.article-search-input-list input', 'aids')
         .assert.value('.fullText input', 'on')
-        .assert.containsText('.language .Select-value-label', 'English')
+        .waitForElementVisible('.publication-date-limiter')
+        .assert.value('.publication-date-limiter .from', '1914')
+        .assert.value('.publication-date-limiter .to', '1918')
         .assert.elementCount('.record', 20);
 
         client.start(done);
