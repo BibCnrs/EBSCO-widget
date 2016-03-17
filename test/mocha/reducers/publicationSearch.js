@@ -218,12 +218,6 @@ describe('reducers publicationSearch', function () {
                 }, {
                     label: 'titre (A à Z)',
                     value: 'title'
-                }, {
-                    label: `date (récent - ancien)`,
-                    value: 'date'
-                }, {
-                    label: `date (ancien - récent)`,
-                    value: 'date2'
                 }
             ]
         });
