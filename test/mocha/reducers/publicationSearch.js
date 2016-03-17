@@ -183,49 +183,7 @@ describe('reducers publicationSearch', function () {
             availableDomains: [],
             limiters: defaultLimiters,
             activeFacets: [],
-            sort: 'relevance',
-            availableFields: [
-                {
-                    label: 'Tout',
-                    value: null
-                }, {
-                    label: `Auteur`,
-                    value: 'AU'
-                }, {
-                    label: `Titre`,
-                    value: 'TI'
-                }, {
-                    label: `Sujet`,
-                    value: 'SU'
-                }, {
-                    label: `ISSN`,
-                    value: 'IS'
-                }, {
-                    label: `ISBN`,
-                    value: 'IB'
-                }, {
-                    label: `Type de document`,
-                    value: 'PT'
-                }, {
-                    label: `Editeur`,
-                    value: 'PB'
-                }
-            ],
-            availableSort: [
-                {
-                    label: 'pertinence',
-                    value: 'relevance'
-                }, {
-                    label: 'titre (A à Z)',
-                    value: 'title'
-                }, {
-                    label: `date (récent - ancien)`,
-                    value: 'date'
-                }, {
-                    label: `date (ancien - récent)`,
-                    value: 'date2'
-                }
-            ]
+            sort: 'relevance'
         });
         delete window.sessionStorage;
     });
