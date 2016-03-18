@@ -19,4 +19,21 @@ describe('articleSearch', function() {
 
         client.start(done);
     });
+
+    it('should add/remove article Input when clicking add/remove', function (done) {
+        browser
+        .waitForElementVisible('.navbar.navbar-default', 100)
+        .assert.containsText('.navbar.navbar-default .active', 'Article')
+        .assert.elementCount('.article-search-input-list .search-input', 1)
+        .setValue('.article-search-input-list input', 'aids')
+        .click('.article-search-input-list .row:nth-child(1) .action .add')
+        .assert.elementCount('.article-search-input-list .search-input', 2)
+        .assert.value('.article-search-input-list .row:nth-child(1) .search-input', 'aids')
+        .assert.value('.article-search-input-list .row:nth-child(2) .search-input', '')
+        .click('.article-search-input-list .row:nth-child(1) .action .remove')
+        .assert.elementCount('.article-search-input-list .search-input', 1)
+        .assert.value('.article-search-input-list .row:nth-child(1) .search-input', '');
+
+        client.start(done);
+    });
 });
