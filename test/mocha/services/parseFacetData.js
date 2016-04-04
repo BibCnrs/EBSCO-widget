@@ -1,231 +1,143 @@
-import { parseFacet, parseFacetValue, parseActiveFacetValue, parseActiveFacets, mergeFacets } from '../../../lib/services/parseFacetData';
+import parseFacetData from '../../../lib/services/parseFacetData';
 
-describe('activeFacetsParser', function () {
+describe('parseFacetData', function () {
 
-    describe('mergeFacets', function  () {
-        it('should merge facet with activeFacet', function () {
-            const facets = {
-                SourceType: {
-                    label: 'Source Type',
-                    choices: [
-                        {
-                            label: 'Academic Journals (32850)',
-                            value: 'Academic Journals'
-                        }
-                    ]
-                }
-            };
-
-            const activeFacets = {
-                SourceType: {
-                    filterId: 2,
-                    values: [
-                        {
-                            label: 'Academic Journals',
-                            value: 'Academic Journals'
-                        }
-                    ]
-                }
-            };
-            assert.deepEqual(mergeFacets(facets, activeFacets), {
-                SourceType: {
-                    filterId: 2,
-                    label: 'Source Type',
-                    choices: [
-                        {
-                            label: 'Academic Journals (32850)',
-                            value: 'Academic Journals'
-                        }
-                    ],
-                    values: [
-                        {
-                            label: 'Academic Journals',
-                            value: 'Academic Journals'
-                        }
-                    ]
-                }
-            });
-        });
-
-        it('should default clear to undefined and values to []', function () {
-            const facets = {
-                SourceType: {
-                    label: 'Source Type',
-                    choices: [
-                        {
-                            label: 'Academic Journals (32850)',
-                            value: 'Academic Journals'
-                        }
-                    ]
-                }
-            };
-
-            const activeFacets = {};
-
-            assert.deepEqual(mergeFacets(facets, activeFacets), {
-                SourceType: {
-                    label: 'Source Type',
-                    choices: [
-                        {
-                            label: 'Academic Journals (32850)',
-                            value: 'Academic Journals'
-                        }
-                    ],
-                    values: [],
-                    newValues: []
-                }
-            });
-        });
-
-        it('should default label to key and choices to activeFacet.values', function () {
-            const facets = {
-            };
-
-            const activeFacets = {
-                SourceType: {
-                    filterId: 2,
-                    values: [
-                        {
-                            label: 'Academic Journals',
-                            value: 'Academic Journals'
-                        }
-                    ]
-                }
-            };
-            assert.deepEqual(mergeFacets(facets, activeFacets), {
-                SourceType: {
-                    filterId: 2,
-                    label: 'SourceType',
-                    choices: [
-                        {
-                            label: 'Academic Journals',
-                            value: 'Academic Journals'
-                        }
-                    ],
-                    values: [
-                        {
-                            label: 'Academic Journals',
-                            value: 'Academic Journals'
-                        }
-                    ]
-                }
-            });
-        });
-
-    });
-
-    describe('parseFacet', function () {
-        const data = {
-            Id: 'SourceType',
-            Label: 'Source Type',
+    const facets = [
+        {
+            Id: 'Category',
+            Label: 'Category',
             AvailableFacetValues: [
                 {
-                    Value: 'Academic Journals',
-                    Count: 32850,
-                    AddAction: 'addfacetfilter(SourceType:Academic Journals)'
+                    Value: 'education / administration / general',
+                    Count: 1,
+                    AddAction: 'addfacetfilter(Category:education / administration / general)'
                 },
                 {
-                    Value: 'Magazines',
-                    Count: 5939,
-                    AddAction: 'addfacetfilter(SourceType:Magazines)'
+                    Value: 'education / organizations & institutions',
+                    Count: 1,
+                    AddAction: 'addfacetfilter(Category:education / organizations & institutions)'
                 },
                 {
-                    Value: 'Reports',
-                    Count: 1651,
-                    AddAction: 'addfacetfilter(SourceType:Reports)'
+                    Value: 'medical / aids & hiv',
+                    Count: 1,
+                    AddAction: 'addfacetfilter(Category:medical / aids & hiv)'
                 }
             ]
-        };
-
-        it('should parse facet', function () {
-            assert.deepEqual(parseFacet({}, data), {
-                SourceType: {
-                    label: 'Source Type',
-                    choices: data.AvailableFacetValues.map(parseFacetValue)
-                }
-            });
-        });
-    });
-
-    describe('parseFacetValue', function () {
-        it('should parse facet value', function () {
-            assert.deepEqual(parseFacetValue({
-                Value: 'Academic Journals',
-                Count: 32850,
-                AddAction: 'addfacetfilter(SourceType:Academic Journals)'
-            }), {
-                label: 'Academic Journals (32850)',
-                value: 'Academic Journals'
-            });
-        });
-
-    });
-
-    describe('parseActiveFacetValue', function () {
-        it('should parse activeFacet value', function () {
-            assert.deepEqual(parseActiveFacetValue('french'), {
-                label: 'french',
-                value: 'french'
-            });
-        });
-    });
-
-    describe('parseActiveFacet', function () {
-
-        it('should parse active facet filter', function () {
-            const data = {
-                Language: ['french', 'english']
-            };
-            assert.deepEqual(parseActiveFacets(data), {
-                Language: {
-                    values: data.Language.map(parseActiveFacetValue),
-                    newValues: data.Language.map(parseActiveFacetValue)
-                }
-            });
-        });
-
-        it('should regroup facet filter by their id', function () {
-            const data = {
-                SourceType: ['magazine'],
-                Language: ['french', 'english']
-            };
-
-            assert.deepEqual(parseActiveFacets(data), {
-                Language: {
-                    values: [
-                        {
-                            label: 'french',
-                            value: 'french'
-                        }, {
-                            label: 'english',
-                            value: 'english'
-                        }
-                    ],
-                    newValues: [
-                        {
-                            label: 'french',
-                            value: 'french'
-                        }, {
-                            label: 'english',
-                            value: 'english'
-                        }
-                    ]
+        }, {
+            Id: 'Language',
+            Label: 'Language',
+            AvailableFacetValues: [
+                {
+                    Value: 'portuguese',
+                    Count: 640,
+                    AddAction: 'addfacetfilter(Language:portuguese)'
                 },
-                SourceType: {
-                    values: [
-                        {
-                            label: 'magazine',
-                            value: 'magazine'
-                        }
-                    ],
-                    newValues: [
-                        {
-                            label: 'magazine',
-                            value: 'magazine'
-                        }
-                    ]
+                {
+                    Value: 'french',
+                    Count: 393,
+                    AddAction: 'addfacetfilter(Language:french)'
                 }
-            });
-        });
+            ]
+        }
+    ];
+
+    const activeFacets = {
+        Category: ['health & fitness / diseases / aids & hiv'],
+        Language: ['english']
+    };
+
+    it('should complete facets with active facets', function () {
+        assert.deepEqual(parseFacetData(facets, activeFacets), [
+            {
+                id: 'Category',
+                label: 'Category',
+                activeFacets: [
+                    'health & fitness / diseases / aids & hiv'
+                ],
+                availableFacetValues: [
+                    {
+                        value: 'education / administration / general',
+                        count: 1,
+                        addAction: 'addfacetfilter(Category:education / administration / general)'
+                    },
+                    {
+                        value: 'education / organizations & institutions',
+                        count: 1,
+                        addAction: 'addfacetfilter(Category:education / organizations & institutions)'
+                    },
+                    {
+                        value: 'medical / aids & hiv',
+                        count: 1,
+                        addAction: 'addfacetfilter(Category:medical / aids & hiv)'
+                    }
+                ]
+            }, {
+                id: 'Language',
+                label: 'Language',
+                activeFacets: [
+                    'english'
+                ],
+                availableFacetValues: [
+                    {
+                        value: 'portuguese',
+                        count: 640,
+                        addAction: 'addfacetfilter(Language:portuguese)'
+                    },
+                    {
+                        value: 'french',
+                        count: 393,
+                        addAction: 'addfacetfilter(Language:french)'
+                    }
+                ]
+            }
+        ]);
+    });
+
+    it('should add facet for purely active facets', function () {
+        assert.deepEqual(parseFacetData(facets, { Journal: ['Le journal de Picsou']}), [
+            {
+                id: 'Journal',
+                label: 'Journal',
+                availableFacetValues: [],
+                activeFacets: ['Le journal de Picsou']
+            }, {
+                id: 'Category',
+                label: 'Category',
+                activeFacets: [],
+                availableFacetValues: [
+                    {
+                        value: 'education / administration / general',
+                        count: 1,
+                        addAction: 'addfacetfilter(Category:education / administration / general)'
+                    },
+                    {
+                        value: 'education / organizations & institutions',
+                        count: 1,
+                        addAction: 'addfacetfilter(Category:education / organizations & institutions)'
+                    },
+                    {
+                        value: 'medical / aids & hiv',
+                        count: 1,
+                        addAction: 'addfacetfilter(Category:medical / aids & hiv)'
+                    }
+                ]
+            }, {
+                id: 'Language',
+                label: 'Language',
+                activeFacets: [],
+                availableFacetValues: [
+                    {
+                        value: 'portuguese',
+                        count: 640,
+                        addAction: 'addfacetfilter(Language:portuguese)'
+                    },
+                    {
+                        value: 'french',
+                        count: 393,
+                        addAction: 'addfacetfilter(Language:french)'
+                    }
+                ]
+            }
+        ]);
     });
 });
