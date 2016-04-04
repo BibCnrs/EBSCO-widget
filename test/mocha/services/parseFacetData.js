@@ -56,6 +56,10 @@ describe('parseFacetData', function () {
                 ],
                 availableFacetValues: [
                     {
+                        value: 'health & fitness / diseases / aids & hiv',
+                        count: null
+                    },
+                    {
                         value: 'education / administration / general',
                         count: 1,
                         addAction: 'addfacetfilter(Category:education / administration / general)'
@@ -79,6 +83,10 @@ describe('parseFacetData', function () {
                 ],
                 availableFacetValues: [
                     {
+                        value: 'english',
+                        count: null
+                    },
+                    {
                         value: 'portuguese',
                         count: 640,
                         addAction: 'addfacetfilter(Language:portuguese)'
@@ -93,12 +101,17 @@ describe('parseFacetData', function () {
         ]);
     });
 
-    it('should add facet for purely active facets', function () {
+    it('should add facet for missing active facets', function () {
         assert.deepEqual(parseFacetData(facets, { Journal: ['Le journal de Picsou']}), [
             {
                 id: 'Journal',
                 label: 'Journal',
-                availableFacetValues: [],
+                availableFacetValues: [
+                    {
+                        value: 'Le journal de Picsou',
+                        count: null
+                    }
+                ],
                 activeFacets: ['Le journal de Picsou']
             }, {
                 id: 'Category',

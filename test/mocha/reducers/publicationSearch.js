@@ -102,15 +102,11 @@ describe('reducers publicationSearch', function () {
     });
 
     it('should return default state if action is LOGOUT', function () {
-        window.sessionStorage = {
-            getItem: () => null
-        };
         const searchState = publicationSearch(
             { status: 'state' },
             { type: LOGOUT }
         );
         assert.deepEqual(searchState, defaultState);
-        delete window.sessionStorage;
     });
 
     it('should add first domains to state if action is LOGIN_SUCCESS', function () {
@@ -175,9 +171,6 @@ describe('reducers publicationSearch', function () {
     });
 
     it('should default status to NONE and term to ""', function () {
-        window.sessionStorage = {
-            getItem: () => null
-        };
         const searchState = publicationSearch(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
             term: '',
@@ -189,6 +182,5 @@ describe('reducers publicationSearch', function () {
             activeFacets: defaultActiveFacets,
             sort: 'relevance'
         });
-        delete window.sessionStorage;
     });
 });
