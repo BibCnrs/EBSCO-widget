@@ -1,6 +1,6 @@
 import FacetValue from '../../../lib/components/FacetValue';
 
-describe.only('FacetValue', function () {
+describe('FacetValue', function () {
     let changeFacetCall;
 
     const getComponent = (facetValue) =>  {

@@ -67,23 +67,18 @@
                 margin-left: 5px;
             }
         }
-        .select {
-            .selector {
-                display: flex;
-                .Select {
-                    .Select-control {
-                        border-top-right-radius: 0px;
-                        border-bottom-right-radius: 0px;
-                    }
-                    min-width: 180px;
-                }
-            }
-            .btn {
-                width: 40px;
-            }
-        }
         .form-group {
             margin-bottom: 0px;
+        }
+        .facet {
+            .header {
+                .title {
+                    width: 80%;
+                }
+                .more {
+                    width: 20%;
+                }
+            }
         }
     }
 }
