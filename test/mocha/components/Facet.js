@@ -1,7 +1,7 @@
 import Facet from '../../../lib/components/Facet';
 
 describe.only('Facet', function () {
-    let changeFacetCall, applyFacetCall;
+    let applyFacetCall;
     const defaultFacet = {
         id: 'id',
         label: 'title',
@@ -15,9 +15,7 @@ describe.only('Facet', function () {
     const getComponent = (facet = defaultFacet) =>  {
         const props = {
             facet,
-            changeFacet: (value) => {
-                changeFacetCall = value;
-            },
+            changeFacet: () => {},
             applyFacet: (value) => {
                 applyFacetCall = value;
             }
@@ -27,15 +25,14 @@ describe.only('Facet', function () {
     };
 
     beforeEach(function () {
-        changeFacetCall = null;
         applyFacetCall = null;
     });
 
-    it('should display a bibButton with facet.label as label that call applyFacet onClick', function () {
+    it('should display a bibButton with "facet.label (facet.count)" as label that call applyFacet onClick', function () {
         const component = getComponent();
-        const bibButton = component.find('BibButton');
+        const bibButton = component.find('BibButton.title');
 
-        assert.equal(bibButton.props().label, 'title');
+        assert.equal(bibButton.props().label, 'title (2)');
         bibButton.props().onClick('click');
 
         assert.equal(applyFacetCall, 'click');
@@ -46,9 +43,9 @@ describe.only('Facet', function () {
             ...defaultFacet,
             label: 'titlePubDb'
         });
-        const bibButton = component.find('BibButton');
+        const bibButton = component.find('BibButton.title');
 
-        assert.equal(bibButton.props().label, 'title');
+        assert.equal(bibButton.props().label, 'title (2)');
     });
 
     it('should display a bibButton with facet.id if no label', function () {
@@ -56,9 +53,9 @@ describe.only('Facet', function () {
             ...defaultFacet,
             label: undefined
         });
-        const bibButton = component.find('BibButton');
+        const bibButton = component.find('BibButton.title');
 
-        assert.equal(bibButton.props().label, 'id');
+        assert.equal(bibButton.props().label, 'id (2)');
     });
 
     it('should replace id TypePublicationPubD by Publication Type', function () {
@@ -67,9 +64,9 @@ describe.only('Facet', function () {
             label: undefined,
             id: 'TypePublicationPubD'
         });
-        const bibButton = component.find('BibButton');
+        const bibButton = component.find('BibButton.title');
 
-        assert.equal(bibButton.props().label, 'Publication Type');
+        assert.equal(bibButton.props().label, 'Publication Type (2)');
     });
 
     it('should display a FacetValue foreach availableFacetValues', function () {
