@@ -31,14 +31,43 @@ describe('reducers publicationActiveFacets', function () {
         assert.deepEqual(publicationActiveFacets({ active: ['facet'] },{ type: LOGOUT }), defaultState);
     });
 
-    it('should set [action.name] to action.values it action is PUBLICATION_CHANGE_FACET', function () {
+    it('should add action.value to [action.id] if action is PUBLICATION_CHANGE_FACET and checked is true', function () {
         const searchState = publicationActiveFacets(
             { active: ['facet'] },
-            { type: CHANGE_FACET, name: 'key', values: [1, 2, 3] }
+            { type: CHANGE_FACET, id: 'active', value: 'new', checked: true }
         );
         assert.deepEqual(searchState, {
-            active: ['facet'],
-            key: [1, 2, 3]
+            active: ['facet', 'new']
+        });
+    });
+
+    it('should initialize action.value to [action.id] if action is PUBLICATION_CHANGE_FACET and checked is true and there was no value yet', function () {
+        const searchState = publicationActiveFacets(
+            {},
+            { type: CHANGE_FACET, id: 'active', value: 'facet', checked: true }
+        );
+        assert.deepEqual(searchState, {
+            active: ['facet']
+        });
+    });
+
+    it('should remove action.value from [action.id] if action is PUBLICATION_CHANGE_FACET and checked is false', function () {
+        const searchState = publicationActiveFacets(
+            { active: ['facet', 'other'] },
+            { type: CHANGE_FACET, id: 'active', value: 'facet', checked: false }
+        );
+        assert.deepEqual(searchState, {
+            active: ['other']
+        });
+    });
+
+    it('should change nothing if action is PUBLICATION_CHANGE_FACET checked is false and value was not in [action.id]', function () {
+        const searchState = publicationActiveFacets(
+            { active: ['facet'] },
+            { type: CHANGE_FACET, id: 'active', value: 'other', checked: false }
+        );
+        assert.deepEqual(searchState, {
+            active: ['facet']
         });
     });
 

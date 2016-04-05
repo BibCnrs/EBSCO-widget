@@ -57,22 +57,26 @@ describe('parseFacetData', function () {
                 availableFacetValues: [
                     {
                         value: 'health & fitness / diseases / aids & hiv',
-                        count: null
+                        count: null,
+                        checked: true
                     },
                     {
                         value: 'education / administration / general',
                         count: 1,
-                        addAction: 'addfacetfilter(Category:education / administration / general)'
+                        addAction: 'addfacetfilter(Category:education / administration / general)',
+                        checked: false
                     },
                     {
                         value: 'education / organizations & institutions',
                         count: 1,
-                        addAction: 'addfacetfilter(Category:education / organizations & institutions)'
+                        addAction: 'addfacetfilter(Category:education / organizations & institutions)',
+                        checked: false
                     },
                     {
                         value: 'medical / aids & hiv',
                         count: 1,
-                        addAction: 'addfacetfilter(Category:medical / aids & hiv)'
+                        addAction: 'addfacetfilter(Category:medical / aids & hiv)',
+                        checked: false
                     }
                 ]
             }, {
@@ -84,17 +88,20 @@ describe('parseFacetData', function () {
                 availableFacetValues: [
                     {
                         value: 'english',
-                        count: null
+                        count: null,
+                        checked: true
                     },
                     {
                         value: 'portuguese',
                         count: 640,
-                        addAction: 'addfacetfilter(Language:portuguese)'
+                        addAction: 'addfacetfilter(Language:portuguese)',
+                        checked: false
                     },
                     {
                         value: 'french',
                         count: 393,
-                        addAction: 'addfacetfilter(Language:french)'
+                        addAction: 'addfacetfilter(Language:french)',
+                        checked: false
                     }
                 ]
             }
@@ -109,7 +116,8 @@ describe('parseFacetData', function () {
                 availableFacetValues: [
                     {
                         value: 'Le journal de Picsou',
-                        count: null
+                        count: null,
+                        checked: true
                     }
                 ],
                 activeFacets: ['Le journal de Picsou']
@@ -121,17 +129,20 @@ describe('parseFacetData', function () {
                     {
                         value: 'education / administration / general',
                         count: 1,
-                        addAction: 'addfacetfilter(Category:education / administration / general)'
+                        addAction: 'addfacetfilter(Category:education / administration / general)',
+                        checked: false
                     },
                     {
                         value: 'education / organizations & institutions',
                         count: 1,
-                        addAction: 'addfacetfilter(Category:education / organizations & institutions)'
+                        addAction: 'addfacetfilter(Category:education / organizations & institutions)',
+                        checked: false
                     },
                     {
                         value: 'medical / aids & hiv',
                         count: 1,
-                        addAction: 'addfacetfilter(Category:medical / aids & hiv)'
+                        addAction: 'addfacetfilter(Category:medical / aids & hiv)',
+                        checked: false
                     }
                 ]
             }, {
@@ -142,12 +153,14 @@ describe('parseFacetData', function () {
                     {
                         value: 'portuguese',
                         count: 640,
-                        addAction: 'addfacetfilter(Language:portuguese)'
+                        addAction: 'addfacetfilter(Language:portuguese)',
+                        checked: false
                     },
                     {
                         value: 'french',
                         count: 393,
-                        addAction: 'addfacetfilter(Language:french)'
+                        addAction: 'addfacetfilter(Language:french)',
+                        checked: false
                     }
                 ]
             }
