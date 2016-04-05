@@ -4,38 +4,38 @@ describe('parseFacetData', function () {
 
     const facets = [
         {
-            Id: 'Category',
-            Label: 'Category',
-            AvailableFacetValues: [
+            id: 'Category',
+            label: 'Category',
+            availableFacetValues: [
                 {
-                    Value: 'education / administration / general',
-                    Count: 1,
-                    AddAction: 'addfacetfilter(Category:education / administration / general)'
+                    value: 'education / administration / general',
+                    count: 1,
+                    addAction: 'addfacetfilter(Category:education / administration / general)'
                 },
                 {
-                    Value: 'education / organizations & institutions',
-                    Count: 1,
-                    AddAction: 'addfacetfilter(Category:education / organizations & institutions)'
+                    value: 'education / organizations & institutions',
+                    count: 1,
+                    addAction: 'addfacetfilter(Category:education / organizations & institutions)'
                 },
                 {
-                    Value: 'medical / aids & hiv',
-                    Count: 1,
-                    AddAction: 'addfacetfilter(Category:medical / aids & hiv)'
+                    value: 'medical / aids & hiv',
+                    count: 1,
+                    addAction: 'addfacetfilter(Category:medical / aids & hiv)'
                 }
             ]
         }, {
-            Id: 'Language',
-            Label: 'Language',
-            AvailableFacetValues: [
+            id: 'Language',
+            label: 'Language',
+            availableFacetValues: [
                 {
-                    Value: 'portuguese',
-                    Count: 640,
-                    AddAction: 'addfacetfilter(Language:portuguese)'
+                    value: 'portuguese',
+                    count: 640,
+                    addAction: 'addfacetfilter(Language:portuguese)'
                 },
                 {
-                    Value: 'french',
-                    Count: 393,
-                    AddAction: 'addfacetfilter(Language:french)'
+                    value: 'french',
+                    count: 393,
+                    addAction: 'addfacetfilter(Language:french)'
                 }
             ]
         }
