@@ -6,8 +6,15 @@
         position: absolute;
     }
     .sidebar {
-        width: 300px;
         float: left;
+        &.open {
+            width: 300px;
+        }
+        &.closed {
+            overflow: hidden;
+            opacity: 0;
+            width: 0px;
+        }
     }
     .search-result {
         .sort-selector {
@@ -15,6 +22,9 @@
             right: 0;
             margin-top: 15px;
         }
+    }
+    .search-result, .sidebar {
+        transition: all 0.2s linear;
     }
     &.no-sidebar {
         .search-result {
