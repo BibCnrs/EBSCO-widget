@@ -1,6 +1,6 @@
 {
   "name": "ebsco-widget",
-  "version": "0.11.9",
+  "version": "0.12.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -58,9 +58,10 @@
     "config": "1.16.0",
     "es5-shim": "4.3.1",
     "isomorphic-fetch": "2.1.1",
-    "rc-checkbox": "1.2.0",
+    "lodash": "^4.7.0",
     "rc-slider": "3.1.0",
     "react": "0.14.3",
+    "react-addons-css-transition-group": "0.14.3",
     "react-bootstrap": "0.28.3",
     "react-dom": "0.14.3",
     "react-fa": "4.0.0",

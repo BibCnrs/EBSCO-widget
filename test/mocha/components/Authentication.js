@@ -1,11 +1,11 @@
 import Authentication from '../../../lib/components/Authentication';
 
 describe('Authentication', function () {
-    let component, data;
+    let component, onSubmitCall;
 
     beforeEach(function () {
-        data = undefined;
-        const onSubmit = (d) => (data = d);
+        onSubmitCall = undefined;
+        const onSubmit = (url, data) => (onSubmitCall = { url, data });
         const props = {
             onSubmit,
             'url': '/api',
@@ -21,9 +21,12 @@ describe('Authentication', function () {
         username.value = 'john';
         password.value = 'secret';
         component.find('button').simulate('click');
-        assert.deepEqual(data, {
-            username: 'john',
-            password: 'secret'
+        assert.deepEqual(onSubmitCall, {
+            url: '/api',
+            data: {
+                username: 'john',
+                password: 'secret'
+            }
         });
     });
 });

@@ -1,6 +1,7 @@
 import articleSearch, { defaultState } from '../../../lib/reducers/articleSearch';
 import { defaultState as defaultLimiters } from '../../../lib/reducers/articleLimiters';
 import { defaultState as defaultQueryList } from '../../../lib/reducers/articleQueryList';
+import { defaultState as defaultActiveFacets } from '../../../lib/reducers/articleActiveFacets';
 
 import {
     LOGIN_SUCCESS,
@@ -34,21 +35,24 @@ describe('reducers articleSearch', function () {
         });
     });
 
-    it('should return DONE if action is ARTICLE_SEARCH_SUCCESS', function () {
+    it('should return DONE and set activeFacets to action.response.activeFacets if action is ARTICLE_SEARCH_SUCCESS', function () {
         const searchState = articleSearch(
-            { status: 'NONE', term: 'aids', activeFacets: [] },
+            { status: 'NONE', term: 'aids', activeFacets: {} },
             {
                 type: SEARCH_SUCCESS,
                 response: {
-                    facets: [],
-                    activeFacets: []
+                    activeFacets: {
+                        Language: ['french']
+                    }
                 }
             }
         );
         assert.deepEqual(searchState, {
             status: 'DONE',
             term: 'aids',
-            activeFacets: []
+            activeFacets: {
+                Language: ['french']
+            }
         });
     });
 
@@ -108,7 +112,7 @@ describe('reducers articleSearch', function () {
         assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
     });
 
-    it('should return default queries, sort, limiter and facet if action is ARTICLE_RESET', function () {
+    it('should return default queries, sort, limiter and activeFacets if action is ARTICLE_RESET', function () {
         const searchState = articleSearch(
             { status: 'state' },
             { type: RESET, response: { domains: [ 'first', 'second' ] } }
@@ -116,7 +120,7 @@ describe('reducers articleSearch', function () {
         assert.deepEqual(searchState, {
             status: 'state',
             limiters: defaultLimiters,
-            activeFacets: [],
+            activeFacets: defaultActiveFacets,
             queries: defaultQueryList,
             sort: 'relevance'
         });
@@ -167,36 +171,44 @@ describe('reducers articleSearch', function () {
         assert.deepEqual(searchState, { status: 'state', sort: 'date' });
     });
 
-    it('should change queries to a single query with term= `action.term action.field`', function () {
-        const state = { status: 'state', queries:  [1, 2, 3]};
-        const searchState = articleSearch(
-            state,
-            { type: LINKED_SEARCH, term: 'term', field: 'EX' }
-        );
-        assert.deepEqual(searchState, {
-            ...state,
-            queries: [{ boolean: 'AND', field: null, term: 'EX term' }]
+    describe('type: LINKED_SEARCH', function () {
+
+        it('should change queries to a single query with term= `action.term action.field`', function () {
+            const state = { status: 'state', queries:  [1, 2, 3]};
+            const searchState = articleSearch(
+                state,
+                { type: LINKED_SEARCH, term: 'term', field: 'EX' }
+            );
+            assert.deepEqual(searchState, {
+                ...state,
+                queries: [{ boolean: 'AND', field: null, term: 'EX term' }],
+                limiters: defaultLimiters,
+                activeFacets: defaultActiveFacets
+            });
+        });
+
+        it('should change queries to a single query with term=`action.term` and field=`action.field` if action.field is in the availableFields', function () {
+            const state = { status: 'state', queries:  [1, 2, 3] };
+            const searchState = articleSearch(
+                state,
+                { type: LINKED_SEARCH, term: 'term', field: 'TI' }
+            );
+            assert.deepEqual(searchState, {
+                ...state,
+                queries: [{ boolean: 'AND', field: 'TI', term: 'term' }],
+                limiters: defaultLimiters,
+                activeFacets: defaultActiveFacets
+            });
         });
     });
 
-    it('should change queries to a single query with term=`action.term` and field=`action.field` if action.field is in the availableFields', function () {
-        const state = { status: 'state', queries:  [1, 2, 3] };
-        const searchState = articleSearch(
-            state,
-            { type: LINKED_SEARCH, term: 'term', field: 'TI' }
-        );
-        assert.deepEqual(searchState, {
-            ...state,
-            queries: [{ boolean: 'AND', field: 'TI', term: 'term' }]
-        });
-    });
 
     it('should return passed state with default limiter and defaulQueryList if action is none of the above', function () {
         const searchState = articleSearch(
             { status: 'state' },
             { type: 'OTHER_ACTION_TYPE' }
         );
-        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, queries: defaultQueryList, activeFacets: [] });
+        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, queries: defaultQueryList, activeFacets: defaultActiveFacets });
     });
 
     it('should default status to NONE and term to "" if none given', function () {
@@ -211,7 +223,7 @@ describe('reducers articleSearch', function () {
             domain: null,
             availableDomains: [],
             limiters: defaultLimiters,
-            activeFacets: [],
+            activeFacets: defaultActiveFacets,
             sort: 'relevance'
         });
     });

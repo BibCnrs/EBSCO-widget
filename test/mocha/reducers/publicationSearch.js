@@ -1,5 +1,6 @@
 import publicationSearch, { defaultState } from '../../../lib/reducers/publicationSearch';
 import { defaultState as defaultLimiters } from '../../../lib/reducers/publicationLimiters';
+import { defaultState as defaultActiveFacets } from '../../../lib/reducers/publicationActiveFacets';
 import {
     LOGOUT,
     LOGIN_SUCCESS,
@@ -31,21 +32,24 @@ describe('reducers publicationSearch', function () {
         });
     });
 
-    it('should return DONE if action is PUBLICATION_SEARCH_SUCCESS', function () {
+    it('should return DONE and set activeFacets if action is PUBLICATION_SEARCH_SUCCESS', function () {
         const searchState = publicationSearch(
             { status: 'NONE', term: 'aids', activeFacets: [] },
             {
                 type: SEARCH_SUCCESS,
                 response: {
-                    facets: [],
-                    activeFacets: []
+                    activeFacets: {
+                        Language: ['french']
+                    }
                 }
             }
         );
         assert.deepEqual(searchState, {
             status: 'DONE',
             term: 'aids',
-            activeFacets: []
+            activeFacets: {
+                Language: ['french']
+            }
         });
     });
 
@@ -98,15 +102,11 @@ describe('reducers publicationSearch', function () {
     });
 
     it('should return default state if action is LOGOUT', function () {
-        window.sessionStorage = {
-            getItem: () => null
-        };
         const searchState = publicationSearch(
             { status: 'state' },
             { type: LOGOUT }
         );
         assert.deepEqual(searchState, defaultState);
-        delete window.sessionStorage;
     });
 
     it('should add first domains to state if action is LOGIN_SUCCESS', function () {
@@ -139,7 +139,7 @@ describe('reducers publicationSearch', function () {
         assert.deepEqual(searchState, {
             status: 'state',
             limiters: defaultLimiters,
-            activeFacets: [],
+            activeFacets: defaultActiveFacets,
             sort: 'relevance'
         });
     });
@@ -157,7 +157,7 @@ describe('reducers publicationSearch', function () {
             { status: 'state' },
             { type: 'OTHER_ACTION_TYPE' }
         );
-        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, activeFacets: [] });
+        assert.deepEqual(searchState, { status: 'state', limiters: defaultLimiters, activeFacets: defaultActiveFacets });
     });
 
     it('should set field to action.value if type is PUBLICATION_CHANGE_FIELD', function () {
@@ -171,9 +171,6 @@ describe('reducers publicationSearch', function () {
     });
 
     it('should default status to NONE and term to ""', function () {
-        window.sessionStorage = {
-            getItem: () => null
-        };
         const searchState = publicationSearch(undefined, { type: 'OTHER_ACTION_TYPE' });
         assert.deepEqual(searchState, {
             term: '',
@@ -182,9 +179,8 @@ describe('reducers publicationSearch', function () {
             domain: null,
             availableDomains: [],
             limiters: defaultLimiters,
-            activeFacets: [],
+            activeFacets: defaultActiveFacets,
             sort: 'relevance'
         });
-        delete window.sessionStorage;
     });
 });

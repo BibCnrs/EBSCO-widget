@@ -3,6 +3,7 @@
 .sidebar {
     width: 300px;
     .limiters, .facet_list {
+        padding: 10px;
         h4 {
             font-size: 1.3em;
             margin-top: 0px;
@@ -13,31 +14,11 @@
             margin-top: 0px;
             margin-bottom: 0px;
         }
-        margin-left: 25px;
-        padding: 10px;
-        width: 250px;
-        input {
-            width: 220px;
-        }
         .reset {
             cursor: pointer;
             float: right;
             button {
                 padding: 2px;
-            }
-        }
-        .more-limit-toggle {
-            cursor: pointer;
-        }
-        .more-limit {
-            overflow-x: hidden;
-            overflow-y: visible;
-            @include transition(max-height, 0.5s, ease-in);
-            &.shown {
-                max-height: 2000px;
-            }
-            &.hidden {
-                max-height: 0px;
             }
         }
         .publication-date-limiter {
@@ -47,7 +28,7 @@
             .boundaries {
                 display: flex;
                 align-items: center;
-                justify-content: flex;
+                justify-content: center;
                 align-content: stretch;
                 .to {
                     text-align: center;
@@ -70,23 +51,18 @@
                 margin-left: 5px;
             }
         }
-        .select {
-            .selector {
-                display: flex;
-                .Select {
-                    .Select-control {
-                        border-top-right-radius: 0px;
-                        border-bottom-right-radius: 0px;
-                    }
-                    min-width: 180px;
-                }
-            }
-            .btn {
-                width: 40px;
-            }
-        }
         .form-group {
             margin-bottom: 0px;
+        }
+        .facet, .active_facet {
+            .header {
+                .title {
+                    width: 85%;
+                }
+                .more {
+                    width: 15%;
+                }
+            }
         }
     }
 }

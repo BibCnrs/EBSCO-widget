@@ -1,28 +1,23 @@
-import articleSearchResult, { defaultState } from '../../../lib/reducers/articleSearchResult';
-import articleRecordList from '../../../lib/reducers/articleRecordList';
+import publicationSearchResult, { defaultState } from '../../../lib/reducers/publicationSearchResult';
+import publicationRecordList from '../../../lib/reducers/publicationRecordList';
 
 import {
-    ARTICLE,
-    RELOAD_HISTORY,
+    PUBLICATION,
     LOGOUT
 } from '../../../lib/actions';
 
-describe('reducers articleSearchResult', function () {
+describe('reducers publicationSearchResult', function () {
 
     it('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
-            articleSearchResult({ maxPage: 0 }, {
-                type: ARTICLE.SEARCH_SUCCESS,
+            publicationSearchResult({ maxPage: 0 }, {
+                type: PUBLICATION.SEARCH_SUCCESS,
                 response: {
                     maxPage: 10,
                     totalHits: 200,
                     results: ['results data'],
                     facets: ['facet1', 'facet2'],
-                    currentPage: 2,
-                    dateRange: {
-                        min: 1515,
-                        max: 2015
-                    }
+                    currentPage: 2
                 }
             }),
             {
@@ -30,25 +25,20 @@ describe('reducers articleSearchResult', function () {
                 totalHits: 200,
                 2: ['results data'],
                 facets: ['facet1', 'facet2'],
-                currentPage: 2,
-                dateRange: {
-                    min: 1515,
-                    max: 2015
-                }
+                currentPage: 2
             }
         );
     });
 
-    it('should return default state if action is ARTICLE_SEARCH_TERM, ARTICLE_LIMIT_SEARCH, RELOAD_HISTORY, LOGOUT or TRIGGER_EBSCO_ACTION', function () {
+    it('should return default state if action is PUBLICATION_SEARCH_TERM, PUBLICATION_LIMIT_SEARCH, LOGOUT or TRIGGER_EBSCO_ACTION', function () {
         const actionTypes = [
-            ARTICLE.SEARCH_TERM,
-            ARTICLE.LIMIT_SEARCH,
-            RELOAD_HISTORY,
+            PUBLICATION.SEARCH_TERM,
+            PUBLICATION.LIMIT_SEARCH,
             LOGOUT
         ];
 
         actionTypes.map((type) => assert.deepEqual(
-            articleSearchResult({
+            publicationSearchResult({
                 maxPage: 10,
                 totalHits: 200,
                 2: ['results data'],
@@ -60,8 +50,8 @@ describe('reducers articleSearchResult', function () {
 
     it('should set currentPage to action.page if action is PAGE_LOAD', function () {
         assert.deepEqual(
-            articleSearchResult({ maxPage: 0 }, {
-                type: ARTICLE.PAGE_LOAD,
+            publicationSearchResult({ maxPage: 0 }, {
+                type: PUBLICATION.PAGE_LOAD,
                 page: 7
             }),
             {
@@ -73,14 +63,14 @@ describe('reducers articleSearchResult', function () {
 
     it('should return state on other action', function () {
         assert.deepEqual(
-            articleSearchResult({ some: 'state' }, {
+            publicationSearchResult({ some: 'state' }, {
                 type: 'OTHER_ACTION'
             }),
             { some: 'state' }
         );
     });
 
-    it('should pass action to articleRecordList if state has currentPage set', function () {
+    it('should pass action to publicationRecordList if state has currentPage set', function () {
         const action = {
             type: 'OTHER_ACTION'
         };
@@ -89,11 +79,11 @@ describe('reducers articleSearchResult', function () {
             currentPage: 7
         };
         assert.deepEqual(
-            articleSearchResult(state, action),
+            publicationSearchResult(state, action),
             {
                 some: 'state',
                 currentPage: 7,
-                '7': articleRecordList(state[7], action)
+                '7': publicationRecordList(state[7], action)
             }
         );
     });
