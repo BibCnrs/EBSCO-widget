@@ -59,7 +59,6 @@
     "es5-shim": "4.3.1",
     "isomorphic-fetch": "2.1.1",
     "lodash": "^4.7.0",
-    "rc-checkbox": "1.2.0",
     "rc-slider": "3.1.0",
     "react": "0.14.3",
     "react-addons-css-transition-group": "0.14.3",
