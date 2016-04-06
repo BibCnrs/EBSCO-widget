@@ -7,7 +7,8 @@ import {
     SHOW_HISTORY,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
-    SHOW_RESULT
+    SHOW_RESULT,
+    CHANGE_LANGUAGE
 } from '../../../lib/actions';
 import userInterface, {defaultState} from '../../../lib/reducers/userInterface';
 
@@ -85,6 +86,13 @@ describe('reducers userInterface', function () {
         assert.deepEqual(
             userInterface({ other: 'data' }, { type: SHOW_RESULT, visibility: true }),
             { resultShown: true, other: 'data' }
+        );
+    });
+
+    it('should set language to action.value if action is CHANGE_LANGUAGE', function () {
+        assert.deepEqual(
+            userInterface({ other: 'data' }, { type: CHANGE_LANGUAGE, value: 'en' }),
+            { language: 'en', other: 'data' }
         );
     });
 
