@@ -3,6 +3,9 @@
 .sidebar {
     width: 300px;
     .limiters, .facet_list {
+        margin-left: 25px;
+        padding: 10px;
+        width: 250px;
         h4 {
             font-size: 1.3em;
             margin-top: 0px;
@@ -13,28 +16,11 @@
             margin-top: 0px;
             margin-bottom: 0px;
         }
-        margin-left: 25px;
-        padding: 10px;
-        width: 250px;
         .reset {
             cursor: pointer;
             float: right;
             button {
                 padding: 2px;
-            }
-        }
-        .more-limit-toggle {
-            cursor: pointer;
-        }
-        .more-limit {
-            overflow-x: hidden;
-            overflow-y: visible;
-            @include transition(max-height, 0.5s, ease-in);
-            &.shown {
-                max-height: 2000px;
-            }
-            &.hidden {
-                max-height: 0px;
             }
         }
         .publication-date-limiter {
@@ -70,7 +56,7 @@
         .form-group {
             margin-bottom: 0px;
         }
-        .facet {
+        .facet, .active_facet {
             .header {
                 .title {
                     width: 80%;

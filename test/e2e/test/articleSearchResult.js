@@ -31,4 +31,24 @@ describe('article Search result', function() {
 
         client.start(done);
     });
+
+    it('should display facet', function (done) {
+        browser
+        .waitForElementVisible('.facet_list', 1000)
+        .assert.elementCount('.active_facet', 0)
+        .assert.containsText('.available_facets .facet:nth-child(1) .header .title', 'Source Type (15)')
+        .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 3)
+        .assert.containsText('.available_facets .facet:nth-child(1) .facet_values', 'Academic Journals (316647)\nMagazines (83627)\nBooks (9427)')
+        .click('.available_facets .facet:nth-child(1) .header .more')
+        .waitForElementVisible('.available_facets', 1000)
+        .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 15)
+        .click('.available_facets .facet:nth-child(1) .facet_values .facet_value:nth-child(1)')
+        .waitForElementVisible('.available_facets', 1000)
+        .assert.containsText('.active_facet .header .title', 'Sélection actuelle')
+        .assert.elementCount('.active_facet .facet_values .facet_value', 1)
+        .assert.containsText('.active_facet .facet_values', 'Academic Journals')
+        ;
+
+        client.start(done);
+    });
 });

@@ -1,6 +1,6 @@
 import Facet from '../../../lib/components/Facet';
 
-describe.only('Facet', function () {
+describe('Facet', function () {
     let applyFacetCall;
     const defaultFacet = {
         id: 'id',
