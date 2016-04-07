@@ -1,4 +1,4 @@
-import applyIfChange from '../../../lib/containers/applyIfChange';
+import applyIfChange from '../../../lib/higherOrderComponents/applyIfChange';
 
 describe('applyIfChange', function () {
     let mountedComponent, onApplyCall, props;
