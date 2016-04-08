@@ -28,7 +28,8 @@ describe('Blob', function () {
             name: 'google'
         };
         const component = getComponent(data);
-        const fullTextHolding = component.find('FullTextHolding');
+        const fullTextHolding = component.find('Connect');
+        assert.equal(fullTextHolding.node.type.displayName, 'Connect(TranslatedComponent)');
         assert.deepEqual(fullTextHolding.props(), data);
     });
 

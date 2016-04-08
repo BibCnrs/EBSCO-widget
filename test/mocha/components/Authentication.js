@@ -1,4 +1,4 @@
-import Authentication from '../../../lib/components/Authentication';
+import { Authentication } from '../../../lib/components/Authentication';
 
 describe('Authentication', function () {
     let component, onSubmitCall;

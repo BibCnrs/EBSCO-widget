@@ -1,4 +1,4 @@
-import Etc from '../../../lib/components/Etc';
+import { Etc } from '../../../lib/components/Etc';
 
 describe('Etc', function () {
     const getComponent = (list, limit) => enzyme.shallow(<Etc list={list} limit={limit} />);
@@ -20,7 +20,7 @@ describe('Etc', function () {
         assert.equal(span.text(), '1; 2 et 3 autres');
     });
 
-    it('should display only the <limit> first list element separated with ";" and add a link to display all', function () {
+    it('should display only the <limit> first list element separated with ";" and add a link to display all one', function () {
         const list = [1, 2, 3, 4, 5];
         const component = getComponent(list, 4);
 
