@@ -1,4 +1,4 @@
-import PublicationSearch from '../../../lib/components/PublicationSearch';
+import { PublicationSearch } from '../../../lib/components/PublicationSearch';
 
 describe('PublicationSearch', function () {
     let component, props;
