@@ -1,4 +1,4 @@
-import ArticleLink from '../../../lib/components/ArticleLink';
+import { ArticleLink } from '../../../lib/components/ArticleLink';
 
 describe('ArticleLink', function () {
 

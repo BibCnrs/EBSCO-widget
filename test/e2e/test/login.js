@@ -14,19 +14,19 @@ describe('login', function() {
         .setValue('.username', 'nightwatch')
         .setValue('.password', 'password')
         .click('button.btn')
-        .waitForElementVisible('.error', 100)
+        .waitForElementVisible('.error', 1000)
         .assert.containsText('.error', 'Unauthorized');
         client.start(done);
     });
 
-    it('should display search article view if login is correct with returned domain', function (done) {
+    it.only('should display search article view if login is correct with returned domain', function (done) {
         browser
         .clearValue('.username')
         .setValue('.username', 'test')
         .clearValue('.password')
         .setValue('.password', 'secret')
         .click('button.btn')
-        .waitForElementVisible('.navbar.navbar-default', 100)
+        .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Article')
         .assert.state('article.search.availableDomains', ['vie', 'shs'])
         .assert.state('login.token', 'token')

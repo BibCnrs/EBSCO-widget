@@ -12,12 +12,12 @@ var sassOptions = [
     'outputStyle=expanded'
 ].join('&');
 
-var sassLoader = { test: /\.scss/g, exclude: /node_modules/ };
-if (['development', 'test'].indexOf(process.env.NODE_ENV) !== -1) {
-    sassLoader.loaders = ['style', 'css', 'sass?' + sassOptions];
-} else {
-    sassLoader.loader = ExtractTextPlugin.extract('css!sass?' + sassOptions);
-}
+var sassLoader = {
+    test: /\.scss/g,
+    exclude: /node_modules/,
+    loaders: ['style', 'css', 'sass?' + sassOptions]
+};
+
 
 module.exports = {
     devtool: 'eval',

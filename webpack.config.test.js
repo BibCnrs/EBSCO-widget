@@ -12,8 +12,11 @@ var sassOptions = [
     'outputStyle=expanded'
 ].join('&');
 
-var sassLoader = { test: /\.scss/g, exclude: /node_modules/ };
-sassLoader.loaders = ['style', 'css', 'sass?' + sassOptions];
+var sassLoader = {
+    test: /\.scss/g,
+    exclude: /node_modules/,
+    loaders: ['style', 'css', 'sass?' + sassOptions]
+};
 
 module.exports = {
     devtool: 'eval',

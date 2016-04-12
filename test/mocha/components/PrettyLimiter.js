@@ -1,4 +1,4 @@
-import PrettyLimiter from '../../../lib/components/PrettyLimiter';
+import { PrettyLimiter } from '../../../lib/components/PrettyLimiter';
 
 describe('PrettyLimiter', function () {
     const getComponent = (data) => enzyme.shallow(<PrettyLimiter data={data} />);
@@ -7,14 +7,12 @@ describe('PrettyLimiter', function () {
         const data = {
             fullText: true,
             peerReviewedArticle: true,
-            language: ['french', 'english'],
+            Language: ['french', 'english'],
             publicationDate: {
                 from: '1000-01',
                 to: '2015-01'
             },
-            author: 'john',
-            journalName: 'le monde',
-            title: 'sir'
+            Journal: 'le monde'
         };
         const component = getComponent(data);
         const span = component.find('span');
@@ -23,9 +21,7 @@ describe('PrettyLimiter', function () {
             'Relu par un comité de lecture',
             'Langue: french, english',
             'Date de publication: 1000-01/2015-01',
-            'Auteur: john',
-            'Journal: le monde',
-            'Titre: sir'
+            'Journal: le monde'
         ]);
     });
 

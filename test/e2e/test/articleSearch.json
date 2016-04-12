@@ -53,6 +53,7 @@
 		"token": "token"
 	},
 	"userInterface": {
+		"language": "fr",
 		"limiterShown": true,
 		"loading": false,
 		"resultShown": false,
