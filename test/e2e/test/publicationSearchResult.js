@@ -31,4 +31,24 @@ describe('publication Search result', function() {
 
         client.start(done);
     });
+
+    it('should translate publicationSearchResult', function (done) {
+        browser
+        .waitForElementVisible('.navbar.navbar-default', 100)
+        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 / 4968')
+        .assert.containsText('.limiters', 'Relu par un comité de lecture')
+        .assert.containsText('.navbar.navbar-default .language', 'fr')
+        .assert.containsText('.facet_list h3', 'Affiner votre recherche')
+        .click('.navbar.navbar-default .language')
+        .waitForElementVisible('#en', 1000)
+        .click('.navbar.navbar-default #en')
+        .waitForElementVisible('.navbar.navbar-default .language', 1000)
+        .assert.containsText('.navbar.navbar-default .language', 'en')
+        .assert.containsText('.search-count', 'Search results : 1 - 20 / 4968')
+        .assert.containsText('.limiters', 'Peer Reviewed')
+        .assert.containsText('.facet_list h3', 'Refine your search')
+        ;
+
+        client.start(done);
+    });
 });
