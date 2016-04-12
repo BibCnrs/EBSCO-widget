@@ -21,13 +21,13 @@ describe('article Search result', function() {
     it('should change page', function (done) {
         browser
         .waitForElementVisible('.record', 1000)
-        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 of 516730')
+        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 / 516730')
         .assert.containsText('.pagination .current.page', '1')
         .assert.containsText('.pagination a.page', '2')
         .click('.pagination a.page')
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.pagination .current.page', '2')
-        .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 of 516730');
+        .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 / 516730');
 
         client.start(done);
     });
@@ -44,9 +44,33 @@ describe('article Search result', function() {
         .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 15)
         .click('.available_facets .facet:nth-child(1) .facet_values .facet_value:nth-child(1)')
         .waitForElementVisible('.available_facets', 1000)
-        .assert.containsText('.active_facet .header .title', 'Sélection actuelle')
+        .assert.containsText('.active_facet .header .title', 'Vos filtres')
         .assert.elementCount('.active_facet .facet_values .facet_value', 1)
         .assert.containsText('.active_facet .facet_values', 'Academic Journals')
+        ;
+
+        client.start(done);
+    });
+
+    it('should translate articleSearchResult', function (done) {
+        browser
+        .waitForElementVisible('.navbar.navbar-default', 100)
+        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 / 516730')
+        .assert.containsText('.limiters', 'Texte Intégral')
+        .assert.containsText('.limiters', 'Relu par un comité de lecture')
+        .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'à')
+        .assert.containsText('.navbar.navbar-default .language', 'fr')
+        .assert.containsText('.facet_list h3', 'Affiner votre recherche')
+        .click('.navbar.navbar-default .language')
+        .waitForElementVisible('#en', 1000)
+        .click('.navbar.navbar-default #en')
+        .waitForElementVisible('.navbar.navbar-default .language', 1000)
+        .assert.containsText('.navbar.navbar-default .language', 'en')
+        .assert.containsText('.search-count', 'Search results : 1 - 20 / 516730')
+        .assert.containsText('.limiters', 'Full Text')
+        .assert.containsText('.limiters', 'Peer Reviewed')
+        .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'to')
+        .assert.containsText('.facet_list h3', 'Refine your search')
         ;
 
         client.start(done);

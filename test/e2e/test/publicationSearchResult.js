@@ -21,13 +21,13 @@ describe('publication Search result', function() {
     it('should change page', function (done) {
         browser
         .waitForElementVisible('.record', 1000)
-        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 of 4968')
+        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 / 4968')
         .assert.containsText('.pagination .current.page', '1')
         .assert.containsText('.pagination a.page', '2')
         .click('.pagination a.page')
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.pagination .current.page', '2')
-        .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 of 4968');
+        .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 / 4968');
 
         client.start(done);
     });
