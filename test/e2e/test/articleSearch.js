@@ -36,4 +36,32 @@ describe('articleSearch', function() {
 
         client.start(done);
     });
+
+    it('should translate ArticleSearch', function (done) {
+        browser
+        .waitForElementVisible('.navbar.navbar-default', 100)
+        .assert.containsText('.navbar .navbar-header .navbar-brand', 'Recherche')
+        .assert.containsText('.navbar.navbar-default', 'Article')
+        .assert.containsText('.navbar.navbar-default', 'Titre')
+        .assert.containsText('.navbar.navbar-default .language', 'fr')
+        .assert.attributeEquals('.article-search-input-list .search-input', 'placeholder', 'Rechercher des articles, des chapitres de livre...')
+        .assert.containsText('.fetch-button', 'Rechercher')
+        .assert.containsText('.search-menu', 'Résultats')
+        .assert.containsText('.search-menu', 'Historique')
+        .click('.navbar.navbar-default .language')
+        .waitForElementVisible('#en', 1000)
+        .click('.navbar.navbar-default #en')
+        .waitForElementVisible('.navbar.navbar-default .language', 1000)
+        .assert.containsText('.navbar.navbar-default .language', 'en')
+        .assert.containsText('.navbar .navbar-header .navbar-brand', 'Search')
+        .assert.containsText('.navbar.navbar-default', 'Article')
+        .assert.containsText('.navbar.navbar-default', 'Title')
+        .assert.attributeEquals('.article-search-input-list .search-input', 'placeholder', 'Search articles, book chapters...')
+        .assert.containsText('.fetch-button', 'Search')
+        .assert.containsText('.search-menu', 'Results')
+        .assert.containsText('.search-menu', 'History')
+        ;
+
+        client.start(done);
+    });
 });
