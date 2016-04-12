@@ -20,4 +20,23 @@ describe('publicationSearch', function() {
 
         client.start(done);
     });
+
+    it('should translate PublicationSearch', function (done) {
+        browser
+        .waitForElementVisible('.navbar.navbar-default', 100)
+        .assert.attributeEquals('.search .search-input', 'placeholder', 'Rechercher des titres de revues, de livres...')
+        .assert.containsText('.fetch-button', 'Rechercher')
+        .assert.containsText('.search-menu', 'Résultats')
+        .click('.navbar.navbar-default .language')
+        .waitForElementVisible('#en', 1000)
+        .click('.navbar.navbar-default #en')
+        .waitForElementVisible('.navbar.navbar-default .language', 1000)
+        .assert.containsText('.navbar.navbar-default .language', 'en')
+        .assert.attributeEquals('.search .search-input', 'placeholder', 'Search journal titles, book titles...')
+        .assert.containsText('.fetch-button', 'Search')
+        .assert.containsText('.search-menu', 'Results')
+        ;
+
+        client.start(done);
+    });
 });
