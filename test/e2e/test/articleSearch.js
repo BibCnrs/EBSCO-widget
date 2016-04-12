@@ -10,7 +10,7 @@ describe('articleSearch', function() {
 
     it('should display article search result when triggering search', function (done) {
         browser
-        .waitForElementVisible('.navbar.navbar-default', 100)
+        .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Article')
         .setValue('.article-search-input-list input', 'aids')
         .click('.fetch-button button')
@@ -22,7 +22,7 @@ describe('articleSearch', function() {
 
     it('should add/remove article Input when clicking add/remove', function (done) {
         browser
-        .waitForElementVisible('.navbar.navbar-default', 100)
+        .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Article')
         .assert.elementCount('.article-search-input-list .search-input', 1)
         .setValue('.article-search-input-list input', 'aids')

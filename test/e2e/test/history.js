@@ -10,7 +10,7 @@ describe('history', function() {
 
     it('should display history', function (done) {
         browser
-        .waitForElementVisible('.history', 100)
+        .waitForElementVisible('.history', 1000)
         .assert.containsText('tr', 'Terme recherchés Domaine Limites Facettes Actions')
         .assert.containsText('tr:nth-child(2)', 'Tout: aids vie Texte intégral; Date de publication: 1914/1918 253975 résultats')
         .assert.containsText('tr:nth-child(3)', 'Tout: phylloxera vie Texte intégral 1193 résultats');
@@ -20,7 +20,7 @@ describe('history', function() {
 
     it('should reload search in history', function (done) {
         browser
-        .waitForElementVisible('.history', 100)
+        .waitForElementVisible('.history', 1000)
         .click('tr:nth-child(2) .edit')
         .assert.value('.article-search-input-list input', 'aids')
         .assert.value('.fullText', 'on')
@@ -34,7 +34,7 @@ describe('history', function() {
 
     it('should relaunch search in history', function (done) {
         browser
-        .waitForElementVisible('.history', 100)
+        .waitForElementVisible('.history', 1000)
         .click('tr:nth-child(2) .refresh')
         .assert.value('.article-search-input-list input', 'aids')
         .assert.value('.fullText', 'on')
@@ -48,7 +48,7 @@ describe('history', function() {
 
     it('should delete search in history', function (done) {
         browser
-        .waitForElementVisible('.history', 100)
+        .waitForElementVisible('.history', 1000)
         .click('tr:nth-child(2) .delete')
         .assert.containsText('tr:nth-child(2)', 'Tout: phylloxera vie Texte intégral 1193 résultats');
 
@@ -57,7 +57,7 @@ describe('history', function() {
 
     it('should translate history', function (done) {
         browser
-        .waitForElementVisible('.history', 100)
+        .waitForElementVisible('.history', 1000)
         .assert.containsText('tr', 'Terme recherchés Domaine Limites Facettes Actions')
         .assert.containsText('tr:nth-child(2)', 'Tout: aids vie Texte intégral; Date de publication: 1914/1918 253975 résultats')
         .assert.containsText('tr:nth-child(3)', 'Tout: phylloxera vie Texte intégral 1193 résultats')

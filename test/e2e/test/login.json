@@ -52,6 +52,7 @@
 		"status": "NONE"
 	},
 	"userInterface": {
+		"language": "fr",
 		"limiterShown": true,
 		"loading": false,
 		"resultShown": false,

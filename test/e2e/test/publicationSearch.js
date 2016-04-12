@@ -11,7 +11,7 @@ describe('publicationSearch', function() {
 
     it('should display article search result when triggering search', function (done) {
         browser
-        .waitForElementVisible('.navbar.navbar-default', 100)
+        .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Titre')
         .setValue('.search-input', 'study')
         .click('.fetch-button button')
@@ -23,7 +23,7 @@ describe('publicationSearch', function() {
 
     it('should translate PublicationSearch', function (done) {
         browser
-        .waitForElementVisible('.navbar.navbar-default', 100)
+        .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.attributeEquals('.search .search-input', 'placeholder', 'Rechercher des titres de revues, de livres...')
         .assert.containsText('.fetch-button', 'Rechercher')
         .assert.containsText('.search-menu', 'Résultats')

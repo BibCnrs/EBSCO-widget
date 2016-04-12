@@ -54,7 +54,7 @@ describe('article Search result', function() {
 
     it('should translate articleSearchResult', function (done) {
         browser
-        .waitForElementVisible('.navbar.navbar-default', 100)
+        .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 / 516730')
         .assert.containsText('.limiters', 'Texte Intégral')
         .assert.containsText('.limiters', 'Relu par un comité de lecture')
