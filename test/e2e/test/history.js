@@ -54,4 +54,24 @@ describe('history', function() {
 
         client.start(done);
     });
+
+    it('should translate history', function (done) {
+        browser
+        .waitForElementVisible('.history', 100)
+        .assert.containsText('tr', 'Terme recherchés Domaine Limites Facettes Actions')
+        .assert.containsText('tr:nth-child(2)', 'Tout: aids vie Texte intégral; Date de publication: 1914/1918 253975 résultats')
+        .assert.containsText('tr:nth-child(3)', 'Tout: phylloxera vie Texte intégral 1193 résultats')
+        .assert.containsText('.navbar.navbar-default .language', 'fr')
+        .click('.navbar.navbar-default .language')
+        .waitForElementVisible('#en', 1000)
+        .click('.navbar.navbar-default #en')
+        .waitForElementVisible('.navbar.navbar-default .language', 1000)
+        .assert.containsText('.navbar.navbar-default .language', 'en')
+        .assert.containsText('tr', 'Searched terms Domain Limits Facets Actions')
+        .assert.containsText('tr:nth-child(2)', 'All: aids vie Full text; Publication date: 1914/1918 253975 results')
+        .assert.containsText('tr:nth-child(3)', 'All: phylloxera vie Full text 1193 results')
+        ;
+
+        client.start(done);
+    });
 });
