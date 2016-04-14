@@ -4,7 +4,6 @@ import {
     ADD_QUERY,
     REMOVE_QUERY,
     CHANGE_QUERY,
-    RESET,
     LINKED_SEARCH
 } from '../../../lib/actions/article';
 
@@ -63,10 +62,6 @@ describe('reducers articleQueryList', function () {
             { ...queryList[1], boolean: 'OR' },
             queryList[2]
         ]);
-    });
-
-    it('should return defaultState when action type is ARTICLE_RESET', function () {
-        assert.deepEqual(articleQueryList(queryList, { type: RESET }), defaultState);
     });
 
     it('should return one single query with term = action.term, field = action.field and boolean=AND when action type is ARTICLE_LINKED_SEARCH', function () {

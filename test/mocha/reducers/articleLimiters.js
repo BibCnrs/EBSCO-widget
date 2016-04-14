@@ -67,25 +67,4 @@ describe('reducers articleLimiters', function () {
         });
     });
 
-    describe('RESET', function () {
-
-        it ('should return all value to default except for fullText', function () {
-            assert.deepEqual(articleLimiters({
-                fullText: false,
-                publicationDate: {
-                    from: 2010,
-                    to: 2012
-                },
-                peerReviewedArticle: true
-            }, { type: ARTICLE.RESET }), {
-                fullText: false,
-                publicationDate: {
-                    from: null,
-                    to: null
-                },
-                peerReviewedArticle: false
-            });
-        });
-    });
-
 });

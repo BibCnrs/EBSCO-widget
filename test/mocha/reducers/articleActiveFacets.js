@@ -9,8 +9,7 @@ import {
 
 const {
     CHANGE_FACET,
-    SEARCH_SUCCESS,
-    RESET
+    SEARCH_SUCCESS
 } = ARTICLE;
 
 describe('reducers articleActiveFacets', function () {
@@ -28,8 +27,7 @@ describe('reducers articleActiveFacets', function () {
         assert.deepEqual(searchState, { active: ['facet'] });
     });
 
-    it('should return defaultState if action is ARTICLE_RESET OR LOGOUT', function () {
-        assert.deepEqual(articleActiveFacets({ active: ['facet'] },{ type: RESET }), defaultState);
+    it('should return defaultState if action is LOGOUT', function () {
         assert.deepEqual(articleActiveFacets({ active: ['facet'] },{ type: LOGOUT }), defaultState);
     });
 
