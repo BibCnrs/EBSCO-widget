@@ -17,7 +17,6 @@ const {
     SEARCH_PENDING,
     SEARCH_SUCCESS,
     SEARCH_ERROR,
-    RESET,
     CHANGE_SORT,
     LINKED_SEARCH
 } = ARTICLE;
@@ -110,20 +109,6 @@ describe('reducers articleSearch', function () {
             { type: LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
         );
         assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
-    });
-
-    it('should return default queries, sort, limiter and activeFacets if action is ARTICLE_RESET', function () {
-        const searchState = articleSearch(
-            { status: 'state' },
-            { type: RESET, response: { domains: [ 'first', 'second' ] } }
-        );
-        assert.deepEqual(searchState, {
-            status: 'state',
-            limiters: defaultLimiters,
-            activeFacets: defaultActiveFacets,
-            queries: defaultQueryList,
-            sort: 'relevance'
-        });
     });
 
     it('should return state completed by action.query if action is RESTORE_HISTORY or RELOAD_HISTORY', function () {

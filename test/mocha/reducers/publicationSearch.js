@@ -14,7 +14,6 @@ const {
     SEARCH_PENDING,
     SEARCH_SUCCESS,
     SEARCH_ERROR,
-    RESET,
     CHANGE_SORT,
     CHANGE_FIELD
 } = PUBLICATION;
@@ -129,19 +128,6 @@ describe('reducers publicationSearch', function () {
                 availableDomains: ['vie', 'shs']
             }
         );
-    });
-
-    it('should return default sort, limiter and facet if action is PUBLICATION_RESET', function () {
-        const searchState = publicationSearch(
-            { status: 'state' },
-            { type: RESET }
-        );
-        assert.deepEqual(searchState, {
-            status: 'state',
-            limiters: defaultLimiters,
-            activeFacets: defaultActiveFacets,
-            sort: 'relevance'
-        });
     });
 
     it('should return state with sort set as action.value if action is PUBLICATION_CHANGE_SORT', function () {
