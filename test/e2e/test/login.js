@@ -19,7 +19,7 @@ describe('login', function() {
         client.start(done);
     });
 
-    it.only('should display search article view if login is correct with returned domain', function (done) {
+    it('should display search article view if login is correct with returned domain', function (done) {
         browser
         .clearValue('.username')
         .setValue('.username', 'test')
