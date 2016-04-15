@@ -59,8 +59,7 @@
 		"resultShown": false,
 		"historyShown": false,
 		"location": "article",
-		"fullScreen": true,
-		"notice": null
+		"fullScreen": true
 	},
 	"error": null,
 	"url": "http://server"

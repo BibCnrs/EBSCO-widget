@@ -13,7 +13,16 @@ describe('article Search result', function() {
         .waitForElementVisible('.record', 1000)
         .click('.record_list a.fetch-link')
         .waitForElementVisible('.notice', 1000)
-        .assert.containsText('.notice h3', 'The Legislative and Policy Gaps in the National HIV and AIDS, STI Policy, 2004-2014, Ghana');
+        .assert.containsText('.notice dl span:nth-child(1) dt', 'Authors')
+        .assert.containsText('.notice dl span:nth-child(2) dt', 'Source')
+        .assert.containsText('.notice dl span:nth-child(3) dt', 'Publication Year')
+        .assert.containsText('.notice dl span:nth-child(4) dt', 'Subject Terms')
+        .assert.containsText('.notice dl span:nth-child(5) dt', 'Description (Translated)')
+        .assert.containsText('.notice dl span:nth-child(6) dt', 'Document Type')
+        .assert.containsText('.notice dl span:nth-child(7) dt', 'Language')
+        .assert.containsText('.notice dl span:nth-child(8) dt', 'ISSN')
+        .assert.containsText('.notice dl span:nth-child(9) dt', 'Accession Number')
+        .assert.containsText('.notice dl span:nth-child(10) dt', 'Airiti Library eBooks & Journals - 華藝線上圖書館');
 
         client.start(done);
     });
