@@ -61,20 +61,6 @@ describe('reducers userInterface', function () {
         );
     });
 
-    it('should set notice to action.index if action.visibility is true and aciton is ARTICLE_SHOW_NOTICE', function () {
-        assert.deepEqual(
-            userInterface({ notice: null, other: 'data' }, { type: ARTICLE.SHOW_NOTICE, visibility: true, index: 5 }),
-            { notice: 5, other: 'data' }
-        );
-    });
-
-    it('should set notice to null if action.visibility is false and action is ARTICLE_SHOW_NOTICE', function () {
-        assert.deepEqual(
-            userInterface({ notice: 5, other: 'data' }, { type: ARTICLE.SHOW_NOTICE, visibility: false, index: 5 }),
-            { notice: null, other: 'data' }
-        );
-    });
-
     it('should set resultShown to false if action.visibility is false and action is SHOW_RESULT', function () {
         assert.deepEqual(
             userInterface({ other: 'data' }, { type: SHOW_RESULT, visibility: false }),
