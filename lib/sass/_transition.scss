@@ -1,19 +1,23 @@
 .fade-enter {
     opacity: 0.01;
+    max-height: 0px;
 }
 
 .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 300ms ease-in;
+    max-height: 100px;
+    transition: all 300ms ease-in;
 }
 
 .fade-leave {
+    max-height: 100px;
     opacity: 1;
 }
 
 .fade-leave.fade-leave-active {
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
+    max-height: 0px;
+    transition: all 300ms ease-in;
 }
 
 .v-slide-enter {
