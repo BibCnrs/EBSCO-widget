@@ -9,7 +9,7 @@ import {
 
 describe('reducers articleSearchResult', function () {
 
-    it.only('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
+    it('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
             articleSearchResult({
                 maxPage: 0,
