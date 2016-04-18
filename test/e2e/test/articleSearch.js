@@ -14,6 +14,7 @@ describe('articleSearch', function() {
         .assert.containsText('.navbar.navbar-default .active', 'Article')
         .setValue('.article-search-input-list input', 'aids')
         .click('.fetch-button button')
+        .pause(300)
         .waitForElementVisible('.search-result-with-sidebar', 1000)
         .assert.elementCount('.record', 20);
 
@@ -27,10 +28,12 @@ describe('articleSearch', function() {
         .assert.elementCount('.article-search-input-list .search-input', 1)
         .setValue('.article-search-input-list input', 'aids')
         .click('.article-search-input-list .row:nth-child(1) .action .add')
+        .pause(300)
         .assert.elementCount('.article-search-input-list .search-input', 2)
         .assert.value('.article-search-input-list .row:nth-child(1) .search-input', 'aids')
         .assert.value('.article-search-input-list .row:nth-child(2) .search-input', '')
         .click('.article-search-input-list .row:nth-child(1) .action .remove')
+        .pause(300)
         .assert.elementCount('.article-search-input-list .search-input', 1)
         .assert.value('.article-search-input-list .row:nth-child(1) .search-input', '');
 

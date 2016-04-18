@@ -15,6 +15,7 @@ describe('publicationSearch', function() {
         .assert.containsText('.navbar.navbar-default .active', 'Titre')
         .setValue('.search-input', 'study')
         .click('.fetch-button button')
+        .pause(300)
         .waitForElementVisible('.search-result', 1000)
         .assert.elementCount('.record', 20);
 

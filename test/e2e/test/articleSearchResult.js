@@ -13,6 +13,7 @@ describe('article Search result', function() {
         .waitForElementVisible('.record', 1000)
         .click('.record_list a.fetch-link')
         .waitForElementVisible('.notice', 1000)
+        .pause(300)
         .assert.containsText('.notice dl span:nth-child(1) dt', 'Authors')
         .assert.containsText('.notice dl span:nth-child(2) dt', 'Source')
         .assert.containsText('.notice dl span:nth-child(3) dt', 'Publication Year')
