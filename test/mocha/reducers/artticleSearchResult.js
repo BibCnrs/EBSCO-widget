@@ -9,9 +9,12 @@ import {
 
 describe('reducers articleSearchResult', function () {
 
-    it('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
+    it.only('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
-            articleSearchResult({ maxPage: 0 }, {
+            articleSearchResult({
+                maxPage: 0,
+                1: 'other page'
+            }, {
                 type: ARTICLE.SEARCH_SUCCESS,
                 response: {
                     maxPage: 10,
@@ -28,6 +31,7 @@ describe('reducers articleSearchResult', function () {
             {
                 maxPage: 10,
                 totalHits: 200,
+                1: 'other page',
                 2: ['results data'],
                 facets: ['facet1', 'facet2'],
                 currentPage: 2,
