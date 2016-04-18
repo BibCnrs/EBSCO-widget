@@ -2,6 +2,7 @@
 @import "./variables.scss";
 
 .record {
+    overflow: hidden;
     text-align: left;
     .title {
         color: $title;
