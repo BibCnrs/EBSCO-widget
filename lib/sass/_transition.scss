@@ -8,18 +8,17 @@
 }
 
 .fade-leave {
-    opacity: 1;
+    opacity: 0.01;
 }
 
 .fade-leave.fade-leave-active {
-    opacity: 0.01;
+    opacity: 0;
     transition: all 300ms ease-in;
 }
 
 .pop-enter {
     opacity: 0.01;
     transform: scale(0);
-    max-height: 0px;
 }
 
 .pop-enter.pop-enter-active {
