@@ -202,7 +202,8 @@ describe('reducers articleSearch', function () {
             queries: [{
                 boolean: 'AND',
                 term: '',
-                field: null
+                field: null,
+                key: 'initial'
             }],
             status: 'NONE',
             domain: null,

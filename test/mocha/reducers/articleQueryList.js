@@ -1,4 +1,5 @@
 import articleQueryList, { defaultState, defaultArticleQuery } from '../../../lib/reducers/articleQueryList';
+import getSha1 from '../../../lib/services/getSha1';
 
 import {
     ADD_QUERY,
@@ -22,19 +23,25 @@ describe('reducers articleQueryList', function () {
         assert.deepEqual(articleQueryList(queryList, { type: 'OTHER_ACTION_TYPE' }), queryList);
     });
 
-    it ('should add a defaultArticleQuery at action.index if action type is ARTICLE_ADD_QUERY', function () {
+    it ('should add a defaultArticleQuery with key equal to previousState sha1 at action.index if action type is ARTICLE_ADD_QUERY', function () {
         assert.deepEqual(articleQueryList(queryList, { type: ADD_QUERY, index: 1 }), [
             queryList[0],
             queryList[1],
-            defaultArticleQuery,
+            {
+                ...defaultArticleQuery,
+                key: getSha1(queryList)
+            },
             queryList[2]
         ]);
     });
 
-    it ('should add a defaultArticleQuery at action.index if action type is ARTICLE_ADD_QUERY', function () {
+    it ('should add a defaultArticleQuery with key equal to previousState sha1 at action.index if action type is ARTICLE_ADD_QUERY', function () {
         assert.deepEqual(articleQueryList(queryList.slice(2), { type: ADD_QUERY, index: 1 }), [
             queryList[2],
-            defaultArticleQuery
+            {
+                ...defaultArticleQuery,
+                key: getSha1(queryList.slice(2))
+            }
         ]);
     });
 
