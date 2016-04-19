@@ -1,6 +1,5 @@
 import {
-    ARTICLE,
-    RETRIEVE_LINK_SUCCESS
+    ARTICLE
 } from '../../../lib/actions';
 import articleRecord, { defaultState } from '../../../lib/reducers/articleRecord';
 
@@ -38,7 +37,7 @@ describe('reducers articleRecord', function () {
         assert.deepEqual(articleRecord({
             author: 'john doe'
         }, {
-            type: RETRIEVE_LINK_SUCCESS,
+            type: ARTICLE.RETRIEVE_LINK_SUCCESS,
             response: {
                 url: 'http://linkToArticle.com'
             }
