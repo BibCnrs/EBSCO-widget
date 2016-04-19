@@ -1,57 +1,64 @@
 # EBSCO-widget
 
-React widget to fetch data from BibApi
+widget React pour interroger BibApi
 
 ## Installation
-install with npm `npm install ebsco-widget`
-Add the widget js and css
+installer avec npm `npm install ebsco-widget`
+Ajouter le js et le css
 ```html
 <link rel="stylesheet" id="ebsco_widget-css" href="/build/app.css?ver=0.13.1" type="text/css" media="all">
 <script type="text/javascript" src="/build/app.js?ver=0.13.1"></script>
 ```
 
 Simply add a div to the target page:
+Ajouter la div qui contiendra le widget
 ```html
 <div id="ebsco_widget"></div>
 ```
-and then the js:
+Et initialiser le widget avec:
 ```js
 document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
         var rootElement = document.getElementById('ebsco_widget');
-        window.ReactDom.render(React.createElement(window.EbscoWidget, {
-            url: 'url toward bibapi', //mandatory
-            domain: 'default domain' // optional: the institute that the widget will use per default if available
+        window.ReactDom.render(React.createElement(window.EbscoWidget, { // options
+            url: 'http://bibapiHost/ebsco', //obligatoire: url de bibapi
+            domain: 'default domain' // facultatif: l'institut que le widget utlisera par défaut si disponible
         }), rootElement);
     }
 };
 ```
 
+## développement
 
-## development
-
-`make install`
-Launch webpack dev server: `make dev`
-Then go to `localhost:3001/webpack-dev-server`
-You can add `?debug_session=<name>` to create a session that will save the state
-of the application inside localstorage.
-You also need to have BibApi server running on localhost:3000
+### dépendence:
+    `make install`
+### serveur de développement
+Lancer webpack dev server: `make dev`
+Ensuite aller sur `localhost:3001/webpack-dev-server`
+Il est possible d'ajouter `?debug_session=<name>` pour créer une session qui sauvegardera l'état du widget' dans le localstorage.
+Il est également  nécessaire d'avoir BibApi de lancer sur  localhost:3000
 
 ### build
-`make build` to build app.js and app.css in the build directory
+Construire build/app.js et build/app.css :`make build`
+
+### serve
+servir une page html de test incorporant le widget construit: `make serve`
 
 ## Test
-`make test`
+`make test`: lancer tout les tests
+`make test-mocha`: lancer les tests unitaires mocha
+`make selenium`: lancer selenium hub et chrome (nécessaire pour les tests "end to end")
+`make selenium-debug`: lancer selenium en mode debug ce qui permet de s'y connecter avec [VNC](https://www.realvnc.com/products/vnc/) pour un retour graphique
+[Application chrome gratuite VNC](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla?hl=en)
+`make test-e2e`: lancer les tests "end to end" nightwatch
 
 ## Useful commands
 
-### make stop
-stop the server container, useful in production when it run detached.
+`make` liste toutes les commandes disponible ainsi que leurs aides
 
-### make npm
-allow to run npm command in the docker npm
-```
-make npm install koa --save // will run `npm install koa --save` inside the npm docker
+`make npm`: permet de lancer les commandes npm dockerizé
+example: `make npm install koa --save`
+
 ```sh
 see [npm documentation](https://docs.npmjs.com/all)
 ```
