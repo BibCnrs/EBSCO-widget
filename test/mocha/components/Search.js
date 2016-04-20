@@ -1,10 +1,10 @@
-import { PublicationSearch } from '../../../lib/components/PublicationSearch';
+import { Search } from '../../../lib/components/Search';
 
-describe('PublicationSearch', function () {
+describe('Search component', function () {
     let component, props;
 
     function getComponent(props) {
-        return enzyme.shallow(<PublicationSearch {...props} />);
+        return enzyme.shallow(<Search {...props} />);
     }
 
     beforeEach(function () {
@@ -12,12 +12,10 @@ describe('PublicationSearch', function () {
             onSearchTerm: function onSearchTerm() {
                 return ['onSearchTerm', ...arguments];
             },
-            term: 'word',
             status: 'NONE',
-            domains: ['vie', 'shs'],
+            term: 'word',
             domain: 'vie',
-            sort: 'relevance',
-            availableSort: ['relevance', 'date']
+            SearchInput: () => <div/>
         };
 
         component = getComponent(props);
