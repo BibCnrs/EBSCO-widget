@@ -49,6 +49,9 @@
         }
         .facet, .active_facet {
             .header {
+                .title, .more {
+                    height: 34px;
+                }
                 .title {
                     width: 85%;
                 }
