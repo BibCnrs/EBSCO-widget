@@ -70,8 +70,8 @@
 		"loading": false,
 		"resultShown": false,
 		"historyShown": false,
-		"location": "article",
-		"fullScreen": true,
+		"location": "a2z",
+		"fullScreen": false,
 		"language": "fr"
 	},
 	"error": null,

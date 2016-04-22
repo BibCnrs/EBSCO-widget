@@ -1,6 +1,12 @@
 import {
     PUBLICATION
 } from '../../../lib/actions';
+
+
+const {
+    RETRIEVE_SUCCESS,
+    SHOW_NOTICE
+} = PUBLICATION;
 import publicationRecord, { defaultState } from '../../../lib/reducers/publicationRecord';
 
 describe('reducers publicationRecord', function () {
@@ -13,7 +19,7 @@ describe('reducers publicationRecord', function () {
         assert.deepEqual(publicationRecord({
             author: 'john doe'
         }, {
-            type: PUBLICATION.RETRIEVE_SUCCESS,
+            type: RETRIEVE_SUCCESS,
             response: 'notice content'
         }), {
             author: 'john doe',
@@ -25,7 +31,7 @@ describe('reducers publicationRecord', function () {
         assert.deepEqual(publicationRecord({
             author: 'john doe'
         }, {
-            type: PUBLICATION.RETRIEVE_SUCCESS,
+            type: RETRIEVE_SUCCESS,
             response: 'notice content'
         }), {
             author: 'john doe',
@@ -35,7 +41,7 @@ describe('reducers publicationRecord', function () {
 
     it('should set noticeShown to action.visibility if action is PUBLICATION_SHOW_NOTICE', function () {
         assert.deepEqual(
-            publicationRecord({ other: 'data' }, { type: PUBLICATION.SHOW_NOTICE, visibility: 'visible?', publicationIndex: 5 }),
+            publicationRecord({ other: 'data' }, { type: SHOW_NOTICE, visibility: 'visible?', articleIndex: 5 }),
             { noticeShown: 'visible?', other: 'data' }
         );
     });
