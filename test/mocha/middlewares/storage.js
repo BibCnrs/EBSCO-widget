@@ -11,7 +11,7 @@ const {
     DOMAIN_CHANGE
 } = ARTICLE;
 
-describe.only('storage middleware', function () {
+describe('storage middleware', function () {
     let store, dispatchedAction, next, nextAction;
     const state = {
         article: {
@@ -99,9 +99,7 @@ describe.only('storage middleware', function () {
         storage(store, next, action);
         assert.deepEqual(nextAction, [action]);
         assert.deepEqual(dispatchedAction, []);
-        assert.deepEqual(sessionStorage, {
-            EBSCO_WIDGET_username: '"john"',
-            EBSCO_WIDGET_domain: '"INSB"',
+        assert.deepEpassport.authenticate('saml', { failureRedirect: '/', failureFlash: true })DGET_domain: '"INSB"',
             EBSCO_WIDGET_availableDomains: '["INSB","INSHS"]'
         });
     });
