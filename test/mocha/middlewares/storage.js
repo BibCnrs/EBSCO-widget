@@ -99,7 +99,9 @@ describe('storage middleware', function () {
         storage(store, next, action);
         assert.deepEqual(nextAction, [action]);
         assert.deepEqual(dispatchedAction, []);
-        assert.deepEpassport.authenticate('saml', { failureRedirect: '/', failureFlash: true })DGET_domain: '"INSB"',
+        assert.deepEqual(sessionStorage, {
+            EBSCO_WIDGET_username: '"john"',
+            EBSCO_WIDGET_domain: '"INSB"',
             EBSCO_WIDGET_availableDomains: '["INSB","INSHS"]'
         });
     });
