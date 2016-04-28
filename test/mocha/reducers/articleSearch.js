@@ -4,7 +4,7 @@ import { defaultState as defaultQueryList } from '../../../lib/reducers/articleQ
 import { defaultState as defaultActiveFacets } from '../../../lib/reducers/articleActiveFacets';
 
 import {
-    LOGIN_SUCCESS,
+    LOGIN,
     LOGOUT,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
@@ -106,7 +106,7 @@ describe('reducers articleSearch', function () {
     it('should add first domains to state if action is LOGIN_SUCCESS', function () {
         const searchState = articleSearch(
             { status: 'state' },
-            { type: LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
+            { type: LOGIN, domains: [ 'first', 'second' ] }
         );
         assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
     });

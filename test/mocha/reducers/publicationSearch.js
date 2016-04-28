@@ -3,7 +3,7 @@ import { defaultState as defaultLimiters } from '../../../lib/reducers/publicati
 import { defaultState as defaultActiveFacets } from '../../../lib/reducers/publicationActiveFacets';
 import {
     LOGOUT,
-    LOGIN_SUCCESS,
+    LOGIN,
     SET_AVAILABLE_DOMAINS,
     PUBLICATION
 } from '../../../lib/actions';
@@ -111,7 +111,7 @@ describe('reducers publicationSearch', function () {
     it('should add first domains to state if action is LOGIN_SUCCESS', function () {
         const searchState = publicationSearch(
             { status: 'state' },
-            { type: LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
+            { type: LOGIN, domains: [ 'first', 'second' ] }
         );
         assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
     });
