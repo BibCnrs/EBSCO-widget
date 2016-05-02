@@ -3,15 +3,14 @@
 widget React pour interroger BibApi
 
 ## Installation
-installer avec npm `npm install ebsco-widget`
+Installer avec npm `npm install ebsco-widget`
 Ajouter le js et le css
 ```html
 <link rel="stylesheet" id="ebsco_widget-css" href="/build/app.css?ver=0.13.1" type="text/css" media="all">
 <script type="text/javascript" src="/build/app.js?ver=0.13.1"></script>
 ```
 
-Simply add a div to the target page:
-Ajouter la div qui contiendra le widget
+Ajouter la div qui contiendra le widget:
 ```html
 <div id="ebsco_widget"></div>
 ```
@@ -21,7 +20,7 @@ document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
         var rootElement = document.getElementById('ebsco_widget');
         window.ReactDom.render(React.createElement(window.EbscoWidget, { // options
-            url: 'http://bibapiHost/ebsco', //obligatoire: url de bibapi
+            url: 'https://bib.crns.fr/api/ebsco', //obligatoire: url de bibapi
             domain: 'default domain' // facultatif: l'institut que le widget utlisera par défaut si disponible
         }), rootElement);
     }
@@ -30,7 +29,7 @@ document.onreadystatechange = function () {
 
 ## développement
 
-### dépendence:
+### dépendance:
     `make install`
 ### serveur de développement
 Lancer webpack dev server: `make dev`
