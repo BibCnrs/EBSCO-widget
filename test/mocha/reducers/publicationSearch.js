@@ -4,6 +4,7 @@ import { defaultState as defaultActiveFacets } from '../../../lib/reducers/publi
 import {
     LOGOUT,
     LOGIN,
+    API_LOGIN_SUCCESS,
     SET_AVAILABLE_DOMAINS,
     PUBLICATION
 } from '../../../lib/actions';
@@ -112,6 +113,14 @@ describe('reducers publicationSearch', function () {
         const searchState = publicationSearch(
             { status: 'state' },
             { type: LOGIN, domains: [ 'first', 'second' ] }
+        );
+        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
+    });
+
+    it('should add first domains to state if action is API_LOGIN_SUCCESS', function () {
+        const searchState = publicationSearch(
+            { status: 'state' },
+            { type: API_LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
         );
         assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
     });
