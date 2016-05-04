@@ -1,7 +1,8 @@
 import a2zSearch, { defaultState } from '../../../lib/reducers/a2zSearch';
 
 import {
-    LOGIN_SUCCESS,
+    LOGIN,
+    API_LOGIN_SUCCESS,
     LOGOUT,
     SET_AVAILABLE_DOMAINS,
     A2Z
@@ -87,10 +88,18 @@ describe('reducers a2zSearch', function () {
         assert.deepEqual(searchState, defaultState);
     });
 
-    it('should add first domains to state if action is LOGIN_SUCCESS', function () {
+    it('should add first domains to state if action is LOGIN', function () {
         const searchState = a2zSearch(
             { status: 'state' },
-            { type: LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
+            { type: LOGIN, domains: [ 'first', 'second' ] }
+        );
+        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
+    });
+
+    it('should add first domains to state if action is API_LOGIN_SUCCESS', function () {
+        const searchState = a2zSearch(
+            { status: 'state' },
+            { type: API_LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
         );
         assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
     });

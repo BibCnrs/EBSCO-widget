@@ -2,7 +2,7 @@ import { storage } from '../../../lib/middlewares/storage';
 import {
     ARTICLE,
     DELETE_HISTORY,
-    LOGIN_SUCCESS,
+    LOGIN,
     LOGOUT
 } from '../../../lib/actions';
 
@@ -89,11 +89,9 @@ describe('storage middleware', function () {
 
     it('should save username domain and availableDomains in sessionStorage on LOGIN_SUCCESS', function () {
         const action = {
-            type: LOGIN_SUCCESS,
-            response: {
-                username: 'john',
-                domains: ['INSB', 'INSHS']
-            }
+            type: LOGIN,
+            username: 'john',
+            domains: ['INSB', 'INSHS']
         };
 
         storage(store, next, action);

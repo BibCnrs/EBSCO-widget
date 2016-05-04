@@ -45,6 +45,20 @@ describe('reducer history', function () {
                 ]
             );
         });
+
+        it('should not add action.query to state if it\'s totalhit is 0', function () {
+            assert.deepEqual(
+                history([{ term: 'phylloxera', activeFacets: [] }, { term: 'aids', activeFacets: [] }], {
+                    type: ARTICLE.SEARCH_SUCCESS,
+                    query: { term: 'aidswxcv' },
+                    response: { totalHits: 0 }
+                }),
+                [
+                    { term: 'phylloxera', activeFacets: [] },
+                    { term: 'aids', activeFacets: [] }
+                ]
+            );
+        });
     });
 
     describe('action DELETE_HISTORY', function () {

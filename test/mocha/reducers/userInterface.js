@@ -1,9 +1,10 @@
 import {
     LOGOUT,
+    LOGIN,
+    API_LOGIN_SUCCESS,
     LOADING,
     LOADED,
     SHOW_SIDEBAR,
-    ARTICLE,
     SHOW_HISTORY,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
@@ -20,6 +21,20 @@ describe('reducers userInterface', function () {
 
     it('should return defaultState if action is LOGOUT', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: LOGOUT }), defaultState);
+    });
+
+    it('should return set location to article if action is LOGIN', function () {
+        assert.deepEqual(userInterface({ location: 'publication', other: 'data' }, { type: LOGIN }), {
+            location: 'article',
+            other: 'data'
+        });
+    });
+
+    it('should return set location to article if action is API_LOGIN_SUCCESS', function () {
+        assert.deepEqual(userInterface({ location: 'publication', other: 'data' }, { type: API_LOGIN_SUCCESS }), {
+            location: 'article',
+            other: 'data'
+        });
     });
 
     it('should set loading to true if action is LOADING', function () {

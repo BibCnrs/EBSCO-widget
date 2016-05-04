@@ -21,6 +21,10 @@ app.use(route.post('/login', function* () {
 
 }));
 
+app.use(route.get('/login_renater', function* () {
+    this.redirect(`http://app?shib=cookie%3Dcookie&token=token&domains=vie&domains=shs&username=tester`);
+}));
+
 app.use(route.get('/:domainName/article/search', function* articleSearch(domainName) {
     this.body = require(`./jsonResponse/${domainName}/article/search/aids${this.query.currentPage || 1}.json`);
 }));
