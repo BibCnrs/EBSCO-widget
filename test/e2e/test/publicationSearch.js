@@ -14,7 +14,8 @@ describe('publicationSearch', function() {
         .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Titre')
         .setValue('.search-input', 'study')
-        .click('.fetch-button button')
+        .waitForElementVisible('.fetch-button .btn', 100)
+        .click('.fetch-button .btn')
         .pause(300)
         .waitForElementVisible('.search-result', 1000)
         .assert.elementCount('.record', 20);
@@ -24,7 +25,12 @@ describe('publicationSearch', function() {
 
     it('should translate PublicationSearch', function (done) {
         browser
-        .waitForElementVisible('.navbar.navbar-default', 1000)
+        .waitForElementVisible('.navbar.navbar-default', 100)
+        .assert.containsText('.navbar .navbar-header .navbar-brand', 'Recherche')
+        .assert.containsText('.navbar.navbar-default', 'Article')
+        .assert.containsText('.navbar.navbar-default', 'Titre')
+        .assert.containsText('.navbar.navbar-default', 'A à Z')
+        .assert.containsText('.navbar.navbar-default .language', 'fr')
         .assert.attributeEquals('.search .search-input', 'placeholder', 'Rechercher des titres de revues, de livres...')
         .assert.containsText('.fetch-button', 'Rechercher')
         .assert.containsText('.search-menu', 'Résultats')

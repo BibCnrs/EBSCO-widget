@@ -8,12 +8,13 @@ describe('publication Search result', function() {
         client.start(done);
     });
 
-    it('should retrieve clicked article', function (done) {
+    it('should retrieve clicked title', function (done) {
         browser
         .waitForElementVisible('.record', 1000)
+        .waitForElementVisible('.record:nth-child(1) a.fetch-link', 100)
         .click('.record:nth-child(1) a.fetch-link')
-        .waitForElementVisible('.notice', 1000)
         .pause(300)
+        .waitForElementVisible('.notice', 1000)
         .assert.containsText('.notice dl span:nth-child(1) dt', 'ISSN')
         .assert.containsText('.notice dl span:nth-child(2) dt', 'Publisher Information')
         .assert.containsText('.notice dl span:nth-child(3) dt', 'Resource Type')
