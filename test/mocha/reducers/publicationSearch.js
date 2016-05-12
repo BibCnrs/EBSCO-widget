@@ -2,10 +2,10 @@ import publicationSearch, { defaultState } from '../../../lib/reducers/publicati
 import { defaultState as defaultLimiters } from '../../../lib/reducers/publicationLimiters';
 import { defaultState as defaultActiveFacets } from '../../../lib/reducers/publicationActiveFacets';
 import {
-    LOGOUT,
     LOGIN,
     API_LOGIN_SUCCESS,
-    SET_AVAILABLE_DOMAINS,
+    LOGOUT,
+    FETCH_DOMAINS_SUCCESS,
     PUBLICATION
 } from '../../../lib/actions';
 
@@ -90,23 +90,15 @@ describe('reducers publicationSearch', function () {
         );
     });
 
-    it('should not update domain with action.domain if domain is not in state.availableDomains if action is PUBLICATION_DOMAIN_CHANGE', function () {
-        const state = { status: 'state', domain: 'vie', availableDomains: [] };
-        assert.deepEqual(
-                publicationSearch(
-                state,
-                { type: DOMAIN_CHANGE, domain: 'shs' }
-            ),
-            state
-        );
-    });
-
-    it('should return default state if action is LOGOUT', function () {
+    it('should return default state except forn domain if action is LOGOUT', function () {
         const searchState = publicationSearch(
-            { status: 'state' },
+            { status: 'state', domain: 'vie' },
             { type: LOGOUT }
         );
-        assert.deepEqual(searchState, defaultState);
+        assert.deepEqual(searchState, {
+            ...defaultState,
+            domain: 'vie'
+        });
     });
 
     it('should add first domains to state if action is LOGIN_SUCCESS', function () {
@@ -114,7 +106,7 @@ describe('reducers publicationSearch', function () {
             { status: 'state' },
             { type: LOGIN, domains: [ 'first', 'second' ] }
         );
-        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
+        assert.deepEqual(searchState, { status: 'state', domain: 'first'});
     });
 
     it('should add first domains to state if action is API_LOGIN_SUCCESS', function () {
@@ -122,19 +114,18 @@ describe('reducers publicationSearch', function () {
             { status: 'state' },
             { type: API_LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
         );
-        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
+        assert.deepEqual(searchState, { status: 'state', domain: 'first'});
     });
 
-    it('should set availableDomains to action.value, and domain to action.value[0] id action is SET_AVAILABLE_DOMAINS', function () {
+    it('should set domain to action.response[0] if action is FETCH_DOMAINS_SUCCESS', function () {
         assert.deepEqual(
             publicationSearch(
                 { status: 'state' },
-                { type: SET_AVAILABLE_DOMAINS, value: ['vie', 'shs'] }
+                { type: FETCH_DOMAINS_SUCCESS, response: ['vie', 'shs'] }
             ),
             {
                 status: 'state',
-                domain: 'vie',
-                availableDomains: ['vie', 'shs']
+                domain: 'vie'
             }
         );
     });
@@ -172,7 +163,6 @@ describe('reducers publicationSearch', function () {
             field: null,
             status: 'NONE',
             domain: null,
-            availableDomains: [],
             limiters: defaultLimiters,
             activeFacets: defaultActiveFacets,
             sort: 'relevance'

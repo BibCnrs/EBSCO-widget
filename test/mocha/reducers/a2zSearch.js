@@ -4,7 +4,7 @@ import {
     LOGIN,
     API_LOGIN_SUCCESS,
     LOGOUT,
-    SET_AVAILABLE_DOMAINS,
+    FETCH_DOMAINS_SUCCESS,
     A2Z
 } from '../../../lib/actions';
 
@@ -53,7 +53,6 @@ describe('reducers a2zSearch', function () {
     it('should update domain with action.domain if action is ARTICLE_DOMAIN_CHANGE', function () {
         const state = {
             status: 'state',
-            availableDomains: ['vie', 'shs'],
             domain: 'vie'
         };
         assert.deepEqual(
@@ -63,29 +62,20 @@ describe('reducers a2zSearch', function () {
             ),
             {
                 status: 'state',
-                availableDomains: ['vie', 'shs'],
                 domain: 'shs'
             }
         );
     });
 
-    it('should not update domain with action.domain if domain is not in state.availableDomains if action is ARTICLE_DOMAIN_CHANGE', function () {
-        const state = { status: 'state', domain: 'vie', availableDomains: [] };
-        assert.deepEqual(
-                a2zSearch(
-                state,
-                { type: DOMAIN_CHANGE, domain: 'shs' }
-            ),
-            state
-        );
-    });
-
-    it('should return default state if action is LOGOUT', function () {
+    it('should return default state except for domain if action is LOGOUT', function () {
         const searchState = a2zSearch(
-            { status: 'state' },
+            { status: 'state', domain: 'vie' },
             { type: LOGOUT }
         );
-        assert.deepEqual(searchState, defaultState);
+        assert.deepEqual(searchState, {
+            ...defaultState,
+            domain: 'vie'
+        });
     });
 
     it('should add first domains to state if action is LOGIN', function () {
@@ -93,7 +83,7 @@ describe('reducers a2zSearch', function () {
             { status: 'state' },
             { type: LOGIN, domains: [ 'first', 'second' ] }
         );
-        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
+        assert.deepEqual(searchState, { status: 'state', domain: 'first'});
     });
 
     it('should add first domains to state if action is API_LOGIN_SUCCESS', function () {
@@ -101,19 +91,18 @@ describe('reducers a2zSearch', function () {
             { status: 'state' },
             { type: API_LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
         );
-        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
+        assert.deepEqual(searchState, { status: 'state', domain: 'first'});
     });
 
-    it('should set availableDomains to action.value, and domain to action.value[0] id action is SET_AVAILABLE_DOMAINS', function () {
+    it('should set domain to action.response[0] if action is FETCH_DOMAINS_SUCCESS', function () {
         assert.deepEqual(
             a2zSearch(
                 { status: 'state' },
-                { type: SET_AVAILABLE_DOMAINS, value: ['vie', 'shs'] }
+                { type: FETCH_DOMAINS_SUCCESS, response: ['vie', 'shs'] }
             ),
             {
                 status: 'state',
-                domain: 'vie',
-                availableDomains: ['vie', 'shs']
+                domain: 'vie'
             }
         );
     });

@@ -1,16 +1,23 @@
 import {
-    LOGOUT,
-    LOGIN,
     API_LOGIN_SUCCESS,
+    LOGIN,
+    LOGOUT,
     LOADING,
     LOADED,
     SHOW_SIDEBAR,
+    ARTICLE,
+    PUBLICATION,
     SHOW_HISTORY,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
     SHOW_RESULT,
-    CHANGE_LANGUAGE
+    NAVIGATE,
+    FULLSCREEN,
+    CHANGE_LANGUAGE,
+    SHOW_LOGIN,
+    HIDE_LOGIN
 } from '../../../lib/actions';
+
 import userInterface, {defaultState} from '../../../lib/reducers/userInterface';
 
 describe('reducers userInterface', function () {
@@ -24,16 +31,16 @@ describe('reducers userInterface', function () {
     });
 
     it('should return set location to article if action is LOGIN', function () {
-        assert.deepEqual(userInterface({ location: 'publication', other: 'data' }, { type: LOGIN }), {
-            location: 'article',
-            other: 'data'
+        assert.deepEqual(userInterface({ other: 'data' }, { type: LOGIN }), {
+            other: 'data',
+            showLogin: false
         });
     });
 
     it('should return set location to article if action is API_LOGIN_SUCCESS', function () {
-        assert.deepEqual(userInterface({ location: 'publication', other: 'data' }, { type: API_LOGIN_SUCCESS }), {
-            location: 'article',
-            other: 'data'
+        assert.deepEqual(userInterface({ other: 'data' }, { type: API_LOGIN_SUCCESS }), {
+            other: 'data',
+            showLogin: false
         });
     });
 
@@ -94,6 +101,48 @@ describe('reducers userInterface', function () {
         assert.deepEqual(
             userInterface({ other: 'data' }, { type: CHANGE_LANGUAGE, value: 'en' }),
             { language: 'en', other: 'data' }
+        );
+    });
+
+    it('should set resultShown to true when action is ARTICLE.SEARCH_SUCCESS', function () {
+        assert.deepEqual(
+            userInterface({ resultShown: false, other: 'data' }, { type: ARTICLE.SEARCH_SUCCESS }),
+            { resultShown: true, other: 'data' }
+        );
+    });
+
+    it('should set resultShown to true when action is PUBLICATION.SEARCH_SUCCESS', function () {
+        assert.deepEqual(
+            userInterface({ resultShown: false, other: 'data' }, { type: PUBLICATION.SEARCH_SUCCESS }),
+            { resultShown: true, other: 'data' }
+        );
+    });
+
+    it('should set location to action.location when action is NAVIGATE', function () {
+        assert.deepEqual(
+            userInterface({ location: 'a2z', other: 'data' }, { type: NAVIGATE, location: 'article' }),
+            { location: 'article', other: 'data' }
+        );
+    });
+
+    it('should set location to action.location when action is FULLSCREEN', function () {
+        assert.deepEqual(
+            userInterface({ fullScreen: true, other: 'data' }, { type: FULLSCREEN, value: false }),
+            { fullScreen: false, other: 'data' }
+        );
+    });
+
+    it('should set showLogin to true when action is SHOW_LOGIN', function () {
+        assert.deepEqual(
+            userInterface({ other: 'data' }, { type: SHOW_LOGIN }),
+            { showLogin: true, other: 'data' }
+        );
+    });
+
+    it('should set showLogin to true when action is HIDE_LOGIN', function () {
+        assert.deepEqual(
+            userInterface({ other: 'data' }, { type: HIDE_LOGIN }),
+            { showLogin: false, other: 'data' }
         );
     });
 
