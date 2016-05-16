@@ -8,8 +8,6 @@
 				"key": "initial"
 			}],
 			"status": "NONE",
-			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
 			"limiters": {
 				"fullText": true,
 				"publicationDate": {
@@ -72,7 +70,6 @@
 			"term": "study",
 			"field": null,
 			"status": "DONE",
-			"domain": "vie",
 			"limiters": {
 				"peerReviewedPublication": false
 			},
@@ -952,7 +949,6 @@
 			"term": "",
 			"field": "JN",
 			"status": "NONE",
-			"domain": "vie",
 			"sort": "title"
 		},
 		"searchResult": {
@@ -975,7 +971,13 @@
 	},
 	"error": null,
 	"url": "http://server",
-	"domains": ["vie", "shs"],
+	"domains": {
+		"all": ["vie", "shs"],
+		"available": ["vie", "shs"],
+		"article": "vie",
+		"publication": "vie",
+		"a2z": "vie"
+	},
 	"pausedAction": {
 		"type": "NAVIGATE",
 		"location": "article"

@@ -8,8 +8,6 @@
 				"key": "initial"
 			}],
 			"status": "DONE",
-			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
 			"limiters": {
 				"fullText": true,
 				"publicationDate": {
@@ -1883,7 +1881,6 @@
 			"term": "",
 			"field": null,
 			"status": "NONE",
-			"domain": "vie",
 			"limiters": {
 				"peerReviewedPublication": false
 			},
@@ -1899,7 +1896,6 @@
 			"term": "",
 			"field": "JN",
 			"status": "NONE",
-			"domain": "vie",
 			"sort": "title"
 		},
 		"searchResult": {
@@ -1922,6 +1918,12 @@
 	},
 	"error": null,
 	"url": "http://server",
-	"domains": [],
+	"domains": {
+		"all": ["vie", "shs"],
+		"available": ["vie", "shs"],
+		"article": "vie",
+		"publication": "vie",
+		"a2z": "vie"
+	},
 	"pausedAction": {}
 }

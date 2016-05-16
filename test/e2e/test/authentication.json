@@ -8,8 +8,6 @@
 				"key": "initial"
 			}],
 			"status": "NONE",
-			"domain": null,
-			"availableDomains": [],
 			"limiters": {
 				"fullText": true,
 				"publicationDate": {
@@ -29,50 +27,13 @@
 				"max": 2017
 			}
 		},
-		"history": [{
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null,
-				"key": "initial"
-			}],
-			"domain": "INSB",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": 1914,
-					"to": 1918
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {},
-			"totalHits": 44
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "phylloxera",
-				"field": null,
-				"key": "initial"
-			}],
-			"domain": "INSB",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {},
-			"totalHits": 1189
-		}]
+		"history": []
 	},
 	"publication": {
 		"search": {
 			"term": "test",
 			"field": null,
 			"status": "DONE",
-			"domain": "INSB",
 			"limiters": {
 				"peerReviewedPublication": false
 			},
@@ -799,7 +760,6 @@
 			"term": "",
 			"field": "JN",
 			"status": "PENDING",
-			"domain": "INSB",
 			"sort": "title",
 			"queries": [{
 				"term": "A*",
@@ -1254,7 +1214,13 @@
 	},
 	"error": null,
 	"url": "http://server",
-	"domains": ["INSB", "INSHS"],
+	"domains": {
+		"all": ["vie", "shs"],
+		"available": [],
+		"article": null,
+		"publication": "vie",
+		"a2z": "vie"
+	},
 	"pausedAction": {
 		"type": "NONE"
 	}

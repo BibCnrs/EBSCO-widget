@@ -8,8 +8,6 @@
 				"key": "initial"
 			}],
 			"status": "NONE",
-			"domain": null,
-			"availableDomains": [],
 			"limiters": {
 				"fullText": true,
 				"publicationDate": {
@@ -36,7 +34,6 @@
 			"term": "",
 			"field": null,
 			"status": "NONE",
-			"domain": "vie",
 			"limiters": {
 				"peerReviewedPublication": false
 			},
@@ -52,7 +49,6 @@
 			"term": "",
 			"field": "JN",
 			"status": "PENDING",
-			"domain": "vie",
 			"sort": "title",
 			"queries": [{
 				"term": "G*",
@@ -472,7 +468,13 @@
 	},
 	"error": null,
 	"url": "http://server",
-	"domains": ["vie", "shs"],
+	"domains": {
+		"all": ["vie", "shs"],
+		"available": ["vie", "shs"],
+		"article": "vie",
+		"publication": "vie",
+		"a2z": "vie"
+	},
 	"pausedAction": {
 		"type": "NONE"
 	}
