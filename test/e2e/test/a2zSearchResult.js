@@ -35,7 +35,7 @@ describe('a2z Search result', function() {
         .click('.pagination a.page')
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.pagination .current.page', '2')
-        .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 / 432');
+        .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 / 4968');
 
         client.start(done);
     });

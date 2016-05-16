@@ -37,7 +37,6 @@
 			"field": null,
 			"status": "NONE",
 			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
 			"limiters": {
 				"peerReviewedPublication": false
 			},
@@ -54,8 +53,7 @@
 			"field": "JN",
 			"status": "NONE",
 			"domain": "vie",
-			"sort": "title",
-			"availableDomains": ["vie", "shs"]
+			"sort": "title"
 		},
 		"searchResult": {
 			"maxPage": 0
@@ -72,8 +70,11 @@
 		"historyShown": false,
 		"location": "article",
 		"fullScreen": true,
-		"language": "fr"
+		"language": "fr",
+		"showLogin": false
 	},
 	"error": null,
-	"url": "http://server"
+	"url": "http://server",
+	"domains": ["vie", "shs"],
+	"pausedAction": {}
 }

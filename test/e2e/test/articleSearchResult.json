@@ -4,7 +4,8 @@
 			"queries": [{
 				"boolean": "AND",
 				"term": "aids",
-				"field": null
+				"field": null,
+				"key": "initial"
 			}],
 			"status": "DONE",
 			"domain": "vie",
@@ -23,6 +24,20 @@
 		"searchResult": {
 			"1": [{
 				"id": 1,
+				"an": "edsarl.21594627.201512.201601150037.201601150037.311.319",
+				"dbId": "edsarl",
+				"articleLink": null,
+				"title": "The Legislative and Policy Gaps in the National HIV and AIDS, STI Policy, 2004-2014, Ghana",
+				"source": "Beijing Law Review. Vol. 6 Issue 4, p311-319. 9 p.",
+				"authors": ["Ishmael D. Norman", "Margaret Kweku", "Gideon Kye-Duodu", "Joyce Der", "Blandina M. Awiah", "Fred N. Binka"],
+				"publicationDate": "2015-12-01T00:00:00.000Z",
+				"languages": ["英文"],
+				"database": "Airiti Library eBooks & Journals - 華藝線上圖書館",
+				"subjects": ["HIV/AIDS", "Legislative and Policy Gaps", "Partner Notification", "Names Reporting", "Expedited Partner Therapy", "MSM", "Ghana"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 2,
 				"an": "edsswe.oai.dspace.mah.se.2043.19888",
 				"dbId": "edsswe",
 				"articleLink": ["http://hdl.handle.net/2043/19888"],
@@ -36,63 +51,35 @@
 				"publicationType": "Academic Journal",
 				"abstract": null
 			}, {
-				"id": 2,
-				"an": "EJ1079541",
-				"dbId": "eric",
-				"articleLink": null,
-				"title": "Impact of Visual Aids in Enhancing the Learning Process Case Research: District Dera Ghazi Khan",
-				"source": "Journal of Education and Practice, v6 n19 p226-233 2015. 9 pp.",
-				"authors": ["Shabiralyani, Ghulam", "Hasan, Khuram Shahzad", "Hamad, Naqvi", "Iqbal, Nadeem"],
-				"publicationDate": "2015-01-01T00:00:00.000Z",
-				"languages": ["English"],
-				"database": "ERIC",
-				"subjects": ["Foreign Countries", "Visual Aids", "Teacher Attitudes", "Student Motivation", "Questionnaires", "Statistical Analysis", "Computer Software", "Student Attitudes", "Public Schools", "Private Schools", "College Students", "College Faculty", "Secondary School Students", "Secondary School Teachers", "Vocabulary Development", "Regression (Statistics)", "Correlation", "Learning Processes"],
-				"publicationType": "Academic Journal",
-				"abstract": null
-			}, {
 				"id": 3,
-				"an": "EJ1079154",
-				"dbId": "eric",
+				"an": "edsarl.21608814.201509.201603170038.201603170038.199.207",
+				"dbId": "edsarl",
 				"articleLink": null,
-				"title": "Trado-Cultural Practices, Situation, Analysis and Epidemiological Factors in the Spread of HIV/AIDS in Nigeria",
-				"source": "Journal of Education and Practice, v6 n21 p65-70 2015. 7 pp.",
-				"authors": ["Adesina, Modupe Olutayo"],
-				"publicationDate": "2015-01-01T00:00:00.000Z",
-				"languages": ["English"],
-				"database": "ERIC",
-				"subjects": ["Acquired Immunodeficiency Syndrome (AIDS)", "Foreign Countries", "Communicable Diseases", "Sexually Transmitted Diseases", "Cultural Influences", "At Risk Persons", "Public Health", "Rural Areas", "Sex Education", "Health Education", "Access to Information", "Access to Health Care", "Gender Bias"],
+				"title": "Assessment of HIV/AIDS Stigma in a Rural Namibian Community",
+				"source": "World Journal of AIDS. Vol. 5 Issue 3, p199-207. 9 p.",
+				"authors": ["Penehafo Angula", "Busisiwe Purity Ncama", "Janet Frohlich"],
+				"publicationDate": "2015-09-01T00:00:00.000Z",
+				"languages": ["英文"],
+				"database": "Airiti Library eBooks & Journals - 華藝線上圖書館",
+				"subjects": ["People Living with HIV/AIDS (PLWHA)", "Family ＆ Community Stigma Instrument", "Ongenga Constituency", "Namibia"],
 				"publicationType": "Academic Journal",
 				"abstract": null
 			}, {
 				"id": 4,
-				"an": "EJ1078484",
-				"dbId": "eric",
+				"an": "edsarl.03633640.201410.201504080029.201504080029.77.92",
+				"dbId": "edsarl",
 				"articleLink": null,
-				"title": "Developing a Participatory Pedagogical and Multidisciplinary Approach for Integrating HIV/AIDS into University Curriculum",
-				"source": "Journal of Education and Practice, v6 n25 p6-15 2015. 11 pp.",
-				"authors": ["Mulwo, Abraham Kiprop", "Chemai, Lemmy"],
-				"publicationDate": "2015-01-01T00:00:00.000Z",
-				"languages": ["English"],
-				"database": "ERIC",
-				"subjects": ["Acquired Immunodeficiency Syndrome (AIDS)", "College Curriculum", "Interdisciplinary Approach", "Sexuality", "Health Promotion", "Questionnaires", "Surveys", "Student Attitudes", "College Students", "Interviews", "Observation", "Foreign Countries", "Access to Information", "Information Sources"],
+				"title": "銀髮族眼戴式手機閱讀輔具雛型之設計開發與科技接受度調查 / Prototype Development and Technology Acceptance Survey on Glasses-Attached Mobile Reading Aids for Senior Citizens",
+				"source": "圖書館學與資訊科學. Vol. 40 Issue 2, p77-92. 16 p.",
+				"authors": ["邱子恒 / Tzu-Heng Chiu", "蔣以仁 / I-Jen Chiang", "黃泓彬王君逸 / Hong-Bin Huang"],
+				"publicationDate": "2014-10-01T00:00:00.000Z",
+				"languages": ["繁體中文"],
+				"database": "Airiti Library eBooks & Journals - 華藝線上圖書館",
+				"subjects": ["銀髮族", "眼載式手機閱讀輔具", "科技接受度調查", "Senior Citizens", "Glasses-Attached Mobile Reading Aids", "Technology Acceptance Survey"],
 				"publicationType": "Academic Journal",
 				"abstract": null
 			}, {
 				"id": 5,
-				"an": "EJ1051131",
-				"dbId": "eric",
-				"articleLink": null,
-				"title": "Students Talk about Their HIV/AIDS Education Courses: A Case of Addis Ababa, Ethiopia",
-				"source": "Journal of International Education Research, v11 n1 p35-46 2015. 12 pp.",
-				"authors": ["Sambe, Mariam M."],
-				"publicationDate": "2015-01-01T00:00:00.000Z",
-				"languages": ["English"],
-				"database": "ERIC",
-				"subjects": ["Foreign Countries", "High School Students", "Acquired Immunodeficiency Syndrome (AIDS)", "Gender Differences", "Health Education", "Sex Education", "Sexually Transmitted Diseases", "Case Studies", "Focus Groups", "Student Attitudes", "Peer Teaching", "Parent Role", "Parents", "Interviews", "Mass Media Role", "Drug Use", "Drinking"],
-				"publicationType": "Academic Journal",
-				"abstract": null
-			}, {
-				"id": 6,
 				"an": "hsdc04p.249.11117.723076",
 				"dbId": "edspac",
 				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdc04p-249-11117-723076"],
@@ -106,7 +93,7 @@
 				"publicationType": "Primary Source",
 				"abstract": null
 			}, {
-				"id": 7,
+				"id": 6,
 				"an": "hsdcp03p.229.9847.634224",
 				"dbId": "edspac",
 				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdcp03p-229-9847-634224"],
@@ -120,7 +107,7 @@
 				"publicationType": "Primary Source",
 				"abstract": null
 			}, {
-				"id": 8,
+				"id": 7,
 				"an": "26665360",
 				"dbId": "mnh",
 				"articleLink": "pdflink",
@@ -134,7 +121,7 @@
 				"publicationType": "Academic Journal",
 				"abstract": null
 			}, {
-				"id": 9,
+				"id": 8,
 				"an": "hsdc02.151.7251.394962",
 				"dbId": "edspac",
 				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdc02-151-7251-394962"],
@@ -148,7 +135,63 @@
 				"publicationType": "Primary Source",
 				"abstract": null
 			}, {
+				"id": 9,
+				"an": "EJ1079541",
+				"dbId": "eric",
+				"articleLink": null,
+				"title": "Impact of Visual Aids in Enhancing the Learning Process Case Research: District Dera Ghazi Khan",
+				"source": "Journal of Education and Practice, v6 n19 p226-233 2015. 9 pp.",
+				"authors": ["Shabiralyani, Ghulam", "Hasan, Khuram Shahzad", "Hamad, Naqvi", "Iqbal, Nadeem"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Foreign Countries", "Visual Aids", "Teacher Attitudes", "Student Motivation", "Questionnaires", "Statistical Analysis", "Computer Software", "Student Attitudes", "Public Schools", "Private Schools", "College Students", "College Faculty", "Secondary School Students", "Secondary School Teachers", "Vocabulary Development", "Regression (Statistics)", "Correlation", "Learning Processes"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
 				"id": 10,
+				"an": "EJ1079154",
+				"dbId": "eric",
+				"articleLink": null,
+				"title": "Trado-Cultural Practices, Situation, Analysis and Epidemiological Factors in the Spread of HIV/AIDS in Nigeria",
+				"source": "Journal of Education and Practice, v6 n21 p65-70 2015. 7 pp.",
+				"authors": ["Adesina, Modupe Olutayo"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Acquired Immunodeficiency Syndrome (AIDS)", "Foreign Countries", "Communicable Diseases", "Sexually Transmitted Diseases", "Cultural Influences", "At Risk Persons", "Public Health", "Rural Areas", "Sex Education", "Health Education", "Access to Information", "Access to Health Care", "Gender Bias"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 11,
+				"an": "EJ1078484",
+				"dbId": "eric",
+				"articleLink": null,
+				"title": "Developing a Participatory Pedagogical and Multidisciplinary Approach for Integrating HIV/AIDS into University Curriculum",
+				"source": "Journal of Education and Practice, v6 n25 p6-15 2015. 11 pp.",
+				"authors": ["Mulwo, Abraham Kiprop", "Chemai, Lemmy"],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Acquired Immunodeficiency Syndrome (AIDS)", "College Curriculum", "Interdisciplinary Approach", "Sexuality", "Health Promotion", "Questionnaires", "Surveys", "Student Attitudes", "College Students", "Interviews", "Observation", "Foreign Countries", "Access to Information", "Information Sources"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 12,
+				"an": "EJ1051131",
+				"dbId": "eric",
+				"articleLink": null,
+				"title": "Students Talk about Their HIV/AIDS Education Courses: A Case of Addis Ababa, Ethiopia",
+				"source": "Journal of International Education Research, v11 n1 p35-46 2015. 12 pp.",
+				"authors": ["Sambe, Mariam M."],
+				"publicationDate": "2015-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Foreign Countries", "High School Students", "Acquired Immunodeficiency Syndrome (AIDS)", "Gender Differences", "Health Education", "Sex Education", "Sexually Transmitted Diseases", "Case Studies", "Focus Groups", "Student Attitudes", "Peer Teaching", "Parent Role", "Parents", "Interviews", "Mass Media Role", "Drug Use", "Drinking"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 13,
 				"an": "hsdc00.0000033455",
 				"dbId": "edspac",
 				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdc00-0000033455"],
@@ -162,7 +205,7 @@
 				"publicationType": "Primary Source",
 				"abstract": null
 			}, {
-				"id": 11,
+				"id": 14,
 				"an": "edssas.ajrh.v19.n1.a7",
 				"dbId": "edssas",
 				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edssas&genre=article&issn=11184841&ISBN=&volume=19&issue=1&date=20150301&spage=63&pages=63-72&title=African Journal of Reproductive Health&atitle=%22Over%20my%20dead%20body%22%20%3A%20knowledge%20and%20attitude%20of%20children%20towards%20HIV%20and%20AIDS%20in%20the%20Cape%20Coast%20Metropolis%20of%20Ghana%20%3A%20original%20research%20article&aulast=Owusu%2C%20Samuel%20Asiedu&id=DOI:"],
@@ -176,7 +219,21 @@
 				"publicationType": "Periodical",
 				"abstract": null
 			}, {
-				"id": 12,
+				"id": 15,
+				"an": "edssas.health.v21.n1.a8",
+				"dbId": "edssas",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edssas&genre=article&issn=10259848&ISBN=&volume=21&issue=1&date=20160101&spage=67&pages=&title=Health SA Gesondheid&atitle=The%20experiences%20of%20clients%20and%20healthcare%20providers%20regarding%20the%20provision%20of%20reproductive%20health%20services%20including%20the%20prevention%20of%20HIV%20and%20AIDS%20in%20an%20informal%20settlement%20in%20Tshwane&aulast=Mataboge%2C%20M.L.S.&id=DOI:10.1016/j.hsag.2015.05.002"],
+				"title": "The experiences of clients and healthcare providers regarding the provision of reproductive health services including the prevention of HIV and AIDS in an informal settlement in Tshwane",
+				"source": "Health SA Gesondheid,  2016, Vol 21, Issue 1, p. 67-76.",
+				"authors": ["Mataboge, M.L.S.", "Beukes, S.", "Nolte, A.G.W."],
+				"publicationDate": "2016-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "SA ePublications Service",
+				"subjects": ["Experiences reproductive health services", "Prevention of HIV and AIDS"],
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 16,
 				"an": "edsswe.oai.DiVA.org.liu.113490",
 				"dbId": "edsswe",
 				"articleLink": ["http://liu.diva-portal.org/smash/get/diva2:781963/FULLTEXT01.pdf"],
@@ -190,7 +247,7 @@
 				"publicationType": "Academic Journal",
 				"abstract": null
 			}, {
-				"id": 13,
+				"id": 17,
 				"an": "hsdc98.0000037450",
 				"dbId": "edspac",
 				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdc98-0000037450"],
@@ -204,7 +261,7 @@
 				"publicationType": "Primary Source",
 				"abstract": null
 			}, {
-				"id": 14,
+				"id": 18,
 				"an": "25403997",
 				"dbId": "mnh",
 				"articleLink": "pdflink",
@@ -218,7 +275,7 @@
 				"publicationType": "Academic Journal",
 				"abstract": null
 			}, {
-				"id": 15,
+				"id": 19,
 				"an": "26125890",
 				"dbId": "mnh",
 				"articleLink": "pdflink",
@@ -232,7 +289,7 @@
 				"publicationType": "Academic Journal",
 				"abstract": null
 			}, {
-				"id": 16,
+				"id": 20,
 				"an": "hsdc01.93.3614.181473",
 				"dbId": "edspac",
 				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdc01-93-3614-181473"],
@@ -245,64 +302,8 @@
 				"subjects": ["AIDS & HIV", "Human Rights, Democratization, & Humanitarian Aid", "Health", "Research & Advocacy", "International Affairs"],
 				"publicationType": "Primary Source",
 				"abstract": null
-			}, {
-				"id": 17,
-				"an": "edsswe.oai.DiVA.org.oru.45680",
-				"dbId": "edsswe",
-				"articleLink": ["http://oru.diva-portal.org/smash/get/diva2:850044/FULLTEXT01.pdf"],
-				"title": "Integration of Family Planning in HIV/AIDS Program in Solwezi District, Northwestern Zambia: Status and Perspectives",
-				"source": "Public Health Research. 01/01/2015 5:103-108",
-				"authors": ["Mulindwa Nsiyi, Tharcisse, Author", "Harrison, N’guni, Author", "Phiri, Ernest, Author", "Brezovsek, Andrea, Author", "Kaboru, Berthollet Bwira, Author"],
-				"publicationDate": "2015-01-01T00:00:00.000Z",
-				"languages": ["English"],
-				"database": "SwePub",
-				"subjects": ["Medical and Health Sciences", "Health Sciences", "Public Health, Global Health, Social Medicine and Epidemiology", "Medicin och hälsovetenskap", "Hälsovetenskaper", "Folkhälsovetenskap, global hälsa, socialmedicin och epidemiologi", "Family planning", "HIV", "Integrated services", "Solwezi", "Zambia", "Public health", "Folkhälsovetenskap"],
-				"publicationType": "Academic Journal",
-				"abstract": null
-			}, {
-				"id": 18,
-				"an": "edsswe.oai.lup.lub.lu.se.7696278",
-				"dbId": "edsswe",
-				"articleLink": ["http://lup.lub.lu.se/record/7696278/file/7696343.pdf"],
-				"title": "The use of OECD commentaries as interpretative aids - The static/ambulatory-approaches debate considered from the perspective of international law",
-				"source": "Nordic Tax Journal. 01/01/2015 2015:34-59",
-				"authors": ["Hilling, Maria, Author", "Linderfalk, Ulf, Author", "Lunds universitet, Juridik, Juridiska institutionen, Publisher", "Lund University, Faculty of Law, Department of Law, Publisher"],
-				"publicationDate": "2015-01-01T00:00:00.000Z",
-				"languages": ["English"],
-				"database": "SwePub",
-				"subjects": ["folkrätt", "finansrätt", "fiscal law", "public international law", "Samhällsvetenskap", "Juridik", "Juridik (exklusive juridik och samhälle)", "Social Sciences", "Law", "Law (excluding Law and Society)"],
-				"publicationType": "Academic Journal",
-				"abstract": null
-			}, {
-				"id": 19,
-				"an": "hsdc96.0000035274",
-				"dbId": "edspac",
-				"articleLink": ["http://library.cqpress.com/cqpac/document.php?id=hsdc96-0000035274"],
-				"title": "'Report of the NIH AIDS Research Program Evaluation Working Group of the Office of AIDS Research Advisory Council' on the Effectiveness of the National Institutes of Health AIDS Research Program",
-				"source": "Historic Documents of 1996.",
-				"authors": null,
-				"publicationDate": "1997-01-01T00:00:00.000Z",
-				"languages": null,
-				"database": "CQ Press Public Affairs Collection",
-				"subjects": ["AIDS & HIV", "Health", "Research & Advocacy"],
-				"publicationType": "Primary Source",
-				"abstract": null
-			}, {
-				"id": 20,
-				"an": "edssas.mp.safp.v57.n6.a9",
-				"dbId": "edssas",
-				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edssas&genre=article&issn=20786190&ISBN=&volume=57&issue=6&date=20151101&spage=337&pages=337-346&title=South African Family Practice&atitle=Integration%20of%20non-communicable%20chronic%20diseases%20%28NCDs%29%20and%20HIV%2FAIDS%20and%20mental%20health%20care%20through%20the%20involvement%20of%20chronically%20ill%20patients%20using%20empowerment%20evaluation%20%3A%20research&aulast=Van%20Deventer%2C%20Claire&id=DOI:"],
-				"title": "Integration of non-communicable chronic diseases (NCDs) and HIV/AIDS and mental health care through the involvement of chronically ill patients using empowerment evaluation : research",
-				"source": "South African Family Practice, Nov / Dec 2015, Vol 57, Issue 6, p. 337-346.",
-				"authors": ["Van Deventer, Claire"],
-				"publicationDate": "2015-11-01T00:00:00.000Z",
-				"languages": ["English"],
-				"database": "SA ePublications Service",
-				"subjects": null,
-				"publicationType": "Periodical",
-				"abstract": null
 			}],
-			"maxPage": 24593,
+			"maxPage": 24924,
 			"facets": [{
 				"id": "SourceType",
 				"label": "Source Type",
@@ -320,35 +321,35 @@
 					"addAction": "addfacetfilter(SourceType:Books)"
 				}, {
 					"value": "Reports",
-					"count": 9414,
+					"count": 9423,
 					"addAction": "addfacetfilter(SourceType:Reports)"
 				}, {
 					"value": "Reviews",
-					"count": 5544,
+					"count": 8050,
 					"addAction": "addfacetfilter(SourceType:Reviews)"
 				}, {
 					"value": "News",
-					"count": 2470,
+					"count": 2563,
 					"addAction": "addfacetfilter(SourceType:News)"
 				}, {
-					"value": "Electronic Resources",
-					"count": 2465,
-					"addAction": "addfacetfilter(SourceType:Electronic Resources)"
-				}, {
 					"value": "Conference Materials",
-					"count": 2413,
+					"count": 2496,
 					"addAction": "addfacetfilter(SourceType:Conference Materials)"
+				}, {
+					"value": "Electronic Resources",
+					"count": 2474,
+					"addAction": "addfacetfilter(SourceType:Electronic Resources)"
 				}, {
 					"value": "Non-Print Resources",
 					"count": 767,
 					"addAction": "addfacetfilter(SourceType:Non-Print Resources)"
 				}, {
 					"value": "Dissertations",
-					"count": 514,
+					"count": 517,
 					"addAction": "addfacetfilter(SourceType:Dissertations)"
 				}, {
 					"value": "eBooks",
-					"count": 186,
+					"count": 197,
 					"addAction": "addfacetfilter(SourceType:eBooks)"
 				}, {
 					"value": "Primary Source Documents",
@@ -372,295 +373,299 @@
 				"label": "Subject",
 				"availableFacetValues": [{
 					"value": "hiv infections",
-					"count": 52490,
+					"count": 53134,
 					"addAction": "addfacetfilter(SubjectEDS:hiv infections)"
 				}, {
 					"value": "acquired immunodeficiency syndrome",
-					"count": 31653,
+					"count": 32108,
 					"addAction": "addfacetfilter(SubjectEDS:acquired immunodeficiency syndrome)"
 				}, {
 					"value": "aids (disease)",
-					"count": 15604,
+					"count": 15719,
 					"addAction": "addfacetfilter(SubjectEDS:aids \\(disease\\))"
 				}, {
 					"value": "hiv-1",
-					"count": 13325,
+					"count": 13471,
 					"addAction": "addfacetfilter(SubjectEDS:hiv-1)"
 				}, {
 					"value": "aids-related opportunistic infections",
-					"count": 12393,
+					"count": 12459,
 					"addAction": "addfacetfilter(SubjectEDS:aids-related opportunistic infections)"
 				}, {
 					"value": "teaching aids & devices",
-					"count": 11238,
+					"count": 11299,
 					"addAction": "addfacetfilter(SubjectEDS:teaching aids & devices)"
 				}, {
 					"value": "hiv",
-					"count": 10610,
+					"count": 10866,
 					"addAction": "addfacetfilter(SubjectEDS:hiv)"
 				}, {
 					"value": "hiv (viruses)",
-					"count": 7869,
+					"count": 7917,
 					"addAction": "addfacetfilter(SubjectEDS:hiv \\(viruses\\))"
 				}, {
 					"value": "aids",
-					"count": 6852,
+					"count": 7019,
 					"addAction": "addfacetfilter(SubjectEDS:aids)"
 				}, {
 					"value": "hearing aids",
-					"count": 6524,
+					"count": 6612,
 					"addAction": "addfacetfilter(SubjectEDS:hearing aids)"
 				}, {
 					"value": "aids vaccines",
-					"count": 5943,
+					"count": 6002,
 					"addAction": "addfacetfilter(SubjectEDS:aids vaccines)"
 				}, {
 					"value": "hiv-positive persons",
-					"count": 5761,
+					"count": 5775,
 					"addAction": "addfacetfilter(SubjectEDS:hiv-positive persons)"
 				}, {
 					"value": "aids (disease) -- prevention",
-					"count": 5716,
+					"count": 5769,
 					"addAction": "addfacetfilter(SubjectEDS:aids \\(disease\\) -- prevention)"
 				}, {
 					"value": "anti-hiv agents",
-					"count": 5657,
+					"count": 5704,
 					"addAction": "addfacetfilter(SubjectEDS:anti-hiv agents)"
 				}, {
 					"value": "sexually transmitted diseases",
-					"count": 5171,
+					"count": 5202,
 					"addAction": "addfacetfilter(SubjectEDS:sexually transmitted diseases)"
 				}, {
 					"value": "hiv/aids",
-					"count": 4918,
+					"count": 5021,
 					"addAction": "addfacetfilter(SubjectEDS:hiv/aids)"
 				}, {
 					"value": "audiovisual aids",
-					"count": 4664,
+					"count": 4691,
 					"addAction": "addfacetfilter(SubjectEDS:audiovisual aids)"
 				}, {
-					"value": "hiv seropositivity",
-					"count": 4340,
-					"addAction": "addfacetfilter(SubjectEDS:hiv seropositivity)"
-				}, {
 					"value": "public health",
-					"count": 4316,
+					"count": 4348,
 					"addAction": "addfacetfilter(SubjectEDS:public health)"
 				}, {
+					"value": "hiv seropositivity",
+					"count": 4326,
+					"addAction": "addfacetfilter(SubjectEDS:hiv seropositivity)"
+				}, {
 					"value": "books -- book reviews",
-					"count": 3834,
+					"count": 3863,
 					"addAction": "addfacetfilter(SubjectEDS:books -- book reviews)"
 				}, {
 					"value": "health knowledge, attitudes, practice",
-					"count": 3782,
+					"count": 3828,
 					"addAction": "addfacetfilter(SubjectEDS:health knowledge\\, attitudes\\, practice)"
 				}, {
 					"value": "sexual behavior",
-					"count": 3775,
+					"count": 3810,
 					"addAction": "addfacetfilter(SubjectEDS:sexual behavior)"
 				}, {
 					"value": "health education",
-					"count": 3671,
+					"count": 3690,
 					"addAction": "addfacetfilter(SubjectEDS:health education)"
 				}, {
 					"value": "tuberculosis",
-					"count": 3447,
+					"count": 3446,
 					"addAction": "addfacetfilter(SubjectEDS:tuberculosis)"
 				}, {
 					"value": "antiviral agents",
-					"count": 3365,
+					"count": 3411,
 					"addAction": "addfacetfilter(SubjectEDS:antiviral agents)"
 				}, {
 					"value": "antiretroviral therapy, highly active",
-					"count": 3353,
+					"count": 3355,
 					"addAction": "addfacetfilter(SubjectEDS:antiretroviral therapy\\, highly active)"
 				}, {
 					"value": "visual aids",
-					"count": 3252,
+					"count": 3325,
 					"addAction": "addfacetfilter(SubjectEDS:visual aids)"
 				}, {
 					"value": "research -- finance",
-					"count": 3207,
+					"count": 3255,
 					"addAction": "addfacetfilter(SubjectEDS:research -- finance)"
 				}, {
 					"value": "educational technology",
-					"count": 3173,
+					"count": 3179,
 					"addAction": "addfacetfilter(SubjectEDS:educational technology)"
 				}, {
 					"value": "aids patients",
-					"count": 3114,
+					"count": 3143,
 					"addAction": "addfacetfilter(SubjectEDS:aids patients)"
 				}, {
 					"value": "teaching methods",
-					"count": 2927,
+					"count": 2966,
 					"addAction": "addfacetfilter(SubjectEDS:teaching methods)"
 				}, {
 					"value": "aids serodiagnosis",
-					"count": 2823,
+					"count": 2839,
 					"addAction": "addfacetfilter(SubjectEDS:aids serodiagnosis)"
 				}, {
-					"value": "medical care",
-					"count": 2631,
-					"addAction": "addfacetfilter(SubjectEDS:medical care)"
-				}, {
 					"value": "antiretroviral agents",
-					"count": 2620,
+					"count": 2695,
 					"addAction": "addfacetfilter(SubjectEDS:antiretroviral agents)"
 				}, {
+					"value": "medical care",
+					"count": 2650,
+					"addAction": "addfacetfilter(SubjectEDS:medical care)"
+				}, {
 					"value": "descriptive statistics",
-					"count": 2583,
+					"count": 2623,
 					"addAction": "addfacetfilter(SubjectEDS:descriptive statistics)"
 				}, {
 					"value": "epidemiology",
-					"count": 2483,
+					"count": 2499,
 					"addAction": "addfacetfilter(SubjectEDS:epidemiology)"
 				}, {
-					"value": "aids dementia complex",
-					"count": 2397,
-					"addAction": "addfacetfilter(SubjectEDS:aids dementia complex)"
-				}, {
 					"value": "substance abuse, intravenous",
-					"count": 2384,
+					"count": 2416,
 					"addAction": "addfacetfilter(SubjectEDS:substance abuse\\, intravenous)"
 				}, {
+					"value": "aids dementia complex",
+					"count": 2409,
+					"addAction": "addfacetfilter(SubjectEDS:aids dementia complex)"
+				}, {
 					"value": "condoms",
-					"count": 2342,
+					"count": 2393,
 					"addAction": "addfacetfilter(SubjectEDS:condoms)"
 				}, {
-					"value": "hiv infections -- prevention",
-					"count": 2315,
-					"addAction": "addfacetfilter(SubjectEDS:hiv infections -- prevention)"
-				}, {
 					"value": "aids (disease) -- research",
-					"count": 2307,
+					"count": 2385,
 					"addAction": "addfacetfilter(SubjectEDS:aids \\(disease\\) -- research)"
 				}, {
 					"value": "higher education",
-					"count": 2300,
+					"count": 2367,
 					"addAction": "addfacetfilter(SubjectEDS:higher education)"
 				}, {
+					"value": "hiv infections -- prevention",
+					"count": 2340,
+					"addAction": "addfacetfilter(SubjectEDS:hiv infections -- prevention)"
+				}, {
 					"value": "nonfiction",
-					"count": 2266,
+					"count": 2280,
 					"addAction": "addfacetfilter(SubjectEDS:nonfiction)"
 				}, {
+					"value": "hiv infection -- research",
+					"count": 2271,
+					"addAction": "addfacetfilter(SubjectEDS:hiv infection -- research)"
+				}, {
 					"value": "questionnaires",
-					"count": 2188,
+					"count": 2222,
 					"addAction": "addfacetfilter(SubjectEDS:questionnaires)"
 				}, {
 					"value": "health promotion",
-					"count": 2171,
+					"count": 2188,
 					"addAction": "addfacetfilter(SubjectEDS:health promotion)"
 				}, {
-					"value": "hiv infection -- research",
-					"count": 2165,
-					"addAction": "addfacetfilter(SubjectEDS:hiv infection -- research)"
-				}, {
-					"value": "developing countries",
-					"count": 2131,
-					"addAction": "addfacetfilter(SubjectEDS:developing countries)"
-				}, {
-					"value": "research",
-					"count": 2091,
-					"addAction": "addfacetfilter(SubjectEDS:research)"
-				}, {
 					"value": "hiv infection -- prevention",
-					"count": 2062,
+					"count": 2152,
 					"addAction": "addfacetfilter(SubjectEDS:hiv infection -- prevention)"
 				}, {
+					"value": "developing countries",
+					"count": 2134,
+					"addAction": "addfacetfilter(SubjectEDS:developing countries)"
+				}, {
 					"value": "homosexuality, male",
-					"count": 2062,
+					"count": 2105,
 					"addAction": "addfacetfilter(SubjectEDS:homosexuality\\, male)"
+				}, {
+					"value": "research",
+					"count": 2105,
+					"addAction": "addfacetfilter(SubjectEDS:research)"
 				}]
 			}, {
 				"id": "Journal",
 				"label": "Publication",
 				"availableFacetValues": [{
 					"value": "aids care",
-					"count": 8977,
+					"count": 8997,
 					"addAction": "addfacetfilter(Journal:aids care)"
 				}, {
 					"value": "aids and behavior",
-					"count": 6752,
+					"count": 6602,
 					"addAction": "addfacetfilter(Journal:aids and behavior)"
 				}, {
 					"value": "plos one",
-					"count": 5471,
+					"count": 5602,
 					"addAction": "addfacetfilter(Journal:plos one)"
 				}, {
 					"value": "nature",
-					"count": 5342,
+					"count": 5351,
 					"addAction": "addfacetfilter(Journal:nature)"
 				}, {
 					"value": "aids patient care and stds",
-					"count": 4906,
+					"count": 4912,
 					"addAction": "addfacetfilter(Journal:aids patient care and stds)"
 				}, {
 					"value": "lancet london england",
-					"count": 4606,
+					"count": 4620,
 					"addAction": "addfacetfilter(Journal:lancet london england)"
 				}, {
 					"value": "american journal of public health",
-					"count": 3754,
+					"count": 3758,
 					"addAction": "addfacetfilter(Journal:american journal of public health)"
 				}, {
 					"value": "journal of the international aids society",
-					"count": 3579,
+					"count": 3712,
 					"addAction": "addfacetfilter(Journal:journal of the international aids society)"
 				}, {
 					"value": "clinical infectious diseases an official publication of the infectious diseases society of america",
-					"count": 3550,
+					"count": 3560,
 					"addAction": "addfacetfilter(Journal:clinical infectious diseases an official publication of the infectious diseases society of america)"
 				}, {
 					"value": "the lancet",
-					"count": 3479,
+					"count": 3483,
 					"addAction": "addfacetfilter(Journal:the lancet)"
 				}, {
 					"value": "journal of the association of nurses in aids care",
-					"count": 3024,
+					"count": 3036,
 					"addAction": "addfacetfilter(Journal:journal of the association of nurses in aids care)"
 				}, {
 					"value": "clinical infectious diseases",
-					"count": 2983,
+					"count": 2990,
 					"addAction": "addfacetfilter(Journal:clinical infectious diseases)"
 				}, {
 					"value": "vaccine",
-					"count": 2552,
+					"count": 2592,
 					"addAction": "addfacetfilter(Journal:vaccine)"
 				}, {
 					"value": "journal of infectious diseases",
-					"count": 2458,
+					"count": 2475,
 					"addAction": "addfacetfilter(Journal:journal of infectious diseases)"
 				}, {
 					"value": "science",
-					"count": 2263,
+					"count": 2266,
 					"addAction": "addfacetfilter(Journal:science)"
 				}, {
 					"value": "library journal",
-					"count": 2247,
+					"count": 2248,
 					"addAction": "addfacetfilter(Journal:library journal)"
 				}, {
 					"value": "virology",
-					"count": 2216,
+					"count": 2223,
 					"addAction": "addfacetfilter(Journal:virology)"
 				}, {
 					"value": "annals of internal medicine",
-					"count": 2102,
+					"count": 2100,
 					"addAction": "addfacetfilter(Journal:annals of internal medicine)"
+				}, {
+					"value": "school library journal",
+					"count": 1835,
+					"addAction": "addfacetfilter(Journal:school library journal)"
 				}, {
 					"value": "science news",
 					"count": 1753,
 					"addAction": "addfacetfilter(Journal:science news)"
 				}, {
 					"value": "bmc public health",
-					"count": 1677,
+					"count": 1712,
 					"addAction": "addfacetfilter(Journal:bmc public health)"
 				}, {
 					"value": "bulletin of the world health organization",
-					"count": 1477,
+					"count": 1478,
 					"addAction": "addfacetfilter(Journal:bulletin of the world health organization)"
 				}, {
 					"value": "nature medicine",
-					"count": 1473,
+					"count": 1475,
 					"addAction": "addfacetfilter(Journal:nature medicine)"
 				}, {
 					"value": "sexually transmitted infections",
@@ -668,11 +673,11 @@
 					"addAction": "addfacetfilter(Journal:sexually transmitted infections)"
 				}, {
 					"value": "international journal of audiology",
-					"count": 1134,
+					"count": 1142,
 					"addAction": "addfacetfilter(Journal:international journal of audiology)"
 				}, {
 					"value": "retrovirology",
-					"count": 1105,
+					"count": 1113,
 					"addAction": "addfacetfilter(Journal:retrovirology)"
 				}, {
 					"value": "cadernos de saude publica",
@@ -680,35 +685,35 @@
 					"addAction": "addfacetfilter(Journal:cadernos de saude publica)"
 				}, {
 					"value": "bmc infectious diseases",
-					"count": 933,
+					"count": 952,
 					"addAction": "addfacetfilter(Journal:bmc infectious diseases)"
 				}, {
-					"value": "journal of medical virology",
-					"count": 910,
-					"addAction": "addfacetfilter(Journal:journal of medical virology)"
-				}, {
 					"value": "aids research and therapy",
-					"count": 849,
+					"count": 860,
 					"addAction": "addfacetfilter(Journal:aids research and therapy)"
+				}, {
+					"value": "maclean's",
+					"count": 832,
+					"addAction": "addfacetfilter(Journal:maclean's)"
 				}, {
 					"value": "journal of school health",
 					"count": 791,
 					"addAction": "addfacetfilter(Journal:journal of school health)"
 				}, {
 					"value": "infection",
-					"count": 734,
+					"count": 738,
 					"addAction": "addfacetfilter(Journal:infection)"
 				}, {
 					"value": "biochemical and biophysical research communications",
-					"count": 727,
+					"count": 731,
 					"addAction": "addfacetfilter(Journal:biochemical and biophysical research communications)"
 				}, {
 					"value": "plos medicine",
-					"count": 721,
+					"count": 724,
 					"addAction": "addfacetfilter(Journal:plos medicine)"
 				}, {
 					"value": "plos pathogens",
-					"count": 707,
+					"count": 721,
 					"addAction": "addfacetfilter(Journal:plos pathogens)"
 				}, {
 					"value": "revista de saude publica",
@@ -716,35 +721,35 @@
 					"addAction": "addfacetfilter(Journal:revista de saude publica)"
 				}, {
 					"value": "reproductive health matters",
-					"count": 651,
+					"count": 654,
 					"addAction": "addfacetfilter(Journal:reproductive health matters)"
 				}, {
 					"value": "revista da sociedade brasileira de medicina tropical",
-					"count": 615,
+					"count": 624,
 					"addAction": "addfacetfilter(Journal:revista da sociedade brasileira de medicina tropical)"
 				}, {
 					"value": "african journal of reproductive health",
-					"count": 603,
+					"count": 607,
 					"addAction": "addfacetfilter(Journal:african journal of reproductive health)"
 				}, {
 					"value": "revista do instituto de medicina tropical de sao paulo",
-					"count": 548,
+					"count": 554,
 					"addAction": "addfacetfilter(Journal:revista do instituto de medicina tropical de sao paulo)"
 				}, {
 					"value": "brazilian journal of infectious diseases",
-					"count": 489,
+					"count": 491,
 					"addAction": "addfacetfilter(Journal:brazilian journal of infectious diseases)"
 				}, {
 					"value": "publishers weekly",
-					"count": 468,
+					"count": 469,
 					"addAction": "addfacetfilter(Journal:publishers weekly)"
 				}, {
 					"value": "bmc health services research",
-					"count": 444,
+					"count": 448,
 					"addAction": "addfacetfilter(Journal:bmc health services research)"
 				}, {
 					"value": "new scientist",
-					"count": 442,
+					"count": 443,
 					"addAction": "addfacetfilter(Journal:new scientist)"
 				}, {
 					"value": "lambda book report",
@@ -752,75 +757,79 @@
 					"addAction": "addfacetfilter(Journal:lambda book report)"
 				}, {
 					"value": "emerging infectious diseases",
-					"count": 402,
+					"count": 406,
 					"addAction": "addfacetfilter(Journal:emerging infectious diseases)"
 				}, {
 					"value": "human rights",
 					"count": 195,
 					"addAction": "addfacetfilter(Journal:human rights)"
 				}, {
-					"value": "black enterprise",
-					"count": 139,
-					"addAction": "addfacetfilter(Journal:black enterprise)"
+					"value": "chinese medical journal",
+					"count": 91,
+					"addAction": "addfacetfilter(Journal:chinese medical journal)"
 				}, {
 					"value": "foreign affairs",
 					"count": 90,
 					"addAction": "addfacetfilter(Journal:foreign affairs)"
 				}, {
-					"value": "beijing review",
-					"count": 45,
-					"addAction": "addfacetfilter(Journal:beijing review)"
-				}, {
-					"value": "bioscience",
-					"count": 37,
-					"addAction": "addfacetfilter(Journal:bioscience)"
+					"value": "japanese journal of infectious diseases",
+					"count": 38,
+					"addAction": "addfacetfilter(Journal:japanese journal of infectious diseases)"
 				}]
 			}, {
 				"id": "Language",
 				"label": "Language",
 				"availableFacetValues": [{
 					"value": "english",
-					"count": 397632,
+					"count": 403153,
 					"addAction": "addfacetfilter(Language:english)"
 				}, {
 					"value": "undetermined",
-					"count": 15071,
+					"count": 15224,
 					"addAction": "addfacetfilter(Language:undetermined)"
 				}, {
 					"value": "portuguese",
-					"count": 5785,
+					"count": 5814,
 					"addAction": "addfacetfilter(Language:portuguese)"
 				}, {
-					"value": "french",
-					"count": 3066,
-					"addAction": "addfacetfilter(Language:french)"
-				}, {
 					"value": "spanish",
-					"count": 3024,
+					"count": 3041,
 					"addAction": "addfacetfilter(Language:spanish)"
 				}, {
+					"value": "french",
+					"count": 2964,
+					"addAction": "addfacetfilter(Language:french)"
+				}, {
 					"value": "german",
-					"count": 2557,
+					"count": 2583,
 					"addAction": "addfacetfilter(Language:german)"
 				}, {
 					"value": "spanish; castilian",
-					"count": 988,
+					"count": 1103,
 					"addAction": "addfacetfilter(Language:spanish; castilian)"
 				}, {
 					"value": "multiple languages",
-					"count": 709,
+					"count": 710,
 					"addAction": "addfacetfilter(Language:multiple languages)"
 				}, {
 					"value": "swedish",
-					"count": 658,
+					"count": 660,
 					"addAction": "addfacetfilter(Language:swedish)"
+				}, {
+					"value": "英文",
+					"count": 275,
+					"addAction": "addfacetfilter(Language:英文)"
 				}, {
 					"value": "italian",
 					"count": 231,
 					"addAction": "addfacetfilter(Language:italian)"
 				}, {
+					"value": "russian",
+					"count": 200,
+					"addAction": "addfacetfilter(Language:russian)"
+				}, {
 					"value": "turkish",
-					"count": 147,
+					"count": 149,
 					"addAction": "addfacetfilter(Language:turkish)"
 				}, {
 					"value": "afrikaans",
@@ -836,120 +845,116 @@
 					"addAction": "addfacetfilter(Language:mulmul)"
 				}, {
 					"value": "polish",
-					"count": 51,
+					"count": 52,
 					"addAction": "addfacetfilter(Language:polish)"
 				}, {
 					"value": "dutch; flemish",
 					"count": 50,
 					"addAction": "addfacetfilter(Language:dutch; flemish)"
 				}, {
+					"value": "persian",
+					"count": 41,
+					"addAction": "addfacetfilter(Language:persian)"
+				}, {
 					"value": "enen",
 					"count": 37,
 					"addAction": "addfacetfilter(Language:enen)"
+				}, {
+					"value": "lithuanian",
+					"count": 37,
+					"addAction": "addfacetfilter(Language:lithuanian)"
 				}, {
 					"value": "other",
 					"count": 37,
 					"addAction": "addfacetfilter(Language:other)"
 				}, {
-					"value": "russian",
-					"count": 37,
-					"addAction": "addfacetfilter(Language:russian)"
-				}, {
-					"value": "lithuanian",
+					"value": "japanese",
 					"count": 36,
-					"addAction": "addfacetfilter(Language:lithuanian)"
-				}, {
-					"value": "persian",
-					"count": 34,
-					"addAction": "addfacetfilter(Language:persian)"
-				}, {
-					"value": "英文",
-					"count": 34,
-					"addAction": "addfacetfilter(Language:英文)"
+					"addAction": "addfacetfilter(Language:japanese)"
 				}, {
 					"value": "dutch",
-					"count": 33,
+					"count": 32,
 					"addAction": "addfacetfilter(Language:dutch)"
 				}, {
 					"value": "sven",
 					"count": 32,
 					"addAction": "addfacetfilter(Language:sven)"
 				}, {
+					"value": "簡體中文",
+					"count": 26,
+					"addAction": "addfacetfilter(Language:簡體中文)"
+				}, {
 					"value": "cht",
 					"count": 24,
 					"addAction": "addfacetfilter(Language:cht)"
 				}, {
 					"value": "chinese",
-					"count": 21,
+					"count": 23,
 					"addAction": "addfacetfilter(Language:chinese)"
 				}, {
 					"value": "croatian",
 					"count": 20,
 					"addAction": "addfacetfilter(Language:croatian)"
 				}, {
+					"value": "czech",
+					"count": 19,
+					"addAction": "addfacetfilter(Language:czech)"
+				}, {
 					"value": "en-1",
 					"count": 19,
 					"addAction": "addfacetfilter(Language:en-1)"
-				}, {
-					"value": "czech",
-					"count": 18,
-					"addAction": "addfacetfilter(Language:czech)"
 				}, {
 					"value": "dutch/flemish",
 					"count": 17,
 					"addAction": "addfacetfilter(Language:dutch/flemish)"
 				}, {
-					"value": "japanese",
-					"count": 17,
-					"addAction": "addfacetfilter(Language:japanese)"
-				}, {
 					"value": "serbian",
 					"count": 17,
 					"addAction": "addfacetfilter(Language:serbian)"
 				}, {
-					"value": "簡體中文",
-					"count": 16,
-					"addAction": "addfacetfilter(Language:簡體中文)"
-				}, {
-					"value": "arabic",
+					"value": "danish",
 					"count": 15,
-					"addAction": "addfacetfilter(Language:arabic)"
+					"addAction": "addfacetfilter(Language:danish)"
 				}, {
 					"value": "sven-1",
 					"count": 15,
 					"addAction": "addfacetfilter(Language:sven-1)"
 				}, {
-					"value": "danish",
-					"count": 14,
-					"addAction": "addfacetfilter(Language:danish)"
+					"value": "繁體中文",
+					"count": 15,
+					"addAction": "addfacetfilter(Language:繁體中文)"
 				}, {
 					"value": "sv-1",
 					"count": 14,
 					"addAction": "addfacetfilter(Language:sv-1)"
 				}, {
+					"value": "中文繁體",
+					"count": 14,
+					"addAction": "addfacetfilter(Language:中文繁體)"
+				}, {
 					"value": "greek",
 					"count": 13,
 					"addAction": "addfacetfilter(Language:greek)"
 				}, {
-					"value": "中文繁體",
-					"count": 12,
-					"addAction": "addfacetfilter(Language:中文繁體)"
+					"value": "hungarian",
+					"count": 11,
+					"addAction": "addfacetfilter(Language:hungarian)"
 				}, {
 					"value": "hebrew",
 					"count": 10,
 					"addAction": "addfacetfilter(Language:hebrew)"
 				}, {
-					"value": "hungarian",
-					"count": 10,
-					"addAction": "addfacetfilter(Language:hungarian)"
-				}, {
 					"value": "svsv",
 					"count": 10,
 					"addAction": "addfacetfilter(Language:svsv)"
 				}, {
-					"value": "繁體中文",
+					"value": "ukranian",
 					"count": 10,
-					"addAction": "addfacetfilter(Language:繁體中文)"
+					"addAction": "addfacetfilter(Language:ukranian)"
+				}, {
+					"value": "arabic",
+					"count": 9,
+					"addAction": "addfacetfilter(Language:arabic)"
 				}, {
 					"value": "finnish",
 					"count": 9,
@@ -959,13 +964,13 @@
 					"count": 9,
 					"addAction": "addfacetfilter(Language:norwegian)"
 				}, {
+					"value": "slovak",
+					"count": 9,
+					"addAction": "addfacetfilter(Language:slovak)"
+				}, {
 					"value": "greek, modern (1453-)",
 					"count": 8,
 					"addAction": "addfacetfilter(Language:greek\\, modern \\(1453-\\))"
-				}, {
-					"value": "slovak",
-					"count": 8,
-					"addAction": "addfacetfilter(Language:slovak)"
 				}, {
 					"value": "svenen",
 					"count": 8,
@@ -1192,123 +1197,127 @@
 				"label": "Category",
 				"availableFacetValues": [{
 					"value": "medical / aids & hiv",
-					"count": 22,
+					"count": 21,
 					"addAction": "addfacetfilter(Category:medical / aids & hiv)"
 				}, {
 					"value": "health & fitness / diseases / aids & hiv",
-					"count": 21,
+					"count": 20,
 					"addAction": "addfacetfilter(Category:health & fitness / diseases / aids & hiv)"
 				}, {
-					"value": "medical / public health",
-					"count": 17,
-					"addAction": "addfacetfilter(Category:medical / public health)"
-				}, {
 					"value": "medical / infectious diseases",
-					"count": 14,
+					"count": 18,
 					"addAction": "addfacetfilter(Category:medical / infectious diseases)"
 				}, {
+					"value": "medical / public health",
+					"count": 18,
+					"addAction": "addfacetfilter(Category:medical / public health)"
+				}, {
 					"value": "education / computers & technology",
-					"count": 10,
+					"count": 9,
 					"addAction": "addfacetfilter(Category:education / computers & technology)"
 				}, {
 					"value": "medical / general",
-					"count": 8,
+					"count": 9,
 					"addAction": "addfacetfilter(Category:medical / general)"
 				}, {
 					"value": "medical / preventive medicine",
 					"count": 8,
 					"addAction": "addfacetfilter(Category:medical / preventive medicine)"
 				}, {
-					"value": "education / educational psychology",
+					"value": "medical / immunology",
 					"count": 6,
+					"addAction": "addfacetfilter(Category:medical / immunology)"
+				}, {
+					"value": "education / educational psychology",
+					"count": 5,
 					"addAction": "addfacetfilter(Category:education / educational psychology)"
 				}, {
 					"value": "education / evaluation & assessment",
-					"count": 6,
-					"addAction": "addfacetfilter(Category:education / evaluation & assessment)"
-				}, {
-					"value": "education / testing & measurement",
 					"count": 5,
-					"addAction": "addfacetfilter(Category:education / testing & measurement)"
+					"addAction": "addfacetfilter(Category:education / evaluation & assessment)"
 				}]
 			}, {
 				"id": "Publisher",
 				"label": "Publisher",
 				"availableFacetValues": [{
 					"value": "wiley-blackwell",
-					"count": 15384,
+					"count": 15356,
 					"addAction": "addfacetfilter(Publisher:wiley-blackwell)"
 				}, {
 					"value": "elsevier",
-					"count": 14579,
+					"count": 14640,
 					"addAction": "addfacetfilter(Publisher:elsevier)"
 				}, {
-					"value": "elsevier b.v.",
-					"count": 11427,
-					"addAction": "addfacetfilter(Publisher:elsevier b.v.)"
-				}, {
 					"value": "taylor & francis ltd",
-					"count": 11281,
+					"count": 11740,
 					"addAction": "addfacetfilter(Publisher:taylor & francis ltd)"
 				}, {
+					"value": "elsevier b.v.",
+					"count": 11598,
+					"addAction": "addfacetfilter(Publisher:elsevier b.v.)"
+				}, {
 					"value": "springer science & business media b.v.",
-					"count": 11054,
+					"count": 11123,
 					"addAction": "addfacetfilter(Publisher:springer science & business media b.v.)"
 				}, {
 					"value": "oxford university press",
-					"count": 10347,
+					"count": 10384,
 					"addAction": "addfacetfilter(Publisher:oxford university press)"
 				}, {
 					"value": "biomed central",
-					"count": 9764,
+					"count": 9872,
 					"addAction": "addfacetfilter(Publisher:biomed central)"
 				}, {
 					"value": "springer",
-					"count": 9335,
+					"count": 9446,
 					"addAction": "addfacetfilter(Publisher:springer)"
 				}, {
 					"value": "elsevier inc.",
-					"count": 8900,
+					"count": 9012,
 					"addAction": "addfacetfilter(Publisher:elsevier inc.)"
 				}, {
 					"value": "elsevier science",
-					"count": 8411,
+					"count": 8527,
 					"addAction": "addfacetfilter(Publisher:elsevier science)"
 				}, {
 					"value": "informa healthcare",
-					"count": 8034,
+					"count": 8260,
 					"addAction": "addfacetfilter(Publisher:informa healthcare)"
 				}, {
+					"value": "elsevier ltd",
+					"count": 8122,
+					"addAction": "addfacetfilter(Publisher:elsevier ltd)"
+				}, {
 					"value": "nature publishing group",
-					"count": 7747,
+					"count": 7728,
 					"addAction": "addfacetfilter(Publisher:nature publishing group)"
 				}, {
 					"value": "public library of science",
-					"count": 7341,
+					"count": 7500,
 					"addAction": "addfacetfilter(Publisher:public library of science)"
 				}, {
 					"value": "mary ann liebert, inc.",
-					"count": 5933,
+					"count": 5949,
 					"addAction": "addfacetfilter(Publisher:mary ann liebert\\, inc.)"
 				}, {
 					"value": "sage publications, ltd.",
-					"count": 5816,
+					"count": 5851,
 					"addAction": "addfacetfilter(Publisher:sage publications\\, ltd.)"
 				}, {
 					"value": "taylor & francis",
-					"count": 5438,
+					"count": 5490,
 					"addAction": "addfacetfilter(Publisher:taylor & francis)"
 				}, {
 					"value": "springer science + business media",
-					"count": 4703,
+					"count": 4781,
 					"addAction": "addfacetfilter(Publisher:springer science + business media)"
 				}, {
 					"value": "wiley",
-					"count": 4502,
+					"count": 4526,
 					"addAction": "addfacetfilter(Publisher:wiley)"
 				}, {
 					"value": "american public health association",
-					"count": 4060,
+					"count": 4065,
 					"addAction": "addfacetfilter(Publisher:american public health association)"
 				}, {
 					"value": "british medical association",
@@ -1316,71 +1325,67 @@
 					"addAction": "addfacetfilter(Publisher:british medical association)"
 				}, {
 					"value": "american association for the advancement of science",
-					"count": 3705,
+					"count": 3708,
 					"addAction": "addfacetfilter(Publisher:american association for the advancement of science)"
 				}, {
 					"value": "academic press",
-					"count": 3479,
+					"count": 3501,
 					"addAction": "addfacetfilter(Publisher:academic press)"
 				}, {
 					"value": "sage publications",
-					"count": 3456,
+					"count": 3481,
 					"addAction": "addfacetfilter(Publisher:sage publications)"
 				}, {
-					"value": "sage publications inc.",
-					"count": 3447,
-					"addAction": "addfacetfilter(Publisher:sage publications inc.)"
-				}, {
 					"value": "bmj publishing group",
-					"count": 3304,
+					"count": 3303,
 					"addAction": "addfacetfilter(Publisher:bmj publishing group)"
 				}, {
 					"value": "university of chicago press",
-					"count": 3208,
+					"count": 3210,
 					"addAction": "addfacetfilter(Publisher:university of chicago press)"
 				}, {
 					"value": "elsevier science publishers",
-					"count": 2936,
+					"count": 2938,
 					"addAction": "addfacetfilter(Publisher:elsevier science publishers)"
 				}, {
 					"value": "international aids society",
-					"count": 2659,
+					"count": 2793,
 					"addAction": "addfacetfilter(Publisher:international aids society)"
 				}, {
 					"value": "time inc.",
-					"count": 2164,
+					"count": 2216,
 					"addAction": "addfacetfilter(Publisher:time inc.)"
 				}, {
 					"value": "world health organization",
-					"count": 1632,
+					"count": 1634,
 					"addAction": "addfacetfilter(Publisher:world health organization)"
+				}, {
+					"value": "springer-verlag",
+					"count": 1294,
+					"addAction": "addfacetfilter(Publisher:springer-verlag)"
 				}, {
 					"value": "library journals, llc",
 					"count": 1280,
 					"addAction": "addfacetfilter(Publisher:library journals\\, llc)"
-				}, {
-					"value": "springer-verlag",
-					"count": 1245,
-					"addAction": "addfacetfilter(Publisher:springer-verlag)"
 				}, {
 					"value": "canadian medical association",
 					"count": 1156,
 					"addAction": "addfacetfilter(Publisher:canadian medical association)"
 				}, {
 					"value": "routledge",
-					"count": 951,
+					"count": 961,
 					"addAction": "addfacetfilter(Publisher:routledge)"
 				}, {
 					"value": "american psychological association",
-					"count": 922,
+					"count": 924,
 					"addAction": "addfacetfilter(Publisher:american psychological association)"
 				}, {
 					"value": "johns hopkins university press",
-					"count": 695,
+					"count": 699,
 					"addAction": "addfacetfilter(Publisher:johns hopkins university press)"
 				}, {
 					"value": "american library association",
-					"count": 447,
+					"count": 448,
 					"addAction": "addfacetfilter(Publisher:american library association)"
 				}, {
 					"value": "lambda literary foundation",
@@ -1390,10 +1395,6 @@
 					"value": "cambridge university press",
 					"count": 365,
 					"addAction": "addfacetfilter(Publisher:cambridge university press)"
-				}, {
-					"value": "duke university press",
-					"count": 294,
-					"addAction": "addfacetfilter(Publisher:duke university press)"
 				}, {
 					"value": "instituto nacional de salud publica",
 					"count": 273,
@@ -1415,6 +1416,10 @@
 					"count": 135,
 					"addAction": "addfacetfilter(Publisher:university of california press)"
 				}, {
+					"value": "palgrave macmillan",
+					"count": 119,
+					"addAction": "addfacetfilter(Publisher:palgrave macmillan)"
+				}, {
 					"value": "earl g. graves publishing co., inc.",
 					"count": 93,
 					"addAction": "addfacetfilter(Publisher:earl g. graves publishing co.\\, inc.)"
@@ -1424,7 +1429,7 @@
 					"addAction": "addfacetfilter(Publisher:institute for operations research and the management sciences)"
 				}, {
 					"value": "humana press",
-					"count": 81,
+					"count": 83,
 					"addAction": "addfacetfilter(Publisher:humana press)"
 				}, {
 					"value": "universitat de barcelona",
@@ -1440,75 +1445,75 @@
 				"label": "Content Provider",
 				"availableFacetValues": [{
 					"value": "MEDLINE with Full Text",
-					"count": 78305,
+					"count": 78897,
 					"addAction": "addfacetfilter(ContentProvider:MEDLINE with Full Text)"
 				}, {
 					"value": "MEDLINE",
-					"count": 78164,
+					"count": 78734,
 					"addAction": "addfacetfilter(ContentProvider:MEDLINE)"
 				}, {
 					"value": "Academic OneFile",
-					"count": 40911,
+					"count": 42613,
 					"addAction": "addfacetfilter(ContentProvider:Academic OneFile)"
 				}, {
 					"value": "ScienceDirect",
-					"count": 30227,
+					"count": 30370,
 					"addAction": "addfacetfilter(ContentProvider:ScienceDirect)"
 				}, {
 					"value": "General OneFile",
-					"count": 28513,
+					"count": 28735,
 					"addAction": "addfacetfilter(ContentProvider:General OneFile)"
 				}, {
 					"value": "Expanded Academic ASAP",
-					"count": 27734,
+					"count": 28091,
 					"addAction": "addfacetfilter(ContentProvider:Expanded Academic ASAP)"
 				}, {
 					"value": "British Library Document Supply Centre Inside Serials & Conference Proceedings",
-					"count": 25578,
+					"count": 26273,
 					"addAction": "addfacetfilter(ContentProvider:British Library Document Supply Centre Inside Serials & Conference Proceedings)"
 				}, {
 					"value": "InfoTrac Health Reference Center Academic",
-					"count": 24919,
+					"count": 26085,
 					"addAction": "addfacetfilter(ContentProvider:InfoTrac Health Reference Center Academic)"
 				}, {
 					"value": "Newswires",
-					"count": 15669,
+					"count": 16116,
 					"addAction": "addfacetfilter(ContentProvider:Newswires)"
 				}, {
 					"value": "General Reference Center Gold",
-					"count": 14720,
+					"count": 14748,
 					"addAction": "addfacetfilter(ContentProvider:General Reference Center Gold)"
 				}, {
 					"value": "Health & Wellness Resource Center",
-					"count": 13542,
+					"count": 13770,
 					"addAction": "addfacetfilter(ContentProvider:Health & Wellness Resource Center)"
 				}, {
 					"value": "ERIC",
-					"count": 13298,
+					"count": 13398,
 					"addAction": "addfacetfilter(ContentProvider:ERIC)"
 				}, {
 					"value": "Networked Digital Library of Theses & Dissertations",
-					"count": 12676,
+					"count": 12777,
 					"addAction": "addfacetfilter(ContentProvider:Networked Digital Library of Theses & Dissertations)"
 				}, {
 					"value": "InfoTrac Student Edition",
-					"count": 11428,
+					"count": 11478,
 					"addAction": "addfacetfilter(ContentProvider:InfoTrac Student Edition)"
 				}, {
 					"value": "RCAAP",
-					"count": 10203,
+					"count": 10231,
 					"addAction": "addfacetfilter(ContentProvider:RCAAP)"
 				}, {
 					"value": "JSTOR Journals",
-					"count": 9346,
+					"count": 9478,
 					"addAction": "addfacetfilter(ContentProvider:JSTOR Journals)"
 				}, {
 					"value": "Student Resources in Context",
-					"count": 7666,
+					"count": 7684,
 					"addAction": "addfacetfilter(ContentProvider:Student Resources in Context)"
 				}, {
 					"value": "Canada In Context",
-					"count": 6713,
+					"count": 6731,
 					"addAction": "addfacetfilter(ContentProvider:Canada In Context)"
 				}, {
 					"value": "USPTO Patent Grants",
@@ -1516,19 +1521,19 @@
 					"addAction": "addfacetfilter(ContentProvider:USPTO Patent Grants)"
 				}, {
 					"value": "Directory of Open Access Journals",
-					"count": 6214,
+					"count": 6215,
 					"addAction": "addfacetfilter(ContentProvider:Directory of Open Access Journals)"
 				}, {
 					"value": "Biography in Context",
-					"count": 6014,
+					"count": 6023,
 					"addAction": "addfacetfilter(ContentProvider:Biography in Context)"
 				}, {
 					"value": "SciELO",
-					"count": 5160,
+					"count": 5189,
 					"addAction": "addfacetfilter(ContentProvider:SciELO)"
 				}, {
 					"value": "Science In Context",
-					"count": 4803,
+					"count": 4830,
 					"addAction": "addfacetfilter(ContentProvider:Science In Context)"
 				}, {
 					"value": "USPTO Patent Applications",
@@ -1536,39 +1541,39 @@
 					"addAction": "addfacetfilter(ContentProvider:USPTO Patent Applications)"
 				}, {
 					"value": "Business Insights: Essentials",
-					"count": 3285,
+					"count": 3290,
 					"addAction": "addfacetfilter(ContentProvider:Business Insights\\: Essentials)"
 				}, {
+					"value": "AGRIS",
+					"count": 2514,
+					"addAction": "addfacetfilter(ContentProvider:AGRIS)"
+				}, {
 					"value": "Government Printing Office Catalog",
-					"count": 2454,
+					"count": 2467,
 					"addAction": "addfacetfilter(ContentProvider:Government Printing Office Catalog)"
 				}, {
 					"value": "Opposing Viewpoints in Context",
-					"count": 2180,
+					"count": 2186,
 					"addAction": "addfacetfilter(ContentProvider:Opposing Viewpoints in Context)"
 				}, {
 					"value": "InfoTrac Newsstand",
-					"count": 1958,
+					"count": 1960,
 					"addAction": "addfacetfilter(ContentProvider:InfoTrac Newsstand)"
 				}, {
 					"value": "ECONIS",
-					"count": 1870,
+					"count": 1927,
 					"addAction": "addfacetfilter(ContentProvider:ECONIS)"
 				}, {
-					"value": "AGRIS",
-					"count": 1757,
-					"addAction": "addfacetfilter(ContentProvider:AGRIS)"
-				}, {
 					"value": "Research Starters",
-					"count": 1568,
+					"count": 1569,
 					"addAction": "addfacetfilter(ContentProvider:Research Starters)"
 				}, {
 					"value": "U.S. History in Context",
-					"count": 1560,
+					"count": 1564,
 					"addAction": "addfacetfilter(ContentProvider:U.S. History in Context)"
 				}, {
 					"value": "Narcis",
-					"count": 1460,
+					"count": 1482,
 					"addAction": "addfacetfilter(ContentProvider:Narcis)"
 				}, {
 					"value": "Europeana",
@@ -1576,11 +1581,11 @@
 					"addAction": "addfacetfilter(ContentProvider:Europeana)"
 				}, {
 					"value": "World History in Context",
-					"count": 928,
+					"count": 953,
 					"addAction": "addfacetfilter(ContentProvider:World History in Context)"
 				}, {
 					"value": "LexisNexis Academic: Law Reviews",
-					"count": 860,
+					"count": 864,
 					"addAction": "addfacetfilter(ContentProvider:LexisNexis Academic\\: Law Reviews)"
 				}, {
 					"value": "SciTech Connect",
@@ -1592,55 +1597,59 @@
 					"addAction": "addfacetfilter(ContentProvider:Energy Citations Database)"
 				}, {
 					"value": "Literature Resource Center",
-					"count": 698,
+					"count": 700,
 					"addAction": "addfacetfilter(ContentProvider:Literature Resource Center)"
 				}, {
 					"value": "Project MUSE",
-					"count": 622,
+					"count": 625,
 					"addAction": "addfacetfilter(ContentProvider:Project MUSE)"
 				}, {
 					"value": "InfoTrac LegalTrac",
-					"count": 545,
+					"count": 557,
 					"addAction": "addfacetfilter(ContentProvider:InfoTrac LegalTrac)"
 				}, {
 					"value": "GreenFILE",
-					"count": 533,
+					"count": 548,
 					"addAction": "addfacetfilter(ContentProvider:GreenFILE)"
 				}, {
 					"value": "InfoTrac Computer Database",
-					"count": 523,
+					"count": 530,
 					"addAction": "addfacetfilter(ContentProvider:InfoTrac Computer Database)"
 				}, {
+					"value": "China Science & Technology Journal Database",
+					"count": 506,
+					"addAction": "addfacetfilter(ContentProvider:China Science & Technology Journal Database)"
+				}, {
+					"value": "InfoTrac Informe!",
+					"count": 472,
+					"addAction": "addfacetfilter(ContentProvider:InfoTrac Informe!)"
+				}, {
 					"value": "SwePub",
-					"count": 422,
+					"count": 424,
 					"addAction": "addfacetfilter(ContentProvider:SwePub)"
 				}, {
 					"value": "SA ePublications Service",
-					"count": 395,
+					"count": 408,
 					"addAction": "addfacetfilter(ContentProvider:SA ePublications Service)"
 				}, {
 					"value": "InfoTrac Junior Edition",
-					"count": 372,
+					"count": 379,
 					"addAction": "addfacetfilter(ContentProvider:InfoTrac Junior Edition)"
 				}, {
-					"value": "China Science & Technology Journal Database",
-					"count": 363,
-					"addAction": "addfacetfilter(ContentProvider:China Science & Technology Journal Database)"
-				}, {
 					"value": "BioOne Online Journals",
-					"count": 357,
+					"count": 360,
 					"addAction": "addfacetfilter(ContentProvider:BioOne Online Journals)"
 				}, {
-					"value": "InfoTrac Informe!",
-					"count": 357,
-					"addAction": "addfacetfilter(ContentProvider:InfoTrac Informe!)"
-				}, {
 					"value": "Index New Zealand",
-					"count": 315,
+					"count": 318,
 					"addAction": "addfacetfilter(ContentProvider:Index New Zealand)"
 				}, {
+					"value": "Airiti Library eBooks & Journals - 華藝線上圖書館",
+					"count": 305,
+					"addAction": "addfacetfilter(ContentProvider:Airiti Library eBooks & Journals - 華藝線上圖書館)"
+				}, {
 					"value": "PsycCRITIQUES",
-					"count": 285,
+					"count": 286,
 					"addAction": "addfacetfilter(ContentProvider:PsycCRITIQUES)"
 				}, {
 					"value": "Cairn.info",
@@ -1648,23 +1657,27 @@
 					"addAction": "addfacetfilter(ContentProvider:Cairn.info)"
 				}, {
 					"value": "arXiv",
-					"count": 244,
+					"count": 253,
 					"addAction": "addfacetfilter(ContentProvider:arXiv)"
-				}, {
-					"value": "Persée",
-					"count": 214,
-					"addAction": "addfacetfilter(ContentProvider:Persée)"
 				}, {
 					"value": "Digital Access to Scholarship at Harvard (DASH)",
 					"count": 197,
 					"addAction": "addfacetfilter(ContentProvider:Digital Access to Scholarship at Harvard \\(DASH\\))"
 				}, {
+					"value": "ELibrary.RU",
+					"count": 197,
+					"addAction": "addfacetfilter(ContentProvider:ELibrary.RU)"
+				}, {
 					"value": "CQ Press Congress Collection",
 					"count": 191,
 					"addAction": "addfacetfilter(ContentProvider:CQ Press Congress Collection)"
 				}, {
+					"value": "J-STAGE",
+					"count": 191,
+					"addAction": "addfacetfilter(ContentProvider:J-STAGE)"
+				}, {
 					"value": "HeinOnline",
-					"count": 165,
+					"count": 176,
 					"addAction": "addfacetfilter(ContentProvider:HeinOnline)"
 				}, {
 					"value": "EU Bookshop",
@@ -1672,15 +1685,15 @@
 					"addAction": "addfacetfilter(ContentProvider:EU Bookshop)"
 				}, {
 					"value": "Openedition.org",
-					"count": 153,
+					"count": 152,
 					"addAction": "addfacetfilter(ContentProvider:Openedition.org)"
 				}, {
 					"value": "SOLIS - Sozialwissenschaftliche Literatur",
-					"count": 126,
+					"count": 128,
 					"addAction": "addfacetfilter(ContentProvider:SOLIS - Sozialwissenschaftliche Literatur)"
 				}, {
 					"value": "Informit Humanities & Social Sciences Collection",
-					"count": 126,
+					"count": 127,
 					"addAction": "addfacetfilter(ContentProvider:Informit Humanities & Social Sciences Collection)"
 				}, {
 					"value": "VLeBooks",
@@ -1688,15 +1701,19 @@
 					"addAction": "addfacetfilter(ContentProvider:VLeBooks)"
 				}, {
 					"value": "Informit Health Collection",
-					"count": 110,
+					"count": 111,
 					"addAction": "addfacetfilter(ContentProvider:Informit Health Collection)"
 				}, {
 					"value": "Small Business Resource Center",
 					"count": 105,
 					"addAction": "addfacetfilter(ContentProvider:Small Business Resource Center)"
 				}, {
+					"value": "Persée",
+					"count": 93,
+					"addAction": "addfacetfilter(ContentProvider:Persée)"
+				}, {
 					"value": "TDX",
-					"count": 89,
+					"count": 90,
 					"addAction": "addfacetfilter(ContentProvider:TDX)"
 				}, {
 					"value": "Gale Virtual Reference Library",
@@ -1707,53 +1724,49 @@
 					"count": 85,
 					"addAction": "addfacetfilter(ContentProvider:RECERCAT)"
 				}, {
+					"value": "HBO Kennisbank",
+					"count": 80,
+					"addAction": "addfacetfilter(ContentProvider:HBO Kennisbank)"
+				}, {
 					"value": "TOXNET TOXLINE",
 					"count": 79,
 					"addAction": "addfacetfilter(ContentProvider:TOXNET TOXLINE)"
 				}, {
-					"value": "HBO Kennisbank",
-					"count": 78,
-					"addAction": "addfacetfilter(ContentProvider:HBO Kennisbank)"
-				}, {
 					"value": "Harvard Library Bibliographic Dataset",
-					"count": 69,
+					"count": 78,
 					"addAction": "addfacetfilter(ContentProvider:Harvard Library Bibliographic Dataset)"
+				}, {
+					"value": "China/Asia On Demand",
+					"count": 74,
+					"addAction": "addfacetfilter(ContentProvider:China/Asia On Demand)"
 				}, {
 					"value": "Bibliotheksverbund Bayern",
 					"count": 67,
 					"addAction": "addfacetfilter(ContentProvider:Bibliotheksverbund Bayern)"
 				}, {
 					"value": "Knovel",
-					"count": 56,
+					"count": 57,
 					"addAction": "addfacetfilter(ContentProvider:Knovel)"
+				}, {
+					"value": "Air University Library Index to Military Periodicals (AULIMP)",
+					"count": 55,
+					"addAction": "addfacetfilter(ContentProvider:Air University Library Index to Military Periodicals \\(AULIMP\\))"
 				}, {
 					"value": "CQ Press Public Affairs Collection",
 					"count": 55,
 					"addAction": "addfacetfilter(ContentProvider:CQ Press Public Affairs Collection)"
 				}, {
-					"value": "Air University Library Index to Military Periodicals (AULIMP)",
-					"count": 54,
-					"addAction": "addfacetfilter(ContentProvider:Air University Library Index to Military Periodicals \\(AULIMP\\))"
-				}, {
-					"value": "Airiti Library eBooks & Journals - 華藝線上圖書館",
-					"count": 49,
-					"addAction": "addfacetfilter(ContentProvider:Airiti Library eBooks & Journals - 華藝線上圖書館)"
-				}, {
 					"value": "RACO",
 					"count": 46,
 					"addAction": "addfacetfilter(ContentProvider:RACO)"
 				}, {
-					"value": "J-STAGE",
-					"count": 39,
-					"addAction": "addfacetfilter(ContentProvider:J-STAGE)"
+					"value": "PsycARTICLES",
+					"count": 43,
+					"addAction": "addfacetfilter(ContentProvider:PsycARTICLES)"
 				}, {
 					"value": "Minority Health Archive",
 					"count": 35,
 					"addAction": "addfacetfilter(ContentProvider:Minority Health Archive)"
-				}, {
-					"value": "China/Asia On Demand",
-					"count": 30,
-					"addAction": "addfacetfilter(ContentProvider:China/Asia On Demand)"
 				}, {
 					"value": "Gigaom Research",
 					"count": 27,
@@ -1763,101 +1776,97 @@
 					"count": 25,
 					"addAction": "addfacetfilter(ContentProvider:Informit Indigenous Collection)"
 				}, {
+					"value": "Japanese Periodical Index - 雑誌記事索引",
+					"count": 25,
+					"addAction": "addfacetfilter(ContentProvider:Japanese Periodical Index - 雑誌記事索引)"
+				}, {
 					"value": "CogPrints",
 					"count": 21,
 					"addAction": "addfacetfilter(ContentProvider:CogPrints)"
 				}, {
-					"value": "ELibrary.RU",
-					"count": 20,
-					"addAction": "addfacetfilter(ContentProvider:ELibrary.RU)"
-				}, {
 					"value": "HyRead Journal",
-					"count": 15,
+					"count": 19,
 					"addAction": "addfacetfilter(ContentProvider:HyRead Journal)"
 				}, {
 					"value": "Informit Literature & Culture Collection",
 					"count": 15,
 					"addAction": "addfacetfilter(ContentProvider:Informit Literature & Culture Collection)"
 				}, {
+					"value": "IndianJournals.com",
+					"count": 15,
+					"addAction": "addfacetfilter(ContentProvider:IndianJournals.com)"
+				}, {
 					"value": "KoreaScience",
 					"count": 14,
 					"addAction": "addfacetfilter(ContentProvider:KoreaScience)"
 				}, {
-					"value": "IndianJournals.com",
-					"count": 12,
-					"addAction": "addfacetfilter(ContentProvider:IndianJournals.com)"
-				}, {
 					"value": "BazEkon",
-					"count": 9,
+					"count": 10,
 					"addAction": "addfacetfilter(ContentProvider:BazEkon)"
 				}, {
 					"value": "Credo Reference Collections",
-					"count": 9,
+					"count": 10,
 					"addAction": "addfacetfilter(ContentProvider:Credo Reference Collections)"
+				}, {
+					"value": "RAMBI",
+					"count": 8,
+					"addAction": "addfacetfilter(ContentProvider:RAMBI)"
+				}, {
+					"value": "Korean Studies Information Service System (KISS)",
+					"count": 8,
+					"addAction": "addfacetfilter(ContentProvider:Korean Studies Information Service System \\(KISS\\))"
 				}, {
 					"value": "Children's Literature Comprehensive Database",
 					"count": 8,
 					"addAction": "addfacetfilter(ContentProvider:Children's Literature Comprehensive Database)"
 				}, {
-					"value": "RAMBI",
-					"count": 7,
-					"addAction": "addfacetfilter(ContentProvider:RAMBI)"
-				}, {
 					"value": "Informit Business Collection",
-					"count": 6,
+					"count": 7,
 					"addAction": "addfacetfilter(ContentProvider:Informit Business Collection)"
 				}, {
 					"value": "Informit Engineering Collection",
 					"count": 6,
 					"addAction": "addfacetfilter(ContentProvider:Informit Engineering Collection)"
 				}, {
-					"value": "Korean Studies Information Service System (KISS)",
-					"count": 4,
-					"addAction": "addfacetfilter(ContentProvider:Korean Studies Information Service System \\(KISS\\))"
-				}, {
-					"value": "DBPIA",
-					"count": 4,
-					"addAction": "addfacetfilter(ContentProvider:DBPIA)"
-				}, {
-					"value": "SciELO Books",
-					"count": 3,
-					"addAction": "addfacetfilter(ContentProvider:SciELO Books)"
-				}, {
 					"value": "SSOAR – Social Science Open Access Repository",
-					"count": 3,
+					"count": 5,
 					"addAction": "addfacetfilter(ContentProvider:SSOAR – Social Science Open Access Repository)"
 				}, {
 					"value": "CQ Press Voting & Elections Collection",
 					"count": 3,
 					"addAction": "addfacetfilter(ContentProvider:CQ Press Voting & Elections Collection)"
 				}, {
+					"value": "SciELO Books",
+					"count": 3,
+					"addAction": "addfacetfilter(ContentProvider:SciELO Books)"
+				}, {
 					"value": "Books24x7",
 					"count": 2,
 					"addAction": "addfacetfilter(ContentProvider:Books24x7)"
-				}, {
-					"value": "OECD iLibrary",
-					"count": 1,
-					"addAction": "addfacetfilter(ContentProvider:OECD iLibrary)"
-				}, {
-					"value": "Japanese Periodical Index - 雑誌記事索引",
-					"count": 1,
-					"addAction": "addfacetfilter(ContentProvider:Japanese Periodical Index - 雑誌記事索引)"
-				}, {
-					"value": "Books at JSTOR",
-					"count": 1,
-					"addAction": "addfacetfilter(ContentProvider:Books at JSTOR)"
-				}, {
-					"value": "ScholarVox",
-					"count": 1,
-					"addAction": "addfacetfilter(ContentProvider:ScholarVox)"
 				}, {
 					"value": "CQ Press Supreme Court Collection",
 					"count": 1,
 					"addAction": "addfacetfilter(ContentProvider:CQ Press Supreme Court Collection)"
 				}, {
+					"value": "ScholarVox",
+					"count": 1,
+					"addAction": "addfacetfilter(ContentProvider:ScholarVox)"
+				}, {
 					"value": "CQ Press Encyclopedia of American Government",
 					"count": 1,
 					"addAction": "addfacetfilter(ContentProvider:CQ Press Encyclopedia of American Government)"
+				}, {
+					"value": "OECD iLibrary",
+					"count": 1,
+					"addAction": "addfacetfilter(ContentProvider:OECD iLibrary)"
+				}, {
+					"value": "Books at JSTOR",
+					"count": 1,
+					"addAction": "addfacetfilter(ContentProvider:Books at JSTOR)"
+				}, {
+					"value": "Publications New Zealand Metadata",
+					"count": 1,
+					"addAction": "addfacetfilter(ContentProvider:Publications New Zealand Metadata)"
 				}]
 			}],
 			"dateRange": {
@@ -1867,357 +1876,7 @@
 			"currentPage": 1,
 			"totalHits": 516730
 		},
-		"history": [{
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SubjectEDS": ["health policy"],
-				"Language": ["french", "german"],
-				"SourceType": ["Electronic Resources"],
-				"ContentProvider": ["EU Bookshop"]
-			},
-			"totalHits": 10
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Electronic Resources"],
-				"ContentProvider": ["EU Bookshop"]
-			},
-			"totalHits": 154
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SubjectEDS": ["public health"],
-				"SourceType": ["Electronic Resources"]
-			},
-			"totalHits": 67
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"Language": ["croatian"],
-				"SourceType": ["Electronic Resources"]
-			},
-			"totalHits": 2
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Magazines", "Academic Journals", "Electronic Resources"]
-			},
-			"totalHits": 412525
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Academic Journals", "Magazines"]
-			},
-			"totalHits": 410230
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SubjectEDS": ["hiv"],
-				"SourceType": ["Electronic Resources"]
-			},
-			"totalHits": 61
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Electronic Resources"]
-			},
-			"totalHits": 2465
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"Language": ["multiple languages", "italian"],
-				"SourceType": ["Electronic Resources", "Conference Materials", "News", "Magazines", "Non-Print Resources"]
-			},
-			"totalHits": 665
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"Language": ["multiple languages"],
-				"SourceType": ["Electronic Resources", "Conference Materials", "News", "Magazines", "Non-Print Resources"]
-			},
-			"totalHits": 649
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Electronic Resources", "Conference Materials", "News", "Magazines", "Non-Print Resources"]
-			},
-			"totalHits": 91725
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Electronic Resources", "Non-Print Resources"]
-			},
-			"totalHits": 3207
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Electronic Resources", "Magazines", "Non-Print Resources"]
-			},
-			"totalHits": 86661
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Electronic Resources", "Conference Materials", "Audio", "Dissertations", "News", "Magazines", "Non-Print Resources"]
-			},
-			"totalHits": 95811
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Academic Journals"]
-			},
-			"totalHits": 326684
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SubjectEDS": ["hiv/aids"],
-				"SourceType": ["Books"]
-			},
-			"totalHits": 219
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {
-				"SourceType": ["Books"]
-			},
-			"totalHits": 9449
-		}, {
-			"queries": [{
-				"boolean": "AND",
-				"term": "aids",
-				"field": null
-			}],
-			"domain": "vie",
-			"limiters": {
-				"fullText": true,
-				"publicationDate": {
-					"from": null,
-					"to": null
-				},
-				"peerReviewedArticle": false
-			},
-			"activeFacets": {},
-			"totalHits": 491860
-		}]
+		"history": []
 	},
 	"publication": {
 		"search": {
@@ -2225,7 +1884,6 @@
 			"field": null,
 			"status": "NONE",
 			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
 			"limiters": {
 				"peerReviewedPublication": false
 			},
@@ -2236,20 +1894,34 @@
 			"maxPage": 0
 		}
 	},
+	"a2z": {
+		"search": {
+			"term": "",
+			"field": "JN",
+			"status": "NONE",
+			"domain": "vie",
+			"sort": "title"
+		},
+		"searchResult": {
+			"maxPage": 0
+		}
+	},
 	"login": {
-		"status": "NONE",
+		"status": "SUCCESS",
 		"token": "token"
 	},
 	"userInterface": {
-		"language": "fr",
 		"limiterShown": true,
 		"loading": false,
 		"resultShown": true,
 		"historyShown": false,
 		"location": "article",
 		"fullScreen": true,
-		"notice": null
+		"language": "fr",
+		"showLogin": false
 	},
 	"error": null,
-	"url": "http://server"
+	"url": "http://server",
+	"domains": [],
+	"pausedAction": {}
 }

@@ -8,8 +8,8 @@
 				"key": "initial"
 			}],
 			"status": "NONE",
-			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
+			"domain": null,
+			"availableDomains": [],
 			"limiters": {
 				"fullText": true,
 				"publicationDate": {
@@ -37,7 +37,6 @@
 			"field": null,
 			"status": "NONE",
 			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
 			"limiters": {
 				"peerReviewedPublication": false
 			},
@@ -55,7 +54,6 @@
 			"status": "PENDING",
 			"domain": "vie",
 			"sort": "title",
-			"availableDomains": ["vie", "shs"],
 			"queries": [{
 				"term": "G*",
 				"field": "JN",
@@ -453,409 +451,13 @@
 					}]
 				}]
 			}],
-			"2": [{
-				"id": 21,
-				"publicationId": "edp30410",
-				"issnOnline": ["14363305"],
-				"issnPrint": ["14363291"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastric Cancer",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=mnh&jid=NPS&scope=site",
-					"name": "MEDLINE with Full Text (EBSCO)",
-					"coverage": [{
-						"start": "20030301",
-						"end": "99991231"
-					}],
-					"embargo": {
-						"value": 1,
-						"unit": "Year"
-					}
-				}, {
-					"url": "http://gate1.inist.fr/login?url=http://link.springer.com/journal/10120",
-					"name": "SpringerLINK Journals",
-					"coverage": [{
-						"start": "19970101",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 22,
-				"publicationId": "edp357057",
-				"issnOnline": ["20835728"],
-				"issnPrint": ["12329886"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroenterologia Polska / Gastroenterology",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=46G2&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "20080301",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 23,
-				"publicationId": "edp469160",
-				"issnOnline": ["15789519"],
-				"issnPrint": ["02105705"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroenterología y Hepatología",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://www.sciencedirect.com/science/journal/02105705",
-					"name": "Elsevier (ISTEX - Licences Nationales)",
-					"coverage": [{
-						"start": "20010101",
-						"end": "20011231"
-					}]
-				}]
-			}, {
-				"id": 24,
-				"publicationId": "edp100465",
-				"issnOnline": [],
-				"issnPrint": ["03998320"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroentérologie Clinique et Biologique",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://www.sciencedirect.com/science/journal/03998320",
-					"name": "ScienceDirect",
-					"coverage": [{
-						"start": "20040101",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 25,
-				"publicationId": "edp30418",
-				"issnOnline": ["15280012"],
-				"issnPrint": ["00165085"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroenterology",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://www.sciencedirect.com/science/journal/00165085",
-					"name": "Elsevier (ISTEX - Licences Nationales)",
-					"coverage": [{
-						"start": "19950101",
-						"end": "20011231"
-					}]
-				}]
-			}, {
-				"id": 26,
-				"publicationId": "edp642294",
-				"issnOnline": ["20084234"],
-				"issnPrint": ["20082258"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroenterology and Hepatology from Bed to Bench",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=B2GW&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "20100401",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 27,
-				"publicationId": "edp94563",
-				"issnOnline": ["15581942"],
-				"issnPrint": ["08898553"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroenterology Clinics of North America",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://www.sciencedirect.com/science/journal/08898553",
-					"name": "Elsevier (ISTEX - Licences Nationales)",
-					"coverage": [{
-						"start": "19960101",
-						"end": "20011231"
-					}]
-				}]
-			}, {
-				"id": 28,
-				"publicationId": "edp559763",
-				"issnOnline": ["20367422"],
-				"issnPrint": ["20367414"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroenterology Insights",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=B2MF&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "20090101",
-						"end": "20130101"
-					}]
-				}]
-			}, {
-				"id": 29,
-				"publicationId": "edp1902753",
-				"issnOnline": ["20520034"],
-				"issnPrint": [],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroenterology Report",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=https://gastro.oxfordjournals.org/content/by/year",
-					"name": "Oxford University Press",
-					"coverage": [{
-						"start": "20130101",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 30,
-				"publicationId": "edp380818",
-				"issnOnline": ["1687630X"],
-				"issnPrint": ["16876121"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastroenterology Research and Practice",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=32R8&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "20080101",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 31,
-				"publicationId": "edp30425",
-				"issnOnline": ["10976779"],
-				"issnPrint": ["00165107"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastrointestinal endoscopy",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://www.sciencedirect.com/science/journal/00165107",
-					"name": "Elsevier (ISTEX - Licences Nationales)",
-					"coverage": [{
-						"start": "19710101",
-						"end": "20011231"
-					}]
-				}, {
-					"url": "http://gate1.inist.fr/login?url=http://www.sciencedirect.com/science/journal/00165107",
-					"name": "ScienceDirect",
-					"coverage": [{
-						"start": "19990101",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 32,
-				"publicationId": "edp1654614",
-				"issnOnline": [],
-				"issnPrint": ["22131795"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gastrointestinal Intervention",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://www.sciencedirect.com/science/journal/22131795",
-					"name": "ScienceDirect",
-					"coverage": [{
-						"start": "20120101",
-						"end": "20141231"
-					}]
-				}]
-			}, {
-				"id": 33,
-				"publicationId": "edp521205",
-				"issnOnline": ["18363393"],
-				"issnPrint": [],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gateways: International Journal of Community Research and Engagement",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=B22P&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "20100701",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 34,
-				"publicationId": "edp78939",
-				"issnOnline": ["14603594"],
-				"issnPrint": ["00165492"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gazette (International journal for mass communication studies)",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://gaz.sagepub.com/",
-					"name": "Sage (ISTEX - Licences Nationales)",
-					"coverage": [{
-						"start": "19550101",
-						"end": "20051231"
-					}]
-				}]
-			}, {
-				"id": 35,
-				"publicationId": "edp375446",
-				"issnOnline": ["13044915"],
-				"issnPrint": ["13001884"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gazi Universitesi Muhendislik Mimarlik Fakultesi Dergisi = Gazi University Journal of the Faculty of Engineering & Architecture",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=30YI&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "20070301",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 36,
-				"publicationId": "edp399245",
-				"issnOnline": [],
-				"issnPrint": ["13019058"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gazi University Journal of Gazi Educational Faculty (GUJGEF)",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=ehh&jid=3LEV&scope=site",
-					"name": "Education Research Complete",
-					"coverage": [{
-						"start": "20070401",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 37,
-				"publicationId": "edp464543",
-				"issnOnline": ["17571707"],
-				"issnPrint": ["17571693"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "GCB Bioenergy",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=B64J&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "20100201",
-						"end": "99991231"
-					}],
-					"embargo": {
-						"value": 1,
-						"unit": "Year"
-					}
-				}, {
-					"url": "http://gate1.inist.fr/login?url=http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1757-1707/issues",
-					"name": "Wiley Online Library (ISTEX - Licences Nationales)",
-					"coverage": [{
-						"start": "20090101",
-						"end": "20121231"
-					}]
-				}]
-			}, {
-				"id": 38,
-				"publicationId": "edp4114936",
-				"issnOnline": [],
-				"issnPrint": ["23414545"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "GE Portuguese Journal of Gastroenterology",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://www.sciencedirect.com/science/journal/23414545",
-					"name": "ScienceDirect",
-					"coverage": [{
-						"start": "20140901",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 39,
-				"publicationId": "edp95167",
-				"issnOnline": [],
-				"issnPrint": ["0016626X"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gems and Gemology",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=1YC4&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "20050301",
-						"end": "99991231"
-					}]
-				}]
-			}, {
-				"id": 40,
-				"publicationId": "edp30529",
-				"issnOnline": ["13600516"],
-				"issnPrint": ["09540253"],
-				"isbnOnline": [],
-				"isbnPrint": [],
-				"type": "Journal",
-				"title": "Gender and Education",
-				"fullTextHoldings": [{
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=GAE&scope=site",
-					"name": "Academic Search Complete",
-					"coverage": [{
-						"start": "19900301",
-						"end": "99991231"
-					}],
-					"embargo": {
-						"value": 18,
-						"unit": "Month"
-					}
-				}, {
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=ehh&jid=GAE&scope=site",
-					"name": "Education Research Complete",
-					"coverage": [{
-						"start": "19900301",
-						"end": "99991231"
-					}],
-					"embargo": {
-						"value": 18,
-						"unit": "Month"
-					}
-				}, {
-					"url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=sih&jid=GAE&scope=site",
-					"name": "SocINDEX with Full Text",
-					"coverage": [{
-						"start": "19900301",
-						"end": "99991231"
-					}],
-					"embargo": {
-						"value": 18,
-						"unit": "Month"
-					}
-				}]
-			}],
 			"maxPage": 22,
 			"currentPage": 1,
 			"totalHits": 432
 		}
 	},
 	"login": {
-		"status": "SUCCESS",
+		"status": "NONE",
 		"token": "token"
 	},
 	"userInterface": {
@@ -864,9 +466,14 @@
 		"resultShown": false,
 		"historyShown": false,
 		"location": "a2z",
-		"fullScreen": false,
-		"language": "fr"
+		"fullScreen": true,
+		"language": "fr",
+		"showLogin": false
 	},
 	"error": null,
-	"url": "http://server"
+	"url": "http://server",
+	"domains": ["vie", "shs"],
+	"pausedAction": {
+		"type": "NONE"
+	}
 }
