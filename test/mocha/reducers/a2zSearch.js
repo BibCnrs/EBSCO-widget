@@ -1,19 +1,10 @@
 import a2zSearch, { defaultState } from '../../../lib/reducers/a2zSearch';
 
 import {
-    LOGIN,
-    API_LOGIN_SUCCESS,
-    LOGOUT,
-    FETCH_DOMAINS_SUCCESS,
-    A2Z
-} from '../../../lib/actions';
-
-const {
     SEARCH_TERM,
-    DOMAIN_CHANGE,
     SEARCH_PENDING,
     SEARCH_ERROR
-} = A2Z;
+} from '../../../lib/actions/a2z';
 
 describe('reducers a2zSearch', function () {
 
@@ -48,62 +39,5 @@ describe('reducers a2zSearch', function () {
         assert.deepEqual(searchState, {
             status: 'DONE'
         });
-    });
-
-    it('should update domain with action.domain if action is ARTICLE_DOMAIN_CHANGE', function () {
-        const state = {
-            status: 'state',
-            domain: 'vie'
-        };
-        assert.deepEqual(
-            a2zSearch(
-                state,
-                { type: DOMAIN_CHANGE, domain: 'shs' }
-            ),
-            {
-                status: 'state',
-                domain: 'shs'
-            }
-        );
-    });
-
-    it('should return default state except for domain if action is LOGOUT', function () {
-        const searchState = a2zSearch(
-            { status: 'state', domain: 'vie' },
-            { type: LOGOUT }
-        );
-        assert.deepEqual(searchState, {
-            ...defaultState,
-            domain: 'vie'
-        });
-    });
-
-    it('should add first domains to state if action is LOGIN', function () {
-        const searchState = a2zSearch(
-            { status: 'state' },
-            { type: LOGIN, domains: [ 'first', 'second' ] }
-        );
-        assert.deepEqual(searchState, { status: 'state', domain: 'first'});
-    });
-
-    it('should add first domains to state if action is API_LOGIN_SUCCESS', function () {
-        const searchState = a2zSearch(
-            { status: 'state' },
-            { type: API_LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
-        );
-        assert.deepEqual(searchState, { status: 'state', domain: 'first'});
-    });
-
-    it('should set domain to action.response[0] if action is FETCH_DOMAINS_SUCCESS', function () {
-        assert.deepEqual(
-            a2zSearch(
-                { status: 'state' },
-                { type: FETCH_DOMAINS_SUCCESS, response: ['vie', 'shs'] }
-            ),
-            {
-                status: 'state',
-                domain: 'vie'
-            }
-        );
     });
 });

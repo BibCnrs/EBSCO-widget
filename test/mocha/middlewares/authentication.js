@@ -27,7 +27,14 @@ describe('authentication middleware', function () {
             login: {
                 token: 'token'
             },
-            pausedAction: {}
+            pausedAction: {},
+            domains: {
+                all: ['INC', 'INSB', 'INSHS'],
+                available: ['INSB', 'INSHS'],
+                article: 'INSB',
+                publication: 'INSB',
+                a2z: 'INSB'
+            }
         };
         const actions = [ NAVIGATE, PUBLICATION.SHOW_NOTICE, A2Z.SHOW_NOTICE ]
         .map(type => ({ type }));
@@ -47,6 +54,13 @@ describe('authentication middleware', function () {
                 },
                 pausedAction: {
                     type: 'I_WILL_BE_BACK'
+                },
+                domains: {
+                    all: ['INC', 'INSB', 'INSHS'],
+                    available: [],
+                    article: 'INSB',
+                    publication: 'INSHS',
+                    a2z: 'INC'
                 }
             };
         });
@@ -117,6 +131,48 @@ describe('authentication middleware', function () {
                 state.pausedAction
             ]);
         });
+    });
+
+
+
+    describe('logged but domain not available', function () {
+
+        beforeEach(function () {
+            state = {
+                login: {
+                    token: 'token'
+                },
+                pausedAction: {},
+                domains: {
+                    all: ['available', 'unavailable'],
+                    available: ['available'],
+                    article: 'unavailable',
+                    publication: 'unavailable',
+                    a2z: 'unavailable'
+                }
+            };
+        });
+
+        it('should trigger ACCESS_ERROR if it is PUBLICATION.SHOW_NOTICE', function () {
+            const action = {
+                type: PUBLICATION.SHOW_NOTICE
+            };
+            authentication(store, next, action);
+            assert.deepEqual(nextAction, [
+                actions.forbidAccess('unavailable')
+            ]);
+        });
+
+        it('should trigger ACCESS_ERROR if it is A2Z.SHOW_NOTICE', function () {
+            const action = {
+                type: A2Z.SHOW_NOTICE
+            };
+            authentication(store, next, action);
+            assert.deepEqual(nextAction, [
+                actions.forbidAccess('unavailable')
+            ]);
+        });
+
     });
 
 });

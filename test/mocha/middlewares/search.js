@@ -15,7 +15,6 @@ describe('search middleware', function () {
                     term: 'searched term',
                     field: 'TI'
                 }],
-                domain: 'vie',
                 limiters: {
                     fullText: true,
                     publicationDate: {
@@ -34,7 +33,6 @@ describe('search middleware', function () {
             search: {
                 term: 'searched term',
                 field: 'TI',
-                domain: 'shs',
                 limiters: {}
             },
             searchResult: {
@@ -45,6 +43,13 @@ describe('search middleware', function () {
         },
         login: {
             token: 'token'
+        },
+        domains: {
+            all: ['vie, shs'],
+            available: ['vie, shs'],
+            article: 'vie',
+            publication: 'shs',
+            a2z: 'vie'
         }
     };
 
