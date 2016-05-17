@@ -15,6 +15,7 @@ describe('publication Search result', function() {
         .click('.record:nth-child(1) a.fetch-link')
         .pause(300)
         .waitForElementVisible('.notice', 1000)
+        .pause(300)
         .assert.containsText('.notice dl span:nth-child(1) dt', 'ISSN')
         .assert.containsText('.notice dl span:nth-child(2) dt', 'Publisher Information')
         .assert.containsText('.notice dl span:nth-child(3) dt', 'Resource Type')

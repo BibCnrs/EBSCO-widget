@@ -69,7 +69,7 @@
 		"language": "fr",
 		"showLogin": true
 	},
-	"error": null,
+	"error": {},
 	"url": "http://server",
 	"domains": {
 		"all": ["INSB", "INSHS"],

@@ -768,7 +768,7 @@
 		"language": "fr",
 		"showLogin": false
 	},
-	"error": null,
+	"error": {},
 	"url": "http://server",
 	"domains": {
 		"all": ["vie", "shs"],
