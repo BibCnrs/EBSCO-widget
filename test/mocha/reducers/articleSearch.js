@@ -4,17 +4,13 @@ import { defaultState as defaultQueryList } from '../../../lib/reducers/articleQ
 import { defaultState as defaultActiveFacets } from '../../../lib/reducers/articleActiveFacets';
 
 import {
-    LOGIN,
-    API_LOGIN_SUCCESS,
     LOGOUT,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
-    SET_AVAILABLE_DOMAINS,
     ARTICLE
 } from '../../../lib/actions';
 
 const {
-    DOMAIN_CHANGE,
     SEARCH_PENDING,
     SEARCH_SUCCESS,
     SEARCH_ERROR,
@@ -66,59 +62,12 @@ describe('reducers articleSearch', function () {
         });
     });
 
-    it('should update domain with action.domain if action is ARTICLE_DOMAIN_CHANGE', function () {
-        const state = {
-            status: 'state',
-            availableDomains: ['vie', 'shs'],
-            domain: 'vie'
-        };
-        assert.deepEqual(
-            articleSearch(
-                state,
-                { type: DOMAIN_CHANGE, domain: 'shs' }
-            ),
-            {
-                status: 'state',
-                availableDomains: ['vie', 'shs'],
-                domain: 'shs'
-            }
-        );
-    });
-
-    it('should not update domain with action.domain if domain is not in state.availableDomains if action is ARTICLE_DOMAIN_CHANGE', function () {
-        const state = { status: 'state', domain: 'vie', availableDomains: [] };
-        assert.deepEqual(
-                articleSearch(
-                state,
-                { type: DOMAIN_CHANGE, domain: 'shs' }
-            ),
-            state
-        );
-    });
-
     it('should return default state if action is LOGOUT', function () {
         const searchState = articleSearch(
             { status: 'state' },
             { type: LOGOUT }
         );
         assert.deepEqual(searchState, defaultState);
-    });
-
-    it('should add first domains to state if action is LOGIN', function () {
-        const searchState = articleSearch(
-            { status: 'state' },
-            { type: LOGIN, domains: [ 'first', 'second' ] }
-        );
-        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
-    });
-
-
-    it('should add first domains to state if action is API_LOGIN_SUCCESS', function () {
-        const searchState = articleSearch(
-            { status: 'state' },
-            { type: API_LOGIN_SUCCESS, response: { domains: [ 'first', 'second' ] } }
-        );
-        assert.deepEqual(searchState, { status: 'state', availableDomains: ['first', 'second'], domain: 'first'});
     });
 
     it('should return state completed by action.query if action is RESTORE_HISTORY or RELOAD_HISTORY', function () {
@@ -140,20 +89,6 @@ describe('reducers articleSearch', function () {
             {
                 status: 'state',
                 queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]
-            }
-        );
-    });
-
-    it('should set availableDomains to action.value, and domain to action.value[0] id action is SET_AVAILABLE_DOMAINS', function () {
-        assert.deepEqual(
-            articleSearch(
-                { status: 'state' },
-                { type: SET_AVAILABLE_DOMAINS, value: ['vie', 'shs'] }
-            ),
-            {
-                status: 'state',
-                domain: 'vie',
-                availableDomains: ['vie', 'shs']
             }
         );
     });

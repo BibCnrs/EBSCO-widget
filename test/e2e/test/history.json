@@ -3,35 +3,699 @@
 		"search": {
 			"queries": [{
 				"boolean": "AND",
-				"term": "",
-				"field": null
+				"term": "aids",
+				"field": null,
+				"key": "initial"
 			}],
-			"status": "NONE",
-			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
+			"status": "DONE",
 			"limiters": {
 				"fullText": true,
 				"publicationDate": {
-					"from": null,
-					"to": null
+					"from": 1914,
+					"to": 1918
 				},
 				"peerReviewedArticle": false
 			},
-			"activeFacets": [],
+			"activeFacets": {},
 			"sort": "relevance"
 		},
 		"searchResult": {
-			"maxPage": 0,
+			"1": [{
+				"id": 1,
+				"an": "ED540929",
+				"dbId": "eric",
+				"articleLink": null,
+				"title": "Teaching English to Aliens: A Bibliography of Textbooks, Dictionaries and Glossaries and Aids to Librarians. Bulletin, 1917, No. 39",
+				"source": "Bureau of Education, Department of the Interior. 76 pp.",
+				"authors": ["Talbot, Winthrop", "Department of the Interior, Bureau of Education (ED)"],
+				"publicationDate": "1918-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Educational History", "Immigrants", "English (Second Language)", "Glossaries", "Librarians", "Textbooks", "Annotated Bibliographies", "Dictionaries", "Library Services", "Second Language Instruction", "Educational Resources", "Adult Education", "Organizations (Groups)", "Native Language", "Library Materials", "Teaching Methods"],
+				"publicationType": "Historical Materials; Reference Materials - Bibliographies",
+				"abstract": null
+			}, {
+				"id": 2,
+				"an": "edsjsr.25312582",
+				"dbId": "edsjsr",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edsjsr&genre=article&issn=00071447&ISBN=&volume=1&issue=2823&date=19150206&spage=248&pages=&title=The British Medical Journal&atitle=Geometric%20Aids%20To%20X-Ray%20Localization&aulast=Shearer%2C%20Donald%20F.&id=DOI:"],
+				"title": "Geometric Aids To X-Ray Localization",
+				"source": "The British Medical Journal, 2/6/1915, Vol. 1, Issue 2823, p. 248",
+				"authors": ["Shearer, Donald F."],
+				"publicationDate": "1915-02-06T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "JSTOR Journals",
+				"subjects": null,
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 3,
+				"an": "edsjsr.20307935",
+				"dbId": "edsjsr",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edsjsr&genre=article&issn=00071447&ISBN=&volume=2&issue=2953&date=19170804&spage=151&pages=&title=The British Medical Journal&atitle=Mechanical%20Aids%20In%20A%20Field%20Operating%20Theatre&aulast=Bensted-Smith%2C%20W.%20F.&id=DOI:"],
+				"title": "Mechanical Aids In A Field Operating Theatre",
+				"source": "The British Medical Journal, 8/4/1917, Vol. 2, Issue 2953, p. 151-152",
+				"authors": ["Bensted-Smith, W. F."],
+				"publicationDate": "1917-08-04T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "JSTOR Journals",
+				"subjects": null,
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 4,
+				"an": "edsjsr.25309198",
+				"dbId": "edsjsr",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edsjsr&genre=article&issn=00071447&ISBN=&volume=1&issue=2776&date=19140314&spage=591&pages=&title=The British Medical Journal&atitle=Aids%20In%20Rectal%20And%20Vesico-Vaginal%20Surgery&aulast=MacMunn%2C%20James&id=DOI:"],
+				"title": "Aids In Rectal And Vesico-Vaginal Surgery",
+				"source": "The British Medical Journal, 3/14/1914, Vol. 1, Issue 2776, p. 591",
+				"authors": ["MacMunn, James"],
+				"publicationDate": "1914-03-14T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "JSTOR Journals",
+				"subjects": null,
+				"publicationType": "Periodical",
+				"abstract": null
+			}, {
+				"id": 5,
+				"an": "edseur..9200143.BibliographicResource.2000069323133",
+				"dbId": "edseur",
+				"articleLink": ["http://europeana.eu/portal/record/9200143/BibliographicResource_2000069323133.html"],
+				"title": "Aids to rational therapeutics with U. S. A. pharmacopoeia equivalents",
+				"source": null,
+				"authors": ["Ralph Winnington Leftwich"],
+				"publicationDate": "1918-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "Europeana",
+				"subjects": ["united kingdom"],
+				"publicationType": null,
+				"abstract": null
+			}, {
+				"id": 6,
+				"an": "71985686",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=0790231X&ISBN=&volume=144&issue=4&date=19171001&spage=212&pages=212-227&title=Dublin Journal of Medical Science - Series 4&atitle=The%20early%20diagnosis%20of%20venereal%20disease%20and%20laboratory%20aids%20to%20successful%20treatment.&aulast=McCullagh%2C%20J.&id=DOI:10.1007/BF02962823"],
+				"title": "The early diagnosis of venereal disease and laboratory aids to successful treatment.",
+				"source": "Dublin Journal of Medical Science - Series 4; Oct1917, Vol. 144 Issue 4, p212-227, 16p",
+				"authors": ["McCullagh, J."],
+				"publicationDate": "1917-10-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": null,
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 7,
+				"an": "ED542442",
+				"dbId": "eric",
+				"articleLink": null,
+				"title": "Survey of Educational Institutions of the State of Washington. Bulletin, 1916, No. 26",
+				"source": "Bureau of Education, Department of the Interior. 236 pp.",
+				"authors": ["Department of the Interior, Bureau of Education (ED)"],
+				"publicationDate": "1916-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Secondary Schools", "Elementary Schools", "Teacher Salaries", "Expenditures", "Standards", "Colleges", "State Colleges", "Enrollment Trends", "State Surveys", "School Maintenance", "Equipment", "Visual Aids", "Public School Teachers"],
+				"publicationType": "Historical Materials; Reports - Evaluative",
+				"abstract": null
+			}, {
+				"id": 8,
+				"an": "ED541859",
+				"dbId": "eric",
+				"articleLink": null,
+				"title": "Bibliography of Education for 1911-12. Bulletin, 1915, No. 30. Whole Number 657",
+				"source": "United States Bureau of Education, Department of the Interior. 155 pp.",
+				"authors": ["Department of the Interior, United States Bureau of Education (ED)"],
+				"publicationDate": "1915-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Foreign Countries", "Annotated Bibliographies", "Educational History", "Educational Principles", "Educational Practices", "Educational Theories", "Educational Equipment", "Organizations (Groups)", "Periodicals", "Instructional Films", "Educational Technology", "Audiovisual Aids", "Asians", "American Indian Education", "Disabilities", "Elementary Education", "High Schools", "Curriculum", "School Health Services", "Home Economics Education", "Agricultural Education", "Health Education", "Womens Education", "Citizenship Education", "Socialization", "Public Education", "Special Needs Students", "Special Education", "Early Childhood Education", "Kindergarten", "Rural Education", "Religious Education", "Values Education", "Higher Education", "Postsecondary Education", "Two Year Colleges", "African American Education", "International Education", "Secondary Education", "Adult Education", "Professional Education", "Vocational Education", "Engineering Education", "Extension Education", "Teacher Education", "Teacher Salaries", "Teaching (Occupation)", "Teaching Methods", "Intellectual Disciplines", "Hygiene", "Sanitation", "Mental Health", "School Administration", "Educational Administration", "Child Welfare", "Physical Education", "Military Training", "Educational Environment", "Educational Assessment", "Educational Psychology", "Educational Sociology", "Child Development", "Educational Facilities", "Libraries", "Biographies", "Government Publications", "Federal Government", "Educational Legislation", "Educational Policy", "State Policy", "Educational Finance", "Educational Research", "Career Guidance", "Encyclopedias", "Montessori Method"],
+				"publicationType": "Historical Materials; Reference Materials - Bibliographies",
+				"abstract": null
+			}, {
+				"id": 9,
+				"an": "ED541765",
+				"dbId": "eric",
+				"articleLink": null,
+				"title": "Education Exhibits at the Panama-Pacific International Exposition, San Francisco, California, 1915. Bulletin, 1916, No. 1",
+				"source": "Bureau of Education, Department of the Interior. 115 pp.",
+				"authors": ["Ryan, W. Carson, Jr.", "Department of the Interior, Bureau of Education (ED)"],
+				"publicationDate": "1916-01-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "ERIC",
+				"subjects": ["Foreign Countries", "Educational History", "Conferences (Gatherings)", "Exhibits", "Instructional Materials", "Educational Resources", "International Education", "Teaching Methods", "Educational Practices", "Program Descriptions", "Urban Areas", "Organizations (Groups)", "Public Agencies", "Bibliographies", "Child Welfare", "Health Promotion", "Child Health", "Early Childhood Education", "Elementary Secondary Education", "Visual Aids", "Public Education", "American Indian Education", "Womens Education", "African American Education", "Vocational Education", "Adult Education", "Postsecondary Education", "Higher Education", "Educational Administration", "School Statistics"],
+				"publicationType": "Historical Materials; Reports - Descriptive",
+				"abstract": null
+			}, {
+				"id": 10,
+				"an": "61561962",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00280836&ISBN=&volume=95&issue=2373&date=19150422&spage=207&pages=207-209&title=Nature&atitle=Aids%20to%20Nature-Study.&aulast=&id=DOI:10.1038/095207a0"],
+				"title": "Aids to Nature-Study.",
+				"source": "Nature; 4/22/1915, Vol. 95 Issue 2373, p207-209, 3p",
+				"authors": null,
+				"publicationDate": "1915-04-22T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": null,
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 11,
+				"an": "18736339",
+				"dbId": "cmedm",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:cmedm&genre=article&issn=0093402X&ISBN=&volume=12&issue=8&date=19140801&spage=316&pages=316-9&title=California State Journal Of Medicine&atitle=Some%20Laboratory%20Aids%20in%20the%20Diagnosis%20of%20Tuberculosis.&aulast=Evans%20GH&id=DOI:"],
+				"title": "Some Laboratory Aids in the Diagnosis of Tuberculosis.",
+				"source": "Country of Publication: United States NLM ID: 0414327 Publication Model: Print Cited Medium: Print ISSN: 0093-402X (Print) Linking ISSN: 0093402X NLM ISO Abbreviation: Cal State J Med Subsets: PubMed not MEDLINE",
+				"authors": ["Evans GH"],
+				"publicationDate": "1914-08-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "MEDLINE",
+				"subjects": null,
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 12,
+				"an": "61563803",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00280836&ISBN=&volume=98&issue=2449&date=19161005&spage=89&pages=89-89&title=Nature&atitle=Aids%20to%20Bacteriology.&aulast=&id=DOI:10.1038/098089a0"],
+				"title": "Aids to Bacteriology.",
+				"source": "Nature; 10/5/1916, Vol. 98 Issue 2449, p89-89, 1p",
+				"authors": null,
+				"publicationDate": "1916-10-05T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": null,
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 13,
+				"an": "61562551",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00280836&ISBN=&volume=96&issue=2396&date=19150930&spage=113&pages=113-113&title=Nature&atitle=Aids%20to%20the%20Analysis%20and%20Assay%20of%20Ores%2C%20Metals%2C%20Fuels%2C%20etc.&aulast=&id=DOI:10.1038/096113b0"],
+				"title": "Aids to the Analysis and Assay of Ores, Metals, Fuels, etc.",
+				"source": "Nature; 9/30/1915, Vol. 96 Issue 2396, p113-113, 1p",
+				"authors": null,
+				"publicationDate": "1915-09-30T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": null,
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 14,
+				"an": "63430204",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00366803&ISBN=&volume=17&issue=9&date=19171201&spage=851&pages=851-851&title=School Science & Mathematics&atitle=AIDS%20IN%20TEACHING%20AGRICULTURE.&aulast=&id=DOI:10.1111/j.1949-8594.1917.tb03772.x"],
+				"title": "AIDS IN TEACHING AGRICULTURE.",
+				"source": "School Science & Mathematics; Dec1917, Vol. 17 Issue 9, p851-851, 1p",
+				"authors": null,
+				"publicationDate": "1917-12-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": null,
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 15,
+				"an": "8682539",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00267902&ISBN=&volume=1&issue=8&date=19170501&spage=308&pages=308-314&title=Modern Language Journal&atitle=THE%20USE%20OF%20PICTURES%20IN%20THE%20COLLEGE%20GERMAN%20CLASS.&aulast=Hess%2C%20John%20A.&id=DOI:", "http://www.jstor.org/openurl?issn=00267902&date=1917&volume=1&issue=8&spage=308"],
+				"title": "THE USE OF PICTURES IN THE COLLEGE GERMAN CLASS.",
+				"source": "Modern Language Journal; May17, Vol. 1 Issue 8, p308, 7p",
+				"authors": ["Hess, John A."],
+				"publicationDate": "1917-05-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": ["PICTURES in education", "TEACHING aids & devices", "GERMAN language -- Study & teaching"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 16,
+				"an": "8682528",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00267902&ISBN=&volume=1&issue=8&date=19170501&spage=295&pages=295-301&title=Modern Language Journal&atitle=SOME%20DEVICES%20FOR%20SUCCESSFUL%20WORK%20AT%20THE%20BLACKBOARD.&aulast=Kleinpell%2C%20Irma&id=DOI:", "http://www.jstor.org/openurl?issn=00267902&date=1917&volume=1&issue=8&spage=295"],
+				"title": "SOME DEVICES FOR SUCCESSFUL WORK AT THE BLACKBOARD.",
+				"source": "Modern Language Journal; May17, Vol. 1 Issue 8, p295, 7p",
+				"authors": ["Kleinpell, Irma"],
+				"publicationDate": "1917-05-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": ["BLACKBOARDS", "TEACHING aids & devices", "RECITATION (Education)"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 17,
+				"an": "21661014",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00135984&ISBN=&volume=18&issue=2&date=19171001&spage=115&pages=115-132&title=Elementary School Journal&atitle=AN%20OUTLINE%20OF%20THE%20COURSE%20IN%20GEOGRAPHY%20IN%20THE%20UNIVERSITY%20ELEMENTARY%20SCHOOL.%20II.&aulast=Henderson%2C%20Bertha&id=DOI:", "http://www.jstor.org/openurl?issn=00135984&date=1917&volume=18&issue=2&spage=115"],
+				"title": "AN OUTLINE OF THE COURSE IN GEOGRAPHY IN THE UNIVERSITY ELEMENTARY SCHOOL. II.",
+				"source": "Elementary School Journal; Oct1917, Vol. 18 Issue 2, p115-132, 18p",
+				"authors": ["Henderson, Bertha", "McLaughlin, Katherine", "Sherman, Adaline", "Storm, Grace", "Parker, Edith"],
+				"publicationDate": "1917-10-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": ["UNITED States", "GEOGRAPHY -- Study & teaching", "ELEMENTARY schools", "CURRICULA (Courses of study)", "ELEMENTARY education", "TEACHING aids & devices"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 18,
+				"an": "22061666",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00135984&ISBN=&volume=17&issue=7&date=19170301&spage=470&pages=470-484&title=Elementary School Journal&atitle=MEASURING%20AND%20STANDARDIZING%20HANDWRITING%20IN%20A%20SCHOOL%20SYSTEM.&aulast=Breed%2C%20F.%20S.&id=DOI:", "http://www.jstor.org/openurl?issn=00135984&date=1917&volume=17&issue=7&spage=470"],
+				"title": "MEASURING AND STANDARDIZING HANDWRITING IN A SCHOOL SYSTEM.",
+				"source": "Elementary School Journal; Mar1917, Vol. 17 Issue 7, p470-484, 15p",
+				"authors": ["Breed, F. S.", "Down, E. F."],
+				"publicationDate": "1917-03-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": ["UNITED States", "ART & writing", "LANGUAGE & languages -- Composition & exercises", "ENGLISH language -- Writing", "TEACHING aids & devices", "AUTOGRAPHS"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 19,
+				"an": "21643598",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00135984&ISBN=&volume=16&issue=3&date=19151101&spage=125&pages=125-131&title=Elementary School Journal&atitle=CLASSROOM%20METHODS%20AND%20DEVICES.&aulast=Walker%2C%20Alberta&id=DOI:", "http://www.jstor.org/openurl?issn=00135984&date=1915&volume=16&issue=3&spage=125"],
+				"title": "CLASSROOM METHODS AND DEVICES.",
+				"source": "Elementary School Journal; Nov1915, Vol. 16 Issue 3, p125-131, 7p",
+				"authors": ["Walker, Alberta"],
+				"publicationDate": "1915-11-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": ["UNITED States", "DRAMA in education", "TEACHING aids & devices", "ROLE playing", "CLASSROOM activities", "CURRICULA (Courses of study)", "TEACHING methods"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}, {
+				"id": 20,
+				"an": "21643597",
+				"dbId": "edb",
+				"articleLink": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edb&genre=article&issn=00135984&ISBN=&volume=16&issue=3&date=19151101&spage=115&pages=115-124&title=Elementary School Journal&atitle=EDUCATIONAL%20WRITINGS.&aulast=&id=DOI:", "http://www.jstor.org/openurl?issn=00135984&date=1915&volume=16&issue=3&spage=115"],
+				"title": "EDUCATIONAL WRITINGS.",
+				"source": "Elementary School Journal; Nov1915, Vol. 16 Issue 3, p115-124, 10p",
+				"authors": null,
+				"publicationDate": "1915-11-01T00:00:00.000Z",
+				"languages": ["English"],
+				"database": "edb",
+				"subjects": ["UNITED States", "SCHOLARLY publishing", "INFORMATION resources", "REFERENCE books", "TEXTBOOKS", "ACADEMIC discourse", "TEACHING aids & devices"],
+				"publicationType": "Academic Journal",
+				"abstract": null
+			}],
+			"maxPage": 3,
+			"facets": [{
+				"id": "SourceType",
+				"label": "Source Type",
+				"availableFacetValues": [{
+					"value": "Academic Journals",
+					"count": 34,
+					"addAction": "addfacetfilter(SourceType:Academic Journals)"
+				}, {
+					"value": "Reports",
+					"count": 4,
+					"addAction": "addfacetfilter(SourceType:Reports)"
+				}, {
+					"value": "Magazines",
+					"count": 4,
+					"addAction": "addfacetfilter(SourceType:Magazines)"
+				}, {
+					"value": "Reviews",
+					"count": 2,
+					"addAction": "addfacetfilter(SourceType:Reviews)"
+				}, {
+					"value": "Books",
+					"count": 1,
+					"addAction": "addfacetfilter(SourceType:Books)"
+				}]
+			}, {
+				"id": "SubjectEDS",
+				"label": "Subject",
+				"availableFacetValues": [{
+					"value": "teaching aids & devices",
+					"count": 16,
+					"addAction": "addfacetfilter(SubjectEDS:teaching aids & devices)"
+				}, {
+					"value": "teaching methods",
+					"count": 7,
+					"addAction": "addfacetfilter(SubjectEDS:teaching methods)"
+				}, {
+					"value": "curricula (courses of study)",
+					"count": 4,
+					"addAction": "addfacetfilter(SubjectEDS:curricula \\(courses of study\\))"
+				}, {
+					"value": "elementary schools",
+					"count": 4,
+					"addAction": "addfacetfilter(SubjectEDS:elementary schools)"
+				}, {
+					"value": "textbooks",
+					"count": 4,
+					"addAction": "addfacetfilter(SubjectEDS:textbooks)"
+				}, {
+					"value": "vocational education",
+					"count": 4,
+					"addAction": "addfacetfilter(SubjectEDS:vocational education)"
+				}, {
+					"value": "adult education",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectEDS:adult education)"
+				}, {
+					"value": "education",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectEDS:education)"
+				}, {
+					"value": "educational history",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectEDS:educational history)"
+				}, {
+					"value": "elementary education",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectEDS:elementary education)"
+				}, {
+					"value": "elementary secondary education",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectEDS:elementary secondary education)"
+				}, {
+					"value": "higher education",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectEDS:higher education)"
+				}, {
+					"value": "organizations (groups)",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectEDS:organizations \\(groups\\))"
+				}, {
+					"value": "secondary education",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectEDS:secondary education)"
+				}, {
+					"value": "african american education",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:african american education)"
+				}, {
+					"value": "american indian education",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:american indian education)"
+				}, {
+					"value": "annotated bibliographies",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:annotated bibliographies)"
+				}, {
+					"value": "child welfare",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:child welfare)"
+				}, {
+					"value": "early childhood education",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:early childhood education)"
+				}, {
+					"value": "educational administration",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:educational administration)"
+				}, {
+					"value": "educational practices",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:educational practices)"
+				}, {
+					"value": "educational resources",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:educational resources)"
+				}, {
+					"value": "educational technology",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:educational technology)"
+				}, {
+					"value": "effective teaching",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:effective teaching)"
+				}, {
+					"value": "foreign countries",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:foreign countries)"
+				}, {
+					"value": "geography -- study & teaching",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:geography -- study & teaching)"
+				}, {
+					"value": "government publications",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:government publications)"
+				}, {
+					"value": "high schools",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:high schools)"
+				}, {
+					"value": "international education",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:international education)"
+				}, {
+					"value": "kindergarten",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:kindergarten)"
+				}, {
+					"value": "library materials",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:library materials)"
+				}, {
+					"value": "mathematics -- study & teaching",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:mathematics -- study & teaching)"
+				}, {
+					"value": "postsecondary education",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:postsecondary education)"
+				}, {
+					"value": "public education",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:public education)"
+				}, {
+					"value": "school administration",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:school administration)"
+				}, {
+					"value": "teacher salaries",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:teacher salaries)"
+				}, {
+					"value": "two year colleges",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:two year colleges)"
+				}, {
+					"value": "visual aids",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:visual aids)"
+				}, {
+					"value": "womens education",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectEDS:womens education)"
+				}, {
+					"value": "abortion",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:abortion)"
+				}, {
+					"value": "abstracts",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:abstracts)"
+				}, {
+					"value": "academic discourse",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:academic discourse)"
+				}, {
+					"value": "addition (mathematics)",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:addition \\(mathematics\\))"
+				}, {
+					"value": "agricultural education",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:agricultural education)"
+				}, {
+					"value": "arithmetic",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:arithmetic)"
+				}, {
+					"value": "arithmetic -- study & teaching",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:arithmetic -- study & teaching)"
+				}, {
+					"value": "art & writing",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:art & writing)"
+				}, {
+					"value": "asians",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:asians)"
+				}, {
+					"value": "audiovisual aids",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:audiovisual aids)"
+				}, {
+					"value": "autographs",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectEDS:autographs)"
+				}]
+			}, {
+				"id": "Journal",
+				"label": "Publication",
+				"availableFacetValues": [{
+					"value": "elementary school journal",
+					"count": 14,
+					"addAction": "addfacetfilter(Journal:elementary school journal)"
+				}, {
+					"value": "nature",
+					"count": 7,
+					"addAction": "addfacetfilter(Journal:nature)"
+				}, {
+					"value": "bureau of education, department of the interior",
+					"count": 3,
+					"addAction": "addfacetfilter(Journal:bureau of education\\, department of the interior)"
+				}, {
+					"value": "the british medical journal",
+					"count": 3,
+					"addAction": "addfacetfilter(Journal:the british medical journal)"
+				}, {
+					"value": "california state journal of medicine",
+					"count": 2,
+					"addAction": "addfacetfilter(Journal:california state journal of medicine)"
+				}, {
+					"value": "elementary school teacher",
+					"count": 2,
+					"addAction": "addfacetfilter(Journal:elementary school teacher)"
+				}, {
+					"value": "modern language journal",
+					"count": 2,
+					"addAction": "addfacetfilter(Journal:modern language journal)"
+				}, {
+					"value": "american journal of sociology",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:american journal of sociology)"
+				}, {
+					"value": "annals of the association of american geographers",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:annals of the association of american geographers)"
+				}, {
+					"value": "dublin journal of medical science - series 4",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:dublin journal of medical science - series 4)"
+				}, {
+					"value": "harvard theological review",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:harvard theological review)"
+				}, {
+					"value": "public health",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:public health)"
+				}, {
+					"value": "school science & mathematics",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:school science & mathematics)"
+				}, {
+					"value": "the journal of infectious diseases",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:the journal of infectious diseases)"
+				}, {
+					"value": "the quarterly journal of economics",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:the quarterly journal of economics)"
+				}, {
+					"value": "transactions of the royal society of tropical medicine and hygiene",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:transactions of the royal society of tropical medicine and hygiene)"
+				}, {
+					"value": "united states bureau of education, department of the interior",
+					"count": 1,
+					"addAction": "addfacetfilter(Journal:united states bureau of education\\, department of the interior)"
+				}]
+			}, {
+				"id": "Language",
+				"label": "Language",
+				"availableFacetValues": [{
+					"value": "english",
+					"count": 40,
+					"addAction": "addfacetfilter(Language:english)"
+				}]
+			}, {
+				"id": "Publisher",
+				"label": "Publisher",
+				"availableFacetValues": [{
+					"value": "university of chicago press",
+					"count": 17,
+					"addAction": "addfacetfilter(Publisher:university of chicago press)"
+				}, {
+					"value": "british medical association",
+					"count": 3,
+					"addAction": "addfacetfilter(Publisher:british medical association)"
+				}, {
+					"value": "nature publishing group",
+					"count": 3,
+					"addAction": "addfacetfilter(Publisher:nature publishing group)"
+				}, {
+					"value": "wiley-blackwell",
+					"count": 3,
+					"addAction": "addfacetfilter(Publisher:wiley-blackwell)"
+				}, {
+					"value": "elsevier ltd",
+					"count": 2,
+					"addAction": "addfacetfilter(Publisher:elsevier ltd)"
+				}, {
+					"value": "cambridge university press",
+					"count": 1,
+					"addAction": "addfacetfilter(Publisher:cambridge university press)"
+				}, {
+					"value": "harvard university press",
+					"count": 1,
+					"addAction": "addfacetfilter(Publisher:harvard university press)"
+				}, {
+					"value": "memorial institute for infectious diseases",
+					"count": 1,
+					"addAction": "addfacetfilter(Publisher:memorial institute for infectious diseases)"
+				}, {
+					"value": "springer science & business media b.v.",
+					"count": 1,
+					"addAction": "addfacetfilter(Publisher:springer science & business media b.v.)"
+				}, {
+					"value": "taylor & francis ltd",
+					"count": 1,
+					"addAction": "addfacetfilter(Publisher:taylor & francis ltd)"
+				}]
+			}, {
+				"id": "ContentProvider",
+				"label": "Content Provider",
+				"availableFacetValues": [{
+					"value": "JSTOR Journals",
+					"count": 5,
+					"addAction": "addfacetfilter(ContentProvider:JSTOR Journals)"
+				}, {
+					"value": "ERIC",
+					"count": 4,
+					"addAction": "addfacetfilter(ContentProvider:ERIC)"
+				}, {
+					"value": "ScienceDirect",
+					"count": 2,
+					"addAction": "addfacetfilter(ContentProvider:ScienceDirect)"
+				}, {
+					"value": "Europeana",
+					"count": 1,
+					"addAction": "addfacetfilter(ContentProvider:Europeana)"
+				}, {
+					"value": "MEDLINE",
+					"count": 1,
+					"addAction": "addfacetfilter(ContentProvider:MEDLINE)"
+				}, {
+					"value": "MEDLINE with Full Text",
+					"count": 1,
+					"addAction": "addfacetfilter(ContentProvider:MEDLINE with Full Text)"
+				}]
+			}],
 			"dateRange": {
-				"min": 1000,
-				"max": 2017
-			}
+				"min": 1914,
+				"max": 1918
+			},
+			"currentPage": 1,
+			"totalHits": 44
 		},
 		"history": [{
 			"queries": [{
 				"boolean": "AND",
 				"term": "aids",
-				"field": null
+				"field": null,
+				"key": "initial"
 			}],
 			"domain": "vie",
 			"limiters": {
@@ -43,12 +707,13 @@
 				"peerReviewedArticle": false
 			},
 			"activeFacets": {},
-			"totalHits": 253975
+			"totalHits": 44
 		}, {
 			"queries": [{
 				"boolean": "AND",
 				"term": "phylloxera",
-				"field": null
+				"field": null,
+				"key": "initial"
 			}],
 			"domain": "vie",
 			"limiters": {
@@ -60,42 +725,60 @@
 				"peerReviewedArticle": false
 			},
 			"activeFacets": {},
-			"totalHits": 1193
-		}],
-		"facets": {}
+			"totalHits": 1189
+		}]
 	},
 	"publication": {
 		"search": {
 			"term": "",
 			"field": null,
 			"status": "NONE",
-			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
 			"limiters": {
 				"peerReviewedPublication": false
 			},
-			"activeFacets": [],
+			"activeFacets": {},
 			"sort": "relevance"
 		},
 		"searchResult": {
 			"maxPage": 0
+		}
+	},
+	"a2z": {
+		"search": {
+			"term": "",
+			"field": "JN",
+			"status": "NONE",
+			"sort": "title"
 		},
-		"facets": {}
+		"searchResult": {
+			"maxPage": 0
+		}
 	},
 	"login": {
-		"status": "NONE",
+		"status": "SUCCESS",
 		"token": "token"
 	},
 	"userInterface": {
-		"language": "fr",
 		"limiterShown": true,
 		"loading": false,
 		"resultShown": true,
 		"historyShown": true,
 		"location": "article",
-		"fullScreen": false,
-		"notice": null
+		"fullScreen": true,
+		"language": "fr",
+		"showLogin": false
 	},
-	"error": null,
-	"url": "http://server"
+	"error": {},
+	"url": "http://server",
+	"domains": {
+		"all": ["vie", "shs"],
+		"available": ["vie", "shs"],
+		"article": "vie",
+		"publication": "vie",
+		"a2z": "vie"
+	},
+	"pausedAction": {
+		"type": "NAVIGATE",
+		"location": "article"
+	}
 }

@@ -21,6 +21,10 @@ app.use(route.post('/login', function* () {
 
 }));
 
+app.use(route.get('/domains', function* () {
+    this.body={ domains: ['vie', 'shs']};
+}));
+
 app.use(route.get('/login_renater', function* () {
     this.redirect(`http://app?shib=cookie%3Dcookie&token=token&domains=vie&domains=shs&username=tester`);
 }));

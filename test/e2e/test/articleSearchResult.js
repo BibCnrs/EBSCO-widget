@@ -1,6 +1,6 @@
 import initialState from './articleSearchResult.json';
 
-describe('article Search result', function() {
+describe('articleSearchResult', function() {
 
     beforeEach(function (done) {
         browser.loadState(initialState);
@@ -35,6 +35,7 @@ describe('article Search result', function() {
         .assert.containsText('.pagination .current.page', '1')
         .assert.containsText('.pagination a.page', '2')
         .click('.pagination a.page')
+        .pause(300)
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.pagination .current.page', '2')
         .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 / 516730');

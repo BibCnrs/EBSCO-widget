@@ -15,7 +15,6 @@ describe('search middleware', function () {
                     term: 'searched term',
                     field: 'TI'
                 }],
-                domain: 'vie',
                 limiters: {
                     fullText: true,
                     publicationDate: {
@@ -34,7 +33,6 @@ describe('search middleware', function () {
             search: {
                 term: 'searched term',
                 field: 'TI',
-                domain: 'shs',
                 limiters: {}
             },
             searchResult: {
@@ -45,6 +43,13 @@ describe('search middleware', function () {
         },
         login: {
             token: 'token'
+        },
+        domains: {
+            all: ['vie, shs'],
+            available: ['vie, shs'],
+            article: 'vie',
+            publication: 'shs',
+            a2z: 'vie'
         }
     };
 
@@ -87,7 +92,7 @@ describe('search middleware', function () {
 
         assert.deepEqual(dispatchedAction, [
             actions.article.search(
-                `${state.url}/${state.article.search.domain}/article/search?queries=${encodeURIComponent(JSON.stringify(state.article.search.queries))}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
+                `${state.url}/${state.domains.article}/article/search?queries=${encodeURIComponent(JSON.stringify(state.article.search.queries))}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
                 state.login.token,
                 {
                     queries: [{ field: 'TI', term: 'searched term' }],
@@ -168,7 +173,7 @@ describe('search middleware', function () {
 
         assert.deepEqual(dispatchedAction, [
             actions.publication.search(
-                `${state.url}/${state.publication.search.domain}/publication/search?queries=${encodeURIComponent(JSON.stringify([{
+                `${state.url}/${state.domains.publication}/publication/search?queries=${encodeURIComponent(JSON.stringify([{
                     term: state.publication.search.term,
                     field: state.publication.search.field
                 }]))}&currentPage=3`,

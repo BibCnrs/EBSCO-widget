@@ -4,11 +4,10 @@
 			"queries": [{
 				"boolean": "AND",
 				"term": "",
-				"field": null
+				"field": null,
+				"key": "initial"
 			}],
 			"status": "NONE",
-			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
 			"limiters": {
 				"fullText": true,
 				"publicationDate": {
@@ -17,51 +16,105 @@
 				},
 				"peerReviewedArticle": false
 			},
-			"activeFacets": [],
+			"activeFacets": {},
 			"sort": "relevance"
 		},
 		"searchResult": {
 			"maxPage": 0,
+			"facets": [],
 			"dateRange": {
 				"min": 1000,
 				"max": 2017
 			}
 		},
-		"history": [],
-		"facets": {}
+		"history": [{
+			"queries": [{
+				"boolean": "AND",
+				"term": "aids",
+				"field": null,
+				"key": "initial"
+			}],
+			"domain": "vie",
+			"limiters": {
+				"fullText": true,
+				"publicationDate": {
+					"from": 1914,
+					"to": 1918
+				},
+				"peerReviewedArticle": false
+			},
+			"activeFacets": {},
+			"totalHits": 44
+		}, {
+			"queries": [{
+				"boolean": "AND",
+				"term": "phylloxera",
+				"field": null,
+				"key": "initial"
+			}],
+			"domain": "vie",
+			"limiters": {
+				"fullText": true,
+				"publicationDate": {
+					"from": null,
+					"to": null
+				},
+				"peerReviewedArticle": false
+			},
+			"activeFacets": {},
+			"totalHits": 1189
+		}]
 	},
 	"publication": {
 		"search": {
 			"term": "",
 			"field": null,
 			"status": "NONE",
-			"domain": "vie",
-			"availableDomains": ["vie", "shs"],
 			"limiters": {
 				"peerReviewedPublication": false
 			},
-			"activeFacets": [],
+			"activeFacets": {},
 			"sort": "relevance"
 		},
 		"searchResult": {
 			"maxPage": 0
+		}
+	},
+	"a2z": {
+		"search": {
+			"term": "",
+			"field": "JN",
+			"status": "NONE",
+			"sort": "title"
 		},
-		"facets": {}
+		"searchResult": {
+			"maxPage": 0
+		}
 	},
 	"login": {
-		"status": "SUCCESS",
-		"token": "token"
+		"status": "NONE",
+		"token": null
 	},
 	"userInterface": {
-		"language": "fr",
 		"limiterShown": true,
 		"loading": false,
 		"resultShown": false,
 		"historyShown": false,
 		"location": "publication",
 		"fullScreen": true,
-		"notice": null
+		"language": "fr",
+		"showLogin": false
 	},
-	"error": null,
-	"url": "http://server"
+	"error": {},
+	"url": "http://server",
+	"domains": {
+		"all": ["vie", "shs"],
+		"available": [],
+		"article": null,
+		"publication": "vie",
+		"a2z": "vie"
+	},
+	"pausedAction": {
+		"type": "NONE"
+	}
 }

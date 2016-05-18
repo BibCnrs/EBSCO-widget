@@ -1,6 +1,6 @@
 import initialState from './articleSearch.json';
 
-describe('articleSearch', function() {
+describe('simple articleSearch', function() {
 
     beforeEach(function (done) {
         browser.loadState(initialState);
