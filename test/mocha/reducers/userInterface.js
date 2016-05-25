@@ -1,6 +1,6 @@
 import {
     API_LOGIN_SUCCESS,
-    LOGIN,
+    LOGIN_SUCCESS,
     LOGOUT,
     LOADING,
     LOADED,
@@ -30,14 +30,14 @@ describe('reducers userInterface', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: LOGOUT }), defaultState);
     });
 
-    it('should return set location to article if action is LOGIN', function () {
-        assert.deepEqual(userInterface({ other: 'data' }, { type: LOGIN }), {
+    it('should return set showLogin to false if action is LOGIN_SUCCESS', function () {
+        assert.deepEqual(userInterface({ other: 'data' }, { type: LOGIN_SUCCESS }), {
             other: 'data',
             showLogin: false
         });
     });
 
-    it('should return set location to article if action is API_LOGIN_SUCCESS', function () {
+    it('should return set showLingi to false if action is API_LOGIN_SUCCESS', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: API_LOGIN_SUCCESS }), {
             other: 'data',
             showLogin: false

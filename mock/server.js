@@ -5,7 +5,7 @@ import cors from 'koa-cors';
 
 const app = koa();
 
-app.use(cors({origin: '*', methods: ['GET', 'POST', 'PUT', 'DELETE'], headers: ['Content-Type', 'Authorization']}));
+app.use(cors({ origin: (ctx) => ctx.get('origin'), methods: ['GET', 'POST', 'PUT', 'DELETE'], credentials: true, headers: ['Content-Type', 'Authorization'] }));
 
 app.use(route.post('/login', function* () {
     const { username, password} = yield cobody(this);
