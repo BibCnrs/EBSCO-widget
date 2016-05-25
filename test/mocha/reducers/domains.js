@@ -2,7 +2,7 @@ import {
     FETCH_DOMAINS_SUCCESS,
     FETCH_DOMAINS_ERROR,
     FETCH_DOMAINS_PENDING,
-    LOGIN,
+    LOGIN_SUCCESS,
     API_LOGIN_SUCCESS,
     LOGOUT,
     ARTICLE,
@@ -11,7 +11,7 @@ import {
 } from '../../../lib/actions';
 import domains from '../../../lib/reducers/domains';
 
-describe.only('reducer domains', function () {
+describe('reducer domains', function () {
     it('should set all to action.response, and publication ant a2z to action.response[0] when action is FETCH_DOMAINS_SUCCESS', function () {
         assert.deepEqual(domains({}, {
             type: FETCH_DOMAINS_SUCCESS,
@@ -40,10 +40,10 @@ describe.only('reducer domains', function () {
         });
     });
 
-    it('should set available to action.domains, and article to action.response.domains[0] when action is LOGIN', function () {
+    it('should set available to action.domains, and article to action.response.domains[0] when action is LOGIN_SUCCESS', function () {
         assert.deepEqual(domains({}, {
-            type: LOGIN,
-            domains: ['INSB', 'INSHS']
+            type: LOGIN_SUCCESS,
+            response: { domains: ['INSB', 'INSHS'] }
         }), {
             available: ['INSB', 'INSHS'],
             article: 'INSB'
