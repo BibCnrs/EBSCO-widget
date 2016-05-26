@@ -2,60 +2,7 @@ import { ArticleLink } from '../../../lib/components/ArticleLink';
 
 describe('ArticleLink', function () {
 
-    it('should display a "Ouvrir l\'article" button if there is one link', function () {
-        const props = {
-            link: [
-                'http://linkToArticle.com'
-            ],
-            url: 'http://host',
-            domain: 'vie',
-            dbId: 'id',
-            an: '1234',
-            token: 'token',
-            index: 1,
-            retrieveLink: () => null
-        };
-        const component = enzyme.shallow(<ArticleLink { ...props } />);
-
-        const button = component.find('BibButton');
-        assert.equal(button.props().label, 'Ouvrir l\'article');
-        assert.isFalse(button.props().disabled);
-
-        const select = component.find('Select');
-        assert.equal(select.length, 0);
-
-        const fetchButton = component.find('FetchButton');
-        assert.equal(fetchButton.length, 0);
-    });
-
-    it('should display an empty span if thereis no link', function () {
-        const props = {
-            link: null,
-            url: 'http://host',
-            domain: 'vie',
-            dbId: 'id',
-            an: '1234',
-            token: 'token',
-            index: 1,
-            retrieveLink: () => null
-        };
-        const component = enzyme.shallow(<ArticleLink { ...props } />);
-
-        const span = component.find('span');
-        assert.deepEqual(span.props(), {});
-        assert.equal(span.text(), '');
-
-        const bibButton = component.find('BibButton');
-        assert.equal(bibButton.length, 0);
-
-        const select = component.find('Select');
-        assert.equal(select.length, 0);
-
-        const fetchButton = component.find('FetchButton');
-        assert.equal(fetchButton.length, 0);
-    });
-
-    it('should display a "Accéder à l\'article (2)" select if there is more than one link', function () {
+    it('should display a "Résolveur de lien" SelectButton if there is link', function () {
         const props = {
             link: [
                 'http://link1ToArticle.com',
@@ -71,26 +18,14 @@ describe('ArticleLink', function () {
         };
         const component = enzyme.shallow(<ArticleLink { ...props } />);
 
-        const select = component.find('Select');
-        assert.equal(select.props().placeholder, 'Accéder à l\'article (2)');
-        assert.deepEqual(select.props().options, [{
-            label: `Ouvrir l'article ${1}`,
-            value: 'http://link1ToArticle.com'
-        }, {
-            label: `Ouvrir l'article ${2}`,
-            value: 'http://link2ToArticle.com'
-        }]);
-
-        const button = component.find('BibButton');
-        assert.equal(button.length, 0);
-
-        const fetchButton = component.find('FetchButton');
-        assert.equal(fetchButton.length, 0);
+        const button = component.find('SelectButton');
+        assert.equal(button.props().value, 'Résolveur de lien');
+        assert.deepEqual(button.props().choices, [{ label: 'lien 1', value: 'http://link1ToArticle.com' }, { label: 'lien 2', value: 'http://link2ToArticle.com' }]);
     });
 
-    it('should display a "Accéder à l\'article" FetchButton if link is pdflink', function () {
+    it('should display a "Résolveur de lien" with a spinner as it single item if link is not an array', function () {
         const props = {
-            link: 'pdflink',
+            link: null,
             url: 'http://host',
             domain: 'vie',
             dbId: 'id',
@@ -101,11 +36,28 @@ describe('ArticleLink', function () {
         };
         const component = enzyme.shallow(<ArticleLink { ...props } />);
 
-        const fetchButton = component.find('FetchButton');
-        assert.equal(fetchButton.props().label, 'Accéder à l\'article');
-        const select = component.find('Select');
-        assert.equal(select.length, 0);
-        const button = component.find('BibButton');
+        const button = component.find('SelectButton');
+        assert.equal(button.props().value, 'Résolveur de lien');
+        const choices = button.props().choices;
+        assert.equal(choices.length, 1);
+        assert.isNull(choices[0].value);
+    });
+
+    it('should not display SelectButton if link is an empty array', function () {
+        const props = {
+            link: [],
+            url: 'http://host',
+            domain: 'vie',
+            dbId: 'id',
+            an: '1234',
+            token: 'token',
+            index: 1,
+            retrieveLink: () => null
+        };
+        const component = enzyme.shallow(<ArticleLink { ...props } />);
+
+        const button = component.find('SelectButton');
         assert.equal(button.length, 0);
     });
+
 });
