@@ -1,7 +1,7 @@
 import { authentication } from '../../../lib/middlewares/authentication';
 import actions, {
     NAVIGATE,
-    LOGIN,
+    LOGIN_SUCCESS,
     API_LOGIN_SUCCESS,
     A2Z,
     PUBLICATION
@@ -112,7 +112,7 @@ describe('authentication middleware', function () {
 
         it('should trigger itself and the paused action action is LOGIN', function () {
             const action = {
-                type: LOGIN
+                type: LOGIN_SUCCESS
             };
             authentication(store, next, action);
             assert.deepEqual(nextAction, [
