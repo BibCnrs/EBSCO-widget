@@ -50,11 +50,7 @@
 			"field": "JN",
 			"status": "PENDING",
 			"sort": "title",
-			"queries": [{
-				"term": "G*",
-				"field": "JN",
-				"boolean": "AND"
-			}]
+			"firstLetter": "G"
 		},
 		"searchResult": {
 			"1": [{

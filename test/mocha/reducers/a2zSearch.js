@@ -8,14 +8,15 @@ import {
 
 describe('reducers a2zSearch', function () {
 
-    it('should set queries to Action.queries when action is A2Z_SEARCH_TERM', function () {
+    it('should set firstLetter and secondLetter to Action.firstLetter and action.secondLetter when action is A2Z_SEARCH_TERM', function () {
         const searchState = a2zSearch(
             { status: 'NONE' },
-            { type: SEARCH_TERM, queries: ['queries'] }
+            { type: SEARCH_TERM, firstLetter: 'A', secondLetter: 'Z' }
         );
         assert.deepEqual(searchState, {
             status: 'NONE',
-            queries: ['queries']
+            firstLetter: 'A',
+            secondLetter: 'Z'
         });
 
     });

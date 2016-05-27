@@ -1,4 +1,6 @@
-import { search } from '../../../lib/middlewares/search';
+import _ from 'lodash';
+
+import { search, getQueries, getTerms } from '../../../lib/middlewares/search';
 import actions, {
     ARTICLE,
     PUBLICATION,
@@ -228,5 +230,72 @@ describe('search middleware', function () {
         search(store, next, action);
         assert.deepEqual(nextAction, [action]);
         assert.deepEqual(dispatchedAction, []);
+    });
+
+    describe('getQueries', function () {
+
+        it('should return state.article.search.queries if type is article', function () {
+            const queries = [{ term: 'aids', field: 'TI'}];
+            const state = {
+                article: {
+                    search: {
+                        queries
+                    }
+                }
+            };
+            assert.deepEqual(getQueries('article', state), queries);
+        });
+
+        it('should returnqueries based on state.publication.search.term and state.publication.search.field if type is publication', function () {
+            const state = {
+                publication: {
+                    search: {
+                        term: 'aids',
+                        field: 'TI'
+                    }
+                }
+            };
+            assert.deepEqual(getQueries('publication', state), [{ term: 'aids', field: 'TI'}]);
+        });
+
+        it('should return state.a2z.search.term and state.publication.search.field as queries if type is a2z', function () {
+            const state = {
+                a2z: {
+                    search: {
+                        firstLetter: 'A',
+                        secondLetter: 'B',
+                        field: 'JN'
+                    }
+                }
+            };
+            assert.deepEqual(getQueries('a2z', state), [{ term: 'AB*', field: 'JN', boolean: 'OR' }]);
+        });
+
+    });
+
+    describe('getTerms', function () {
+        it('should compute term based on firstLeter and second letter', function () {
+            assert.deepEqual(getTerms('A', 'B'), ['AB*']);
+        });
+
+        it('should return "" if no firstLetter', function () {
+            assert.deepEqual(getTerms('', 'B'), ['']);
+        });
+
+        it('should ignore secondLetter if there is none', function () {
+            assert.deepEqual(getTerms('A', ''), ['A*']);
+        });
+
+        it('should return all digit if first letter is #', function () {
+            assert.deepEqual(getTerms('#', ''), _.range(10).map(i => `${i}*`));
+        });
+
+        it('should return all digit if secondLetter letter is #', function () {
+            assert.deepEqual(getTerms('B', '#'), _.range(10).map(i => `B${i}*`));
+        });
+
+        it('should return all digit combination if first and second letter are #', function () {
+            assert.deepEqual(getTerms('#', '#'), _.range(100).map(i => `${i < 10 ? `0${i}` : i}*`));
+        });
     });
 });
