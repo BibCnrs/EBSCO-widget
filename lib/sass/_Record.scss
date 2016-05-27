@@ -14,9 +14,13 @@
             cursor: pointer;
         }
     }
+    .article-link, .show-notice {
+        margin: 10px;
+    }
     .fulltext-holdings {
         list-style-type: none;
     }
+
     .notice {
         dt {
             display: block;
