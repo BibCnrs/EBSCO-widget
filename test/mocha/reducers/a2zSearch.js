@@ -3,7 +3,8 @@ import a2zSearch, { defaultState } from '../../../lib/reducers/a2zSearch';
 import {
     SEARCH_TERM,
     SEARCH_PENDING,
-    SEARCH_ERROR
+    SEARCH_ERROR,
+    CHANGE_RESULTS_PER_PAGE
 } from '../../../lib/actions/a2z';
 
 describe('reducers a2zSearch', function () {
@@ -19,6 +20,17 @@ describe('reducers a2zSearch', function () {
             secondLetter: 'Z'
         });
 
+    });
+
+    it('should set resultsPerPage to Action.nbResults when action is A2Z_CHANGE_RESULTS_PER_PAGE', function () {
+        const searchState = a2zSearch(
+            { status: 'NONE' },
+            { type: CHANGE_RESULTS_PER_PAGE, nbResults: 50 }
+        );
+        assert.deepEqual(searchState, {
+            status: 'NONE',
+            resultsPerPage: 50
+        });
     });
 
     it('should return PENDING if action is ARTICLE_SEARCH_PENDING', function () {
@@ -40,5 +52,13 @@ describe('reducers a2zSearch', function () {
         assert.deepEqual(searchState, {
             status: 'DONE'
         });
+    });
+
+    it('should return defaultState when no previous state', function () {
+        const searchState = a2zSearch(
+            undefined,
+            { type: 'WHATEVER' }
+        );
+        assert.deepEqual(searchState, defaultState);
     });
 });

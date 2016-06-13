@@ -34,6 +34,7 @@ describe('reducers publicationSearchResult', function () {
         const actionTypes = [
             PUBLICATION.SEARCH_TERM,
             PUBLICATION.LIMIT_SEARCH,
+            PUBLICATION.CHANGE_RESULTS_PER_PAGE,
             LOGOUT
         ];
 

@@ -15,7 +15,8 @@ const {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
     CHANGE_SORT,
-    LINKED_SEARCH
+    LINKED_SEARCH,
+    CHANGE_RESULTS_PER_PAGE
 } = ARTICLE;
 
 describe('reducers articleSearch', function () {
@@ -59,6 +60,17 @@ describe('reducers articleSearch', function () {
         );
         assert.deepEqual(searchState, {
             status: 'DONE'
+        });
+    });
+
+    it('should set resultsPerPage to action.nbResults if action is ARTICLE_CHANGE_RESULTS_PER_PAGE', function () {
+        const searchState = articleSearch(
+            { status: 'NONE' },
+            { type: CHANGE_RESULTS_PER_PAGE, nbResults: 50 }
+        );
+        assert.deepEqual(searchState, {
+            status: 'NONE',
+            resultsPerPage: 50
         });
     });
 
@@ -155,7 +167,8 @@ describe('reducers articleSearch', function () {
             availableDomains: [],
             limiters: defaultLimiters,
             activeFacets: defaultActiveFacets,
-            sort: 'relevance'
+            sort: 'relevance',
+            resultsPerPage: 20
         });
     });
 });

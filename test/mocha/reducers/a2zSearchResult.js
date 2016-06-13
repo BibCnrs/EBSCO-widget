@@ -9,7 +9,8 @@ import {
 const {
     SEARCH_TERM,
     SEARCH_SUCCESS,
-    PAGE_LOAD
+    PAGE_LOAD,
+    CHANGE_RESULTS_PER_PAGE
 } = A2Z;
 
 describe('reducers a2zSearchResult', function () {
@@ -54,6 +55,18 @@ describe('reducers a2zSearchResult', function () {
                 2: ['results data'],
                 currentPage: 2
             }, { type: LOGOUT }),
+            defaultState
+        );
+    });
+
+    it('should return default state if action is A2Z_CHANGE_RESULTS_PER_PAGE', function () {
+        assert.deepEqual(
+            a2zSearchResult({
+                maxPage: 10,
+                totalHits: 200,
+                2: ['results data'],
+                currentPage: 2
+            }, { type: CHANGE_RESULTS_PER_PAGE }),
             defaultState
         );
     });
