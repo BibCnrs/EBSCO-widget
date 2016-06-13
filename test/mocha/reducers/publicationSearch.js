@@ -8,7 +8,8 @@ import {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
     CHANGE_SORT,
-    CHANGE_FIELD
+    CHANGE_FIELD,
+    CHANGE_RESULTS_PER_PAGE
 } from '../../../lib/actions/publication';
 
 describe('reducers publicationSearch', function () {
@@ -55,6 +56,14 @@ describe('reducers publicationSearch', function () {
         });
     });
 
+    it('should set resultsPerPage to action.nbResults if action is PUBLICATION_CHANGE_RESULTS_PER_PAGE', function () {
+        const searchState = publicationSearch(
+            { status: 'state' },
+            { type: CHANGE_RESULTS_PER_PAGE, nbResults: 50 }
+        );
+        assert.deepEqual(searchState, { status: 'state', resultsPerPage: 50 });
+    });
+
     it('should update term with action.term if action is PUBLICATION_CHANGE_TERM', function () {
         const searchState = publicationSearch(
             { status: 'state' },
@@ -97,7 +106,8 @@ describe('reducers publicationSearch', function () {
             status: 'NONE',
             limiters: defaultLimiters,
             activeFacets: defaultActiveFacets,
-            sort: 'relevance'
+            sort: 'relevance',
+            resultsPerPage: 20
         });
     });
 });

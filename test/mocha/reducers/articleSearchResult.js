@@ -47,6 +47,7 @@ describe('reducers articleSearchResult', function () {
         const actionTypes = [
             ARTICLE.SEARCH_TERM,
             ARTICLE.LIMIT_SEARCH,
+            ARTICLE.CHANGE_RESULTS_PER_PAGE,
             RELOAD_HISTORY,
             LOGOUT
         ];
