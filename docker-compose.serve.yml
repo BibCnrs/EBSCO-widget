@@ -2,6 +2,9 @@ server:
   image: cannin/nodejs-http-server
   volumes:
     - ./build:/public
+    - ./node_modules:/public/node_modules
+  environment:
+    server_url: http://localhost:3000/ebsco
   working_dir: /public
   ports:
     - 3002:8080
