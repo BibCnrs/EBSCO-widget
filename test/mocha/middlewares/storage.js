@@ -2,13 +2,13 @@ import { storage } from '../../../lib/middlewares/storage';
 import {
     ARTICLE,
     DELETE_HISTORY,
-    LOGIN,
+    LOGIN_SUCCESS,
+    API_LOGIN_SUCCESS,
     LOGOUT
 } from '../../../lib/actions';
 
 const {
-    SEARCH_SUCCESS,
-    DOMAIN_CHANGE
+    SEARCH_SUCCESS
 } = ARTICLE;
 
 describe('storage middleware', function () {
@@ -89,9 +89,30 @@ describe('storage middleware', function () {
 
     it('should save username domain and availableDomains in sessionStorage on LOGIN_SUCCESS', function () {
         const action = {
-            type: LOGIN,
-            username: 'john',
-            domains: ['INSB', 'INSHS']
+            type: LOGIN_SUCCESS,
+            response: {
+                username: 'john',
+                domains: ['INSB', 'INSHS']
+            }
+        };
+
+        storage(store, next, action);
+        assert.deepEqual(nextAction, [action]);
+        assert.deepEqual(dispatchedAction, []);
+        assert.deepEqual(sessionStorage, {
+            EBSCO_WIDGET_username: '"john"',
+            EBSCO_WIDGET_domain: '"INSB"',
+            EBSCO_WIDGET_availableDomains: '["INSB","INSHS"]'
+        });
+    });
+
+    it('should save username domain and availableDomains in sessionStorage on API_LOGIN_SUCCESS', function () {
+        const action = {
+            type: API_LOGIN_SUCCESS,
+            response: {
+                username: 'john',
+                domains: ['INSB', 'INSHS']
+            }
         };
 
         storage(store, next, action);
@@ -119,26 +140,5 @@ describe('storage middleware', function () {
         assert.deepEqual(nextAction, [action]);
         assert.deepEqual(dispatchedAction, []);
         assert.deepEqual(sessionStorage, {});
-    });
-
-    it('should save action.domain in sessionStorage.domain on ARTICLE_DOMAIN_CHANGE', function () {
-        sessionStorage = {
-            EBSCO_WIDGET_username: '"john"',
-            EBSCO_WIDGET_domain: '"INSB"',
-            EBSCO_WIDGET_availableDomains: '["INSB","INSHS"]'
-        };
-        const action = {
-            type: DOMAIN_CHANGE,
-            domain: 'INSHS'
-        };
-
-        storage(store, next, action);
-        assert.deepEqual(nextAction, [action]);
-        assert.deepEqual(dispatchedAction, []);
-        assert.deepEqual(sessionStorage, {
-            EBSCO_WIDGET_username: '"john"',
-            EBSCO_WIDGET_domain: '"INSHS"',
-            EBSCO_WIDGET_availableDomains: '["INSB","INSHS"]'
-        });
     });
 });
