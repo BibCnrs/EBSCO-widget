@@ -7,12 +7,14 @@
   </head>
   <body>
     <div id="ebsco_widget" style="border:solid #BBBBBB 1px; position: absolute; top: 20px; bottom: 300px; left: 200px; right: 200px; overflow: auto;"></div>
+    <script src="node_modules/react/dist/react-with-addons.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
     <script>
 'use strict';
 document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
         var rootElement = document.getElementById('ebsco_widget');
-        window.ReactDom.render(React.createElement(window.EbscoWidget, { url: window.__SERVER_URL__, dbUrl: 'http://google.fr' }), rootElement);
+        window.ReactDOM.render(React.createElement(window.EbscoWidget, { url: window.__SERVER_URL__, dbUrl: 'http://google.fr' }), rootElement);
     }
 };
     </script>

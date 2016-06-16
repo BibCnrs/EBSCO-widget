@@ -68,5 +68,10 @@ module.exports = {
         new ExtractTextPlugin('build/app.css', {
             allChunks: true
         })
-    ]
+    ],
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'react-addons-css-transition-group': 'React.addons.CSSTransitionGroup'
+    }
 };
