@@ -72,6 +72,7 @@ module.exports = {
     externals: {
         'react': 'React',
         'react-dom': 'ReactDOM',
-        'react-addons-css-transition-group': 'React.addons.CSSTransitionGroup'
+        'react-addons-css-transition-group': 'React.addons.CSSTransitionGroup',
+        'babel-polyfill': '_babelPolyfill'
     }
 };
