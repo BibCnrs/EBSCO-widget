@@ -34,4 +34,10 @@ describe('reducers selectedRecord', function () {
             assert.isFalse(isSelected({ category: [1, 3]}, 'category', 2));
         });
     });
+
+    describe('getSelected', function () {
+        it('should return the list of selected id for the given category', function () {
+            assert.deepEqual(getSelected({ category: [1, 2, 3]}, 'category'), [1, 2, 3]);
+        });
+    });
 });

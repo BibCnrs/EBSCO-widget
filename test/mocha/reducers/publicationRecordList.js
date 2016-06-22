@@ -1,12 +1,9 @@
 import publicationRecordList from '../../../lib/reducers/publicationRecordList';
-import publicationRecord from '../../../lib/reducers/publicationRecord';
 
 import {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
-    SEARCH_PENDING,
-    RETRIEVE_SUCCESS,
-    SHOW_NOTICE
+    SEARCH_PENDING
 } from '../../../lib/actions/publication';
 
 describe('reducers publicationRecordList', function () {
@@ -49,66 +46,6 @@ describe('reducers publicationRecordList', function () {
 
     it ('should return empty array if action type is SEARCH_PENDING', function () {
         assert.deepEqual(publicationRecordList(resultList, { type: SEARCH_PENDING }), []);
-    });
-
-    it('should pass action RETRIEVE_SUCCESS with an publicationIndex to publicationRecord', function () {
-        const retrieveLinkAction = {
-            type: RETRIEVE_SUCCESS,
-            response: 'notice content',
-            publicationIndex: 2
-        };
-        assert.deepEqual(publicationRecordList(resultList, retrieveLinkAction), [
-            ...resultList.slice(0, 2),
-            publicationRecord(resultList[2], retrieveLinkAction),
-            ...resultList.slice(3)
-        ]);
-    });
-
-    it('should ignore action RETRIEVE_SUCCESS if no publicationIndex', function () {
-        const retrieveLinkAction = {
-            type: RETRIEVE_SUCCESS,
-            response: 'notice content'
-        };
-        assert.deepEqual(publicationRecordList(resultList, retrieveLinkAction), resultList);
-    });
-
-    it('should ignore action RETRIEVE_SUCCESS if there is no publication at state[publicationIndex]', function () {
-        const retrieveLinkAction = {
-            type: RETRIEVE_SUCCESS,
-            response: 'notice content',
-            publicationIndex: 3
-        };
-        assert.deepEqual(publicationRecordList(resultList, retrieveLinkAction), resultList);
-    });
-
-    it('should pass action SHOW_NOTICE with an publicationIndex to publicationRecord', function () {
-        const retrieveLinkAction = {
-            type: SHOW_NOTICE,
-            visibility: true,
-            publicationIndex: 2
-        };
-        assert.deepEqual(publicationRecordList(resultList, retrieveLinkAction), [
-            ...resultList.slice(0, 2),
-            publicationRecord(resultList[2], retrieveLinkAction),
-            ...resultList.slice(3)
-        ]);
-    });
-
-    it('should ignore action SHOW_NOTICE if  no publicationIndex', function () {
-        const retrieveLinkAction = {
-            type: SHOW_NOTICE,
-            visibility: true
-        };
-        assert.deepEqual(publicationRecordList(resultList, retrieveLinkAction), resultList);
-    });
-
-    it('should ignore action SHOW_NOTICE if there is no publication at state[publicationIndex]', function () {
-        const retrieveLinkAction = {
-            type: SHOW_NOTICE,
-            visibility: true,
-            publicationIndex: 3
-        };
-        assert.deepEqual(publicationRecordList(resultList, retrieveLinkAction), resultList);
     });
 
     it('should ignore OTHER_ACTION_TYPE with publicationIndex', function () {

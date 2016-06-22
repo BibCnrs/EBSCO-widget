@@ -3,8 +3,7 @@ import actions, {
     NAVIGATE,
     LOGIN_SUCCESS,
     API_LOGIN_SUCCESS,
-    A2Z,
-    PUBLICATION
+    SHOW_NOTICE
 } from '../../../lib/actions';
 
 describe('authentication middleware', function () {
@@ -36,8 +35,8 @@ describe('authentication middleware', function () {
                 a2z: 'INSB'
             }
         };
-        const actions = [ NAVIGATE, PUBLICATION.SHOW_NOTICE, A2Z.SHOW_NOTICE ]
-        .map(type => ({ type }));
+        const actions = [ NAVIGATE, SHOW_NOTICE ]
+        .map(type => ({ type, category: 'a2z' }));
 
         actions.forEach(action => {
             authentication(store, next, action);
@@ -88,20 +87,10 @@ describe('authentication middleware', function () {
             ]);
         });
 
-        it('should trigger SHOW_LOGIN and pause action if it is PUBLICATION.SHOW_NOTICE', function () {
+        it('should trigger SHOW_LOGIN and pause action if it is SHOW_NOTICE', function () {
             const action = {
-                type: PUBLICATION.SHOW_NOTICE
-            };
-            authentication(store, next, action);
-            assert.deepEqual(nextAction, [
-                actions.pauseAction(action),
-                actions.showLogin()
-            ]);
-        });
-
-        it('should trigger SHOW_LOGIN and pause action if it is A2Z.SHOW_NOTICE', function () {
-            const action = {
-                type: A2Z.SHOW_NOTICE
+                type: SHOW_NOTICE,
+                category: 'a2z'
             };
             authentication(store, next, action);
             assert.deepEqual(nextAction, [
@@ -153,19 +142,10 @@ describe('authentication middleware', function () {
             };
         });
 
-        it('should trigger ACCESS_ERROR if it is PUBLICATION.SHOW_NOTICE', function () {
+        it('should trigger ACCESS_ERROR if it is SHOW_NOTICE', function () {
             const action = {
-                type: PUBLICATION.SHOW_NOTICE
-            };
-            authentication(store, next, action);
-            assert.deepEqual(nextAction, [
-                actions.forbidAccess('unavailable')
-            ]);
-        });
-
-        it('should trigger ACCESS_ERROR if it is A2Z.SHOW_NOTICE', function () {
-            const action = {
-                type: A2Z.SHOW_NOTICE
+                type: SHOW_NOTICE,
+                category: 'a2z'
             };
             authentication(store, next, action);
             assert.deepEqual(nextAction, [
