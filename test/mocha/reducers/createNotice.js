@@ -5,7 +5,7 @@ import {
     SHOW_NOTICE
 } from '../../../lib/actions';
 
-describe.only('notice', function () {
+describe('createNotice', function () {
     let categoryNotice;
 
     before(function () {
