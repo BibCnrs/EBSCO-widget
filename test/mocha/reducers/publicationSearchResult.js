@@ -1,5 +1,4 @@
 import publicationSearchResult, { defaultState } from '../../../lib/reducers/publicationSearchResult';
-import publicationRecordList from '../../../lib/reducers/publicationRecordList';
 
 import {
     PUBLICATION,
@@ -68,24 +67,6 @@ describe('reducers publicationSearchResult', function () {
                 type: 'OTHER_ACTION'
             }),
             { some: 'state' }
-        );
-    });
-
-    it('should pass action to publicationRecordList if state has currentPage set', function () {
-        const action = {
-            type: 'OTHER_ACTION'
-        };
-        const state = {
-            some: 'state',
-            currentPage: 7
-        };
-        assert.deepEqual(
-            publicationSearchResult(state, action),
-            {
-                some: 'state',
-                currentPage: 7,
-                '7': publicationRecordList(state[7], action)
-            }
         );
     });
 

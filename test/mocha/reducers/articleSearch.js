@@ -32,7 +32,7 @@ describe('reducers articleSearch', function () {
         });
     });
 
-    it('should return DONE and set activeFacets to action.response.activeFacets if action is ARTICLE_SEARCH_SUCCESS', function () {
+    it('should return DONE and set activeFacets and dateRange if action is ARTICLE_SEARCH_SUCCESS', function () {
         const searchState = articleSearch(
             { status: 'NONE', term: 'aids', activeFacets: {} },
             {
@@ -40,6 +40,10 @@ describe('reducers articleSearch', function () {
                 response: {
                     activeFacets: {
                         Language: ['french']
+                    },
+                    dateRange: {
+                        min: 1515,
+                        max: 2015
                     }
                 }
             }
@@ -49,6 +53,10 @@ describe('reducers articleSearch', function () {
             term: 'aids',
             activeFacets: {
                 Language: ['french']
+            },
+            dateRange: {
+                min: 1515,
+                max: 2015
             }
         });
     });
@@ -167,6 +175,10 @@ describe('reducers articleSearch', function () {
             availableDomains: [],
             limiters: defaultLimiters,
             activeFacets: defaultActiveFacets,
+            dateRange: {
+                min: 1000,
+                max: new Date().getFullYear() + 1
+            },
             sort: 'relevance',
             resultsPerPage: 20
         });

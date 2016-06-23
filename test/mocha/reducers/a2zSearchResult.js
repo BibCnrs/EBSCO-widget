@@ -1,5 +1,4 @@
 import a2zSearchResult, { defaultState } from '../../../lib/reducers/a2zSearchResult';
-import a2zRecordList from '../../../lib/reducers/a2zRecordList';
 
 import {
     LOGOUT,
@@ -90,24 +89,6 @@ describe('reducers a2zSearchResult', function () {
                 type: 'OTHER_ACTION'
             }),
             { some: 'state' }
-        );
-    });
-
-    it('should pass action to a2zRecordList if state has currentPage set', function () {
-        const action = {
-            type: 'OTHER_ACTION'
-        };
-        const state = {
-            some: 'state',
-            currentPage: 7
-        };
-        assert.deepEqual(
-            a2zSearchResult(state, action),
-            {
-                some: 'state',
-                currentPage: 7,
-                '7': a2zRecordList(state[7], action)
-            }
         );
     });
 

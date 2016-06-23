@@ -1,5 +1,4 @@
 import articleSearchResult, { defaultState } from '../../../lib/reducers/articleSearchResult';
-import articleRecordList from '../../../lib/reducers/articleRecordList';
 
 import {
     ARTICLE,
@@ -21,11 +20,7 @@ describe('reducers articleSearchResult', function () {
                     totalHits: 200,
                     results: ['results data'],
                     facets: ['facet1', 'facet2'],
-                    currentPage: 2,
-                    dateRange: {
-                        min: 1515,
-                        max: 2015
-                    }
+                    currentPage: 2
                 }
             }),
             {
@@ -34,11 +29,7 @@ describe('reducers articleSearchResult', function () {
                 1: 'other page',
                 2: ['results data'],
                 facets: ['facet1', 'facet2'],
-                currentPage: 2,
-                dateRange: {
-                    min: 1515,
-                    max: 2015
-                }
+                currentPage: 2
             }
         );
     });
@@ -82,24 +73,6 @@ describe('reducers articleSearchResult', function () {
                 type: 'OTHER_ACTION'
             }),
             { some: 'state' }
-        );
-    });
-
-    it('should pass action to articleRecordList if state has currentPage set', function () {
-        const action = {
-            type: 'OTHER_ACTION'
-        };
-        const state = {
-            some: 'state',
-            currentPage: 7
-        };
-        assert.deepEqual(
-            articleSearchResult(state, action),
-            {
-                some: 'state',
-                currentPage: 7,
-                '7': articleRecordList(state[7], action)
-            }
         );
     });
 
