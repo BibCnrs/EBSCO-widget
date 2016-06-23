@@ -5,7 +5,7 @@ import {
     SEARCH_PENDING,
     SEARCH_ERROR,
     CHANGE_RESULTS_PER_PAGE
-} from '../../../lib/actions/a2z';
+} from '../../../lib/actions';
 
 describe('reducers a2zSearch', function () {
 
