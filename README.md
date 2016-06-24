@@ -32,7 +32,7 @@ document.onreadystatechange = function () {
 ### dépendance:
     `make install`
 ### serveur de développement
-Lancer webpack dev server: `make dev`
+Lancer webpack dev server: `make run-dev`
 Ensuite aller sur `localhost:3001/webpack-dev-server`
 Il est possible d'ajouter `?debug_session=<name>` pour créer une session qui sauvegardera l'état du widget' dans le localstorage.
 Il est également  nécessaire d'avoir BibApi de lancer sur  localhost:3000
