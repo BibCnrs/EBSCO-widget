@@ -1,57 +1,72 @@
-import publicationSearchResult, { defaultState } from '../../../lib/reducers/publicationSearchResult';
+import createSearchResult, { defaultState } from '../../../lib/reducers/createSearchResult';
 
 import {
-    PUBLICATION,
+    SEARCH_SUCCESS,
+    SEARCH_TERM,
+    LIMIT_SEARCH,
+    PAGE_LOAD,
+    CHANGE_RESULTS_PER_PAGE,
+    RELOAD_HISTORY,
     LOGOUT
 } from '../../../lib/actions';
 
-describe('reducers publicationSearchResult', function () {
+describe('reducers createSearchResult', function () {
+    let categorySearchResult;
+
+    before(function () {
+        categorySearchResult = createSearchResult('category');
+    });
 
     it('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
-            publicationSearchResult({ maxPage: 0 }, {
-                type: PUBLICATION.SEARCH_SUCCESS,
+            categorySearchResult({
+                maxPage: 0,
+                1: 'other page'
+            }, {
+                type: SEARCH_SUCCESS,
+                category: 'category',
                 response: {
                     maxPage: 10,
                     totalHits: 200,
                     results: ['results data'],
-                    facets: ['facet1', 'facet2'],
                     currentPage: 2
                 }
             }),
             {
                 maxPage: 10,
                 totalHits: 200,
+                1: 'other page',
                 2: ['results data'],
-                facets: ['facet1', 'facet2'],
                 currentPage: 2
             }
         );
     });
 
-    it('should return default state if action is PUBLICATION_SEARCH_TERM, PUBLICATION_LIMIT_SEARCH, LOGOUT or TRIGGER_EBSCO_ACTION', function () {
+    it('should return default state if action is ARTICLE_SEARCH_TERM, ARTICLE_LIMIT_SEARCH, RELOAD_HISTORY, LOGOUT or TRIGGER_EBSCO_ACTION', function () {
         const actionTypes = [
-            PUBLICATION.SEARCH_TERM,
-            PUBLICATION.LIMIT_SEARCH,
-            PUBLICATION.CHANGE_RESULTS_PER_PAGE,
+            SEARCH_TERM,
+            LIMIT_SEARCH,
+            CHANGE_RESULTS_PER_PAGE,
+            RELOAD_HISTORY,
             LOGOUT
         ];
 
         actionTypes.map((type) => assert.deepEqual(
-            publicationSearchResult({
+            categorySearchResult({
                 maxPage: 10,
                 totalHits: 200,
                 2: ['results data'],
                 currentPage: 2
-            }, { type }),
+            }, { type, category: 'category' }),
             defaultState
         ));
     });
 
     it('should set currentPage to action.page if action is PAGE_LOAD', function () {
         assert.deepEqual(
-            publicationSearchResult({ maxPage: 0 }, {
-                type: PUBLICATION.PAGE_LOAD,
+            categorySearchResult({ maxPage: 0 }, {
+                type: PAGE_LOAD,
+                category: 'category',
                 page: 7
             }),
             {
@@ -63,8 +78,9 @@ describe('reducers publicationSearchResult', function () {
 
     it('should return state on other action', function () {
         assert.deepEqual(
-            publicationSearchResult({ some: 'state' }, {
-                type: 'OTHER_ACTION'
+            categorySearchResult({ some: 'state' }, {
+                type: 'OTHER_ACTION',
+                category: 'category'
             }),
             { some: 'state' }
         );
