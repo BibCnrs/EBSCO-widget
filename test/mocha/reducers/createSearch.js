@@ -15,7 +15,7 @@ import {
     CHANGE_RESULTS_PER_PAGE
 } from '../../../lib/actions';
 
-describe.only('reducers createSearch', function () {
+describe('reducers createSearch', function () {
     let categorySearch;
 
     before(function () {
