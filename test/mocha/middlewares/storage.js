@@ -1,15 +1,11 @@
 import { storage } from '../../../lib/middlewares/storage';
 import {
-    ARTICLE,
+    SEARCH_SUCCESS,
     DELETE_HISTORY,
     LOGIN_SUCCESS,
     API_LOGIN_SUCCESS,
     LOGOUT
 } from '../../../lib/actions';
-
-const {
-    SEARCH_SUCCESS
-} = ARTICLE;
 
 describe('storage middleware', function () {
     let store, dispatchedAction, next, nextAction;
