@@ -2,17 +2,23 @@ import _ from 'lodash';
 
 import { search, getQueries, getTerms } from '../../../lib/middlewares/search';
 import actions, {
-    ARTICLE,
-    PUBLICATION,
-    RELOAD_HISTORY
+    PAGE_LOAD,
+    SEARCH_TERM,
+    SEARCH_LETTERS,
+    LIMIT_SEARCH,
+    APPLY_FACET,
+    CHANGE_RESULTS_PER_PAGE,
+    RELOAD_HISTORY,
+    CHANGE_SORT,
+    LINKED_SEARCH
 } from '../../../lib/actions';
 
 describe('search middleware', function () {
     let store, dispatchedAction, next, nextAction;
     const state = {
         url: 'http://apiroute',
-        article: {
-            search: {
+        search: {
+            article: {
                 queries: [{
                     term: 'searched term',
                     field: 'TI'
@@ -25,23 +31,19 @@ describe('search middleware', function () {
                     }
                 }
             },
-            searchResult: {
-                currentPage: 5
-            },
-            facets: {},
-            activeFacets: {}
-        },
-        publication: {
-            search: {
+            publication: {
                 term: 'searched term',
                 field: 'TI',
                 limiters: {}
+            }
+        },
+        searchResult: {
+            article: {
+                currentPage: 5
             },
-            searchResult: {
+            publication: {
                 currentPage: 3
-            },
-            facets: {},
-            activeFacets: {}
+            }
         },
         login: {
             token: 'token'
@@ -81,20 +83,22 @@ describe('search middleware', function () {
         assert.deepEqual(dispatchedAction, []);
     });
 
-    const testArticleType = (type) => {
+    const testType = (type) => {
         const action = {
-            type
+            type,
+            category: 'article'
         };
 
         search(store, next, action);
-        const { from, to } = state.article.search.limiters.publicationDate;
+        const { from, to } = state.search.article.limiters.publicationDate;
         assert.deepEqual(nextAction, [
             action
         ]);
 
         assert.deepEqual(dispatchedAction, [
-            actions.article.search(
-                `${state.url}/${state.domains.article}/article/search?queries=${encodeURIComponent(JSON.stringify(state.article.search.queries))}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
+            actions.search(
+                'article',
+                `${state.url}/${state.domains.article}/article/search?queries=${encodeURIComponent(JSON.stringify(state.search.article.queries))}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
                 state.login.token,
                 {
                     queries: [{ field: 'TI', term: 'searched term' }],
@@ -113,118 +117,59 @@ describe('search middleware', function () {
         ]);
     };
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_SEARCH_TERM', function () {
-        testArticleType(ARTICLE.SEARCH_TERM);
+    it('should trigger received action and SEARCH action with info gotten from store if it is SEARCH_TERM', function () {
+        testType(SEARCH_TERM);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_LIMIT_SEARCH', function () {
-        testArticleType(ARTICLE.LIMIT_SEARCH);
+    it('should trigger received action and SEARCH action with info gotten from store if it is LIMIT_SEARCH', function () {
+        testType(LIMIT_SEARCH);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_LIMIT_SEARCH', function () {
-        testArticleType(ARTICLE.APPLY_FACET);
+    it('should trigger received action and SEARCH action with info gotten from store if it is LIMIT_SEARCH', function () {
+        testType(APPLY_FACET);
     });
 
     it('should trigger received action and SEARCH action with info gotten from store if it is RELOAD_HISTORY', function () {
-        testArticleType(RELOAD_HISTORY);
+        testType(RELOAD_HISTORY);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_LINKED_SEARCH', function () {
-        testArticleType(ARTICLE.LINKED_SEARCH);
+    it('should trigger received action and SEARCH action with info gotten from store if it is LINKED_SEARCH', function () {
+        testType(LINKED_SEARCH);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_CHANGE_SORT', function () {
-        testArticleType(ARTICLE.CHANGE_SORT);
+    it('should trigger received action and SEARCH action with info gotten from store if it is CHANGE_SORT', function () {
+        testType(CHANGE_SORT);
     });
 
-    it('should trigger received action and SEARCH action with info gotten from store if it is ARTICLE_PAGE_LOAD', function () {
-        testArticleType(ARTICLE.PAGE_LOAD);
+    it('should trigger received action and SEARCH action with info gotten from store if it is PAGE_LOAD', function () {
+        testType(PAGE_LOAD);
+    });
+
+    it('should trigger received action and SEARCH action with info gotten from store if it is CHANGE_RESULTS_PER_PAGE', function () {
+        testType(CHANGE_RESULTS_PER_PAGE);
     });
 
 
-    it('should not trigger received action if it is ARTICLE_PAGE_LOAD and the currentPage is in the store', function () {
+    it('should trigger received action and SEARCH action with info gotten from store if it is CHANGE_RESULTS_PER_PAGE', function () {
+        testType(SEARCH_LETTERS);
+    });
+
+
+    it('should not trigger received action if it is PAGE_LOAD and the currentPage is in the store', function () {
         store.getState = () => ({
             ...state,
-            article: {
-                ...state.article,
-                searchResult: {
+            searchResult: {
+                ...state.searchResult,
+                article: {
                     currentPage: 5,
                     5: { page: 'data' }
                 }
             }
         });
         const action = {
-            type: ARTICLE.PAGE_LOAD,
+            type: PAGE_LOAD,
+            category: 'article',
             page: 5
-        };
-
-        search(store, next, action);
-        assert.deepEqual(nextAction, [action]);
-        assert.deepEqual(dispatchedAction, []);
-    });
-
-    const testPublicationType = (type) => {
-        const action = {
-            type
-        };
-
-        search(store, next, action);
-        assert.deepEqual(nextAction, [
-            action
-        ]);
-
-        assert.deepEqual(dispatchedAction, [
-            actions.publication.search(
-                `${state.url}/${state.domains.publication}/publication/search?queries=${encodeURIComponent(JSON.stringify([{
-                    term: state.publication.search.term,
-                    field: state.publication.search.field
-                }]))}&currentPage=3`,
-                state.login.token,
-                {
-                    queries: [{ field: 'TI', term: 'searched term' }],
-                    domain: 'shs',
-                    activeFacets: undefined,
-                    action: undefined,
-                    limiters: {}
-                }
-            )
-        ]);
-    };
-
-    it('should trigger received action and SEARCH action with info gotten from store if it is PUBLICATION_SEARCH_TERM', function () {
-        testPublicationType(PUBLICATION.SEARCH_TERM);
-    });
-
-    it('should trigger received action and SEARCH action with info gotten from store if it is PUBLICATION_LIMIT_SEARCH', function () {
-        testPublicationType(PUBLICATION.LIMIT_SEARCH);
-    });
-
-    it('should trigger received action and SEARCH action with info gotten from store if it is PUBLICATION_LIMIT_SEARCH', function () {
-        testPublicationType(PUBLICATION.APPLY_FACET);
-    });
-
-    it('should trigger received action and SEARCH action with info gotten from store if it is PUBLICATION_CHANGE_SORT', function () {
-        testPublicationType(PUBLICATION.CHANGE_SORT);
-    });
-
-    it('should trigger received action and SEARCH action with info gotten from store if it is PUBLICATION_PAGE_LOAD', function () {
-        testPublicationType(PUBLICATION.PAGE_LOAD);
-    });
-
-    it('should not trigger if received action is PUBLICATION_PAGE_LOAD and the currentPage is in the store', function () {
-        store.getState = () => ({
-            ...state,
-            publication: {
-                ...state.publication,
-                searchResult: {
-                    currentPage: 3,
-                    3: { page: 'data' }
-                }
-            }
-        });
-        const action = {
-            type: PUBLICATION.PAGE_LOAD,
-            page: 3
         };
 
         search(store, next, action);
@@ -234,11 +179,11 @@ describe('search middleware', function () {
 
     describe('getQueries', function () {
 
-        it('should return state.article.search.queries if type is article', function () {
+        it('should return state.search.article.queries if type is article', function () {
             const queries = [{ term: 'aids', field: 'TI'}];
             const state = {
-                article: {
-                    search: {
+                search: {
+                    article: {
                         queries
                     }
                 }
@@ -246,10 +191,10 @@ describe('search middleware', function () {
             assert.deepEqual(getQueries('article', state), queries);
         });
 
-        it('should returnqueries based on state.publication.search.term and state.publication.search.field if type is publication', function () {
+        it('should returnqueries based on state.search.publication.term and state.publication.search.field if type is publication', function () {
             const state = {
-                publication: {
-                    search: {
+                search: {
+                    publication: {
                         term: 'aids',
                         field: 'TI'
                     }
@@ -258,10 +203,10 @@ describe('search middleware', function () {
             assert.deepEqual(getQueries('publication', state), [{ term: 'aids', field: 'TI'}]);
         });
 
-        it('should return state.a2z.search.term and state.publication.search.field as queries if type is a2z', function () {
+        it('should return state.search.a2z.term and state.publication.search.field as queries if type is a2z', function () {
             const state = {
-                a2z: {
-                    search: {
+                search: {
+                    a2z: {
                         firstLetter: 'A',
                         secondLetter: 'B',
                         field: 'JN'
