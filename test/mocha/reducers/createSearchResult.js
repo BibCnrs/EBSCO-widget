@@ -1,4 +1,4 @@
-import createSearchResult, { defaultState } from '../../../lib/reducers/createSearchResult';
+import createSearchResult, * as fromSearchResult from '../../../lib/reducers/createSearchResult';
 
 import {
     SEARCH_SUCCESS,
@@ -58,7 +58,7 @@ describe('reducers createSearchResult', function () {
                 2: ['results data'],
                 currentPage: 2
             }, { type, category: 'category' }),
-            defaultState
+            fromSearchResult.defaultState
         ));
     });
 
@@ -86,4 +86,59 @@ describe('reducers createSearchResult', function () {
         );
     });
 
+    describe('selector', function () {
+
+        describe('getCurrentPage', function () {
+
+            it('should return currentPage', function () {
+                assert.equal(fromSearchResult.getCurrentPage({
+                    currentPage: 64,
+                    64: 'currentPage records',
+                    65: 'otherPage records'
+                }), 'currentPage records');
+            });
+
+            it('should return undefined if no currentPage', function () {
+                assert.isUndefined(fromSearchResult.getCurrentPage({
+                    currentPage: null,
+                    64: 'currentPage',
+                    65: 'otherPage'
+                }));
+            });
+        });
+
+        describe('getPaginationData', function () {
+
+            it('should return pagination information', function () {
+                const paginationData = fromSearchResult.getPaginationData({
+                    currentPage: 64,
+                    totalHits: 197,
+                    maxPage: 65,
+                    1: [
+                        { id: 1 },
+                        { id: 2 },
+                        { id: 3 }
+                    ],
+                    64: [
+                        { id: 192 },
+                        { id: 193 },
+                        { id: 194 }
+                    ],
+                    65: [
+                        { id: 195 },
+                        { id: 196 },
+                        { id: 197 }
+                    ]
+                });
+
+                assert.deepEqual(paginationData, {
+                    first: 192,
+                    last: 194,
+                    totalHits: 197,
+                    maxPage: 65,
+                    currentPage: 64
+                });
+            });
+        });
+    });
 });
