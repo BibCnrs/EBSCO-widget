@@ -1,6 +1,5 @@
-import _ from 'lodash';
 
-import { search, getQueries, getTerms } from '../../../lib/middlewares/search';
+import { search } from '../../../lib/middlewares/search';
 import actions, {
     PAGE_LOAD,
     SEARCH_TERM,
@@ -18,25 +17,30 @@ describe('search middleware', function () {
     const state = {
         url: 'http://apiroute',
         search: {
+            article: {},
+            publication: {}
+        },
+        queryList: {
+            article: [{
+                term: 'searched term',
+                field: 'TI'
+            }],
+            publication: [{
+                term: 'searched term',
+                field: 'TI'
+            }]
+        },
+        limiters: {
             article: {
-                queries: [{
-                    term: 'searched term',
-                    field: 'TI'
-                }],
-                limiters: {
-                    fullText: true,
-                    publicationDate: {
-                        from: 1000,
-                        to: 2016
-                    }
+                fullText: true,
+                publicationDate: {
+                    from: 1000,
+                    to: 2016
                 }
             },
-            publication: {
-                term: 'searched term',
-                field: 'TI',
-                limiters: {}
-            }
+            publication: {}
         },
+        facets: {},
         searchResult: {
             article: {
                 currentPage: 5
@@ -90,7 +94,7 @@ describe('search middleware', function () {
         };
 
         search(store, next, action);
-        const { from, to } = state.search.article.limiters.publicationDate;
+        const { from, to } = state.limiters.article.publicationDate;
         assert.deepEqual(nextAction, [
             action
         ]);
@@ -98,7 +102,7 @@ describe('search middleware', function () {
         assert.deepEqual(dispatchedAction, [
             actions.search(
                 'article',
-                `${state.url}/${state.domains.article}/article/search?queries=${encodeURIComponent(JSON.stringify(state.search.article.queries))}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
+                `${state.url}/${state.domains.article}/article/search?queries=${encodeURIComponent(JSON.stringify(state.queryList.article))}&FT=Y&DT1=${from}-01/${to}-01&currentPage=5`,
                 state.login.token,
                 {
                     queries: [{ field: 'TI', term: 'searched term' }],
@@ -175,72 +179,5 @@ describe('search middleware', function () {
         search(store, next, action);
         assert.deepEqual(nextAction, [action]);
         assert.deepEqual(dispatchedAction, []);
-    });
-
-    describe('getQueries', function () {
-
-        it('should return state.search.article.queries if type is article', function () {
-            const queries = [{ term: 'aids', field: 'TI'}];
-            const state = {
-                search: {
-                    article: {
-                        queries
-                    }
-                }
-            };
-            assert.deepEqual(getQueries('article', state), queries);
-        });
-
-        it('should returnqueries based on state.search.publication.term and state.publication.search.field if type is publication', function () {
-            const state = {
-                search: {
-                    publication: {
-                        term: 'aids',
-                        field: 'TI'
-                    }
-                }
-            };
-            assert.deepEqual(getQueries('publication', state), [{ term: 'aids', field: 'TI'}]);
-        });
-
-        it('should return state.search.a2z.term and state.publication.search.field as queries if type is a2z', function () {
-            const state = {
-                search: {
-                    a2z: {
-                        firstLetter: 'A',
-                        secondLetter: 'B',
-                        field: 'JN'
-                    }
-                }
-            };
-            assert.deepEqual(getQueries('a2z', state), [{ term: 'AB*', field: 'JN', boolean: 'OR' }]);
-        });
-
-    });
-
-    describe('getTerms', function () {
-        it('should compute term based on firstLeter and second letter', function () {
-            assert.deepEqual(getTerms('A', 'B'), ['AB*']);
-        });
-
-        it('should return "" if no firstLetter', function () {
-            assert.deepEqual(getTerms('', 'B'), ['']);
-        });
-
-        it('should ignore secondLetter if there is none', function () {
-            assert.deepEqual(getTerms('A', ''), ['A*']);
-        });
-
-        it('should return all digit if first letter is #', function () {
-            assert.deepEqual(getTerms('#', ''), _.range(10).map(i => `${i}*`));
-        });
-
-        it('should return all digit if secondLetter letter is #', function () {
-            assert.deepEqual(getTerms('B', '#'), _.range(10).map(i => `B${i}*`));
-        });
-
-        it('should return all digit combination if first and second letter are #', function () {
-            assert.deepEqual(getTerms('#', '#'), _.range(100).map(i => `${i < 10 ? `0${i}` : i}*`));
-        });
     });
 });
