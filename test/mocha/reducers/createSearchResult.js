@@ -17,26 +17,44 @@ describe('reducers createSearchResult', function () {
         categorySearchResult = createSearchResult('category');
     });
 
-    it('should set [action.response.currentPage] to action.response.results if action is SEARCH_SUCCESS', function () {
+    it('should set [action.response.currentPage] to action.response.results[].id if action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
             categorySearchResult({
                 maxPage: 0,
-                1: 'other page'
+                currentPage: 1,
+                1: [1, 2, 3],
+                byId: {
+                    1: { id: 1 },
+                    2: { id: 2 },
+                    3: { id: 3 }
+                }
             }, {
                 type: SEARCH_SUCCESS,
                 category: 'category',
                 response: {
                     maxPage: 10,
                     totalHits: 200,
-                    results: ['results data'],
+                    results: [
+                        { id: 4 },
+                        { id: 5 },
+                        { id: 6 }
+                    ],
                     currentPage: 2
                 }
             }),
             {
                 maxPage: 10,
                 totalHits: 200,
-                1: 'other page',
-                2: ['results data'],
+                1: [1, 2, 3],
+                2: [4, 5, 6],
+                byId: {
+                    1: { id: 1 },
+                    2: { id: 2 },
+                    3: { id: 3 },
+                    4: { id: 4 },
+                    5: { id: 5 },
+                    6: { id: 6 }
+                },
                 currentPage: 2
             }
         );
@@ -91,11 +109,11 @@ describe('reducers createSearchResult', function () {
         describe('getCurrentPage', function () {
 
             it('should return currentPage', function () {
-                assert.equal(fromSearchResult.getCurrentPage({
+                assert.deepEqual(fromSearchResult.getCurrentPage({
                     currentPage: 64,
-                    64: 'currentPage records',
-                    65: 'otherPage records'
-                }), 'currentPage records');
+                    64: [128, 129],
+                    65: [130, 131]
+                }), [128, 129]);
             });
 
             it('should return undefined if no currentPage', function () {
@@ -107,6 +125,31 @@ describe('reducers createSearchResult', function () {
             });
         });
 
+        describe('getCurrentPageRecords', function () {
+
+            it('should return record for currentPage', function () {
+                assert.deepEqual(fromSearchResult.getCurrentPageRecords({
+                    byId: {
+                        128: { id: 128 },
+                        129: { id: 129 },
+                        130: { id: 130 },
+                        131: { id: 131 }
+                    },
+                    currentPage: 64,
+                    64: [128, 129],
+                    65: [130, 131]
+                }), [{ id: 128 }, { id: 129 }]);
+            });
+
+            it('should return empty array if no currentPage', function () {
+                assert.deepEqual(fromSearchResult.getCurrentPageRecords({
+                    currentPage: null,
+                    64: 'currentPage',
+                    65: 'otherPage'
+                }), []);
+            });
+        });
+
         describe('getPaginationData', function () {
 
             it('should return pagination information', function () {
@@ -114,21 +157,9 @@ describe('reducers createSearchResult', function () {
                     currentPage: 64,
                     totalHits: 197,
                     maxPage: 65,
-                    1: [
-                        { id: 1 },
-                        { id: 2 },
-                        { id: 3 }
-                    ],
-                    64: [
-                        { id: 192 },
-                        { id: 193 },
-                        { id: 194 }
-                    ],
-                    65: [
-                        { id: 195 },
-                        { id: 196 },
-                        { id: 197 }
-                    ]
+                    1: [1, 2, 3],
+                    64: [192, 193, 194],
+                    65: [195, 196, 197]
                 });
 
                 assert.deepEqual(paginationData, {
@@ -138,6 +169,18 @@ describe('reducers createSearchResult', function () {
                     maxPage: 65,
                     currentPage: 64
                 });
+            });
+        });
+
+        describe('getRecordById', function () {
+            it('should return recordById', function () {
+                assert.deepEqual(fromSearchResult.getRecordById({
+                    byId: {
+                        1: { id: 1 },
+                        2: { id: 2 },
+                        3: { id: 3 }
+                    }
+                }, 2), { id: 2 });
             });
         });
     });
