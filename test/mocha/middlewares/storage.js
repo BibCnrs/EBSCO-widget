@@ -4,38 +4,37 @@ import {
     DELETE_HISTORY,
     LOGIN_SUCCESS,
     API_LOGIN_SUCCESS,
-    LOGOUT
+    LOGOUT,
+    FETCH_DOMAINS_SUCCESS
 } from '../../../lib/actions';
 
 describe('storage middleware', function () {
     let store, dispatchedAction, next, nextAction;
     const state = {
-        article: {
-            history: [
-                {
-                    queries: [
-                        {
-                            boolean: 'AND',
-                            term: 'aids',
-                            field: null,
-                            key: 'initial'
-                        }
-                    ],
-                    domain: 'INSB',
-                    limiters:{
-                        fullText: true,
-                        publicationDate:{
-                            from: null,
-                            to: null
-                        },
-                        peerReviewedArticle: false
-                    },activeFacets: {
-
+        history: [
+            {
+                queries: [
+                    {
+                        boolean: 'AND',
+                        term: 'aids',
+                        field: null,
+                        key: 'initial'
+                    }
+                ],
+                domain: 'INSB',
+                limiters:{
+                    fullText: true,
+                    publicationDate:{
+                        from: null,
+                        to: null
                     },
-                    totalHits: 493671
-                }
-            ]
-        }
+                    peerReviewedArticle: false
+                },activeFacets: {
+
+                },
+                totalHits: 493671
+            }
+        ]
     };
 
     let sessionStorage = {};
@@ -67,16 +66,30 @@ describe('storage middleware', function () {
         localStorage = {};
     });
 
-    it('should save state.article.history in localStorage on DELETE_HISTORY AND ARTICLE_SEARCH_SUCCESS', function () {
+    it('should save state.history in localStorage on DELETE_HISTORY AND SEARCH_SUCCESS', function () {
         [ DELETE_HISTORY, SEARCH_SUCCESS ].map(type => {
-            const action = { type };
+            const action = { type, category: 'article' };
 
             storage(store, next, action);
             assert.deepEqual(nextAction, [action]);
             assert.deepEqual(dispatchedAction, []);
             assert.deepEqual(localStorage, {
-                EBSCO_WIDGET_history: JSON.stringify(state.article.history)
+                EBSCO_WIDGET_history: JSON.stringify(state.history)
             });
+            localStorage = {};
+            nextAction = [];
+            dispatchedAction = [];
+        });
+    });
+
+    it('should not save state.history in localStorage SEARCH_SUCCESS if category is not article', function () {
+        [ DELETE_HISTORY, SEARCH_SUCCESS ].map(type => {
+            const action = { type, category: 'publication' };
+
+            storage(store, next, action);
+            assert.deepEqual(nextAction, [action]);
+            assert.deepEqual(dispatchedAction, []);
+            assert.deepEqual(localStorage, {});
             localStorage = {};
             nextAction = [];
             dispatchedAction = [];
@@ -136,5 +149,19 @@ describe('storage middleware', function () {
         assert.deepEqual(nextAction, [action]);
         assert.deepEqual(dispatchedAction, []);
         assert.deepEqual(sessionStorage, {});
+    });
+
+    it('should save domains in sessionStorage on FETCH_DOMAINS_SUCCESS', function () {
+        const action = {
+            type: FETCH_DOMAINS_SUCCESS,
+            response: ['INSB', 'INSHS']
+        };
+
+        storage(store, next, action);
+        assert.deepEqual(nextAction, [action]);
+        assert.deepEqual(dispatchedAction, []);
+        assert.deepEqual(sessionStorage, {
+            EBSCO_WIDGET_allDomains: '["INSB","INSHS"]'
+        });
     });
 });
