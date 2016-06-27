@@ -1,4 +1,4 @@
-import createLimiters, { defaultState } from '../../../lib/reducers/createLimiters';
+import createLimiters, * as fromLimiters from '../../../lib/reducers/createLimiters';
 import {
     CHANGE_LIMITER,
     LINKED_SEARCH,
@@ -18,12 +18,12 @@ describe('reducers createLimiters', function () {
             assert.deepEqual(createLimiters('article')(undefined, {
                 type: 'OTHER_ACTION_TYPE',
                 category: 'category'
-            }), defaultState['article']);
+            }), fromLimiters.defaultState['article']);
 
             assert.deepEqual(createLimiters('publication')(undefined, {
                 type: 'OTHER_ACTION_TYPE',
                 category: 'category'
-            }), defaultState['publication']);
+            }), fromLimiters.defaultState['publication']);
         });
 
         it ('should return default state if action type is LOGOUT OR LINKED_SEARCH for category article)', function () {
@@ -40,7 +40,7 @@ describe('reducers createLimiters', function () {
                     },
                     { type, category: 'article' }
                 ),
-                defaultState['article'])
+                fromLimiters.defaultState['article'])
             );
         });
 
@@ -58,7 +58,7 @@ describe('reducers createLimiters', function () {
                     },
                     { type, category: 'publication' }
                 ),
-                defaultState['publication'])
+                fromLimiters.defaultState['publication'])
             );
         });
 
@@ -69,28 +69,35 @@ describe('reducers createLimiters', function () {
         });
     });
 
-    describe('CHANGE_LIMITER', function () {
-        it('should set action.limiter to action.value', function () {
-            assert.equal(categoryLimiters({ fullText: true }, {
-                type: CHANGE_LIMITER,
-                category: 'category',
-                limiter: 'fullText',
-                value: false
-            }).fullText, false);
+    it('should set action.limiter to action.value when action is CHANGE_LIMITER', function () {
+        assert.equal(categoryLimiters({ fullText: true }, {
+            type: CHANGE_LIMITER,
+            category: 'category',
+            limiter: 'fullText',
+            value: false
+        }).fullText, false);
 
-            const newState = categoryLimiters({
-                publicationDate: {
-                    from: 1000,
-                    to: 2016
-                }
-            }, {
-                type: CHANGE_LIMITER,
-                category: 'category',
-                limiter: 'publicationDate',
-                value: { from: 2000, to: 2012 }
+        const newState = categoryLimiters({
+            publicationDate: {
+                from: 1000,
+                to: 2016
+            }
+        }, {
+            type: CHANGE_LIMITER,
+            category: 'category',
+            limiter: 'publicationDate',
+            value: { from: 2000, to: 2012 }
+        });
+        assert.equal(newState.publicationDate.from, 2000);
+        assert.equal(newState.publicationDate.to, 2012);
+    });
+
+    describe('selector', function () {
+
+        describe('getValueByName', function () {
+            it('should return value for the given limiter name', function () {
+                assert.equal(fromLimiters.getValueByName({ name: 'value'}, 'name'), 'value');
             });
-            assert.equal(newState.publicationDate.from, 2000);
-            assert.equal(newState.publicationDate.to, 2012);
         });
     });
 
