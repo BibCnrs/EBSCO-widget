@@ -8,10 +8,6 @@ import {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
     CHANGE_SORT,
-    LINKED_SEARCH,
-    SEARCH_LETTERS,
-    CHANGE_TERM,
-    CHANGE_FIELD,
     CHANGE_RESULTS_PER_PAGE
 } from '../../../lib/actions';
 
@@ -20,19 +16,6 @@ describe('reducers createSearch', function () {
 
     before(function () {
         categorySearch = createSearch('category');
-    });
-
-    it('should set firstLetter and secondLetter to Action.firstLetter and action.secondLetter when action is SEARCH_LETTERS', function () {
-        const searchState = categorySearch(
-            { status: 'NONE' },
-            { type: SEARCH_LETTERS, category: 'category', firstLetter: 'A', secondLetter: 'Z' }
-        );
-        assert.deepEqual(searchState, {
-            status: 'NONE',
-            firstLetter: 'A',
-            secondLetter: 'Z'
-        });
-
     });
 
     it('should set resultsPerPage to Action.nbResults when action is CHANGE_RESULTS_PER_PAGE', function () {
@@ -129,53 +112,6 @@ describe('reducers createSearch', function () {
             status: 'DONE',
             term: 'aids',
             dateRange: 'date range'
-        });
-    });
-
-    it('should update term with action.term if action is PUBLICATION_CHANGE_TERM', function () {
-        const searchState = categorySearch(
-            { status: 'state' },
-            { type: CHANGE_TERM, category: 'category', term: 'searched term' }
-        );
-        assert.deepEqual(searchState, { status: 'state', term: 'searched term' });
-    });
-
-    it('should set field to action.value if type is PUBLICATION_CHANGE_FIELD', function () {
-        assert.deepEqual(
-            categorySearch(
-                { status: 'state', field: 'TI' },
-                { type: CHANGE_FIELD, category: 'category', value: 'AU' }
-            ),
-            { status: 'state', field: 'AU' }
-        );
-    });
-
-
-
-    describe('type: LINKED_SEARCH', function () {
-
-        it('should change queries to a single query with term= `action.term action.field`', function () {
-            const state = { status: 'state', queries:  [1, 2, 3]};
-            const searchState = categorySearch(
-                state,
-                { type: LINKED_SEARCH, category: 'category', term: 'term', field: 'EX' }
-            );
-            assert.deepEqual(searchState, {
-                ...state,
-                queries: [{ boolean: 'AND', field: null, term: 'EX term' }]
-            });
-        });
-
-        it('should change queries to a single query with term=`action.term` and field=`action.field` if action.field is in the availableFields', function () {
-            const state = { status: 'state', queries:  [1, 2, 3] };
-            const searchState = categorySearch(
-                state,
-                { type: LINKED_SEARCH, category: 'category', term: 'term', field: 'TI' }
-            );
-            assert.deepEqual(searchState, {
-                ...state,
-                queries: [{ boolean: 'AND', field: 'TI', term: 'term' }]
-            });
         });
     });
 });
