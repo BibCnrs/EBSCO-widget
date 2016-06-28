@@ -22,12 +22,7 @@ app.use(route.post('/login', function* () {
 }));
 
 app.use(route.post('/getLogin', function* () {
-    this.body = {
-        token: 'token',
-        domains: ['vie', 'shs'],
-        username: 'test'
-    };
-
+    this.status = 401;
 }));
 
 app.use(route.get('/domains', function* () {
