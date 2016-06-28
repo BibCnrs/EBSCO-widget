@@ -3,7 +3,7 @@ import initialState from './publicationSearchResult.json';
 describe('publication Search result', function() {
 
     beforeEach(function (done) {
-        browser.loadState(initialState).loadState(initialState);
+        browser.pause(300).loadState(initialState);
 
         client.start(done);
     });
