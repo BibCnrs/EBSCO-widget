@@ -3,7 +3,7 @@ import initialState from './articleSearchResult.json';
 describe('articleSearchResult', function() {
 
     beforeEach(function (done) {
-        browser.loadState(initialState);
+        browser.pause(300).loadState(initialState);
 
         client.start(done);
     });
@@ -47,12 +47,12 @@ describe('articleSearchResult', function() {
         browser
         .waitForElementVisible('.facet_list', 1000)
         .assert.elementCount('.active_facet', 0)
-        .assert.containsText('.available_facets .facet:nth-child(1) .header .title', 'Source Type (15)')
+        .assert.containsText('.available_facets .facet:nth-child(1) .header .title', 'Source Type (14)')
         .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 3)
-        .assert.containsText('.available_facets .facet:nth-child(1) .facet_values', 'Academic Journals (316647)\nMagazines (83627)\nBooks (9427)')
+        .assert.containsText('.available_facets .facet:nth-child(1) .facet_values', 'Academic Journals (237702)\nMagazines (75583)\nReports (41302)')
         .click('.available_facets .facet:nth-child(1) .header .more')
         .waitForElementVisible('.available_facets', 1000)
-        .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 15)
+        .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 14)
         .click('.available_facets .facet:nth-child(1) .facet_values .facet_value:nth-child(1)')
         .waitForElementVisible('.available_facets', 1000)
         .assert.containsText('.active_facet .header .title', 'Vos filtres')
