@@ -4,8 +4,10 @@ import {
     ADD_QUERY,
     REMOVE_QUERY,
     CHANGE_QUERY,
-    LINKED_SEARCH
-} from '../../../lib/actions';
+    LINKED_SEARCH,
+    RESTORE_HISTORY,
+    RELOAD_HISTORY
+    } from '../../../lib/actions';
 
 describe('reducers createQueryList', function () {
 
@@ -100,6 +102,30 @@ describe('reducers createQueryList', function () {
         assert.deepEqual(queryListState, [
             { term: 'field term', field: null, boolean: 'AND' }
         ]);
+    });
+
+    it('should set queryList to action.query.queries if action is RELOAD_HISTORY', function () {
+        const queryListState = articleQueryList(
+            [
+                { term: 'old' },
+                { term: 'old' },
+                { term: 'old' }
+            ],
+            { type: RELOAD_HISTORY, category: 'article', query: { queries: 'queries content' } }
+        );
+        assert.equal(queryListState, 'queries content');
+    });
+
+    it('should set queryList to action.query.queries if action is RESTORE_HISTORY', function () {
+        const queryListState = articleQueryList(
+            [
+                { term: 'old' },
+                { term: 'old' },
+                { term: 'old' }
+            ],
+            { type: RESTORE_HISTORY, category: 'article', query: { queries: 'queries content' } }
+        );
+        assert.equal(queryListState, 'queries content');
     });
 
 });

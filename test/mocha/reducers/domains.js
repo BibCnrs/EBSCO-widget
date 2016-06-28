@@ -5,6 +5,8 @@ import {
     DOMAIN_CHANGE,
     LOGIN_SUCCESS,
     API_LOGIN_SUCCESS,
+    RESTORE_HISTORY,
+    RELOAD_HISTORY,
     LOGOUT
 } from '../../../lib/actions';
 import domains from '../../../lib/reducers/domains';
@@ -111,6 +113,34 @@ describe('reducer domains', function () {
         }), {
             available: ['INSB'],
             publication: 'INSHS'
+        });
+    });
+
+    it('should set article to action.query.domain if action is RESTORE_HISTORY', function () {
+        assert.deepEqual(domains({
+            available: ['INSB'],
+            article: 'INSB'
+        }, {
+            type: RESTORE_HISTORY,
+            category: 'article',
+            query: { domain: 'INSHS' }
+        }), {
+            available: ['INSB'],
+            article: 'INSHS'
+        });
+    });
+
+    it('should set article to action.query.domain if action is RELOAD_HISTORY', function () {
+        assert.deepEqual(domains({
+            available: ['INSB'],
+            article: 'INSB'
+        }, {
+            type: RELOAD_HISTORY,
+            category: 'article',
+            query: { domain: 'INSHS' }
+        }), {
+            available: ['INSB'],
+            article: 'INSHS'
         });
     });
 

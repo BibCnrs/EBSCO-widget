@@ -2,6 +2,8 @@ import createLimiters, * as fromLimiters from '../../../lib/reducers/createLimit
 import {
     CHANGE_LIMITER,
     LINKED_SEARCH,
+    RELOAD_HISTORY,
+    RESTORE_HISTORY,
     LOGOUT
 } from '../../../lib/actions';
 
@@ -90,6 +92,20 @@ describe('reducers createLimiters', function () {
         });
         assert.equal(newState.publicationDate.from, 2000);
         assert.equal(newState.publicationDate.to, 2012);
+    });
+
+    it('should set state to action.query.limiters if action is RELOAD_HISTORY', function () {
+        const queryListState = categoryLimiters({},
+            { type: RELOAD_HISTORY, category: 'category', query: { limiters: 'limiter content' } }
+        );
+        assert.equal(queryListState, 'limiter content');
+    });
+
+    it('should set state to action.query.limiters if action is RESTORE_HISTORY', function () {
+        const queryListState = categoryLimiters({},
+            { type: RESTORE_HISTORY, category: 'category', query: { limiters: 'limiter content' } }
+        );
+        assert.equal(queryListState, 'limiter content');
     });
 
     describe('selector', function () {

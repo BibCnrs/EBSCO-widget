@@ -2,8 +2,6 @@ import createSearch, { defaultState } from '../../../lib/reducers/createSearch';
 
 import {
     LOGOUT,
-    RELOAD_HISTORY,
-    RESTORE_HISTORY,
     SEARCH_PENDING,
     SEARCH_SUCCESS,
     SEARCH_ERROR,
@@ -56,37 +54,6 @@ describe('reducers createSearch', function () {
             { type: LOGOUT, category: 'category' }
         );
         assert.deepEqual(searchState, defaultState['category']);
-    });
-
-    it('should return state completed by action.query if action is RESTORE_HISTORY or RELOAD_HISTORY', function () {
-        assert.deepEqual(
-            categorySearch(
-                { status: 'state', queries: [1, 2, 3] },
-                {
-                    type: RELOAD_HISTORY,
-                    category: 'category',
-                    query: { queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]}
-                }
-            ),
-            {
-                status: 'state',
-                queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]
-            }
-        );
-        assert.deepEqual(
-            categorySearch(
-                { status: 'state', queries: [1, 2, 3] },
-                {
-                    type: RESTORE_HISTORY,
-                    category: 'category',
-                    query: { queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]}
-                }
-            ),
-            {
-                status: 'state',
-                queries: [{ term: 'term', peerReviewedArticle: true, publicationDate: { from: 1914, to: 1918 } }]
-            }
-        );
     });
 
     it('should return state with sort set as action.value if action is CHANGE_SORT', function () {
