@@ -4,7 +4,7 @@ describe('a2zSearch', function() {
 
     beforeEach(function (done) {
         browser
-        .loadState(initialState)
+        .pause(1000)
         .loadState(initialState);
 
         client.start(done);

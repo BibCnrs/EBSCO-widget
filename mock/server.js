@@ -21,12 +21,21 @@ app.use(route.post('/login', function* () {
 
 }));
 
+app.use(route.post('/getLogin', function* () {
+    this.body = {
+        token: 'token',
+        domains: ['vie', 'shs'],
+        username: 'test'
+    };
+
+}));
+
 app.use(route.get('/domains', function* () {
-    this.body={ domains: ['vie', 'shs']};
+    this.body = ['vie', 'shs'];
 }));
 
 app.use(route.get('/login_renater', function* () {
-    this.redirect(`http://app?shib=cookie%3Dcookie&token=token&domains=vie&domains=shs&username=tester`);
+    this.redirect('http://app?shib=cookie%3Dcookie&token=token&domains=vie&domains=shs&username=tester');
 }));
 
 app.use(route.get('/:domainName/article/search', function* articleSearch(domainName) {
