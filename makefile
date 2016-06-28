@@ -16,7 +16,7 @@ install:
 build:
 	docker-compose run build
 
-dev:
+run-dev:
 	docker-compose up --force-recreate devserver
 
 test-mocha:
