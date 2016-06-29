@@ -74,7 +74,7 @@
     "redux": "3.0.4",
     "redux-localstorage": "1.0.0-rc4",
     "redux-localstorage-debounce": "0.1.0",
-    "redux-thunk": "^2.1.0",
+    "redux-saga": "0.10.5",
     "reselect": "2.0.3"
   }
 }
