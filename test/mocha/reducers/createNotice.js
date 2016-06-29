@@ -82,5 +82,15 @@ describe('createNotice', function () {
                 assert.isUndefined(fromNotice.getNoticeById({}, 64));
             });
         });
+
+        describe.only('getMissingNoticeIds', function () {
+            it('should return only the id that are not in byId', function () {
+                assert.deepEqual(fromNotice.getMissingNoticeIds({
+                    byId: {
+                        1: 'notice'
+                    }
+                }, ['1', '2']), ['2']);
+            });
+        });
     });
 });
