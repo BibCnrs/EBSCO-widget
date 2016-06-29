@@ -1,9 +1,10 @@
 import {
-    ARTICLE,
-    SET_HISTORY,
+    SEARCH_SUCCESS,
+    LOGOUT,
     DELETE_HISTORY,
-    LOGOUT
+    SET_HISTORY
 } from '../../../lib/actions';
+
 import history from '../../../lib/reducers/history';
 
 describe('reducer history', function () {
@@ -16,7 +17,8 @@ describe('reducer history', function () {
         it('should add action.query to state along with response.totalHits and response.activeFacets', function () {
             assert.deepEqual(
                 history([{ term: 'phylloxera' }, { term: 'horton' }], {
-                    type: ARTICLE.SEARCH_SUCCESS,
+                    type: SEARCH_SUCCESS,
+                    category: 'article',
                     query: { term: 'aids' },
                     response: {
                         totalHits: 7,
@@ -31,10 +33,29 @@ describe('reducer history', function () {
             );
         });
 
+        it('should not add action.query to state if category is not article', function () {
+            assert.deepEqual(
+                history([{ term: 'phylloxera' }, { term: 'horton' }], {
+                    type: SEARCH_SUCCESS,
+                    category: 'publication',
+                    query: { term: 'aids' },
+                    response: {
+                        totalHits: 7,
+                        activeFacets: ['active', 'facets']
+                    }
+                }),
+                [
+                    { term: 'phylloxera' },
+                    { term: 'horton' }
+                ]
+            );
+        });
+
         it('should not add action.query to state if it is already present in state but update its totalHits instead', function () {
             assert.deepEqual(
                 history([{ term: 'phylloxera', activeFacets: [] }, { term: 'aids', activeFacets: [] }, { term: 'horton', activeFacets: [] }], {
-                    type: ARTICLE.SEARCH_SUCCESS,
+                    type: SEARCH_SUCCESS,
+                    category: 'article',
                     query: { term: 'aids' },
                     response: { totalHits: 5 }
                 }),
@@ -49,7 +70,8 @@ describe('reducer history', function () {
         it('should not add action.query to state if it\'s totalhit is 0', function () {
             assert.deepEqual(
                 history([{ term: 'phylloxera', activeFacets: [] }, { term: 'aids', activeFacets: [] }], {
-                    type: ARTICLE.SEARCH_SUCCESS,
+                    type: SEARCH_SUCCESS,
+                    category: 'article',
                     query: { term: 'aidswxcv' },
                     response: { totalHits: 0 }
                 }),

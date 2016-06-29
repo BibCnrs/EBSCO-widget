@@ -3,15 +3,17 @@ import initialState from './articleSearch.json';
 describe('simple articleSearch', function() {
 
     beforeEach(function (done) {
-        browser.loadState(initialState);
+        browser.pause(300).loadState(initialState);
 
         client.start(done);
     });
 
     it('should display article search result when triggering search', function (done) {
         browser
+        .pause(300)
         .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Article')
+        .pause(300)
         .setValue('.article-search-input-list input', 'aids')
         .click('.fetch-button button')
         .pause(300)

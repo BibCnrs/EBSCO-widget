@@ -3,7 +3,7 @@ import initialState from './a2zSearchResult.json';
 describe('a2z Search result', function() {
 
     beforeEach(function (done) {
-        browser.loadState(initialState).loadState(initialState);
+        browser.loadState(initialState);
 
         client.start(done);
     });

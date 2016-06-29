@@ -4,9 +4,8 @@ import {
     LOGOUT,
     LOADING,
     LOADED,
+    SEARCH_SUCCESS,
     SHOW_SIDEBAR,
-    ARTICLE,
-    PUBLICATION,
     SHOW_HISTORY,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
@@ -104,16 +103,9 @@ describe('reducers userInterface', function () {
         );
     });
 
-    it('should set resultShown to true when action is ARTICLE.SEARCH_SUCCESS', function () {
+    it('should set resultShown to true when action is SEARCH_SUCCESS', function () {
         assert.deepEqual(
-            userInterface({ resultShown: false, other: 'data' }, { type: ARTICLE.SEARCH_SUCCESS }),
-            { resultShown: true, other: 'data' }
-        );
-    });
-
-    it('should set resultShown to true when action is PUBLICATION.SEARCH_SUCCESS', function () {
-        assert.deepEqual(
-            userInterface({ resultShown: false, other: 'data' }, { type: PUBLICATION.SEARCH_SUCCESS }),
+            userInterface({ resultShown: false, other: 'data' }, { type: SEARCH_SUCCESS }),
             { resultShown: true, other: 'data' }
         );
     });

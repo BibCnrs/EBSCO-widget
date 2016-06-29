@@ -1,4 +1,4 @@
-import articleQueryList, { defaultState, defaultArticleQuery } from '../../../lib/reducers/articleQueryList';
+import articleQueryList, { defaultArticleQuery } from '../../../lib/reducers/articleQueryList';
 import getSha1 from '../../../lib/services/getSha1';
 
 import {
@@ -6,7 +6,7 @@ import {
     REMOVE_QUERY,
     CHANGE_QUERY,
     LINKED_SEARCH
-} from '../../../lib/actions/article';
+} from '../../../lib/actions';
 
 describe('reducers articleQueryList', function () {
     const queryList = [

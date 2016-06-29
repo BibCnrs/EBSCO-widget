@@ -14,7 +14,6 @@ describe('Search component', function () {
             },
             status: 'NONE',
             term: 'word',
-            domain: 'vie',
             SearchInput: () => <div/>
         };
 
@@ -32,22 +31,11 @@ describe('Search component', function () {
         assert.isTrue(fetchButton.props().disabled);
     });
 
-    it('should have a FetchButton component with onClick calling onSearchTerm with term and domain', function () {
+    it('should have a FetchButton component with onClick calling onSearchTerm', function () {
         const fetchButton = component.find('FetchButton');
         const { onClick } = fetchButton.props();
-        assert.deepEqual(onClick(), ['onSearchTerm', 'word', 'vie']);
+        assert.deepEqual(onClick(), ['onSearchTerm']);
         assert.isFalse(fetchButton.props().disabled);
-
-    });
-
-    it('should have a FetchButton component with passed status and error props', function () {
-        props.error = 'error';
-        props.status = 'status';
-        component = getComponent(props);
-        const fetchButton = component.find('FetchButton');
-        const { status, error } = fetchButton.props();
-        assert.equal(status, 'status');
-        assert.equal(error, 'error');
 
     });
 });
