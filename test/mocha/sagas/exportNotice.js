@@ -2,15 +2,16 @@ import { put, select } from 'redux-saga/effects';
 
 import { exportNotice } from '../../../lib/sagas/exportNotice';
 import { fromNotice, fromLogin } from '../../../lib/reducers';
-import {
+import actions,  {
     EXPORT_NOTICE_PENDING,
     EXPORT_NOTICE_SUCCESS
 } from '../../../lib/actions';
 
 describe.only('sagas export notice', function () {
     let iterator;
+    let action = { category: 'category', ids: [1, 2, 3] };
     beforeEach(function () {
-        iterator = exportNotice({ category: 'category', ids: [1, 2, 3] });
+        iterator = exportNotice(action);
     });
 
     it('should select isUserLogged', function () {
@@ -23,13 +24,14 @@ describe.only('sagas export notice', function () {
         const next = iterator.next(true);
         assert.deepEqual(next.value, put({
             type: EXPORT_NOTICE_PENDING,
-            category: 'category'
+            category: action.category
         }));
     });
 
-    it('should end if user is not logged', function () {
+    it('should trigger pauseAction with current action and end if user is not logged', function () {
         iterator.next();
         const next = iterator.next(false);
+        assert.deepEqual(next.value, put(actions.pauseAction(action)));
         assert.isTrue(next.done);
     });
 
@@ -37,7 +39,7 @@ describe.only('sagas export notice', function () {
         iterator.next();
         iterator.next(true);
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromNotice.getMissingNoticeIds, 'category', [1, 2, 3]));
+        assert.deepEqual(next.value, select(fromNotice.getMissingNoticeIds, action.category, action.ids));
     });
 
     it('should select notices by ids if no missing ids', function () {
@@ -46,7 +48,7 @@ describe.only('sagas export notice', function () {
         iterator.next(true);
         iterator.next();
         const next = iterator.next(missingIds);
-        assert.deepEqual(next.value, select(fromNotice.getNoticesByIds, 'category', [1, 2, 3]));
+        assert.deepEqual(next.value, select(fromNotice.getNoticesByIds, action.category, action.ids));
     });
 
     it('should end if missing ids', function () {
@@ -67,7 +69,7 @@ describe.only('sagas export notice', function () {
         const next = iterator.next(notices);
         assert.deepEqual(next.value, put({
             type: EXPORT_NOTICE_SUCCESS,
-            category: 'category',
+            category: action.category,
             notices
         }));
     });
