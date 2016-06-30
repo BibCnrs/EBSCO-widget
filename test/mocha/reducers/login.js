@@ -8,7 +8,7 @@ import {
 
 import login, * as fromLogin from '../../../lib/reducers/login';
 
-describe.only('reducer login', function () {
+describe('reducer login', function () {
 
     describe('actions', function () {
 

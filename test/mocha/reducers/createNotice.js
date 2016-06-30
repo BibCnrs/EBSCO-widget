@@ -5,49 +5,59 @@ import {
     SHOW_NOTICE
 } from '../../../lib/actions';
 
-describe('createNotice', function () {
-    let categoryNotice;
+describe.only('createNotice', function () {
 
-    before(function () {
-        categoryNotice = createNotice('category');
-    });
+    describe('actions', function () {
 
-    it('should return default state if called with no state and any action', function () {
-        assert.deepEqual(categoryNotice(undefined, {}), fromNotice.defaultState);
-    });
+        let categoryNotice;
 
-    it('should set action.id to action.response if action is RETRIEVE_SUCCESS', function () {
-        assert.deepEqual(categoryNotice({ other: 'value'}, { type: RETRIEVE_SUCCESS, category: 'category', id: 64, response: { api: 'response' } }), {
-            other: 'value',
-            byId: {
-                64: { api: 'response' }
-            }
+        before(function () {
+            categoryNotice = createNotice('category');
         });
-    });
 
-    it('should not set action.id to action.response if action is RETRIEVE_SUCCESS but category does not match', function () {
-        assert.deepEqual(categoryNotice({ other: 'value'}, { type: RETRIEVE_SUCCESS, category: 'other category', id: 64, response: { api: 'response' } }), {
-            other: 'value'
+        it('should return default state if called with no state and any action', function () {
+            assert.deepEqual(categoryNotice(undefined, {}), fromNotice.defaultState);
         });
-    });
 
-    it('should add action.id to noticeShown if action is SHOW_NOTICE', function () {
-        assert.deepEqual(categoryNotice({ other: 'value', noticeShown: [1, 2] }, { type: SHOW_NOTICE, category: 'category', id: 64 }), {
-            other: 'value',
-            noticeShown: [1, 2, 64]
+        describe('RETRIEVE_SUCCESS', function () {
+
+            it('should set action.id to action.response', function () {
+                assert.deepEqual(categoryNotice({ other: 'value'}, { type: RETRIEVE_SUCCESS, category: 'category', id: 64, response: { api: 'response' } }), {
+                    other: 'value',
+                    byId: {
+                        64: { api: 'response' }
+                    }
+                });
+            });
+
+            it('should not set action.id to action.response if category does not match', function () {
+                assert.deepEqual(categoryNotice({ other: 'value'}, { type: RETRIEVE_SUCCESS, category: 'other category', id: 64, response: { api: 'response' } }), {
+                    other: 'value'
+                });
+            });
         });
-    });
 
-    it('should remove action.id from noticeShown if it is in it and action is SHOW_NOTICE', function () {
-        assert.deepEqual(categoryNotice({ other: 'value', noticeShown: [1, 64, 2] }, { type: SHOW_NOTICE, category: 'category', id: 64 }), {
-            other: 'value',
-            noticeShown: [1, 2]
-        });
-    });
+        describe('SHOW_NOTICE', function () {
 
-    it('should not change state if action is SHOW_NOTICE but category does not match', function () {
-        assert.deepEqual(categoryNotice({ other: 'value'}, { type: SHOW_NOTICE, category: 'other category', id: 64 }), {
-            other: 'value'
+            it('should add action.id to noticeShown', function () {
+                assert.deepEqual(categoryNotice({ other: 'value', noticeShown: [1, 2] }, { type: SHOW_NOTICE, category: 'category', id: 64 }), {
+                    other: 'value',
+                    noticeShown: [1, 2, 64]
+                });
+            });
+
+            it('should remove action.id from noticeShown if it is in it', function () {
+                assert.deepEqual(categoryNotice({ other: 'value', noticeShown: [1, 64, 2] }, { type: SHOW_NOTICE, category: 'category', id: 64 }), {
+                    other: 'value',
+                    noticeShown: [1, 2]
+                });
+            });
+
+            it('should not change state if category does not match', function () {
+                assert.deepEqual(categoryNotice({ other: 'value'}, { type: SHOW_NOTICE, category: 'other category', id: 64 }), {
+                    other: 'value'
+                });
+            });
         });
     });
 
@@ -83,13 +93,65 @@ describe('createNotice', function () {
             });
         });
 
-        describe.only('getMissingNoticeIds', function () {
+        describe('getMissingNoticeIds', function () {
             it('should return only the id that are not in byId', function () {
                 assert.deepEqual(fromNotice.getMissingNoticeIds({
                     byId: {
                         1: 'notice'
                     }
                 }, ['1', '2']), ['2']);
+            });
+        });
+
+        describe('getNoticeLiteralById', function () {
+            it('should return notice in literal form', function () {
+                assert.deepEqual(fromNotice.getNoticeLiteralById({
+                    byId: {
+                        1: [
+                            { name: 'name1', value: 'value1' },
+                            { name: 'name2', value: 'value2' },
+                            { name: 'name3', value: 'value3' }
+                        ]
+                    }
+                }, 1), {
+                    name1: 'value1',
+                    name2: 'value2',
+                    name3: 'value3'
+                });
+            });
+        });
+
+        describe.skip('getTY', function () {
+            it('should return JOUR if type is Academic Journal', function () {
+                assert.equal(fromNotice.getTY({
+                    byId: {
+                        1: { publicationType: 'Academic Journal' }
+                    }
+                }, 1), 'TY  - JOUR');
+            });
+
+            it('should return JOUR if type is Periodical', function () {
+                assert.equal(fromNotice.getTY({
+                    byId: {
+                        1: { publicationType: 'Periodical' }
+                    }
+                }, 1), 'TY  - JOUR');
+            });
+
+            it('should return MGZN if type is Periodical', function () {
+                assert.equal(fromNotice.getTY({
+                    byId: {
+                        1: { publicationType: 'Periodical' }
+                    }
+                }, 1), 'TY  - MGZN');
+            });
+
+            it('should return MGZN if type is Periodical', function () {
+                assert.equal(fromNotice.getTY({
+                    byId: {
+                        1: { publicationType: 'Periodical' }
+                    }
+                }, 1), 'TY  - MGZN');
             });
         });
     });

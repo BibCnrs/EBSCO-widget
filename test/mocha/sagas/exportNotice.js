@@ -7,7 +7,7 @@ import actions,  {
     EXPORT_NOTICE_SUCCESS
 } from '../../../lib/actions';
 
-describe.only('sagas export notice', function () {
+describe('sagas export notice', function () {
     let iterator;
     let action = { category: 'category', ids: [1, 2, 3] };
     beforeEach(function () {
