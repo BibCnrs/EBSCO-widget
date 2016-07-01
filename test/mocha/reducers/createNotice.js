@@ -120,5 +120,33 @@ describe('createNotice', function () {
                 });
             });
         });
+
+        describe('getAU', function () {
+            it('should return list of AU for every author in notice', function () {
+                const state = {
+                    byId: {
+                        1: [
+                            {
+                                name: 'Author',
+                                value: [
+                                    {
+                                        term: '\"BRETON, O.\"',
+                                        field: 'AR',
+                                        value: 'BRETON, O.'
+                                    }, {
+                                        indice: 'b1'
+                                    },
+                                    'John, Doe.'
+                                ]
+                            }
+                        ]
+                    }
+                };
+                assert.deepEqual(fromNotice.getAU(state, 1), [
+                    'AU  - BRETON, O.',
+                    'AU  - John, Doe.'
+                ]);
+            });
+        });
     });
 });
