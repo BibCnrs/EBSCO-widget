@@ -148,5 +148,28 @@ describe('createNotice', function () {
                 ]);
             });
         });
+
+        describe('getAN', function () {
+            it('should return AN for notice with given id', function () {
+                const state = {
+                    byId: {
+                        1: [
+                            {
+                                name: 'AN',
+                                value: [
+                                    '1234',
+                                    [
+                                        'additional info'
+                                    ]
+                                ]
+                            }
+                        ]
+                    }
+                };
+                assert.deepEqual(fromNotice.getAN(state, 1), [
+                    'AN  - 1234'
+                ]);
+            });
+        });
     });
 });
