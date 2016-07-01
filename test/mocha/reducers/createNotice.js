@@ -166,9 +166,73 @@ describe('createNotice', function () {
                         ]
                     }
                 };
-                assert.deepEqual(fromNotice.getAN(state, 1), [
-                    'AN  - 1234'
-                ]);
+                assert.deepEqual(fromNotice.getAN(state, 1), ['AN  - 1234']);
+            });
+        });
+
+        describe('getTI', function () {
+            it('should return TI for notice with given id', function () {
+                const state = {
+                    byId: {
+                        1: [
+                            {
+                                name: 'Title',
+                                value: ['my title']
+                            }
+                        ]
+                    }
+                };
+                assert.deepEqual(fromNotice.getTI(state, 1), ['TI  - my title']);
+            });
+        });
+
+        describe('getTT', function () {
+            it('should return TT for notice with given id', function () {
+                const state = {
+                    byId: {
+                        1: [
+                            {
+                                name: 'TitleAlt',
+                                value: ['mon titre (french)']
+                            }
+                        ]
+                    }
+                };
+                assert.deepEqual(fromNotice.getTT(state, 1), ['TT  - mon titre (french)']);
+            });
+
+            it('should return empty array for notice with given id if no TitleAlt', function () {
+                const state = {
+                    byId: {
+                        1: []
+                    }
+                };
+                assert.deepEqual(fromNotice.getTT(state, 1), []);
+            });
+        });
+
+        describe('getJO', function () {
+            it('should return JO for notice with given id', function () {
+                const state = {
+                    byId: {
+                        1: [
+                            {
+                                name: 'TitleSource',
+                                value: [
+                                    [
+                                        {
+                                            term: '"Miscellanea francescana"',
+                                            field: 'JN',
+                                            value: 'Miscellanea francescana'
+                                        },
+                                        '[Misc. frances.], 2012, Vol. 112, Issue 3-4 p581-599, 19p'
+                                    ]
+                                ]
+                            }
+                        ]
+                    }
+                };
+                assert.deepEqual(fromNotice.getJO(state, 1), ['JO  - Miscellanea francescana']);
             });
         });
     });
