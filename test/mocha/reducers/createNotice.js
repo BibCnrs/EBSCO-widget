@@ -5,7 +5,7 @@ import {
     SHOW_NOTICE
 } from '../../../lib/actions';
 
-describe.only('createNotice', function () {
+describe('createNotice', function () {
 
     describe('actions', function () {
 
@@ -118,40 +118,6 @@ describe.only('createNotice', function () {
                     name2: 'value2',
                     name3: 'value3'
                 });
-            });
-        });
-
-        describe.skip('getTY', function () {
-            it('should return JOUR if type is Academic Journal', function () {
-                assert.equal(fromNotice.getTY({
-                    byId: {
-                        1: { publicationType: 'Academic Journal' }
-                    }
-                }, 1), 'TY  - JOUR');
-            });
-
-            it('should return JOUR if type is Periodical', function () {
-                assert.equal(fromNotice.getTY({
-                    byId: {
-                        1: { publicationType: 'Periodical' }
-                    }
-                }, 1), 'TY  - JOUR');
-            });
-
-            it('should return MGZN if type is Periodical', function () {
-                assert.equal(fromNotice.getTY({
-                    byId: {
-                        1: { publicationType: 'Periodical' }
-                    }
-                }, 1), 'TY  - MGZN');
-            });
-
-            it('should return MGZN if type is Periodical', function () {
-                assert.equal(fromNotice.getTY({
-                    byId: {
-                        1: { publicationType: 'Periodical' }
-                    }
-                }, 1), 'TY  - MGZN');
             });
         });
     });
