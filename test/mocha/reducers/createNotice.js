@@ -211,8 +211,8 @@ describe('createNotice', function () {
             });
         });
 
-        describe('getJO', function () {
-            it('should return JO for notice with given id', function () {
+        describe('getJA', function () {
+            it('should return JA for notice with given id', function () {
                 const state = {
                     byId: {
                         1: [
@@ -232,7 +232,39 @@ describe('createNotice', function () {
                         ]
                     }
                 };
-                assert.deepEqual(fromNotice.getJO(state, 1), ['JO  - Miscellanea francescana']);
+                assert.deepEqual(fromNotice.getJA(state, 1), ['JA  - Miscellanea francescana']);
+            });
+        });
+
+        describe('getJO', function () {
+            it('should return JO for notice with given id', function () {
+                const state = {
+                    byId: {
+                        1: [
+                            {
+                                name: 'PublisherInfo',
+                                value: [['Miscellanea Francescana, Roma; 2012 Country of publication: Italy']]
+                            }
+                        ]
+                    }
+                };
+                assert.deepEqual(fromNotice.getJO(state, 1), ['JO  - Miscellanea Francescana, Roma; 2012 Country of publication: Italy']);
+            });
+        });
+
+        describe('getJF', function () {
+            it('should return JF for notice with given id', function () {
+                const state = {
+                    byId: {
+                        1: [
+                            {
+                                name: 'PublisherInfo',
+                                value: [['Miscellanea Francescana, Roma; 2012 Country of publication: Italy']]
+                            }
+                        ]
+                    }
+                };
+                assert.deepEqual(fromNotice.getJF(state, 1), ['JF  - Miscellanea Francescana, Roma; 2012 Country of publication: Italy']);
             });
         });
     });
