@@ -284,5 +284,15 @@ describe('reducers createSearchResult', function () {
                 }, 1), 'Missing record for id: 1');
             });
         });
+
+        describe('getY1', function () {
+            it('should return Y1', function () {
+                assert.equal(fromSearchResult.getY1({
+                    byId: {
+                        1: { publicationDate: '2013-01-01T00:00:00.000Z' }
+                    }
+                }, 1), 'Y1  - 2013-01-01T00:00:00.000Z');
+            });
+        });
     });
 });
