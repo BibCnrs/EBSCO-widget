@@ -108,15 +108,39 @@ describe('createNotice', function () {
                 assert.deepEqual(fromNotice.getNoticeLiteralById({
                     byId: {
                         1: [
-                            { name: 'name1', value: 'value1' },
-                            { name: 'name2', value: 'value2' },
-                            { name: 'name3', value: 'value3' }
+                            {
+                                name: 'name1',
+                                value: [
+                                    [
+                                        {
+                                            term: '"5271338"',
+                                            field: 'KK',
+                                            value: '5271338'
+                                        },
+                                        ': Christologie Soteriologie'
+                                    ], [
+                                        {
+                                            term: '"527IV"',
+                                            field: 'KK',
+                                            value: '527IV'
+                                        },
+                                        ': CHRISTIANISME'
+                                    ]
+                                ]
+                            },
+                            { name: 'name2', value: ['value2'] },
+                            { name: 'name3', value: [[ { indice: 1 }, 'value3']] },
+                            { name: 'name4', value: [['value4', ['whatever']]] }
                         ]
                     }
                 }, 1), {
-                    name1: 'value1',
-                    name2: 'value2',
-                    name3: 'value3'
+                    name1: [
+                        '5271338: Christologie Soteriologie',
+                        '527IV: CHRISTIANISME'
+                    ],
+                    name2: ['value2'],
+                    name3: ['value3'],
+                    name4: ['value4']
                 });
             });
         });
@@ -129,14 +153,14 @@ describe('createNotice', function () {
                             {
                                 name: 'Author',
                                 value: [
-                                    {
+                                    [{
                                         term: '\"BRETON, O.\"',
                                         field: 'AR',
                                         value: 'BRETON, O.'
                                     }, {
                                         indice: 'b1'
-                                    },
-                                    'John, Doe.'
+                                    }],
+                                    ['John, Doe.']
                                 ]
                             }
                         ]
@@ -156,12 +180,12 @@ describe('createNotice', function () {
                         1: [
                             {
                                 name: 'AN',
-                                value: [
+                                value: [[
                                     '1234',
                                     [
                                         'additional info'
                                     ]
-                                ]
+                                ]]
                             }
                         ]
                     }
