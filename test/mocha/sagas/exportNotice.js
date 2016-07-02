@@ -1,7 +1,7 @@
 import { put, select } from 'redux-saga/effects';
 
 import { exportNotice } from '../../../lib/sagas/exportNotice';
-import { fromNotice, fromLogin } from '../../../lib/reducers';
+import * as fromState from '../../../lib/reducers';
 import actions,  {
     EXPORT_NOTICE_PENDING,
     EXPORT_NOTICE_SUCCESS
@@ -16,7 +16,7 @@ describe('sagas export notice', function () {
 
     it('should select isUserLogged', function () {
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromLogin.isUserLogged));
+        assert.deepEqual(next.value, select(fromState.isUserLogged));
     });
 
     it('should trigger EXPORT_NOTICE_PENDING action if user isLogged', function () {
@@ -39,7 +39,7 @@ describe('sagas export notice', function () {
         iterator.next();
         iterator.next(true);
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromNotice.getMissingNoticeIds, action.category, action.ids));
+        assert.deepEqual(next.value, select(fromState.getMissingNoticeIds, action.ids));
     });
 
     it('should select notices by ids if no missing ids', function () {
@@ -48,7 +48,7 @@ describe('sagas export notice', function () {
         iterator.next(true);
         iterator.next();
         const next = iterator.next(missingIds);
-        assert.deepEqual(next.value, select(fromNotice.getNoticesByIds, action.category, action.ids));
+        assert.deepEqual(next.value, select(fromState.getNoticesByIds, action.ids));
     });
 
     it('should end if missing ids', function () {

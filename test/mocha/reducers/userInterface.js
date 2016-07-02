@@ -29,17 +29,17 @@ describe('reducers userInterface', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: LOGOUT }), defaultState);
     });
 
-    it('should return set showLogin to false if action is LOGIN_SUCCESS', function () {
+    it('should return set loginShown to false if action is LOGIN_SUCCESS', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: LOGIN_SUCCESS }), {
             other: 'data',
-            showLogin: false
+            loginShown: false
         });
     });
 
-    it('should return set showLingi to false if action is API_LOGIN_SUCCESS', function () {
+    it('should return set loginShown to false if action is API_LOGIN_SUCCESS', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: API_LOGIN_SUCCESS }), {
             other: 'data',
-            showLogin: false
+            loginShown: false
         });
     });
 
@@ -124,17 +124,17 @@ describe('reducers userInterface', function () {
         );
     });
 
-    it('should set showLogin to true when action is SHOW_LOGIN', function () {
+    it('should set loginShown to true when action is SHOW_LOGIN', function () {
         assert.deepEqual(
             userInterface({ other: 'data' }, { type: SHOW_LOGIN }),
-            { showLogin: true, other: 'data' }
+            { loginShown: true, other: 'data' }
         );
     });
 
-    it('should set showLogin to true when action is HIDE_LOGIN', function () {
+    it('should set loginShown to true when action is HIDE_LOGIN', function () {
         assert.deepEqual(
             userInterface({ other: 'data' }, { type: HIDE_LOGIN }),
-            { showLogin: false, other: 'data' }
+            { loginShown: false, other: 'data' }
         );
     });
 
