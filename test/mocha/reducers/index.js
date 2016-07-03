@@ -1,8 +1,10 @@
 import * as fromState from '../../../lib/reducers';
 
 describe('index reducers', function () {
+
     describe('selector', function () {
-        describe('selectRetrieveUrl', function () {
+
+        describe('getRetrieveUrl', function () {
             it('should generate retrieve url for article when loation is article', function () {
                 assert.equal(fromState.getRetrieveUrl({
                     url: 'http://api',
@@ -37,6 +39,14 @@ describe('index reducers', function () {
                         location: 'a2z'
                     }
                 }, 'publicationId'), 'http://api/insb/publication/retrieve/publicationId');
+            });
+        });
+
+        describe('getLocation', function () {
+            it('should return userInterface.location', function () {
+                assert.equal(fromState.getLocation({
+                    userInterface: { location: 'article' }
+                }), 'article');
             });
         });
     });
