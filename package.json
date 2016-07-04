@@ -69,7 +69,7 @@
     "react-input-autosize": "0.6.8",
     "react-input-calendar": "0.1.19",
     "react-modal": "0.6.1",
-    "react-redux": "4.0.0",
+    "react-redux": "4.3.0",
     "react-select": "1.0.0-beta8",
     "redux": "3.0.4",
     "redux-localstorage": "1.0.0-rc4",

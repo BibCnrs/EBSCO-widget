@@ -43,9 +43,9 @@ describe('createSelectedRecord', function () {
         });
     });
 
-    describe('getSelectedRecord', function () {
+    describe('getSelectedRecordIds', function () {
         it('should return the list of selected id for the given category', function () {
-            assert.deepEqual(fromSelectedRecord.getSelectedRecord([1, 2, 3]), [1, 2, 3]);
+            assert.deepEqual(fromSelectedRecord.getSelectedRecordIds([1, 2, 3]), [1, 2, 3]);
         });
     });
 });
