@@ -1,4 +1,3 @@
-
 import { search } from '../../../lib/middlewares/search';
 import actions, {
     PAGE_LOAD,
@@ -77,7 +76,7 @@ describe('search middleware', function () {
         };
     });
 
-    it('should only trigger received action if it is not one of ARTICLE_PAGE_LOAD, ARTICLE_SEARCH_TERM, ARTICLE_LIMIT_SEARCH, ARTICLE_APPLY_FACET, PUBLICATION_PAGE_LOAD, PUBLICATION_SEARCH_TERM, PUBLICATION_LIMIT_SEARCH, PUBLICATION_APPLY_FACET', function () {
+    it('should only trigger received action if it is not one of PAGE_LOAD, SEARCH_TERM, SEARCH, APPLY_FACET', function () {
         const action = {
             type: 'DONT_CARE'
         };
@@ -92,6 +91,12 @@ describe('search middleware', function () {
             type,
             category: 'article'
         };
+        store.getState = () => ({
+            ...state,
+            userInterface: {
+                location: 'article'
+            }
+        });
 
         search(store, next, action);
         const { from, to } = state.limiters.article.publicationDate;
@@ -168,6 +173,9 @@ describe('search middleware', function () {
                     currentPage: 5,
                     5: { page: 'data' }
                 }
+            },
+            userInterface: {
+                location: 'article'
             }
         });
         const action = {

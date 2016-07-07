@@ -1,6 +1,6 @@
 import BatchExport from '../../../lib/components/BatchExport';
 
-describe.only('BatchExport', function () {
+describe('BatchExport', function () {
     it('render a span instead of a BibButton if selectedIds is empty', function () {
         const props = {
             selectedIds: []

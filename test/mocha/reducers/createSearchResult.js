@@ -119,10 +119,10 @@ describe('reducers createSearchResult', function () {
 
     describe('selector', function () {
 
-        describe('getCurrentPage', function () {
+        describe('getCurrentPageData', function () {
 
-            it('should return currentPage', function () {
-                assert.deepEqual(fromSearchResult.getCurrentPage({
+            it('should return currentPageData', function () {
+                assert.deepEqual(fromSearchResult.getCurrentPageData({
                     currentPage: 64,
                     64: [128, 129],
                     65: [130, 131]
@@ -130,7 +130,7 @@ describe('reducers createSearchResult', function () {
             });
 
             it('should return undefined if no currentPage', function () {
-                assert.isUndefined(fromSearchResult.getCurrentPage({
+                assert.isUndefined(fromSearchResult.getCurrentPageData({
                     currentPage: null,
                     64: 'currentPage',
                     65: 'otherPage'

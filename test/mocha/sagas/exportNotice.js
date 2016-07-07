@@ -1,10 +1,9 @@
-import { put, select } from 'redux-saga/effects';
+import { put, select, call } from 'redux-saga/effects';
 
-import { exportNotice } from '../../../lib/sagas/exportNotice';
+import { exportNotice, openExport } from '../../../lib/sagas/exportNotice';
 import * as fromState from '../../../lib/reducers';
 import actions,  {
-    EXPORT_NOTICE_PENDING,
-    EXPORT_NOTICE_SUCCESS
+    EXPORT_NOTICE_PENDING
 } from '../../../lib/actions';
 
 describe('sagas export notice', function () {
@@ -51,26 +50,24 @@ describe('sagas export notice', function () {
         assert.deepEqual(next.value, select(fromState.getNoticesByIds, action.ids));
     });
 
-    it('should end if missing ids', function () {
+    it('should trigger BATCH_RETRIEVE with missing ids if there are some', function () {
         const missingIds = [1];
         iterator.next();
         iterator.next(true);
         iterator.next();
         const next = iterator.next(missingIds);
-        assert.isTrue(next.done);
+        assert.deepEqual(next.value, put(actions.batchRetrieve(missingIds)));
+
+        // assert.isTrue(next.done);
     });
 
-    it('should trigger EXPORT_NOTICE_SUCCESS with returned notices', function () {
+    it('should call openExport with returned notices', function () {
         const notices = ['notice1', 'notice2', 'notice3'];
         iterator.next();
         iterator.next(true);
         iterator.next();
         iterator.next([]);
         const next = iterator.next(notices);
-        assert.deepEqual(next.value, put({
-            type: EXPORT_NOTICE_SUCCESS,
-            category: action.category,
-            notices
-        }));
+        assert.deepEqual(next.value, call(openExport, notices));
     });
 });
