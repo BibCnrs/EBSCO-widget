@@ -9,8 +9,8 @@ describe('Search component', function () {
 
     beforeEach(function () {
         props = {
-            onSearchTerm: function onSearchTerm() {
-                return ['onSearchTerm', ...arguments];
+            onSearch: function onSearch() {
+                return ['onSearch', ...arguments];
             },
             status: 'NONE',
             term: 'word',
@@ -31,10 +31,10 @@ describe('Search component', function () {
         assert.isTrue(fetchButton.props().disabled);
     });
 
-    it('should have a FetchButton component with onClick calling onSearchTerm', function () {
+    it('should have a FetchButton component with onClick calling onSearch', function () {
         const fetchButton = component.find('FetchButton');
         const { onClick } = fetchButton.props();
-        assert.deepEqual(onClick(), ['onSearchTerm']);
+        assert.deepEqual(onClick(), ['onSearch']);
         assert.isFalse(fetchButton.props().disabled);
 
     });

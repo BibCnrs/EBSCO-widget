@@ -13,8 +13,18 @@ describe('index reducers', function () {
                     },
                     userInterface: {
                         location: 'article'
+                    },
+                    searchResult: {
+                        article: {
+                            byId: {
+                                1: {
+                                    dbId: 'dbId',
+                                    an: 'an'
+                                }
+                            }
+                        }
                     }
-                }, 'dbId', 'an'), 'http://api/insb/article/retrieve/dbId/an');
+                }, 1), 'http://api/insb/article/retrieve/dbId/an');
             });
 
             it('should generate retrieve url for publication when location is publication', function () {
@@ -25,8 +35,17 @@ describe('index reducers', function () {
                     },
                     userInterface: {
                         location: 'publication'
+                    },
+                    searchResult: {
+                        publication: {
+                            byId: {
+                                1: {
+                                    publicationId: 'publicationId'
+                                }
+                            }
+                        }
                     }
-                }, 'publicationId'), 'http://api/insb/publication/retrieve/publicationId');
+                }, 1), 'http://api/insb/publication/retrieve/publicationId');
             });
 
             it('should generate retrieve url for a2z when location is a2z', function () {
@@ -37,8 +56,17 @@ describe('index reducers', function () {
                     },
                     userInterface: {
                         location: 'a2z'
+                    },
+                    searchResult: {
+                        a2z: {
+                            byId: {
+                                1: {
+                                    publicationId: 'publicationId'
+                                }
+                            }
+                        }
                     }
-                }, 'publicationId'), 'http://api/insb/publication/retrieve/publicationId');
+                }, 1), 'http://api/insb/publication/retrieve/publicationId');
             });
         });
 
