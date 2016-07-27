@@ -2,7 +2,43 @@ import * as fromState from '../../../lib/reducers';
 
 describe('index reducers', function () {
 
-    describe('selector', function () {
+    describe.only('selector', function () {
+
+        describe('getPausedAction', function () {
+            it('should return pausedAction', function () {
+                assert.equal(fromState.getPausedAction({ pausedAction: 'pausedActionValue' }), 'pausedActionValue');
+            });
+        });
+
+        describe('getCurrentSearchResult', function () {
+            it('should return current searchResult result', function () {
+                assert.equal(fromState.getCurrentSearchResult({
+                    searchResult: {
+                        article: 'articleSearchResult'
+                    },
+                    userInterface: {
+                        location: 'article'
+                    }
+                }), 'articleSearchResult');
+
+                assert.equal(fromState.getCurrentSearchResult({
+                    searchResult: {
+                        a2z: 'a2zSearchResult'
+                    },
+                    userInterface: {
+                        location: 'a2z'
+                    }
+                }), 'a2zSearchResult');
+                assert.equal(fromState.getCurrentSearchResult({
+                    searchResult: {
+                        publication: 'publicationSearchResult'
+                    },
+                    userInterface: {
+                        location: 'publication'
+                    }
+                }), 'publicationSearchResult');
+            });
+        });
 
         describe('getRetrieveUrl', function () {
             it('should generate retrieve url for article when loation is article', function () {
