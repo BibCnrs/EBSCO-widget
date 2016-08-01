@@ -2,7 +2,7 @@ import * as fromState from '../../../lib/reducers';
 
 describe('index reducers', function () {
 
-    describe.only('selector', function () {
+    describe('selector', function () {
 
         describe('getPausedAction', function () {
             it('should return pausedAction', function () {
