@@ -11,7 +11,7 @@
 		"location": "a2z",
 		"fullScreen": false,
 		"language": "fr",
-		"showLogin": true
+		"loginShown": true
 	},
 	"error": {},
 	"url": "http://server",

@@ -3,7 +3,9 @@ import initialState from './articleSearchResult.json';
 describe('articleSearchResult', function() {
 
     beforeEach(function (done) {
-        browser.pause(300).loadState(initialState);
+        browser
+        .pause(1000)
+        .loadState(initialState);
 
         client.start(done);
     });
@@ -31,14 +33,14 @@ describe('articleSearchResult', function() {
     it('should change page', function (done) {
         browser
         .waitForElementVisible('.record', 1000)
-        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 / 516730')
+        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 10 / 516730')
         .assert.containsText('.pagination .current.page', '1')
         .assert.containsText('.pagination a.page', '2')
         .click('.pagination a.page')
         .pause(300)
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.pagination .current.page', '2')
-        .assert.containsText('.search-count', 'Résultats de recherche : 21 - 40 / 516730');
+        .assert.containsText('.search-count', 'Résultats de recherche : 11 - 20 / 516730');
 
         client.start(done);
     });
@@ -66,7 +68,7 @@ describe('articleSearchResult', function() {
     it('should translate articleSearchResult', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 20 / 516730')
+        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 10 / 516730')
         .assert.containsText('.limiters', 'Texte Intégral')
         .assert.containsText('.limiters', 'Relu par un comité de lecture')
         .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'à')
@@ -77,7 +79,7 @@ describe('articleSearchResult', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('.search-count', 'Search results : 1 - 20 / 516730')
+        .assert.containsText('.search-count', 'Search results : 1 - 10 / 516730')
         .assert.containsText('.limiters', 'Full Text')
         .assert.containsText('.limiters', 'Peer Reviewed')
         .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'to')

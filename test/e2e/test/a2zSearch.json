@@ -1,7 +1,7 @@
 {
 	"login": {
-		"status": "SUCCESS",
-		"token": "token"
+		"status": "NONE",
+		"token": null
 	},
 	"userInterface": {
 		"limiterShown": true,
@@ -11,15 +11,15 @@
 		"location": "a2z",
 		"fullScreen": true,
 		"language": "fr",
-		"showLogin": false
+		"loginShown": false
 	},
 	"error": {},
 	"url": "http://server",
 	"dbUrl": "http://google.fr",
 	"domains": {
 		"all": ["vie", "shs"],
-		"available": ["vie", "vie", "shs"],
-		"article": "vie",
+		"available": [],
+		"article": null,
 		"publication": "vie",
 		"a2z": "vie"
 	},
@@ -122,7 +122,6 @@
 	},
 	"history": [],
 	"pausedAction": {
-		"type": "NAVIGATE",
-		"location": "article"
+		"type": "NONE"
 	}
 }

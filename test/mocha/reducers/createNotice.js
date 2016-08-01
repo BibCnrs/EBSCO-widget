@@ -236,7 +236,7 @@ describe('createNotice', function () {
         });
 
         describe('getJA', function () {
-            it('should return JA for notice with given id', function () {
+            it.skip('should return JA for notice with given id', function () {
                 const state = {
                     byId: {
                         1: [

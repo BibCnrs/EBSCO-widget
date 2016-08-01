@@ -4,6 +4,7 @@ describe('authenticationModal', function() {
 
     beforeEach(function (done) {
         browser
+        .pause(1000)
         .loadState(initialState);
 
         client.start(done);
