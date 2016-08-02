@@ -11,7 +11,8 @@
 		"location": "publication",
 		"fullScreen": true,
 		"language": "fr",
-		"showLogin": false
+		"showLogin": false,
+		"noticeBeingExported": []
 	},
 	"error": {},
 	"url": "http://server",
