@@ -1,9 +1,10 @@
-import BatchExport from '../../../lib/components/BatchExport';
+import { BatchExport } from '../../../lib/components/BatchExport';
 
 describe('BatchExport', function () {
     it('render a span instead of a BibButton if selectedIds is empty', function () {
         const props = {
-            selectedIds: []
+            selectedIds: [],
+            exporting: false
         };
 
         const component = enzyme.shallow(<BatchExport {...props} />);
@@ -17,6 +18,7 @@ describe('BatchExport', function () {
         let onClickCall;
         const props = {
             selectedIds: [1, 2],
+            exporting: false,
             exportNotice: (ids) => { onClickCall = ids;}
         };
         const component = enzyme.shallow(<BatchExport {...props} />);
