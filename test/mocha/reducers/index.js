@@ -113,5 +113,41 @@ describe('index reducers', function () {
                 }), 'article');
             });
         });
+
+        describe('getSelectedRecordsRisRequest', function () {
+            it('should return Ris request for selected records', function () {
+                assert.deepEqual(fromState.getSelectedRecordsRisRequest({
+                    selectedRecord: {
+                        article: [1, 3]
+                    },
+                    searchResult: {
+                        article: {
+                            byId: {
+                                1: { risLink: 'http://risLink.com/1' },
+                                2: { risLink: 'http://risLink.com/2' },
+                                3: { risLink: 'http://risLink.com/3' }
+                            }
+                        }
+                    },
+                    url: 'http://api',
+                    userInterface: { location: 'article' }
+                }), {
+                    url: 'http://api/retrieve_ris',
+                    config: {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            links: [
+                                'http://risLink.com/1',
+                                'http://risLink.com/3'
+                            ]
+                        })
+                    }
+                });
+            });
+        });
     });
 });
