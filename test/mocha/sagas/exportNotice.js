@@ -8,7 +8,7 @@ import actions, {
     LOGOUT
 } from '../../../lib/actions';
 
-describe('sagas export notice', function () {
+describe.only('sagas export notice', function () {
     let iterator;
     let action = { category: 'category', ids: [1, 2, 3] };
     beforeEach(function () {
@@ -47,7 +47,7 @@ describe('sagas export notice', function () {
         iterator.next();
         iterator.next(true);
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.getSelectedRecordsRisRequest));
+        assert.deepEqual(next.value, select(fromState.getRisRequestForIds, action.ids));
     });
 
     it('should fetch ris Notice using the retrieved link', function () {

@@ -114,12 +114,9 @@ describe('index reducers', function () {
             });
         });
 
-        describe('getSelectedRecordsRisRequest', function () {
-            it('should return Ris request for selected records', function () {
-                assert.deepEqual(fromState.getSelectedRecordsRisRequest({
-                    selectedRecord: {
-                        article: [1, 3]
-                    },
+        describe('getRisRequestForIds', function () {
+            it('should return Ris request for given records', function () {
+                assert.deepEqual(fromState.getRisRequestForIds({
                     searchResult: {
                         article: {
                             byId: {
@@ -131,7 +128,7 @@ describe('index reducers', function () {
                     },
                     url: 'http://api',
                     userInterface: { location: 'article' }
-                }), {
+                }, [1, 3]), {
                     url: 'http://api/retrieve_ris',
                     config: {
                         method: 'POST',
