@@ -1,7 +1,5 @@
 import {
-    FETCH_DOMAINS_SUCCESS,
-    FETCH_DOMAINS_ERROR,
-    FETCH_DOMAINS_PENDING,
+    SET_ALL_DOMAINS,
     DOMAIN_CHANGE,
     LOGIN_SUCCESS,
     API_LOGIN_SUCCESS,
@@ -12,31 +10,14 @@ import {
 import domains from '../../../lib/reducers/domains';
 
 describe('reducer domains', function () {
-    it('should set all to action.response, and publication ant a2z to action.response[0] when action is FETCH_DOMAINS_SUCCESS', function () {
+    it('should set all to action.domains, and publication ant a2z to action.domains[0] when action is SET_ALL_DOMAINS', function () {
         assert.deepEqual(domains({}, {
-            type: FETCH_DOMAINS_SUCCESS,
-            response: ['INSB', 'INSHS']
+            type: SET_ALL_DOMAINS,
+            domains: ['INSB', 'INSHS']
         }), {
             all: ['INSB', 'INSHS'],
             a2z: 'INSB',
             publication: 'INSB'
-        });
-    });
-
-    it('should set all to [], and publication ant a2z to action.response[0] when action is FETCH_DOMAINS_ERROR or FETCH_DOMAINS_PENDING', function () {
-        [FETCH_DOMAINS_ERROR, FETCH_DOMAINS_PENDING]
-        .forEach(type => {
-            assert.deepEqual(domains({
-                all: ['INSB', 'INSHS'],
-                a2z: 'INSB',
-                publication: 'INSB'
-            }, {
-                type
-            }), {
-                all: [],
-                a2z: null,
-                publication: null
-            });
         });
     });
 

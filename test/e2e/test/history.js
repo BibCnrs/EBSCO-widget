@@ -3,7 +3,9 @@ import initialState from './history.json';
 describe('history', function() {
 
     beforeEach(function (done) {
-        browser.loadState(initialState);
+        browser
+        .pause(1000)
+        .loadState(initialState);
 
         client.start(done);
     });

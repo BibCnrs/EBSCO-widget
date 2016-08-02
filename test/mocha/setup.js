@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import { assert } from 'chai';
 import * as enzyme from 'enzyme';
 var React = require('react');

@@ -56,4 +56,5 @@ test:
     - hub
   environment:
     NODE_ENV: test
+    server_url: http://server
   command: node_modules/mocha/bin/mocha --config test/e2e/mocha.opts test/e2e test/e2e/test/*.js

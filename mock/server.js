@@ -11,6 +11,7 @@ app.use(route.post('/login', function* () {
     const { username, password} = yield cobody(this);
     if (username !== 'test' || password !== 'secret') {
         this.status = 401;
+        this.body = 'Unauthorized';
 
         return;
     }

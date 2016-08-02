@@ -4,7 +4,7 @@ describe('authentication', function() {
 
     beforeEach(function (done) {
         browser
-        .pause(300)
+        .pause(1000)
         .loadState(initialState);
 
         client.start(done);

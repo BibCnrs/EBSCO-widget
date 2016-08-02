@@ -3,7 +3,9 @@ import initialState from './articleSearch.json';
 describe('simple articleSearch', function() {
 
     beforeEach(function (done) {
-        browser.pause(300).loadState(initialState);
+        browser
+        .pause(1000)
+        .loadState(initialState);
 
         client.start(done);
     });

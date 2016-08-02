@@ -61,19 +61,20 @@
     "lodash": "^4.7.0",
     "query-string": "^4.1.0",
     "rc-slider": "3.1.0",
-    "react-bootstrap": "0.28.3",
     "react": "0.14.3",
     "react-addons-css-transition-group": "0.14.3",
+    "react-bootstrap": "0.28.3",
     "react-dom": "0.14.3",
     "react-fa": "4.0.0",
     "react-input-autosize": "0.6.8",
     "react-input-calendar": "0.1.19",
     "react-modal": "0.6.1",
-    "react-redux": "4.0.0",
+    "react-redux": "4.3.0",
     "react-select": "1.0.0-beta8",
     "redux": "3.0.4",
     "redux-localstorage": "1.0.0-rc4",
     "redux-localstorage-debounce": "0.1.0",
+    "redux-saga": "0.10.5",
     "reselect": "2.0.3"
   }
 }
