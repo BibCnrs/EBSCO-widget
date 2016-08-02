@@ -146,5 +146,23 @@ describe('index reducers', function () {
                 });
             });
         });
+
+        describe('isExportingNotice', function () {
+            it('should return true if id is in noticeBeingExported', function () {
+                assert.isTrue(fromState.isExportingNotice({
+                    userInterface: {
+                        noticeBeingExported: [1]
+                    }
+                }, 1));
+            });
+
+            it('should return false if id is not in noticeBeingExported', function () {
+                assert.isFalse(fromState.isExportingNotice({
+                    userInterface: {
+                        noticeBeingExported: [1]
+                    }
+                }, 2));
+            });
+        });
     });
 });
