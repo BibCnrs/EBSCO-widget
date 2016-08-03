@@ -33,14 +33,14 @@ describe('articleSearchResult', function() {
     it('should change page', function (done) {
         browser
         .waitForElementVisible('.record', 1000)
-        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 10 / 516730')
+        .assert.containsText('.search-count', '1 - 10 / 516730')
         .assert.containsText('.pagination .current.page', '1')
         .assert.containsText('.pagination a.page', '2')
         .click('.pagination a.page')
         .pause(300)
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.pagination .current.page', '2')
-        .assert.containsText('.search-count', 'Résultats de recherche : 11 - 20 / 516730');
+        .assert.containsText('.search-count', '11 - 20 / 516730');
 
         client.start(done);
     });
@@ -68,7 +68,7 @@ describe('articleSearchResult', function() {
     it('should translate articleSearchResult', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 10 / 516730')
+        .assert.containsText('.search-count', '1 - 10 / 516730')
         .assert.containsText('.limiters', 'Texte Intégral')
         .assert.containsText('.limiters', 'Relu par un comité de lecture')
         .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'à')
