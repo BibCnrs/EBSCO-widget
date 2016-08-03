@@ -164,5 +164,52 @@ describe('index reducers', function () {
                 }, 2));
             });
         });
+
+        describe('isPageSelected', function () {
+            it('should return true if currentPage is selected', function () {
+                assert.isTrue(fromState.isPageSelected({
+                    selectedRecord: {
+                        article: [0, 1, 2, 3, 4, 5, 6]
+                    },
+                    searchResult: {
+                        article: {
+                            currentPage: 1,
+                            1: [1, 2, 3, 4, 5]
+                        }
+                    },
+                    userInterface: { location: 'article' }
+                }, 1));
+            });
+
+            it('should return false if currentPage is only partially selected', function () {
+                assert.isFalse(fromState.isPageSelected({
+                    selectedRecord: {
+                        article: [0, 2, 3]
+                    },
+                    searchResult: {
+                        article: {
+                            currentPage: 1,
+                            1: [1, 2]
+                        }
+                    },
+                    userInterface: { location: 'article' }
+                }, 1));
+            });
+
+            it('should return false if currentPage is only partially selected', function () {
+                assert.isFalse(fromState.isPageSelected({
+                    selectedRecord: {
+                        article: [2, 3]
+                    },
+                    searchResult: {
+                        article: {
+                            currentPage: 1,
+                            1: [1, 2, 3]
+                        }
+                    },
+                    userInterface: { location: 'article' }
+                }, 1));
+            });
+        });
     });
 });

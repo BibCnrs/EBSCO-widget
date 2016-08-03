@@ -17,6 +17,11 @@
         }
     }
     .search-result {
+        .header {
+            input {
+                margin: 10px;
+            }
+        }
         .sort-selector {
             position: absolute;
             right: 0;
