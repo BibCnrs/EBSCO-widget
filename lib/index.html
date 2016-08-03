@@ -15,7 +15,6 @@
 document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
         var rootElement = document.getElementById('ebsco_widget');
-        console.log({url:  window.__SERVER_URL__});
         window.ReactDOM.render(React.createElement(window.EbscoWidget, { url: window.__SERVER_URL__, dbUrl: 'http://google.fr' }), rootElement);
     }
 };

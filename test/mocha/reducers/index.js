@@ -113,5 +113,56 @@ describe('index reducers', function () {
                 }), 'article');
             });
         });
+
+        describe('getRisRequestForIds', function () {
+            it('should return Ris request for given records', function () {
+                assert.deepEqual(fromState.getRisRequestForIds({
+                    searchResult: {
+                        article: {
+                            byId: {
+                                1: { risLink: 'http://risLink.com/1' },
+                                2: { risLink: 'http://risLink.com/2' },
+                                3: { risLink: 'http://risLink.com/3' }
+                            }
+                        }
+                    },
+                    url: 'http://api',
+                    userInterface: { location: 'article' }
+                }, [1, 3]), {
+                    url: 'http://api/retrieve_ris',
+                    config: {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            links: [
+                                'http://risLink.com/1',
+                                'http://risLink.com/3'
+                            ]
+                        })
+                    }
+                });
+            });
+        });
+
+        describe('isExportingNotice', function () {
+            it('should return true if id is in noticeBeingExported', function () {
+                assert.isTrue(fromState.isExportingNotice({
+                    userInterface: {
+                        noticeBeingExported: [1]
+                    }
+                }, 1));
+            });
+
+            it('should return false if id is not in noticeBeingExported', function () {
+                assert.isFalse(fromState.isExportingNotice({
+                    userInterface: {
+                        noticeBeingExported: [1]
+                    }
+                }, 2));
+            });
+        });
     });
 });

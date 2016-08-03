@@ -43,41 +43,48 @@ describe('sagas export notice', function () {
         assert.isTrue(next.done);
     });
 
-    it('should select missingNoticeIds', function () {
+    it('should select SelectedRecordsRisRequest', function () {
         iterator.next();
         iterator.next(true);
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.getMissingNoticeIds, action.ids));
+        assert.deepEqual(next.value, select(fromState.getRisRequestForIds, action.ids));
     });
 
-    it('should select notices by ids if no missing ids', function () {
-        const missingIds = [];
+    it('should fetch ris Notice using the retrieved link', function () {
         iterator.next();
         iterator.next(true);
         iterator.next();
-        const next = iterator.next(missingIds);
-        assert.deepEqual(next.value, select(fromState.getNoticesByIds, action.ids));
+        const next = iterator.next({ retrieveLink: 'request' });
+        assert.deepEqual(next.value, call(fetch, { retrieveLink: 'request' }, [SEARCH, LOGOUT]));
     });
 
-    it('should select BatchRetrieveRequest with missing ids if there are some', function () {
-        const missingIds = [1];
+    it('should call openExport with returned response', function () {
+        const notices = ['ris1', 'ris2', 'ris3'];
         iterator.next();
         iterator.next(true);
         iterator.next();
-        let next = iterator.next(missingIds);
-        assert.deepEqual(next.value, select(fromState.getBatchRetrieveRequest, missingIds));
-
-        next = iterator.next({ request: 'object' });
-        assert.deepEqual(next.value, call(fetch, { request: 'object' }, [ SEARCH, LOGOUT ]));
+        iterator.next({ retrieveLink: 'request' });
+        const next = iterator.next({ response: notices });
+        assert.deepEqual(next.value, call(openExport, notices.join('')));
     });
 
-    it('should call openExport with returned notices', function () {
-        const notices = ['notice1', 'notice2', 'notice3'];
+    it('should cancel openExport if receiving cancel key', function () {
+        const notices = ['ris1', 'ris2', 'ris3'];
         iterator.next();
         iterator.next(true);
         iterator.next();
-        iterator.next([]);
-        const next = iterator.next(notices);
-        assert.deepEqual(next.value, call(openExport, notices));
+        iterator.next({ retrieveLink: 'request' });
+        const next = iterator.next({ cancel: true, response: notices });
+        assert.isTrue(next.done);
+    });
+
+    it('should trigger EXPORT_NOTICE_ERROR if receiving error key', function () {
+        const notices = ['ris1', 'ris2', 'ris3'];
+        iterator.next();
+        iterator.next(true);
+        iterator.next();
+        iterator.next({ retrieveLink: 'request' });
+        const next = iterator.next({ error: 'error', response: notices });
+        assert.deepEqual(next.value, put(actions.exportNoticeError('error')));
     });
 });
