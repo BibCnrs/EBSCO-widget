@@ -5,7 +5,6 @@ describe('createSelectedRecord', function () {
     let selectedCategoryRecord;
 
     before(function () {
-        console.log({createSelectedRecord});
         selectedCategoryRecord = createSelectedRecord('category');
     });
 
@@ -38,8 +37,16 @@ describe('createSelectedRecord', function () {
             assert.isTrue(fromSelectedRecord.isRecordSelected([1, 2, 3], 2));
         });
 
+        it('should return true if all the given ids are in selected', function () {
+            assert.isTrue(fromSelectedRecord.isRecordSelected([1, 2, 3], [1, 2]));
+        });
+
         it('should return false if the given id is not in the given category', function () {
             assert.isFalse(fromSelectedRecord.isRecordSelected([1, 3], 2));
+        });
+
+        it('should return false if all the given ids are not in the given category', function () {
+            assert.isFalse(fromSelectedRecord.isRecordSelected([2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
         });
     });
 

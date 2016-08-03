@@ -31,13 +31,13 @@ describe('a2z Search result', function() {
     it('should change page', function (done) {
         browser
         .waitForElementVisible('.record', 1000)
-        .assert.containsText('.search-count', 'Résultats de recherche : 1 - 10 / 432')
+        .assert.containsText('.search-count', '1 - 10 / 432')
         .assert.containsText('.pagination .current.page', '1')
         .assert.containsText('.pagination a.page', '2')
         .click('.pagination a.page')
         .waitForElementVisible('.record', 1000)
         .assert.containsText('.pagination .current.page', '2')
-        .assert.containsText('.search-count', 'Résultats de recherche : 11 - 20 / 432');
+        .assert.containsText('.search-count', '11 - 20 / 432');
 
         client.start(done);
     });

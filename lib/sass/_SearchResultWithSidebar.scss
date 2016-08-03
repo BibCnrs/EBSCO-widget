@@ -17,6 +17,9 @@
         }
     }
     .search-result {
+        input {
+            margin: 5px;
+        }
         .sort-selector {
             position: absolute;
             right: 0;
