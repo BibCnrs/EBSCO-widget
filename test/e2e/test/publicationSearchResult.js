@@ -48,7 +48,6 @@ describe('publication Search result', function() {
     it('should translate publicationSearchResult', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.search-count', '1 - 20 / 4968')
         .assert.containsText('.limiters', 'Relu par un comité de lecture')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
         .assert.containsText('.facet_list h3', 'Affiner votre recherche')
@@ -57,7 +56,6 @@ describe('publication Search result', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('.search-count', 'Search results : 1 - 20 / 4968')
         .assert.containsText('.limiters', 'Peer Reviewed')
         .assert.containsText('.facet_list h3', 'Refine your search')
         ;

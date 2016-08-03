@@ -68,7 +68,6 @@ describe('articleSearchResult', function() {
     it('should translate articleSearchResult', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.search-count', '1 - 10 / 516730')
         .assert.containsText('.limiters', 'Texte Intégral')
         .assert.containsText('.limiters', 'Relu par un comité de lecture')
         .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'à')
@@ -79,7 +78,6 @@ describe('articleSearchResult', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('.search-count', 'Search results : 1 - 10 / 516730')
         .assert.containsText('.limiters', 'Full Text')
         .assert.containsText('.limiters', 'Peer Reviewed')
         .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'to')
