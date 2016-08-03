@@ -1,4 +1,12 @@
 @import "./_variables.scss";
+.a2z-search {
+    hr {
+        margin: 5px;
+    }
+    .letters .btn {
+        padding: 0px 5px;
+    }
+}
 .search {
     .input input {
         font-size: 1em;
