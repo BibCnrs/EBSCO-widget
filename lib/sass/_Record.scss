@@ -4,6 +4,9 @@
 .record {
     text-align: left;
     .title {
+        .fa {
+            float: right;
+        }
         color: $title;
     }
     .fetch-link {
@@ -22,6 +25,7 @@
     }
 
     .notice {
+        line-height: 1;
         dt {
             display: block;
             width: 200px;

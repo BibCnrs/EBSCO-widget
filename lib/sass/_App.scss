@@ -7,14 +7,12 @@
     }
     color: black;
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 1em;
     .container {
         max-width: 100%;
     }
     .full-screen {
         padding: 25px;
-    }
-    .full-screen {
         z-index: 1;
         position: fixed;
         top: 0px;
