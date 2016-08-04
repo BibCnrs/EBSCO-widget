@@ -41,15 +41,19 @@ Il est également  nécessaire d'avoir BibApi de lancer sur  localhost:3000
 Construire build/app.js et build/app.css :`make build`
 
 ### serve
-servir une page html de test incorporant le widget construit: `make serve`
+
+Servir une page html de test incorporant le widget construit: `make serve`
+
+Le serveur web écoutera ensuite sur l'url suivante : http://127.0.0.1:3002/
 
 ## Test
-`make test`: lancer tout les tests
-`make test-mocha`: lancer les tests unitaires mocha
-`make selenium`: lancer selenium hub et chrome (nécessaire pour les tests "end to end")
-`make selenium-debug`: lancer selenium en mode debug ce qui permet de s'y connecter avec [VNC](https://www.realvnc.com/products/vnc/) pour un retour graphique
+
+- `make test`: lancer tout les tests
+- `make test-mocha`: lancer les tests unitaires mocha
+- `make selenium`: lancer selenium hub et chrome (nécessaire pour les tests "end to end")
+- `make selenium-debug`: lancer selenium en mode debug ce qui permet de s'y connecter avec [VNC](https://www.realvnc.com/products/vnc/) pour un retour graphique
 [Application chrome gratuite VNC](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla?hl=en)
-`make test-e2e`: lancer les tests "end to end" nightwatch
+- `make test-e2e`: lancer les tests "end to end" nightwatch
 
 ## Useful commands
 
