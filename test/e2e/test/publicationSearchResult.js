@@ -50,14 +50,14 @@ describe('publication Search result', function() {
         .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.limiters', 'Relu par un comité de lecture')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
-        .assert.containsText('.facet_list h3', 'Affiner votre recherche')
+        .assert.containsText('.sidebar h3', 'Affiner votre recherche')
         .click('.navbar.navbar-default .language')
         .waitForElementVisible('#en', 1000)
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
         .assert.containsText('.limiters', 'Peer Reviewed')
-        .assert.containsText('.facet_list h3', 'Refine your search')
+        .assert.containsText('.sidebar h3', 'Refine your search')
         ;
 
         client.start(done);

@@ -72,7 +72,7 @@ describe('articleSearchResult', function() {
         .assert.containsText('.limiters', 'Relu par un comité de lecture')
         .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'à')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
-        .assert.containsText('.facet_list h3', 'Affiner votre recherche')
+        .assert.containsText('.sidebar h3', 'Affiner votre recherche')
         .click('.navbar.navbar-default .language')
         .waitForElementVisible('#en', 1000)
         .click('.navbar.navbar-default #en')
@@ -81,7 +81,7 @@ describe('articleSearchResult', function() {
         .assert.containsText('.limiters', 'Full Text')
         .assert.containsText('.limiters', 'Peer Reviewed')
         .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'to')
-        .assert.containsText('.facet_list h3', 'Refine your search')
+        .assert.containsText('.sidebar h3', 'Refine your search')
         ;
 
         client.start(done);

@@ -18,7 +18,6 @@ var sassLoader = {
     loaders: ['style', 'css', 'sass?' + sassOptions]
 };
 
-
 module.exports = {
     devtool: 'eval',
     module: {

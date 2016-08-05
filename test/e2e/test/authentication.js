@@ -42,7 +42,7 @@ describe('authentication', function() {
         .assert.containsText('.navbar.navbar-default .active', 'A à Z')
         .click('.nav-publication')
         .pause(300)
-        .assert.containsText('.navbar.navbar-default .active', 'Titre')
+        .assert.containsText('.navbar.navbar-default .active', 'Parution')
         .waitForElementVisible('.record', 1000)
         .click('.record_list a.fetch-link')
         .pause(300)
@@ -67,11 +67,14 @@ describe('authentication', function() {
         client.start(done);
     });
 
-    it('should display login modal when trying to go to article page', function (done) {
+    it('should display login modal when trying to search article', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'A à Z')
         .click('.nav-article')
+        .pause(300)
+        .setValue('.article-search-input-list input', 'aids')
+        .click('.fetch-button button')
         .pause(300)
         .waitForElementVisible('.authentication .modal-dialog', 1000)
         .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')

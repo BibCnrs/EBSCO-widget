@@ -12,7 +12,7 @@ describe('publicationSearch', function() {
     it('should display article search result when triggering search', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Titre')
+        .assert.containsText('.navbar.navbar-default .active', 'Parution')
         .setValue('.search-input', 'study')
         .waitForElementVisible('.fetch-button .btn', 100)
         .click('.fetch-button .btn')
@@ -28,12 +28,11 @@ describe('publicationSearch', function() {
         .waitForElementVisible('.navbar.navbar-default', 100)
         .assert.containsText('.navbar .navbar-header .navbar-brand', 'Recherche')
         .assert.containsText('.navbar.navbar-default', 'Article')
-        .assert.containsText('.navbar.navbar-default', 'Titre')
+        .assert.containsText('.navbar.navbar-default', 'Parution')
         .assert.containsText('.navbar.navbar-default', 'A à Z')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
         .assert.attributeEquals('.search .search-input', 'placeholder', 'Rechercher des titres de revues, de livres...')
         .assert.containsText('.fetch-button', 'Rechercher')
-        .assert.containsText('.search-menu', 'Résultats')
         .click('.navbar.navbar-default .language')
         .waitForElementVisible('#en', 1000)
         .click('.navbar.navbar-default #en')
@@ -41,7 +40,6 @@ describe('publicationSearch', function() {
         .assert.containsText('.navbar.navbar-default .language', 'en')
         .assert.attributeEquals('.search .search-input', 'placeholder', 'Search journal titles, book titles...')
         .assert.containsText('.fetch-button', 'Search')
-        .assert.containsText('.search-menu', 'Results')
         ;
 
         client.start(done);
