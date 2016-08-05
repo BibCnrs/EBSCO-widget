@@ -34,9 +34,8 @@ module.exports = {
             },
             sassLoader,
             { test: /\.css$/, loader: 'style-loader!css-loader?importLoaders=1' },
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
             {
-                test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+                test: /\.(otf|eot|svg|ttf|woff|woff2|png|jpg)(\?.+)?$/,
                 loader: 'url-loader?limit=8192'
             }
         ]

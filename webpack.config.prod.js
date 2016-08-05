@@ -31,11 +31,11 @@ module.exports = {
                 },
                 exclude: /node_modules/
             },
-            { test: /\.(woff2?|svg|ttf|eot|png|jpe?g|gif|ico)?$/, loader: 'file?name=[path][hash].[ext]&context=./src', exclude: /node_modules/ },
+            { test: /\.(woff2?|svg|ttf|eot|jpe?g|gif|ico)?$/, loader: 'file?name=[path][hash].[ext]&context=./src', exclude: /node_modules/ },
             sassLoader,
             { test: /\.css$/, loader: 'style-loader!css-loader?importLoaders=1' },
             {
-                test: /\.(otf|eot|svg|ttf|woff|woff2)(\?.+)?$/,
+                test: /\.(otf|eot|svg|ttf|woff|woff2|png|jpg)(\?.+)?$/,
                 loader: 'url-loader'
             }
         ]
