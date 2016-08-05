@@ -8,10 +8,16 @@
     color: black;
     font-family: sans-serif;
     font-size: 1em;
+    background-image: url('./images/search-back.png');
+    background-repeat: no-repeat;
+    background-position: 5px 60px;
     .container {
         max-width: 100%;
     }
     .full-screen {
+        background-image: url('./images/search-back.png');
+        background-repeat: no-repeat;
+        background-position: 5px 85px;
         padding: 25px;
         z-index: 1;
         position: fixed;
