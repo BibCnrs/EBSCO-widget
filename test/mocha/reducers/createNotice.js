@@ -77,19 +77,77 @@ describe('createNotice', function () {
         });
 
         describe('getNoticeById', function () {
-            it('should return notice for given id', function () {
-                assert.equal(fromNotice.getNoticeById({ byId: {
+            it('should return notice.items formatted as literal minus the first item for given id', function () {
+                assert.deepEqual(fromNotice.getNoticeById({ byId: {
                     1: 'notice 1',
-                    64: 'notice 64'
-                }}, 64), 'notice 64');
+                    64: {
+                        items: [
+                            { label: 'key1', value: 'value1' },
+                            { label: 'key2', value: 'value2' },
+                            { label: 'key3', value: 'value3' }
+                        ]
+                    }
+                }}, 64), {
+                    key2: 'value2',
+                    key3: 'value3'
+                });
+            });
+
+            it('should add dbId with dbLabel if both are provided', function () {
+                assert.deepEqual(fromNotice.getNoticeById({ byId: {
+                    1: 'notice 1',
+                    64: {
+                        dbId: 'dbId',
+                        dbLabel: 'dbLabel',
+                        items: []
+                    }
+                }}, 64), {
+                    dbLabel: 'dbId'
+                });
+            });
+
+            it('should add dbId with with key if there is only a dbId', function () {
+                assert.deepEqual(fromNotice.getNoticeById({ byId: {
+                    1: 'notice 1',
+                    64: {
+                        dbId: 'dbId',
+                        items: []
+                    }
+                }}, 64), {
+                    'dbId': 'dbId'
+                });
+            });
+
+            it('should add articleLinks.fullTextLinks if it is present', function () {
+                assert.deepEqual(fromNotice.getNoticeById({ byId: {
+                    1: 'notice 1',
+                    64: {
+                        articleLinks: {
+                            fullTextLinks: 'value'
+                        },
+                        items: []
+                    }
+                }}, 64), {
+                    'fullTextLinks': 'value'
+                });
+            });
+
+            it('should add articleLinks.pdfLinks if it is present', function () {
+                assert.deepEqual(fromNotice.getNoticeById({ byId: {
+                    1: 'notice 1',
+                    64: {
+                        articleLinks: {
+                            pdfLinks: 'value'
+                        },
+                        items: []
+                    }
+                }}, 64), {
+                    'pdfLinks': 'value'
+                });
             });
 
             it('should return undefined if given id is not in byId', function () {
                 assert.isUndefined(fromNotice.getNoticeById({ byId: { 1: 'notice 1' }}, 64));
-            });
-
-            it('should return false if there is no noticeShown', function () {
-                assert.isUndefined(fromNotice.getNoticeById({}, 64));
             });
         });
     });
