@@ -8,7 +8,7 @@
     .sidebar {
         float: left;
         &.open {
-            width: 300px;
+            width: 250px;
         }
         &.closed {
             overflow: hidden;
@@ -37,7 +37,7 @@
     }
     &.with-sidebar {
         .search-result {
-            margin-left: 330px;
+            margin-left: 280px;
             border-left: solid 1px #ccc;
         }
     }

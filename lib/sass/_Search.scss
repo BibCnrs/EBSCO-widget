@@ -1,4 +1,9 @@
 @import "./_variables.scss";
+.a2z-search {
+    .letters .btn {
+        padding: 0px 5px;
+    }
+}
 .search {
     .input input {
         font-size: 1em;
@@ -16,6 +21,7 @@
         height: 36px;
     }
     .article-search-input-list {
+        margin-left: 0px;
         .open.dropdown.btn-group {
             z-index: 3;
         }
