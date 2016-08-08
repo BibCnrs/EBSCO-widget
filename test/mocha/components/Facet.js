@@ -30,7 +30,7 @@ describe('Facet', function () {
 
     it('should display a bibButton with "facet.label (facet.count)" as label that call applyFacet onClick', function () {
         const component = getComponent();
-        const bibButton = component.find('BibButton.title');
+        const bibButton = component.find('FetchButton.title');
 
         assert.equal(bibButton.props().label, 'title (2)');
         bibButton.props().onClick('click');
@@ -43,7 +43,7 @@ describe('Facet', function () {
             ...defaultFacet,
             label: 'titlePubDb'
         });
-        const bibButton = component.find('BibButton.title');
+        const bibButton = component.find('FetchButton.title');
 
         assert.equal(bibButton.props().label, 'title (2)');
     });
@@ -53,7 +53,7 @@ describe('Facet', function () {
             ...defaultFacet,
             label: undefined
         });
-        const bibButton = component.find('BibButton.title');
+        const bibButton = component.find('FetchButton.title');
 
         assert.equal(bibButton.props().label, 'id (2)');
     });
@@ -64,7 +64,7 @@ describe('Facet', function () {
             label: undefined,
             id: 'TypePublicationPubD'
         });
-        const bibButton = component.find('BibButton.title');
+        const bibButton = component.find('FetchButton.title');
 
         assert.equal(bibButton.props().label, 'Publication Type (2)');
     });

@@ -16,7 +16,7 @@ describe('FetchButton', function () {
             const error = component.find('.error');
             assert.equal(button.type(), BibButton);
             const {disabled, icon} = button.props();
-            assert.isFalse(disabled);
+            assert.isUndefined(disabled);
             assert.deepEqual(icon, {
                 name: 'test'
             });
