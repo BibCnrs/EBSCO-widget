@@ -48,6 +48,7 @@ describe('publication Search result', function() {
     it('should translate publicationSearchResult', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
+        .waitForElementVisible('.limiters', 1000)
         .assert.containsText('.limiters', 'Relu par un comité de lecture')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
         .assert.containsText('.sidebar h3', 'Affiner votre recherche')

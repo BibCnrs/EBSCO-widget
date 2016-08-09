@@ -18,7 +18,7 @@ describe('translate', function () {
     });
 
     const Test = translate(({ name, text }) => {
-        return <p>{`${text.hello} ${name}`}</p>
+        return <p>{`${text.hello} ${name}`}</p>;
     }, 'Test');
 
     const getComponent = (language, name) => {
