@@ -10,10 +10,10 @@
     color: black;
     font-family: sans-serif;
     font-size: 1em;
-    background-image: url('./images/search-back.png');
-    background-repeat: no-repeat;
-    background-position: 5px 60px;
     .container {
+        background-image: url('./images/search-back.png');
+        background-repeat: no-repeat;
+        background-position: 5px 60px;
         max-width: 100%;
     }
     .full-screen {
