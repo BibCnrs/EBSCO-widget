@@ -1,4 +1,6 @@
 .ebsco-widget {
+    all: initial;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     .btn {
         border-radius: 0px;
     }
@@ -29,17 +31,5 @@
         right: 0px;
         background-color: white;
         overflow: auto;
-    }
-}
-
-.ReactModalPortal:nth-last-child(1) {
-    .ReactModal__Overlay {
-        z-index: 3;
-    }
-}
-
-.ReactModalPortal:nth-last-child(2) {
-    .ReactModal__Overlay {
-        z-index: 4;
     }
 }
