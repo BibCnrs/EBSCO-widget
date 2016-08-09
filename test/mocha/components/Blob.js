@@ -9,7 +9,7 @@ describe('Blob', function () {
             b: '2'
         };
         const component = getComponent(data);
-        const dl = component.find('DL');
+        const dl = component.find('.dl');
         assert.deepEqual(dl.props().data, data);
     });
 

@@ -1,4 +1,4 @@
-import DL from '../../../lib/components/DL';
+import { DL } from '../../../lib/components/DL';
 
 describe('DL', function () {
     const getComponent = (data) => enzyme.shallow(<DL data={data} />);
