@@ -65,8 +65,6 @@ describe('sagas search', function () {
         let next = iterator.next(true);
         assert.deepEqual(next.value, put(actions.searchPending(action.category)));
         next = iterator.next();
-        assert.deepEqual(next.value, put(actions.loading()));
-        next = iterator.next();
         assert.deepEqual(next.value, select(fromState.getSearchQuery));
         next = iterator.next({ search: 'query'});
         assert.deepEqual(next.value, select(fromState.getSearchRequest));
@@ -74,31 +72,27 @@ describe('sagas search', function () {
         assert.deepEqual(next.value, call(fetch, { search: 'request'}, [RETRIEVE, LOGOUT]));
     });
 
-    it('should put action loaded and return if receiving cancel key', function () {
+    it('should put action searchCancel and return if receiving cancel key', function () {
         iterator.next();
         iterator.next(true);
         iterator.next(true);
-        iterator.next();
         iterator.next();
         iterator.next({ search: 'query'});
         iterator.next({ search: 'request'});
         let next = iterator.next({ cancel: true });
-        assert.deepEqual(next.value, put(actions.loaded()));
+        assert.deepEqual(next.value, put(actions.searchCancel(action.category)));
         next = iterator.next();
         assert.isTrue(next.done);
     });
 
-    it('should put loaded, searchError and return if receiving error key', function () {
+    it('should put searchError and return if receiving error key', function () {
         iterator.next();
         iterator.next(true);
         iterator.next(true);
-        iterator.next();
         iterator.next();
         iterator.next({ search: 'query'});
         iterator.next({ search: 'request'});
         let next = iterator.next({ error: 'error' });
-        assert.deepEqual(next.value, put(actions.loaded()));
-        next = iterator.next();
         assert.deepEqual(next.value, put(actions.searchError(action.category, 'error')));
         next = iterator.next();
         assert.isTrue(next.done);
@@ -109,13 +103,10 @@ describe('sagas search', function () {
         iterator.next(true);
         iterator.next(true);
         iterator.next();
-        iterator.next();
         iterator.next({ search: 'query'});
         iterator.next({ search: 'request'});
         let next = iterator.next({ response: 'response' });
         assert.deepEqual(next.value, put(actions.searchSuccess(action.category, 'response', { search: 'query' })));
-        next = iterator.next();
-        assert.deepEqual(next.value, put(actions.loaded()));
         next = iterator.next();
         assert.isTrue(next.done);
     });

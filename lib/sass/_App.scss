@@ -15,10 +15,12 @@
         max-width: 100%;
     }
     .full-screen {
-        background-image: url('./images/search-back.png');
-        background-repeat: no-repeat;
-        background-position: 5px 85px;
-        padding: 25px;
+        .content {
+            background-image: url('./images/search-back.png');
+            background-repeat: no-repeat;
+            background-position: 5px 85px;
+            padding: 25px;
+        }
         z-index: 1;
         position: fixed;
         top: 0px;

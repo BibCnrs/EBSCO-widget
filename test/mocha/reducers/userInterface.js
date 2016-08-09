@@ -2,8 +2,6 @@ import {
     API_LOGIN_SUCCESS,
     LOGIN_SUCCESS,
     LOGOUT,
-    LOADING,
-    LOADED,
     SEARCH_SUCCESS,
     SHOW_SIDEBAR,
     SHOW_HISTORY,
@@ -41,20 +39,6 @@ describe('reducers userInterface', function () {
             other: 'data',
             loginShown: false
         });
-    });
-
-    it('should set loading to true if action is LOADING', function () {
-        assert.deepEqual(
-            userInterface({ loading: false, other: 'data' }, { type: LOADING }),
-            { loading: true, other: 'data' }
-        );
-    });
-
-    it('should set loading to false if action is LOADED', function () {
-        assert.deepEqual(
-            userInterface({ loading: true, other: 'data' }, { type: LOADED }),
-            { loading: false, other: 'data' }
-        );
     });
 
     it('should set limiterShown to action.visibility if action is SHOW_SIDEBAR', function () {
