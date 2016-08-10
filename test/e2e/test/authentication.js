@@ -42,7 +42,7 @@ describe('authentication', function() {
         .assert.containsText('.navbar.navbar-default .active', 'A à Z')
         .click('.nav-publication')
         .pause(300)
-        .assert.containsText('.navbar.navbar-default .active', 'Parution')
+        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
         .waitForElementVisible('.record', 1000)
         .click('.record_list a.fetch-link')
         .pause(300)
@@ -84,7 +84,7 @@ describe('authentication', function() {
         .setValue('.password', 'secret')
         .click('button.api')
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Article');
+        .assert.containsText('.navbar.navbar-default .active', 'Articles');
 
         client.start(done);
     });

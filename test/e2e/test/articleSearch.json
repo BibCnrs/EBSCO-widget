@@ -1,7 +1,10 @@
 {
 	"login": {
 		"status": "SUCCESS",
-		"token": "token"
+		"token": "token",
+		"username": "",
+		"password": "",
+		"mode": "labintel"
 	},
 	"userInterface": {
 		"limiterShown": true,

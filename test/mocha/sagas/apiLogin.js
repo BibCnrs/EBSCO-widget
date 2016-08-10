@@ -20,7 +20,7 @@ describe('sagas apiLogin', function () {
 
     it('should select apiLoginRequest', function () {
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.getApiLoginRequest, action.data));
+        assert.deepEqual(next.value, select(fromState.getApiLoginRequest));
     });
 
     it('should call the fetch for the apiLoginRequest', function () {

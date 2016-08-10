@@ -27,6 +27,8 @@ describe('reducer login', function () {
 
                 assert.deepEqual(nextState, {
                     other: 'data',
+                    username: '',
+                    password: '',
                     status: 'SUCCESS',
                     token
                 });
@@ -74,16 +76,20 @@ describe('reducer login', function () {
         });
 
         describe('LOGOUT', function () {
-            it('should return defaultState', function () {
+            it('should return defaultState except for the mod', function () {
                 const nextState = login({
                     other: 'data',
                     status: 'SUCCESS',
-                    toke: 'token'
+                    token: 'token',
+                    mode: 'i will stay'
                 }, {
                     type: LOGOUT
                 });
 
-                assert.deepEqual(nextState, fromLogin.defaultState);
+                assert.deepEqual(nextState, {
+                    ...fromLogin.defaultState,
+                    mode: 'i will stay'
+                });
             });
         });
     });
