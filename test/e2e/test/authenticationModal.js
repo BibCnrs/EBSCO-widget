@@ -20,7 +20,7 @@ describe('authenticationModal', function() {
         .click('button.janus')
         .pause(1000)
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Article');
+        .assert.containsText('.navbar.navbar-default .active', 'Articles');
 
         client.start(done);
     });
@@ -36,7 +36,7 @@ describe('authenticationModal', function() {
         .setValue('.password', 'secret')
         .click('button.api')
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Article');
+        .assert.containsText('.navbar.navbar-default .active', 'Articles');
 
         client.start(done);
     });

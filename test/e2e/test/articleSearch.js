@@ -14,7 +14,7 @@ describe('simple articleSearch', function() {
         browser
         .pause(300)
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Article')
+        .assert.containsText('.navbar.navbar-default .active', 'Articles')
         .pause(300)
         .setValue('.article-search-input-list input', 'aids')
         .click('.fetch-button button')
@@ -28,7 +28,7 @@ describe('simple articleSearch', function() {
     it('should add/remove article Input when clicking add/remove', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Article')
+        .assert.containsText('.navbar.navbar-default .active', 'Articles')
         .assert.elementCount('.article-search-input-list .search-input', 1)
         .setValue('.article-search-input-list input', 'aids')
         .click('.article-search-input-list .row:nth-child(1) .action .add')
@@ -48,8 +48,8 @@ describe('simple articleSearch', function() {
         browser
         .waitForElementVisible('.navbar.navbar-default', 100)
         .assert.containsText('.navbar .navbar-header .navbar-brand', 'Recherche')
-        .assert.containsText('.navbar.navbar-default', 'Article')
-        .assert.containsText('.navbar.navbar-default', 'Parution')
+        .assert.containsText('.navbar.navbar-default', 'Articles')
+        .assert.containsText('.navbar.navbar-default', 'Revues, Ouvrages')
         .assert.containsText('.navbar.navbar-default', 'A à Z')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
         .assert.attributeEquals('.article-search-input-list .search-input', 'placeholder', 'Rechercher des articles, des chapitres de livre...')
@@ -60,8 +60,8 @@ describe('simple articleSearch', function() {
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
         .assert.containsText('.navbar .navbar-header .navbar-brand', 'Search')
-        .assert.containsText('.navbar.navbar-default', 'Article')
-        .assert.containsText('.navbar.navbar-default', 'Publication')
+        .assert.containsText('.navbar.navbar-default', 'Articles')
+        .assert.containsText('.navbar.navbar-default', 'Journals, Books')
         .assert.containsText('.navbar.navbar-default', 'A to Z')
         .assert.attributeEquals('.article-search-input-list .search-input', 'placeholder', 'Search articles, book chapters...')
         .assert.containsText('.fetch-button', 'Search')
