@@ -2,6 +2,7 @@ import createSearch, { defaultState } from '../../../lib/reducers/createSearch';
 
 import {
     LOGOUT,
+    INITIALIZE,
     SEARCH_PENDING,
     SEARCH_SUCCESS,
     SEARCH_ERROR,
@@ -64,9 +65,20 @@ describe('reducers createSearch', function () {
             it('should return default state', function () {
                 const searchState = categorySearch(
                     { status: 'state' },
-                    { type: LOGOUT, category: 'category' }
+                    { type: LOGOUT }
                 );
                 assert.deepEqual(searchState, defaultState['category']);
+            });
+        });
+
+        describe('INITIALIZE', function () {
+
+            it('should set status to NONE', function () {
+                const searchState = categorySearch(
+                    { status: 'state' },
+                    { type: INITIALIZE }
+                );
+                assert.deepEqual(searchState, { status: 'NONE' });
             });
         });
 

@@ -1,6 +1,7 @@
 import createNotice, * as fromNotice from '../../../lib/reducers/createNotice';
 
 import {
+    INITIALIZE,
     RETRIEVE_SUCCESS,
     SHOW_NOTICE
 } from '../../../lib/actions';
@@ -17,6 +18,34 @@ describe('createNotice', function () {
 
         it('should return default state if called with no state and any action', function () {
             assert.deepEqual(categoryNotice(undefined, {}), fromNotice.defaultState);
+        });
+
+        describe('INITIALIZE', function () {
+            it('should return received state if all noticeShown are found in byId', function () {
+                const state = {
+                    noticeShown: [1, 2],
+                    byId: {
+                        1: 'notice1',
+                        2: 'notice2'
+                    }
+                };
+                assert.deepEqual(categoryNotice(state, { type: INITIALIZE }), state);
+            });
+
+            it('should remove all noticeShown that are not in byId', function () {
+                const state = {
+                    noticeShown: [1, 2, 3, 4],
+                    byId: {
+                        2: 'notice2',
+                        4: 'notice4',
+                        5: 'notice5'
+                    }
+                };
+                assert.deepEqual(categoryNotice(state, { type: INITIALIZE }), {
+                    ...state,
+                    noticeShown: [2, 4]
+                });
+            });
         });
 
         describe('RETRIEVE_SUCCESS', function () {
