@@ -1,14 +1,15 @@
 @import "compass";
+@import "../../node_modules/normalize.css/normalize.css";
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../../node_modules/rc-slider/assets/index.css";
 @import "../../node_modules/react-input-calendar/styles/input-calendar.css";
 @import "../../node_modules/react-select/dist/react-select.min.css";
+@import "./_App.scss";
 @import "./_Search.scss";
 @import "./_input.scss";
 @import "./_RecordList.scss";
 @import "./_Record.scss";
 @import "./_Sidebar.scss";
-@import "./_App.scss";
 @import "./_Home.scss";
 @import "./_Pagination.scss";
 @import "./_DL.scss";

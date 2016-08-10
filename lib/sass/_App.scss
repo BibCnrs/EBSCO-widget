@@ -1,5 +1,7 @@
 .ebsco-widget {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     .btn {
+        height: 34px;
         border-radius: 0px;
     }
     hr {
@@ -8,10 +10,10 @@
     color: black;
     font-family: sans-serif;
     font-size: 1em;
-    background-image: url('./images/search-back.png');
-    background-repeat: no-repeat;
-    background-position: 5px 60px;
     .container {
+        background-image: url('./images/search-back.png');
+        background-repeat: no-repeat;
+        background-position: 5px 60px;
         max-width: 100%;
     }
     .full-screen {
@@ -29,17 +31,5 @@
         right: 0px;
         background-color: white;
         overflow: auto;
-    }
-}
-
-.ReactModalPortal:nth-last-child(1) {
-    .ReactModal__Overlay {
-        z-index: 3;
-    }
-}
-
-.ReactModalPortal:nth-last-child(2) {
-    .ReactModal__Overlay {
-        z-index: 4;
     }
 }
