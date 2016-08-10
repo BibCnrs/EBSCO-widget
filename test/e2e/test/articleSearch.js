@@ -47,7 +47,6 @@ describe('simple articleSearch', function() {
     it('should translate ArticleSearch', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 100)
-        .assert.containsText('.navbar .navbar-header .navbar-brand', 'Recherche')
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Revues, Ouvrages')
         .assert.containsText('.navbar.navbar-default', 'A à Z')
@@ -59,7 +58,6 @@ describe('simple articleSearch', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('.navbar .navbar-header .navbar-brand', 'Search')
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Journals, Books')
         .assert.containsText('.navbar.navbar-default', 'A to Z')

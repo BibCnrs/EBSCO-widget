@@ -26,7 +26,6 @@ describe('publicationSearch', function() {
     it('should translate PublicationSearch', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 100)
-        .assert.containsText('.navbar .navbar-header .navbar-brand', 'Recherche')
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Revues, Ouvrages')
         .assert.containsText('.navbar.navbar-default', 'A à Z')
