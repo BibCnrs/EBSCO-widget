@@ -1,6 +1,6 @@
 import { put, select, call } from 'redux-saga/effects';
 
-import { initialize, initializeLogin, initializeAllDomains } from '../../../lib/sagas/initialize';
+import { initialize, initializeLogin, initializeAllDomains, initializeDomain } from '../../../lib/sagas/initialize';
 import * as fromState from '../../../lib/reducers';
 import fetch from '../../../lib/sagas/fetch';
 import { localStorage, sessionStorage } from '../../../lib/services/storage';
@@ -17,28 +17,13 @@ describe('sagas initialize', function () {
             iterator = initialize(action);
         });
 
-        it('should select isUserLogged', function () {
-            const next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.isUserLogged));
-        });
-
-        it('should call initializeLogin then localStorage.getItem if isUserLogged is false', function () {
-            iterator.next();
-            let next = iterator.next(false);
-            assert.deepEqual(next.value, call(initializeLogin));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(localStorage.getItem, 'EBSCO_WIDGET_history'));
-        });
-
         it('should call localStorage.getItem EBSCO_WIDGET_history if isUserLogged is false', function () {
-            iterator.next();
-            const next = iterator.next(true);
+            const next = iterator.next();
             assert.deepEqual(next.value, call(localStorage.getItem, 'EBSCO_WIDGET_history'));
         });
 
         it('should put setHistory then selectAllDomains if receiving history', function () {
             iterator.next();
-            iterator.next(true);
             let next = iterator.next('history');
             assert.deepEqual(next.value, put(actions.setHistory('history')));
             next = iterator.next();
@@ -47,38 +32,63 @@ describe('sagas initialize', function () {
 
         it('should select allDomains if receiving no history', function () {
             iterator.next();
-            iterator.next(true);
             const next = iterator.next();
             assert.deepEqual(next.value, select(fromState.getAllDomains));
         });
 
-        it('should call initializeAllDomains if receiving no domains before put changeDomain', function () {
+        it('should call initializeAllDomains if receiving no domains before select isUserLogged', function () {
             iterator.next();
-            iterator.next(true);
             iterator.next();
             let next = iterator.next([]);
             assert.deepEqual(next.value, call(initializeAllDomains));
             next = iterator.next();
-            assert.deepEqual(next.value, put(actions.changeDomain('article', action.domain)));
+            assert.deepEqual(next.value, select(fromState.isUserLogged));
         });
 
-        it('should before put changeDomain if receiving domains', function () {
+        it('should select isUserLogged', function () {
             iterator.next();
+            iterator.next();
+            const next = iterator.next(['insb', 'inshs']);
+            assert.deepEqual(next.value, select(fromState.isUserLogged));
+        });
+
+        it('should call initializeLogin then localStorage.getItem if isUserLogged is false', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            let next = iterator.next(false);
+            assert.deepEqual(next.value, call(initializeLogin, action.domain));
+            next = iterator.next();
+            assert.deepEqual(next.value, select(fromState.isUserLogged));
+        });
+
+        it('should call initializeDomain if isUserLogged returned true again', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
             iterator.next(true);
+            let next = iterator.next(true);
+            assert.deepEqual(next.value, call(initializeDomain, action.domain));
+            next = iterator.next();
+            assert.deepEqual(next.value, put(actions.showResult(false)));
+        });
+
+        it('should end if isUserLogged returned false then true', function () {
             iterator.next();
-            let next = iterator.next(['insb', 'inshs']);
-            assert.deepEqual(next.value, put(actions.changeDomain('article', action.domain)));
-            next = iterator.next();
-            assert.deepEqual(next.value, put(actions.changeDomain('publication', action.domain)));
-            next = iterator.next();
-            assert.deepEqual(next.value, put(actions.changeDomain('a2z', action.domain)));
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next(false); //select isUserLogged
+            iterator.next(); // call initializeLogin
+            let next = iterator.next(true); //select isUserLogged
+            assert.isTrue(next.done);
         });
     });
 
     describe('initializeLogin', function() {
-        let iterator;
+        let iterator, domain;
         beforeEach(function () {
-            iterator = initializeLogin();
+            domain = 'insb';
+            iterator = initializeLogin(domain);
         });
 
         it('should select getLoginRequest and call fetch with it', function () {
@@ -143,6 +153,43 @@ describe('sagas initialize', function () {
             assert.deepEqual(next.value, select(fromState.getPausedAction));
             next = iterator.next({ paused: 'action' });
             assert.deepEqual(next.value, put({ paused: 'action' }));
+        });
+
+        it('should select isDomainAvailable if paused action.category is article', function () {
+            const response = {
+                token: 'token',
+                username: 'john',
+                domains: [ 'insb', 'inshs']
+            };
+            iterator.next(); //init
+            iterator.next({ getLogin: 'request' }); // select getLoginRequest
+            iterator.next({ response }); // call fetch
+            iterator.next(); // put actionLoginSuccess
+            iterator.next(); // call sessionStorage
+            iterator.next(); // call sessionStorage
+            iterator.next(); // call sessionStorage
+            let next = iterator.next({ category: 'article' }); // sellect getPausedAction
+            assert.deepEqual(next.value, select(fromState.isDomainAvailable, domain));
+        });
+
+        it('should call initializeDomain if isDomainAvailable return true', function () {
+            const response = {
+                token: 'token',
+                username: 'john',
+                domains: [ 'insb', 'inshs']
+            };
+            iterator.next();
+            iterator.next({ getLogin: 'request' });
+            iterator.next({ response });
+            iterator.next();
+            iterator.next();
+            iterator.next();
+            iterator.next();
+            iterator.next({ category: 'article' });
+            let next = iterator.next(true);
+            assert.deepEqual(next.value, call(initializeDomain, domain));
+            next = iterator.next();
+            assert.deepEqual(next.value, put({ category: 'article' }));
         });
 
     });
