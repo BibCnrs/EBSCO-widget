@@ -42,4 +42,10 @@ describe('getPagination', function () {
 
         assert.deepEqual(getPagination(1, 2), expectedResult);
     });
+
+    it('should return [] if given null, null', function () {
+        const expectedResult = [];
+
+        assert.deepEqual(getPagination(null, null), expectedResult);
+    });
 });
