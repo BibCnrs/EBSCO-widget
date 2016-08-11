@@ -7,8 +7,7 @@ import * as fromState from '../../../lib/reducers';
 import actions, {
     SEARCH,
     RETRIEVE,
-    LOGOUT,
-    DOMAIN_CHANGE
+    LOGOUT
 } from '../../../lib/actions';
 
 describe('sagas search', function () {
@@ -21,14 +20,6 @@ describe('sagas search', function () {
     it('should select canUserSearch', function () {
         const next = iterator.next();
         assert.deepEqual(next.value, select(fromState.canUserSearch));
-    });
-
-    it('should end if user is not logged and action is DOMAIN_CHANGE', function () {
-        const iterator = search({ category: 'article', type: DOMAIN_CHANGE });
-        iterator.next();
-        const next = iterator.next(false);
-
-        assert.isTrue(next.done);
     });
 
     it('should select isUserLogged if user cannot search', function () {
