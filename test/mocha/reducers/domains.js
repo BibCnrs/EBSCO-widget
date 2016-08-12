@@ -2,15 +2,14 @@ import {
     SET_ALL_DOMAINS,
     DOMAIN_CHANGE,
     LOGIN_SUCCESS,
-    API_LOGIN_SUCCESS,
     RESTORE_HISTORY,
     RELOAD_HISTORY,
     LOGOUT
 } from '../../../lib/actions';
 import domains from '../../../lib/reducers/domains';
 
-describe('reducer domains', function () {
-    it('should set all to action.domains, and publication ant a2z to action.domains[0] when action is SET_ALL_DOMAINS', function () {
+describe.only('reducer domains', function () {
+    it('should set all to action.domains, and publication and a2z to action.domains[0] when action is SET_ALL_DOMAINS', function () {
         assert.deepEqual(domains({}, {
             type: SET_ALL_DOMAINS,
             domains: ['INSB', 'INSHS']
@@ -18,6 +17,20 @@ describe('reducer domains', function () {
             all: ['INSB', 'INSHS'],
             a2z: 'INSB',
             publication: 'INSB'
+        });
+    });
+
+    it('should set all to action.domains, and publication and a2z to state.defaultDomain if it is in action.domains when action is SET_ALL_DOMAINS', function () {
+        assert.deepEqual(domains({
+            defaultDomain: 'INSHS'
+        }, {
+            type: SET_ALL_DOMAINS,
+            domains: ['INSB', 'INSHS']
+        }), {
+            all: ['INSB', 'INSHS'],
+            a2z: 'INSHS',
+            publication: 'INSHS',
+            defaultDomain: 'INSHS'
         });
     });
 
@@ -31,15 +44,14 @@ describe('reducer domains', function () {
         });
     });
 
-    it('should set available to actionresponse.domains, and article to action.response.domains[0] when action is API_LOGIN_SUCCESS', function () {
-        assert.deepEqual(domains({}, {
-            type: API_LOGIN_SUCCESS,
-            response: {
-                domains: ['INSB', 'INSHS']
-            }
+    it('should set available to action.domains, and article to state.defaultDomain if it is present in action.domains when action is LOGIN_SUCCESS', function () {
+        assert.deepEqual(domains({ defaultDomain: 'INSHS' }, {
+            type: LOGIN_SUCCESS,
+            response: { domains: ['INSB', 'INSHS'] }
         }), {
+            defaultDomain: 'INSHS',
             available: ['INSB', 'INSHS'],
-            article: 'INSB'
+            article: 'INSHS'
         });
     });
 
