@@ -51,23 +51,23 @@ describe('sagas initialize', function () {
             assert.deepEqual(next.value, select(fromState.isLoggingWithRenater));
         });
 
-        it('should call retrieveLoginData then localStorage.getItem if isLoggingWithRenater is false', function () {
+        it('should call retrieveLoginData then localStorage.getItem if isLoggingWithRenater is true', function () {
             iterator.next();
             iterator.next();
             iterator.next(['insb', 'inshs']);
             iterator.next();
-            let next = iterator.next(false);
+            let next = iterator.next(true);
             assert.deepEqual(next.value, call(retrieveLoginData));
             next = iterator.next();
             assert.isTrue(next.done);
         });
 
-        it('should call updateDomain and put showResult(false) if isLoggingWithRenater is true', function () {
+        it('should put showResult(false) if isLoggingWithRenater is false', function () {
             iterator.next();
             iterator.next();
             iterator.next(['insb', 'inshs']);
             iterator.next();
-            const next = iterator.next(true);
+            const next = iterator.next(false);
             assert.deepEqual(next.value, put(actions.showResult(false)));
         });
     });
