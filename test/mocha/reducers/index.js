@@ -361,7 +361,7 @@ describe('index reducers', function () {
             });
         });
 
-        describe.only('getDomainUpdate', function () {
+        describe('getDomainToUpdate', function () {
             it('should return domain same result as getDomainChange if no searchResult', function () {
                 const state = {
                     searchResult: {
@@ -385,7 +385,7 @@ describe('index reducers', function () {
                     }
                 };
 
-                assert.deepEqual(fromState.getDomainUpdate(state), fromState.getDomainChange(state));
+                assert.deepEqual(fromState.getDomainToUpdate(state), fromState.getDomainChange(state));
             });
 
             it('should return undefined for article if article has searchResult', function () {
@@ -413,7 +413,7 @@ describe('index reducers', function () {
                     }
                 };
 
-                assert.deepEqual(fromState.getDomainUpdate(state), {
+                assert.deepEqual(fromState.getDomainToUpdate(state), {
                     ...fromState.getDomainChange(state),
                     article: undefined
                 });
@@ -444,7 +444,7 @@ describe('index reducers', function () {
                     }
                 };
 
-                assert.deepEqual(fromState.getDomainUpdate(state), {
+                assert.deepEqual(fromState.getDomainToUpdate(state), {
                     ...fromState.getDomainChange(state),
                     publication: undefined
                 });
@@ -475,7 +475,38 @@ describe('index reducers', function () {
                     }
                 };
 
-                assert.deepEqual(fromState.getDomainUpdate(state), {
+                assert.deepEqual(fromState.getDomainToUpdate(state), {
+                    ...fromState.getDomainChange(state),
+                    a2z: undefined
+                });
+            });
+
+            it('should return undefined for a2z if a2z has searchResult', function () {
+                const state = {
+                    searchResult: {
+                        article: {
+                            byId: {}
+                        },
+                        publication: {
+                            byId: {}
+                        },
+                        a2z: {
+                            byId: {
+                                0: 'result'
+                            }
+                        }
+                    },
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3', 'INSHS'],
+                        available: ['IN2P3', 'INSHS'],
+                        defaultDomain: 'INSHS'
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainToUpdate(state), {
                     ...fromState.getDomainChange(state),
                     a2z: undefined
                 });
