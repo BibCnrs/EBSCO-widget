@@ -211,5 +211,275 @@ describe('index reducers', function () {
                 }, 1));
             });
         });
+
+        describe('articleHasResult', function () {
+            it('should return true if state.searchResult.article.byId has at least one key', function() {
+                assert.isTrue(fromState.articleHasResult({
+                    searchResult: {
+                        article: {
+                            byId: {
+                                1: 'key'
+                            }
+                        }
+                    }
+                }));
+            });
+
+            it('should return false if state.searchResult.article.byId has no key', function() {
+                assert.isFalse(fromState.articleHasResult({
+                    searchResult: {
+                        article: {
+                            byId: {}
+                        }
+                    }
+                }));
+            });
+        });
+
+        describe('publicationHasResult', function () {
+            it('should return true if state.searchResult.publication.byId has at least one key', function() {
+                assert.isTrue(fromState.publicationHasResult({
+                    searchResult: {
+                        publication: {
+                            byId: {
+                                1: 'key'
+                            }
+                        }
+                    }
+                }));
+            });
+
+            it('should return false if state.searchResult.publication.byId has no key', function() {
+                assert.isFalse(fromState.publicationHasResult({
+                    searchResult: {
+                        publication: {
+                            byId: {}
+                        }
+                    }
+                }));
+            });
+        });
+
+        describe('a2zHasResult', function () {
+            it('should return true if state.searchResult.a2z.byId has at least one key', function() {
+                assert.isTrue(fromState.a2zHasResult({
+                    searchResult: {
+                        a2z: {
+                            byId: {
+                                1: 'key'
+                            }
+                        }
+                    }
+                }));
+            });
+
+            it('should return false if state.searchResult.a2z.byId has no key', function() {
+                assert.isFalse(fromState.a2zHasResult({
+                    searchResult: {
+                        a2z: {
+                            byId: {}
+                        }
+                    }
+                }));
+            });
+        });
+
+        describe('getDomainChange', function() {
+            it('should return domain to modify for each location', function () {
+                const state = {
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3', 'INSHS'],
+                        available: ['IN2P3', 'INSHS'],
+                        defaultDomain: 'INSHS'
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainChange(state), {
+                    article: 'INSHS',
+                    a2z: 'INSHS',
+                    publication: 'INSHS'
+                });
+            });
+
+            it('should return undefined if no defaultDomain', function () {
+                const state = {
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3', 'INSHS'],
+                        available: ['IN2P3', 'INSHS']
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainChange(state), {
+                    article: undefined,
+                    a2z: undefined,
+                    publication: undefined
+                });
+            });
+
+            it('should return undefined for article if defaultDomain is not available', function () {
+                const state = {
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3', 'INSHS'],
+                        available: ['IN2P3'],
+                        defaultDomain: 'INSHS'
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainChange(state), {
+                    article: undefined,
+                    a2z: 'INSHS',
+                    publication: 'INSHS'
+                });
+            });
+
+            it('should return undefined for publication and a2z if defaultDomain is not in all', function () {
+                const state = {
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3'],
+                        available: ['IN2P3', 'INSHS'],
+                        defaultDomain: 'INSHS'
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainChange(state), {
+                    article: 'INSHS',
+                    a2z: undefined,
+                    publication: undefined
+                });
+            });
+        });
+
+        describe.only('getDomainUpdate', function () {
+            it('should return domain same result as getDomainChange if no searchResult', function () {
+                const state = {
+                    searchResult: {
+                        article: {
+                            byId: {}
+                        },
+                        publication: {
+                            byId: {}
+                        },
+                        a2z: {
+                            byId: {}
+                        }
+                    },
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3', 'INSHS'],
+                        available: ['IN2P3', 'INSHS'],
+                        defaultDomain: 'INSHS'
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainUpdate(state), fromState.getDomainChange(state));
+            });
+
+            it('should return undefined for article if article has searchResult', function () {
+                const state = {
+                    searchResult: {
+                        article: {
+                            byId: {
+                                0: 'result'
+                            }
+                        },
+                        publication: {
+                            byId: {}
+                        },
+                        a2z: {
+                            byId: {}
+                        }
+                    },
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3', 'INSHS'],
+                        available: ['IN2P3', 'INSHS'],
+                        defaultDomain: 'INSHS'
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainUpdate(state), {
+                    ...fromState.getDomainChange(state),
+                    article: undefined
+                });
+            });
+
+            it('should return undefined for publication if publication has searchResult', function () {
+                const state = {
+                    searchResult: {
+                        article: {
+                            byId: {}
+                        },
+                        publication: {
+                            byId: {
+                                0: 'result'
+                            }
+                        },
+                        a2z: {
+                            byId: {}
+                        }
+                    },
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3', 'INSHS'],
+                        available: ['IN2P3', 'INSHS'],
+                        defaultDomain: 'INSHS'
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainUpdate(state), {
+                    ...fromState.getDomainChange(state),
+                    publication: undefined
+                });
+            });
+
+            it('should return undefined for a2z if a2z has searchResult', function () {
+                const state = {
+                    searchResult: {
+                        article: {
+                            byId: {}
+                        },
+                        publication: {
+                            byId: {}
+                        },
+                        a2z: {
+                            byId: {
+                                0: 'result'
+                            }
+                        }
+                    },
+                    domains: {
+                        article: 'IN2P3',
+                        publication: 'IN2P3',
+                        a2z: 'IN2P3',
+                        all: ['IN2P3', 'INSHS'],
+                        available: ['IN2P3', 'INSHS'],
+                        defaultDomain: 'INSHS'
+                    }
+                };
+
+                assert.deepEqual(fromState.getDomainUpdate(state), {
+                    ...fromState.getDomainChange(state),
+                    a2z: undefined
+                });
+            });
+        });
     });
 });
