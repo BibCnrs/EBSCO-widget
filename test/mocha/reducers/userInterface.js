@@ -1,5 +1,4 @@
 import {
-    API_LOGIN_SUCCESS,
     LOGIN_SUCCESS,
     LOGOUT,
     SEARCH_SUCCESS,
@@ -29,13 +28,6 @@ describe('reducers userInterface', function () {
 
     it('should return set loginShown to false if action is LOGIN_SUCCESS', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: LOGIN_SUCCESS }), {
-            other: 'data',
-            loginShown: false
-        });
-    });
-
-    it('should return set loginShown to false if action is API_LOGIN_SUCCESS', function () {
-        assert.deepEqual(userInterface({ other: 'data' }, { type: API_LOGIN_SUCCESS }), {
             other: 'data',
             loginShown: false
         });
