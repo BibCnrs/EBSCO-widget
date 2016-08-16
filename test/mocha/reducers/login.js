@@ -1,8 +1,11 @@
 import {
+    CHANGE_AUTHENTICATION_MODE,
+    CHANGE_USERNAME,
+    CHANGE_PASSWORD,
     LOGIN_SUCCESS,
-    API_LOGIN_SUCCESS,
-    API_LOGIN_PENDING,
-    API_LOGIN_ERROR,
+    LOGIN_PENDING,
+    LOGIN_ERROR,
+    LOGIN_CANCEL,
     LOGOUT
 } from '../../../lib/actions';
 
@@ -12,65 +15,126 @@ describe('reducer login', function () {
 
     describe('actions', function () {
 
-        describe('LOGIN_SUCCESS and API_LOGIN_SUCCESS', function () {
-
-            const test = (type) => {
-                const token = 'token';
+        describe('CHANGE_AUTHENTICATION_MODE', function () {
+            it('should set mode to action.value', function () {
                 const nextState = login({
-                    other: 'data',
-                    status: 'NONE',
-                    token: null
+                    other: 'data'
                 }, {
-                    type,
-                    response: { token }
+                    type: CHANGE_AUTHENTICATION_MODE,
+                    value: 'mode'
                 });
 
                 assert.deepEqual(nextState, {
                     other: 'data',
-                    username: '',
-                    password: '',
-                    status: 'SUCCESS',
-                    token
+                    mode: 'mode'
                 });
-            };
 
-            it('LOGIN_SUCCESS should set status to SUCCESS and token to action.response.token', function () {
-                test(LOGIN_SUCCESS);
-            });
-
-            it('API_LOGIN_SUCCESS should set status to SUCCESS and token to action.response.token', function () {
-                test(API_LOGIN_SUCCESS);
             });
         });
 
-        describe('API_LOGIN_PENDING', function () {
-            it('should set status to PENDING', function () {
+        describe('CHANGE_USERNAME', function () {
+            it('should set username to action.value', function () {
+                const nextState = login({
+                    other: 'data'
+                }, {
+                    type: CHANGE_USERNAME,
+                    value: 'username'
+                });
+
+                assert.deepEqual(nextState, {
+                    other: 'data',
+                    username: 'username'
+                });
+
+            });
+        });
+
+        describe('CHANGE_PASSWORD', function () {
+            it('should set username to action.value', function () {
+                const nextState = login({
+                    other: 'data'
+                }, {
+                    type: CHANGE_PASSWORD,
+                    value: 'password'
+                });
+
+                assert.deepEqual(nextState, {
+                    other: 'data',
+                    password: 'password'
+                });
+
+            });
+        });
+
+        it('LOGIN_SUCCESS should set status to SUCCESS and token to action.response.token', function () {
+            const token = 'token';
+            const nextState = login({
+                other: 'data',
+                status: 'NONE',
+                token: null
+            }, {
+                type: LOGIN_SUCCESS,
+                response: { token }
+            });
+
+            assert.deepEqual(nextState, {
+                isLoggingWithRenater: false,
+                other: 'data',
+                username: '',
+                password: '',
+                status: 'SUCCESS',
+                token
+            });
+        });
+
+        describe('LOGIN_PENDING', function () {
+            it('should set status to PENDING and isLoggingWithRenater to ation.renater', function () {
                 const nextState = login({
                     other: 'data',
                     status: 'NONE'
                 }, {
-                    type: API_LOGIN_PENDING
+                    type: LOGIN_PENDING,
+                    renater: 'depends'
                 });
 
                 assert.deepEqual(nextState, {
+                    other: 'data',
+                    status: 'PENDING',
+                    isLoggingWithRenater: 'depends'
+                });
+            });
+        });
+
+        describe('LOGIN_ERROR', function () {
+            it('should set status to ERROR and isLoggingWithRenater to false', function () {
+                const nextState = login({
+                    other: 'data',
+                    status: 'NONE'
+                }, {
+                    type: LOGIN_ERROR
+                });
+
+                assert.deepEqual(nextState, {
+                    other: 'data',
+                    status: 'ERROR',
+                    isLoggingWithRenater: false
+                });
+            });
+        });
+
+        describe('LOGIN_CANCEL', function () {
+            it('should set status to NONE and isLoggingWithRenater to false', function () {
+                const nextState = login({
                     other: 'data',
                     status: 'PENDING'
-                });
-            });
-        });
-
-        describe('API_LOGIN_ERROR', function () {
-            it('should set status to ERROR', function () {
-                const nextState = login({
-                    other: 'data',
-                    status: 'NONE'
                 }, {
-                    type: API_LOGIN_ERROR
+                    type: LOGIN_CANCEL
                 });
 
                 assert.deepEqual(nextState, {
                     other: 'data',
-                    status: 'ERROR'
+                    status: 'NONE',
+                    isLoggingWithRenater: false
                 });
             });
         });

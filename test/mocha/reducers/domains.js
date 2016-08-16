@@ -8,7 +8,7 @@ import {
 } from '../../../lib/actions';
 import domains from '../../../lib/reducers/domains';
 
-describe.only('reducer domains', function () {
+describe('reducer domains', function () {
     it('should set all to action.domains, and publication and a2z to action.domains[0] when action is SET_ALL_DOMAINS', function () {
         assert.deepEqual(domains({}, {
             type: SET_ALL_DOMAINS,
