@@ -15,7 +15,7 @@
 document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
         var rootElement = document.getElementById('ebsco_widget');
-        window.ReactDOM.render(React.createElement(window.EbscoWidget, { url: 'https://bib-preprod.cnrs.fr/api/ebsco', dbUrl: 'http://google.fr', domain: 'INSMI' }), rootElement);
+        window.ReactDOM.render(React.createElement(window.EbscoWidget, { url: window.__SERVER_URL__, dbUrl: 'http://google.fr' }), rootElement);
     }
 };
     </script>
