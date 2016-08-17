@@ -1,6 +1,6 @@
 import { put, select, call } from 'redux-saga/effects';
 
-import { initialize, initializeLogin, initializeAllDomains } from '../../../lib/sagas/initialize';
+import { initialize, retrieveLoginData, initializeAllDomains, updateDomain } from '../../../lib/sagas/initialize';
 import * as fromState from '../../../lib/reducers';
 import fetch from '../../../lib/sagas/fetch';
 import { localStorage, sessionStorage } from '../../../lib/services/storage';
@@ -10,35 +10,17 @@ describe('sagas initialize', function () {
     describe('initialize', function () {
 
         let iterator;
-        let action = {
-            domain: 'insb'
-        };
         beforeEach(function () {
-            iterator = initialize(action);
+            iterator = initialize();
         });
 
-        it('should select isUserLogged', function () {
+        it('should call localStorage.getItem EBSCO_WIDGET_history', function () {
             const next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.isUserLogged));
-        });
-
-        it('should call initializeLogin then localStorage.getItem if isUserLogged is false', function () {
-            iterator.next();
-            let next = iterator.next(false);
-            assert.deepEqual(next.value, call(initializeLogin));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(localStorage.getItem, 'EBSCO_WIDGET_history'));
-        });
-
-        it('should call localStorage.getItem EBSCO_WIDGET_history if isUserLogged is false', function () {
-            iterator.next();
-            const next = iterator.next(true);
             assert.deepEqual(next.value, call(localStorage.getItem, 'EBSCO_WIDGET_history'));
         });
 
         it('should put setHistory then selectAllDomains if receiving history', function () {
             iterator.next();
-            iterator.next(true);
             let next = iterator.next('history');
             assert.deepEqual(next.value, put(actions.setHistory('history')));
             next = iterator.next();
@@ -47,38 +29,54 @@ describe('sagas initialize', function () {
 
         it('should select allDomains if receiving no history', function () {
             iterator.next();
-            iterator.next(true);
             const next = iterator.next();
             assert.deepEqual(next.value, select(fromState.getAllDomains));
         });
 
-        it('should call initializeAllDomains if receiving no domains before put changeDomain', function () {
+        it('should call initializeAllDomains if receiving no domains before calling updateDomain', function () {
             iterator.next();
-            iterator.next(true);
             iterator.next();
             let next = iterator.next([]);
             assert.deepEqual(next.value, call(initializeAllDomains));
             next = iterator.next();
-            assert.deepEqual(next.value, put(actions.changeDomain('article', action.domain)));
+            assert.deepEqual(next.value, call(updateDomain));
         });
 
-        it('should before put changeDomain if receiving domains', function () {
+        it('should call updateDomain and select isLoggingWithRenater', function () {
             iterator.next();
-            iterator.next(true);
             iterator.next();
             let next = iterator.next(['insb', 'inshs']);
-            assert.deepEqual(next.value, put(actions.changeDomain('article', action.domain)));
+            assert.deepEqual(next.value, call(updateDomain));
             next = iterator.next();
-            assert.deepEqual(next.value, put(actions.changeDomain('publication', action.domain)));
+            assert.deepEqual(next.value, select(fromState.isLoggingWithRenater));
+        });
+
+        it('should call retrieveLoginData then localStorage.getItem if isLoggingWithRenater is true', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next();
+            let next = iterator.next(true);
+            assert.deepEqual(next.value, call(retrieveLoginData));
             next = iterator.next();
-            assert.deepEqual(next.value, put(actions.changeDomain('a2z', action.domain)));
+            assert.isTrue(next.done);
+        });
+
+        it('should put showResult(false) if isLoggingWithRenater is false', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next();
+            const next = iterator.next(false);
+            assert.deepEqual(next.value, put(actions.showResult(false)));
         });
     });
 
-    describe('initializeLogin', function() {
-        let iterator;
+    describe('retrieveLoginData', function() {
+        let iterator, domain;
         beforeEach(function () {
-            iterator = initializeLogin();
+            domain = 'insb';
+            iterator = retrieveLoginData(domain);
         });
 
         it('should select getLoginRequest and call fetch with it', function () {
@@ -88,42 +86,28 @@ describe('sagas initialize', function () {
             assert.deepEqual(next.value, call(fetch, { getLogin: 'request' }));
         });
 
-        it('should throw an error if getLogin return an error other than Unauthorized', function () {
+        it('should put loginError if getLogin return an error other than Unauthorized', function () {
             iterator.next();
             iterator.next({ getLogin: 'request' });
-            assert.throws(function () { iterator.next({ error: new Error('boom') }); }, 'boom');
+            const next = iterator.next({ error: new Error('boom') });
+            assert.deepEqual(next.value, put(actions.loginError(new Error('boom'))));
         });
 
-        it('should put apiLoginSuccess if error unauthorized and response', function () {
-            const response = {
-                token: 'token',
-                username: 'john',
-                domains: [ 'insb', 'inshs']
-            };
-            iterator.next();
-            iterator.next({ getLogin: 'request' });
-            let next = iterator.next({ error: new Error('Unauthorized'), response });
-            assert.deepEqual(next.value, put(actions.apiLoginSuccess(response)));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_username', response.username));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_availableDomains', response.domains));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_domain', response.domains[0]));
-            next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.getPausedAction));
-            next = iterator.next({ paused: 'action' });
-            assert.deepEqual(next.value, put({ paused: 'action' }));
-        });
-
-        it('should end if no response and Unauthorized error', function () {
+        it('should put loginCancel if error unauthorized', function () {
             iterator.next();
             iterator.next({ getLogin: 'request' });
             const next = iterator.next({ error: new Error('Unauthorized') });
+            assert.deepEqual(next.value, put(actions.loginCancel()));
+        });
+
+        it('should end if no response nor error', function () {
+            iterator.next();
+            iterator.next({ getLogin: 'request' });
+            const next = iterator.next({});
             assert.isTrue(next.done);
         });
 
-        it('should put apiLoginSuccess if response', function () {
+        it('should put loginSuccess if response', function () {
             const response = {
                 token: 'token',
                 username: 'john',
@@ -131,18 +115,8 @@ describe('sagas initialize', function () {
             };
             iterator.next();
             iterator.next({ getLogin: 'request' });
-            let next = iterator.next({ response });
-            assert.deepEqual(next.value, put(actions.apiLoginSuccess(response)));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_username', response.username));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_availableDomains', response.domains));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_domain', response.domains[0]));
-            next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.getPausedAction));
-            next = iterator.next({ paused: 'action' });
-            assert.deepEqual(next.value, put({ paused: 'action' }));
+            const next = iterator.next({ response });
+            assert.deepEqual(next.value, put(actions.loginSuccess(response)));
         });
 
     });
@@ -153,14 +127,20 @@ describe('sagas initialize', function () {
             iterator = initializeAllDomains();
         });
 
-        it('should call sessionStorage.getItem EBSCO_WIDGET_allDomains', function () {
+        it('should select allDomains', function () {
             const next = iterator.next();
-            assert.deepEqual(next.value, call(sessionStorage.getItem, 'EBSCO_WIDGET_allDomains'));
+            assert.deepEqual(next.value, select(fromState.getAllDomains));
+        });
+
+        it('should end if at least one domain is returned', function () {
+            iterator.next();
+            const next = iterator.next(['INSHS']);
+            assert.isTrue(next.done);
         });
 
         it('should fetch domains if none are returned', function () {
             iterator.next();
-            let next = iterator.next();
+            let next = iterator.next([]);
             assert.deepEqual(next.value, select(fromState.getDomainsRequest));
             next = iterator.next({ domains: 'request' });
             assert.deepEqual(next.value, call(fetch, { domains: 'request' }));
@@ -168,7 +148,7 @@ describe('sagas initialize', function () {
 
         it('should end if fetch domains return an error', function () {
             iterator.next();
-            iterator.next();
+            iterator.next([]);
             iterator.next({ domains: 'request' });
             const next = iterator.next({ error: 'error', response: 'response' });
             assert.isTrue(next.done);
@@ -176,16 +156,50 @@ describe('sagas initialize', function () {
 
         it('should call sessionStorage.setItem with fetch resposne', function () {
             iterator.next();
-            iterator.next();
+            iterator.next([]);
             iterator.next({ domains: 'request' });
             const next = iterator.next({ response: 'response' });
             assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_allDomains', 'response'));
         });
+    });
 
-        it('should put setAllDomains if domains are returned', function () {
+    describe('updateDomain', function() {
+        let iterator;
+        beforeEach(function () {
+            iterator = updateDomain();
+        });
+
+        it('should select domainToUpdate', function() {
+            const next = iterator.next();
+            assert.deepEqual(next.value, select(fromState.getDomainToUpdate));
+        });
+
+        it('should put changeDomain for article if receiving a domain for article', function() {
             iterator.next();
-            const next = iterator.next('domains');
-            assert.deepEqual(next.value, put(actions.setAllDomains('domains')));
+            const next = iterator.next({ article: 'INSHS' });
+            assert.deepEqual(next.value, put(actions.changeDomain('article', 'INSHS')));
+        });
+
+        it('should put changeDomain for publication if receiving a domain for publication', function() {
+            iterator.next();
+            const next = iterator.next({ publication: 'INSHS' });
+            assert.deepEqual(next.value, put(actions.changeDomain('publication', 'INSHS')));
+        });
+
+        it('should put changeDomain for a2z if receiving a domain for a2z', function() {
+            iterator.next();
+            const next = iterator.next({ a2z: 'INSHS' });
+            assert.deepEqual(next.value, put(actions.changeDomain('a2z', 'INSHS')));
+        });
+
+        it('should put changeDomain for all category if receiving a domain for all of them', function() {
+            iterator.next();
+            let next = iterator.next({ article: 'INSB', publication: 'INSMI', a2z: 'INSHS' });
+            assert.deepEqual(next.value, put(actions.changeDomain('article', 'INSB')));
+            next = iterator.next();
+            assert.deepEqual(next.value, put(actions.changeDomain('publication', 'INSMI')));
+            next = iterator.next();
+            assert.deepEqual(next.value, put(actions.changeDomain('a2z', 'INSHS')));
         });
     });
 
