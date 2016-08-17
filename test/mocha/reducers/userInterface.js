@@ -88,7 +88,7 @@ describe('reducers userInterface', function () {
 
     it('should set location to action.location when action is NAVIGATE', function () {
         assert.deepEqual(
-            userInterface({ location: 'a2z', other: 'data' }, { type: NAVIGATE, location: 'article' }),
+            userInterface({ location: 'publication', other: 'data' }, { type: NAVIGATE, location: 'article' }),
             { location: 'article', other: 'data' }
         );
     });

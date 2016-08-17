@@ -188,7 +188,7 @@ describe('sagas initialize', function () {
 
         it('should put changeDomain for all category if receiving a domain for all of them', function() {
             iterator.next();
-            let next = iterator.next({ article: 'INSB', publication: 'INSMI', a2z: 'INSHS' });
+            let next = iterator.next({ article: 'INSB', publication: 'INSMI' });
             assert.deepEqual(next.value, put(actions.changeDomain('article', 'INSB')));
             next = iterator.next();
             assert.deepEqual(next.value, put(actions.changeDomain('publication', 'INSMI')));
