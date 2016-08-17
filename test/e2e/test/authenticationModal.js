@@ -14,7 +14,7 @@ describe('authenticationModal', function() {
     it.skip('should trigger pausedAction(go to article) once logged with janus button', function (done) {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'A à Z')
+        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
         .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')
         .assert.containsText('.bibapi .panel-title', 'Vous avez un compte Inist.')
         .click('button.janus')
@@ -28,7 +28,7 @@ describe('authenticationModal', function() {
     it('should trigger pausedAction(go to article) once logged with bibapi account', function (done) {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'A à Z')
+        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
         .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')
         .assert.containsText('.bibapi .panel-title', 'Vous avez un compte Inist.')
         .click('.bibapi .panel-title a')
@@ -50,7 +50,7 @@ describe('authenticationModal', function() {
         .click('button.api')
         .waitForElementVisible('.error', 1000)
         .assert.containsText('.error', 'Unauthorized')
-        .assert.containsText('.navbar.navbar-default .active', 'A à Z');
+        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages');
         client.start(done);
     });
 });

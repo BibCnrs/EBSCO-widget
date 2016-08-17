@@ -24,13 +24,11 @@
 		"all": ["vie", "shs"],
 		"available": ["vie", "shs"],
 		"article": "vie",
-		"publication": "vie",
-		"a2z": "vie"
+		"publication": "vie"
 	},
 	"selectedRecord": {
 		"article": [],
-		"publication": [],
-		"a2z": []
+		"publication": []
 	},
 	"notice": {
 		"article": {
@@ -38,10 +36,6 @@
 			"noticeShown": []
 		},
 		"publication": {
-			"byId": {},
-			"noticeShown": []
-		},
-		"a2z": {
 			"byId": {},
 			"noticeShown": []
 		}
@@ -74,10 +68,6 @@
 			"maxPage": 0,
 			"byId": {}
 		},
-		"a2z": {
-			"maxPage": 0,
-			"byId": {}
-		},
 		"publication": {
 			"maxPage": 0,
 			"byId": {}
@@ -93,11 +83,6 @@
 				"max": 2017
 			}
 		},
-		"a2z": {
-			"status": "NONE",
-			"sort": "title",
-			"resultsPerPage": 20
-		},
 		"publication": {
 			"status": "NONE",
 			"sort": "relevance",
@@ -110,11 +95,6 @@
 			"term": "",
 			"field": null,
 			"key": "initial"
-		}],
-		"a2z": [{
-			"boolean": "AND",
-			"term": "",
-			"field": "JN"
 		}],
 		"publication": [{
 			"boolean": "AND",

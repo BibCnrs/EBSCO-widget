@@ -11,7 +11,7 @@
 		"loading": false,
 		"resultShown": true,
 		"historyShown": false,
-		"location": "a2z",
+		"location": "publication",
 		"fullScreen": true,
 		"language": "fr",
 		"loginShown": false,
@@ -24,13 +24,11 @@
 		"all": ["vie", "shs"],
 		"available": [],
 		"article": null,
-		"publication": "vie",
-		"a2z": "vie"
+		"publication": "vie"
 	},
 	"selectedRecord": {
 		"article": [],
-		"publication": [],
-		"a2z": []
+		"publication": []
 	},
 	"notice": {
 		"article": {
@@ -38,10 +36,6 @@
 			"noticeShown": []
 		},
 		"publication": {
-			"byId": {},
-			"noticeShown": []
-		},
-		"a2z": {
 			"byId": {},
 			"noticeShown": []
 		}
@@ -358,212 +352,6 @@
 			"maxPage": 0,
 			"byId": {}
 		},
-		"a2z": {
-			"1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-			"maxPage": 115,
-			"byId": {
-				"1": {
-					"id": 1,
-					"publicationId": "edp305",
-					"issnOnline": [],
-					"issnPrint": ["00946354"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "AANA Journal",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=GLR&scope=site",
-						"name": "Academic Search Complete",
-						"coverage": [{
-							"start": "20010201",
-							"end": "99991231"
-						}]
-					}]
-				},
-				"2": {
-					"id": 2,
-					"publicationId": "edp383300",
-					"issnOnline": ["19356773"],
-					"issnPrint": ["19356765"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "AAOS Now",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=B40K&scope=site",
-						"name": "Academic Search Complete",
-						"coverage": [{
-							"start": "20100301",
-							"end": "20151201"
-						}]
-					}]
-				},
-				"3": {
-					"id": 3,
-					"publicationId": "edp452763",
-					"issnOnline": [],
-					"issnPrint": ["21610649"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "ABA Child Law Practice",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=5432&scope=site",
-						"name": "Academic Search Complete",
-						"coverage": [{
-							"start": "20080301",
-							"end": "99991231"
-						}]
-					}]
-				},
-				"4": {
-					"id": 4,
-					"publicationId": "edp351",
-					"issnOnline": ["21627983"],
-					"issnPrint": ["07470088"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "ABA Journal",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=ABJ&scope=site",
-						"name": "Academic Search Complete",
-						"coverage": [{
-							"start": "19840101",
-							"end": "99991231"
-						}]
-					}]
-				},
-				"5": {
-					"id": 5,
-					"publicationId": "edp9972148",
-					"issnOnline": ["23815868"],
-					"issnPrint": [],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "ABA Tax Times",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=JTC4&scope=site",
-						"name": "Academic Search Complete",
-						"coverage": [{
-							"start": "20151001",
-							"end": "99991231"
-						}]
-					}]
-				},
-				"6": {
-					"id": 6,
-					"publicationId": "edp356",
-					"issnOnline": ["14676281"],
-					"issnPrint": ["00013072"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "Abacus",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1467-6281/issues",
-						"name": "Wiley Online Library (ISTEX - Licences Nationales)",
-						"coverage": [{
-							"start": "19650101",
-							"end": "20121231"
-						}]
-					}]
-				},
-				"7": {
-					"id": 7,
-					"publicationId": "edp106842",
-					"issnOnline": [],
-					"issnPrint": ["0717344X"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "Abante : estudios en direcciâon de empresas.",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=I43&scope=site",
-						"name": "Academic Search Complete",
-						"coverage": [{
-							"start": "20010401",
-							"end": "20081001"
-						}]
-					}]
-				},
-				"8": {
-					"id": 8,
-					"publicationId": "edp367",
-					"issnOnline": ["14320509"],
-					"issnPrint": ["09428925"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "Abdominal imaging",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=mnh&jid=O52&scope=site",
-						"name": "MEDLINE with Full Text (EBSCO)",
-						"coverage": [{
-							"start": "20030501",
-							"end": "99991231"
-						}],
-						"embargo": {
-							"value": 1,
-							"unit": "Year"
-						}
-					}, {
-						"url": "http://chimie.gate.inist.fr/login?url=http://www.springerlink.com/openurl.asp?genre=journal&issn=0942-8925",
-						"name": "Springer Journal Archives (Licence Nationale France)",
-						"coverage": [{
-							"start": "19930101",
-							"end": "19961231"
-						}]
-					}]
-				},
-				"9": {
-					"id": 9,
-					"publicationId": "edp93495",
-					"issnOnline": ["18658784"],
-					"issnPrint": ["00255858"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "Abhandlungen aus dem Mathematischen Seminar der Universität Hamburg",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://link.springer.com/journal/12188",
-						"name": "Springer Journal Archives (Licence Nationale France)",
-						"coverage": [{
-							"start": "19220101",
-							"end": "19961231"
-						}]
-					}, {
-						"url": "http://chimie.gate.inist.fr/login?url=http://link.springer.com/journal/12188",
-						"name": "Springer Online Archives Collection",
-						"coverage": [{
-							"start": "19220101",
-							"end": "19961231"
-						}]
-					}]
-				},
-				"10": {
-					"id": 10,
-					"publicationId": "edp95986",
-					"issnOnline": ["21914664"],
-					"issnPrint": ["07206763"],
-					"isbnOnline": [],
-					"isbnPrint": [],
-					"type": "Journal",
-					"title": "ABI Technik - Zeitschrift fur Automation Bau und Technik im Archiv Bibl und Inform Wesen",
-					"fullTextHoldings": [{
-						"url": "http://chimie.gate.inist.fr/login?url=http://www.degruyter.com/loi/abitech",
-						"name": "De Gruyter (ISTEX - Licences Nationales)",
-						"coverage": [{
-							"start": "19960101",
-							"end": "20121231"
-						}]
-					}]
-				}
-			},
-			"currentPage": 1,
-			"totalHits": 1144
-		},
 		"publication": {
 			"1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 			"maxPage": 22,
@@ -777,15 +565,6 @@
 				"max": 2017
 			}
 		},
-		"a2z": {
-			"status": "DONE",
-			"sort": "title",
-			"resultsPerPage": 10,
-			"dateRange": {
-				"min": 1,
-				"max": 1
-			}
-		},
 		"publication": {
 			"status": "DONE",
 			"sort": "relevance",
@@ -802,11 +581,6 @@
 			"term": "",
 			"field": null,
 			"key": "initial"
-		}],
-		"a2z": [{
-			"boolean": "AND",
-			"term": "A*",
-			"field": "JN"
 		}],
 		"publication": [{
 			"boolean": "AND",

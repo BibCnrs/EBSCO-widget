@@ -28,7 +28,6 @@ describe('publicationSearch', function() {
         .waitForElementVisible('.navbar.navbar-default', 100)
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Revues, Ouvrages')
-        .assert.containsText('.navbar.navbar-default', 'A à Z')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
         .assert.attributeEquals('.search .search-input', 'placeholder', 'Rechercher des titres de revues, de livres...')
         .assert.containsText('.fetch-button', 'Rechercher')
