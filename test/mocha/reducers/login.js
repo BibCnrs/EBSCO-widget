@@ -6,6 +6,7 @@ import {
     LOGIN_PENDING,
     LOGIN_ERROR,
     LOGIN_CANCEL,
+    RENATER_LOGIN,
     LOGOUT
 } from '../../../lib/actions';
 
@@ -88,19 +89,32 @@ describe('reducer login', function () {
         });
 
         describe('LOGIN_PENDING', function () {
-            it('should set status to PENDING and isLoggingWithRenater to ation.renater', function () {
+            it('should set status to PENDING', function () {
                 const nextState = login({
                     other: 'data',
                     status: 'NONE'
                 }, {
-                    type: LOGIN_PENDING,
-                    renater: 'depends'
+                    type: LOGIN_PENDING
                 });
 
                 assert.deepEqual(nextState, {
                     other: 'data',
-                    status: 'PENDING',
-                    isLoggingWithRenater: 'depends'
+                    status: 'PENDING'
+                });
+            });
+        });
+
+        describe('RENATER_LOGIN', function () {
+            it('should set isLoggingWithRenater to true', function () {
+                const nextState = login({
+                    other: 'data'
+                }, {
+                    type: RENATER_LOGIN
+                });
+
+                assert.deepEqual(nextState, {
+                    other: 'data',
+                    isLoggingWithRenater: true
                 });
             });
         });
