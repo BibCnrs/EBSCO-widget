@@ -9,29 +9,32 @@ import {
 
 describe('reducers createLimiters', function () {
     let categoryLimiters;
+    const defaultState = {
+        value: 'default state'
+    };
 
     before(function () {
-        categoryLimiters = createLimiters('category');
+        categoryLimiters = createLimiters('category', defaultState);
     });
 
     describe('default action', function () {
 
         it ('should default state to default limiter value', function () {
-            assert.deepEqual(createLimiters('article')(undefined, {
+            assert.deepEqual(createLimiters('article', { value: 'default article state' })(undefined, {
                 type: 'OTHER_ACTION_TYPE',
                 category: 'category'
-            }), fromLimiters.defaultState['article']);
+            }), { value: 'default article state' });
 
-            assert.deepEqual(createLimiters('publication')(undefined, {
+            assert.deepEqual(createLimiters('publication', { value: 'default publication state' })(undefined, {
                 type: 'OTHER_ACTION_TYPE',
                 category: 'category'
-            }), fromLimiters.defaultState['publication']);
+            }), { value: 'default publication state' });
         });
 
-        it ('should return default state if action type is LOGOUT OR LINKED_SEARCH for category article)', function () {
+        it ('should return default state if action type is LOGOUT OR LINKED_SEARCH', function () {
             [ LOGOUT, LINKED_SEARCH ]
             .map(type => assert.deepEqual(
-                createLimiters('article')(
+                createLimiters('article', { value: 'default state' })(
                     {
                         fullText: false,
                         publicationDate: {
@@ -42,25 +45,7 @@ describe('reducers createLimiters', function () {
                     },
                     { type, category: 'article' }
                 ),
-                fromLimiters.defaultState['article'])
-            );
-        });
-
-        it ('should return default state if action type is LOGOUT OR LINKED_SEARCH for category publication', function () {
-            [ LOGOUT, LINKED_SEARCH ]
-            .map(type => assert.deepEqual(
-                createLimiters('publication')(
-                    {
-                        fullText: false,
-                        publicationDate: {
-                            from: 2000,
-                            to: 2015
-                        },
-                        peerReviewedArticle: true
-                    },
-                    { type, category: 'publication' }
-                ),
-                fromLimiters.defaultState['publication'])
+                { value: 'default state' })
             );
         });
 
