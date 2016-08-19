@@ -9,7 +9,7 @@ describe('publicationSearch', function() {
         client.start(done);
     });
 
-    it('should display article search result when triggering search', function (done) {
+    it('should display publication search result when triggering search', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
@@ -17,6 +17,25 @@ describe('publicationSearch', function() {
         .waitForElementVisible('.fetch-button .btn', 100)
         .click('.fetch-button .btn')
         .pause(300)
+        .waitForElementVisible('.search-result', 1000)
+        .assert.elementCount('.record', 20);
+
+        client.start(done);
+    });
+
+
+    it('should trigger a2z search result when clicking on a letter', function (done) {
+        browser
+        .waitForElementVisible('.navbar.navbar-default', 1000)
+        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
+        .assert.containsText('.a2z-search .first.letters', 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0-9')
+        .assert.elementNotPresent('.a2z-search .second.letters')
+        .click('.B')
+        .pause(300)
+        .assert.containsText('.a2z-search .second.letters', 'BA BB BC BD BE BF BG BH BI BJ BK BL BM BN BO BP BQ BR BS BT BU BV BW BX BY BZ')
+        .assert.value('.search-input', 'B*')
+        .assert.containsText('.field.select-button', 'Titre')
+        .assert.containsText('.sort.select-button', 'alphabétique')
         .waitForElementVisible('.search-result', 1000)
         .assert.elementCount('.record', 20);
 

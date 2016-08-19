@@ -131,7 +131,7 @@ describe('reducers createQueryList', function () {
     });
 
     describe('selector', function() {
-        describe.only('isQueryListInA2zMode', function () {
+        describe('isQueryListInA2zMode', function () {
             it('should return true if queryList is a singleQuery on field TI with term targeting <Letter>*', function() {
                 assert.isTrue(fromQueryList.isQueryListInA2zMode([{
                     field: 'TI',
