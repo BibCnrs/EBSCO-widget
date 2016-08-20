@@ -4,31 +4,53 @@
         padding: 0px 5px;
     }
 }
-.search {
-    .input input {
-        font-size: 1em;
-        height: 23px;
-    }
-    .Select {
-        display: inline-block;
-        height: 23px;
-        width: 60px;
-        .Select-menu-outer {
-            top: 37px;
+.search-bar {
+    display: flex;
+    .search {
+        flex: 5;
+        display: flex;
+        justify-content: space-between;
+        .query-list {
+            display: flex;
+            flex: -moz-available;
+            flex-direction: column;
+            justify-content: space-between;
         }
-    }
-    .button {
-        height: 36px;
-    }
-    .article-search-input-list {
-        margin-left: 0px;
-        .open.dropdown.btn-group {
-            z-index: 3;
-        }
-        .action {
-            button {
-                margin: 0 5px 0 5px;
+        .search-input {
+            .term {
+                width: 100%;
             }
+            .search-clear {
+                font-size: 14px;
+                color: grey;
+                cursor: pointer;
+                z-index: 3;
+                position: absolute;
+                right: 14px;
+                top: 7px;
+                bottom: 7px;
+            }
+            .open.dropdown.btn-group {
+                z-index: 3;
+            }
+        }
+        .query {
+            display: flex;
+            margin-bottom: 10px;
+            .search-input {
+                flex: 6;
+            }
+            .action {
+                flex: 1;
+            }
+        }
+    }
+    .search-menu {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        .show-result {
+            align-self: flex-end;
         }
     }
 }
