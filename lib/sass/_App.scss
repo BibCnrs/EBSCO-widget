@@ -1,8 +1,12 @@
 .ebsco-widget {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-    .btn {
+    .btn, .btn-group {
         height: 34px;
         border-radius: 0px;
+    }
+    .dropdown-menu {
+        border-radius: 0px;
+        margin: 0px;
     }
     hr {
         margin: 5px;
