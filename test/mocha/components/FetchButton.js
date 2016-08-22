@@ -11,11 +11,9 @@ describe('FetchButton', function () {
         });
 
         it ('should display input with button and search icon', function () {
-            assert.equal(component.type(), 'span');
-            const button = component.find('BibButton');
+            assert.equal(component.type(), BibButton);
             const error = component.find('.error');
-            assert.equal(button.type(), BibButton);
-            const {disabled, icon} = button.props();
+            const {disabled, icon} = component.props();
             assert.isUndefined(disabled);
             assert.deepEqual(icon, {
                 name: 'test'
@@ -31,10 +29,8 @@ describe('FetchButton', function () {
         });
 
         it ('should disable search and display spinner if props.status is PENDING', function () {
-            assert.equal(component.type(), 'span');
-            const button = component.find('BibButton');
-            assert.equal(button.type(), BibButton);
-            const {disabled, icon} = button.props();
+            assert.equal(component.type(), BibButton);
+            const {disabled, icon} = component.props();
             assert.isTrue(disabled);
             assert.deepEqual(icon, {
                 name: 'spinner',

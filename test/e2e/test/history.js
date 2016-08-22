@@ -24,8 +24,8 @@ describe('history', function() {
         browser
         .waitForElementVisible('.history', 1000)
         .click('tr:nth-child(2) .edit')
-        .assert.value('.article-search-input-list input', 'aids')
-        .assert.value('.fullText', 'on')
+        .assert.value('.term input', 'aids')
+        .assert.value('.fullText input', 'on')
         .waitForElementVisible('.publication-date-limiter')
         .assert.value('.publication-date-limiter .from', '1914')
         .assert.value('.publication-date-limiter .to', '1918')
@@ -38,8 +38,8 @@ describe('history', function() {
         browser
         .waitForElementVisible('.history', 1000)
         .click('tr:nth-child(2) .refresh')
-        .assert.value('.article-search-input-list input', 'aids')
-        .assert.value('.fullText', 'on')
+        .assert.value('.term input', 'aids')
+        .assert.value('.fullText input', 'on')
         .waitForElementVisible('.publication-date-limiter')
         .assert.value('.publication-date-limiter .from', '1914')
         .assert.value('.publication-date-limiter .to', '1918')
