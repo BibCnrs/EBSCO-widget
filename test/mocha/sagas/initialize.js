@@ -186,20 +186,12 @@ describe('sagas initialize', function () {
             assert.deepEqual(next.value, put(actions.changeDomain('publication', 'INSHS')));
         });
 
-        it('should put changeDomain for a2z if receiving a domain for a2z', function() {
-            iterator.next();
-            const next = iterator.next({ a2z: 'INSHS' });
-            assert.deepEqual(next.value, put(actions.changeDomain('a2z', 'INSHS')));
-        });
-
         it('should put changeDomain for all category if receiving a domain for all of them', function() {
             iterator.next();
-            let next = iterator.next({ article: 'INSB', publication: 'INSMI', a2z: 'INSHS' });
+            let next = iterator.next({ article: 'INSB', publication: 'INSMI' });
             assert.deepEqual(next.value, put(actions.changeDomain('article', 'INSB')));
             next = iterator.next();
             assert.deepEqual(next.value, put(actions.changeDomain('publication', 'INSMI')));
-            next = iterator.next();
-            assert.deepEqual(next.value, put(actions.changeDomain('a2z', 'INSHS')));
         });
     });
 

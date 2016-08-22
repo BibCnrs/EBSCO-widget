@@ -23,14 +23,6 @@ describe('index reducers', function () {
 
                 assert.equal(fromState.getCurrentSearchResult({
                     searchResult: {
-                        a2z: 'a2zSearchResult'
-                    },
-                    userInterface: {
-                        location: 'a2z'
-                    }
-                }), 'a2zSearchResult');
-                assert.equal(fromState.getCurrentSearchResult({
-                    searchResult: {
                         publication: 'publicationSearchResult'
                     },
                     userInterface: {
@@ -74,27 +66,6 @@ describe('index reducers', function () {
                     },
                     searchResult: {
                         publication: {
-                            byId: {
-                                1: {
-                                    publicationId: 'publicationId'
-                                }
-                            }
-                        }
-                    }
-                }, 1), 'http://api/insb/publication/retrieve/publicationId');
-            });
-
-            it('should generate retrieve url for a2z when location is a2z', function () {
-                assert.equal(fromState.getRetrieveUrl({
-                    url: 'http://api',
-                    domains: {
-                        a2z: 'insb'
-                    },
-                    userInterface: {
-                        location: 'a2z'
-                    },
-                    searchResult: {
-                        a2z: {
                             byId: {
                                 1: {
                                     publicationId: 'publicationId'
@@ -260,37 +231,12 @@ describe('index reducers', function () {
             });
         });
 
-        describe('a2zHasResult', function () {
-            it('should return true if state.searchResult.a2z.byId has at least one key', function() {
-                assert.isTrue(fromState.a2zHasResult({
-                    searchResult: {
-                        a2z: {
-                            byId: {
-                                1: 'key'
-                            }
-                        }
-                    }
-                }));
-            });
-
-            it('should return false if state.searchResult.a2z.byId has no key', function() {
-                assert.isFalse(fromState.a2zHasResult({
-                    searchResult: {
-                        a2z: {
-                            byId: {}
-                        }
-                    }
-                }));
-            });
-        });
-
         describe('getDomainChange', function() {
             it('should return domain to modify for each location', function () {
                 const state = {
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
-                        a2z: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS'],
                         defaultDomain: 'INSHS'
@@ -299,7 +245,6 @@ describe('index reducers', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: 'INSHS',
-                    a2z: 'INSHS',
                     publication: 'INSHS'
                 });
             });
@@ -309,7 +254,6 @@ describe('index reducers', function () {
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
-                        a2z: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS']
                     }
@@ -317,7 +261,6 @@ describe('index reducers', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: undefined,
-                    a2z: undefined,
                     publication: undefined
                 });
             });
@@ -327,7 +270,6 @@ describe('index reducers', function () {
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
-                        a2z: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3'],
                         defaultDomain: 'INSHS'
@@ -336,17 +278,15 @@ describe('index reducers', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: undefined,
-                    a2z: 'INSHS',
                     publication: 'INSHS'
                 });
             });
 
-            it('should return undefined for publication and a2z if defaultDomain is not in all', function () {
+            it('should return undefined for publication if defaultDomain is not in all', function () {
                 const state = {
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
-                        a2z: 'IN2P3',
                         all: ['IN2P3'],
                         available: ['IN2P3', 'INSHS'],
                         defaultDomain: 'INSHS'
@@ -355,7 +295,6 @@ describe('index reducers', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: 'INSHS',
-                    a2z: undefined,
                     publication: undefined
                 });
             });
@@ -370,15 +309,11 @@ describe('index reducers', function () {
                         },
                         publication: {
                             byId: {}
-                        },
-                        a2z: {
-                            byId: {}
                         }
                     },
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
-                        a2z: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS'],
                         defaultDomain: 'INSHS'
@@ -398,15 +333,11 @@ describe('index reducers', function () {
                         },
                         publication: {
                             byId: {}
-                        },
-                        a2z: {
-                            byId: {}
                         }
                     },
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
-                        a2z: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS'],
                         defaultDomain: 'INSHS'
@@ -429,15 +360,11 @@ describe('index reducers', function () {
                             byId: {
                                 0: 'result'
                             }
-                        },
-                        a2z: {
-                            byId: {}
                         }
                     },
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
-                        a2z: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS'],
                         defaultDomain: 'INSHS'
@@ -447,68 +374,6 @@ describe('index reducers', function () {
                 assert.deepEqual(fromState.getDomainToUpdate(state), {
                     ...fromState.getDomainChange(state),
                     publication: undefined
-                });
-            });
-
-            it('should return undefined for a2z if a2z has searchResult', function () {
-                const state = {
-                    searchResult: {
-                        article: {
-                            byId: {}
-                        },
-                        publication: {
-                            byId: {}
-                        },
-                        a2z: {
-                            byId: {
-                                0: 'result'
-                            }
-                        }
-                    },
-                    domains: {
-                        article: 'IN2P3',
-                        publication: 'IN2P3',
-                        a2z: 'IN2P3',
-                        all: ['IN2P3', 'INSHS'],
-                        available: ['IN2P3', 'INSHS'],
-                        defaultDomain: 'INSHS'
-                    }
-                };
-
-                assert.deepEqual(fromState.getDomainToUpdate(state), {
-                    ...fromState.getDomainChange(state),
-                    a2z: undefined
-                });
-            });
-
-            it('should return undefined for a2z if a2z has searchResult', function () {
-                const state = {
-                    searchResult: {
-                        article: {
-                            byId: {}
-                        },
-                        publication: {
-                            byId: {}
-                        },
-                        a2z: {
-                            byId: {
-                                0: 'result'
-                            }
-                        }
-                    },
-                    domains: {
-                        article: 'IN2P3',
-                        publication: 'IN2P3',
-                        a2z: 'IN2P3',
-                        all: ['IN2P3', 'INSHS'],
-                        available: ['IN2P3', 'INSHS'],
-                        defaultDomain: 'INSHS'
-                    }
-                };
-
-                assert.deepEqual(fromState.getDomainToUpdate(state), {
-                    ...fromState.getDomainChange(state),
-                    a2z: undefined
                 });
             });
         });

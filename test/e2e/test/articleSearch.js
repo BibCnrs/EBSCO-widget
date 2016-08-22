@@ -49,7 +49,6 @@ describe('simple articleSearch', function() {
         .waitForElementVisible('.navbar.navbar-default', 100)
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Revues, Ouvrages')
-        .assert.containsText('.navbar.navbar-default', 'A à Z')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
         .assert.attributeEquals('.article-search-input-list .search-input', 'placeholder', 'Rechercher des articles, des chapitres de livre...')
         .assert.containsText('.fetch-button', 'Rechercher')
@@ -60,7 +59,6 @@ describe('simple articleSearch', function() {
         .assert.containsText('.navbar.navbar-default .language', 'en')
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Journals, Books')
-        .assert.containsText('.navbar.navbar-default', 'A to Z')
         .assert.attributeEquals('.article-search-input-list .search-input', 'placeholder', 'Search articles, book chapters...')
         .assert.containsText('.fetch-button', 'Search')
         ;

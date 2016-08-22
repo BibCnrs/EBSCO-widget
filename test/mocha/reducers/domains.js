@@ -11,18 +11,17 @@ import domains, * as fromState from '../../../lib/reducers/domains';
 describe('reducer domains', function () {
     describe('actions', function () {
 
-        it('should set all to action.domains, and publication and a2z to action.domains[0] when action is SET_ALL_DOMAINS', function () {
+        it('should set all to action.domains, and publication to action.domains[0] when action is SET_ALL_DOMAINS', function () {
             assert.deepEqual(domains({}, {
                 type: SET_ALL_DOMAINS,
                 domains: ['INSB', 'INSHS']
             }), {
                 all: ['INSB', 'INSHS'],
-                a2z: 'INSB',
                 publication: 'INSB'
             });
         });
 
-        it('should set all to action.domains, and publication and a2z to state.defaultDomain if it is in action.domains when action is SET_ALL_DOMAINS', function () {
+        it('should set all to action.domains, and publication to state.defaultDomain if it is in action.domains when action is SET_ALL_DOMAINS', function () {
             assert.deepEqual(domains({
                 defaultDomain: 'INSHS'
             }, {
@@ -30,7 +29,6 @@ describe('reducer domains', function () {
                 domains: ['INSB', 'INSHS']
             }), {
                 all: ['INSB', 'INSHS'],
-                a2z: 'INSHS',
                 publication: 'INSHS',
                 defaultDomain: 'INSHS'
             });
@@ -175,21 +173,6 @@ describe('reducer domains', function () {
                 }, 'publication'), undefined);
             });
 
-            it('should return defaultDomain for a2z', function() {
-                assert.equal(fromState.getDefaultDomain({
-                    article: 'INSB',
-                    all: ['INSHS'],
-                    defaultDomain: 'INSHS'
-                }, 'a2z'), 'INSHS');
-            });
-
-            it('should return undefined if defaultDomains is not in all for a2z', function() {
-                assert.equal(fromState.getDefaultDomain({
-                    article: 'INSB',
-                    all: [],
-                    defaultDomain: 'INSHS'
-                }, 'a2z'), undefined);
-            });
         });
 
         describe('getDomainChange', function() {
@@ -198,7 +181,6 @@ describe('reducer domains', function () {
                 const state = {
                     article: 'INSB',
                     publication: 'INSB',
-                    a2z: 'INSB',
                     defaultDomain: 'INSHS',
                     all: ['INSHS', 'INSB'],
                     available: ['INSHS', 'INSB']
@@ -206,8 +188,7 @@ describe('reducer domains', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: 'INSHS',
-                    publication: 'INSHS',
-                    a2z: 'INSHS'
+                    publication: 'INSHS'
                 });
             });
 
@@ -215,7 +196,6 @@ describe('reducer domains', function () {
                 const state = {
                     article: 'INSHS',
                     publication: 'INSB',
-                    a2z: 'INSB',
                     defaultDomain: 'INSHS',
                     all: ['INSHS', 'INSB'],
                     available: ['INSHS', 'INSB']
@@ -223,8 +203,7 @@ describe('reducer domains', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: undefined,
-                    publication: 'INSHS',
-                    a2z: 'INSHS'
+                    publication: 'INSHS'
                 });
             });
         });
