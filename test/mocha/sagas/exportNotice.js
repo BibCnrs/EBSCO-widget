@@ -10,7 +10,7 @@ import actions, {
 
 describe('sagas export notice', function () {
     let iterator;
-    let action = { category: 'category', ids: [1, 2, 3] };
+    let action = { category: 'category', format: 'ris', ids: [1, 2, 3] };
     beforeEach(function () {
         iterator = exportNotice(action);
     });
@@ -43,11 +43,11 @@ describe('sagas export notice', function () {
         assert.isTrue(next.done);
     });
 
-    it('should select SelectedRecordsRisRequest', function () {
+    it('should select SelectedRecordsExportRequest', function () {
         iterator.next();
         iterator.next(true);
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.getRisRequestForIds, action.ids));
+        assert.deepEqual(next.value, select(fromState.getExportRequestForIds, { format: 'ris', ids: action.ids }));
     });
 
     it('should fetch ris Notice using the retrieved link', function () {

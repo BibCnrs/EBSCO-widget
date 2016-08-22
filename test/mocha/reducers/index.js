@@ -85,21 +85,21 @@ describe('index reducers', function () {
             });
         });
 
-        describe('getRisRequestForIds', function () {
-            it('should return Ris request for given records', function () {
-                assert.deepEqual(fromState.getRisRequestForIds({
+        describe('getExportRequestForIds', function () {
+            it('should return export request for given records', function () {
+                assert.deepEqual(fromState.getExportRequestForIds({
                     searchResult: {
                         article: {
                             byId: {
-                                1: { risLink: 'http://risLink.com/1' },
-                                2: { risLink: 'http://risLink.com/2' },
-                                3: { risLink: 'http://risLink.com/3' }
+                                1: { exportLinks: { ris: 'http://risLink.com/1' } },
+                                2: { exportLinks: { ris: 'http://risLink.com/2' } },
+                                3: { exportLinks: { ris: 'http://risLink.com/3' } }
                             }
                         }
                     },
                     url: 'http://api',
                     userInterface: { location: 'article' }
-                }, [1, 3]), {
+                }, { format: 'ris', ids: [1, 3] }), {
                     url: 'http://api/retrieve_ris',
                     config: {
                         method: 'POST',
