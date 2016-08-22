@@ -19,6 +19,7 @@
         .search-input {
             .term {
                 width: 100%;
+                min-width: 250px;
             }
             .search-clear {
                 font-size: 14px;
@@ -36,12 +37,15 @@
         }
         .query {
             display: flex;
+            flex-wrap: wrap;
             margin-bottom: 10px;
             .search-input {
-                flex: 6;
+                flex: 11;
             }
             .action {
                 flex: 1;
+                display: flex;
+                justify-content: flex-end;
             }
         }
     }

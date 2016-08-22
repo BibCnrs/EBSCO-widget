@@ -16,8 +16,8 @@ describe('simple articleSearch', function() {
         .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Articles')
         .pause(300)
-        .setValue('.article-search-input-list input', 'aids')
-        .click('.fetch-button button')
+        .setValue('.term input', 'aids')
+        .click('.fetch-button')
         .pause(300)
         .waitForElementVisible('.search-result-with-sidebar', 1000)
         .assert.elementCount('.record', 20);
@@ -29,17 +29,17 @@ describe('simple articleSearch', function() {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Articles')
-        .assert.elementCount('.article-search-input-list .search-input', 1)
-        .setValue('.article-search-input-list input', 'aids')
-        .click('.article-search-input-list .row:nth-child(1) .action .add')
+        .assert.elementCount('.query-list .search-input', 1)
+        .setValue('.term input', 'aids')
+        .click('.query-list .query:nth-child(1) .action .add')
         .pause(300)
-        .assert.elementCount('.article-search-input-list .search-input', 2)
-        .assert.value('.article-search-input-list .row:nth-child(1) .search-input', 'aids')
-        .assert.value('.article-search-input-list .row:nth-child(2) .search-input', '')
-        .click('.article-search-input-list .row:nth-child(1) .action .remove')
+        .assert.elementCount('.query-list .search-input', 2)
+        .assert.value('.query-list .query:nth-child(1) .search-input .term input', 'aids')
+        .assert.value('.query-list .query:nth-child(2) .search-input .term input', '')
+        .click('.query-list .query:nth-child(1) .action .remove')
         .pause(300)
-        .assert.elementCount('.article-search-input-list .search-input', 1)
-        .assert.value('.article-search-input-list .row:nth-child(1) .search-input', '');
+        .assert.elementCount('.query-list .search-input', 1)
+        .assert.value('.query-list .query:nth-child(1) .search-input .term input', '');
 
         client.start(done);
     });
@@ -50,7 +50,7 @@ describe('simple articleSearch', function() {
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Revues, Ouvrages')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
-        .assert.attributeEquals('.article-search-input-list .search-input', 'placeholder', 'Rechercher des articles, des chapitres de livre...')
+        .assert.attributeEquals('.query-list .search-input .term input', 'placeholder', 'Rechercher des articles, des chapitres de livre...')
         .assert.containsText('.fetch-button', 'Rechercher')
         .click('.navbar.navbar-default .language')
         .waitForElementVisible('#en', 1000)
@@ -59,7 +59,7 @@ describe('simple articleSearch', function() {
         .assert.containsText('.navbar.navbar-default .language', 'en')
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Journals, Books')
-        .assert.attributeEquals('.article-search-input-list .search-input', 'placeholder', 'Search articles, book chapters...')
+        .assert.attributeEquals('.query-list .search-input .term input', 'placeholder', 'Search articles, book chapters...')
         .assert.containsText('.fetch-button', 'Search')
         ;
 

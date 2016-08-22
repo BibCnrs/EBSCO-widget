@@ -13,9 +13,9 @@ describe('publicationSearch', function() {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
-        .setValue('.search-input', 'study')
-        .waitForElementVisible('.fetch-button .btn', 100)
-        .click('.fetch-button .btn')
+        .setValue('.search-input .term input', 'study')
+        .waitForElementVisible('.fetch-button', 100)
+        .click('.fetch-button')
         .pause(300)
         .waitForElementVisible('.search-result', 1000)
         .assert.elementCount('.record', 20);
@@ -33,7 +33,7 @@ describe('publicationSearch', function() {
         .click('.B')
         .pause(300)
         .assert.containsText('.a2z-search .second.letters', 'BA BB BC BD BE BF BG BH BI BJ BK BL BM BN BO BP BQ BR BS BT BU BV BW BX BY BZ')
-        .assert.value('.search-input', 'B*')
+        .assert.value('.search-input .term input', 'B*')
         .assert.containsText('.field.select-button', 'Titre')
         .assert.containsText('.sort.select-button', 'alphabétique')
         .waitForElementVisible('.search-result', 1000)
@@ -48,14 +48,14 @@ describe('publicationSearch', function() {
         .assert.containsText('.navbar.navbar-default', 'Articles')
         .assert.containsText('.navbar.navbar-default', 'Revues, Ouvrages')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
-        .assert.attributeEquals('.search .search-input', 'placeholder', 'Rechercher des titres de revues, de livres...')
+        .assert.attributeEquals('.search .search-input .term input', 'placeholder', 'Rechercher des titres de revues, de livres...')
         .assert.containsText('.fetch-button', 'Rechercher')
         .click('.navbar.navbar-default .language')
         .waitForElementVisible('#en', 1000)
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.attributeEquals('.search .search-input', 'placeholder', 'Search journal titles, book titles...')
+        .assert.attributeEquals('.search .search-input .term input', 'placeholder', 'Search journal titles, book titles...')
         .assert.containsText('.fetch-button', 'Search')
         ;
 
