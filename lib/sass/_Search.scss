@@ -20,16 +20,20 @@
             .term {
                 width: 100%;
                 min-width: 250px;
+                .form-control {
+                    border-right: 0;
+                    box-shadow: none;
+                    border-color: #ccc;
+                }
             }
             .search-clear {
+                padding-right: 5px;
+                padding-left: 1px;
                 font-size: 14px;
                 color: grey;
                 cursor: pointer;
-                z-index: 3;
-                position: absolute;
-                right: 14px;
-                top: 7px;
-                bottom: 7px;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
             }
             .open.dropdown.btn-group {
                 z-index: 3;
