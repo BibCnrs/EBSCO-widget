@@ -1,7 +1,7 @@
 import { Etc } from '../../../lib/components/Etc';
 
 describe('Etc', function () {
-    const getComponent = (list, limit) => enzyme.shallow(<Etc list={list} limit={limit} />);
+    const getComponent = (list, limit) => enzyme.mount(<Etc list={list} limit={limit} />);
 
     it('should display list separated with ";"', function () {
         const list = [1, 2, 3, 4, 5];
