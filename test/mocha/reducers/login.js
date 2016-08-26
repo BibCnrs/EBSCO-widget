@@ -16,23 +16,6 @@ describe('reducer login', function () {
 
     describe('actions', function () {
 
-        describe('CHANGE_AUTHENTICATION_MODE', function () {
-            it('should set mode to action.value', function () {
-                const nextState = login({
-                    other: 'data'
-                }, {
-                    type: CHANGE_AUTHENTICATION_MODE,
-                    value: 'mode'
-                });
-
-                assert.deepEqual(nextState, {
-                    other: 'data',
-                    mode: 'mode'
-                });
-
-            });
-        });
-
         describe('CHANGE_USERNAME', function () {
             it('should set username to action.value', function () {
                 const nextState = login({
