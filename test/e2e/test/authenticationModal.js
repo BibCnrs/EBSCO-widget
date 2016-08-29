@@ -15,8 +15,8 @@ describe('authenticationModal', function() {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
-        .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')
-        .assert.containsText('.bibapi .panel-title', 'Vous avez un compte Inist.')
+        .assert.containsText('.janus .panel-title', 'Via le gestionnaire d\'identité janus')
+        .assert.containsText('.bibapi .panel-title', 'Via votre ancien code d\'accés portail')
         .click('button.janus')
         .pause(1000)
         .waitForElementVisible('.navbar.navbar-default', 1000)
@@ -29,9 +29,9 @@ describe('authenticationModal', function() {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
         .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
-        .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')
-        .assert.containsText('.bibapi .panel-title', 'Vous avez un compte Inist.')
-        .click('.bibapi .panel-title a')
+        .assert.containsText('.janus', 'Via le gestionnaire d\'identité janus')
+        .assert.containsText('.inist-button', 'Via votre ancien code d\'accés portail')
+        .click('.inist-button')
         .setValue('.username', 'test')
         .setValue('.password', 'secret')
         .click('button.api')
@@ -44,7 +44,7 @@ describe('authenticationModal', function() {
     it('should display Unauthorized error if wrong username and password when using api button', function (done) {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .click('.bibapi .panel-title a')
+        .click('.inist-button')
         .setValue('.username', 'nightwatch')
         .setValue('.password', 'password')
         .click('button.api')
