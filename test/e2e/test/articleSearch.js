@@ -14,7 +14,7 @@ describe('simple articleSearch', function() {
         browser
         .pause(300)
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Articles')
+        .assert.containsText('.navbar.navbar-default .active', 'Un article')
         .pause(300)
         .setValue('.term input', 'aids')
         .click('.fetch-button')
@@ -28,7 +28,7 @@ describe('simple articleSearch', function() {
     it('should add/remove article Input when clicking add/remove', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Articles')
+        .assert.containsText('.navbar.navbar-default .active', 'Un article')
         .assert.elementCount('.query-list .search-input', 1)
         .setValue('.term input', 'aids')
         .click('.query-list .query:nth-child(1) .action .add')
@@ -47,8 +47,8 @@ describe('simple articleSearch', function() {
     it('should translate ArticleSearch', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 100)
-        .assert.containsText('.navbar.navbar-default', 'Articles')
-        .assert.containsText('.navbar.navbar-default', 'Revues, Ouvrages')
+        .assert.containsText('.navbar.navbar-default', 'Un article')
+        .assert.containsText('.navbar.navbar-default', 'Une revue, un ouvrage')
         .assert.containsText('.navbar.navbar-default .language', 'fr')
         .assert.attributeEquals('.query-list .search-input .term input', 'placeholder', 'Rechercher des articles, des chapitres de livre...')
         .assert.containsText('.fetch-button', 'Rechercher')
@@ -57,8 +57,8 @@ describe('simple articleSearch', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('.navbar.navbar-default', 'Articles')
-        .assert.containsText('.navbar.navbar-default', 'Journals, Books')
+        .assert.containsText('.navbar.navbar-default', 'An article')
+        .assert.containsText('.navbar.navbar-default', 'A journal, a book')
         .assert.attributeEquals('.query-list .search-input .term input', 'placeholder', 'Search articles, book chapters...')
         .assert.containsText('.fetch-button', 'Search')
         ;
