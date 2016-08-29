@@ -8,7 +8,7 @@
     background-color: $back;
     text-align: left;
     .title {
-        .fa {
+        .btn-link {
             float: right;
         }
         color: $title;
@@ -31,15 +31,5 @@
     .notice {
         font-size: 12px;
         line-height: 1;
-        dt {
-            display: block;
-            width: 200px;
-            font-weight: bold;
-            padding: 5px 10px 5px 10px
-        }
-        dd {
-            margin: 0 0 0 200px;
-            padding: 5px 0 5px 10px;
-        }
     }
 }

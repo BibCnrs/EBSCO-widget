@@ -1,7 +1,6 @@
 import Facet from '../../../lib/components/Facet';
 
 describe('Facet', function () {
-    let applyFacetCall;
     const defaultFacet = {
         id: 'id',
         label: 'title',
@@ -15,27 +14,17 @@ describe('Facet', function () {
     const getComponent = (facet = defaultFacet) =>  {
         const props = {
             facet,
-            changeFacet: () => {},
-            applyFacet: (value) => {
-                applyFacetCall = value;
-            }
+            changeFacet: () => {}
         };
 
         return enzyme.shallow(<Facet {...props}/>);
     };
 
-    beforeEach(function () {
-        applyFacetCall = null;
-    });
-
     it('should display a bibButton with "facet.label (facet.count)" as label that call applyFacet onClick', function () {
         const component = getComponent();
-        const bibButton = component.find('FetchButton.title');
+        const titleButton = component.find('BibButton.title');
 
-        assert.equal(bibButton.props().label, 'title (2)');
-        bibButton.props().onClick('click');
-
-        assert.equal(applyFacetCall, 'click');
+        assert.equal(titleButton.props().label, 'title (2)');
     });
 
     it('should display a bibButton with facet.label minus PubDb', function () {
@@ -43,7 +32,7 @@ describe('Facet', function () {
             ...defaultFacet,
             label: 'titlePubDb'
         });
-        const bibButton = component.find('FetchButton.title');
+        const bibButton = component.find('BibButton.title');
 
         assert.equal(bibButton.props().label, 'title (2)');
     });
@@ -53,7 +42,7 @@ describe('Facet', function () {
             ...defaultFacet,
             label: undefined
         });
-        const bibButton = component.find('FetchButton.title');
+        const bibButton = component.find('BibButton.title');
 
         assert.equal(bibButton.props().label, 'id (2)');
     });
@@ -64,7 +53,7 @@ describe('Facet', function () {
             label: undefined,
             id: 'TypePublicationPubD'
         });
-        const bibButton = component.find('FetchButton.title');
+        const bibButton = component.find('BibButton.title');
 
         assert.equal(bibButton.props().label, 'Publication Type (2)');
     });

@@ -14,13 +14,13 @@ describe('authenticationModal', function() {
     it.skip('should trigger pausedAction(go to article) once logged with janus button', function (done) {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
-        .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')
-        .assert.containsText('.bibapi .panel-title', 'Vous avez un compte Inist.')
+        .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage')
+        .assert.containsText('.janus .panel-title', 'Via le gestionnaire d\'identité janus')
+        .assert.containsText('.bibapi .panel-title', 'Via votre ancien code d\'accès portail')
         .click('button.janus')
         .pause(1000)
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Articles');
+        .assert.containsText('.navbar.navbar-default .active', 'Un article');
 
         client.start(done);
     });
@@ -28,15 +28,15 @@ describe('authenticationModal', function() {
     it('should trigger pausedAction(go to article) once logged with bibapi account', function (done) {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
-        .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')
-        .assert.containsText('.bibapi .panel-title', 'Vous avez un compte Inist.')
-        .click('.bibapi .panel-title a')
+        .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage')
+        .assert.containsText('.janus', 'Via le gestionnaire d\'identité janus')
+        .assert.containsText('.inist-button', 'Via votre ancien code d\'accès portail')
+        .click('.inist-button')
         .setValue('.username', 'test')
         .setValue('.password', 'secret')
         .click('button.api')
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Articles');
+        .assert.containsText('.navbar.navbar-default .active', 'Un article');
 
         client.start(done);
     });
@@ -44,13 +44,13 @@ describe('authenticationModal', function() {
     it('should display Unauthorized error if wrong username and password when using api button', function (done) {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .click('.bibapi .panel-title a')
+        .click('.inist-button')
         .setValue('.username', 'nightwatch')
         .setValue('.password', 'password')
         .click('button.api')
         .waitForElementVisible('.error', 1000)
         .assert.containsText('.error', 'Unauthorized')
-        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages');
+        .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage');
         client.start(done);
     });
 });

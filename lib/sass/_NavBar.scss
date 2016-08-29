@@ -1,3 +1,25 @@
 .navbar {
     background-color: white;
+    .nav {
+        .nav-item {
+            padding-top: 8px;
+            a {
+                padding-top: 5px;
+                padding-bottom: 5px;
+                margin: 0 5px;
+                background-color: #eee;
+                &:hover {
+                    border: solid #337ab7 1px;
+                    background-color: #fff;
+                    box-shadow: 5px 5px 5px #999
+                }
+                border-radius: 0px;
+            }
+            &.active a {
+                border: solid #337ab7 2px;
+                background-color: #fff;
+                box-shadow: 5px 5px 5px #999
+            }
+        }
+    }
 }

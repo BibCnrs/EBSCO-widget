@@ -13,14 +13,14 @@ describe('authentication', function() {
     it('should display login modal when trying to retrieve clicked publication title', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
+        .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage')
         .waitForElementVisible('.record', 1000)
         .click('.record_list a.fetch-link')
         .pause(300)
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')
-        .assert.containsText('.bibapi .panel-title', 'Vous avez un compte Inist.')
-        .click('.bibapi .panel-title a')
+        .assert.containsText('.janus', 'Via le gestionnaire d\'identité janus')
+        .assert.containsText('.inist-button', 'Via votre ancien code d\'accès portail')
+        .click('.inist-button')
         .setValue('.username', 'test')
         .setValue('.password', 'secret')
         .click('button.api')
@@ -41,21 +41,21 @@ describe('authentication', function() {
     it('should display login modal when trying to search article', function (done) {
         browser
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Revues, Ouvrages')
+        .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage')
         .click('.nav-article')
         .pause(300)
         .setValue('.term input', 'aids')
         .click('.fetch-button')
         .pause(300)
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .assert.containsText('.janus .panel-title', 'Vous avez un compte Labintel.')
-        .assert.containsText('.bibapi .panel-title', 'Vous avez un compte Inist.')
-        .click('.bibapi .panel-title a')
+        .assert.containsText('.janus', 'Via le gestionnaire d\'identité janus')
+        .assert.containsText('.inist-button', 'Via votre ancien code d\'accès portail')
+        .click('.inist-button')
         .setValue('.username', 'test')
         .setValue('.password', 'secret')
         .click('button.api')
         .waitForElementVisible('.navbar.navbar-default', 1000)
-        .assert.containsText('.navbar.navbar-default .active', 'Articles');
+        .assert.containsText('.navbar.navbar-default .active', 'Un article');
 
         client.start(done);
     });
