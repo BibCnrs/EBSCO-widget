@@ -57,7 +57,7 @@ describe('articleSearchResult', function() {
         .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 14)
         .click('.available_facets .facet:nth-child(1) .facet_values .facet_value:nth-child(1)')
         .waitForElementVisible('.available_facets', 1000)
-        .assert.containsText('.active_facet .header .title', 'Vos filtres')
+        .assert.containsText('.active_facet .header .title', 'Appliquer vos filtres')
         .assert.elementCount('.active_facet .facet_values .facet_value', 1)
         .assert.containsText('.active_facet .facet_values', 'Academic Journals')
         ;
