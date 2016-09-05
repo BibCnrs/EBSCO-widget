@@ -2186,8 +2186,9 @@
 					"an": "edssas.m.ajhpe.v8.n1.a28",
 					"dbId": "edssas",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.7196/AJHPE.2016.v8i1.750",
 					"title": "Assessing the effect of an online HIV/AIDS course on 1st-year pharmacy students' knowledge : research",
@@ -2205,8 +2206,9 @@
 					"an": "114455557",
 					"dbId": "sih",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.12759/hsr.41.2016.1.111-134",
 					"title": "Risky Sex -- Risky Language. HIV/AIDS and the West German Gay Scene in the 1980s.",
@@ -2224,8 +2226,9 @@
 					"an": "edsswe.oai.dspace.mah.se.2043.19888",
 					"dbId": "edsswe",
 					"articleLinks": {
-						"fullTextLinks": ["http://hdl.handle.net/2043/19888"],
-						"pdfLinks": []
+						"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/2043/19888" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": null,
 					"title": "Social representation of hearing aids : cross-cultural study in India, Iran, Portugal, and the United Kingdom",
@@ -2243,8 +2246,9 @@
 					"an": "115222911",
 					"dbId": "a9h",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1371/journal.pone.0154893",
 					"title": "What Is Required to End the AIDS Epidemic as a Public Health Threat by 2030? The Cost and Impact of the Fast-Track Approach.",
@@ -2262,8 +2266,9 @@
 					"an": "115815026",
 					"dbId": "sih",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.2105/AJPH.2016.303085",
 					"title": "Unrecognized “AIDS” in Monkeys, 1969– 1980: Explanations and Implications.",
@@ -2281,8 +2286,9 @@
 					"an": "115332895",
 					"dbId": "a9h",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.5336/biostatic.2015-48400",
 					"title": "Accelerated Failure Time Shared Frailty Models: Application to HIV/AIDS Patients on Anti-Retroviral Therapy in Delhi, India.",
@@ -2300,8 +2306,9 @@
 					"an": "115815040",
 					"dbId": "sih",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.2105/AJPH.2016.303176",
 					"title": "Opening the Market for Lower Cost Hearing Aids: Regulatory Change Can Improve the Health of Older Americans.",
@@ -2319,8 +2326,9 @@
 					"an": "114606515",
 					"dbId": "sih",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1111/soin.12105",
 					"title": "Economic Dependency and HIV/ AIDS Prevalence in the Developing World: A Comparative, Longitudinal Analysis.",
@@ -2338,8 +2346,9 @@
 					"an": "edswao.444910158",
 					"dbId": "edswao",
 					"articleLinks": {
-						"fullTextLinks": ["http://journals.sub.uni-hamburg.de/giga/afsp/article/view/827/828"],
-						"pdfLinks": []
+						"fullTextLinks": [{ "name": "Full Text Link", "url": "http://journals.sub.uni-hamburg.de/giga/afsp/article/view/827/828" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": null,
 					"title": "A future beyond HIV/AIDS? : Health as a political commodity in Botswana / Astrid Bochow",
@@ -2357,8 +2366,9 @@
 					"an": "13969504",
 					"dbId": "inh",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1121/1.4824700",
 					"title": "Integrating cognitive and peripheral factors in predicting hearing-aid processing effectiveness",
@@ -2376,8 +2386,9 @@
 					"an": "115446372",
 					"dbId": "a9h",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1371/journal.pone.0155560",
 					"title": "A Comparison of the Diabetes Risk Score in HIV/AIDS Patients on Highly Active Antiretroviral Therapy (HAART) and HAART-Naïve Patients at the Limbe Regional Hospital, Cameroon.",
@@ -2395,8 +2406,9 @@
 					"an": "115089459",
 					"dbId": "a9h",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1155/2016/3272483",
 					"title": "Treatment of Dermatological Conditions Associated with HIV/AIDS: The Scarcity of Guidance on a Global Scale.",
@@ -2414,8 +2426,9 @@
 					"an": "114992776",
 					"dbId": "a9h",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1155/2016/5675036",
 					"title": "Tuberculous Gastric Abscess in a Patient with AIDS: A Rare Presentation.",
@@ -2433,8 +2446,9 @@
 					"an": "114208725",
 					"dbId": "a9h",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1371/journal.pone.0152990",
 					"title": "Cross-Culture Validation of the HIV/AIDS Stress Scale: The Development of a Revised Chinese Version.",
@@ -2452,8 +2466,9 @@
 					"an": "113775892",
 					"dbId": "ehh",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": null,
 					"title": "THE EFFECT OF USING VISUAL AIDS ON TEACHING VOLLEYBALL SKILLS TO PHYSICAL EDUCATION STUDENTS.",
@@ -2471,8 +2486,9 @@
 					"an": "112350391",
 					"dbId": "ehh",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": null,
 					"title": "Do Visual Aids Really Matter? A Comparison of Student Evaluations Before and After Embedding Visuals Into Video Lectures.",
@@ -2490,8 +2506,9 @@
 					"an": "edsswe.oai.DiVA.org.umu.119656",
 					"dbId": "edsswe",
 					"articleLinks": {
-						"fullTextLinks": ["http://umu.diva-portal.org/smash/get/diva2:925120/FULLTEXT01.pdf"],
-						"pdfLinks": []
+						"fullTextLinks": [{ "name": "Full Text Link", "url": "http://umu.diva-portal.org/smash/get/diva2:925120/FULLTEXT01.pdf" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1186/s12963-016-0079-z",
 					"title": "Social patterns and differentials in the fertility transition in the context of HIV/AIDS: evidence from population surveillance, rural South Africa, 1993-2013",
@@ -2509,8 +2526,9 @@
 					"an": "hsdc04p.249.11117.723076",
 					"dbId": "edspac",
 					"articleLinks": {
-						"fullTextLinks": ["http://library.cqpress.com/cqpac/document.php?id=hsdc04p-249-11117-723076"],
-						"pdfLinks": []
+						"fullTextLinks": [{ "name": "Full Text Link", "url": "http://library.cqpress.com/cqpac/document.php?id=hsdc04p-249-11117-723076" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": null,
 					"title": "Randall Tobias, Head of President's Emergency Plan for AIDS, Speech at 2004 International Conference on HIV/AIDS",
@@ -2528,8 +2546,9 @@
 					"an": "112075501",
 					"dbId": "a9h",
 					"articleLinks": {
-						"fullTextLinks": [],
-						"pdfLinks": []
+						"fullTextLinks": [{  "name": "Access Url", "url": "http://acccess-url.com" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": "10.1371/journal.pone.0146387",
 					"title": "Exploring the Potential Health Impact and Cost-Effectiveness of AIDS Vaccine within a Comprehensive HIV/AIDS Response in Low- and Middle-Income Countries.",
@@ -2547,8 +2566,9 @@
 					"an": "hsdcp03p.229.9847.634224",
 					"dbId": "edspac",
 					"articleLinks": {
-						"fullTextLinks": ["http://library.cqpress.com/cqpac/document.php?id=hsdcp03p-229-9847-634224"],
-						"pdfLinks": []
+						"fullTextLinks": [{ "name": "Full Text Link", "url": "http://library.cqpress.com/cqpac/document.php?id=hsdcp03p-229-9847-634224" }],
+						"pdfLinks": [],
+						"urls": []
 					},
 					"doi": null,
 					"title": "Address by Stephen Lewis, UN Special Envoy for HIV/AIDS in Africa, at the Thirteenth International Conference on AIDS and STIs",
