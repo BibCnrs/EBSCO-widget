@@ -39,6 +39,8 @@ describe('sagas showNotice', function () {
         iterator.next(undefined);
         let next = iterator.next(true);
         assert.deepEqual(next.value, call(retrieve, action.id, action.category));
+        next = iterator.next();
+        assert.isTrue(next.done);
     });
 
     it('should select isUserLogged if canUserRetrieve return false', function () {

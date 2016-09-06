@@ -24,7 +24,7 @@ describe('authentication', function() {
         .setValue('.username', 'test')
         .setValue('.password', 'secret')
         .click('button.api')
-        .pause(1000)
+        .pause(2000)
         .waitForElementVisible('.notice', 1000)
         .assert.containsText('.notice dl span:nth-child(1) dt', 'ISSN')
         .assert.containsText('.notice dl span:nth-child(2) dt', 'Publisher Information')
