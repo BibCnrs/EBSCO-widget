@@ -34,11 +34,7 @@ beforeEach(function (done) {
     global.client.start(done);
 });
 
-afterEach(function (done) {
-    global.browser.end();
-    global.client.start(done);
-});
-
 after(function () {
+    global.browser.end();
     global.client.terminate();
 });

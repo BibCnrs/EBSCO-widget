@@ -4,8 +4,9 @@
 		"an": "edsarl.21594627.201512.201601150037.201601150037.311.319",
 		"dbId": "edsarl",
 		"articleLinks": {
-			"fullTextLinks": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=edsarl&AN=edsarl.21594627.201512.201601150037.201601150037.311.319"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=edsarl&AN=edsarl.21594627.201512.201601150037.201601150037.311.319" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "The Legislative and Policy Gaps in the National HIV and AIDS, STI Policy, 2004-2014, Ghana",
 		"source": "Beijing Law Review. Vol. 6 Issue 4, p311-319. 9 p.",
@@ -21,8 +22,9 @@
 		"an": "edssas.m.sahara.v13.n1.a4",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC184146"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC184146" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Social support seeking and self-efficacy-building strategies in enhancing the emotional well-being of informal HIV/AIDS caregivers in Ibadan, Oyo state, Nigeria : original article",
 		"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2016, Vol 13, Issue 1, p. 35-40.",
@@ -38,8 +40,9 @@
 		"an": "edssas.m.sahara.v13.n1.a1",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC184149"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC184149" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Zimbabwe's national AIDS levy : a case study : original article",
 		"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2016, Vol 13, Issue 1, p. 1-7.",
@@ -55,8 +58,9 @@
 		"an": "edssas.m.sahara.v13.n1.a2",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC184148"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC184148" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "'The mercurial piece of the puzzle' : understanding stigma and HIV/AIDS in South Africa : original article",
 		"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2016, Vol 13, Issue 1, p. 8-16.",
@@ -72,8 +76,9 @@
 		"an": "edsswe.oai.dspace.mah.se.2043.19888",
 		"dbId": "edsswe",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/2043/19888"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/2043/19888" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Social representation of hearing aids : cross-cultural study in India, Iran, Portugal, and the United Kingdom",
 		"source": "Clinical interventions in aging;. 01/01/2015 10:1601-1615",
@@ -89,8 +94,9 @@
 		"an": "edssas.genbeh.v12.n2.a7",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.com" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Poverty, migration and the incidence of HIV/AIDS among rural women in Lesotho : a rights-based approach to public health strategies",
 		"source": "Gender and Behaviour, Dec 2014, Vol 12, Issue 2, p. 6317-6328.",
@@ -106,8 +112,9 @@
 		"an": "edssas.sapsyc.v45.n1.a11",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.comm" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Psycho-social experiences and coping among caregivers of people living with HIV/AIDS in the North-West province of South Africa",
 		"source": "South African Journal of Psychology, Mar 2015, Vol 45, Issue 1, p. 130-139.",
@@ -123,8 +130,9 @@
 		"an": "edssas.jemba.v8.n2.a5",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC183697"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC183697" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Combating HIV and/or AIDS : a challenge to millennium development goals for disaster managers in the Southern African development community : original research",
 		"source": "Jamba : Journal of Disaster Risk Studies,  2016, Vol 8, Issue 2, p. 1-10.",
@@ -140,8 +148,9 @@
 		"an": "EJ1079541",
 		"dbId": "eric",
 		"articleLinks": {
-			"fullTextLinks": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1079541"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1079541" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Impact of Visual Aids in Enhancing the Learning Process Case Research: District Dera Ghazi Khan",
 		"source": "Journal of Education and Practice, v6 n19 p226-233 2015. 9 pp.",
@@ -157,8 +166,9 @@
 		"an": "EJ1079154",
 		"dbId": "eric",
 		"articleLinks": {
-			"fullTextLinks": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1079154"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1079154" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Trado-Cultural Practices, Situation, Analysis and Epidemiological Factors in the Spread of HIV/AIDS in Nigeria",
 		"source": "Journal of Education and Practice, v6 n21 p65-70 2015. 7 pp.",
@@ -174,8 +184,9 @@
 		"an": "EJ1078484",
 		"dbId": "eric",
 		"articleLinks": {
-			"fullTextLinks": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1078484"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1078484" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Developing a Participatory Pedagogical and Multidisciplinary Approach for Integrating HIV/AIDS into University Curriculum",
 		"source": "Journal of Education and Practice, v6 n25 p6-15 2015. 11 pp.",
@@ -191,8 +202,9 @@
 		"an": "EJ1051131",
 		"dbId": "eric",
 		"articleLinks": {
-			"fullTextLinks": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1051131"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=eric&AN=EJ1051131" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Students Talk about Their HIV/AIDS Education Courses: A Case of Addis Ababa, Ethiopia",
 		"source": "Journal of International Education Research, v11 n1 p35-46 2015. 12 pp.",
@@ -208,8 +220,9 @@
 		"an": "edsswe.oai.DiVA.org.liu.113490",
 		"dbId": "edsswe",
 		"articleLinks": {
-			"fullTextLinks": ["http://liu.diva-portal.org/smash/get/diva2:781963/FULLTEXT01.pdf"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://liu.diva-portal.org/smash/get/diva2:781963/FULLTEXT01.pdf" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Benefit from, and acclimatization to, frequency compression hearing aids in experienced adult hearing-aid users",
 		"source": "International Journal of Audiology. 01/01/2015 54:37-47",
@@ -225,8 +238,9 @@
 		"an": "edsarl.03633640.201410.201504080029.201504080029.77.92",
 		"dbId": "edsarl",
 		"articleLinks": {
-			"fullTextLinks": ["http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=edsarl&AN=edsarl.03633640.201410.201504080029.201504080029.77.92"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://gate1.inist.fr/login?url=http://search.ebscohost.com/login.aspx?direct=true&site=eds-live&scope=site&db=edsarl&AN=edsarl.03633640.201410.201504080029.201504080029.77.92" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "銀髮族眼戴式手機閱讀輔具雛型之設計開發與科技接受度調查 / Prototype Development and Technology Acceptance Survey on Glasses-Attached Mobile Reading Aids for Senior Citizens",
 		"source": "圖書館學與資訊科學. Vol. 40 Issue 2, p77-92. 16 p.",
@@ -242,8 +256,9 @@
 		"an": "26157079",
 		"dbId": "mnh",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.com" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "An unusual appearing skin lesion from Penicillium marneffei infection in an AIDS patient in central China.",
 		"source": "Publisher: American Society of Tropical Medicine and Hygiene Country of Publication: United States NLM ID: 0370507 Publication Model: Print Cited Medium: Internet ISSN: 1476-1645 (Electronic) Linking ISSN: 00029637 NLM ISO Abbreviation: Am. J. Trop. Med. Hyg. Subsets: Core Clinical (AIM); MEDLINE",
@@ -259,8 +274,9 @@
 		"an": "hsdc04p.249.11117.723076",
 		"dbId": "edspac",
 		"articleLinks": {
-			"fullTextLinks": ["http://library.cqpress.com/cqpac/document.php?id=hsdc04p-249-11117-723076"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://library.cqpress.com/cqpac/document.php?id=hsdc04p-249-11117-723076" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Randall Tobias, Head of President's Emergency Plan for AIDS, Speech at 2004 International Conference on HIV/AIDS",
 		"source": "Historic Documents of 2004.",
@@ -276,8 +292,9 @@
 		"an": "edsswe.oai.DiVA.org.oru.45680",
 		"dbId": "edsswe",
 		"articleLinks": {
-			"fullTextLinks": ["http://oru.diva-portal.org/smash/get/diva2:850044/FULLTEXT01.pdf"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://oru.diva-portal.org/smash/get/diva2:850044/FULLTEXT01.pdf" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Integration of Family Planning in HIV/AIDS Program in Solwezi District, Northwestern Zambia: Status and Perspectives",
 		"source": "Public Health Research. 01/01/2015 5:103-108",
@@ -293,8 +310,9 @@
 		"an": "edsswe.oai.lup.lub.lu.se.7696278",
 		"dbId": "edsswe",
 		"articleLinks": {
-			"fullTextLinks": ["http://lup.lub.lu.se/record/7696278/file/7696343.pdf"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://lup.lub.lu.se/record/7696278/file/7696343.pdf" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "The use of OECD commentaries as interpretative aids - The static/ambulatory-approaches debate considered from the perspective of international law",
 		"source": "Nordic Tax Journal. 01/01/2015 2015:34-59",
@@ -310,8 +328,9 @@
 		"an": "hsdcp03p.229.9847.634224",
 		"dbId": "edspac",
 		"articleLinks": {
-			"fullTextLinks": ["http://library.cqpress.com/cqpac/document.php?id=hsdcp03p-229-9847-634224"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://library.cqpress.com/cqpac/document.php?id=hsdcp03p-229-9847-634224" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Address by Stephen Lewis, UN Special Envoy for HIV/AIDS in Africa, at the Thirteenth International Conference on AIDS and STIs",
 		"source": "Historic Documents of 2003.",
@@ -327,8 +346,9 @@
 		"an": "26665360",
 		"dbId": "mnh",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.comm" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Use of Audio-Visual aids in teaching post operative exercises to person affected by Leprosy.",
 		"source": "Publisher: British Leprosy Relief Association Country of Publication: England NLM ID: 0243711 Publication Model: Print Cited Medium: Print ISSN: 0305-7518 (Print) Linking ISSN: 03057518 NLM ISO Abbreviation: Lepr Rev Subsets: MEDLINE",

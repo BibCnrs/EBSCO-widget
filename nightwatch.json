@@ -21,11 +21,6 @@
                 "on_failure": true,
                 "path": "tests_output"
             }
-        },
-        "firefox": {
-            "desiredCapabilities": {
-                "browserName": "firefox"
-            }
         }
     }
 }

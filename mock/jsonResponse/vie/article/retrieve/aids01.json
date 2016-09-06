@@ -2,8 +2,9 @@
 	"dbId": "edsarl",
 	"dbLabel": "Airiti Library eBooks & Journals - 華藝線上圖書館",
 	"articleLinks": {
-		"fullTextLinks": [],
-		"pdfLinks": []
+		"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.comm" }],
+		"pdfLinks": [],
+		"urls": []
 	},
 	"items": [{
 		"name": "Title",

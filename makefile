@@ -26,10 +26,10 @@ test-e2e:
 	docker-compose -f docker-compose.e2e.yml run --rm test
 
 selenium:
-	docker-compose -f docker-compose.e2e.yml up --force-recreate -d chrome firefox
+	docker-compose -f docker-compose.e2e.yml up --force-recreate -d chrome
 
 selenium-debug:
-	docker-compose -f docker-compose.e2e.yml up --force-recreate -d chromedebug firefoxdebug
+	docker-compose -f docker-compose.e2e.yml up --force-recreate -d chromedebug
 
 cleanup-e2e:
 	docker-compose -f docker-compose.e2e.yml stop
