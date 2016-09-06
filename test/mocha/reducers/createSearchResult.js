@@ -7,6 +7,7 @@ import {
     PAGE_LOAD,
     CHANGE_RESULTS_PER_PAGE,
     RELOAD_HISTORY,
+    RETRIEVE_SUCCESS,
     LOGOUT
 } from '../../../lib/actions';
 
@@ -115,7 +116,91 @@ describe('reducers createSearchResult', function () {
                 { some: 'state' }
             );
         });
+
+        describe('RETRIEVE_SUCCESS', function () {
+            let articleSearchResult;
+            before(function () {
+                articleSearchResult = createSearchResult('article');
+            });
+
+            it('should return given stat if category is not article', function () {
+                assert.deepEqual(
+                    categorySearchResult({ some: 'state' }, {
+                        type: RETRIEVE_SUCCESS,
+                        category: 'category'
+                    }),
+                    { some: 'state' }
+                );
+            });
+
+            it('should set corresponding articleLinks to action.response.articleLinks', function () {
+                assert.deepEqual(
+                    articleSearchResult({
+                        byId: {
+                            7: {}
+                        }
+                    }, {
+                        type: RETRIEVE_SUCCESS,
+                        category: 'article',
+                        id: '7',
+                        response: {
+                            articleLinks: {
+                                fullTextLinks: ['fulltext'],
+                                pdfLinks: [],
+                                urls: []
+                            }
+                        }
+                    }),
+                    {
+                        byId: {
+                            7: {
+                                articleLinks: {
+                                    fullTextLinks: ['fulltext'],
+                                    pdfLinks: [],
+                                    urls: []
+                                }
+                            }
+                        }
+                    }
+                );
+            });
+
+            it('should set corresponding articleLinks to null action.response.articleLinks contain only emptyArray', function () {
+                assert.deepEqual(
+                    articleSearchResult({
+                        byId: {
+                            '7': {
+                                articleLinks: {
+                                    fullTextLinks: [],
+                                    pdfLinks: [],
+                                    urls: []
+                                }
+                            }
+                        }
+                    }, {
+                        type: 'RETRIEVE_SUCCESS',
+                        category: 'article',
+                        id: '7',
+                        response: {
+                            articleLinks: {
+                                fullTextLinks: [],
+                                pdfLinks: [],
+                                urls: []
+                            }
+                        }
+                    }),
+                    {
+                        byId: {
+                            7: {
+                                articleLinks: null
+                            }
+                        }
+                    }
+                );
+            });
+        });
     });
+
 
     describe('selector', function () {
 
