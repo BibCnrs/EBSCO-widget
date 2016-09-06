@@ -4,8 +4,9 @@
 		"an": "edssas.ifepsyc.v23.n1.a16",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.comm" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Cognitive therapy, psychosocial variables and immune system functioning of persons with HIV/AIDS",
 		"source": "IFE PsychologIA : An International Journal,  2015, Vol 23, Issue 1, p. 143-149.",
@@ -21,8 +22,9 @@
 		"an": "hsdc02.151.7251.394962",
 		"dbId": "edspac",
 		"articleLinks": {
-			"fullTextLinks": ["http://library.cqpress.com/cqpac/document.php?id=hsdc02-151-7251-394962"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://library.cqpress.com/cqpac/document.php?id=hsdc02-151-7251-394962" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Annual Report of the Joint United Nations Programme on HIV/AIDS: 'Report on the Global HIV/AIDS Epidemic 2002'",
 		"source": "Historic Documents of 2002.",
@@ -38,8 +40,9 @@
 		"an": "edssas.educat.v34.n2.a14",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC153702"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC153702" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "'Cascading participation' and the role of teachers in a collaborative HIV and Aids curriculum development project",
 		"source": "South African Journal of Education, May 2014, Vol 34, Issue 2, p. 1-15.",
@@ -55,8 +58,9 @@
 		"an": "edsjsr.jappastud.20.2.0194",
 		"dbId": "edsjsr",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.com" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Food Insecurity Is Associated with Depression among Individuals Living with HIV/AIDS in Rural Appalachia",
 		"source": "Journal of Appalachian Studies, Fall 2014, Vol. 20, Issue 2, p. 194-206",
@@ -72,8 +76,9 @@
 		"an": "hsdc00.0000033455",
 		"dbId": "edspac",
 		"articleLinks": {
-			"fullTextLinks": ["http://library.cqpress.com/cqpac/document.php?id=hsdc00-0000033455"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://library.cqpress.com/cqpac/document.php?id=hsdc00-0000033455" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Report of the Joint United Nations (UN) Program on HIV/AIDS: 'Report on the Global HIV/AIDS Epidemic'",
 		"source": "Historic Documents of 2000.",
@@ -89,8 +94,9 @@
 		"an": "25879621",
 		"dbId": "mnh",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.com" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Trends in prevalence of selected opportunistic infections associated with HIV/AIDS in Uganda.",
 		"source": "Publisher: BioMed Central Country of Publication: England NLM ID: 100968551 Publication Model: Electronic Cited Medium: Internet ISSN: 1471-2334 (Electronic) Linking ISSN: 14712334 NLM ISO Abbreviation: BMC Infect. Dis. Subsets: MEDLINE",
@@ -106,8 +112,9 @@
 		"an": "edsndl.oai.union.ndltd.org.UPSALLA1.oai.DiVA.org.esh-4722",
 		"dbId": "edsndl",
 		"articleLinks": {
-			"fullTextLinks": ["http://urn.kb.se/resolve?urn=urn:nbn:se:esh:diva-4722"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://urn.kb.se/resolve?urn=urn:nbn:se:esh:diva-4722" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Människan bakom sjukdomen : En litteraturöversikt om vårdpersonalens attityder gentemot personer med HIV/AIDS",
 		"source": null,
@@ -123,8 +130,9 @@
 		"an": "edssas.ajrh.v19.n1.a7",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edssas&genre=article&issn=11184841&ISBN=&volume=19&issue=1&date=20150301&spage=63&pages=63-72&title=African Journal of Reproductive Health&atitle=%22Over%20my%20dead%20body%22%20%3A%20knowledge%20and%20attitude%20of%20children%20towards%20HIV%20and%20AIDS%20in%20the%20Cape%20Coast%20Metropolis%20of%20Ghana%20%3A%20original%20research%20article&aulast=Owusu%2C%20Samuel%20Asiedu&id=DOI:"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://gate1.inist.fr/login?url=http://resolver.ebscohost.com/openurl?custid=ns254627&group=main&authtype=ip,guest&sid=EBSCO:edssas&genre=article&issn=11184841&ISBN=&volume=19&issue=1&date=20150301&spage=63&pages=63-72&title=African Journal of Reproductive Health&atitle=%22Over%20my%20dead%20body%22%20%3A%20knowledge%20and%20attitude%20of%20children%20towards%20HIV%20and%20AIDS%20in%20the%20Cape%20Coast%20Metropolis%20of%20Ghana%20%3A%20original%20research%20article&aulast=Owusu%2C%20Samuel%20Asiedu&id=DOI:" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "\"Over my dead body\" : knowledge and attitude of children towards HIV and AIDS in the Cape Coast Metropolis of Ghana : original research article",
 		"source": "African Journal of Reproductive Health, Mar 2015, Vol 19, Issue 1, p. 63-72.",
@@ -140,8 +148,9 @@
 		"an": "edssas.m.sahara.v12.n1.a9",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC183209"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC183209" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Talk radio as the soundtrack of our lives : participatory HIV/AIDS communication, public self-expression and Positive Talk",
 		"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2015, Vol 12, Issue 1, p. 66-75.",
@@ -157,8 +166,9 @@
 		"an": "edssas.m.sahara.v12.n1.a15",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC183211"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC183211" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "The convergence of HIV/AIDS and customary tenure on women's access to land in rural Malawi : original article",
 		"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2015, Vol 12, Issue 1, p. 134-146.",
@@ -174,8 +184,9 @@
 		"an": "edssas.m.sahara.v12.n1.a14",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC183204"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC183204" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "A case study of school support and the psychological, emotional and behavioural consequences of HIV and AIDS on adolescents : original article",
 		"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2015, Vol 12, Issue 1, p. 123-133.",
@@ -191,8 +202,9 @@
 		"an": "edssas.health.v20.n1.a2",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC178115"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC178115" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "The health literacy needs of women living with HIV/AIDS",
 		"source": "Health SA Gesondheid,  2015, Vol 20, Issue 1, p. 11-21.",
@@ -208,8 +220,9 @@
 		"an": "edssas.high.v29.n2.a13",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC174433" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Digital animation for 'going public' on curriculum integration of HIV and AIDS in higher education : articles",
 		"source": "South African Journal of Higher Education,  2015, Vol 29, Issue 2, p. 237-259.",
@@ -225,8 +238,9 @@
 		"an": "edssas.m.sahara.v12.n1.a2",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC174433"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC174433" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Acceptability, feasibility and challenges of implementing an HIV prevention intervention for people living with HIV/AIDS among healthcare providers in Mozambique : results of a qualitative study : original article",
 		"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2015, Vol 12, Issue 1, p. 2-9.",
@@ -242,8 +256,9 @@
 		"an": "edssas.genbeh.v13.n1.a18",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": [],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://fulltext.com" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "HIV/AIDS awareness of male prison inmates in Lagos, Nigeria",
 		"source": "Gender and Behaviour,  2015, Vol 13, Issue 1, p. 6621-6631.",
@@ -259,8 +274,9 @@
 		"an": "edssci.S0104.59702016005002106",
 		"dbId": "edssci",
 		"articleLinks": {
-			"fullTextLinks": ["http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0104-59702016005002106&lng=en&tlng=en#?"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0104-59702016005002106&lng=en&tlng=en#?" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "A emergência da Aids no Amazonas / The emergence of Aids in Amazonas",
 		"source": "História, Ciências, Saúde-Manguinhos. 0(0):0-0",
@@ -276,8 +292,9 @@
 		"an": "edssas.hist.v59.n1.a5",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC153579"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC153579" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "\"Tell me where I can find the condom!\" Catholic AIDS discourses in South Africa during the 1990s",
 		"source": "Historia, May 2014, Vol 59, Issue 1, p. 72-87.",
@@ -293,8 +310,9 @@
 		"an": "edssas.sl.jeteraps.v5.n2.a11",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC152974"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC152974" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "The links between Kakuma refugee camp HIV/AIDs education programmes and the programmes in regular schools in the surrounding host community in north-western Kenya",
 		"source": "Journal of Emerging Trends in Educational Research and Policy Studies, Apr 2014, Vol 5, Issue 2, p. 199-209.",
@@ -310,8 +328,9 @@
 		"an": "hsdc98.0000037450",
 		"dbId": "edspac",
 		"articleLinks": {
-			"fullTextLinks": ["http://library.cqpress.com/cqpac/document.php?id=hsdc98-0000037450"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://library.cqpress.com/cqpac/document.php?id=hsdc98-0000037450" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Report of the United Nations (UN) Programme on HIV/AIDS: 'AIDS Epidemic Update -- December 1998'",
 		"source": "Historic Documents of 1998.",
@@ -327,8 +346,9 @@
 		"an": "edssas.m.sahara.v12.n1.a10",
 		"dbId": "edssas",
 		"articleLinks": {
-			"fullTextLinks": ["http://hdl.handle.net/10520/EJC183208"],
-			"pdfLinks": []
+			"fullTextLinks": [{ "name": "Full Text Link", "url": "http://hdl.handle.net/10520/EJC183208" }],
+			"pdfLinks": [],
+			"urls": []
 		},
 		"title": "Responses to the global HIV and AIDS pandemic : a study of the role of faith-based organisations in Lesotho : original article",
 		"source": "SAHARA : Journal of Social Aspects of HIV / AIDS Research Alliance,  2015, Vol 12, Issue 1, p. 76-86.",
