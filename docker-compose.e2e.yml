@@ -15,38 +15,23 @@ server:
   command: node mock/launcher.js
 
 hub:
-  image: selenium/hub:2.48.2
-chrome:
-  image: selenium/node-chrome:2.48.2
-  links:
-    - hub
-    - app
-    - server
+  image: selenium/hub:2.53.0
 
-firefox:
-  image: selenium/node-firefox:2.48.2
+chrome:
+  image: selenium/node-chrome:2.53.0
   links:
     - hub
     - app
     - server
 
 chromedebug:
-  image: selenium/node-chrome-debug:2.48.2
+  image: selenium/node-chrome-debug:2.53.0
   links:
     - hub
     - app
     - server
   ports:
     - 5900:5900
-
-firefoxdebug:
-  image: selenium/node-firefox-debug:2.48.2
-  links:
-    - hub
-    - app
-    - server
-  ports:
-    - 5901:5900
 
 test:
   extends:
