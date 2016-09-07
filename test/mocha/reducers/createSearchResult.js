@@ -281,5 +281,37 @@ describe('reducers createSearchResult', function () {
                 }, 2), { id: 2 });
             });
         });
+
+        describe('getRecordIdsWithMissingLink', function () {
+            it('should return recordIds for all record in currentPage who have no articleLinks', function () {
+                assert.deepEqual(fromSearchResult.getRecordIdsWithMissingLink({
+                    currentPage: 5,
+                    5: [1, 2, 3, 4, 5],
+                    6: [6, 7, 8, 9, 10],
+                    byId: {
+                        1: { articleLinks: { pdfLinks: ['link'] } },
+                        2: { articleLinks: { pdfLinks: ['link'] } },
+                        3: { articleLinks: { pdfLinks: ['link'] } },
+                        4: {},
+                        5: {}
+                    }
+                }), [4, 5]);
+            });
+
+            it('should return recordIds for all record in currentPage who have 0 articleLinks.fullTextLinks && 0 articleLinks.pdfLinks', function () {
+                assert.deepEqual(fromSearchResult.getRecordIdsWithMissingLink({
+                    currentPage: 5,
+                    5: [1, 2, 3, 4, 5],
+                    6: [6, 7, 8, 9, 10],
+                    byId: {
+                        1: { articleLinks: { pdfLinks: [], fullTextLinks: [] } },
+                        2: { articleLinks: { pdfLinks: ['link'], fullTextLinks: ['link'] } },
+                        3: { articleLinks: { pdfLinks: ['link'], fullTextLinks: [] } },
+                        4: { articleLinks: { pdfLinks: [], fullTextLinks: ['link'] } },
+                        5: { articleLinks: {} }
+                    }
+                }), [1, 5]);
+            });
+        });
     });
 });
