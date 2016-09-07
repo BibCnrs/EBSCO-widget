@@ -1,23 +1,23 @@
-import { call } from 'redux-saga/effects';
+import { select, call } from 'redux-saga/effects';
 
-import { searchSuccess, getMissingLinkIds } from '../../../lib/sagas/searchSuccess';
+import { searchSuccess } from '../../../lib/sagas/searchSuccess';
 import retrieve from '../../../lib/sagas/retrieve';
+import * as fromState from '../../../lib/reducers';
 
 describe('sagas searchSuccess', function () {
     let iterator;
     let action = {
         id: '7',
-        category: 'article',
-        response: 'response data'
+        category: 'article'
     };
 
     beforeEach(function () {
         iterator = searchSuccess(action);
     });
 
-    it('should call getMissingLinkIds with action.response', function () {
+    it('should call getRecordIdsWithMissingLink with action.response', function () {
         let next = iterator.next();
-        assert.deepEqual(next.value, call(getMissingLinkIds, action.response));
+        assert.deepEqual(next.value, select(fromState.getRecordIdsWithMissingLink));
     });
 
     it('should call retrieve forEach returned id', function () {
