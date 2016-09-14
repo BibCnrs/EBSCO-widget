@@ -150,7 +150,9 @@ describe('sagas initialize', function () {
             iterator.next();
             iterator.next([]);
             iterator.next({ domains: 'request' });
-            const next = iterator.next({ error: 'error', response: 'response' });
+            let next = iterator.next({ error: 'error', response: 'response' });
+            assert.deepEqual(next.value, put(actions.fetchDomainError('error')));
+            next = iterator.next();
             assert.isTrue(next.done);
         });
 
