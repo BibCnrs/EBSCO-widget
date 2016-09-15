@@ -48,7 +48,8 @@ describe('articleSearchResult', function() {
     it('should display facet', function (done) {
         browser
         .waitForElementVisible('.facet_list', 1000)
-        .assert.elementCount('.active_facet', 0)
+        .assert.elementCount('.active_facet', 1)
+        .assert.containsText('.active_facet .header .title', 'Appliquer vos filtres')
         .assert.containsText('.available_facets .facet:nth-child(1) .header .title', 'Source Type (14)')
         .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 3)
         .assert.containsText('.available_facets .facet:nth-child(1) .facet_values', 'Academic Journals (237702)\nMagazines (75583)\nReports (41302)')

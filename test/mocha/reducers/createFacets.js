@@ -19,23 +19,49 @@ describe('reducers createFacets', function () {
             categoryFacets = createFacets('category');
         });
 
-        it('should return action.response.activeFacets if action is SEARCH_SUCCESS', function () {
-            const searchState = categoryFacets(
-                {},
-                {
-                    type: SEARCH_SUCCESS,
-                    category: 'category',
-                    response: {
-                        activeFacets: { active: ['facet'] },
-                        facets: ['facets']
+        describe('SEARCH_SUCCESS', function () {
+
+            it('should return action.response.activeFacets and action.response.facets', function () {
+                const searchState = categoryFacets(
+                    {},
+                    {
+                        type: SEARCH_SUCCESS,
+                        category: 'category',
+                        response: {
+                            activeFacets: { active: ['facet'] },
+                            facets: ['facets']
+                        }
                     }
-                }
-            );
-            assert.deepEqual(searchState, {
-                active: { active: ['facet'] },
-                available: ['facets']
+                );
+                assert.deepEqual(searchState, {
+                    active: { active: ['facet'] },
+                    available: ['facets']
+                });
+            });
+
+            it('should change only action.response.facets if action.response.totalHits is 0', function () {
+                const searchState = categoryFacets(
+                    {
+                        active: { active: ['facet'] },
+                        available: ['facets']
+                    },
+                    {
+                        type: SEARCH_SUCCESS,
+                        category: 'category',
+                        response: {
+                            activeFacets: {},
+                            facets: [],
+                            totalHits: 0
+                        }
+                    }
+                );
+                assert.deepEqual(searchState, {
+                    available: [],
+                    active: { active: ['facet'] }
+                });
             });
         });
+
 
         it('should return defaultState if action is LOGOUT', function () {
             assert.deepEqual(categoryFacets({ active: ['facet'] }, {
