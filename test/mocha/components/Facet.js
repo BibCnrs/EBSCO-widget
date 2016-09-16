@@ -1,4 +1,4 @@
-import Facet from '../../../lib/components/Facet';
+import { Facet } from '../../../lib/components/Facet';
 
 describe('Facet', function () {
     const defaultFacet = {
@@ -25,16 +25,6 @@ describe('Facet', function () {
         const titleButton = component.find('BibButton.title');
 
         assert.equal(titleButton.props().label, 'title (2)');
-    });
-
-    it('should display a bibButton with facet.label minus PubDb', function () {
-        const component = getComponent({
-            ...defaultFacet,
-            label: 'titlePubDb'
-        });
-        const bibButton = component.find('BibButton.title');
-
-        assert.equal(bibButton.props().label, 'title (2)');
     });
 
     it('should display a bibButton with facet.id if no label', function () {
