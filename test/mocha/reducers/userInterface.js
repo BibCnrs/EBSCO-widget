@@ -11,7 +11,8 @@ import {
     FULLSCREEN,
     CHANGE_LANGUAGE,
     SHOW_LOGIN,
-    HIDE_LOGIN
+    HIDE_LOGIN,
+    INITIALIZE
 } from '../../../lib/actions';
 
 import userInterface, {defaultState} from '../../../lib/reducers/userInterface';
@@ -113,5 +114,22 @@ describe('reducers userInterface', function () {
             { loginShown: false, other: 'data' }
         );
     });
+
+    describe('INITIALIZE', function () {
+        it('should set language to action.language and noticeBeingExported to []', function () {
+            assert.deepEqual(
+                userInterface({ other: 'data' }, { type: INITIALIZE, language: 'en' }),
+                { language: 'en', noticeBeingExported: [], other: 'data' }
+            );
+        });
+
+        it('should set language to defaultState.language if no action.language', function () {
+            assert.deepEqual(
+                userInterface({ other: 'data' }, { type: INITIALIZE }),
+                { language: defaultState.language, noticeBeingExported: [], other: 'data' }
+            );
+        });
+    });
+
 
 });
