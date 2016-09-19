@@ -6,7 +6,9 @@ import {
     CHANGE_QUERY,
     LINKED_SEARCH,
     RESTORE_HISTORY,
-    RELOAD_HISTORY
+    RELOAD_HISTORY,
+    SUGGEST_TERMS,
+    SEARCH
     } from '../../../lib/actions';
 
 describe('reducers createQueryList', function () {
@@ -127,6 +129,42 @@ describe('reducers createQueryList', function () {
                 { type: RESTORE_HISTORY, category: 'article', query: { queries: 'queries content' } }
             );
             assert.equal(queryListState, 'queries content');
+        });
+
+        describe('SUGGEST_TERMS', function () {
+            it('should set suggestedTerms to actions.terms for query at action.index', function () {
+                const queryListState = articleQueryList(
+                    [
+                        { term: 'first' },
+                        { term: 'second' },
+                        { term: 'third' }
+                    ],
+                    { type: SUGGEST_TERMS, category: 'article', index: 1, terms: [' son', ' to finish', 'ary'] }
+                );
+                assert.deepEqual(queryListState, [
+                    { term: 'first' },
+                    { term: 'second', suggestedTerms: [' son', ' to finish', 'ary'] },
+                    { term: 'third' }
+                ]);
+            });
+        });
+
+        describe('SEARCH', function () {
+            it('should empty all suggestedTerms for all query', function () {
+                const queryListState = articleQueryList(
+                    [
+                        { term: 'first', suggestedTerms: ['man'] },
+                        { term: 'second', suggestedTerms: [' son', ' to finish', 'ary'] },
+                        { term: 'third' }
+                    ],
+                    { type: SEARCH, category: 'article', index: 1, terms: [' son', ' to finish', 'ary'] }
+                );
+                assert.deepEqual(queryListState, [
+                    { term: 'first', suggestedTerms: [] },
+                    { term: 'second', suggestedTerms: [] },
+                    { term: 'third', suggestedTerms: [] }
+                ]);
+            });
         });
     });
 
