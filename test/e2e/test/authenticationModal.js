@@ -48,7 +48,7 @@ describe('authenticationModal', function() {
         .setValue('.username', 'nightwatch')
         .setValue('.password', 'password')
         .click('button.api')
-        .waitForElementVisible('.error', 1000)
+        .waitForElementVisible('.error', 2000)
         .assert.containsText('.error', 'Unauthorized')
         .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage');
         client.start(done);

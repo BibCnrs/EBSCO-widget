@@ -111,9 +111,9 @@ describe('createNotice', function () {
                     1: 'notice 1',
                     64: {
                         items: [
-                            { label: 'key1', value: 'value1' },
-                            { label: 'key2', value: 'value2' },
-                            { label: 'key3', value: 'value3' }
+                            { name: 'key1', value: 'value1' },
+                            { name: 'key2', value: 'value2' },
+                            { name: 'key3', value: 'value3' }
                         ]
                     }
                 }}, 64), {

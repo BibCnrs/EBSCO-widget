@@ -19,13 +19,13 @@ describe('publication Search result', function() {
         .waitForElementVisible('.notice', 1000)
         .pause(300)
         .assert.containsText('.notice dl span:nth-child(1) dt', 'ISSN')
-        .assert.containsText('.notice dl span:nth-child(2) dt', 'Publisher Information')
-        .assert.containsText('.notice dl span:nth-child(3) dt', 'Resource Type')
-        .assert.containsText('.notice dl span:nth-child(4) dt', 'Subjects')
+        .assert.containsText('.notice dl span:nth-child(2) dt', 'Info Editeur')
+        .assert.containsText('.notice dl span:nth-child(3) dt', 'Type de Publication')
+        .assert.containsText('.notice dl span:nth-child(4) dt', 'Sujets')
         .assert.containsText('.notice dl span:nth-child(5) dt', 'Description')
         .assert.containsText('.notice dl span:nth-child(6) dt', 'URL')
-        .assert.containsText('.notice dl span:nth-child(7) dt', 'Frequency')
-        .assert.containsText('.notice dl span:nth-child(8) dt', 'Peer Reviewed');
+        .assert.containsText('.notice dl span:nth-child(7) dt', 'Fréquence')
+        .assert.containsText('.notice dl span:nth-child(8) dt', 'Relu par un comité de lecture');
 
         client.start(done);
     });
