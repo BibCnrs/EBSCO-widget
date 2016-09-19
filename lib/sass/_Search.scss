@@ -16,8 +16,19 @@
             flex-direction: column;
             justify-content: space-between;
         }
+        .after, .before {
+            vertical-align: top;
+        }
         .search-input {
             .term {
+                display: flex;
+                flex-direction: column;
+                .autocompletion {
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid #ccc;
+                    background-color: #fff;
+                }
                 width: 100%;
                 min-width: 250px;
                 .form-control {
