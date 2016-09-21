@@ -1,0 +1,13 @@
+.exact-match {
+    margin: 20px;
+    padding: 10px;
+    border: solid #BBBBBB 1px;
+    .fetch-link {
+        cursor: pointer;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
