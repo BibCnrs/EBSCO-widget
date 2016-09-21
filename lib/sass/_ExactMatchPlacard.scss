@@ -1,7 +1,15 @@
+@import "./variables.scss";
+
 .exact-match {
     margin: 20px;
     padding: 10px;
     border: solid #BBBBBB 1px;
+    .title {
+        .btn-link {
+            float: right;
+        }
+        color: $title;
+    }
     .fetch-link {
         cursor: pointer;
         text-decoration: none;
