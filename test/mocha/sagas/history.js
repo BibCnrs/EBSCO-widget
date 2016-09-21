@@ -2,7 +2,7 @@ import { call, select } from 'redux-saga/effects';
 
 import { updateStorageHistory } from '../../../lib/sagas/history';
 import { localStorage } from '../../../lib/services/storage';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 import { SEARCH_SUCCESS } from '../../../lib/actions';
 
 describe('history sagas', function () {

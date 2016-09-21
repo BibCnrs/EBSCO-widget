@@ -2,7 +2,7 @@ import { select, call } from 'redux-saga/effects';
 
 import { searchSuccess } from '../../../lib/sagas/searchSuccess';
 import retrieve from '../../../lib/sagas/retrieve';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 
 describe('sagas searchSuccess', function () {
     let iterator;

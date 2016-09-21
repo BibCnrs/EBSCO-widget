@@ -1,7 +1,7 @@
 import { put, select, call } from 'redux-saga/effects';
 
 import { initialize, retrieveLoginData, initializeAllDomains, updateDomain } from '../../../lib/sagas/initialize';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 import fetch from '../../../lib/sagas/fetch';
 import { localStorage, sessionStorage } from '../../../lib/services/storage';
 import actions from '../../../lib/actions';

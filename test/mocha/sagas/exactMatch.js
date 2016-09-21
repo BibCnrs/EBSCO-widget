@@ -6,7 +6,7 @@ import actions, {
     LOGOUT,
     RETRIEVE
 } from '../../../lib/actions';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 
 describe('sagas exactMatch', function () {
     let iterator;

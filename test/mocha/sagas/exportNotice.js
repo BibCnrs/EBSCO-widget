@@ -2,7 +2,7 @@ import { put, select, call } from 'redux-saga/effects';
 
 import fetch from '../../../lib/sagas/fetch';
 import { exportNotice, openExport } from '../../../lib/sagas/exportNotice';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 import actions, {
     SEARCH,
     LOGOUT

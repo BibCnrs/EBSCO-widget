@@ -1,7 +1,7 @@
 import { put, select, call } from 'redux-saga/effects';
 
 import { apiLogin } from '../../../lib/sagas/apiLogin';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 import fetch from '../../../lib/sagas/fetch';
 import actions from '../../../lib/actions';
 

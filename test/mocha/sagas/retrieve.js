@@ -3,7 +3,7 @@ import { put, select, call } from 'redux-saga/effects';
 import retrieve from '../../../lib/sagas/retrieve';
 import actions, { SEARCH, LOGOUT } from '../../../lib/actions';
 import fetch from '../../../lib/sagas/fetch';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 
 describe('sagas retrieve', function () {
     let iterator;
