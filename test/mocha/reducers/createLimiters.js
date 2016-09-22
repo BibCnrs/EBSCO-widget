@@ -4,7 +4,8 @@ import {
     LINKED_SEARCH,
     RELOAD_HISTORY,
     RESTORE_HISTORY,
-    LOGOUT
+    LOGOUT,
+    EXACT_MATCH_SEARCH
 } from '../../../lib/actions';
 
 describe('reducers createLimiters', function () {
@@ -91,6 +92,20 @@ describe('reducers createLimiters', function () {
             { type: RESTORE_HISTORY, category: 'category', query: { limiters: 'limiter content' } }
         );
         assert.equal(queryListState, 'limiter content');
+    });
+
+    describe('EXACT_MATCH_SEARCH', function () {
+        it('should set publication.id to action.label, action.value', function () {
+            const queryListState = categoryLimiters({},
+                { type: EXACT_MATCH_SEARCH, category: 'category', label: 'label', value: 'value' }
+            );
+            assert.deepEqual(queryListState, {
+                publicationId: {
+                    label: 'label',
+                    value: 'value'
+                }
+            });
+        });
     });
 
     describe('selector', function () {

@@ -3,7 +3,7 @@ import { put, select, call } from 'redux-saga/effects';
 import { showNotice } from '../../../lib/sagas/showNotice';
 import retrieve from '../../../lib/sagas/retrieve';
 import actions from '../../../lib/actions';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 
 describe('sagas showNotice', function () {
     let iterator;

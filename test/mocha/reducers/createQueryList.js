@@ -8,7 +8,8 @@ import {
     RESTORE_HISTORY,
     RELOAD_HISTORY,
     SUGGEST_TERMS,
-    SEARCH
+    SEARCH,
+    EXACT_MATCH_SEARCH
     } from '../../../lib/actions';
 
 describe('reducers createQueryList', function () {
@@ -166,6 +167,18 @@ describe('reducers createQueryList', function () {
                 ]);
             });
         });
+
+        describe('EXACT_MATCH_SEARCH', function () {
+            it('should return defaultState with term set to action.term', function () {
+                assert.deepEqual(
+                    articleQueryList([{ some: 'state' }], { type: EXACT_MATCH_SEARCH, category: 'article', term: 'term' }),
+                    [{
+                        ...fromQueryList.defaultQuery['article'],
+                        term: 'term'
+                    }]
+                );
+            });
+        });
     });
 
     describe('selector', function() {
@@ -287,6 +300,15 @@ describe('reducers createQueryList', function () {
                 }, { field: 'TI', term: 'A*'}]));
             });
 
+        });
+
+        describe('getExactMatchQuery', function () {
+            it('should return queries with field null', function () {
+                assert.deepEqual(
+                    fromQueryList.getExactMatchQuery([{ field: 'set', term: 'discarded' }, { field: null, term: 'kept' }]),
+                    [{ field: null, term: 'kept' }]
+                );
+            });
         });
     });
 });

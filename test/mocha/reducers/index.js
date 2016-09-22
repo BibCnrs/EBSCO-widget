@@ -1,4 +1,4 @@
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 
 describe('index reducers', function () {
 

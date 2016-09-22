@@ -592,5 +592,10 @@
 	"history": [],
 	"pausedAction": {
 		"type": "NONE"
+	},
+	"exactMatch": {
+		"publication": null,
+		"notice": null,
+		"noticeShown": false
 	}
 }

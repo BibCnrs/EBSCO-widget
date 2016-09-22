@@ -1,7 +1,7 @@
 import { put, select, call } from 'redux-saga/effects';
 
 import { loginSuccess } from '../../../lib/sagas/loginSuccess';
-import * as fromState from '../../../lib/reducers';
+import * as fromState from '../../../lib/selectors';
 import { sessionStorage } from '../../../lib/services/storage';
 
 describe('sagas loginSuccess', function () {
