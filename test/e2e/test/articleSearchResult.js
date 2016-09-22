@@ -18,13 +18,13 @@ describe('articleSearchResult', function() {
         .pause(300)
         .assert.containsText('.notice dl span:nth-child(1) dt', 'Auteur')
         .assert.containsText('.notice dl span:nth-child(2) dt', 'Source')
-        .assert.containsText('.notice dl span:nth-child(3) dt', 'Année de Publication')
-        .assert.containsText('.notice dl span:nth-child(4) dt', 'Sujets')
+        .assert.containsText('.notice dl span:nth-child(3) dt', 'Année de publication')
+        .assert.containsText('.notice dl span:nth-child(4) dt', 'Mot clé')
         .assert.containsText('.notice dl span:nth-child(5) dt', 'Résumé')
-        .assert.containsText('.notice dl span:nth-child(6) dt', 'Type de Document')
+        .assert.containsText('.notice dl span:nth-child(6) dt', 'Type de document')
         .assert.containsText('.notice dl span:nth-child(7) dt', 'Langue')
         .assert.containsText('.notice dl span:nth-child(8) dt', 'ISSN')
-        .assert.containsText('.notice dl span:nth-child(9) dt', 'Numéro d\'Accès')
+        .assert.containsText('.notice dl span:nth-child(9) dt', 'Numéro d\'accès')
         .assert.containsText('.notice dl span:nth-child(10) dt', 'Airiti Library eBooks & Journals - 華藝線上圖書館');
 
         client.start(done);
@@ -50,7 +50,7 @@ describe('articleSearchResult', function() {
         .waitForElementVisible('.facet_list', 1000)
         .assert.elementCount('.active_facet', 1)
         .assert.containsText('.active_facet .header .title', 'Appliquer vos filtres')
-        .assert.containsText('.available_facets .facet:nth-child(1) .header .title', 'Type de Source (14)')
+        .assert.containsText('.available_facets .facet:nth-child(1) .header .title', 'Type de ressource (14)')
         .assert.elementCount('.available_facets .facet:nth-child(1) .facet_values .facet_value', 3)
         .assert.containsText('.available_facets .facet:nth-child(1) .facet_values', 'Academic Journals (237702)\nMagazines (75583)\nReports (41302)')
         .click('.available_facets .facet:nth-child(1) .header .more')
