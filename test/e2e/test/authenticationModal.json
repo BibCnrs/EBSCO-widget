@@ -107,5 +107,10 @@
 	"pausedAction": {
 		"type": "NAVIGATE",
 		"location": "article"
+	},
+	"exactMatch": {
+		"publication": null,
+		"notice": null,
+		"noticeShown": false
 	}
 }
