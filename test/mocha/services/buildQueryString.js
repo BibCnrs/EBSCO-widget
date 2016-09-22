@@ -76,6 +76,10 @@ describe('buildQueryString', function () {
         assert.equal(buildQueryString({ sort: 'date' }), 'sort=date');
     });
 
+    it('should add publicationId=value if publicationId is set', function () {
+        assert.equal(buildQueryString({ publicationId: { label: 'publicationName', value: 'publication_id'} }), 'publicationId=publication_id');
+    });
+
     it('should separate different delimiter with "&"', function () {
         assert.equal(buildQueryString({
             fullText: true,
