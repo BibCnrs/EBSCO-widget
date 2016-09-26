@@ -7,7 +7,13 @@
     padding-top: 5px;
     background-color: $back;
     text-align: left;
+    font-size: 13px;
+    line-height: 1em;
+    p {
+        margin: 0 0 5px;
+    }
     .title {
+        font-size: 16px;
         .btn-link {
             float: right;
         }
@@ -29,7 +35,7 @@
     }
 
     .notice {
-        font-size: 12px;
-        line-height: 1;
+        font-size: 13px;
+        line-height: 1em;
     }
 }
