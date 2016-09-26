@@ -34,6 +34,14 @@
         list-style-type: none;
     }
 
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        li {
+            margin-bottom: 5px;
+        }
+    }
+
     .notice {
         font-size: 13px;
         line-height: 1em;
