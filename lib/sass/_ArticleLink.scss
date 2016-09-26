@@ -1,35 +1,10 @@
-.article-link {
-    .Select {
-        display: inline-block;
-        min-width: 200px;
-        .Select-placeholder {
-            color: #005AAB;
-        }
-        .Select-control {
-            border: solid #BBBBBB 1px;
-        }
-        .Select-option {
-            border-top: solid #BBBBBB 1px;
-            color: #005AAB;
-        }
-        .Select-control,.Select-option {
-            @include background(linear-gradient(#ffffff, #F2F2F2));
-            font-family: Arial;
-            .Select-value {
-                .Select-value-label {
-                    color: #005AAB;
-                }
-            }
-            margin: 0;
-            cursor: pointer;
-            &:hover {
-                @include background(linear-gradient(#F2F2F2, #ffffff));
-                text-decoration: none;
-            }
-            &:active {
-                background: #F2F2F2;
-                text-decoration: none;
-            }
+.article-link, .show-notice {
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        li {
+            margin-bottom: 5px;
         }
     }
+    margin: 10px;
 }

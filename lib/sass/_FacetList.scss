@@ -1,0 +1,21 @@
+@import "./_variables.scss";
+
+.facet_list {
+    .facet, .active_facet {
+        .header {
+            .title, .more {
+                height: 34px;
+            }
+            .title {
+                width: 85%;
+            }
+            .more {
+                width: 15%;
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .active_facet {
+        margin-bottom: 10px;
+    }
+}

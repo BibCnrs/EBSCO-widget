@@ -3,8 +3,7 @@
 
 .record {
     margin: 0px 20px 20px;
-    padding: 20px;
-    padding-top: 5px;
+    padding: 5px 20px 5px 20px;
     background-color: $back;
     text-align: left;
     font-size: 13px;
@@ -27,19 +26,11 @@
             cursor: pointer;
         }
     }
-    .article-link, .show-notice {
+    .show-notice {
         margin: 10px;
     }
     .fulltext-holdings {
         list-style-type: none;
-    }
-
-    ul {
-        list-style-type: none;
-        padding-left: 0;
-        li {
-            margin-bottom: 5px;
-        }
     }
 
     .notice {
