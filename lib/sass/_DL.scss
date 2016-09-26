@@ -8,7 +8,7 @@
         display: flex;
         dt {
             padding-right: 10px;
-            flex: 1;
+            flex: 0 1 15%;
             text-align: right;
         }
         .fulltext-holdings {
@@ -17,7 +17,7 @@
         }
         dd {
             flex: 9;
-            display: block;
+            display: flex;
             .ul {
                 display: flex;
                 flex-wrap: wrap;
