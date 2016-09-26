@@ -19,37 +19,6 @@
         .after, .before {
             vertical-align: top;
         }
-        .search-input {
-            .term {
-                display: flex;
-                flex-direction: column;
-                .autocompletion {
-                    display: flex;
-                    flex-direction: column;
-                    border: 1px solid #ccc;
-                    background-color: #fff;
-                }
-                width: 100%;
-                min-width: 250px;
-                .form-control {
-                    border-right: 0;
-                    box-shadow: none;
-                    border-color: #ccc;
-                }
-            }
-            .search-clear {
-                padding-right: 5px;
-                padding-left: 1px;
-                font-size: 14px;
-                color: grey;
-                cursor: pointer;
-                border-top: 1px solid #ccc;
-                border-bottom: 1px solid #ccc;
-            }
-            .open.dropdown.btn-group {
-                z-index: 3;
-            }
-        }
         .query {
             display: flex;
             flex-wrap: wrap;
@@ -61,13 +30,6 @@
                 flex: 1;
                 display: flex;
                 justify-content: flex-end;
-            }
-        }
-        .search-menu {
-            display: flex;
-            justify-content: space-between;
-            justify-content: flex-end;
-            .show-result {
             }
         }
     }

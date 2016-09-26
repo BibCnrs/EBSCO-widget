@@ -21,15 +21,20 @@ describe('reducers createQueryList', function () {
             articleQueryList = createQueryList('article');
         });
 
-        it('should add a new default query at action.index with new key for article if action is ADD_QUERY and category article', function () {
+        it('should add a new default query at action.index with new key for article if action is ADD_QUERY and category article and reset suggest"d terms for the other query', function () {
             const queryListState = articleQueryList(
-                [1, 2, 3],
+                [{ term: 1 }, { term: 2 }, { term: 3 }],
                 { type: ADD_QUERY, category: 'article', index: 1 }
             );
-            assert.deepEqual(queryListState, [1, 2, {
-                ...fromQueryList.defaultQuery['article'],
-                key: queryListState[2].key
-            }, 3]);
+            assert.deepEqual(queryListState, [
+                { term: 1, suggestedTerms: [] },
+                { term: 2, suggestedTerms: []  },
+                {
+                    ...fromQueryList.defaultQuery['article'],
+                    key: queryListState[2].key
+                },
+                { term: 3, suggestedTerms: []  }
+            ]);
         });
 
         it('should not add a new default query at action.index with new key for article if action is ADD_QUERY but category is not article', function () {
@@ -40,12 +45,12 @@ describe('reducers createQueryList', function () {
             assert.deepEqual(queryListState, [1, 2, 3]);
         });
 
-        it('should remove query at action.index if action is REMOVE_QUERY and category is article', function () {
+        it('should remove query at action.index if action is REMOVE_QUERY and category is article and reset suggest"d terms for the other query', function () {
             const queryListState = articleQueryList(
-                [1, 2, 3],
+                [{ term: 1, suggestedTerms: ['suggestions'] }, 2, { term: 3, suggestedTerms: ['suggestions'] }],
                 { type: REMOVE_QUERY, category: 'article', index: 1 }
             );
-            assert.deepEqual(queryListState, [1, 3]);
+            assert.deepEqual(queryListState, [{ term: 1, suggestedTerms: [] }, { term: 3, suggestedTerms: [] }]);
         });
 
         it('should not remove query at action.index if action is ADD_QUERY and category is article but there is only one query', function () {
@@ -64,7 +69,7 @@ describe('reducers createQueryList', function () {
             assert.deepEqual(queryListState, [1, 2, 3]);
         });
 
-        it('should change query at action.key and action.index if action is CHANGE_QUERY and category article', function () {
+        it('should change query at action.key and action.index if action is CHANGE_QUERY and category article and reset suggest"d terms for the other query', function () {
             const queryListState = articleQueryList(
                 [
                     { term: 'old' },
@@ -74,9 +79,9 @@ describe('reducers createQueryList', function () {
                 { type: CHANGE_QUERY, category: 'article', key: 'term', index: 1, value: 'new' }
             );
             assert.deepEqual(queryListState, [
-                { term: 'old' },
+                { term: 'old', suggestedTerms: [] },
                 { term: 'new' },
-                { term: 'old' }
+                { term: 'old', suggestedTerms: [] }
             ]);
         });
 

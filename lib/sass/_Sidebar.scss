@@ -13,47 +13,8 @@
             margin-top: 0px;
             margin-bottom: 0px;
         }
-        .publication-date-limiter {
-            .to, .from {
-                width: 80px;
-            }
-            .boundaries {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                align-content: stretch;
-                .to {
-                    text-align: center;
-                }
-                .title {
-                    text-align: center;
-                }
-            }
-        }
-        .full-text-limiter {
-            .rc-checkbox {
-                margin-left: 5px;
-            }
-        }
         .form-group {
             margin-bottom: 0px;
-        }
-        .facet, .active_facet {
-            .header {
-                .title, .more {
-                    height: 34px;
-                }
-                .title {
-                    width: 85%;
-                }
-                .more {
-                    width: 15%;
-                    font-size: 1.4rem;
-                }
-            }
-        }
-        .active_facet {
-            margin-bottom: 10px;
         }
     }
 }

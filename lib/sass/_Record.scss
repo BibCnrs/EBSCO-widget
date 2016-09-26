@@ -3,11 +3,16 @@
 
 .record {
     margin: 0px 20px 20px;
-    padding: 20px;
-    padding-top: 5px;
+    padding: 5px 20px 5px 20px;
     background-color: $back;
     text-align: left;
+    font-size: 13px;
+    line-height: 1em;
+    p {
+        margin: 0 0 5px;
+    }
     .title {
+        font-size: 16px;
         .btn-link {
             float: right;
         }
@@ -21,7 +26,7 @@
             cursor: pointer;
         }
     }
-    .article-link, .show-notice {
+    .show-notice {
         margin: 10px;
     }
     .fulltext-holdings {
@@ -29,7 +34,7 @@
     }
 
     .notice {
-        font-size: 12px;
-        line-height: 1;
+        font-size: 13px;
+        line-height: 1em;
     }
 }
