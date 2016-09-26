@@ -19,9 +19,9 @@ describe('sagas autoComplete', function () {
         iterator = autoComplete(action);
     });
 
-    it('should call delay with 500 then call fetch', function () {
+    it('should call delay with 100 then call fetch', function () {
         let next = iterator.next();
-        assert.deepEqual(next.value, call(delay, 500));
+        assert.deepEqual(next.value, call(delay, 100));
         next = iterator.next();
         assert.deepEqual(next.value, call(fetch, {
             url: `https://widgets.ebscohost.com/prod/simplekey/autocomplete/autocomp.php?q=${action.term.replace(/\s/, '%2B')}`
