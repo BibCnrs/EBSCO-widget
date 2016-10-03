@@ -9,7 +9,9 @@ import {
     RELOAD_HISTORY,
     SUGGEST_TERMS,
     SEARCH,
-    EXACT_MATCH_SEARCH
+    EXACT_MATCH_SEARCH,
+    APPLY_TERM,
+    CHANGE_TERM
     } from '../../../lib/actions';
 
 describe('reducers createQueryList', function () {
@@ -182,6 +184,26 @@ describe('reducers createQueryList', function () {
                         term: 'term'
                     }]
                 );
+            });
+        });
+
+        describe('SEARCH_TERM and APPLY_TERM', function () {
+            it('should change query term at action.index', function () {
+                [CHANGE_TERM, APPLY_TERM].forEach(type => {
+                    const queryListState = articleQueryList(
+                        [
+                            { term: 'old' },
+                            { term: 'old' },
+                            { term: 'old' }
+                        ],
+                        { type, category: 'article', index: 1, term: 'new' }
+                    );
+                    assert.deepEqual(queryListState, [
+                        { term: 'old', suggestedTerms: [] },
+                        { term: 'new', suggestedTerms: [] },
+                        { term: 'old', suggestedTerms: [] }
+                    ]);
+                });
             });
         });
     });
