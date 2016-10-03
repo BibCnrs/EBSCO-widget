@@ -2,13 +2,15 @@
 @import "compass/typography/lists/inline-list";
 
 .dl {
-    display: flex;
-    flex-direction: column;
+    @include flexbox((
+        display: flex,
+        flex-direction: column
+    ));
     .dl-item {
-        display: flex;
+        @include display-flex;
         dt {
             padding-right: 10px;
-            flex: 0 1 15%;
+            @include flex(0 1 15%);
             text-align: right;
         }
         .fulltext-holdings {
@@ -16,11 +18,13 @@
             padding: 0;
         }
         dd {
-            flex: 9;
-            display: flex;
+            @include flex(9);
+            @include display-flex;
             .ul {
-                display: flex;
-                flex-wrap: wrap;
+                @include flexbox((
+                    display: flex,
+                    flex-wrap: wrap
+                ));
                 .ul {
                     display: block;
                 }
