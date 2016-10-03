@@ -55,7 +55,7 @@ describe('sagas export notice', function () {
         iterator.next(true);
         iterator.next();
         const next = iterator.next({ retrieveLink: 'request' });
-        assert.deepEqual(next.value, call(fetch, { retrieveLink: 'request' }, [SEARCH, LOGOUT]));
+        assert.deepEqual(next.value, call(fetch, { retrieveLink: 'request' }, [SEARCH, LOGOUT], false));
     });
 
     it('should call openExport with returned response', function () {

@@ -25,7 +25,7 @@ describe('sagas autoComplete', function () {
         next = iterator.next();
         assert.deepEqual(next.value, call(fetch, {
             url: `https://widgets.ebscohost.com/prod/simplekey/autocomplete/autocomp.php?q=${action.term.replace(/\s/, '%2B')}`
-        }, [CHANGE_TERM, SEARCH]));
+        }, [CHANGE_TERM, SEARCH], false));
     });
 
     it('should end if fetch return cancel', function () {

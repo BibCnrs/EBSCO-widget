@@ -26,7 +26,7 @@ describe('sagas apiLogin', function () {
         iterator.next();
         const next = iterator.next({ request: 'object' });
 
-        assert.deepEqual(next.value, call(fetch, { request: 'object' }));
+        assert.deepEqual(next.value, call(fetch, { request: 'object' }, [], false));
     });
 
     it('should trigger loginCancel if receiving cancel', function () {
