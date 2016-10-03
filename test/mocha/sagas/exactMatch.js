@@ -29,8 +29,31 @@ describe('sagas exactMatch', function () {
         assert.deepEqual(next.value, select(fromState.canUserSearch));
     });
 
+    it('should end if canUserSearch return false', function () {
+        iterator.next();
+        const next = iterator.next(false);
+
+        assert.isTrue(next.done);
+    });
+
+    it('should select canExactMatch', function () {
+        iterator.next();
+        const next = iterator.next(true);
+
+        assert.deepEqual(next.value, select(fromState.canExactMatch));
+    });
+
+    it('should end if canExactMatch return false', function () {
+        iterator.next();
+        iterator.next(true);
+        const next = iterator.next(false);
+
+        assert.isTrue(next.done);
+    });
+
     it('should select getExactMatchRequest and call fetch with it', function () {
         iterator.next();
+        iterator.next(true);
         let next = iterator.next(true);
         assert.deepEqual(next.value, select(fromState.getExactMatchRequest));
         next = iterator.next('request');
@@ -41,6 +64,7 @@ describe('sagas exactMatch', function () {
     it('should end if fetch returned cancel', function () {
         iterator.next();
         iterator.next(true);
+        iterator.next(true);
         iterator.next('request');
         const next = iterator.next({ cancel : true });
         assert.isTrue(next.done);
@@ -49,6 +73,7 @@ describe('sagas exactMatch', function () {
     it('should put actions.exactMatchError if fetch returned an error', function () {
         iterator.next();
         iterator.next(true);
+        iterator.next(true);
         iterator.next('request');
         const next = iterator.next({ error : 'Boom' });
         assert.deepEqual(next.value, put(actions.exactMatchError('Boom')));
@@ -56,6 +81,7 @@ describe('sagas exactMatch', function () {
 
     it('should put actions.exactMatchSuccess if fetch returned a response', function () {
         iterator.next();
+        iterator.next(true);
         iterator.next(true);
         iterator.next('request');
         const next = iterator.next({ response : 'response' });
