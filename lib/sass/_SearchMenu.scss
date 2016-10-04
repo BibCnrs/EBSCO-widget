@@ -1,5 +1,6 @@
 .search-menu {
-    display: flex;
-    justify-content: space-between;
-    justify-content: flex-end;
+    @include flexbox((
+        display: flex,
+        justify-content: flex-end
+    ));
 }
