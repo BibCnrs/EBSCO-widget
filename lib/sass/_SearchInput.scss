@@ -1,28 +1,31 @@
 .search-input {
     .term {
-        input::::-ms-clear {
-            display: none;
-        }
-        position: relative;
         @include flexbox((
             display: flex,
             flex-direction: column
         ));
+        input::-ms-clear {
+            display: none;
+        }
+        position: relative;
+        width: 100%;
+        min-width: 250px;
         .autocompletion {
+            @include flexbox((
+                display: flex,
+                flex-direction: column
+            ));
+            .suggestion {
+                @include display-flex;
+            }
             position: absolute;
             left: 0;
             right: 0;
             top: 34px;
             z-index: 10;
-            @include flexbox((
-                display: flex,
-                flex-direction: column
-            ));
             border: 1px solid #ccc;
             background-color: #fff;
         }
-        width: 100%;
-        min-width: 250px;
         .form-control {
             border-right: 0;
             box-shadow: none;
