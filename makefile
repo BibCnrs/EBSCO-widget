@@ -11,16 +11,16 @@ ifneq "$(SUPPORTS_MAKE_ARGS)" ""
 endif
 
 install:
-	docker-compose run npm install
+	docker-compose run --rm npm install
 
 build:
-	docker-compose run build
+	docker-compose run --rm build
 
 run-dev:
 	docker-compose up --force-recreate devserver
 
 test-mocha:
-	docker-compose run test
+	docker-compose run --rm test
 
 test-e2e:
 	docker-compose -f docker-compose.e2e.yml run --rm test
