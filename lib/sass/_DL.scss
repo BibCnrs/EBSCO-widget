@@ -48,10 +48,10 @@
     @include inline-block();
     list-style-type: none;
     padding-left: 0;
+    li {
+        padding-right: 0.5rem;
+    }
     .ul {
         @include inline-list();
-        li {
-            padding-right: 0.5rem;
-        }
     }
 }
