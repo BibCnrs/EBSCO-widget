@@ -57,8 +57,8 @@ describe('simple articleSearch', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('.navbar.navbar-default', 'An Article')
-        .assert.containsText('.navbar.navbar-default', 'A Journal, A Book')
+        .assert.containsText('.navbar.navbar-default', 'An article')
+        .assert.containsText('.navbar.navbar-default', 'A Journal, a book')
         .assert.attributeEquals('.query-list .search-input .term input', 'placeholder', 'Search articles, book chapters...')
         .assert.containsText('.fetch-button', 'Search')
         ;

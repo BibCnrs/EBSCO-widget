@@ -69,7 +69,7 @@ describe('history', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('tr', 'Searched terms Domain Limits Facets Actions')
+        .assert.containsText('tr', 'Searched terms Discipline Limits Facets Actions')
         .assert.containsText('tr:nth-child(2)', 'All: aids vie Full text; Publication date: 1914/1918 44 results')
         .assert.containsText('tr:nth-child(3)', 'All: phylloxera vie Full text 1189 results')
         ;
