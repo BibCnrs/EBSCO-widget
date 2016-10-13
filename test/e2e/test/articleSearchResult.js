@@ -79,8 +79,8 @@ describe('articleSearchResult', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('.limiters', 'Full Text')
-        .assert.containsText('.limiters', 'Peer Reviewed')
+        .assert.containsText('.limiters', 'Full text')
+        .assert.containsText('.limiters', 'Peer reviewed')
         .assert.containsText('.limiters .publication-date-limiter .boundaries .to', 'to')
         .assert.containsText('.sidebar h3', 'Refine your search')
         ;

@@ -57,7 +57,7 @@ describe('publication Search result', function() {
         .click('.navbar.navbar-default #en')
         .waitForElementVisible('.navbar.navbar-default .language', 1000)
         .assert.containsText('.navbar.navbar-default .language', 'en')
-        .assert.containsText('.limiters', 'Peer Reviewed')
+        .assert.containsText('.limiters', 'Peer reviewed')
         .assert.containsText('.sidebar h3', 'Refine your search')
         ;
 
