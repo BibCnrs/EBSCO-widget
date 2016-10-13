@@ -65,7 +65,7 @@ describe('sagas export notice', function () {
         iterator.next();
         iterator.next({ retrieveLink: 'request' });
         const next = iterator.next({ response: notices });
-        assert.deepEqual(next.value, call(openExport, notices.join('')));
+        assert.deepEqual(next.value, call(openExport, notices.join('\n'), 'ris'));
     });
 
     it('should cancel openExport if receiving cancel key', function () {
