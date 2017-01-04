@@ -31,7 +31,6 @@ describe('authenticationModal', function() {
         .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage')
         .assert.containsText('.janus', 'Via le gestionnaire d\'identité janus')
         .assert.containsText('.inist-button', 'Via votre ancien code d\'accès portail')
-        .click('.inist-button')
         .setValue('.username', 'test')
         .setValue('.password', 'secret')
         .click('button.api')
@@ -44,7 +43,6 @@ describe('authenticationModal', function() {
     it('should display Unauthorized error if wrong username and password when using api button', function (done) {
         browser
         .waitForElementVisible('.authentication .modal-dialog', 1000)
-        .click('.inist-button')
         .setValue('.username', 'nightwatch')
         .setValue('.password', 'password')
         .click('button.api')
