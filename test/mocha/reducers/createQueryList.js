@@ -9,8 +9,10 @@ import {
     RELOAD_HISTORY,
     SUGGEST_TERMS,
     SEARCH,
-    EXACT_MATCH_SEARCH,
-    CHANGE_TERM
+    SEARCH_SUCCESS,
+    CLEAR_AUTOCOMPLETE,
+    CHANGE_TERM,
+    EXACT_MATCH_SEARCH
     } from '../../../lib/actions';
 
 describe('reducers createQueryList', function () {
@@ -156,21 +158,23 @@ describe('reducers createQueryList', function () {
             });
         });
 
-        describe('SEARCH', function () {
+        describe('SEARCH, SEARCH_SUCCESS, CLEAR_AUTOCOMPLETE', function () {
             it('should empty all suggestedTerms for all query', function () {
-                const queryListState = articleQueryList(
-                    [
-                        { term: 'first', suggestedTerms: ['man'] },
-                        { term: 'second', suggestedTerms: [' son', ' to finish', 'ary'] },
-                        { term: 'third' }
-                    ],
-                    { type: SEARCH, category: 'article', index: 1, terms: [' son', ' to finish', 'ary'] }
-                );
-                assert.deepEqual(queryListState, [
-                    { term: 'first', suggestedTerms: [] },
-                    { term: 'second', suggestedTerms: [] },
-                    { term: 'third', suggestedTerms: [] }
-                ]);
+                [SEARCH, SEARCH_SUCCESS, CLEAR_AUTOCOMPLETE].forEach(type => {
+                    const queryListState = articleQueryList(
+                        [
+                            { term: 'first', suggestedTerms: ['man'] },
+                            { term: 'second', suggestedTerms: [' son', ' to finish', 'ary'] },
+                            { term: 'third' }
+                        ],
+                        { type, category: 'article', index: 1, terms: [' son', ' to finish', 'ary'] }
+                    );
+                    assert.deepEqual(queryListState, [
+                        { term: 'first', suggestedTerms: [] },
+                        { term: 'second', suggestedTerms: [] },
+                        { term: 'third', suggestedTerms: [] }
+                    ]);
+                });
             });
         });
 
@@ -194,7 +198,7 @@ describe('reducers createQueryList', function () {
                         { term: 'old' },
                         { term: 'old' }
                     ],
-                    { type: 'CHANGE_TERM', category: 'article', index: 1, term: 'new' }
+                    { type: CHANGE_TERM, category: 'article', index: 1, term: 'new' }
                 );
                 assert.deepEqual(queryListState, [
                     { term: 'old', suggestedTerms: [] },
