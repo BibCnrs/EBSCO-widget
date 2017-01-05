@@ -17,9 +17,9 @@ app.use(route.post('/login', function* () {
     }
     this.body = {
         token: 'token',
-        domains: ['vie', 'shs']
+        domains: ['vie', 'shs'],
+        favorite_domain: 'vie'
     };
-
 }));
 
 app.use(route.post('/getLogin', function* () {

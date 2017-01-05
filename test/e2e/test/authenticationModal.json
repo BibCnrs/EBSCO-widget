@@ -112,5 +112,10 @@
 		"publication": null,
 		"notice": null,
 		"noticeShown": false
-	}
+	},
+    "profile": {
+        "username": "Frodo",
+        "domains": ["vie", "shs"],
+        "favorite_domain": "vie"
+    }
 }
