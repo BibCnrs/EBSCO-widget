@@ -4,7 +4,9 @@ import { autoComplete, parseAutoComplete } from '../../../lib/sagas/autoComplete
 import fetch from '../../../lib/sagas/fetch';
 import actions, {
     CHANGE_TERM,
-    SEARCH
+    SEARCH,
+    SEARCH_PENDING,
+    SEARCH_SUCCESS,
 } from '../../../lib/actions';
 import { delay } from '../../../lib/services/sagaUtils';
 
@@ -25,7 +27,7 @@ describe('sagas autoComplete', function () {
         next = iterator.next();
         assert.deepEqual(next.value, call(fetch, {
             url: `https://widgets.ebscohost.com/prod/simplekey/autocomplete/autocomp.php?q=${action.term.replace(/\s/, '%2B')}`
-        }, [CHANGE_TERM, SEARCH], false));
+        }, [CHANGE_TERM, SEARCH, SEARCH_PENDING, SEARCH_SUCCESS], false));
     });
 
     it('should end if fetch return cancel', function () {
