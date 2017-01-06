@@ -27,10 +27,19 @@ describe('reducers userInterface', function () {
         assert.deepEqual(userInterface({ other: 'data' }, { type: LOGOUT }), defaultState);
     });
 
-    it('should return set loginShown to false if action is LOGIN_SUCCESS', function () {
-        assert.deepEqual(userInterface({ other: 'data' }, { type: LOGIN_SUCCESS }), {
+    it('should return set loginShown and profileShown to false if action is LOGIN_SUCCESS and favorite_domain is included in domains', function () {
+        assert.deepEqual(userInterface({ other: 'data' }, { type: LOGIN_SUCCESS, response: { domains: ['foo'], favorite_domain: 'foo' } }), {
             other: 'data',
-            loginShown: false
+            loginShown: false,
+            profileShown: false,
+        });
+    });
+
+    it('should return set loginShown to false profileShown to true if action is LOGIN_SUCCESS and favorite_domain is not included in domains', function () {
+        assert.deepEqual(userInterface({ other: 'data' }, { type: LOGIN_SUCCESS, response: { domains: ['bar'], favorite_domain: 'foo' } }), {
+            other: 'data',
+            loginShown: false,
+            profileShown: true,
         });
     });
 
