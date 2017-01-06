@@ -43,7 +43,6 @@ describe('reducer profile', function () {
             assert.deepEqual(nextState, {
                 other: 'data',
                 username: 'username',
-                domains: 'domains',
                 favorite_domain: 'favorite_domain',
                 status: 'NONE',
             });
