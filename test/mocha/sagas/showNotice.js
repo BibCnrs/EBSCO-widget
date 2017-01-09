@@ -55,7 +55,7 @@ describe('sagas showNotice', function () {
         iterator.next(undefined);
         iterator.next(false);
         let next = iterator.next(true);
-        assert.deepEqual(next.value, put(actions.retrieveError(action.category, action.id, { code: 401 })));
+        assert.deepEqual(next.value, put(actions.retrieveError(action.category, action.id, { code: 'RETRIEVE_ERROR_401' })));
     });
 
     it('should put actions.pauseAction, retrieveCancel, showLogin if isUserLogger return false', function () {
