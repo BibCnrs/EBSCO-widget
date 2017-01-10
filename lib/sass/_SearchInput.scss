@@ -19,7 +19,7 @@
                 width: 100%;
                 @include display-flex;
                 .suggested-term {
-                    @include display-flex;
+                    float: left;
                 }
             }
             position: absolute;
