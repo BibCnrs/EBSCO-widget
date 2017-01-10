@@ -4,7 +4,7 @@ describe('index reducers', function () {
 
     describe('selector', function () {
 
-        describe('getPausedAction', function () {
+        describe.only('getPausedAction', function () {
             it('should return pausedAction', function () {
                 assert.equal(fromState.getPausedAction({ pausedAction: 'pausedActionValue' }), 'pausedActionValue');
             });
@@ -313,6 +313,7 @@ describe('index reducers', function () {
                     },
                     domains: {
                         article: 'IN2P3',
+                        database: 'ALL',
                         publication: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS'],
@@ -338,6 +339,7 @@ describe('index reducers', function () {
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
+                        database: 'ALL',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS'],
                         defaultDomain: 'INSHS'
@@ -373,7 +375,7 @@ describe('index reducers', function () {
 
                 assert.deepEqual(fromState.getDomainToUpdate(state), {
                     ...fromState.getDomainChange(state),
-                    publication: undefined
+                    publication: undefined,
                 });
             });
         });
