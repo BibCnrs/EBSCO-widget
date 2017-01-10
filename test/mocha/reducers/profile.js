@@ -41,10 +41,11 @@ describe('reducer profile', function () {
             });
 
             assert.deepEqual(nextState, {
-                other: 'data',
-                username: 'username',
                 favorite_domain: 'favorite_domain',
+                has_profile: false,
+                other: 'data',
                 status: 'NONE',
+                username: 'username',
             });
         });
 
