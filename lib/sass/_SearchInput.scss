@@ -16,7 +16,11 @@
                 flex-direction: column
             ));
             .suggestion {
+                width: 100%;
                 @include display-flex;
+                .suggested-term {
+                    float: left;
+                }
             }
             position: absolute;
             left: 0;
