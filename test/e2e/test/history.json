@@ -19,7 +19,6 @@
 	},
 	"error": {},
 	"url": "http://server",
-	"dbUrl": "http://google.fr",
 	"domains": {
 		"all": ["vie", "shs"],
 		"available": ["vie", "vie", "shs"],
