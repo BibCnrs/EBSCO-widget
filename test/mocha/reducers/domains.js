@@ -35,23 +35,29 @@ describe('reducer domains', function () {
         });
 
         it('should set available to action.domains, and article to action.response.domains[0] when action is LOGIN_SUCCESS', function () {
-            assert.deepEqual(domains({}, {
+            assert.deepEqual(domains({
+                all: ['INSB', 'INSHS'],
+            }, {
                 type: LOGIN_SUCCESS,
                 response: { domains: ['INSB', 'INSHS'] }
             }), {
+                all: ['INSB', 'INSHS'],
                 available: ['INSB', 'INSHS'],
-                article: 'INSB'
+                article: 'INSB',
+                database: 'INSB',
             });
         });
 
         it('should set available to action.domains, and article to state.defaultDomain if it is present in action.domains when action is LOGIN_SUCCESS', function () {
-            assert.deepEqual(domains({ defaultDomain: 'INSHS' }, {
+            assert.deepEqual(domains({ defaultDomain: 'INSHS', all: ['INSB', 'INSHS'] }, {
                 type: LOGIN_SUCCESS,
                 response: { domains: ['INSB', 'INSHS'] }
             }), {
                 defaultDomain: 'INSHS',
+                all: ['INSB', 'INSHS'],
                 available: ['INSB', 'INSHS'],
-                article: 'INSHS'
+                article: 'INSHS',
+                database: 'INSHS',
             });
         });
 
@@ -181,6 +187,7 @@ describe('reducer domains', function () {
                 const state = {
                     article: 'INSB',
                     publication: 'INSB',
+                    database: 'INSB',
                     defaultDomain: 'INSHS',
                     all: ['INSHS', 'INSB'],
                     available: ['INSHS', 'INSB']
@@ -188,7 +195,8 @@ describe('reducer domains', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: 'INSHS',
-                    publication: 'INSHS'
+                    publication: 'INSHS',
+                    database: 'INSHS',
                 });
             });
 
@@ -196,6 +204,7 @@ describe('reducer domains', function () {
                 const state = {
                     article: 'INSHS',
                     publication: 'INSB',
+                    database: 'INSU',
                     defaultDomain: 'INSHS',
                     all: ['INSHS', 'INSB'],
                     available: ['INSHS', 'INSB']
@@ -203,7 +212,8 @@ describe('reducer domains', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: undefined,
-                    publication: 'INSHS'
+                    publication: 'INSHS',
+                    database: 'INSHS',
                 });
             });
         });
