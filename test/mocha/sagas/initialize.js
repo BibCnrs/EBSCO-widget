@@ -62,10 +62,42 @@ describe('sagas initialize', function () {
             assert.isTrue(next.done);
         });
 
+        it('should select getQueryListTerm', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next();
+            const next = iterator.next();
+            assert.deepEqual(next.value, select(fromState.getQueryListTerm));
+        });
+
+        it('should select getLocation', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next();
+            iterator.next();
+            const next = iterator.next();
+            assert.deepEqual(next.value, select(fromState.getLocation));
+        });
+
+        it('should put search() if term is available', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next();
+            iterator.next();
+            iterator.next('foo');
+            const next = iterator.next('bar');
+            assert.deepEqual(next.value, put(actions.search('bar')));
+        });
+
         it('should put showResult(false) if isLoggingWithRenater is false', function () {
             iterator.next();
             iterator.next();
             iterator.next(['insb', 'inshs']);
+            iterator.next();
+            iterator.next();
             iterator.next();
             const next = iterator.next(false);
             assert.deepEqual(next.value, put(actions.showResult(false)));

@@ -50,17 +50,29 @@ describe('sagas loginSuccess', function () {
         assert.deepEqual(next.value, select(fromState.hasPublicationSearchResult));
     });
 
+    it('should select hasDomainSetFromUrl', () => {
+        iterator.next();
+        iterator.next();
+        iterator.next();
+        iterator.next();
+
+        const next = iterator.next();
+        assert.deepEqual(next.value, select(fromState.hasDomainSetFromUrl));
+    });
+
     it('should put changeDomain if hasPublicationSearchResult is false', () => {
         iterator.next();
         iterator.next();
         iterator.next();
         iterator.next();
+        iterator.next(false);
 
         const next = iterator.next(false);
         assert.deepEqual(next.value, put(actions.changeDomain('publication', action.response.domains[0])));
     });
 
     it('should select pausedAction if hasPublicationSearchResult is true', function () {
+        iterator.next();
         iterator.next();
         iterator.next();
         iterator.next();
@@ -75,6 +87,7 @@ describe('sagas loginSuccess', function () {
         iterator.next();
         iterator.next();
         iterator.next();
+        iterator.next();
 
         iterator.next(true);
         const next = iterator.next(undefined);
@@ -82,6 +95,7 @@ describe('sagas loginSuccess', function () {
     });
 
     it('should put retrieved pausedAction', function () {
+        iterator.next();
         iterator.next();
         iterator.next();
         iterator.next();
