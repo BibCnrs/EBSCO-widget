@@ -98,9 +98,10 @@ describe('Database', function () {
     });
 
     describe('DatabaseLetter', () => {
-        it('should render one databaseItem for each item in database with text and url based on language', () => {
+        it('should render one databaseItem for each item in database with text based on language but no url if domain is all', () => {
             const props = {
                 language: 'fr',
+                domain: 'ALL',
                 databases: [
                     {
                         name: 'inist',
@@ -127,7 +128,43 @@ describe('Database', function () {
                 const expectedItem = props.databases[index];
                 assert.deepEqual(databaseItem.props(), {
                     name: expectedItem.name,
-                    url: expectedItem.url_fr,
+                    url: null,
+                    title: expectedItem.text_fr,
+                    image: expectedItem.image,
+                });
+            });
+        });
+        it('should render one databaseItem for each item in database with text and url based on language and domain if not ALL', () => {
+            const props = {
+                language: 'fr',
+                domain: 'INSU',
+                databases: [
+                    {
+                        name: 'inist',
+                        text_fr: 'description en français',
+                        text_en: 'description in english',
+                        url_fr: 'inist.fr',
+                        url_en: 'inist.com',
+                        imge: 'inist image',
+                    }, {
+                        name: 'insb',
+                        text_fr: 'insb en français',
+                        text_en: 'insb in english',
+                        url_fr: 'insb.fr',
+                        url_en: 'insb.com',
+                        imge: 'insb image',
+                    },
+                ],
+            };
+            const component = enzyme.shallow(<DatabaseLetter {...props} />);
+
+            const databaseItems = component.find('DatabaseItem');
+            assert.equal(databaseItems.length, 2);
+            databaseItems.map((databaseItem, index) => {
+                const expectedItem = props.databases[index];
+                assert.deepEqual(databaseItem.props(), {
+                    name: expectedItem.name,
+                    url: `https://insu.bib.cnrs.fr/login?url=${expectedItem.url_fr}`,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                 });
