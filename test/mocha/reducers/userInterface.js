@@ -128,21 +128,14 @@ describe('reducers userInterface', function () {
         it('should set language to action.language and noticeBeingExported to []', function () {
             assert.deepEqual(
                 userInterface({ other: 'data' }, { type: INITIALIZE, language: 'en' }),
-                { language: 'en', noticeBeingExported: [], other: 'data', location: 'article' }
+                { language: 'en', noticeBeingExported: [], other: 'data' }
             );
         });
 
         it('should set language to defaultState.language if no action.language', function () {
             assert.deepEqual(
                 userInterface({ other: 'data' }, { type: INITIALIZE }),
-                { language: defaultState.language, noticeBeingExported: [], other: 'data', location: 'article' }
-            );
-        });
-
-        it('should set location to defaultState.location if no action.location', function () {
-            assert.deepEqual(
-                userInterface({ other: 'data' }, { type: INITIALIZE }),
-                { language: defaultState.language, location: defaultState.location, noticeBeingExported: [], other: 'data' }
+                { language: defaultState.language, noticeBeingExported: [], other: 'data' }
             );
         });
 
