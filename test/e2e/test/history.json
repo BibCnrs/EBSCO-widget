@@ -2418,43 +2418,45 @@
 			"key": "initial"
 		}]
 	},
-	"history": [{
-	    "queries": [{
-	        "boolean": "AND",
-	        "term": "aids",
-	        "field": null,
-	        "key": "initial"
-	    }],
-	    "domain": "vie",
-	    "limiters": {
-	        "fullText": true,
-	        "publicationDate": {
-	            "from": 1914,
-	            "to": 1918
-	        },
-	        "peerReviewedArticle": false
-	    },
-	    "activeFacets": {},
-	    "totalHits": 44
-	}, {
-	    "queries": [{
-	        "boolean": "AND",
-	        "term": "phylloxera",
-	        "field": null,
-	        "key": "initial"
-	    }],
-	    "domain": "vie",
-	    "limiters": {
-	        "fullText": true,
-	        "publicationDate": {
-	            "from": null,
-	            "to": null
-	        },
-	        "peerReviewedArticle": false
-	    },
-	    "activeFacets": {},
-	    "totalHits": 1189
-	}],
+    "history": {
+        "queries": [{
+    	    "queries": [{
+    	        "boolean": "AND",
+    	        "term": "aids",
+    	        "field": null,
+    	        "key": "initial"
+    	    }],
+    	    "domain": "vie",
+    	    "limiters": {
+    	        "fullText": true,
+    	        "publicationDate": {
+    	            "from": 1914,
+    	            "to": 1918
+    	        },
+    	        "peerReviewedArticle": false
+    	    },
+    	    "activeFacets": {},
+    	    "totalHits": 44
+    	}, {
+    	    "queries": [{
+    	        "boolean": "AND",
+    	        "term": "phylloxera",
+    	        "field": null,
+    	        "key": "initial"
+    	    }],
+    	    "domain": "vie",
+    	    "limiters": {
+    	        "fullText": true,
+    	        "publicationDate": {
+    	            "from": null,
+    	            "to": null
+    	        },
+    	        "peerReviewedArticle": false
+    	    },
+    	    "activeFacets": {},
+    	    "totalHits": 1189
+    	}]
+    },
 	"pausedAction": {
 		"type": "NAVIGATE",
 		"location": "article"
@@ -2467,6 +2469,7 @@
     "profile": {
         "username": "Frodo",
         "domains": ["vie", "shs"],
-        "favorite_domain": "vie"
+        "favorite_domain": "vie",
+        "origin": "inist"
     }
 }

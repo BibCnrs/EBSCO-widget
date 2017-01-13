@@ -102,7 +102,7 @@
 			"key": "initial"
 		}]
 	},
-	"history": [],
+    "history": { "queries": [] },
 	"pausedAction": {
 		"type": "NAVIGATE",
 		"location": "article"
@@ -115,6 +115,7 @@
     "profile": {
         "username": "Frodo",
         "domains": ["vie", "shs"],
-        "favorite_domain": "vie"
+        "favorite_domain": "vie",
+        "origin": "inist"
     }
 }
