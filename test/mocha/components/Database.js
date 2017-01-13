@@ -49,7 +49,7 @@ describe('Database', function () {
         });
     });
 
-    it('should ignore database taht do not have domain', function () {
+    it('should ignore database that do not have domain', function () {
         const props = {
             language: 'fr',
             domain: 'INSB',
@@ -104,14 +104,16 @@ describe('Database', function () {
                 domain: 'ALL',
                 databases: [
                     {
-                        name: 'inist',
+                        name_fr: 'inist',
+                        name_en: 'inist en',
                         text_fr: 'description en français',
                         text_en: 'description in english',
                         url_fr: 'inist.fr',
                         url_en: 'inist.com',
                         imge: 'inist image',
                     }, {
-                        name: 'insb',
+                        name_fr: 'insb',
+                        name_en: 'insb en',
                         text_fr: 'insb en français',
                         text_en: 'insb in english',
                         url_fr: 'insb.fr',
@@ -127,27 +129,30 @@ describe('Database', function () {
             databaseItems.map((databaseItem, index) => {
                 const expectedItem = props.databases[index];
                 assert.deepEqual(databaseItem.props(), {
-                    name: expectedItem.name,
+                    name: expectedItem.name_fr,
                     url: null,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                 });
             });
         });
+
         it('should render one databaseItem for each item in database with text and url based on language and domain if not ALL', () => {
             const props = {
                 language: 'fr',
                 domain: 'INSU',
                 databases: [
                     {
-                        name: 'inist',
+                        name_fr: 'inist',
+                        name_en: 'inist en',
                         text_fr: 'description en français',
                         text_en: 'description in english',
                         url_fr: 'inist.fr',
                         url_en: 'inist.com',
                         imge: 'inist image',
                     }, {
-                        name: 'insb',
+                        name_fr: 'insb',
+                        name_en: 'insb en',
                         text_fr: 'insb en français',
                         text_en: 'insb in english',
                         url_fr: 'insb.fr',
@@ -163,7 +168,7 @@ describe('Database', function () {
             databaseItems.map((databaseItem, index) => {
                 const expectedItem = props.databases[index];
                 assert.deepEqual(databaseItem.props(), {
-                    name: expectedItem.name,
+                    name: expectedItem.name_fr,
                     url: `https://insu.bib.cnrs.fr/login?url=${expectedItem.url_fr}`,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
