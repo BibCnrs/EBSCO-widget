@@ -1,3 +1,57 @@
+.database-tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: normal;
+    filter: alpha(opacity=0);
+    opacity: 0;
+
+    line-break: auto;
+    &.in {
+        filter: alpha(opacity=90);
+        opacity: .9;
+    }
+    &.bottom {
+        padding: 5px 0;
+        margin-top: 3px;
+        .database-tooltip-arrow {
+            top: 0;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 0 5px 5px;
+            border-bottom-color: #ffffca;
+        }
+    }
+    .database-tooltip-inner {
+        max-width: 600px;
+        padding: 3px 8px;
+        color: #000;
+        text-align: center;
+        background-color: #ffffca;
+        border-radius: 4px;
+    }
+    .database-tooltip-arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+}
 .database {
     align: center;
     column-count: auto;
