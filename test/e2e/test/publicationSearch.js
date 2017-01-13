@@ -29,7 +29,7 @@ describe('publicationSearch', function() {
         .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage')
         .assert.containsText('.a2z-search .first.letters', 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0-9')
         .assert.elementNotPresent('.a2z-search .second.letters')
-        .click('.B')
+        .click('.letter_B')
         .pause(300)
         .assert.containsText('.a2z-search .second.letters', 'BA BB BC BD BE BF BG BH BI BJ BK BL BM BN BO BP BQ BR BS BT BU BV BW BX BY BZ')
         .assert.value('.search-input .term input', 'B*')
