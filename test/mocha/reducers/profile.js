@@ -31,18 +31,18 @@ describe('reducer profile', function () {
             });
         });
 
-        it('LOGIN_SUCCESS should set username, domains, favorite_domain from response data', function () {
+        it('LOGIN_SUCCESS should set username, origin and favorite_domain from response data', function () {
             const nextState = profile({
                 other: 'data',
                 status: 'NONE',
             }, {
                 type: LOGIN_SUCCESS,
-                response: { username: 'username', domains: 'domains', favorite_domain: 'favorite_domain' }
+                response: { username: 'username', domains: 'domains', favorite_domain: 'favorite_domain', origin: 'janus' }
             });
 
             assert.deepEqual(nextState, {
                 favorite_domain: 'favorite_domain',
-                has_profile: false,
+                origin: 'janus',
                 other: 'data',
                 status: 'NONE',
                 username: 'username',

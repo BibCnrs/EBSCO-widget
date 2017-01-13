@@ -15,40 +15,32 @@ describe('sagas initialize', function () {
         });
 
         it('should call localStorage.getItem EBSCO_WIDGET_history', function () {
-            const next = iterator.next();
-            assert.deepEqual(next.value, call(localStorage.getItem, 'EBSCO_WIDGET_history'));
+            assert.deepEqual(iterator.next().value, call(localStorage.getItem, 'EBSCO_WIDGET_history'));
         });
 
         it('should put setHistory then selectAllDomains if receiving history', function () {
             iterator.next();
-            let next = iterator.next('history');
-            assert.deepEqual(next.value, put(actions.setHistory('history')));
-            next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.getAllDomains));
+            assert.deepEqual(iterator.next('history').value, put(actions.setHistory('history')));
+            assert.deepEqual(iterator.next().value, select(fromState.getAllDomains));
         });
 
         it('should select allDomains if receiving no history', function () {
             iterator.next();
-            const next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.getAllDomains));
+            assert.deepEqual(iterator.next().value, select(fromState.getAllDomains));
         });
 
         it('should call initializeAllDomains if receiving no domains before calling updateDomain', function () {
             iterator.next();
             iterator.next();
-            let next = iterator.next([]);
-            assert.deepEqual(next.value, call(initializeAllDomains));
-            next = iterator.next();
-            assert.deepEqual(next.value, call(updateDomain));
+            assert.deepEqual(iterator.next([]).value, call(initializeAllDomains));
+            assert.deepEqual(iterator.next().value, call(updateDomain));
         });
 
         it('should call updateDomain and select isLoggingWithRenater', function () {
             iterator.next();
             iterator.next();
-            let next = iterator.next(['insb', 'inshs']);
-            assert.deepEqual(next.value, call(updateDomain));
-            next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.isLoggingWithRenater));
+            assert.deepEqual(iterator.next(['insb', 'inshs']).value, call(updateDomain));
+            assert.deepEqual(iterator.next().value, select(fromState.isLoggingWithRenater));
         });
 
         it('should call retrieveLoginData then localStorage.getItem if isLoggingWithRenater is true', function () {
@@ -56,10 +48,35 @@ describe('sagas initialize', function () {
             iterator.next();
             iterator.next(['insb', 'inshs']);
             iterator.next();
-            let next = iterator.next(true);
-            assert.deepEqual(next.value, call(retrieveLoginData));
-            next = iterator.next();
-            assert.isTrue(next.done);
+            assert.deepEqual(iterator.next(true).value, call(retrieveLoginData));
+            assert.isTrue(iterator.next().done);
+        });
+
+        it('should select isUserLogged', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next();
+            assert.deepEqual(iterator.next().value, select(fromState.isUserLogged));
+        });
+
+        it('should select canPersistHistoryOnServer', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next();
+            iterator.next();
+            assert.deepEqual(iterator.next().value, select(fromState.canPersistHistoryOnServer));
+        });
+
+        it('should put loadHistoryPage if user is logged in and can persist history on server', function () {
+            iterator.next();
+            iterator.next();
+            iterator.next(['insb', 'inshs']);
+            iterator.next();
+            iterator.next();
+            iterator.next(true);
+            assert.deepEqual(iterator.next(true).value, put(actions.loadHistoryPage()));
         });
 
         it('should select getQueryListTerm', function () {
@@ -67,8 +84,9 @@ describe('sagas initialize', function () {
             iterator.next();
             iterator.next(['insb', 'inshs']);
             iterator.next();
-            const next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.getQueryListTerm));
+            iterator.next();
+            iterator.next();
+            assert.deepEqual(iterator.next().value, select(fromState.getQueryListTerm));
         });
 
         it('should select getLocation', function () {
@@ -77,8 +95,9 @@ describe('sagas initialize', function () {
             iterator.next(['insb', 'inshs']);
             iterator.next();
             iterator.next();
-            const next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.getLocation));
+            iterator.next();
+            iterator.next();
+            assert.deepEqual(iterator.next().value, select(fromState.getLocation));
         });
 
         it('should put search() if term is available', function () {
@@ -87,20 +106,22 @@ describe('sagas initialize', function () {
             iterator.next(['insb', 'inshs']);
             iterator.next();
             iterator.next();
+            iterator.next();
+            iterator.next();
             iterator.next('foo');
-            const next = iterator.next('bar');
-            assert.deepEqual(next.value, put(actions.search('bar')));
+            assert.deepEqual(iterator.next('bar').value, put(actions.search('bar')));
         });
 
-        it('should put showResult(false) if isLoggingWithRenater is false', function () {
+        it('should put showResult(false) if term is not false', function () {
             iterator.next();
             iterator.next();
             iterator.next(['insb', 'inshs']);
             iterator.next();
             iterator.next();
             iterator.next();
-            const next = iterator.next(false);
-            assert.deepEqual(next.value, put(actions.showResult(false)));
+            iterator.next();
+            iterator.next();
+            assert.deepEqual(iterator.next(false).value, put(actions.showResult(false)));
         });
     });
 
