@@ -71,7 +71,7 @@ describe('sagas loginSuccess', function () {
         assert.deepEqual(next.value, put(actions.changeDomain('publication', action.response.domains[0])));
     });
 
-    it('should select pausedAction if hasPublicationSearchResult is true', function () {
+    it('should select canPersistHistoryOnServer', function () {
         iterator.next();
         iterator.next();
         iterator.next();
@@ -79,7 +79,17 @@ describe('sagas loginSuccess', function () {
         iterator.next();
 
         const next = iterator.next(true);
-        assert.deepEqual(next.value, select(fromState.getPausedAction));
+        assert.deepEqual(next.value, select(fromState.canPersistHistoryOnServer));
+    });
+
+    it('should load history from server if canPersistHistoryOnServer is true', function () {
+        iterator.next();
+        iterator.next();
+        iterator.next();
+        iterator.next();
+        iterator.next();
+        iterator.next(true);
+        assert.deepEqual(iterator.next(true).value, put(actions.loadHistoryPage()));
     });
 
     it('should end if no pausedAction', function () {
@@ -90,7 +100,8 @@ describe('sagas loginSuccess', function () {
         iterator.next();
 
         iterator.next(true);
-        const next = iterator.next(undefined);
+        iterator.next(false);
+        const next = iterator.next(false);
         assert.isTrue(next.done);
     });
 
@@ -101,7 +112,9 @@ describe('sagas loginSuccess', function () {
         iterator.next();
         iterator.next();
 
-        iterator.next(true);
+        iterator.next(false);
+        iterator.next(false);
+        iterator.next(false);
         const next = iterator.next({ type: 'PAUSED_ACTION'});
         assert.deepEqual(next.value, put({ type: 'PAUSED_ACTION' }));
     });
