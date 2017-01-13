@@ -1,10 +1,11 @@
 import {
+    INITIALIZE,
     SET_ALL_DOMAINS,
     DOMAIN_CHANGE,
     LOGIN_SUCCESS,
     RESTORE_HISTORY,
     RELOAD_HISTORY,
-    LOGOUT
+    LOGOUT,
 } from '../../../lib/actions';
 import domains, * as fromState from '../../../lib/reducers/domains';
 
@@ -140,6 +141,76 @@ describe('reducer domains', function () {
             }), {
                 available: ['INSB'],
                 article: 'INSHS'
+            });
+        });
+
+        it('should return state unchanged if action is INITIALIZE, location is article and specified domain is not available', function () {
+            assert.deepEqual(domains({
+                available: ['INSB'],
+                all: ['INSB'],
+                article: 'INSB'
+            }, {
+                type: INITIALIZE,
+                location: 'article',
+                domain: 'foo',
+                domainFromUrl: 'foo',
+            }), {
+                available: ['INSB'],
+                all: ['INSB'],
+                article: 'INSB'
+            });
+        });
+
+        it('should return state unchanged if action is INITIALIZE, location is not article and specified domain does not exist', function () {
+            assert.deepEqual(domains({
+                all: ['INSB'],
+                article: 'INSB'
+            }, {
+                type: INITIALIZE,
+                location: 'publication',
+                domain: 'foo',
+                domainFromUrl: 'foo',
+            }), {
+                all: ['INSB'],
+                article: 'INSB'
+            });
+        });
+
+        it('should set state.domain, state.domainFromUrl and state.article if the action is INITIALIZE, location is article and specified domain is available', function () {
+            assert.deepEqual(domains({
+                all: ['INSB', 'FOO'],
+                article: 'INSB',
+                available: ['INSB', 'FOO'],
+            }, {
+                domain: 'FOO',
+                domainFromUrl: 'FOO',
+                location: 'article',
+                type: INITIALIZE,
+            }), {
+                all: ['INSB', 'FOO'],
+                article: 'FOO',
+                available: ['INSB', 'FOO'],
+                defaultDomain: 'FOO',
+                setFromUrl: 'FOO',
+            });
+        });
+
+        it('should set state.domain, state.domainFromUrl and state.publication if the action is INITIALIZE, location is publication and specified domain is available', function () {
+            assert.deepEqual(domains({
+                all: ['INSB', 'FOO'],
+                available: ['INSB'],
+                publication: 'INSB',
+            }, {
+                domain: 'FOO',
+                domainFromUrl: 'FOO',
+                location: 'publication',
+                type: INITIALIZE,
+            }), {
+                all: ['INSB', 'FOO'],
+                available: ['INSB'],
+                defaultDomain: 'FOO',
+                publication: 'FOO',
+                setFromUrl: 'FOO',
             });
         });
     });
