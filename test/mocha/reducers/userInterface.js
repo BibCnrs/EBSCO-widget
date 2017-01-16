@@ -125,24 +125,24 @@ describe('reducers userInterface', function () {
     });
 
     describe('INITIALIZE', function () {
-        it('should set language to action.language and noticeBeingExported to []', function () {
+        it('should set language to action.language and readOnlyLanguage to true and noticeBeingExported to []', function () {
             assert.deepEqual(
                 userInterface({ other: 'data' }, { type: INITIALIZE, language: 'en' }),
-                { language: 'en', noticeBeingExported: [], other: 'data' }
+                { language: 'en', readOnlyLanguage: true, noticeBeingExported: [], other: 'data' }
             );
         });
 
-        it('should set language to defaultState.language if no action.language', function () {
+        it('should set language to defaultState.language and readOnlyLanguage to false if no action.language', function () {
             assert.deepEqual(
                 userInterface({ other: 'data' }, { type: INITIALIZE }),
-                { language: defaultState.language, noticeBeingExported: [], other: 'data' }
+                { language: defaultState.language, readOnlyLanguage: false, noticeBeingExported: [], other: 'data' }
             );
         });
 
         it('should set location to action.location', function () {
             assert.deepEqual(
                 userInterface({ other: 'data' }, { type: INITIALIZE, location: 'publication' }),
-                { language: defaultState.language, noticeBeingExported: [], other: 'data', location: 'publication' }
+                { language: defaultState.language, readOnlyLanguage: false, noticeBeingExported: [], other: 'data', location: 'publication' }
             );
         });
     });
