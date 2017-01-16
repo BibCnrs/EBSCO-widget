@@ -11,7 +11,7 @@ describe('sagas initialize', function () {
 
         let iterator;
         beforeEach(function () {
-            iterator = initialize();
+            iterator = initialize({});
         });
 
         it('should call localStorage.getItem EBSCO_WIDGET_history', function () {
@@ -33,13 +33,21 @@ describe('sagas initialize', function () {
             iterator.next();
             iterator.next();
             assert.deepEqual(iterator.next([]).value, call(initializeAllDomains));
-            assert.deepEqual(iterator.next().value, call(updateDomain));
+            assert.deepEqual(iterator.next().value, call(updateDomain, undefined, undefined));
         });
 
-        it('should call updateDomain and select isLoggingWithRenater', function () {
+        it('should call initializeAllDomains if receiving no domains before calling updateDomain', function () {
+            iterator = initialize({ domainFromUrl: 'insb', location: 'article' });
             iterator.next();
             iterator.next();
-            assert.deepEqual(iterator.next(['insb', 'inshs']).value, call(updateDomain));
+            assert.deepEqual(iterator.next([]).value, call(initializeAllDomains));
+            assert.deepEqual(iterator.next().value, call(updateDomain, 'insb', 'article'));
+        });
+
+        it('should call updateDomain with action domainFromUrl and location and select isLoggingWithRenater', function () {
+            iterator.next();
+            iterator.next();
+            assert.deepEqual(iterator.next(['insb', 'inshs']).value, call(updateDomain, undefined, undefined));
             assert.deepEqual(iterator.next().value, select(fromState.isLoggingWithRenater));
         });
 
