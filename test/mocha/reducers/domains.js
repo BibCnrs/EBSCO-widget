@@ -38,27 +38,28 @@ describe('reducer domains', function () {
         it('should set available to action.domains, and article to action.response.domains[0] when action is LOGIN_SUCCESS', function () {
             assert.deepEqual(domains({
                 all: ['INSB', 'INSHS'],
+                available: ['INSB', 'INSHS'],
             }, {
                 type: LOGIN_SUCCESS,
-                response: { domains: ['INSB', 'INSHS'] }
+                response: { domains: ['INSB', 'INSHS'], favorite_domain: 'INSB' }
             }), {
                 all: ['INSB', 'INSHS'],
                 available: ['INSB', 'INSHS'],
-                article: 'INSB',
                 database: 'INSB',
+                favoriteDomain: 'INSB',
             });
         });
 
-        it('should set available to action.domains, and article to state.defaultDomain if it is present in action.domains when action is LOGIN_SUCCESS', function () {
+        it('should set available to action.domains if it is present in action.domains when action is LOGIN_SUCCESS', function () {
             assert.deepEqual(domains({ defaultDomain: 'INSHS', all: ['INSB', 'INSHS'] }, {
                 type: LOGIN_SUCCESS,
-                response: { domains: ['INSB', 'INSHS'] }
+                response: { domains: ['INSB', 'INSHS'], favorite_domain: 'INSHS' }
             }), {
                 defaultDomain: 'INSHS',
                 all: ['INSB', 'INSHS'],
                 available: ['INSB', 'INSHS'],
-                article: 'INSHS',
                 database: 'INSHS',
+                favoriteDomain: 'INSHS'
             });
         });
 
@@ -70,7 +71,8 @@ describe('reducer domains', function () {
                 type: LOGOUT
             }), {
                 available: [],
-                article: null
+                article: null,
+                favoriteDomain: null,
             });
         });
 
@@ -157,7 +159,8 @@ describe('reducer domains', function () {
             }), {
                 available: ['INSB'],
                 all: ['INSB'],
-                article: 'INSB'
+                article: 'INSB',
+                setFromUrl: 'foo',
             });
         });
 
@@ -172,7 +175,8 @@ describe('reducer domains', function () {
                 domainFromUrl: 'foo',
             }), {
                 all: ['INSB'],
-                article: 'INSB'
+                article: 'INSB',
+                setFromUrl: 'foo',
             });
         });
 

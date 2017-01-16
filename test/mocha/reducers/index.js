@@ -308,7 +308,7 @@ describe('index reducers', function () {
             });
         });
 
-        describe('getDomainToUpdate', function () {
+        describe('getInitialDomains', function () {
             it('should return domain same result as getDomainChange if no searchResult', function () {
                 const state = {
                     searchResult: {
@@ -329,7 +329,7 @@ describe('index reducers', function () {
                     }
                 };
 
-                assert.deepEqual(fromState.getDomainToUpdate(state), fromState.getDomainChange(state));
+                assert.deepEqual(fromState.getInitialDomains(state), fromState.getDomainChange(state));
             });
 
             it('should return undefined for article if article has searchResult', function () {
@@ -354,7 +354,7 @@ describe('index reducers', function () {
                     }
                 };
 
-                assert.deepEqual(fromState.getDomainToUpdate(state), {
+                assert.deepEqual(fromState.getInitialDomains(state), {
                     ...fromState.getDomainChange(state),
                     article: undefined
                 });
@@ -381,7 +381,7 @@ describe('index reducers', function () {
                     }
                 };
 
-                assert.deepEqual(fromState.getDomainToUpdate(state), {
+                assert.deepEqual(fromState.getInitialDomains(state), {
                     ...fromState.getDomainChange(state),
                     publication: undefined,
                 });

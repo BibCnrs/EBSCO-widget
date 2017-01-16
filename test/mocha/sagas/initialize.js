@@ -224,9 +224,9 @@ describe('sagas initialize', function () {
             iterator = updateDomain();
         });
 
-        it('should select domainToUpdate', function() {
+        it('should select InitialDomains', function() {
             const next = iterator.next();
-            assert.deepEqual(next.value, select(fromState.getDomainToUpdate));
+            assert.deepEqual(next.value, select(fromState.getInitialDomains));
         });
 
         it('should put changeDomain for article if receiving a domain for article', function() {
