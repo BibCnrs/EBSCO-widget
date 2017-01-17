@@ -1,6 +1,7 @@
 import { put, select, call } from 'redux-saga/effects';
 
 import { loginSuccess } from '../../../lib/sagas/loginSuccess';
+import updateDomain from '../../../lib/sagas/updateDomain';
 import * as fromState from '../../../lib/selectors';
 import { sessionStorage } from '../../../lib/services/storage';
 import actions from '../../../lib/actions';
@@ -41,56 +42,19 @@ describe('sagas loginSuccess', function () {
         assert.deepEqual(next.value, put(actions.noDomainError()));
     });
 
-    it('should select getDomainToChangeOnLogin', () => {
+    it('should call updateDomain', () => {
         iterator.next();
         iterator.next();
         iterator.next();
 
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.getDomainToChangeOnLogin));
-    });
-
-    it('should put changeDomain with received domains', () => {
-        iterator.next();
-        iterator.next();
-        iterator.next();
-        iterator.next();
-
-        const next = iterator.next('domains');
-        assert.deepEqual(next.value, put(actions.changeDomain('domains', 'INSB')));
-    });
-
-    it('should select domainSetFromUrl', () => {
-        iterator.next();
-        iterator.next();
-        iterator.next();
-        iterator.next();
-        iterator.next('domains');
-
-        const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.hasDomainSetFromUrl));
-    });
-
-    it('should select location if there is domainSetFromUrl and put changeDomain for location with domain from url', () => {
-        iterator.next();
-        iterator.next();
-        iterator.next();
-        iterator.next();
-        iterator.next('domains');
-        iterator.next();
-
-        let next = iterator.next('fromUrl');
-        assert.deepEqual(next.value, select(fromState.getLocation));
-        next = iterator.next('location');
-        assert.deepEqual(next.value, put(actions.changeDomain('location', 'fromUrl')));
+        assert.deepEqual(next.value, call(updateDomain));
     });
 
     it('should select canPersistHistoryOnServer if no domainFromUrl', function () {
         iterator.next();
         iterator.next();
         iterator.next();
-        iterator.next();
-        iterator.next('domains');
         iterator.next();
 
         const next = iterator.next();
@@ -102,8 +66,6 @@ describe('sagas loginSuccess', function () {
         iterator.next();
         iterator.next();
         iterator.next();
-        iterator.next('domains');
-        iterator.next();
         iterator.next();
         assert.deepEqual(iterator.next(true).value, put(actions.loadHistoryPage()));
     });
@@ -112,8 +74,6 @@ describe('sagas loginSuccess', function () {
         iterator.next();
         iterator.next();
         iterator.next();
-        iterator.next();
-        iterator.next('domains');
         iterator.next();
 
         iterator.next();
@@ -126,8 +86,6 @@ describe('sagas loginSuccess', function () {
         iterator.next();
         iterator.next();
         iterator.next();
-        iterator.next();
-        iterator.next('domains');
         iterator.next();
 
         iterator.next();

@@ -221,39 +221,67 @@ describe('reducer domains', function () {
 
     describe('fromState', function() {
         describe('getDefaultDomain', function () {
-
-            it('should return defaultDomain for article', function() {
+            it('should return undefined if defaultDomain is not available when called with available = true', function() {
                 assert.equal(fromState.getDefaultDomain({
-                    article: 'INSB',
-                    available: ['INSHS'],
-                    defaultDomain: 'INSHS'
-                }, 'article'), 'INSHS');
-            });
-
-            it('should return undefined if defaultDomains is not in available for article', function() {
-                assert.equal(fromState.getDefaultDomain({
-                    article: 'INSB',
                     available: [],
-                    defaultDomain: 'INSHS'
-                }, 'article'), undefined);
+                    defaultDomain: 'default',
+                }, true), undefined);
             });
 
-            it('should return defaultDomain for publication', function() {
+            it('should return undefined if defaultDomain is not in all when called with available = false', function() {
                 assert.equal(fromState.getDefaultDomain({
-                    article: 'INSB',
-                    all: ['INSHS'],
-                    defaultDomain: 'INSHS'
-                }, 'publication'), 'INSHS');
-            });
-
-            it('should return undefined if defaultDomains is not in all for publication', function() {
-                assert.equal(fromState.getDefaultDomain({
-                    article: 'INSB',
                     all: [],
-                    defaultDomain: 'INSHS'
-                }, 'publication'), undefined);
+                    defaultDomain: 'default',
+                }, false), undefined);
             });
 
+            it('should return defaultDomain if available when called with available = true', function() {
+                assert.equal(fromState.getDefaultDomain({
+                    available: ['default'],
+                    defaultDomain: 'default',
+                }, true), 'default');
+            });
+
+            it('should return defaultDomain if in all when called with available = false', function() {
+                assert.equal(fromState.getDefaultDomain({
+                    all: ['default'],
+                    defaultDomain: 'default',
+                }, false), 'default');
+            });
+
+            it('should return defaultDomain if favoriteDomain is not available when called with available = true and there is a favoriteDomain', function() {
+                assert.equal(fromState.getDefaultDomain({
+                    available: ['default'],
+                    defaultDomain: 'default',
+                    favoriteDomain: 'favorite',
+                }, true), 'default');
+            });
+
+            it('should return favoriteDomain if available when called with available = true and there is a favoriteDomain', function() {
+                assert.equal(fromState.getDefaultDomain({
+                    available: ['default', 'favorite'],
+                    defaultDomain: 'default',
+                    favoriteDomain: 'favorite',
+                }, true), 'favorite');
+            });
+
+            it('should return setFromUrl domain if available when called with available = true and there is setFromUrl', function() {
+                assert.equal(fromState.getDefaultDomain({
+                    available: ['default', 'favorite', 'url'],
+                    defaultDomain: 'default',
+                    favoriteDomain: 'favorite',
+                    setFromUrl: 'url',
+                }, true), 'url');
+            });
+
+            it('should return favoriteDomain domain if setFromUrl domain is not available when called with available = true and there is setFromUrl', function() {
+                assert.equal(fromState.getDefaultDomain({
+                    available: ['default', 'favorite'],
+                    defaultDomain: 'default',
+                    favoriteDomain: 'favorite',
+                    setFromUrl: 'url',
+                }, true), 'favorite');
+            });
         });
 
         describe('getDomainChange', function() {
