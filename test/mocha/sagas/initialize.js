@@ -1,6 +1,7 @@
 import { put, select, call } from 'redux-saga/effects';
 
-import { initialize, retrieveLoginData, initializeAllDomains, updateDomain } from '../../../lib/sagas/initialize';
+import { initialize, retrieveLoginData, initializeAllDomains } from '../../../lib/sagas/initialize';
+import updateDomain from '../../../lib/sagas/updateDomain';
 import * as fromState from '../../../lib/selectors';
 import fetch from '../../../lib/sagas/fetch';
 import { localStorage, sessionStorage } from '../../../lib/services/storage';
@@ -11,7 +12,7 @@ describe('sagas initialize', function () {
 
         let iterator;
         beforeEach(function () {
-            iterator = initialize({});
+            iterator = initialize();
         });
 
         it('should call localStorage.getItem EBSCO_WIDGET_history', function () {
@@ -33,21 +34,13 @@ describe('sagas initialize', function () {
             iterator.next();
             iterator.next();
             assert.deepEqual(iterator.next([]).value, call(initializeAllDomains));
-            assert.deepEqual(iterator.next().value, call(updateDomain, undefined, undefined));
+            assert.deepEqual(iterator.next().value, call(updateDomain));
         });
 
-        it('should call initializeAllDomains if receiving no domains before calling updateDomain', function () {
-            iterator = initialize({ domainFromUrl: 'insb', location: 'article' });
+        it('should call updateDomain and select isLoggingWithRenater', function () {
             iterator.next();
             iterator.next();
-            assert.deepEqual(iterator.next([]).value, call(initializeAllDomains));
-            assert.deepEqual(iterator.next().value, call(updateDomain, 'insb', 'article'));
-        });
-
-        it('should call updateDomain with action domainFromUrl and location and select isLoggingWithRenater', function () {
-            iterator.next();
-            iterator.next();
-            assert.deepEqual(iterator.next(['insb', 'inshs']).value, call(updateDomain, undefined, undefined));
+            assert.deepEqual(iterator.next(['insb', 'inshs']).value, call(updateDomain));
             assert.deepEqual(iterator.next().value, select(fromState.isLoggingWithRenater));
         });
 
