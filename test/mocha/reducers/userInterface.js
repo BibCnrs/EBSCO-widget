@@ -23,8 +23,11 @@ describe('reducers userInterface', function () {
         assert.deepEqual(userInterface(undefined, { type: 'OTHER_ACTION_TYPE' }), defaultState);
     });
 
-    it('should return defaultState if action is LOGOUT', function () {
-        assert.deepEqual(userInterface({ other: 'data' }, { type: LOGOUT }), defaultState);
+    it('should return defaultState except for readOnlyLanguage if action is LOGOUT', function () {
+        assert.deepEqual(userInterface({ other: 'data', readOnlyLanguage: true }, { type: LOGOUT }), {
+            ...defaultState,
+            readOnlyLanguage: true,
+        });
     });
 
     it('should return set loginShown and profileShown to false if action is LOGIN_SUCCESS and favorite_domain is included in domains', function () {
