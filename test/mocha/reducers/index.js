@@ -251,7 +251,7 @@ describe('index reducers', function () {
                 });
             });
 
-            it('should return undefined if no defaultDomain', function () {
+            it('should return undefined or available[0] for article if no defaultDomain', function () {
                 const state = {
                     domains: {
                         article: 'IN2P3',
@@ -263,26 +263,26 @@ describe('index reducers', function () {
                 };
 
                 assert.deepEqual(fromState.getDomainChange(state), {
-                    article: undefined,
+                    article: 'IN2P3',
                     publication: undefined,
                     database: undefined,
                 });
             });
 
-            it('should return undefined for article if defaultDomain is not available', function () {
+            it('should return available[0] for article if defaultDomain is not available', function () {
                 const state = {
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
                         database: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
-                        available: ['IN2P3'],
+                        available: ['INSB', 'IN2P3'],
                         defaultDomain: 'INSHS'
                     }
                 };
 
                 assert.deepEqual(fromState.getDomainChange(state), {
-                    article: undefined,
+                    article: 'INSB',
                     publication: 'INSHS',
                     database: 'INSHS',
                 });
