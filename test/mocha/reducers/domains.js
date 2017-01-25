@@ -305,8 +305,8 @@ describe('reducer domains', function () {
 
             it('should return undefined when defaultDomain is equal to category domain', function() {
                 const state = {
-                    article: 'INSHS',
-                    publication: 'INSB',
+                    article: 'INSB',
+                    publication: 'INSHS',
                     database: 'INSU',
                     defaultDomain: 'INSHS',
                     all: ['INSHS', 'INSB'],
@@ -314,9 +314,43 @@ describe('reducer domains', function () {
                 };
 
                 assert.deepEqual(fromState.getDomainChange(state), {
+                    article: 'INSHS',
+                    publication: undefined,
+                    database: 'INSHS',
+                });
+            });
+
+            it('should return undefined when defaultDomain is equal to category domain for article', function() {
+                const state = {
+                    article: 'INSHS',
+                    publication: 'INSB',
+                    database: 'INSU',
+                    defaultDomain: 'INSHS',
+                    all: ['INSHS', 'INSB'],
+                    available: ['IN2P3', 'INSHS', 'INSB']
+                };
+
+                assert.deepEqual(fromState.getDomainChange(state), {
                     article: undefined,
                     publication: 'INSHS',
                     database: 'INSHS',
+                });
+            });
+
+            it('should return available[0] for article when no defaultDomain', function() {
+                const state = {
+                    article: 'INSHS',
+                    publication: 'INSB',
+                    database: 'INSU',
+                    defaultDomain: undefined,
+                    all: ['INSHS', 'INSB'],
+                    available: ['IN2P3', 'INSHS', 'INSB']
+                };
+
+                assert.deepEqual(fromState.getDomainChange(state), {
+                    article: 'IN2P3',
+                    publication: undefined,
+                    database: undefined,
                 });
             });
         });
