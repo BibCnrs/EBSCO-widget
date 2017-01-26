@@ -231,6 +231,7 @@ describe('reducer domains', function () {
             it('should return undefined if defaultDomain is not in all when called with available = false', function() {
                 assert.equal(fromState.getDefaultDomain({
                     all: [],
+                    available: [],
                     defaultDomain: 'default',
                 }, false), undefined);
             });
@@ -337,7 +338,7 @@ describe('reducer domains', function () {
                 });
             });
 
-            it('should return available[0] for article when no defaultDomain', function() {
+            it('should return available[0] when no defaultDomain', function() {
                 const state = {
                     article: 'INSHS',
                     publication: 'INSB',
@@ -349,8 +350,8 @@ describe('reducer domains', function () {
 
                 assert.deepEqual(fromState.getDomainChange(state), {
                     article: 'IN2P3',
-                    publication: undefined,
-                    database: undefined,
+                    publication: 'IN2P3',
+                    database: 'IN2P3',
                 });
             });
         });
