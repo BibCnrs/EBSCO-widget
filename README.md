@@ -20,39 +20,39 @@ document.onreadystatechange = function () {
     if (document.readyState === 'complete') {
         var rootElement = document.getElementById('ebsco_widget');
         window.ReactDom.render(React.createElement(window.EbscoWidget, { // options
-            url: 'https://bib.crns.fr/api/ebsco', //obligatoire: url de bibapi
+            url: 'https://bib.cnrs.fr/api/ebsco', //obligatoire: url de bibapi
             domain: 'default domain' // facultatif: l'institut que le widget utlisera par défaut si disponible
         }), rootElement);
     }
 };
 ```
 
-## développement
+## Développement
 
-### dépendance:
-    `make install`
-### serveur de développement
+### Installer les dépendances
+    make install
+### Lancer un serveur de développement
 Lancer webpack dev server: `make run-dev`
 Ensuite aller sur `localhost:3001/webpack-dev-server`
 Il est possible d'ajouter `?debug_session=<name>` pour créer une session qui sauvegardera l'état du widget' dans le localstorage.
 Il est également  nécessaire d'avoir BibApi de lancer sur  localhost:3000
 
-### build
-Construire build/app.js et build/app.css :`make build`
+### Construire le widget (build)
+Construire build/app.js et build/app.css : `make build`
 
-### serve
+### Tester le widget dans une page web
 
 Servir une page html de test incorporant le widget construit: `make serve`
 
 Le serveur web écoutera ensuite sur l'url suivante : http://127.0.0.1:3002/
 
-## Test
+## Tests
 
 - `make test`: lancer tout les tests
 - `make test-mocha`: lancer les tests unitaires mocha
 - `make selenium`: lancer selenium hub et chrome (nécessaire pour les tests "end to end")
 - `make selenium-debug`: lancer selenium en mode debug ce qui permet de s'y connecter avec [VNC](https://www.realvnc.com/products/vnc/) pour un retour graphique
-[Application chrome gratuite VNC](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla?hl=en)
+  [Application chrome gratuite VNC](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla?hl=en)
 - `make test-e2e`: lancer les tests "end to end" nightwatch
 
 ## Useful commands
