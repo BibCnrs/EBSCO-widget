@@ -1,6 +1,6 @@
 # EBSCO-widget
 
-Widget permettant d'intégrer [BibCNRS](https://bib.cnrs.fr) dans un site web tier (le votre par exemple). Ce widget utilise la technologie ReactJS. A noter que des compétences d'informaticien/webmestre sont nécessaires pour intégrer le widget dans votre site web.
+Widget permettant d'intégrer [BibCNRS](https://bib.cnrs.fr) dans un site web tiers (le votre par exemple). Ce widget utilise la technologie ReactJS. A noter que des compétences d'informaticien/webmestre sont nécessaires pour intégrer le widget dans votre site web.
 
 ## Installation
 Installer le code source du widget avec npm : `npm install ebsco-widget`
