@@ -1,30 +1,38 @@
 # EBSCO-widget
 
-widget React pour interroger BibApi
+Widget permettant d'intégrer [BibCNRS](https://bib.cnrs.fr) dans un site web tier (le votre par exemple). Ce widget utilise la technologie ReactJS. A noter que des compétences d'informaticien/webmestre sont nécessaires pour intégrer le widget dans votre site web.
 
 ## Installation
-Installer avec npm `npm install ebsco-widget`
-Ajouter le js et le css
+Installer le code source du widget avec npm : `npm install ebsco-widget`
+Ajouter ensuite le JS et le CSS du widget dans la partie <head> de votre page web.
 ```html
-<link rel="stylesheet" id="ebsco_widget-css" href="/build/app.css?ver=0.13.1" type="text/css" media="all">
-<script type="text/javascript" src="/build/app.js?ver=0.13.1"></script>
+<link rel="stylesheet" id="ebsco_widget-css" href="/node_modules/ebsco-widget/build/app.css?ver=0.13.1" type="text/css" media="all">
+
+<script type="text/javascript" src="/node_modules/babel-polyfill/dist/polyfill.js?ver=6.16.0"></script>
+<script type="text/javascript" src="/node_modules/react/dist/react-with-addons.js?ver=15.3.2"></script>
+<script type="text/javascript" src="/node_modules/react-dom/dist/react-dom.js?ver=15.3.2"></script>
+<script type="text/javascript" src="/node_modules/ebsco-widget/build/app.js?ver=0.13.1"></script>
 ```
 
-Ajouter la div qui contiendra le widget:
+Ajouter la <div> qui contiendra le widget à l'endroit souhaité dans votre page web :
 ```html
 <div id="ebsco_widget"></div>
 ```
-Et initialiser le widget avec:
+Et initialiser le widget à la fin de votre page web avec le bloc suivant :
 ```js
+<script type="text/javascript">
+
 document.onreadystatechange = function () {
-    if (document.readyState === 'complete') {
-        var rootElement = document.getElementById('ebsco_widget');
-        window.ReactDom.render(React.createElement(window.EbscoWidget, { // options
-            url: 'https://bib.cnrs.fr/api/ebsco', //obligatoire: url de bibapi
-            domain: 'default domain' // facultatif: l'institut que le widget utlisera par défaut si disponible
-        }), rootElement);
-    }
+  if (document.readyState === 'complete') {
+    var rootElement = document.getElementById('ebsco_widget');
+    window.ReactDom.render(React.createElement(window.EbscoWidget, { // options
+      url: 'https://bib.cnrs.fr/api/ebsco', //obligatoire: url de bibapi
+      domain: 'default domain' // facultatif: l'institut que le widget utlisera par défaut si disponible
+    }), rootElement);
+  }
 };
+
+</script>
 ```
 
 ## Développement
