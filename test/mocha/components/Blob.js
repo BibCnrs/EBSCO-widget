@@ -29,7 +29,7 @@ describe('Blob', function () {
         };
         const component = getComponent(data);
         const fullTextHolding = component.find('Connect');
-        assert.equal(fullTextHolding.node.type.displayName, 'Connect(TranslatedComponent)');
+        assert.equal(fullTextHolding.getElement().type.displayName, 'Connect(TranslatedComponent)');
         assert.deepEqual(fullTextHolding.props(), data);
     });
 
@@ -52,7 +52,7 @@ describe('Blob', function () {
         };
         const component = getComponent(data);
         const searchLink = component.find('Connect');
-        assert.equal(searchLink.node.type.displayName, 'Connect(SearchLink)');
+        assert.equal(searchLink.getElement().type.displayName, 'Connect(SearchLink)');
         assert.deepEqual(searchLink.props(), data);
     });
 
