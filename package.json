@@ -55,7 +55,7 @@
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
-    "babel-polyfill": "6.16.0",
+    "babel-polyfill": "6.26.0",
     "bootstrap": "3.3.7",
     "compass-mixins": "0.12.10",
     "config": "1.21.0",
