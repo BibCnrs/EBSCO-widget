@@ -71,5 +71,6 @@ module.exports = {
     externals: {
         'react': 'React',
         'react-dom': 'ReactDOM',
+        'babel-polyfill': '_babelPolyfill',
     }
 };
