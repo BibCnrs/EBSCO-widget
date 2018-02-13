@@ -1,6 +1,6 @@
 import extractFormulas from '../../../lib/services/extractFormulas';
 
-describe.only('extractFormulas', () => {
+describe('extractFormulas', () => {
     it('should return null if no inline formula', () => {
         assert.equal(extractFormulas('hello world'), null);
     });
