@@ -82,7 +82,7 @@ describe('Blob', function () {
         assert.equal(span.text(), data);
     });
 
-    it.only('should display span with math formula', function () {
+    it('should display span with math formula', function () {
         const data = {
             notation: 'LaTeX',
             value: `(1,s)`,
