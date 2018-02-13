@@ -47,7 +47,7 @@ describe('authenticationModal', function() {
         .setValue('.password', 'password')
         .click('button.api')
         .waitForElementVisible('.error', 2000)
-        .assert.containsText('.error', 'Unauthorized')
+        .assert.containsText('.error', `L'identifiant/mot de passe saisi n'a pas permis de vous connecter au portail, veuillez essayer à nouveau en majuscule sans espace. Si le problème persiste, n'hésitez pas à contacter assistance-portail@inist.fr`)
         .assert.containsText('.navbar.navbar-default .active', 'Une revue, un ouvrage');
         client.start(done);
     });
