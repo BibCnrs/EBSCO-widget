@@ -1,12 +1,18 @@
 .authentication {
     .modal-content {
         border-radius: 0px;
+        .panel-primary {
+            border-radius: 0px;
+        }
+        .choose {
+            font-weight: bold;
+        }
+        .ask-account {
+            text-align: right;
+        }
         .btn, .btn-group {
             height: 34px;
             border-radius: 0px;
-        }
-        .inist-button {
-            padding: 5px;
         }
 
         .collaspe {
