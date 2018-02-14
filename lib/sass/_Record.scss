@@ -31,6 +31,11 @@
     }
     .fulltext-holdings {
         list-style-type: none;
+        .fulltext-holding {
+            &.current {
+                font-weight: bold;
+            }
+        }
     }
 
     .notice {
