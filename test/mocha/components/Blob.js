@@ -82,7 +82,7 @@ describe('Blob', function () {
         assert.equal(span.text(), data);
     });
 
-    it.only('should display span with math formula', function () {
+    it('should display span with math formula', function () {
         const data = {
             notation: 'LaTeX',
             value: `(1,s)`,
@@ -95,4 +95,14 @@ describe('Blob', function () {
         );
     });
 
+    it('should interpret inline formula', function () {
+        const data = 'The formula is: $(1,s)$';
+        const component = getComponent(data);
+        assert.equal(component.text(), 'The formula is: ');
+        const span = component.find('span');
+        assert.equal(
+            span.at(1).props().dangerouslySetInnerHTML.__html,
+            '<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mi>s</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">s</span><span class="mclose">)</span></span></span></span>'
+        );
+    });
 });
