@@ -1,24 +1,23 @@
 .navbar {
     background-color: white;
+    border: none;
     .nav {
+        border-bottom: solid #337ab7 1px;
+        float: none;
         .nav-item {
-            padding-top: 8px;
             a {
-                padding-top: 5px;
-                padding-bottom: 5px;
-                margin: 0 5px;
-                background-color: #eee;
+                border: solid #337ab7 1px;
+                border-bottom: none;
                 &:hover {
-                    border: solid #337ab7 1px;
-                    background-color: #fff;
-                    box-shadow: 5px 5px 5px #999
+                    border: solid #337ab7 2px;
+                    border-bottom: none;
                 }
-                border-radius: 0px;
             }
             &.active a {
-                border: solid #337ab7 2px;
-                background-color: #fff;
-                box-shadow: 5px 5px 5px #999
+                border: solid #337ab7 3px;
+                border-bottom: none;
+                background-color: white;
+                font-weight: bold;
             }
         }
         .connection {
