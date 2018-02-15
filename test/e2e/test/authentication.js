@@ -20,6 +20,8 @@ describe('authentication', function() {
         .waitForElementVisible('.authentication .modal-dialog', 1000)
         .assert.containsText('.janus', 'Via le gestionnaire d\'identité janus')
         .assert.containsText('.inist-button', 'Via votre ancien code d\'accès portail')
+        .click('.inist-button')
+        .waitForElementVisible('.username', 1000)
         .setValue('.username', 'test')
         .setValue('.password', 'secret')
         .click('button.api')
