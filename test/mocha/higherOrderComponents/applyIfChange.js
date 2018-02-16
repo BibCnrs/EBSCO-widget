@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import applyIfChange from '../../../lib/higherOrderComponents/applyIfChange';
 
 describe('applyIfChange', function() {
@@ -13,6 +15,10 @@ describe('applyIfChange', function() {
                     </button>
                 </div>
             );
+        };
+        component.propTypes = {
+            value: PropTypes.string.isRequired,
+            onApply: PropTypes.func.isRequired,
         };
         const ApplyIfChangeComponent = applyIfChange(component);
         onApplyCall = 0;

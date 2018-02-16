@@ -8,13 +8,14 @@ describe('Search component', function() {
     }
 
     beforeEach(function() {
+        const SearchInput = () => <div />;
         props = {
             onSearch: function onSearch() {
                 return ['onSearch', ...arguments];
             },
             status: 'NONE',
             term: 'word',
-            SearchInput: () => <div />,
+            SearchInput,
         };
 
         component = getComponent(props);
