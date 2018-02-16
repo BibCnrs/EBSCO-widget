@@ -1,20 +1,20 @@
 import { Provider } from 'react-redux';
-import { createStore } from 'redux'
+import { createStore } from 'redux';
 
 import { translator } from '../../../lib/higherOrderComponents/translate';
 
-describe('translate', function () {
+describe('translate', function() {
     const translate = translator({
         en: {
             Test: {
-                hello: 'Hello'
-            }
+                hello: 'Hello',
+            },
         },
         fr: {
             Test: {
-                hello: 'Salut'
-            }
-        }
+                hello: 'Salut',
+            },
+        },
     });
 
     const Test = translate(({ name, text }) => {
@@ -23,17 +23,21 @@ describe('translate', function () {
 
     const getComponent = (language, name) => {
         const store = createStore(() => ({
-            userInterface: { language: language }
+            userInterface: { language: language },
         }));
-        return enzyme.mount(<Provider store={store}><Test name={name} /></Provider>);
+        return enzyme.mount(
+            <Provider store={store}>
+                <Test name={name} />
+            </Provider>,
+        );
     };
 
-    it('should use english translation when state.userInterface.language is en', function () {
+    it('should use english translation when state.userInterface.language is en', function() {
         const test = getComponent('en', 'john');
         assert.equal(test.text(), 'Hello john');
     });
 
-    it('should use french translation when state.userInterface.language is fr', function () {
+    it('should use french translation when state.userInterface.language is fr', function() {
         const test = getComponent('fr', 'john');
         assert.equal(test.text(), 'Salut john');
     });

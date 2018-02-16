@@ -10,35 +10,43 @@ import {
 
 import profile from '../../../lib/reducers/profile';
 
-describe('reducer profile', function () {
-
-    describe('actions', function () {
-
-        describe('CHANGE_FAVORITE_DOMAIN', function () {
-            it('should set favorite_domain to action.value', function () {
-                const nextState = profile({
-                    other: 'data'
-                }, {
-                    type: CHANGE_FAVORITE_DOMAIN,
-                    value: 'favorite_domain'
-                });
+describe('reducer profile', function() {
+    describe('actions', function() {
+        describe('CHANGE_FAVORITE_DOMAIN', function() {
+            it('should set favorite_domain to action.value', function() {
+                const nextState = profile(
+                    {
+                        other: 'data',
+                    },
+                    {
+                        type: CHANGE_FAVORITE_DOMAIN,
+                        value: 'favorite_domain',
+                    },
+                );
 
                 assert.deepEqual(nextState, {
                     other: 'data',
-                    favorite_domain: 'favorite_domain'
+                    favorite_domain: 'favorite_domain',
                 });
-
             });
         });
 
-        it('LOGIN_SUCCESS should set username, origin and favorite_domain from response data', function () {
-            const nextState = profile({
-                other: 'data',
-                status: 'NONE',
-            }, {
-                type: LOGIN_SUCCESS,
-                response: { username: 'username', domains: 'domains', favorite_domain: 'favorite_domain', origin: 'janus' }
-            });
+        it('LOGIN_SUCCESS should set username, origin and favorite_domain from response data', function() {
+            const nextState = profile(
+                {
+                    other: 'data',
+                    status: 'NONE',
+                },
+                {
+                    type: LOGIN_SUCCESS,
+                    response: {
+                        username: 'username',
+                        domains: 'domains',
+                        favorite_domain: 'favorite_domain',
+                        origin: 'janus',
+                    },
+                },
+            );
 
             assert.deepEqual(nextState, {
                 favorite_domain: 'favorite_domain',
@@ -49,46 +57,55 @@ describe('reducer profile', function () {
             });
         });
 
-        describe('UPDATE_PROFILE_PENDING', function () {
-            it('should set status to PENDING', function () {
-                const nextState = profile({
-                    other: 'data',
-                    status: 'NONE'
-                }, {
-                    type: UPDATE_PROFILE_PENDING
-                });
+        describe('UPDATE_PROFILE_PENDING', function() {
+            it('should set status to PENDING', function() {
+                const nextState = profile(
+                    {
+                        other: 'data',
+                        status: 'NONE',
+                    },
+                    {
+                        type: UPDATE_PROFILE_PENDING,
+                    },
+                );
 
                 assert.deepEqual(nextState, {
                     other: 'data',
-                    status: 'PENDING'
+                    status: 'PENDING',
                 });
             });
         });
 
-        describe('UPDATE_PROFILE_SUCCESS', function () {
-            it('should set status to SUCCESS', function () {
-                const nextState = profile({
-                    other: 'data',
-                    status: 'NONE'
-                }, {
-                    type: UPDATE_PROFILE_SUCCESS
-                });
+        describe('UPDATE_PROFILE_SUCCESS', function() {
+            it('should set status to SUCCESS', function() {
+                const nextState = profile(
+                    {
+                        other: 'data',
+                        status: 'NONE',
+                    },
+                    {
+                        type: UPDATE_PROFILE_SUCCESS,
+                    },
+                );
 
                 assert.deepEqual(nextState, {
                     other: 'data',
-                    status: 'SUCCESS'
+                    status: 'SUCCESS',
                 });
             });
         });
 
-        describe('UPDATE_PROFILE_ERROR', function () {
-            it('should set status to ERROR', function () {
-                const nextState = profile({
-                    other: 'data',
-                    status: 'NONE'
-                }, {
-                    type: UPDATE_PROFILE_ERROR
-                });
+        describe('UPDATE_PROFILE_ERROR', function() {
+            it('should set status to ERROR', function() {
+                const nextState = profile(
+                    {
+                        other: 'data',
+                        status: 'NONE',
+                    },
+                    {
+                        type: UPDATE_PROFILE_ERROR,
+                    },
+                );
 
                 assert.deepEqual(nextState, {
                     other: 'data',
@@ -97,14 +114,17 @@ describe('reducer profile', function () {
             });
         });
 
-        describe('UPDATE_PROFILE_CANCEL', function () {
-            it('should set status to NONE', function () {
-                const nextState = profile({
-                    other: 'data',
-                    status: 'PENDING'
-                }, {
-                    type: UPDATE_PROFILE_CANCEL
-                });
+        describe('UPDATE_PROFILE_CANCEL', function() {
+            it('should set status to NONE', function() {
+                const nextState = profile(
+                    {
+                        other: 'data',
+                        status: 'PENDING',
+                    },
+                    {
+                        type: UPDATE_PROFILE_CANCEL,
+                    },
+                );
 
                 assert.deepEqual(nextState, {
                     other: 'data',
@@ -113,14 +133,17 @@ describe('reducer profile', function () {
             });
         });
 
-        describe('HIDE_PROFILE', function () {
-            it('should set status to NONE', function () {
-                const nextState = profile({
-                    other: 'data',
-                    status: 'PENDING'
-                }, {
-                    type: HIDE_PROFILE
-                });
+        describe('HIDE_PROFILE', function() {
+            it('should set status to NONE', function() {
+                const nextState = profile(
+                    {
+                        other: 'data',
+                        status: 'PENDING',
+                    },
+                    {
+                        type: HIDE_PROFILE,
+                    },
+                );
 
                 assert.deepEqual(nextState, {
                     other: 'data',

@@ -8,46 +8,42 @@ import {
     CHANGE_RESULTS_PER_PAGE,
     RELOAD_HISTORY,
     RETRIEVE_SUCCESS,
-    LOGOUT
+    LOGOUT,
 } from '../../../lib/actions';
 
-describe('reducers createSearchResult', function () {
-
-    describe('actions type:', function () {
-
+describe('reducers createSearchResult', function() {
+    describe('actions type:', function() {
         let categorySearchResult;
 
-        before(function () {
+        before(function() {
             categorySearchResult = createSearchResult('category');
         });
 
-        describe('SEARCH_SUCCESS', function () {
-
-            it('should set [action.response.currentPage] to action.response.results[].id', function () {
+        describe('SEARCH_SUCCESS', function() {
+            it('should set [action.response.currentPage] to action.response.results[].id', function() {
                 assert.deepEqual(
-                    categorySearchResult({
-                        maxPage: 0,
-                        currentPage: 1,
-                        1: [1, 2, 3],
-                        byId: {
-                            1: { id: 1 },
-                            2: { id: 2 },
-                            3: { id: 3 }
-                        }
-                    }, {
-                        type: SEARCH_SUCCESS,
-                        category: 'category',
-                        response: {
-                            maxPage: 10,
-                            totalHits: 200,
-                            results: [
-                                { id: 4 },
-                                { id: 5 },
-                                { id: 6 }
-                            ],
-                            currentPage: 2
-                        }
-                    }),
+                    categorySearchResult(
+                        {
+                            maxPage: 0,
+                            currentPage: 1,
+                            1: [1, 2, 3],
+                            byId: {
+                                1: { id: 1 },
+                                2: { id: 2 },
+                                3: { id: 3 },
+                            },
+                        },
+                        {
+                            type: SEARCH_SUCCESS,
+                            category: 'category',
+                            response: {
+                                maxPage: 10,
+                                totalHits: 200,
+                                results: [{ id: 4 }, { id: 5 }, { id: 6 }],
+                                currentPage: 2,
+                            },
+                        },
+                    ),
                     {
                         maxPage: 10,
                         totalHits: 200,
@@ -59,10 +55,10 @@ describe('reducers createSearchResult', function () {
                             3: { id: 3 },
                             4: { id: 4 },
                             5: { id: 5 },
-                            6: { id: 6 }
+                            6: { id: 6 },
                         },
-                        currentPage: 2
-                    }
+                        currentPage: 2,
+                    },
                 );
             });
         });
@@ -72,192 +68,214 @@ describe('reducers createSearchResult', function () {
             LIMIT_SEARCH,
             CHANGE_RESULTS_PER_PAGE,
             RELOAD_HISTORY,
-            LOGOUT
+            LOGOUT,
         ].forEach(type => {
-            describe(type, function () {
-                it('should return default state', function () {
+            describe(type, function() {
+                it('should return default state', function() {
                     assert.deepEqual(
-                        categorySearchResult({
-                            maxPage: 10,
-                            totalHits: 200,
-                            2: ['results data'],
-                            currentPage: 2
-                        }, { type, category: 'category' }),
-                        fromSearchResult.defaultState
+                        categorySearchResult(
+                            {
+                                maxPage: 10,
+                                totalHits: 200,
+                                2: ['results data'],
+                                currentPage: 2,
+                            },
+                            { type, category: 'category' },
+                        ),
+                        fromSearchResult.defaultState,
                     );
                 });
             });
         });
 
-        describe('PAGE_LOAD', function () {
-
-            it('should set currentPage to action.page if action', function () {
+        describe('PAGE_LOAD', function() {
+            it('should set currentPage to action.page if action', function() {
                 assert.deepEqual(
-                    categorySearchResult({ maxPage: 0 }, {
-                        type: PAGE_LOAD,
-                        category: 'category',
-                        page: 7
-                    }),
+                    categorySearchResult(
+                        { maxPage: 0 },
+                        {
+                            type: PAGE_LOAD,
+                            category: 'category',
+                            page: 7,
+                        },
+                    ),
                     {
                         maxPage: 0,
-                        currentPage: 7
-                    }
+                        currentPage: 7,
+                    },
                 );
             });
         });
 
-
-        it('should return state on other action', function () {
+        it('should return state on other action', function() {
             assert.deepEqual(
-                categorySearchResult({ some: 'state' }, {
-                    type: 'OTHER_ACTION',
-                    category: 'category'
-                }),
-                { some: 'state' }
+                categorySearchResult(
+                    { some: 'state' },
+                    {
+                        type: 'OTHER_ACTION',
+                        category: 'category',
+                    },
+                ),
+                { some: 'state' },
             );
         });
 
-        describe('RETRIEVE_SUCCESS', function () {
+        describe('RETRIEVE_SUCCESS', function() {
             let articleSearchResult;
-            before(function () {
+            before(function() {
                 articleSearchResult = createSearchResult('article');
             });
 
-            it('should return given stat if category is not article', function () {
+            it('should return given stat if category is not article', function() {
                 assert.deepEqual(
-                    categorySearchResult({ some: 'state' }, {
-                        type: RETRIEVE_SUCCESS,
-                        category: 'category'
-                    }),
-                    { some: 'state' }
+                    categorySearchResult(
+                        { some: 'state' },
+                        {
+                            type: RETRIEVE_SUCCESS,
+                            category: 'category',
+                        },
+                    ),
+                    { some: 'state' },
                 );
             });
 
-            it('should set corresponding articleLinks to action.response.articleLinks', function () {
+            it('should set corresponding articleLinks to action.response.articleLinks', function() {
                 assert.deepEqual(
-                    articleSearchResult({
-                        byId: {
-                            7: {}
-                        }
-                    }, {
-                        type: RETRIEVE_SUCCESS,
-                        category: 'article',
-                        id: '7',
-                        response: {
-                            articleLinks: {
-                                fullTextLinks: ['fulltext'],
-                                pdfLinks: [],
-                                urls: []
-                            }
-                        }
-                    }),
+                    articleSearchResult(
+                        {
+                            byId: {
+                                7: {},
+                            },
+                        },
+                        {
+                            type: RETRIEVE_SUCCESS,
+                            category: 'article',
+                            id: '7',
+                            response: {
+                                articleLinks: {
+                                    fullTextLinks: ['fulltext'],
+                                    pdfLinks: [],
+                                    urls: [],
+                                },
+                            },
+                        },
+                    ),
                     {
                         byId: {
                             7: {
                                 articleLinks: {
                                     fullTextLinks: ['fulltext'],
                                     pdfLinks: [],
-                                    urls: []
-                                }
-                            }
-                        }
-                    }
+                                    urls: [],
+                                },
+                            },
+                        },
+                    },
                 );
             });
 
-            it('should set corresponding articleLinks to null action.response.articleLinks contain only emptyArray', function () {
+            it('should set corresponding articleLinks to null action.response.articleLinks contain only emptyArray', function() {
                 assert.deepEqual(
-                    articleSearchResult({
-                        byId: {
-                            '7': {
+                    articleSearchResult(
+                        {
+                            byId: {
+                                '7': {
+                                    articleLinks: {
+                                        fullTextLinks: [],
+                                        pdfLinks: [],
+                                        urls: [],
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            type: 'RETRIEVE_SUCCESS',
+                            category: 'article',
+                            id: '7',
+                            response: {
                                 articleLinks: {
                                     fullTextLinks: [],
                                     pdfLinks: [],
-                                    urls: []
-                                }
-                            }
-                        }
-                    }, {
-                        type: 'RETRIEVE_SUCCESS',
-                        category: 'article',
-                        id: '7',
-                        response: {
-                            articleLinks: {
-                                fullTextLinks: [],
-                                pdfLinks: [],
-                                urls: []
-                            }
-                        }
-                    }),
+                                    urls: [],
+                                },
+                            },
+                        },
+                    ),
                     {
                         byId: {
                             7: {
-                                articleLinks: null
-                            }
-                        }
-                    }
+                                articleLinks: null,
+                            },
+                        },
+                    },
                 );
             });
         });
     });
 
-
-    describe('selector', function () {
-
-        describe('getCurrentPageData', function () {
-
-            it('should return currentPageData', function () {
-                assert.deepEqual(fromSearchResult.getCurrentPageData({
-                    currentPage: 64,
-                    64: [128, 129],
-                    65: [130, 131]
-                }), [128, 129]);
+    describe('selector', function() {
+        describe('getCurrentPageData', function() {
+            it('should return currentPageData', function() {
+                assert.deepEqual(
+                    fromSearchResult.getCurrentPageData({
+                        currentPage: 64,
+                        64: [128, 129],
+                        65: [130, 131],
+                    }),
+                    [128, 129],
+                );
             });
 
-            it('should return undefined if no currentPage', function () {
-                assert.isUndefined(fromSearchResult.getCurrentPageData({
-                    currentPage: null,
-                    64: 'currentPage',
-                    65: 'otherPage'
-                }));
-            });
-        });
-
-        describe('getCurrentPageRecords', function () {
-
-            it('should return record for currentPage', function () {
-                assert.deepEqual(fromSearchResult.getCurrentPageRecords({
-                    byId: {
-                        128: { id: 128 },
-                        129: { id: 129 },
-                        130: { id: 130 },
-                        131: { id: 131 }
-                    },
-                    currentPage: 64,
-                    64: [128, 129],
-                    65: [130, 131]
-                }), [{ id: 128 }, { id: 129 }]);
-            });
-
-            it('should return empty array if no currentPage', function () {
-                assert.deepEqual(fromSearchResult.getCurrentPageRecords({
-                    currentPage: null,
-                    64: 'currentPage',
-                    65: 'otherPage'
-                }), []);
+            it('should return undefined if no currentPage', function() {
+                assert.isUndefined(
+                    fromSearchResult.getCurrentPageData({
+                        currentPage: null,
+                        64: 'currentPage',
+                        65: 'otherPage',
+                    }),
+                );
             });
         });
 
-        describe('getPaginationData', function () {
+        describe('getCurrentPageRecords', function() {
+            it('should return record for currentPage', function() {
+                assert.deepEqual(
+                    fromSearchResult.getCurrentPageRecords({
+                        byId: {
+                            128: { id: 128 },
+                            129: { id: 129 },
+                            130: { id: 130 },
+                            131: { id: 131 },
+                        },
+                        currentPage: 64,
+                        64: [128, 129],
+                        65: [130, 131],
+                    }),
+                    [{ id: 128 }, { id: 129 }],
+                );
+            });
 
-            it('should return pagination information', function () {
+            it('should return empty array if no currentPage', function() {
+                assert.deepEqual(
+                    fromSearchResult.getCurrentPageRecords({
+                        currentPage: null,
+                        64: 'currentPage',
+                        65: 'otherPage',
+                    }),
+                    [],
+                );
+            });
+        });
+
+        describe('getPaginationData', function() {
+            it('should return pagination information', function() {
                 const paginationData = fromSearchResult.getPaginationData({
                     currentPage: 64,
                     totalHits: 197,
                     maxPage: 65,
                     1: [1, 2, 3],
                     64: [192, 193, 194],
-                    65: [195, 196, 197]
+                    65: [195, 196, 197],
                 });
 
                 assert.deepEqual(paginationData, {
@@ -265,52 +283,84 @@ describe('reducers createSearchResult', function () {
                     last: 194,
                     totalHits: 197,
                     maxPage: 65,
-                    currentPage: 64
+                    currentPage: 64,
                 });
             });
         });
 
-        describe('getRecordById', function () {
-            it('should return recordById', function () {
-                assert.deepEqual(fromSearchResult.getRecordById({
-                    byId: {
-                        1: { id: 1 },
-                        2: { id: 2 },
-                        3: { id: 3 }
-                    }
-                }, 2), { id: 2 });
+        describe('getRecordById', function() {
+            it('should return recordById', function() {
+                assert.deepEqual(
+                    fromSearchResult.getRecordById(
+                        {
+                            byId: {
+                                1: { id: 1 },
+                                2: { id: 2 },
+                                3: { id: 3 },
+                            },
+                        },
+                        2,
+                    ),
+                    { id: 2 },
+                );
             });
         });
 
-        describe('getRecordIdsWithMissingLink', function () {
-            it('should return recordIds for all record in currentPage who have no articleLinks', function () {
-                assert.deepEqual(fromSearchResult.getRecordIdsWithMissingLink({
-                    currentPage: 5,
-                    5: [1, 2, 3, 4, 5],
-                    6: [6, 7, 8, 9, 10],
-                    byId: {
-                        1: { articleLinks: { pdfLinks: ['link'] } },
-                        2: { articleLinks: { pdfLinks: ['link'] } },
-                        3: { articleLinks: { pdfLinks: ['link'] } },
-                        4: {},
-                        5: {}
-                    }
-                }), [4, 5]);
+        describe('getRecordIdsWithMissingLink', function() {
+            it('should return recordIds for all record in currentPage who have no articleLinks', function() {
+                assert.deepEqual(
+                    fromSearchResult.getRecordIdsWithMissingLink({
+                        currentPage: 5,
+                        5: [1, 2, 3, 4, 5],
+                        6: [6, 7, 8, 9, 10],
+                        byId: {
+                            1: { articleLinks: { pdfLinks: ['link'] } },
+                            2: { articleLinks: { pdfLinks: ['link'] } },
+                            3: { articleLinks: { pdfLinks: ['link'] } },
+                            4: {},
+                            5: {},
+                        },
+                    }),
+                    [4, 5],
+                );
             });
 
-            it('should return recordIds for all record in currentPage who have 0 articleLinks.fullTextLinks && 0 articleLinks.pdfLinks', function () {
-                assert.deepEqual(fromSearchResult.getRecordIdsWithMissingLink({
-                    currentPage: 5,
-                    5: [1, 2, 3, 4, 5],
-                    6: [6, 7, 8, 9, 10],
-                    byId: {
-                        1: { articleLinks: { pdfLinks: [], fullTextLinks: [] } },
-                        2: { articleLinks: { pdfLinks: ['link'], fullTextLinks: ['link'] } },
-                        3: { articleLinks: { pdfLinks: ['link'], fullTextLinks: [] } },
-                        4: { articleLinks: { pdfLinks: [], fullTextLinks: ['link'] } },
-                        5: { articleLinks: {} }
-                    }
-                }), [1, 5]);
+            it('should return recordIds for all record in currentPage who have 0 articleLinks.fullTextLinks && 0 articleLinks.pdfLinks', function() {
+                assert.deepEqual(
+                    fromSearchResult.getRecordIdsWithMissingLink({
+                        currentPage: 5,
+                        5: [1, 2, 3, 4, 5],
+                        6: [6, 7, 8, 9, 10],
+                        byId: {
+                            1: {
+                                articleLinks: {
+                                    pdfLinks: [],
+                                    fullTextLinks: [],
+                                },
+                            },
+                            2: {
+                                articleLinks: {
+                                    pdfLinks: ['link'],
+                                    fullTextLinks: ['link'],
+                                },
+                            },
+                            3: {
+                                articleLinks: {
+                                    pdfLinks: ['link'],
+                                    fullTextLinks: [],
+                                },
+                            },
+                            4: {
+                                articleLinks: {
+                                    pdfLinks: [],
+                                    fullTextLinks: ['link'],
+                                },
+                            },
+                            5: { articleLinks: {} },
+                        },
+                    }),
+                    [1, 5],
+                );
             });
         });
     });

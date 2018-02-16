@@ -7,21 +7,19 @@ import {
     LOGOUT,
     LINKED_SEARCH,
     RESTORE_HISTORY,
-    RELOAD_HISTORY
+    RELOAD_HISTORY,
 } from '../../../lib/actions';
 
-describe('reducers createFacets', function () {
+describe('reducers createFacets', function() {
     describe('actions', function() {
-
         let categoryFacets;
 
-        before(function () {
+        before(function() {
             categoryFacets = createFacets('category');
         });
 
-        describe('SEARCH_SUCCESS', function () {
-
-            it('should return action.response.activeFacets and action.response.facets', function () {
+        describe('SEARCH_SUCCESS', function() {
+            it('should return action.response.activeFacets and action.response.facets', function() {
                 const searchState = categoryFacets(
                     {},
                     {
@@ -29,21 +27,21 @@ describe('reducers createFacets', function () {
                         category: 'category',
                         response: {
                             activeFacets: { active: ['facet'] },
-                            facets: ['facets']
-                        }
-                    }
+                            facets: ['facets'],
+                        },
+                    },
                 );
                 assert.deepEqual(searchState, {
                     active: { active: ['facet'] },
-                    available: ['facets']
+                    available: ['facets'],
                 });
             });
 
-            it('should change only action.response.facets if action.response.totalHits is 0', function () {
+            it('should change only action.response.facets if action.response.totalHits is 0', function() {
                 const searchState = categoryFacets(
                     {
                         active: { active: ['facet'] },
-                        available: ['facets']
+                        available: ['facets'],
                     },
                     {
                         type: SEARCH_SUCCESS,
@@ -51,38 +49,49 @@ describe('reducers createFacets', function () {
                         response: {
                             activeFacets: {},
                             facets: [],
-                            totalHits: 0
-                        }
-                    }
+                            totalHits: 0,
+                        },
+                    },
                 );
                 assert.deepEqual(searchState, {
                     available: [],
-                    active: { active: ['facet'] }
+                    active: { active: ['facet'] },
                 });
             });
         });
 
-
-        it('should return defaultState if action is LOGOUT', function () {
-            assert.deepEqual(categoryFacets({ active: ['facet'] }, {
-                type: LOGOUT,
-                category: 'category'
-            }), fromState.defaultState);
-        });
-
-        it('should return empty activeFacets if action is CLEAR_FACET OR LINKED_SEARCH', function () {
-            [ CLEAR_FACET, LINKED_SEARCH ].map(type =>
-                assert.deepEqual(categoryFacets({
-                    active: { facet: 'value' },
-                    available: ['facets']
-                },{ type, category: 'category' }), {
-                    active: {},
-                    available: ['facets']
-                })
+        it('should return defaultState if action is LOGOUT', function() {
+            assert.deepEqual(
+                categoryFacets(
+                    { active: ['facet'] },
+                    {
+                        type: LOGOUT,
+                        category: 'category',
+                    },
+                ),
+                fromState.defaultState,
             );
         });
 
-        it('should add action.value to [action.name] if action is CHANGE_FACET and checked is true', function () {
+        it('should return empty activeFacets if action is CLEAR_FACET OR LINKED_SEARCH', function() {
+            [CLEAR_FACET, LINKED_SEARCH].map(type =>
+                assert.deepEqual(
+                    categoryFacets(
+                        {
+                            active: { facet: 'value' },
+                            available: ['facets'],
+                        },
+                        { type, category: 'category' },
+                    ),
+                    {
+                        active: {},
+                        available: ['facets'],
+                    },
+                ),
+            );
+        });
+
+        it('should add action.value to [action.name] if action is CHANGE_FACET and checked is true', function() {
             const searchState = categoryFacets(
                 { active: { id: ['old value'] } },
                 {
@@ -90,14 +99,15 @@ describe('reducers createFacets', function () {
                     category: 'category',
                     id: 'id',
                     value: 'new value',
-                    checked: true }
+                    checked: true,
+                },
             );
             assert.deepEqual(searchState, {
-                active: { id: ['old value', 'new value'] }
+                active: { id: ['old value', 'new value'] },
             });
         });
 
-        it('should initialize action.value to [action.id] if action is CHANGE_FACET and checked is true and there was no value yet', function () {
+        it('should initialize action.value to [action.id] if action is CHANGE_FACET and checked is true and there was no value yet', function() {
             const searchState = categoryFacets(
                 { active: {} },
                 {
@@ -105,15 +115,15 @@ describe('reducers createFacets', function () {
                     category: 'category',
                     id: 'id',
                     value: 'value',
-                    checked: true
-                }
+                    checked: true,
+                },
             );
             assert.deepEqual(searchState, {
-                active: { id: ['value'] }
+                active: { id: ['value'] },
             });
         });
 
-        it('should remove action.value from [action.name] if action is CHANGE_FACET and checked is false', function () {
+        it('should remove action.value from [action.name] if action is CHANGE_FACET and checked is false', function() {
             const searchState = categoryFacets(
                 { active: { id: ['value', 'other'] } },
                 {
@@ -121,15 +131,15 @@ describe('reducers createFacets', function () {
                     category: 'category',
                     id: 'id',
                     value: 'value',
-                    checked: false
-                }
+                    checked: false,
+                },
             );
             assert.deepEqual(searchState, {
-                active: { id: ['other'] }
+                active: { id: ['other'] },
             });
         });
 
-        it('should change nothing if action is CHANGE_FACET checked is false and value was not in [action.id]', function () {
+        it('should change nothing if action is CHANGE_FACET checked is false and value was not in [action.id]', function() {
             const searchState = categoryFacets(
                 { active: { id: ['other'] } },
                 {
@@ -137,50 +147,53 @@ describe('reducers createFacets', function () {
                     category: 'category',
                     id: 'id',
                     value: 'value',
-                    checked: false
-                }
+                    checked: false,
+                },
             );
             assert.deepEqual(searchState, {
-                active: { id: ['other'] }
+                active: { id: ['other'] },
             });
         });
 
-        it('should return action.query.activeFacets if action is RELOAD_HISTORY or RESTORE_HISTORY', function () {
-            assert.deepEqual(categoryFacets(
-                null,
-                {
+        it('should return action.query.activeFacets if action is RELOAD_HISTORY or RESTORE_HISTORY', function() {
+            assert.deepEqual(
+                categoryFacets(null, {
                     type: RELOAD_HISTORY,
                     category: 'category',
-                    query: { activeFacets: { facet: ['value'] } }
-                }
-            ), {
-                active: { facet: ['value'] },
-                available: []
-            });
-            assert.deepEqual(categoryFacets(
-                null,
+                    query: { activeFacets: { facet: ['value'] } },
+                }),
                 {
+                    active: { facet: ['value'] },
+                    available: [],
+                },
+            );
+            assert.deepEqual(
+                categoryFacets(null, {
                     type: RESTORE_HISTORY,
                     category: 'category',
-                    query: { activeFacets: { facet: ['value']  } }
-                }
-            ), {
-                active: { facet: ['value'] },
-                available: []
-            });
+                    query: { activeFacets: { facet: ['value'] } },
+                }),
+                {
+                    active: { facet: ['value'] },
+                    available: [],
+                },
+            );
         });
     });
 
     describe('selector', function() {
         describe('hasActiveFacet', function() {
             it('should return true if there is at least an active facet', function() {
-                assert.isTrue(fromState.hasActiveFacet({ active: { 0: 'active facet value'}}));
+                assert.isTrue(
+                    fromState.hasActiveFacet({
+                        active: { 0: 'active facet value' },
+                    }),
+                );
             });
 
             it('should return false if there no active facet', function() {
-                assert.isFalse(fromState.hasActiveFacet({ active: {}}));
+                assert.isFalse(fromState.hasActiveFacet({ active: {} }));
             });
         });
     });
-
 });

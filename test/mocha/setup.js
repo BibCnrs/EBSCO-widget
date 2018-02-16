@@ -6,7 +6,9 @@ import Adapter from 'enzyme-adapter-react-16';
 var React = require('react');
 
 Enzyme.configure({ adapter: new Adapter() });
-require.extensions['.css'] = function() {return null;}; // allow to ignore css required by react-fa during test
+require.extensions['.css'] = function() {
+    return null;
+}; // allow to ignore css required by react-fa during test
 
 global.assert = assert;
 global.React = React;
