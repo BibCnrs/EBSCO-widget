@@ -27,7 +27,8 @@
         }],
         "import/no-extraneous-dependencies": "off",
         "no-console": ["error", { "allow": ["warn", "error"] }],
-        "no-unused-vars": ["error", { "ignoreRestSiblings": true }]
+        "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+        "import/no-named-as-default": "off"
     },
     "globals": {
         "__DEVELOPMENT__": true,
