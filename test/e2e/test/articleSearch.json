@@ -22,6 +22,10 @@
 	"domains": {
 		"all": ["vie", "shs"],
 		"available": ["vie", "shs"],
+		"byName": {
+			"vie": "vie.bib.cnrs.fr",
+			"shs": "vie.bib.cnrs.fr"
+		},
 		"article": "vie",
 		"publication": "vie"
 	},
