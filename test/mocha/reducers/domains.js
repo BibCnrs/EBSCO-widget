@@ -17,11 +17,18 @@ describe('reducer domains', function() {
                     {},
                     {
                         type: SET_ALL_DOMAINS,
-                        domains: ['INSB', 'INSHS'],
+                        domains: [
+                            { name: 'INSB', gate: 'insb.gate' },
+                            { name: 'INSHS', gate: 'inshs.gate' },
+                        ],
                     },
                 ),
                 {
                     all: ['INSB', 'INSHS'],
+                    byName: {
+                        INSB: 'insb.gate',
+                        INSHS: 'inshs.gate',
+                    },
                     publication: 'INSB',
                 },
             );
@@ -35,11 +42,18 @@ describe('reducer domains', function() {
                     },
                     {
                         type: SET_ALL_DOMAINS,
-                        domains: ['INSB', 'INSHS'],
+                        domains: [
+                            { name: 'INSB', gate: 'insb.gate' },
+                            { name: 'INSHS', gate: 'inshs.gate' },
+                        ],
                     },
                 ),
                 {
                     all: ['INSB', 'INSHS'],
+                    byName: {
+                        INSB: 'insb.gate',
+                        INSHS: 'inshs.gate',
+                    },
                     publication: 'INSHS',
                     defaultDomain: 'INSHS',
                 },

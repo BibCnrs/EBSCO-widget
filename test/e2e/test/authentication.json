@@ -22,6 +22,10 @@
 	"dbUrl": "http://google.fr",
 	"domains": {
 		"all": ["vie", "shs"],
+		"byName": {
+			"vie": "vie.bib.cnrs.fr",
+			"shs": "vie.bib.cnrs.fr"
+		},
 		"available": [],
 		"article": null,
 		"publication": "vie"
