@@ -27,7 +27,8 @@ describe('parseArticleLinks', () => {
             ),
             [
                 {
-                    url: 'http://currentGate/login?url=www.google.fr',
+                    url:
+                        'http://currentGate.bib.cnrs.fr/login?url=www.google.fr',
                     name: 'pdfLinks',
                     icon: 'file-pdf-o',
                 },
@@ -98,7 +99,8 @@ describe('parseArticleLinks', () => {
             [
                 { link: 1, icon: 'th-list' },
                 {
-                    url: 'http://currentGate/login?url=www.google.fr',
+                    url:
+                        'http://currentGate.bib.cnrs.fr/login?url=www.google.fr',
                     name: 'pdfLinks',
                     icon: 'file-pdf-o',
                 },
