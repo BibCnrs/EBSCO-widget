@@ -146,6 +146,7 @@ describe('Database', function() {
                     url: null,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
+                    domain: 'ALL',
                 });
             });
         });
@@ -188,6 +189,7 @@ describe('Database', function() {
                     }`,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
+                    domain: 'INSU',
                 });
             });
         });
