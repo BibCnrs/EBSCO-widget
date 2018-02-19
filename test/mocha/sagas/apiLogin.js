@@ -5,31 +5,34 @@ import * as fromState from '../../../lib/selectors';
 import fetch from '../../../lib/sagas/fetch';
 import actions from '../../../lib/actions';
 
-describe('sagas apiLogin', function () {
+describe('sagas apiLogin', function() {
     let iterator;
     let action = {
         data: {
             username: 'john',
-            password: 'secret'
-        }
+            password: 'secret',
+        },
     };
-    beforeEach(function () {
+    beforeEach(function() {
         iterator = apiLogin(action);
     });
 
-    it('should select apiLoginRequest', function () {
+    it('should select apiLoginRequest', function() {
         const next = iterator.next();
         assert.deepEqual(next.value, select(fromState.getApiLoginRequest));
     });
 
-    it('should call the fetch for the apiLoginRequest', function () {
+    it('should call the fetch for the apiLoginRequest', function() {
         iterator.next();
         const next = iterator.next({ request: 'object' });
 
-        assert.deepEqual(next.value, call(fetch, { request: 'object' }, [], false));
+        assert.deepEqual(
+            next.value,
+            call(fetch, { request: 'object' }, [], false),
+        );
     });
 
-    it('should trigger loginCancel if receiving cancel', function () {
+    it('should trigger loginCancel if receiving cancel', function() {
         iterator.next();
         iterator.next({ request: 'object' });
         const next = iterator.next({ cancel: true, response: 'response' });
@@ -38,7 +41,7 @@ describe('sagas apiLogin', function () {
         assert.isTrue(iterator.next().done);
     });
 
-    it('should trigger loginError if receiving error', function () {
+    it('should trigger loginError if receiving error', function() {
         iterator.next();
         iterator.next({ request: 'object' });
         const next = iterator.next({ response: 'response', error: 'error' });
@@ -47,12 +50,11 @@ describe('sagas apiLogin', function () {
         assert.isTrue(iterator.next().done);
     });
 
-    it('should trigger loginSuccess if receiving response with no error', function () {
+    it('should trigger loginSuccess if receiving response with no error', function() {
         iterator.next();
         iterator.next({ request: 'object' });
         const next = iterator.next({ response: 'response' });
 
         assert.deepEqual(next.value, put(actions.loginSuccess('response')));
     });
-
 });

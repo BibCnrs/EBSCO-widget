@@ -1,7 +1,7 @@
 import nightwatch from 'nightwatch';
 import { assert } from 'chai';
 
-before(function (done) {
+before(function(done) {
     this.timeout(20000);
     global.assert = assert;
 
@@ -12,29 +12,28 @@ before(function (done) {
         custom_assertions_path: './test/e2e/assertion',
         selenium_host: 'hub',
         desiredCapabilities: {
-            browserName: 'chrome'
+            browserName: 'chrome',
         },
-        launch_url: 'http://app'
+        launch_url: 'http://app',
     });
 
     global.browser = global.client.api();
 
-    global.browser
-    .url(global.browser.launch_url);
+    global.browser.url(global.browser.launch_url);
 
     global.client.start(done);
 });
 
-beforeEach(function (done) {
+beforeEach(function(done) {
     this.timeout(20000);
     global.browser
-    .url(global.browser.launch_url)
-    .waitForElementVisible('.ebsco-widget', 1000);
+        .url(global.browser.launch_url)
+        .waitForElementVisible('.ebsco-widget', 1000);
 
     global.client.start(done);
 });
 
-after(function () {
+after(function() {
     global.browser.end();
     global.client.terminate();
 });

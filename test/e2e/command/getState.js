@@ -1,4 +1,3 @@
-
 exports.command = function(callback) {
     this.execute(
         function() {
@@ -9,7 +8,7 @@ exports.command = function(callback) {
             if (typeof callback === 'function') {
                 callback(result.value);
             }
-        }
+        },
     );
 
     return this;

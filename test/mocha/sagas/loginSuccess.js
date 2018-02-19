@@ -6,33 +6,45 @@ import * as fromState from '../../../lib/selectors';
 import { sessionStorage } from '../../../lib/services/storage';
 import actions from '../../../lib/actions';
 
-describe('sagas loginSuccess', function () {
+describe('sagas loginSuccess', function() {
     let iterator;
     let action = {
         response: {
             username: 'john',
-            domains: ['INSB', 'INSHS']
-        }
+            domains: ['INSB', 'INSHS'],
+        },
     };
-    beforeEach(function () {
+    beforeEach(function() {
         iterator = loginSuccess(action);
     });
 
-    it('should call sessionStorage.setItem three times', function () {
+    it('should call sessionStorage.setItem three times', function() {
         let next = iterator.next();
-        assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_username', 'john'));
+        assert.deepEqual(
+            next.value,
+            call(sessionStorage.setItem, 'EBSCO_WIDGET_username', 'john'),
+        );
         next = iterator.next();
-        assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_availableDomains', ['INSB', 'INSHS']));
+        assert.deepEqual(
+            next.value,
+            call(sessionStorage.setItem, 'EBSCO_WIDGET_availableDomains', [
+                'INSB',
+                'INSHS',
+            ]),
+        );
         next = iterator.next();
-        assert.deepEqual(next.value, call(sessionStorage.setItem, 'EBSCO_WIDGET_domain', 'INSB'));
+        assert.deepEqual(
+            next.value,
+            call(sessionStorage.setItem, 'EBSCO_WIDGET_domain', 'INSB'),
+        );
     });
 
     it('should put noDomainError and end if no domain', () => {
         iterator = loginSuccess({
             response: {
                 username: 'john',
-                domains: []
-            }
+                domains: [],
+            },
         });
         iterator.next();
         iterator.next();
@@ -51,26 +63,32 @@ describe('sagas loginSuccess', function () {
         assert.deepEqual(next.value, call(updateDomain));
     });
 
-    it('should select canPersistHistoryOnServer if no domainFromUrl', function () {
+    it('should select canPersistHistoryOnServer if no domainFromUrl', function() {
         iterator.next();
         iterator.next();
         iterator.next();
         iterator.next();
 
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.canPersistHistoryOnServer));
+        assert.deepEqual(
+            next.value,
+            select(fromState.canPersistHistoryOnServer),
+        );
     });
 
-    it('should load history from server if canPersistHistoryOnServer is true', function () {
+    it('should load history from server if canPersistHistoryOnServer is true', function() {
         iterator.next();
         iterator.next();
         iterator.next();
         iterator.next();
         iterator.next();
-        assert.deepEqual(iterator.next(true).value, put(actions.loadHistoryPage()));
+        assert.deepEqual(
+            iterator.next(true).value,
+            put(actions.loadHistoryPage()),
+        );
     });
 
-    it('should end if no pausedAction', function () {
+    it('should end if no pausedAction', function() {
         iterator.next();
         iterator.next();
         iterator.next();
@@ -82,7 +100,7 @@ describe('sagas loginSuccess', function () {
         assert.isTrue(next.done);
     });
 
-    it('should put retrieved pausedAction', function () {
+    it('should put retrieved pausedAction', function() {
         iterator.next();
         iterator.next();
         iterator.next();
@@ -90,8 +108,7 @@ describe('sagas loginSuccess', function () {
 
         iterator.next();
         iterator.next(false);
-        const next = iterator.next({ type: 'PAUSED_ACTION'});
+        const next = iterator.next({ type: 'PAUSED_ACTION' });
         assert.deepEqual(next.value, put({ type: 'PAUSED_ACTION' }));
     });
-
 });

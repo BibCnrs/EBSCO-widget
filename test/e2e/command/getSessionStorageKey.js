@@ -1,4 +1,3 @@
-
 exports.command = function(key, callback) {
     this.execute(
         function(key) {
@@ -9,7 +8,7 @@ exports.command = function(key, callback) {
             if (typeof callback === 'function') {
                 callback(self, result);
             }
-        }
+        },
     );
 
     return this;

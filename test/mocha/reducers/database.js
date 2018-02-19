@@ -35,11 +35,14 @@ describe('databases', () => {
     });
 
     it('should ignore case', () => {
-        assert.deepEqual(getSortedDatabases([{ name_fr: 'oiseau' }, { name_fr: 'Oregon' }], 'fr'), {
-            o: [
-                { name_fr: 'oiseau' },
-                { name_fr: 'Oregon' },
-            ],
-        });
+        assert.deepEqual(
+            getSortedDatabases(
+                [{ name_fr: 'oiseau' }, { name_fr: 'Oregon' }],
+                'fr',
+            ),
+            {
+                o: [{ name_fr: 'oiseau' }, { name_fr: 'Oregon' }],
+            },
+        );
     });
 });

@@ -1,11 +1,11 @@
 import { BatchExport } from '../../../lib/components/BatchExport';
 
-describe('BatchExport', function () {
-    it('render a span instead of a BibButton if selectedIds is empty', function () {
+describe('BatchExport', function() {
+    it('render a span instead of a BibButton if selectedIds is empty', function() {
         const props = {
             selectedIds: [],
             exportTypes: ['RIS format'],
-            exporting: false
+            exporting: false,
         };
 
         const component = enzyme.shallow(<BatchExport {...props} />);
@@ -15,13 +15,15 @@ describe('BatchExport', function () {
         assert.equal(span.length, 1);
     });
 
-    it('render a DropdownButton if selectedIds contain value that call exportNotice with selectedIds on click', function () {
+    it('render a DropdownButton if selectedIds contain value that call exportNotice with selectedIds on click', function() {
         let onClickCall;
         const props = {
             selectedIds: [1, 2],
             exportTypes: ['ris'],
             exporting: false,
-            exportNotice: (...args) => { onClickCall = args;}
+            exportNotice: (...args) => {
+                onClickCall = args;
+            },
         };
         const component = enzyme.shallow(<BatchExport {...props} />);
         const dropdownButton = component.find('.batch-export');
