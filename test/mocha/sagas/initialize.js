@@ -116,24 +116,10 @@ describe('sagas initialize', function() {
             );
         });
 
-        it('should select getQueryListTerm', function() {
-            iterator.next();
-            iterator.next();
-            iterator.next(['insb', 'inshs']);
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            assert.deepEqual(
-                iterator.next().value,
-                select(fromState.getQueryListTerm),
-            );
-        });
-
         it('should select getLocation', function() {
             iterator.next();
             iterator.next();
             iterator.next(['insb', 'inshs']);
-            iterator.next();
             iterator.next();
             iterator.next();
             iterator.next();
@@ -143,26 +129,10 @@ describe('sagas initialize', function() {
             );
         });
 
-        it('should put search() if term is available', function() {
+        it('should put showResult(false)', function() {
             iterator.next();
             iterator.next();
             iterator.next(['insb', 'inshs']);
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next();
-            iterator.next('foo');
-            assert.deepEqual(
-                iterator.next('bar').value,
-                put(actions.search('bar')),
-            );
-        });
-
-        it('should put showResult(false) if term is not false', function() {
-            iterator.next();
-            iterator.next();
-            iterator.next(['insb', 'inshs']);
-            iterator.next();
             iterator.next();
             iterator.next();
             iterator.next();
