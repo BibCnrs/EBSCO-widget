@@ -134,6 +134,7 @@ describe('Database', function() {
                         imge: 'insb image',
                     },
                 ],
+                clickDb: () => {},
             };
             const component = enzyme.shallow(<DatabaseLetter {...props} />);
 
@@ -141,12 +142,14 @@ describe('Database', function() {
             assert.equal(databaseItems.length, 2);
             databaseItems.map((databaseItem, index) => {
                 const expectedItem = props.databases[index];
-                assert.deepEqual(databaseItem.props(), {
+                const itemProps = databaseItem.props();
+                assert.deepEqual(itemProps, {
                     name: expectedItem.name_fr,
                     url: null,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                     domain: 'ALL',
+                    onDbClick: itemProps.onDbClick,
                 });
             });
         });
@@ -182,7 +185,8 @@ describe('Database', function() {
             assert.equal(databaseItems.length, 2);
             databaseItems.map((databaseItem, index) => {
                 const expectedItem = props.databases[index];
-                assert.deepEqual(databaseItem.props(), {
+                const itemProps = databaseItem.props();
+                assert.deepEqual(itemProps, {
                     name: expectedItem.name_fr,
                     url: `https://insu.bib.cnrs.fr/login?url=${
                         expectedItem.url_fr
@@ -190,6 +194,7 @@ describe('Database', function() {
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                     domain: 'INSU',
+                    onDbClick: itemProps.onDbClick,
                 });
             });
         });

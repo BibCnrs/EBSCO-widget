@@ -128,8 +128,6 @@ describe('sagas search', function() {
             ),
         );
         next = iterator.next();
-        assert.deepEqual(next.value, call(trackSearch, 'article', 'domain'));
-        next = iterator.next();
         assert.isTrue(next.done);
     });
 });
