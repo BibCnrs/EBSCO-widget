@@ -1,7 +1,26 @@
 {
     "presets": [
+        ["env", {
+            "targets": {
+                "browsers": [
+                    "Chrome >= 29",
+                    "FireFox >= 22",
+                    "Safari >= 7",
+                    "Opera >= 12",
+                    "Explorer >= 10",
+                    "last 4 Edge versions"
+                ]
+            },
+            "useBuiltIns": true
+        }],
         "react",
-        "es2015",
         "stage-2"
+    ],
+    "ignore": [
+        "node_modules"
+    ],
+    "plugins": [
+        "transform-class-properties",
+        "syntax-class-properties"
     ]
 }
