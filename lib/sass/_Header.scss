@@ -3,19 +3,18 @@
     box-sizing: border-box;
 }
 .infos {
-    width: 55%;
     padding: 5px 0px 5px 0px;
     font-style: italic;
     font-size: 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    .name, .otherdomains{
-        text-align: right;
-    }
-}
-@media (max-width: 660px) {
-    .infos {
-        display: none;
+    .name, .otherdomains {
+        .text {
+            color: #333;
+        }
+        .profile-icon {
+            margin-right: 20px;
+        }
     }
 }
