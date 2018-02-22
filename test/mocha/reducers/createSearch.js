@@ -7,8 +7,7 @@ import {
     SEARCH_SUCCESS,
     SEARCH_ERROR,
     CHANGE_SORT,
-    CHANGE_RESULTS_PER_PAGE,
-    A2Z_SEARCH,
+    CHANGE_RESULTS_PER_PAGE
 } from '../../../lib/actions';
 
 describe('reducers createSearch', function() {
@@ -114,22 +113,6 @@ describe('reducers createSearch', function() {
                     status: 'DONE',
                     term: 'aids',
                     dateRange: 'date range',
-                });
-            });
-        });
-
-        describe('A2Z_SEARCH', () => {
-            it('should set sort to title', () => {
-                const searchState = categorySearch(
-                    { foo: 'bar' },
-                    {
-                        type: A2Z_SEARCH,
-                        category: 'category',
-                    },
-                );
-                assert.deepEqual(searchState, {
-                    foo: 'bar',
-                    sort: 'title',
                 });
             });
         });
