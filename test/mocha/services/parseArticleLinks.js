@@ -79,6 +79,7 @@ describe('parseArticleLinks', () => {
                     url: 'data:text/html;charset=utf-8,html%20content',
                     icon: 'file-code-o',
                     download: true,
+                    onClick: undefined,
                 },
             ],
         );
@@ -114,6 +115,7 @@ describe('parseArticleLinks', () => {
                     url: 'data:text/html;charset=utf-8,html%20content',
                     icon: 'file-code-o',
                     download: true,
+                    onClick: undefined,
                 },
             ],
         );
