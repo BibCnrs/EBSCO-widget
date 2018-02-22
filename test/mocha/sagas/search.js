@@ -5,6 +5,7 @@ import fetch from '../../../lib/sagas/fetch';
 import * as fromState from '../../../lib/selectors';
 
 import actions, { SEARCH, RETRIEVE, LOGOUT } from '../../../lib/actions';
+import { trackSearch } from '../../../lib/services/piwikTracker';
 
 describe('sagas search', function() {
     let iterator;
@@ -109,12 +110,12 @@ describe('sagas search', function() {
         assert.isTrue(next.done);
     });
 
-    it('should put searchSuccess, loaded and return if receiving response key', function() {
+    it('should put searchSuccess, loaded, call trackSearch and return if receiving response key', function() {
         iterator.next();
         iterator.next(true);
         iterator.next(true);
         iterator.next();
-        iterator.next({ search: 'query' });
+        iterator.next({ search: 'query', domain: 'domain' });
         iterator.next({ search: 'request' });
         let next = iterator.next({ response: 'response' });
         assert.deepEqual(
@@ -122,6 +123,7 @@ describe('sagas search', function() {
             put(
                 actions.searchSuccess(action.category, 'response', {
                     search: 'query',
+                    domain: 'domain',
                 }),
             ),
         );
