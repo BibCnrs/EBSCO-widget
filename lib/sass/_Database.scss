@@ -67,11 +67,16 @@
         padding: 2px 5px 2px 2px;
         display: flex;
         width: 211px;
-        height: 48px;
+        min-height: 48px;
         border: #dcded9 solid 2px;
         border-radius: 10px;
         line-height: 40px;
         background-color: #fff;
+        color: #000;
+        line-height: 40px;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: 5px center;
         .title {
             font-size: 12px;
             font-weight: normal;
@@ -80,13 +85,10 @@
             text-align: right;
             line-height: 2rem;
         }
-        a {
-            color: #000;
-            line-height: 40px;
-            vertical-align: middle;
-        }
         img {
-            vertical-align: middle;
+            object-fit: contain;
+            width: auto;
+            display: block;
         }
     }
 
