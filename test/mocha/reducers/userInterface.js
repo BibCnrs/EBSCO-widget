@@ -191,6 +191,7 @@ describe('reducers userInterface', function() {
                     readOnlyLanguage: true,
                     noticeBeingExported: [],
                     other: 'data',
+                    publicationSort: undefined,
                 },
             );
         });
@@ -203,6 +204,7 @@ describe('reducers userInterface', function() {
                     readOnlyLanguage: false,
                     noticeBeingExported: [],
                     other: 'data',
+                    publicationSort: undefined,
                 },
             );
         });
@@ -219,6 +221,7 @@ describe('reducers userInterface', function() {
                     noticeBeingExported: [],
                     other: 'data',
                     location: 'publication',
+                    publicationSort: undefined,
                 },
             );
         });
