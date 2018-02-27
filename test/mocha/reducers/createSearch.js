@@ -129,7 +129,6 @@ describe('reducers createSearch', function() {
                 );
                 assert.deepEqual(searchState, {
                     foo: 'bar',
-                    sort: 'title',
                 });
             });
         });
