@@ -50,6 +50,7 @@
         -webkit-column-break-inside: avoid;
         page-break-inside: avoid;
         break-inside: avoid-column;
+        display: inline-block;
         h2 {
             margin-top: 0px;
             padding-left: 20px;
