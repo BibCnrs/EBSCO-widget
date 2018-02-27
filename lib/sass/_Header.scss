@@ -1,6 +1,5 @@
 .header {
     box-sizing: border-box;
-    padding: 5px 0px 5px 0px;
     font-style: italic;
     font-size: 14px;
     display: flex;
@@ -19,13 +18,13 @@
             }
         }
     }
-    .connect {
-        align-self: center;
-        .btn {
-            .text{
-                text-transform: uppercase;
-                font-weight: bold;
-            }
+}
+
+.connection {
+    .btn {
+        .text{
+            text-transform: uppercase;
+            font-weight: bold;
         }
     }
 }
