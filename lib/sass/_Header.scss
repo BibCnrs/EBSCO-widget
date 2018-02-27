@@ -21,5 +21,11 @@
     }
     .connect {
         align-self: center;
+        .btn {
+            .text{
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
     }
 }
