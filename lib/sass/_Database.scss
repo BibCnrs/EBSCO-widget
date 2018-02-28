@@ -57,28 +57,25 @@
             font-weight: bold;
             color: #fff;
         }
-        li {
-            display: inline-block;
-        }
     }
     .db {
         color:#000;
         margin: 5px 5px 0px 5px;
         padding: 2px 5px 2px 2px;
-        display: flex;
+        display: block;
         width: 211px;
         height: 48px;
         border: #dcded9 solid 2px;
         border-radius: 10px;
         line-height: 40px;
         background-color: #fff;
+        vertical-align: middle;
         .title {
+            float:right;
             font-size: 12px;
             font-weight: normal;
             vertical-align: middle;
-            margin-left: auto;
-            text-align: right;
-            line-height: 2rem;
+            line-height: 40px;
         }
         a {
             color: #000;
