@@ -61,14 +61,13 @@ describe('reducer login', function() {
                 },
                 {
                     type: LOGIN_SUCCESS,
-                    response: { token, username: 'user name' },
+                    response: { token },
                 },
             );
 
             assert.deepEqual(nextState, {
                 isLoggingWithRenater: false,
                 other: 'data',
-                name: 'user name',
                 username: '',
                 password: '',
                 status: 'SUCCESS',
