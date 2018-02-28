@@ -13,6 +13,8 @@ import {
     SHOW_LOGIN,
     HIDE_LOGIN,
     INITIALIZE,
+    EXPORT_NOTICE_SUCCESS,
+    EXPORT_NOTICE_ERROR,
 } from '../../../lib/actions';
 
 import userInterface, {
@@ -222,6 +224,28 @@ describe('reducers userInterface', function() {
                     other: 'data',
                     location: 'publication',
                     publicationSort: undefined,
+                },
+            );
+        });
+    });
+
+    describe('EXPORT_NOTICE_SUCCESS, EXPORT_NOTICE_ERROR', () => {
+        it('should set noticeBeingExported to []', () => {
+            assert.deepEqual(
+                userInterface(
+                    { other: 'data' },
+                    { type: EXPORT_NOTICE_SUCCESS },
+                ),
+                {
+                    other: 'data',
+                    noticeBeingExported: [],
+                },
+            );
+            assert.deepEqual(
+                userInterface({ other: 'data' }, { type: EXPORT_NOTICE_ERROR }),
+                {
+                    other: 'data',
+                    noticeBeingExported: [],
                 },
             );
         });
