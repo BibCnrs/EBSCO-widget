@@ -39,6 +39,7 @@
     "eslint-import-resolver-node": "0.3.2",
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-mocha": "4.11.0",
+    "eslint-plugin-mocha-no-only": "0.0.6",
     "eslint-plugin-prettier": "2.6.0",
     "eslint-plugin-react": "7.6.1",
     "extract-text-webpack-plugin": "1.0.1",
@@ -52,6 +53,7 @@
     "nightwatch": "0.9.8",
     "node-sass": "3.10.1",
     "prettier": "1.10.2",
+    "pre-commit": "1.2.2",
     "react-addons-test-utils": "15.3.2",
     "redux-devtools": "3.3.1",
     "redux-devtools-dock-monitor": "1.1.1",
@@ -93,5 +95,8 @@
     "redux-localstorage-debounce": "0.1.0",
     "redux-saga": "0.12.0",
     "reselect": "2.5.4"
-  }
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
