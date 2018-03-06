@@ -21,10 +21,12 @@
 }
 
 .connection {
+    display: inline;
     .btn {
         .text{
             text-transform: uppercase;
             font-weight: bold;
+            color: #337ab7;
         }
     }
 }
