@@ -27,4 +27,16 @@ describe('favouriteResources reducers', () => {
             assert.deepEqual(favouriteResources('state', actions.logout()), []);
         });
     });
+
+    describe('ADD_FAVOURITE_RESSOURCES', () => {
+        it('should add given resource to state', () => {
+            assert.deepEqual(
+                favouriteResources(
+                    ['resource1', 'resource2'],
+                    actions.addFavouriteResource('new resource'),
+                ),
+                ['new resource', 'resource1', 'resource2'],
+            );
+        });
+    });
 });
