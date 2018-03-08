@@ -67,6 +67,7 @@
         margin: 5px 5px 0px 5px;
         padding: 2px 5px 2px 2px;
         display: flex;
+        flex-direction: column;
         width: 211px;
         min-height: 48px;
         border: #dcded9 solid 2px;
@@ -77,14 +78,18 @@
         line-height: 40px;
         vertical-align: middle;
         background-repeat: no-repeat;
-        background-position: 5px center;
-        .title {
+        background-position: 5px 5px;
+        .title, .bookmark-button {
+            max-width: 80%;
+            color: #000;
             font-size: 12px;
             font-weight: normal;
             vertical-align: middle;
             margin-left: auto;
             text-align: right;
             line-height: 2rem;
+            height: 2.5rem;
+            padding: 0;
         }
         img {
             object-fit: contain;

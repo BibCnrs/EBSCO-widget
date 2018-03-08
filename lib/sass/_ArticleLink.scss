@@ -1,9 +1,18 @@
+@import "./variables.scss";
+
 .article-link, .show-notice {
     ul {
         list-style-type: none;
         padding-left: 0;
         li {
+            display: flex;
             margin-bottom: 5px;
+            &:hover {
+                background-color: $darkerBack;
+            }
+            .bookmark-button {
+                margin-left: auto;
+            }
         }
     }
     margin: 10px;

@@ -1,4 +1,3 @@
-
 @import "./variables.scss";
 
 .record {
@@ -32,8 +31,16 @@
     .fulltext-holdings {
         list-style-type: none;
         .fulltext-holding {
+            display: flex;
+            align-items: center;
+            &:hover {
+                background-color: $darkerBack;
+            }
             &.current {
                 font-weight: bold;
+            }
+            .bookmark-button {
+                margin-left: auto;
             }
         }
     }
