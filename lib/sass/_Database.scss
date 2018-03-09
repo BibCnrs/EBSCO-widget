@@ -90,6 +90,9 @@
             line-height: 2rem;
             height: 2.5rem;
             padding: 0;
+            &.added {
+                color: #f0ad4e;
+            }
         }
         img {
             object-fit: contain;

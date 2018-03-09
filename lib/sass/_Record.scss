@@ -41,6 +41,9 @@
             }
             .bookmark-button {
                 margin-left: auto;
+                &.added {
+                    color: #f0ad4e;
+                }
             }
         }
     }
