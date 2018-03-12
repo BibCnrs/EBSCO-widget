@@ -31,7 +31,50 @@ describe('profile', function() {
             .assert.containsText(
                 '.favourite-resource-item:nth-child(4)',
                 'bibcnrs',
-            );
+            )
+            .end();
+
+        client.start(done);
+    });
+
+    it('should allow to remove resource from profile', function(done) {
+        browser
+            .waitForElementVisible('.profile-button', 1000)
+            .assert.containsText('.text', 'Developer marmelab')
+            .click('.profile-button')
+            .pause(300)
+            .waitForElementVisible('.favourite-resource-list', 1000)
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(1)',
+                '.Test : CNRS',
+            )
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(2)',
+                'Wikipedia',
+            )
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(3)',
+                'google',
+            )
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(4)',
+                'bibcnrs',
+            )
+            .click('.favourite-resource-item:nth-child(2) .delete')
+            .waitForElementVisible('.favourite-resource-list', 1000)
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(1)',
+                '.Test : CNRS',
+            )
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(2)',
+                'google',
+            )
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(3)',
+                'bibcnrs',
+            )
+            .end();
 
         client.start(done);
     });
@@ -40,11 +83,10 @@ describe('profile', function() {
         browser
             .waitForElementVisible('.nav-db', 1000)
             .click('.nav-db')
-            .click('.nav-db')
             .pause(300)
             .waitForElementVisible('.database', 2000)
             .assert.containsText('.database .db .title', 'Test add')
-            .click('.bookmark-button')
+            .click('.letter_t .bookmark-button')
             .pause(1000)
             .waitForElementVisible('.profile-button', 1000)
             .click('.profile-button')
@@ -68,7 +110,8 @@ describe('profile', function() {
             .assert.containsText(
                 '.favourite-resource-item:nth-child(5)',
                 'bibcnrs',
-            );
+            )
+            .end();
 
         client.start(done);
     });
@@ -76,7 +119,6 @@ describe('profile', function() {
     it('should allow to add resource from publication', function(done) {
         browser
             .waitForElementVisible('.nav-publication', 1000)
-            .click('.nav-publication')
             .click('.nav-publication')
             .pause(300)
             .waitForElementVisible('.record_list', 1000)
@@ -112,7 +154,37 @@ describe('profile', function() {
             .assert.containsText(
                 '.favourite-resource-item:nth-child(5)',
                 'bibcnrs',
-            );
+            )
+            .end();
+
+        client.start(done);
+    });
+
+    it('clicking on bookmark button should remove an alredy added resources', function(done) {
+        browser
+            .waitForElementVisible('.nav-db', 1000)
+            .click('.nav-db')
+            .pause(300)
+            .waitForElementVisible('.database', 2000)
+            .assert.containsText('.database .letter_w .db .title', 'Wikipedia')
+            .click('.letter_w .bookmark-button')
+            .pause(1000)
+            .waitForElementVisible('.profile-button', 1000)
+            .click('.profile-button')
+            .waitForElementVisible('.favourite-resource-list', 1000)
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(1)',
+                '.Test : CNRS',
+            )
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(2)',
+                'google',
+            )
+            .assert.containsText(
+                '.favourite-resource-item:nth-child(3)',
+                'bibcnrs',
+            )
+            .end();
 
         client.start(done);
     });
@@ -124,7 +196,6 @@ describe('profile', function() {
             .assert.elementCount('.profile-button', 0)
             .waitForElementVisible('.nav-db', 1000)
             .click('.nav-db')
-            .click('.nav-db')
             .pause(300)
             .waitForElementVisible('.database', 1000)
             .assert.elementCount('.bookmark-button', 0)
@@ -132,7 +203,8 @@ describe('profile', function() {
             .click('.nav-publication')
             .pause(300)
             .waitForElementVisible('.record_list', 1000)
-            .assert.elementCount('.bookmark-button', 0);
+            .assert.elementCount('.bookmark-button', 0)
+            .end();
 
         client.start(done);
     });
@@ -150,7 +222,8 @@ describe('profile', function() {
             .click('.nav-publication')
             .pause(300)
             .waitForElementVisible('.record_list', 1000)
-            .assert.elementCount('.bookmark-button', 0);
+            .assert.elementCount('.bookmark-button', 0)
+            .end();
 
         client.start(done);
     });
