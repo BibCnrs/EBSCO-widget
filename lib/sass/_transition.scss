@@ -56,3 +56,25 @@
     transform: translateY(100%);
     @include single-transition(all, 300ms, ease-in);
 }
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    30%{
+        transform: scale(1.1);
+    }
+
+    75%{
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bounce {
+    animation: bounce 0.5s infinite;
+}

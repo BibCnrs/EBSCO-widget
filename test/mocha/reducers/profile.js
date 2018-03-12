@@ -44,6 +44,7 @@ describe('reducer profile', function() {
                         domains: 'domains',
                         favorite_domain: 'favorite_domain',
                         origin: 'janus',
+                        id: 1,
                     },
                 },
             );
@@ -54,6 +55,7 @@ describe('reducer profile', function() {
                 other: 'data',
                 status: 'NONE',
                 username: 'username',
+                id: 1,
             });
         });
 

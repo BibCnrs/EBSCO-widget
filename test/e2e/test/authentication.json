@@ -593,7 +593,7 @@
 			"key": "initial"
 		}]
 	},
-    "history": { "queries": [] },
+	"history": { "queries": [] },
 	"pausedAction": {
 		"type": "NONE"
 	},
@@ -602,10 +602,12 @@
 		"notice": null,
 		"noticeShown": false
 	},
-    "profile": {
-        "username": null,
-        "domains": [],
-        "favorite_domain": null,
-        "origin": null
-    }
+	"profile": {
+		"username": null,
+		"domains": [],
+		"favorite_domain": null,
+		"origin": null,
+		"id": 1
+	},
+	"favouriteResources": []
 }
