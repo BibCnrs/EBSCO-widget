@@ -3,7 +3,6 @@ import initialState from './authentication.json';
 describe('authentication', function() {
     beforeEach(function(done) {
         browser.pause(1000).loadState(initialState);
-
         client.start(done);
     });
 

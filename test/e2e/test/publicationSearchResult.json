@@ -964,7 +964,7 @@
 			"key": "initial"
 		}]
 	},
-    "history": { "queries": [] },
+	"history": { "queries": [] },
 	"pausedAction": {
 		"type": "NONE"
 	},
@@ -973,10 +973,12 @@
 		"notice": null,
 		"noticeShown": false
 	},
-    "profile": {
-        "username": "Frodo",
-        "domains": ["vie", "shs"],
-        "favorite_domain": "vie",
-        "origin": "inist"
-    }
+	"profile": {
+		"username": "Frodo",
+		"domains": ["vie", "shs"],
+		"favorite_domain": "vie",
+		"origin": "inist",
+		"id": 1
+	},
+	"favouriteResources": []
 }

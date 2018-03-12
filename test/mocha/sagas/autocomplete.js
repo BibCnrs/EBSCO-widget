@@ -24,9 +24,9 @@ describe('sagas autoComplete', function() {
         iterator = autoComplete(action);
     });
 
-    it('should call delay with 100 then call fetch', function() {
+    it('should yield delay with 100 then call fetch', function() {
         let next = iterator.next();
-        assert.deepEqual(next.value, call(delay, 100));
+        assert.deepEqual(next.value, delay(100));
         next = iterator.next();
         assert.deepEqual(
             next.value,
