@@ -1,14 +1,13 @@
-.favourite-resource-list {
-    .favourite-resource-item {
-        display: flex;
-        align-items: center;
-        padding-left: 0;
-        a {
-            display: block;
-            width: 100%;
-        }
-        .drag-button {
-            padding: 0 15px;
-        }
+.favourite-resource-item {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    a {
+        display: block;
+        width: 100%;
     }
+    .drag-button {
+        padding: 0 15px;
+    }
+    z-index: 10000;
 }
