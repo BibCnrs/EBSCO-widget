@@ -55,4 +55,25 @@ describe('favouriteResources reducers', () => {
             );
         });
     });
+
+    describe('MOVE_FAVOURITE_RESSOURCES', () => {
+        it('should move resources', () => {
+            const state = [
+                { url: 'resource1' },
+                { url: 'resource2' },
+                { url: 'resource3' },
+            ];
+            assert.deepEqual(
+                favouriteResources(
+                    state,
+                    actions.moveFavouriteResource({ oldIndex: 2, newIndex: 0 }),
+                ),
+                [
+                    { url: 'resource3' },
+                    { url: 'resource1' },
+                    { url: 'resource2' },
+                ],
+            );
+        });
+    });
 });
