@@ -39,4 +39,20 @@ describe('favouriteResources reducers', () => {
             );
         });
     });
+
+    describe('REMOVE_FAVOURITE_RESSOURCES', () => {
+        it('should remove given url from state', () => {
+            assert.deepEqual(
+                favouriteResources(
+                    [
+                        { url: 'resource1' },
+                        { url: 'resource2' },
+                        { url: 'resource3' },
+                    ],
+                    actions.removeFavouriteResource('resource2'),
+                ),
+                [{ url: 'resource1' }, { url: 'resource3' }],
+            );
+        });
+    });
 });
