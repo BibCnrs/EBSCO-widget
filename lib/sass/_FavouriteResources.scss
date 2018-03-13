@@ -2,12 +2,14 @@
     display: flex;
     align-items: center;
     padding-left: 0;
+    position: static;
     a {
         display: block;
         width: 100%;
     }
     .drag-button {
         padding: 0 15px;
+        cursor: row-resize;
     }
     z-index: 10000;
 }
