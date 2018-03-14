@@ -1,0 +1,24 @@
+.profile {
+    .nav-tabs {
+        border-bottom: solid #337ab7 1px;
+        margin-bottom: 2rem;
+        li {
+            a {
+                border: solid #337ab7 1px;
+                border-bottom: none;
+                margin-bottom: 0;
+                color: #333;
+                &:hover {
+                    border: solid #337ab7 2px;
+                    border-bottom: none;
+                }
+            }
+            &.active a {
+                border: solid #337ab7 3px;
+                border-bottom: none;
+                background-color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}
