@@ -41,6 +41,7 @@ describe('reducers createSearchResult', function() {
                                 totalHits: 200,
                                 results: [{ id: 4 }, { id: 5 }, { id: 6 }],
                                 currentPage: 2,
+                                noFullText: false,
                             },
                         },
                     ),
@@ -58,6 +59,7 @@ describe('reducers createSearchResult', function() {
                             6: { id: 6 },
                         },
                         currentPage: 2,
+                        noFullText: false,
                     },
                 );
             });
