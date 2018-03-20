@@ -62,7 +62,7 @@ describe('simple articleSearch', function() {
             .assert.attributeEquals(
                 '.query-list .search-input .term input',
                 'placeholder',
-                'Rechercher des articles, des chapitres de livre...',
+                'Rechercher des articles, des chapitres de livre, des DOIs...',
             )
             .assert.containsText('.fetch-button', 'Rechercher')
             .click('.navbar.navbar-default .language')
@@ -75,7 +75,7 @@ describe('simple articleSearch', function() {
             .assert.attributeEquals(
                 '.query-list .search-input .term input',
                 'placeholder',
-                'Search articles, book chapters...',
+                'Search articles, book chapters, DOIs...',
             )
             .assert.containsText('.fetch-button', 'Search');
 
