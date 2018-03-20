@@ -25,6 +25,7 @@
 	"domains": {
 		"all": ["INSHS", "INSB", "IN2P3", "INEE", "INP", "INSIS", "INSU", "INC", "INS2I", "INSMI"],
 		"available": [],
+		"rights": [],
 		"byName": {
 			"INSHS": "inshs",
 			"INSB": "insb",

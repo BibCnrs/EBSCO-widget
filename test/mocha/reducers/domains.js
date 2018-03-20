@@ -60,50 +60,106 @@ describe('reducer domains', function() {
             );
         });
 
-        it('should set available to action.domains, and article to action.response.domains[0] when action is LOGIN_SUCCESS', function() {
-            assert.deepEqual(
-                domains(
+        describe('LOGIN_SUCCESS', () => {
+            it('should set available to action.domains, and article to action.response.domains[0]', function() {
+                assert.deepEqual(
+                    domains(
+                        {
+                            all: ['INSB', 'INSHS'],
+                            byName: {
+                                INSB: 'insb',
+                                INSHS: 'inshs',
+                            },
+                        },
+                        {
+                            type: LOGIN_SUCCESS,
+                            response: {
+                                domains: ['INSB', 'INSHS'],
+                                favorite_domain: 'INSB',
+                            },
+                        },
+                    ),
                     {
                         all: ['INSB', 'INSHS'],
                         available: ['INSB', 'INSHS'],
-                    },
-                    {
-                        type: LOGIN_SUCCESS,
-                        response: {
-                            domains: ['INSB', 'INSHS'],
-                            favorite_domain: 'INSB',
+                        rights: ['INSB', 'INSHS'],
+                        byName: {
+                            INSB: 'insb',
+                            INSHS: 'inshs',
                         },
+                        database: 'INSB',
+                        favoriteDomain: 'INSB',
                     },
-                ),
-                {
-                    all: ['INSB', 'INSHS'],
-                    available: ['INSB', 'INSHS'],
-                    database: 'INSB',
-                    favoriteDomain: 'INSB',
-                },
-            );
-        });
+                );
+            });
 
-        it('should set available to action.domains if it is present in action.domains when action is LOGIN_SUCCESS', function() {
-            assert.deepEqual(
-                domains(
-                    { defaultDomain: 'INSHS', all: ['INSB', 'INSHS'] },
-                    {
-                        type: LOGIN_SUCCESS,
-                        response: {
-                            domains: ['INSB', 'INSHS'],
-                            favorite_domain: 'INSHS',
+            it('should set available to action.domains if it is present in action.domains', function() {
+                assert.deepEqual(
+                    domains(
+                        {
+                            defaultDomain: 'INSHS',
+                            all: ['INSB', 'INSHS'],
+                            byName: {
+                                INSB: 'insb',
+                                INSHS: 'inshs',
+                            },
                         },
+                        {
+                            type: LOGIN_SUCCESS,
+                            response: {
+                                domains: ['INSB', 'INSHS'],
+                                favorite_domain: 'INSHS',
+                            },
+                        },
+                    ),
+                    {
+                        defaultDomain: 'INSHS',
+                        all: ['INSB', 'INSHS'],
+                        byName: {
+                            INSB: 'insb',
+                            INSHS: 'inshs',
+                        },
+                        available: ['INSB', 'INSHS'],
+                        rights: ['INSB', 'INSHS'],
+                        database: 'INSHS',
+                        favoriteDomain: 'INSHS',
                     },
-                ),
-                {
-                    defaultDomain: 'INSHS',
-                    all: ['INSB', 'INSHS'],
-                    available: ['INSB', 'INSHS'],
-                    database: 'INSHS',
-                    favoriteDomain: 'INSHS',
-                },
-            );
+                );
+            });
+
+            it('should set available to action.domains removing domain not in byName', function() {
+                assert.deepEqual(
+                    domains(
+                        {
+                            defaultDomain: 'INSHS',
+                            all: ['INSB', 'INSHS'],
+                            byName: {
+                                INSB: 'insb',
+                                INSHS: 'inshs',
+                            },
+                        },
+                        {
+                            type: LOGIN_SUCCESS,
+                            response: {
+                                domains: ['INSB', 'IOP', 'INSHS', 'REAXYS'],
+                                favorite_domain: 'INSHS',
+                            },
+                        },
+                    ),
+                    {
+                        defaultDomain: 'INSHS',
+                        all: ['INSB', 'INSHS'],
+                        byName: {
+                            INSB: 'insb',
+                            INSHS: 'inshs',
+                        },
+                        available: ['INSB', 'INSHS'],
+                        rights: ['INSB', 'IOP', 'INSHS', 'REAXYS'],
+                        database: 'INSHS',
+                        favoriteDomain: 'INSHS',
+                    },
+                );
+            });
         });
 
         it('should set available to [], and article to null when action is LOGOUT', function() {
