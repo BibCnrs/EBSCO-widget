@@ -1,4 +1,4 @@
-import {
+import actions, {
     API_LOAD_HISTORY_PAGE_SUCCESS,
     SEARCH_SUCCESS,
     LOGOUT,
@@ -242,7 +242,62 @@ describe('reducer history', function() {
                 {
                     currentPage: 2,
                     maxPage: 3,
-                    queries: [{ id: 42, foo: 42 }, { id: 14, foo: 14 }],
+                    queries: [
+                        {
+                            id: 42,
+                            foo: 42,
+                            totalcount: 12,
+                        },
+                        {
+                            id: 14,
+                            foo: 14,
+                            totalcount: 12,
+                        },
+                    ],
+                },
+            );
+        });
+    });
+
+    describe('SAVE_ALERT', () => {
+        it('should set alert for history id', () => {
+            assert.deepEqual(
+                history(
+                    {
+                        queries: [{ id: 4 }, { id: 5 }, { id: 6 }],
+                    },
+                    actions.saveAlert(5, 'month'),
+                ),
+                {
+                    queries: [
+                        { id: 4 },
+                        { id: 5, frequence: 'month', hasAlert: true },
+                        { id: 6 },
+                    ],
+                },
+            );
+        });
+    });
+
+    describe('REMOVE_ALERT', () => {
+        it('should set alert for history id', () => {
+            assert.deepEqual(
+                history(
+                    {
+                        queries: [
+                            { id: 4 },
+                            { id: 5, frequence: 'month', hasAlert: true },
+                            { id: 6 },
+                        ],
+                    },
+                    actions.removeAlert(5),
+                ),
+                {
+                    queries: [
+                        { id: 4 },
+                        { id: 5, frequence: 'none', hasAlert: false },
+                        { id: 6 },
+                    ],
                 },
             );
         });
