@@ -17,11 +17,16 @@ describe('reducer history', function() {
         it('should add action.query to state along with response.totalHits and response.activeFacets', function() {
             assert.deepEqual(
                 history(
-                    { queries: [{ term: 'phylloxera' }, { term: 'horton' }] },
+                    {
+                        queries: [
+                            { queries: { term: 'phylloxera' } },
+                            { queries: { term: 'horton' } },
+                        ],
+                    },
                     {
                         type: SEARCH_SUCCESS,
                         category: 'article',
-                        query: { term: 'aids' },
+                        query: { queries: { term: 'aids' } },
                         response: {
                             totalHits: 7,
                             activeFacets: ['active', 'facets'],
@@ -31,12 +36,12 @@ describe('reducer history', function() {
                 {
                     queries: [
                         {
-                            term: 'aids',
+                            queries: { term: 'aids' },
                             totalHits: 7,
                             activeFacets: ['active', 'facets'],
                         },
-                        { term: 'phylloxera' },
-                        { term: 'horton' },
+                        { queries: { term: 'phylloxera' } },
+                        { queries: { term: 'horton' } },
                     ],
                 },
             );
@@ -45,11 +50,16 @@ describe('reducer history', function() {
         it('should not add action.query to state if category is not article', function() {
             assert.deepEqual(
                 history(
-                    { queries: [{ term: 'phylloxera' }, { term: 'horton' }] },
+                    {
+                        queries: [
+                            { queries: { term: 'phylloxera' } },
+                            { queries: { term: 'horton' } },
+                        ],
+                    },
                     {
                         type: SEARCH_SUCCESS,
                         category: 'publication',
-                        query: { term: 'aids' },
+                        query: { queries: { term: 'aids' } },
                         response: {
                             totalHits: 7,
                             activeFacets: ['active', 'facets'],
@@ -57,7 +67,10 @@ describe('reducer history', function() {
                     },
                 ),
                 {
-                    queries: [{ term: 'phylloxera' }, { term: 'horton' }],
+                    queries: [
+                        { queries: { term: 'phylloxera' } },
+                        { queries: { term: 'horton' } },
+                    ],
                 },
             );
         });
@@ -67,23 +80,34 @@ describe('reducer history', function() {
                 history(
                     {
                         queries: [
-                            { term: 'phylloxera', activeFacets: [] },
-                            { term: 'aids', activeFacets: [] },
-                            { term: 'horton', activeFacets: [] },
+                            {
+                                queries: {
+                                    term: 'phylloxera',
+                                },
+                                activeFacets: [],
+                            },
+                            { queries: { term: 'aids' }, activeFacets: [] },
+                            { queries: { term: 'horton' }, activeFacets: [] },
                         ],
                     },
                     {
                         type: SEARCH_SUCCESS,
                         category: 'article',
-                        query: { term: 'aids' },
+                        query: { queries: { term: 'aids' }, activeFacets: [] },
                         response: { totalHits: 5 },
                     },
                 ),
                 {
                     queries: [
-                        { term: 'phylloxera', activeFacets: [] },
-                        { term: 'aids', activeFacets: [], totalHits: 5 },
-                        { term: 'horton', activeFacets: [] },
+                        { queries: { term: 'phylloxera' }, activeFacets: [] },
+                        {
+                            queries: {
+                                term: 'aids',
+                            },
+                            activeFacets: [],
+                            totalHits: 5,
+                        },
+                        { queries: { term: 'horton' }, activeFacets: [] },
                     ],
                 },
             );
@@ -121,18 +145,21 @@ describe('reducer history', function() {
                 history(
                     {
                         queries: [
-                            { term: 'phylloxera' },
-                            { term: 'aids' },
-                            { term: 'horton' },
+                            { queries: { term: 'phylloxera' } },
+                            { queries: { term: 'aids' } },
+                            { queries: { term: 'horton' } },
                         ],
                     },
                     {
                         type: DELETE_HISTORY,
-                        query: { term: 'aids' },
+                        query: { queries: { term: 'aids' } },
                     },
                 ),
                 {
-                    queries: [{ term: 'phylloxera' }, { term: 'horton' }],
+                    queries: [
+                        { queries: { term: 'phylloxera' } },
+                        { queries: { term: 'horton' } },
+                    ],
                 },
             );
         });
@@ -140,14 +167,22 @@ describe('reducer history', function() {
         it('should do nothing if query is not in history', function() {
             assert.deepEqual(
                 history(
-                    { queries: [{ term: 'phylloxera' }, { term: 'horton' }] },
+                    {
+                        queries: [
+                            { queries: { term: 'phylloxera' } },
+                            { queries: { term: 'horton' } },
+                        ],
+                    },
                     {
                         type: DELETE_HISTORY,
-                        query: { term: 'aids' },
+                        query: { queries: { term: 'aids' } },
                     },
                 ),
                 {
-                    queries: [{ term: 'phylloxera' }, { term: 'horton' }],
+                    queries: [
+                        { queries: { term: 'phylloxera' } },
+                        { queries: { term: 'horton' } },
+                    ],
                 },
             );
         });
@@ -157,20 +192,20 @@ describe('reducer history', function() {
                 history(
                     {
                         queries: [
-                            { term: 'phylloxera', totalHits: 5 },
-                            { term: 'aids', totalHits: 5 },
-                            { term: 'horton', totalHits: 5 },
+                            { queries: { term: 'phylloxera' }, totalHits: 5 },
+                            { queries: { term: 'aids' }, totalHits: 5 },
+                            { queries: { term: 'horton' }, totalHits: 5 },
                         ],
                     },
                     {
                         type: DELETE_HISTORY,
-                        query: { term: 'aids', totalHits: 7 },
+                        query: { queries: { term: 'aids' }, totalHits: 7 },
                     },
                 ),
                 {
                     queries: [
-                        { term: 'phylloxera', totalHits: 5 },
-                        { term: 'horton', totalHits: 5 },
+                        { queries: { term: 'phylloxera' }, totalHits: 5 },
+                        { queries: { term: 'horton' }, totalHits: 5 },
                     ],
                 },
             );
