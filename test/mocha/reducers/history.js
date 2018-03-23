@@ -1,4 +1,4 @@
-import actions, {
+import {
     API_LOAD_HISTORY_PAGE_SUCCESS,
     SEARCH_SUCCESS,
     LOGOUT,
@@ -17,16 +17,11 @@ describe('reducer history', function() {
         it('should add action.query to state along with response.totalHits and response.activeFacets', function() {
             assert.deepEqual(
                 history(
-                    {
-                        queries: [
-                            { queries: { term: 'phylloxera' } },
-                            { queries: { term: 'horton' } },
-                        ],
-                    },
+                    { queries: [{ term: 'phylloxera' }, { term: 'horton' }] },
                     {
                         type: SEARCH_SUCCESS,
                         category: 'article',
-                        query: { queries: { term: 'aids' } },
+                        query: { term: 'aids' },
                         response: {
                             totalHits: 7,
                             activeFacets: ['active', 'facets'],
@@ -36,12 +31,12 @@ describe('reducer history', function() {
                 {
                     queries: [
                         {
-                            queries: { term: 'aids' },
+                            term: 'aids',
                             totalHits: 7,
                             activeFacets: ['active', 'facets'],
                         },
-                        { queries: { term: 'phylloxera' } },
-                        { queries: { term: 'horton' } },
+                        { term: 'phylloxera' },
+                        { term: 'horton' },
                     ],
                 },
             );
@@ -50,16 +45,11 @@ describe('reducer history', function() {
         it('should not add action.query to state if category is not article', function() {
             assert.deepEqual(
                 history(
-                    {
-                        queries: [
-                            { queries: { term: 'phylloxera' } },
-                            { queries: { term: 'horton' } },
-                        ],
-                    },
+                    { queries: [{ term: 'phylloxera' }, { term: 'horton' }] },
                     {
                         type: SEARCH_SUCCESS,
                         category: 'publication',
-                        query: { queries: { term: 'aids' } },
+                        query: { term: 'aids' },
                         response: {
                             totalHits: 7,
                             activeFacets: ['active', 'facets'],
@@ -67,10 +57,7 @@ describe('reducer history', function() {
                     },
                 ),
                 {
-                    queries: [
-                        { queries: { term: 'phylloxera' } },
-                        { queries: { term: 'horton' } },
-                    ],
+                    queries: [{ term: 'phylloxera' }, { term: 'horton' }],
                 },
             );
         });
@@ -80,34 +67,23 @@ describe('reducer history', function() {
                 history(
                     {
                         queries: [
-                            {
-                                queries: {
-                                    term: 'phylloxera',
-                                },
-                                activeFacets: [],
-                            },
-                            { queries: { term: 'aids' }, activeFacets: [] },
-                            { queries: { term: 'horton' }, activeFacets: [] },
+                            { term: 'phylloxera', activeFacets: [] },
+                            { term: 'aids', activeFacets: [] },
+                            { term: 'horton', activeFacets: [] },
                         ],
                     },
                     {
                         type: SEARCH_SUCCESS,
                         category: 'article',
-                        query: { queries: { term: 'aids' }, activeFacets: [] },
+                        query: { term: 'aids' },
                         response: { totalHits: 5 },
                     },
                 ),
                 {
                     queries: [
-                        { queries: { term: 'phylloxera' }, activeFacets: [] },
-                        {
-                            queries: {
-                                term: 'aids',
-                            },
-                            activeFacets: [],
-                            totalHits: 5,
-                        },
-                        { queries: { term: 'horton' }, activeFacets: [] },
+                        { term: 'phylloxera', activeFacets: [] },
+                        { term: 'aids', activeFacets: [], totalHits: 5 },
+                        { term: 'horton', activeFacets: [] },
                     ],
                 },
             );
@@ -145,21 +121,18 @@ describe('reducer history', function() {
                 history(
                     {
                         queries: [
-                            { queries: { term: 'phylloxera' } },
-                            { queries: { term: 'aids' } },
-                            { queries: { term: 'horton' } },
+                            { term: 'phylloxera' },
+                            { term: 'aids' },
+                            { term: 'horton' },
                         ],
                     },
                     {
                         type: DELETE_HISTORY,
-                        query: { queries: { term: 'aids' } },
+                        query: { term: 'aids' },
                     },
                 ),
                 {
-                    queries: [
-                        { queries: { term: 'phylloxera' } },
-                        { queries: { term: 'horton' } },
-                    ],
+                    queries: [{ term: 'phylloxera' }, { term: 'horton' }],
                 },
             );
         });
@@ -167,22 +140,14 @@ describe('reducer history', function() {
         it('should do nothing if query is not in history', function() {
             assert.deepEqual(
                 history(
-                    {
-                        queries: [
-                            { queries: { term: 'phylloxera' } },
-                            { queries: { term: 'horton' } },
-                        ],
-                    },
+                    { queries: [{ term: 'phylloxera' }, { term: 'horton' }] },
                     {
                         type: DELETE_HISTORY,
-                        query: { queries: { term: 'aids' } },
+                        query: { term: 'aids' },
                     },
                 ),
                 {
-                    queries: [
-                        { queries: { term: 'phylloxera' } },
-                        { queries: { term: 'horton' } },
-                    ],
+                    queries: [{ term: 'phylloxera' }, { term: 'horton' }],
                 },
             );
         });
@@ -192,20 +157,20 @@ describe('reducer history', function() {
                 history(
                     {
                         queries: [
-                            { queries: { term: 'phylloxera' }, totalHits: 5 },
-                            { queries: { term: 'aids' }, totalHits: 5 },
-                            { queries: { term: 'horton' }, totalHits: 5 },
+                            { term: 'phylloxera', totalHits: 5 },
+                            { term: 'aids', totalHits: 5 },
+                            { term: 'horton', totalHits: 5 },
                         ],
                     },
                     {
                         type: DELETE_HISTORY,
-                        query: { queries: { term: 'aids' }, totalHits: 7 },
+                        query: { term: 'aids', totalHits: 7 },
                     },
                 ),
                 {
                     queries: [
-                        { queries: { term: 'phylloxera' }, totalHits: 5 },
-                        { queries: { term: 'horton' }, totalHits: 5 },
+                        { term: 'phylloxera', totalHits: 5 },
+                        { term: 'horton', totalHits: 5 },
                     ],
                 },
             );
@@ -277,62 +242,7 @@ describe('reducer history', function() {
                 {
                     currentPage: 2,
                     maxPage: 3,
-                    queries: [
-                        {
-                            id: 42,
-                            foo: 42,
-                            totalcount: 12,
-                        },
-                        {
-                            id: 14,
-                            foo: 14,
-                            totalcount: 12,
-                        },
-                    ],
-                },
-            );
-        });
-    });
-
-    describe('SAVE_ALERT', () => {
-        it('should set alert for history id', () => {
-            assert.deepEqual(
-                history(
-                    {
-                        queries: [{ id: 4 }, { id: 5 }, { id: 6 }],
-                    },
-                    actions.saveAlert(5, 'month'),
-                ),
-                {
-                    queries: [
-                        { id: 4 },
-                        { id: 5, frequence: 'month', hasAlert: true },
-                        { id: 6 },
-                    ],
-                },
-            );
-        });
-    });
-
-    describe('REMOVE_ALERT', () => {
-        it('should set alert for history id', () => {
-            assert.deepEqual(
-                history(
-                    {
-                        queries: [
-                            { id: 4 },
-                            { id: 5, frequence: 'month', hasAlert: true },
-                            { id: 6 },
-                        ],
-                    },
-                    actions.removeAlert(5),
-                ),
-                {
-                    queries: [
-                        { id: 4 },
-                        { id: 5, frequence: 'none', hasAlert: false },
-                        { id: 6 },
-                    ],
+                    queries: [{ id: 42, foo: 42 }, { id: 14, foo: 14 }],
                 },
             );
         });
