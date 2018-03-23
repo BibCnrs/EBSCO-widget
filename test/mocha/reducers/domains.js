@@ -167,7 +167,6 @@ describe('reducer domains', function() {
                 domains(
                     {
                         available: ['INSB', 'INSHS'],
-                        rights: ['INSB', 'INSHS'],
                         article: 'INSB',
                     },
                     {
@@ -176,7 +175,6 @@ describe('reducer domains', function() {
                 ),
                 {
                     available: [],
-                    rights: [],
                     article: null,
                     favoriteDomain: null,
                 },
