@@ -3,6 +3,7 @@
     .btn, .btn-group {
         height: 34px;
         border-radius: 0px;
+        border-radius: 20px;
     }
     .dropdown-menu {
         border-radius: 0px;
@@ -14,17 +15,9 @@
     color: black;
     font-family: sans-serif;
     font-size: 1em;
-    .container {
-        background-image: url('./images/search-back.png');
-        background-repeat: no-repeat;
-        background-position: 5px 60px;
-        max-width: 100%;
-    }
+
     .full-screen {
         .content {
-            background-image: url('./images/search-back.png');
-            background-repeat: no-repeat;
-            background-position: 5px 85px;
             padding: 25px;
         }
         z-index: 1;

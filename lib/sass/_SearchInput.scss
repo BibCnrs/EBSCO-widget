@@ -1,50 +1,73 @@
+$radius: 20px;
+
 .search-input {
-    .term {
+    height: 50px;
+    .input-group {
+        height:100%;
+
+        .before {
+            height:100%;
+            .dropdown {
+                height:100%;
+
+                button#domain {
+                    border: 0;
+                    box-shadow: none;;
+                    height: 100%;
+                    border-top-left-radius: $radius;
+                    border-bottom-left-radius: $radius;
+                }
+            }
+        }
+
+        .search-query {
+            position: relative;
+            height:100%;
+
+            .form-control {
+                border: 0;
+                height: 100%;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .search-clear {
+            padding-right: 10px;
+            padding-left: 1px;
+            font-size: 18px;
+            color: grey;
+            cursor: pointer;
+            background-color: #fff;
+            border: 0;
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+        }
+    }
+
+    .autocompletion {
         @include flexbox((
             display: flex,
             flex-direction: column
         ));
-        input::-ms-clear {
-            display: none;
-        }
-        position: relative;
-        width: 100%;
-        min-width: 250px;
-        .autocompletion {
-            @include flexbox((
-                display: flex,
-                flex-direction: column
-            ));
-            .suggestion {
-                width: 100%;
-                @include display-flex;
-                .suggested-term {
-                    float: left;
-                }
+        .suggestion {
+            width: 100%;
+            @include display-flex;
+            .suggested-term {
+                float: left;
             }
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 34px;
-            z-index: 10;
-            border: 1px solid #ccc;
-            background-color: #fff;
         }
-        .form-control {
-            border-right: 0;
-            box-shadow: none;
-            border-color: #ccc;
-        }
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 34px;
+        z-index: 10;
+        border: 1px solid #ccc;
+        background-color: #fff;
     }
-    .search-clear {
-        padding-right: 5px;
-        padding-left: 1px;
-        font-size: 14px;
-        color: grey;
-        cursor: pointer;
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-    }
+
     .open.dropdown.btn-group {
         z-index: 3;
     }

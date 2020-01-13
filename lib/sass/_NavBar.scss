@@ -1,24 +1,55 @@
+$item-radius: 12px;
+$padding-y: 15px;
+$color-active: #00284b;
+
 .navbar {
-    background-color: white;
+    background-color: transparent;
     border: none;
+    background-color: #0050A0;
+    font-size: 18px;
+    margin-bottom: 0;
+    min-height: initial;
+    overflow-y: hidden;
+    padding-top: 1rem;
+    padding-left: 50px;
+    border-radius: 0;
+
+    .navbar-brand {
+        color:#fff;
+        font-weight: bold;
+        height: 100%;
+        padding-bottom: $padding-y;
+        margin-right: 40px;
+
+        &:hover {
+            color: #fff;
+        }
+    }
     .nav {
-        border-bottom: solid #337ab7 1px;
+        @include display-flex;
+        @include justify-content(flex-start);
+        @include align-items(flex-end);
+
+        border-bottom: 0;
         float: none;
+
         .nav-item {
             a {
-                border: solid #337ab7 1px;
-                border-bottom: none;
+                border: solid #fff 1px;
+                border-top-right-radius: $item-radius;
+                border-top-left-radius: $item-radius;
+                border-bottom: none !important;
+                color:#fff !important;
                 margin-bottom: 0;
-                &:hover {
-                    border: solid #337ab7 2px;
-                    border-bottom: none;
-                }
+                margin-right: -1px;
+                padding: $padding-y 20px;
             }
-            &.active a {
-                border: solid #337ab7 3px;
-                border-bottom: none;
-                background-color: white;
+
+            &.active a, a:hover {
+                background-color: $color-active;
+                border-color: $color-active;
                 font-weight: bold;
+                margin-bottom: 1px; // to compensate the bold font-weight
             }
         }
         .connection {
