@@ -9,7 +9,6 @@ $color-active: #00284b;
     font-size: 18px;
     margin-bottom: 0;
     min-height: initial;
-    overflow-y: hidden;
     padding-top: 1rem;
     padding-left: 50px;
     border-radius: 0;
@@ -54,6 +53,14 @@ $color-active: #00284b;
         }
         .connection {
             font-weight: bolder;
+
+            .text {
+                color: #fff;
+            }
+        }
+
+        .navbar-right button {
+            color: #fff !important;
         }
     }
 }

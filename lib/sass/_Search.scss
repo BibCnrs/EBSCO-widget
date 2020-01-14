@@ -12,7 +12,7 @@
     .search {
         @include flex(5);
         @include display-flex;
-        @include align-items(center);
+        @include align-items(flex-start); // to align with the top block containing the navbar
         @include justify-content(space-between);
         .query-list {
             @include flex(12);
@@ -44,10 +44,24 @@
             }
         }
 
-        .search-button {
-            background-color: transparent;
-            border: 2px solid #fff;
-            color:#fff;
+        .buttons {
+            @include display-flex;
+            @include justify-content(flex-start);
+            @include align-items(flex-start);
+            @include flex-direction(column);
+
+            margin-left: 50px;
+            button {
+                color: #fff !important;
+            }
+
+            .search-button {
+                background-color: transparent;
+                border: 2px solid #fff;
+                color:#fff;
+                font-size: 16px;
+                height: 50px;
+            }
         }
     }
 }

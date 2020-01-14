@@ -1,11 +1,16 @@
 $radius: 20px;
 
 .search-input {
+    @include flex(1);
     height: 50px;
     .input-group {
         height:100%;
 
         .before {
+            background-color: #fff;
+            border-top-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+
             height:100%;
             .dropdown {
                 height:100%;
@@ -62,7 +67,7 @@ $radius: 20px;
         position: absolute;
         left: 0;
         right: 0;
-        top: 34px;
+        top: 50px;
         z-index: 10;
         border: 1px solid #ccc;
         background-color: #fff;
