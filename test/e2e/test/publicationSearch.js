@@ -42,7 +42,7 @@ describe('publicationSearch', function() {
                 'BA BB BC BD BE BF BG BH BI BJ BK BL BM BN BO BP BQ BR BS BT BU BV BW BX BY BZ',
             )
             .assert.value('.search-input .term input', 'B*')
-            .assert.containsText('.field.select-button', 'Titre')
+            // .assert.containsText('.field.select-button', 'Titre') // this is hidden now this will always fail
             .waitForElementVisible('.search-result', 1000)
             .assert.elementCount('.record', 20);
 
