@@ -63,7 +63,7 @@ Le serveur web écoutera ensuite sur l'url suivante : http://127.0.0.1:3002/
   [Application chrome gratuite VNC](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla?hl=en)
 - `make test-e2e`: lancer les tests "end to end" nightwatch
 
-## Useful commands
+## Commandes utiles
 
 `make` liste toutes les commandes disponible ainsi que leurs aides
 
@@ -72,4 +72,17 @@ example: `make npm install koa --save`
 
 ```sh
 see [npm documentation](https://docs.npmjs.com/all)
+```
+
+## Déploiement
+
+Tout d'abord, on incrémente la version dans le package.json (selon le niveau de changement)
+
+- Sur NPM : 
+```bash
+  npm login (avec les idenfiants de bibcnrs)
+```
+ puis :
+```bash
+  npm deploy
 ```
