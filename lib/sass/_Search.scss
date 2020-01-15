@@ -1,4 +1,5 @@
 @import "./_variables.scss";
+
 .a2z-search {
     .letters .btn {
         padding: 0px 5px;
@@ -6,9 +7,12 @@
 }
 .search-bar {
     @include display-flex;
+    background-color: $header-blue-color;
+    padding: 0 50px;
     .search {
         @include flex(5);
         @include display-flex;
+        @include align-items(flex-start); // to align with the top block containing the navbar
         @include justify-content(space-between);
         .query-list {
             @include flex(12);
@@ -24,6 +28,8 @@
             vertical-align: top;
         }
         .query {
+            @include flex(4);
+            min-width: 900px;
             @include flexbox((
                 display: flex,
                 flex-direction: row
@@ -37,6 +43,29 @@
                 @include flex(1);
                 @include display-flex;
                 @include justify-content(flex-end);
+            }
+        }
+
+        .buttons {
+            @include display-flex;
+            @include justify-content(flex-start);
+            @include align-items(flex-start);
+            @include flex-direction(column);
+            @include flex(4);
+            margin-left: 50px;
+
+
+            button {
+                color: #fff !important;
+            }
+
+            .search-button {
+                background-color: transparent;
+                border: 2px solid #fff;
+                color:#fff;
+                font-size: 16px;
+                height: 50px;
+                width: 100%;
             }
         }
     }

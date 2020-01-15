@@ -22,7 +22,8 @@ describe('simple articleSearch', function() {
         client.start(done);
     });
 
-    it('should add/remove article Input when clicking add/remove', function(done) {
+    // this feature is now hidden, therefore this test is nosense and will always fail. By keeping the same strategy we skip it.
+    it.skip('should add/remove article Input when clicking add/remove', function(done) {
         browser
             .waitForElementVisible('.navbar.navbar-default', 1000)
             .assert.containsText('.navbar.navbar-default .active', 'Un article')
