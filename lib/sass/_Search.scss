@@ -28,6 +28,8 @@
             vertical-align: top;
         }
         .query {
+            @include flex(4);
+            min-width: 900px;
             @include flexbox((
                 display: flex,
                 flex-direction: row
@@ -49,8 +51,9 @@
             @include justify-content(flex-start);
             @include align-items(flex-start);
             @include flex-direction(column);
-
+            @include flex(4);
             margin-left: 50px;
+
 
             button {
                 color: #fff !important;
