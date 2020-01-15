@@ -10,8 +10,9 @@ $radius: 20px;
             background-color: #fff;
             border-top-left-radius: $radius;
             border-bottom-left-radius: $radius;
-
             height:100%;
+            min-width: 50px;
+
             .dropdown {
                 height:100%;
 
