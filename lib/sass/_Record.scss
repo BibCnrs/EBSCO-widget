@@ -1,12 +1,14 @@
 @import "./variables.scss";
 
 .record {
-    margin: 0px 20px 20px;
-    padding: 5px 20px 5px 20px;
-    background-color: $back;
-    text-align: left;
+    background-color: #fff;
+    border-radius: 10px;
     font-size: 13px;
     line-height: 1em;
+    margin: 0px 20px 20px;
+    padding: 5px 20px 5px 20px;
+    text-align: left;
+
     p {
         margin: 0 0 5px;
     }

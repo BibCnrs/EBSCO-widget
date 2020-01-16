@@ -1,23 +1,50 @@
+@import "./_variables.scss";
+
 .profile {
-    .nav-tabs {
-        border-bottom: solid #337ab7 1px;
-        margin-bottom: 2rem;
-        li {
-            a {
-                border: solid #337ab7 1px;
-                border-bottom: none;
-                margin-bottom: 0;
-                color: #333;
-                &:hover {
-                    border: solid #337ab7 2px;
-                    border-bottom: none;
-                }
+    @include display-flex;
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+    padding: $body-padding-y 0;
+
+    .list-group-item {
+        border-radius: 10px;
+        margin: 5px 0;
+
+        .fa {
+            font-size: 18px;
+        }
+    }
+
+    &-left {
+        @include flex(2);
+    }
+
+    &-right {
+        @include display-flex;
+        @include flex-direction(column);
+        @include align-items(flex-start);
+        @include justify-content(flex-start);
+        @include flex(1);
+
+        margin-left: 20px;
+
+        .favourite-domain {
+            width: 100%;
+
+            &-item {
+                @include display-flex;
+                @include align-items(center);
+                @include justify-content(space-between);
             }
-            &.active a {
-                border: solid #337ab7 3px;
-                border-bottom: none;
-                background-color: white;
-                font-weight: bold;
+        }
+
+        .domains {
+            width: 100%;
+
+            &-item {
+                @include display-flex;
+                @include align-items(center);
+                @include justify-content(space-between);
             }
         }
     }

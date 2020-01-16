@@ -7,8 +7,13 @@
 }
 .search-bar {
     @include display-flex;
-    background-color: $header-blue-color;
-    padding: 0 50px;
+    background-color: $primary-blue;
+    margin-left: -$body-padding-x;
+    margin-right: -$body-padding-x;
+    padding-left: $body-padding-x;
+    padding-right: $body-padding-x;
+
+
     .search {
         @include flex(5);
         @include display-flex;
@@ -29,7 +34,6 @@
         }
         .query {
             @include flex(4);
-            min-width: 900px;
             @include flexbox((
                 display: flex,
                 flex-direction: row
@@ -44,6 +48,10 @@
                 @include display-flex;
                 @include justify-content(flex-end);
             }
+        }
+
+        .search-input {
+            @include flex(11); // on publication tab this is not inside a .query element, needs investigation
         }
 
         .buttons {
