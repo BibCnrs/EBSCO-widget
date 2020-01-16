@@ -8,7 +8,6 @@ import {
     RESTORE_HISTORY,
     SHOW_RESULT,
     NAVIGATE,
-    FULLSCREEN,
     CHANGE_LANGUAGE,
     SHOW_LOGIN,
     HIDE_LOGIN,
@@ -154,16 +153,6 @@ describe('reducers userInterface', function() {
                 { type: NAVIGATE, location: 'article' },
             ),
             { location: 'article', other: 'data' },
-        );
-    });
-
-    it('should set location to action.location when action is FULLSCREEN', function() {
-        assert.deepEqual(
-            userInterface(
-                { fullScreen: true, other: 'data' },
-                { type: FULLSCREEN, value: false },
-            ),
-            { fullScreen: false, other: 'data' },
         );
     });
 
