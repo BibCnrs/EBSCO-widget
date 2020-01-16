@@ -22,3 +22,29 @@
         }
     }
 }
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    .tooltip-text {
+        visibility: hidden;
+        width: 120px;
+        top: 100%;
+        left: 50%;
+        margin-left: -60px;
+        background-color: white;
+        color: #4C7392;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+        b {
+           color: #FBAD9A;
+        }
+    }
+} 
+
+.tooltip2:hover .tooltip-text {
+    visibility: visible;
+}
