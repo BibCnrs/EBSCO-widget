@@ -15,18 +15,4 @@
     color: black;
     font-family: sans-serif;
     font-size: 1em;
-
-    .full-screen {
-        .content {
-            padding: 25px;
-        }
-        z-index: 1;
-        position: fixed;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        background-color: white;
-        overflow: auto;
-    }
 }
