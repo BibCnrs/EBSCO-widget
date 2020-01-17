@@ -213,7 +213,7 @@ describe('profile', function() {
         browser
             .loadState(initialStateInistAccount)
             .pause(300)
-            .assert.elementCount('.profile-button', 0)
+            .assert.elementCount('.profile-button', 1)
             .waitForElementVisible('.nav-db', 1000)
             .click('.nav-db')
             .pause(300)
