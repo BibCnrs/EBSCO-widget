@@ -1,22 +1,32 @@
 .search-result-with-sidebar {
-    position: relative;
+    @include display-flex;
 
+    position: relative;
     border-top: solid 1px #ccc;
+
     .sidebar-handler {
         position: absolute;
+        left: 250px;
     }
+
     .sidebar {
-        float: left;
+        @include flex-shrink(0);
+        @include flex-grow(0);
+        padding-right: 30px;
+
         &.open {
-            width: 250px;
+            @include flex-basis(300px);
         }
+
         &.closed {
             overflow: hidden;
             opacity: 0;
-            width: 0px;
+            @include flex-basis(0);
         }
     }
     .search-result {
+        @include flex(1);
+
         .header{
             height: 34px;
             margin: 5px;
@@ -34,7 +44,6 @@
     }
     &.with-sidebar {
         .search-result {
-            margin-left: 280px;
             border-left: solid 1px #ccc;
         }
     }

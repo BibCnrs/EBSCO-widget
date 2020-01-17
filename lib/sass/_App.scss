@@ -1,5 +1,7 @@
+@import "./_variables.scss";
+
 .ebsco-widget {
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'DM Sans', Helvetica Neue,Helvetica,Arial,sans-serif;
     .btn, .btn-group {
         height: 34px;
         border-radius: 0px;
@@ -13,6 +15,16 @@
         margin: 5px;
     }
     color: black;
-    font-family: sans-serif;
+    // font-family: sans-serif;
     font-size: 1em;
+
+    h1,h2,h3,h4,h5,h6 {
+        font-weight: bold;
+        color: $primary-blue
+    }
+
+    .grid {
+        background-color: #eee;
+        padding: 0 $body-padding-x;
+    }
 }

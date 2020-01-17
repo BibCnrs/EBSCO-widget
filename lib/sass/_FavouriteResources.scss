@@ -1,3 +1,7 @@
+@import "./_variables.scss";
+
+$pagination-arrow-margin: 50px;
+
 .favourite-resource-item {
     display: flex;
     align-items: center;
@@ -12,4 +16,36 @@
         cursor: row-resize;
     }
     z-index: 10000;
+}
+
+.favourite-resource-pagination {
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+
+    width: 100%;
+
+    .fa {
+        color: $primary-blue;
+        cursor: pointer;
+        margin: 0 5px;
+
+        &.arrow {
+            font-size: 20px;
+            font-weight: bold;
+
+            &:first-child {
+                margin-right: $pagination-arrow-margin;
+            }
+
+            &:last-child {
+                margin-left: $pagination-arrow-margin;
+            }
+
+            &.disabled {
+                cursor: initial;
+                color: $deactivated
+            }
+        }
+    }
 }

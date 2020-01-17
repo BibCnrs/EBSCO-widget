@@ -1,17 +1,22 @@
+@import "./_variables.scss";
+
 $item-radius: 12px;
 $padding-y: 15px;
 $color-active: #00284b;
 
 .navbar {
-    background-color: transparent;
-    border: none;
     background-color: #0050A0;
+
+    border-radius: 0;
+    border: none;
     font-size: 18px;
     margin-bottom: 0;
+    margin-left: -$body-padding-x;
+    margin-right: -$body-padding-x;
     min-height: initial;
+    padding-left: $body-padding-x;
+    padding-right: $body-padding-x;
     padding-top: 1rem;
-    padding-left: 50px;
-    border-radius: 0;
 
     .navbar-brand {
         color:#fff;
