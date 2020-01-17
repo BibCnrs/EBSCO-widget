@@ -1,7 +1,6 @@
 
 .header {
     box-sizing: border-box;
-    font-style: italic;
     font-size: 14px;
     display: flex;
     flex-direction: row;
@@ -24,10 +23,21 @@
 
 .connection {
     display: inline;
-    .btn {
+    margin-right: 15px;
+    .profile-button {
+        cursor: auto;
+        border-radius: 15px;
+        border: 1px transparent;
+        background-color: white;
         .text{
             font-weight: bold;
-            color: #337ab7;
+            color: #034FA0;
         }
+        &:active, &:hover, &:focus {
+            background-color: white !important;
+        }
+    }
+    .logout {
+        color: white;
     }
 }
