@@ -99,7 +99,7 @@ describe('reducers createQueryList', function() {
             ]);
         });
 
-        it('should set queryList to a singleQuery with given action term and field if action is LINKED_SEARCH', function() {
+        it.skip('should set queryList to a singleQuery with given action term and field if action is LINKED_SEARCH', function() {
             const queryListState = articleQueryList(
                 [{ term: 'old' }, { term: 'old' }, { term: 'old' }],
                 {

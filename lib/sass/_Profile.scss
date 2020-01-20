@@ -39,12 +39,24 @@
         }
 
         .domains {
+            position: relative;
             width: 100%;
 
             &-item {
                 @include display-flex;
                 @include align-items(center);
                 @include justify-content(space-between);
+            }
+
+            #profile-domain-help {
+                background-color: transparent;
+                border:0;
+                color: $primary-blue;
+                height: initial;
+                margin-left: 2px;
+                padding: 0 0;
+                position: absolute;
+                top: -2px;
             }
         }
     }
@@ -70,7 +82,7 @@
            color: #FBAD9A;
         }
     }
-} 
+}
 
 .tooltip2:hover .tooltip-text {
     visibility: visible;
