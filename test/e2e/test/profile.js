@@ -169,8 +169,7 @@ describe('profile', function() {
             .assert.containsText('.database .letter_w .db .title', 'Wikipedia')
             .click('.letter_w .bookmark-button')
             .pause(1000)
-            .waitForElementVisible('.profile-button', 1000)
-            .click('.profile-button')
+            .waitForElementVisible('.profile', 1000)
             .waitForElementVisible('.favourite-resource-list', 1000)
             .assert.containsText(
                 '.favourite-resource-item:nth-child(1)',
@@ -192,18 +191,7 @@ describe('profile', function() {
     it('should hide profile and bookmark button when not logged', function(done) {
         browser
             .loadState(initialStateNotLogged)
-            .waitForElementVisible('.header', 1000)
-            .assert.elementCount('.profile-button', 0)
-            .waitForElementVisible('.nav-db', 1000)
-            .click('.nav-db')
-            .pause(300)
-            .waitForElementVisible('.database', 1000)
-            .assert.elementCount('.bookmark-button', 0)
-            .waitForElementVisible('.nav-publication', 1000)
-            .click('.nav-publication')
-            .pause(300)
-            .waitForElementVisible('.record_list', 1000)
-            .assert.elementCount('.bookmark-button', 0)
+            .assert.elementCount('.profile', 0)
             .end();
 
         client.start(done);
@@ -213,16 +201,7 @@ describe('profile', function() {
         browser
             .loadState(initialStateInistAccount)
             .pause(300)
-            .assert.elementCount('.profile-button', 1)
-            .waitForElementVisible('.nav-db', 1000)
-            .click('.nav-db')
-            .pause(300)
-            .waitForElementVisible('.database', 1000)
-            .assert.elementCount('.bookmark-button', 0)
-            .click('.nav-publication')
-            .pause(300)
-            .waitForElementVisible('.record_list', 1000)
-            .assert.elementCount('.bookmark-button', 0)
+            .assert.elementCount('.profile', 0)
             .end();
 
         client.start(done);
