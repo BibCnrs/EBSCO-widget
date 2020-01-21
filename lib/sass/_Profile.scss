@@ -66,8 +66,9 @@
     display: inline-block;
     border-bottom: 1px dotted black;
     .tooltip-text {
+        font-size: 12px;
         visibility: hidden;
-        width: 120px;
+        width: 125px;
         top: 100%;
         left: 50%;
         margin-left: -60px;
