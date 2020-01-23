@@ -55,8 +55,9 @@
                 height: initial;
                 margin-left: 2px;
                 padding: 0 0;
-                position: absolute;
-                top: -2px;
+                .fa {
+                    font-size: 18px;
+                }
             }
         }
     }
