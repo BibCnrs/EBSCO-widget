@@ -1,12 +1,26 @@
 @import "./_variables.scss";
 
+
+$color-active: #00284b;
+
 .btn-primary {
     background-color: $primary-blue;
     border-color: $primary-blue;
 
     &:hover {
-        background-color: #0050a0cf;
-        border-color: #0050a0cf;
+        background-color: $color-active;
+        border-color: $color-active;
+    }
+}
+
+.tooltip {
+    & > .tooltip-inner{
+        background-color: $color-active !important;
+        border-color: $color-active !important;
+    }
+
+    &.top .tooltip-arrow {
+        border-top-color: $color-active !important;
     }
 }
 
