@@ -15,12 +15,12 @@ $color-active: #00284b;
 
 .tooltip {
     & > .tooltip-inner{
-        background-color: $primary-blue !important;
-        border-color: $primary-blue !important;
+        background-color: $color-active !important;
+        border-color: $color-active !important;
     }
 
     &.top .tooltip-arrow {
-        border-top-color: $primary-blue !important;
+        border-top-color: $color-active !important;
     }
 }
 
