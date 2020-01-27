@@ -1,5 +1,17 @@
+@import "./_variables.scss";
+
 .a2z-search {
     .letters .btn {
         padding: 0px 5px;
+    }
+
+    background-color: $primary-blue;
+    margin-left: -$body-padding-x;
+    margin-right: -$body-padding-x;
+    padding-left: $body-padding-x;
+    padding-right: $body-padding-x;
+
+    button {
+        color: #fff;
     }
 }

@@ -13,7 +13,8 @@ $pagination-arrow-margin: 50px;
     }
     .drag-button {
         padding: 0 15px;
-        cursor: row-resize;
+        cursor: row-resize !important;
+        user-select: none;
     }
     z-index: 10000;
 }
