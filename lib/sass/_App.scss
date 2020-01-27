@@ -1,12 +1,25 @@
 @import "./_variables.scss";
 
+.btn-primary {
+    background-color: $primary-blue;
+    border-color: $primary-blue;
+
+    &:hover {
+        background-color: #0050a0cf;
+        border-color: #0050a0cf;
+    }
+}
+
 .ebsco-widget {
     font-family: 'DM Sans', Helvetica Neue,Helvetica,Arial,sans-serif;
     .btn, .btn-group {
         height: 34px;
         border-radius: 0px;
         border-radius: 20px;
+
     }
+
+
     .dropdown-menu {
         border-radius: 0px;
         margin: 0px;
