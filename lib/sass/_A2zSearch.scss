@@ -10,8 +10,13 @@
     margin-right: -$body-padding-x;
     padding-left: $body-padding-x;
     padding-right: $body-padding-x;
+    padding-bottom: 5px;
 
     button {
         color: #fff;
+
+        &:hover {
+            color: #fff;
+        }
     }
 }
