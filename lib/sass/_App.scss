@@ -13,6 +13,17 @@ $color-active: #00284b;
     }
 }
 
+.tooltip {
+    & > .tooltip-inner{
+        background-color: $primary-blue !important;
+        border-color: $primary-blue !important;
+    }
+
+    &.top .tooltip-arrow {
+        border-top-color: $primary-blue !important;
+    }
+}
+
 .ebsco-widget {
     font-family: 'DM Sans', Helvetica Neue,Helvetica,Arial,sans-serif;
     .btn, .btn-group {
