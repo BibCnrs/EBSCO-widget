@@ -1,9 +1,10 @@
 $primary-blue: #0050A0;
+$primary-blue-alt: #00284b;
 
 $title: $primary-blue;
 $back: #f8f8f8;
 $darkerBack: #e8e8e8;
 $deactivated: grey;
-$hover: #3dbcf6;
+$hover: $primary-blue-alt;
 $body-padding-x: 50px;
 $body-padding-y: 20px;

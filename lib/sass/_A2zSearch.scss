@@ -18,5 +18,9 @@
         &:hover {
             color: #fff;
         }
+
+        &.btn-primary {
+            background-color: $primary-blue-alt;
+        }
     }
 }
