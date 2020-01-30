@@ -1,7 +1,8 @@
 import Blob from '../../../lib/components/Blob';
 
 describe('Blob', function() {
-    const getComponent = data => enzyme.shallow(<Blob data={data} />);
+    const getComponent = data =>
+        enzyme.shallow(<Blob data={data} currentGate="INSHS" doi="DOI" />);
 
     it('should display object with DL component', function() {
         const data = {
@@ -36,15 +37,31 @@ describe('Blob', function() {
         assert.deepEqual(fullTextHolding.props(), data);
     });
 
-    it('should display object with url  and value property with a', function() {
+    it('should display object with url and value property with a', function() {
         const data = {
             url: 'http://google.com',
             value: 'google',
         };
         const component = getComponent(data);
-        const a = component.find('a');
-        assert.deepEqual(a.props().href, data.url);
-        assert.deepEqual(a.text(), data.value);
+        const a = component.find('OALink');
+        assert.deepEqual(a.props().url, data.url);
+        assert.deepEqual(a.props().children, data.value);
+    });
+
+    it('should proxify open access links', function() {
+        const data = {
+            url: 'https://www.hal.inserm.fr/inserm-01802849',
+            value: 'hal',
+        };
+        const component = getComponent(data);
+        const a = component
+            .find('OALink')
+            .dive()
+            .find('a');
+        assert.deepEqual(
+            a.props().href,
+            'http://localhost:3000/ebsco/oa?url=https://www.hal.inserm.fr/inserm-01802849&sid=hal&domaine=INSHS&doi=DOI',
+        );
     });
 
     it('should display object with term, field and value property with SearchableLink', function() {
