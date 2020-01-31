@@ -44,7 +44,7 @@ describe('Blob', function() {
         };
         const component = getComponent(data);
         const a = component.find('OALinkContainer');
-        assert.deepEqual(a.props().url, data.url);
+        assert.deepEqual(a.props().href, data.url);
         assert.deepEqual(a.props().children, data.value);
     });
 
