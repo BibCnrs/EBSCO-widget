@@ -43,25 +43,9 @@ describe('Blob', function() {
             value: 'google',
         };
         const component = getComponent(data);
-        const a = component.find('OALink');
-        assert.deepEqual(a.props().url, data.url);
+        const a = component.find('OALinkContainer');
+        assert.deepEqual(a.props().href, data.url);
         assert.deepEqual(a.props().children, data.value);
-    });
-
-    it('should proxify open access links', function() {
-        const data = {
-            url: 'https://www.hal.inserm.fr/inserm-01802849',
-            value: 'hal',
-        };
-        const component = getComponent(data);
-        const a = component
-            .find('OALink')
-            .dive()
-            .find('a');
-        assert.deepEqual(
-            a.props().href,
-            'http://localhost:3000/ebsco/oa?url=https://www.hal.inserm.fr/inserm-01802849&sid=hal&domaine=INSHS&doi=DOI',
-        );
     });
 
     it('should display object with term, field and value property with SearchableLink', function() {
