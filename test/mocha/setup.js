@@ -13,3 +13,4 @@ require.extensions['.css'] = function() {
 global.assert = assert;
 global.React = React;
 global.enzyme = enzyme;
+global.window.__SERVER_URL__ = 'http://localhost:3000/ebsco';
