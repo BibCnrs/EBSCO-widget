@@ -24,8 +24,7 @@
         color: $title;
     }
     .fetch-link {
-        display:inline-flex;
-        @include align-items(center);
+
         cursor: pointer;
         text-decoration: none;
         &:hover{
