@@ -24,11 +24,16 @@
         color: $title;
     }
     .fetch-link {
+        display:inline-flex;
+        @include align-items(center);
         cursor: pointer;
         text-decoration: none;
         &:hover{
             text-decoration: underline;
             cursor: pointer;
+        }
+        img {
+            margin-left: 1rem;
         }
     }
     .show-notice {
