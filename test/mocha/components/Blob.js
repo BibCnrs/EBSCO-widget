@@ -23,18 +23,16 @@ describe('Blob', function() {
         assert.equal(sup.text(), data.indice);
     });
 
-    it('should display object with url  and name property with FullTextHolding', function() {
+    it('should display object with url and name property with FullTextHolding', function() {
         const data = {
             url: 'http://google.com',
             name: 'google',
         };
         const component = getComponent(data);
-        const fullTextHolding = component.find('Connect');
-        assert.equal(
-            fullTextHolding.getElement().type.displayName,
-            'Connect(TranslatedComponent)',
-        );
-        assert.deepEqual(fullTextHolding.props(), data);
+        const a = component.find('OALinkContainer');
+        assert.deepEqual(a.props().url, data.url);
+        assert.deepEqual(a.props().name, 'google');
+        assert.equal(typeof a.props().children, 'function');
     });
 
     it('should display object with url and value property with a', function() {
@@ -44,7 +42,7 @@ describe('Blob', function() {
         };
         const component = getComponent(data);
         const a = component.find('OALinkContainer');
-        assert.deepEqual(a.props().href, data.url);
+        assert.deepEqual(a.props().url, data.url);
         assert.deepEqual(a.props().children, data.value);
     });
 
