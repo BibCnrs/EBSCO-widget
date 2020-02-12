@@ -24,11 +24,15 @@
         color: $title;
     }
     .fetch-link {
+
         cursor: pointer;
         text-decoration: none;
         &:hover{
             text-decoration: underline;
             cursor: pointer;
+        }
+        img {
+            margin-left: 1rem;
         }
     }
     .show-notice {

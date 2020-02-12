@@ -10,7 +10,7 @@ describe('articleSearchResult', function() {
     it('should retrieve clicked article', function(done) {
         browser
             .waitForElementVisible('.record', 1000)
-            .click('.record_list a.fetch-link')
+            .click('.record_list .notice-opener')
             .waitForElementVisible('.notice', 1000)
             .pause(300)
             .assert.containsText('.notice dl span:nth-child(1) dt', 'Auteur')
