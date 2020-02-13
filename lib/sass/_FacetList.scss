@@ -18,4 +18,28 @@
     .active_facet {
         margin-bottom: 10px;
     }
+
+    .facet {
+        .header {
+            .btn:first-child {
+                border: 0;
+                background-color: transparent;
+                color: #FF9982;
+                font-weight: bold;
+                text-align: left;
+            }
+            .btn:last-child {
+                border: 0;
+                background-color: transparent;
+                text-align: right;
+            }
+
+            border-bottom: 1px solid $primary-blue;
+            border-radius: 0;
+        }
+
+        .facet_value {
+            color: $primary-blue;
+        }
+    }
 }
