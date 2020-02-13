@@ -6,7 +6,7 @@ describe('OALink', function() {
     it('should proxify doaj links', function() {
         const props = {
             apiUrl: 'http://api.local',
-            href: 'https://doaj.org/article/579ba7d670e24071a9ac4c06de8b1b7f',
+            url: 'https://doaj.org/article/579ba7d670e24071a9ac4c06de8b1b7f',
             doi: 'TEST-01',
             domain: 'TEST',
             children: 'Hello',
@@ -25,7 +25,7 @@ describe('OALink', function() {
     it('should proxify arxiv links', function() {
         const props = {
             apiUrl: 'http://api.local',
-            href: 'http://arxiv.org/abs/1301.1629f',
+            url: 'http://arxiv.org/abs/1301.1629f',
             doi: 'TEST-01',
             domain: 'TEST',
             children: 'Hello',
@@ -44,7 +44,7 @@ describe('OALink', function() {
     it('should proxify hal links #1', function() {
         const props = {
             apiUrl: 'http://api.local',
-            href: 'https://www.hal.inserm.fr/inserm-01802849',
+            url: 'https://www.hal.inserm.fr/inserm-01802849',
             doi: 'TEST-01',
             domain: 'TEST',
             children: 'Hello',
@@ -63,7 +63,7 @@ describe('OALink', function() {
     it('should proxify hal links #2', function() {
         const props = {
             apiUrl: 'http://api.local',
-            href: 'https://hal.inserm.fr/inserm-01802849',
+            url: 'https://hal.inserm.fr/inserm-01802849',
             doi: 'TEST-01',
             domain: 'TEST',
             children: 'Hello',
