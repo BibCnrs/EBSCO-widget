@@ -23,6 +23,11 @@ $color-active: #00284b;
         padding-bottom: $padding-y;
         margin-right: 40px;
 
+        @media (max-width: 900px) {
+            margin-right: 0px;
+            font-size: 15px;
+        }
+
         &:hover {
             color: #fff;
         }

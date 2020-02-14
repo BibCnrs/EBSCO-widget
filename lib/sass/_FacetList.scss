@@ -34,6 +34,10 @@
                 text-align: right;
             }
 
+            .btn-default {
+                color: $primary-blue
+            }
+
             border-bottom: 1px solid $primary-blue;
             border-radius: 0;
         }
