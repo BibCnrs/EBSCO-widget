@@ -3,7 +3,6 @@ $radius: 20px;
 .search-input {
     @include flex(1);
     height: 50px;
-    min-width: 900px;
 
     .input-group {
         height:100%;

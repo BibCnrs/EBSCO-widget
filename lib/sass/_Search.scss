@@ -8,10 +8,10 @@
 .search-bar {
     @include display-flex;
     background-color: $primary-blue;
-    margin-left: -$body-padding-x;
-    margin-right: -$body-padding-x;
-    padding-left: $body-padding-x;
-    padding-right: $body-padding-x;
+    margin-left: -3.5em;
+    margin-right: -3.5em;
+    padding-left: 4em;
+    padding-right: 4em;
 
 
     .search {
