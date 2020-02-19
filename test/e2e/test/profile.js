@@ -56,10 +56,6 @@ describe('profile', function() {
                 '.record_list .record .fetch-link',
                 'The hitchhiker guide to the galaxy',
             )
-            .assert.containsText(
-                '.record_list .record .fulltext-holding',
-                "J'ai lu",
-            )
             .click('.bookmark-button')
             .pause(1000)
             .waitForElementVisible('.profile-button', 1000)
@@ -67,7 +63,7 @@ describe('profile', function() {
             .waitForElementVisible('.favourite-resource-list', 1000)
             .assert.containsText(
                 '.favourite-resource-item:nth-child(1)',
-                "The hitchhiker guide to the galaxy - J'ai lu",
+                'The hitchhiker guide to the galaxy',
             )
             .assert.containsText(
                 '.favourite-resource-item:nth-child(2)',

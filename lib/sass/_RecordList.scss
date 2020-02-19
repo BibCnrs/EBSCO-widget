@@ -2,6 +2,56 @@
     list-style-type: none;
     padding-left:0;
     margin-top: 17px;
+
+    .consult-button, .consult-button:hover {
+        border: 2px solid #FF9982;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .notice-opener {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+
+    .bookmark-button {
+        font-size: 18px;
+        position: absolute;
+        right: 0;
+        &.added {
+            color: #f0ad4e;
+        }
+    }
+    
+    .dropdown {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+    }
+
+    ul.dropdown-menu {
+        padding: 7px;
+        border: 2px solid #FF9982;
+        left: initial;
+
+        div.coverage {
+            font-weight: normal;
+            margin-bottom: 6px;
+        }
+
+        .fulltext-holding {
+            .text {
+                margin-right: 10px;
+            }
+        }
+
+        .fulltext-holding, .btn-link {
+            font-weight: bold;
+            padding-left: 0px;
+            color: #0050A0;
+        }
+    }
 }
 .no-fulltext {
     margin: 20px;
