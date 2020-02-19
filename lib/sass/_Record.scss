@@ -6,8 +6,9 @@
     font-size: 13px;
     line-height: 1em;
     margin: 0px 20px 20px;
-    padding: 5px 20px 5px 20px;
     text-align: left;
+    padding: 5px 20px 25px 20px;
+    position: relative;
 
     .record-checkbox {
         margin-right: 10px;
@@ -18,9 +19,6 @@
     }
     .title {
         font-size: 16px;
-        .btn-link {
-            float: right;
-        }
         color: $title;
     }
     .fetch-link {
@@ -37,26 +35,6 @@
     }
     .show-notice {
         margin: 10px;
-    }
-    .fulltext-holdings {
-        list-style-type: none;
-        .fulltext-holding {
-            display: flex;
-            align-items: center;
-            &:hover {
-                background-color: $darkerBack;
-            }
-            &.current {
-                font-weight: bold;
-            }
-            height: 2rem;
-            .bookmark-button {
-                margin-left: auto;
-                &.added {
-                    color: #f0ad4e;
-                }
-            }
-        }
     }
 
     .notice {

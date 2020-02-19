@@ -27,16 +27,15 @@ $color-active: #00284b;
 .ebsco-widget {
     font-family: 'DM Sans', Helvetica Neue,Helvetica,Arial,sans-serif;
     .btn, .btn-group {
-        height: 34px;
         border-radius: 0px;
         border-radius: 20px;
 
     }
-
-
+    
     .dropdown-menu {
-        border-radius: 0px;
+        border-radius: 15px;
         margin: 0px;
+        right: 0px;
     }
     hr {
         margin: 5px;
