@@ -18,22 +18,22 @@
     .bookmark-button {
         font-size: 18px;
         position: absolute;
-        right: 0;
+        right: 10px;
+        bottom: 5px;
         &.added {
-            color: #f0ad4e;
+            color: #f0ad4e !important;
         }
     }
     
-    .dropdown {
-        position: absolute;
-        right: 10px;
-        bottom: 5px;
+    .dropdown > button {
+        visibility: hidden;
     }
 
     ul.dropdown-menu {
         padding: 7px;
         border: 2px solid #FF9982;
         left: initial;
+        right: 50%;
 
         div.coverage {
             font-weight: normal;
@@ -43,6 +43,10 @@
         .fulltext-holding {
             .text {
                 margin-right: 10px;
+            }
+            .bookmark-button {
+                right: -3px;
+                bottom: inherit;
             }
         }
 
