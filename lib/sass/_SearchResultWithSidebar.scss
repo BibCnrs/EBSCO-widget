@@ -27,6 +27,10 @@
     .search-result {
         @include flex(1);
 
+        .search-count {
+            font-style: italic;
+        }
+
         .header{
             height: 34px;
             margin: 5px;

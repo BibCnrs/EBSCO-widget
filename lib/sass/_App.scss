@@ -11,6 +11,10 @@ $color-active: #00284b;
         background-color: $color-active;
         border-color: $color-active;
     }
+
+    &:disabled {
+        opacity: 1
+    }
 }
 
 .tooltip {
