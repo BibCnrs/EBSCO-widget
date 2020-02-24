@@ -1,6 +1,6 @@
 import parseFullTextHoldings from '../../../lib/services/parseFullTextHoldings';
 
-describe.only('parseFullTextHoldings', function() {
+describe('parseFullTextHoldings', function() {
     it('should handle duplicates', () => {
         assert.deepEqual(
             parseFullTextHoldings([
@@ -9,7 +9,7 @@ describe.only('parseFullTextHoldings', function() {
                     coverage: [
                         {
                             end: { day: 2, month: 4, year: 2019 },
-                            start: { day: 2, month: 3, year: 2019 },
+                            start: { day: 3, month: 3, year: 2019 },
                         },
                     ],
                 },
@@ -18,7 +18,7 @@ describe.only('parseFullTextHoldings', function() {
                     coverage: [
                         {
                             end: { day: 2, month: 4, year: 2019 },
-                            start: { day: 2, month: 3, year: 2019 },
+                            start: { day: 3, month: 3, year: 2019 },
                         },
                     ],
                 },
@@ -29,7 +29,7 @@ describe.only('parseFullTextHoldings', function() {
                     coverage: [
                         {
                             end: { day: 2, month: 4, year: 2019 },
-                            start: { day: 2, month: 3, year: 2019 },
+                            start: { day: 3, month: 3, year: 2019 },
                         },
                     ],
                 },
@@ -316,7 +316,7 @@ describe.only('parseFullTextHoldings', function() {
                     id: 2,
                     coverage: [
                         {
-                            end: { day: 1, month: 4, year: 2019 },
+                            end: { day: 3, month: 4, year: 2019 },
                             start: { day: 10, month: 2, year: 2019 },
                         },
                     ],
@@ -333,11 +333,11 @@ describe.only('parseFullTextHoldings', function() {
             ]),
             [
                 {
-                    id: 1,
+                    id: 2,
                     coverage: [
                         {
-                            end: { day: 2, month: 4, year: 2019 },
-                            start: { day: 1, month: 3, year: 2019 },
+                            end: { day: 3, month: 4, year: 2019 },
+                            start: { day: 10, month: 2, year: 2019 },
                         },
                     ],
                 },
@@ -347,6 +347,51 @@ describe.only('parseFullTextHoldings', function() {
                         {
                             end: { day: 2, month: 4, year: 2020 },
                             start: { day: 1, month: 3, year: 2020 },
+                        },
+                    ],
+                },
+            ],
+        );
+    });
+
+    it('should handle overlapping dates with PRESENT', () => {
+        assert.deepEqual(
+            parseFullTextHoldings([
+                {
+                    id: 1,
+                    coverage: [
+                        {
+                            end: { day: 1, month: 1, year: 9999 },
+                            start: { day: 1, month: 1, year: 2010 },
+                        },
+                    ],
+                },
+                {
+                    id: 2,
+                    coverage: [
+                        {
+                            end: { day: 1, month: 11, year: 2015 },
+                            start: { day: 1, month: 10, year: 2005 },
+                        },
+                    ],
+                },
+            ]),
+            [
+                {
+                    id: 1,
+                    coverage: [
+                        {
+                            end: { day: 1, month: 1, year: 9999 },
+                            start: { day: 1, month: 1, year: 2010 },
+                        },
+                    ],
+                },
+                {
+                    id: 2,
+                    coverage: [
+                        {
+                            end: { day: 1, month: 11, year: 2015 },
+                            start: { day: 1, month: 10, year: 2005 },
                         },
                     ],
                 },
