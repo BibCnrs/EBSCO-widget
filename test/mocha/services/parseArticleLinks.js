@@ -6,7 +6,10 @@ describe('parseArticleLinks', () => {
             parseArticleLinks({
                 fullTextLinks: [{ link: 1 }, { link: 2 }],
             }),
-            [{ link: 1, icon: 'th-list' }, { link: 2, icon: 'th-list' }],
+            [
+                { link: 1, icon: 'th-list' },
+                { link: 2, icon: 'th-list' },
+            ],
         );
     });
 

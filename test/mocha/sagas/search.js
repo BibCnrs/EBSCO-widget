@@ -5,7 +5,6 @@ import fetch from '../../../lib/sagas/fetch';
 import * as fromState from '../../../lib/selectors';
 
 import actions, { SEARCH, RETRIEVE, LOGOUT } from '../../../lib/actions';
-import { trackSearch } from '../../../lib/services/piwikTracker';
 
 describe('sagas search', function() {
     let iterator;
