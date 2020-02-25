@@ -1,6 +1,5 @@
 @import "./_variables.scss";
 
-
 $color-active: #00284b;
 
 .btn-primary {
@@ -22,11 +21,29 @@ $color-active: #00284b;
 }
 
 .tooltip {
-    & > .tooltip-inner, &.top .tooltip-arrow {
-        text-align: left;
-        background-color: $color-active !important;
-        border-color: $color-active !important;
-        border-top-color: $color-active !important;
+    &.bottom {
+        .tooltip-arrow {
+            border-bottom-color: $color-active;
+        }
+    }
+    &.top {
+        .tooltip-arrow {
+            border-top-color: $color-active;
+        }
+    }
+    &.left {
+        .tooltip-arrow {
+            border-left-color: $color-active;
+        }
+    }
+    &.right {
+        .tooltip-arrow {
+            border-right-color: $color-active;
+        }
+    }
+    .tooltip-inner {
+        max-width: 600px;
+        background-color: $color-active;
     }
 }
 

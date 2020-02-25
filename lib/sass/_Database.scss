@@ -1,31 +1,4 @@
-.tooltip {
-    &.bottom {
-        .tooltip-arrow {
-            border-bottom-color: rgb(82, 108, 135);
-        }
-    }
-    &.top {
-        .tooltip-arrow {
-            border-top-color: rgb(82, 108, 135);
-        }
-    }
-    &.left {
-        .tooltip-arrow {
-            border-left-color: rgb(82, 108, 135);
-        }
-    }
-    &.right {
-        .tooltip-arrow {
-            border-right-color: rgb(82, 108, 135);
-        }
-    }
-    .tooltip-inner {
-        max-width: 600px;
-        background-color: rgb(82, 108, 135);
-    }
-}
 .database {
-    align: center;
     column-count: auto;
     -moz-column-count: auto;
     -webkit-column-count: auto;
@@ -91,7 +64,7 @@
             height: 2.5rem;
             padding: 0;
             &.added {
-                color: #f0ad4e;
+                color: #FF9982 !important;
             }
         }
         img {
