@@ -70,12 +70,12 @@
         font-size: 12px;
         visibility: hidden;
         top: 100%;
-        left: 0;
+        left: -10px;
         background-color: white;
         color: #4C7392;
-        text-align: center;
         padding: 5px 0;
         border-radius: 6px;
+        min-width: 160px;
         position: absolute;
         z-index: 1;
         b {
