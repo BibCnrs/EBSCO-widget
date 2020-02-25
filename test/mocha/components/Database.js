@@ -188,9 +188,7 @@ describe('Database', function() {
                 const itemProps = databaseItem.props();
                 assert.deepEqual(itemProps, {
                     name: expectedItem.name_fr,
-                    url: `https://insu.bib.cnrs.fr/login?url=${
-                        expectedItem.url_fr
-                    }`,
+                    url: `https://insu.bib.cnrs.fr/login?url=${expectedItem.url_fr}`,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                     domain: 'INSU',

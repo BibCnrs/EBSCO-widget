@@ -10,7 +10,10 @@ describe('DL', function() {
         };
         const component = getComponent(data);
         const keys = component.find('dt');
-        assert.deepEqual(keys.map(key => key.text()), Object.keys(data));
+        assert.deepEqual(
+            keys.map(key => key.text()),
+            Object.keys(data),
+        );
         const values = component.find('dd');
         assert.deepEqual(
             values.map(value => {
@@ -27,11 +30,15 @@ describe('DL', function() {
             b: undefined,
         });
         const keys = component.find('dt');
-        assert.deepEqual(keys.map(key => key.text()), ['a']);
+        assert.deepEqual(
+            keys.map(key => key.text()),
+            ['a'],
+        );
         const values = component.find('dd');
-        assert.deepEqual(values.map(key => key.find('Blob').props().data), [
-            '1',
-        ]);
+        assert.deepEqual(
+            values.map(key => key.find('Blob').props().data),
+            ['1'],
+        );
     });
 
     it('should ignore null value', function() {
@@ -40,11 +47,15 @@ describe('DL', function() {
             b: null,
         });
         const keys = component.find('dt');
-        assert.deepEqual(keys.map(key => key.text()), ['a']);
+        assert.deepEqual(
+            keys.map(key => key.text()),
+            ['a'],
+        );
         const values = component.find('dd');
-        assert.deepEqual(values.map(key => key.find('Blob').props().data), [
-            '1',
-        ]);
+        assert.deepEqual(
+            values.map(key => key.find('Blob').props().data),
+            ['1'],
+        );
     });
 
     it('should ignore empty string value', function() {
@@ -53,10 +64,14 @@ describe('DL', function() {
             b: '',
         });
         const keys = component.find('dt');
-        assert.deepEqual(keys.map(key => key.text()), ['a']);
+        assert.deepEqual(
+            keys.map(key => key.text()),
+            ['a'],
+        );
         const values = component.find('dd');
-        assert.deepEqual(values.map(key => key.find('Blob').props().data), [
-            '1',
-        ]);
+        assert.deepEqual(
+            values.map(key => key.find('Blob').props().data),
+            ['1'],
+        );
     });
 });

@@ -19,27 +19,27 @@ describe('UL', function() {
     it('should ignore undefined value', function() {
         const component = getComponent([1, undefined, 3]);
         const values = component.find('li');
-        assert.deepEqual(values.map(key => key.find('Blob').props().data), [
-            1,
-            3,
-        ]);
+        assert.deepEqual(
+            values.map(key => key.find('Blob').props().data),
+            [1, 3],
+        );
     });
 
     it('should ignore null value', function() {
         const component = getComponent([1, null, 3]);
         const values = component.find('li');
-        assert.deepEqual(values.map(key => key.find('Blob').props().data), [
-            1,
-            3,
-        ]);
+        assert.deepEqual(
+            values.map(key => key.find('Blob').props().data),
+            [1, 3],
+        );
     });
 
     it('should ignore empty string value', function() {
         const component = getComponent([1, '', 3]);
         const values = component.find('li');
-        assert.deepEqual(values.map(key => key.find('Blob').props().data), [
-            1,
-            3,
-        ]);
+        assert.deepEqual(
+            values.map(key => key.find('Blob').props().data),
+            [1, 3],
+        );
     });
 });

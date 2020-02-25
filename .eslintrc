@@ -28,7 +28,7 @@
             "trailingComma": "all"
         }],
         "import/no-extraneous-dependencies": "off",
-        "no-console": ["error", { "allow": ["warn", "error"] }],
+        "no-console": 1,
         "no-unused-vars": ["error", { "ignoreRestSiblings": true }],
         "import/no-named-as-default": "off"
     },
@@ -36,5 +36,10 @@
         "__DEVELOPMENT__": true,
         "__VERSION__": true,
         "__SERVER_URL__": true
+    },
+    "settings": {
+        "react": {
+            "version": "16.2.0"
+        }
     }
 }
