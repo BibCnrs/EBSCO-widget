@@ -18,12 +18,10 @@ $color-active: #00284b;
 }
 
 .tooltip {
-    & > .tooltip-inner{
+    & > .tooltip-inner, &.top .tooltip-arrow {
+        text-align: left;
         background-color: $color-active !important;
         border-color: $color-active !important;
-    }
-
-    &.top .tooltip-arrow {
         border-top-color: $color-active !important;
     }
 }
