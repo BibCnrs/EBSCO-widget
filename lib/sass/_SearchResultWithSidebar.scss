@@ -6,7 +6,7 @@
 
     .sidebar-handler {
         position: absolute;
-        left: 250px;
+        left: 270px;
     }
 
     .sidebar {
@@ -41,6 +41,10 @@
         transition: all 0.2s linear;
     }
     &.no-sidebar {
+        .sidebar-handler {
+            position: absolute;
+            left: 10px;
+        }
         .search-result {
             margin-left: 30px;
             border-left: solid 1px #ccc;

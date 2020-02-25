@@ -7,6 +7,10 @@ $color-active: #00284b;
     background-color: $primary-blue;
     border-color: $primary-blue;
 
+    &:disabled:hover {
+        background-color: $primary-blue !important;
+    }
+
     &:hover {
         background-color: $color-active;
         border-color: $color-active;
