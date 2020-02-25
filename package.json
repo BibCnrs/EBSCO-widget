@@ -20,7 +20,7 @@
   "homepage": "https://github.com/BibCnrs/EBSCO-widget",
   "dependencies": {
     "babel-polyfill": "6.26.0",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "classnames": "2.2.6",
     "compass-mixins": "0.12.10",
     "config": "1.21.0",
