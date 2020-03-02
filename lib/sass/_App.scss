@@ -21,6 +21,9 @@ $color-active: #00284b;
 }
 
 .tooltip {
+    & > .tooltip-inner {
+        text-align: left;
+    }
     &.bottom {
         .tooltip-arrow {
             border-bottom-color: $color-active;
