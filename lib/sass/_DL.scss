@@ -50,9 +50,6 @@
     padding-left: 0;
     li {
         width: 100%;
-        a {
-            margin-right: 10px;
-        }
     }
     .ul {
         @include inline-list();
