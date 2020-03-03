@@ -17,11 +17,16 @@
 
     .bookmark-button {
         font-size: 18px;
-        position: absolute;
-        right: 10px;
-        bottom: 5px;
         &.added {
             color: #FF9982 !important;
+        }
+    }
+
+    .record-publication {
+        & > button.bookmark-button {
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
         }
     }
     
@@ -29,9 +34,17 @@
         visibility: hidden;
         height: 0;
     }
+    
+    ul.ul {
+        .fulltext-holding {
+            .bookmark-button {
+                position: initial;
+            }
+        }
+    }
 
     ul.dropdown-menu {
-        padding: 7px;
+        padding: 10px;
         border: 2px solid #FF9982;
         left: initial;
 
@@ -40,13 +53,16 @@
             margin-bottom: 6px;
         }
 
+        a {
+            margin-right: 10px;
+        }
+
         .fulltext-holding {
-            .text {
-                margin-right: 10px;
-            }
+            position: relative;
             .bookmark-button {
-                right: -3px;
-                bottom: inherit;
+                position: absolute;
+                right: -15px;
+                bottom: 17px;
             }
         }
 
