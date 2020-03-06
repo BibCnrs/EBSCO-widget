@@ -36,6 +36,7 @@
         }
     }
     .db {
+        position: relative;
         color:#000;
         margin: 5px 5px 0px 5px;
         padding: 2px 5px 2px 2px;
@@ -66,6 +67,11 @@
             &.added {
                 color: #FF9982 !important;
             }
+        }
+        .oa-img {
+            position: absolute;
+            right: 22px;
+            bottom: 6px;
         }
         img {
             object-fit: contain;

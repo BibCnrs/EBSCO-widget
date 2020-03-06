@@ -122,7 +122,7 @@ describe('Database', function() {
                         text_en: 'description in english',
                         url_fr: 'inist.fr',
                         url_en: 'inist.com',
-                        imge: 'inist image',
+                        image: 'inist image',
                     },
                     {
                         name_fr: 'insb',
@@ -131,7 +131,7 @@ describe('Database', function() {
                         text_en: 'insb in english',
                         url_fr: 'insb.fr',
                         url_en: 'insb.com',
-                        imge: 'insb image',
+                        image: 'insb image',
                     },
                 ],
                 clickDb: () => {},
@@ -149,6 +149,7 @@ describe('Database', function() {
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                     domain: 'ALL',
+                    oa: undefined,
                     onDbClick: itemProps.onDbClick,
                 });
             });
@@ -192,6 +193,7 @@ describe('Database', function() {
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                     domain: 'INSU',
+                    oa: undefined,
                     onDbClick: itemProps.onDbClick,
                 });
             });
