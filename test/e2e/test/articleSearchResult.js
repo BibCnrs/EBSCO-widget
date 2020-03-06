@@ -60,7 +60,7 @@ describe('articleSearchResult', function() {
             .assert.elementCount('.active_facet', 1)
             .assert.containsText(
                 '.active_facet .header .title',
-                'Appliquer vos filtres',
+                'Réinitialiser vos filtres',
             )
             .assert.containsText(
                 '.available_facets .facet:nth-child(1) .header .title',
@@ -86,7 +86,7 @@ describe('articleSearchResult', function() {
             .waitForElementVisible('.available_facets', 1000)
             .assert.containsText(
                 '.active_facet .header .title',
-                'Appliquer vos filtres',
+                'Réinitialiser vos filtres',
             )
             .assert.elementCount('.active_facet .facet_values .facet_value', 1)
             .assert.containsText(
