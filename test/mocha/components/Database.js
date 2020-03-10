@@ -110,52 +110,7 @@ describe('Database', function() {
     });
 
     describe('DatabaseLetter', () => {
-        it('should render one databaseItem for each item in database with text based on language but no url if domain is all', () => {
-            const props = {
-                language: 'fr',
-                domain: 'ALL',
-                databases: [
-                    {
-                        name_fr: 'inist',
-                        name_en: 'inist en',
-                        text_fr: 'description en français',
-                        text_en: 'description in english',
-                        url_fr: 'inist.fr',
-                        url_en: 'inist.com',
-                        image: 'inist image',
-                    },
-                    {
-                        name_fr: 'insb',
-                        name_en: 'insb en',
-                        text_fr: 'insb en français',
-                        text_en: 'insb in english',
-                        url_fr: 'insb.fr',
-                        url_en: 'insb.com',
-                        image: 'insb image',
-                    },
-                ],
-                clickDb: () => {},
-            };
-            const component = enzyme.shallow(<DatabaseLetter {...props} />);
-
-            const databaseItems = component.find('DatabaseItem');
-            assert.equal(databaseItems.length, 2);
-            databaseItems.map((databaseItem, index) => {
-                const expectedItem = props.databases[index];
-                const itemProps = databaseItem.props();
-                assert.deepEqual(itemProps, {
-                    name: expectedItem.name_fr,
-                    url: null,
-                    title: expectedItem.text_fr,
-                    image: expectedItem.image,
-                    domain: 'ALL',
-                    oa: undefined,
-                    onDbClick: itemProps.onDbClick,
-                });
-            });
-        });
-
-        it('should render one databaseItem for each item in database with text and url based on language and domain if not ALL', () => {
+        it('should render one databaseItem for each item in database with text and url based on language and domain', () => {
             const props = {
                 language: 'fr',
                 domain: 'INSU',
