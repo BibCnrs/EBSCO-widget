@@ -434,7 +434,7 @@ describe('index reducers', function() {
                     },
                     domains: {
                         article: 'IN2P3',
-                        database: 'ALL',
+                        database: 'IN2P3',
                         publication: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS'],
@@ -463,7 +463,7 @@ describe('index reducers', function() {
                     domains: {
                         article: 'IN2P3',
                         publication: 'IN2P3',
-                        database: 'ALL',
+                        database: 'IN2P3',
                         all: ['IN2P3', 'INSHS'],
                         available: ['IN2P3', 'INSHS'],
                         defaultDomain: 'INSHS',
