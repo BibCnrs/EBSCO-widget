@@ -5,6 +5,7 @@ describe('Database', function() {
         const props = {
             language: 'fr',
             domain: 'INSB',
+            apiUrl: 'http://api.local',
             databases: {
                 d: [
                     {
@@ -14,6 +15,7 @@ describe('Database', function() {
                         url_fr: 'database.fr',
                         url_en: 'database.com',
                         domains: ['INSB'],
+                        oa: false,
                     },
                 ],
                 i: [
@@ -24,6 +26,7 @@ describe('Database', function() {
                         url_fr: 'inist.fr',
                         url_en: 'inist.com',
                         domains: ['INSB'],
+                        oa: false,
                     },
                     {
                         name: 'insb',
@@ -32,6 +35,7 @@ describe('Database', function() {
                         url_fr: 'insb.fr',
                         url_en: 'insb.com',
                         domains: ['INSB'],
+                        oa: false,
                     },
                 ],
             },
@@ -59,6 +63,7 @@ describe('Database', function() {
         const props = {
             language: 'fr',
             domain: 'INSB',
+            apiUrl: 'http://api.local',
             databases: {
                 d: [
                     {
@@ -68,6 +73,7 @@ describe('Database', function() {
                         url_fr: 'database.fr',
                         url_en: 'database.com',
                         domains: ['INSB'],
+                        oa: false,
                     },
                 ],
                 i: [
@@ -78,6 +84,7 @@ describe('Database', function() {
                         url_fr: 'inist.fr',
                         url_en: 'inist.com',
                         domains: ['INSHS'],
+                        oa: false,
                     },
                     {
                         name: 'insb',
@@ -86,6 +93,7 @@ describe('Database', function() {
                         url_fr: 'insb.fr',
                         url_en: 'insb.com',
                         domains: ['INSB'],
+                        oa: false,
                     },
                 ],
             },
@@ -114,6 +122,7 @@ describe('Database', function() {
             const props = {
                 language: 'fr',
                 domain: 'INSU',
+                apiUrl: 'http://api.local',
                 databases: [
                     {
                         name_fr: 'inist',
@@ -122,7 +131,8 @@ describe('Database', function() {
                         text_en: 'description in english',
                         url_fr: 'inist.fr',
                         url_en: 'inist.com',
-                        imge: 'inist image',
+                        image: 'inist image',
+                        oa: false,
                     },
                     {
                         name_fr: 'insb',
@@ -131,7 +141,8 @@ describe('Database', function() {
                         text_en: 'insb in english',
                         url_fr: 'insb.fr',
                         url_en: 'insb.com',
-                        imge: 'insb image',
+                        image: 'insb image',
+                        oa: false,
                     },
                 ],
             };
@@ -144,11 +155,87 @@ describe('Database', function() {
                 const itemProps = databaseItem.props();
                 assert.deepEqual(itemProps, {
                     name: expectedItem.name_fr,
+                    url: `http://api.local/oa?url=${expectedItem.url_fr}&sid=bdd&domaine=INSU&doi=null`,
+                    title: expectedItem.text_fr,
+                    image: expectedItem.image,
+                    domain: 'INSU',
+                    oa: false,
+                    onDbClick: itemProps.onDbClick,
+                });
+            });
+        });
+
+        it('should proxify url for databaseItem when useProxy value is true', () => {
+            const props = {
+                language: 'fr',
+                domain: 'INSU',
+                apiUrl: 'http://api.local',
+                databases: [
+                    {
+                        name_fr: 'inist',
+                        name_en: 'inist en',
+                        text_fr: 'description en français',
+                        text_en: 'description in english',
+                        url_fr: 'inist.fr',
+                        url_en: 'inist.com',
+                        image: 'inist image',
+                        oa: true,
+                        useProxy: true,
+                    },
+                ],
+            };
+            const component = enzyme.shallow(<DatabaseLetter {...props} />);
+
+            const databaseItems = component.find('DatabaseItem');
+            assert.equal(databaseItems.length, 1);
+            databaseItems.map((databaseItem, index) => {
+                const expectedItem = props.databases[index];
+                const itemProps = databaseItem.props();
+                assert.deepEqual(itemProps, {
+                    name: expectedItem.name_fr,
                     url: `https://insu.bib.cnrs.fr/login?url=${expectedItem.url_fr}`,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                     domain: 'INSU',
-                    oa: undefined,
+                    oa: true,
+                    onDbClick: itemProps.onDbClick,
+                });
+            });
+        });
+
+        it('should not proxify url for databaseItem when useProxy value is false', () => {
+            const props = {
+                language: 'fr',
+                domain: 'INSU',
+                apiUrl: 'http://api.local',
+                databases: [
+                    {
+                        name_fr: 'inist',
+                        name_en: 'inist en',
+                        text_fr: 'description en français',
+                        text_en: 'description in english',
+                        url_fr: 'inist.fr',
+                        url_en: 'inist.com',
+                        image: 'inist image',
+                        oa: true,
+                        useProxy: false,
+                    },
+                ],
+            };
+            const component = enzyme.shallow(<DatabaseLetter {...props} />);
+
+            const databaseItems = component.find('DatabaseItem');
+            assert.equal(databaseItems.length, 1);
+            databaseItems.map((databaseItem, index) => {
+                const expectedItem = props.databases[index];
+                const itemProps = databaseItem.props();
+                assert.deepEqual(itemProps, {
+                    name: expectedItem.name_fr,
+                    url: `http://api.local/oa?url=${expectedItem.url_fr}&sid=bdd&domaine=INSU&doi=null`,
+                    title: expectedItem.text_fr,
+                    image: expectedItem.image,
+                    domain: 'INSU',
+                    oa: true,
                     onDbClick: itemProps.onDbClick,
                 });
             });
