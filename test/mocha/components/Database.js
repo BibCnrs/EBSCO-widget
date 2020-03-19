@@ -165,7 +165,7 @@ describe('Database', function() {
             });
         });
 
-        it('should proxify url for databaseItem when useProxy value is true', () => {
+        it('should proxify url for databaseItem when use_proxy value is true', () => {
             const props = {
                 language: 'fr',
                 domain: 'INSU',
@@ -180,7 +180,7 @@ describe('Database', function() {
                         url_en: 'inist.com',
                         image: 'inist image',
                         oa: true,
-                        useProxy: true,
+                        use_proxy: true,
                     },
                 ],
             };
@@ -203,7 +203,7 @@ describe('Database', function() {
             });
         });
 
-        it('should not proxify url for databaseItem when useProxy value is false', () => {
+        it('should not proxify url for databaseItem when use_proxy value is false', () => {
             const props = {
                 language: 'fr',
                 domain: 'INSU',
@@ -218,7 +218,7 @@ describe('Database', function() {
                         url_en: 'inist.com',
                         image: 'inist image',
                         oa: true,
-                        useProxy: false,
+                        use_proxy: false,
                     },
                 ],
             };
