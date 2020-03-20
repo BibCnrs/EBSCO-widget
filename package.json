@@ -81,7 +81,7 @@
     "koa": "1.2.5",
     "koa-cors": "0.0.16",
     "koa-route": "2.4.2",
-    "mocha": "7.1.0",
+    "mocha": "7.1.1",
     "nightwatch": "0.9.21",
     "node-sass": "4.13.1",
     "prettier": "1.19.1",
