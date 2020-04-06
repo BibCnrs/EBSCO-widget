@@ -32,7 +32,9 @@
             color: #fff;
         }
         li {
-            display: inline-block;
+            a {
+                text-decoration: none;
+            }
         }
     }
     .db {
