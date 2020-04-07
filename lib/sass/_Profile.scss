@@ -4,7 +4,6 @@
     @include display-flex;
     @include align-items(flex-start);
     @include justify-content(space-between);
-    padding: $body-padding-y 0;
 
     .list-group-item {
         border-radius: 10px;
