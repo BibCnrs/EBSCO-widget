@@ -81,6 +81,21 @@ $color-active: #00284b;
     }
 }
 
-.link {
-    cursor: pointer;
+#homepageResource {
+    position: relative;
+    margin-top: 10px;
+
+    .resource-opener {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    .more {
+        background-color: transparent;
+        border: transparent;
+        color: $primary-blue;
+        font-size: 18px;
+    }
 }
+
