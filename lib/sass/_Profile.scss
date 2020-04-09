@@ -15,50 +15,13 @@
     }
 
     &-left {
-        @include flex(1.7);
+        @include flex(1.5);
     }
 
     &-right {
-        @include display-flex;
-        @include flex-direction(column);
-        @include align-items(flex-start);
-        @include justify-content(flex-start);
         @include flex(1);
 
         margin-left: 20px;
-
-        .favourite-domain {
-            width: 100%;
-
-            &-item {
-                @include display-flex;
-                @include align-items(center);
-                @include justify-content(space-between);
-            }
-        }
-
-        .domains {
-            position: relative;
-            width: 100%;
-
-            &-item {
-                @include display-flex;
-                @include align-items(center);
-                @include justify-content(space-between);
-            }
-
-            #profile-domain-help {
-                background-color: transparent;
-                border:0;
-                color: $primary-blue;
-                height: initial;
-                margin-left: 2px;
-                padding: 0 0;
-                .fa {
-                    font-size: 18px;
-                }
-            }
-        }
     }
 }
 .tooltip2 {
