@@ -52,8 +52,7 @@ describe('Blob', function() {
             value: 'a value',
             field: 'a field',
         };
-        const component = getComponent(data);
-        const searchLink = component.find('Connect');
+        const searchLink = getComponent(data);
         assert.equal(
             searchLink.getElement().type.displayName,
             'Connect(SearchLink)',

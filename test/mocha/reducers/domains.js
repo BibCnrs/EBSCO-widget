@@ -179,6 +179,8 @@ describe('reducer domains', function() {
                     rights: [],
                     article: null,
                     favoriteDomain: null,
+                    database: null,
+                    publication: null,
                 },
             );
         });
