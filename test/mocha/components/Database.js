@@ -160,7 +160,6 @@ describe('Database', function() {
                     image: expectedItem.image,
                     domain: 'INSU',
                     oa: false,
-                    onDbClick: itemProps.onDbClick,
                 });
             });
         });
@@ -198,7 +197,6 @@ describe('Database', function() {
                     image: expectedItem.image,
                     domain: 'INSU',
                     oa: true,
-                    onDbClick: itemProps.onDbClick,
                 });
             });
         });
@@ -236,7 +234,6 @@ describe('Database', function() {
                     image: expectedItem.image,
                     domain: 'INSU',
                     oa: true,
-                    onDbClick: itemProps.onDbClick,
                 });
             });
         });
