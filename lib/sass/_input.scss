@@ -1,1 +1,10 @@
 @import "./_variables.scss";
+
+input[type=search] {
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    &:focus {
+        outline: none;
+        border: 1px solid $hover;
+    }
+}
