@@ -155,7 +155,7 @@ describe('Database', function() {
                 const itemProps = databaseItem.props();
                 assert.deepEqual(itemProps, {
                     name: expectedItem.name_fr,
-                    url: `http://api.local/oa?url=${expectedItem.url_fr}&sid=bdd&domaine=INSU&doi=null`,
+                    url: `http://api.local/oa_database?url=${expectedItem.url_fr}&sid=bdd&domaine=INSU&doi=null`,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                     domain: 'INSU',
@@ -164,7 +164,7 @@ describe('Database', function() {
             });
         });
 
-        it('should proxify url for databaseItem when use_proxy value is true', () => {
+        it('should proxify url for databaseItem when use_proxy value is true and user is not logged', () => {
             const props = {
                 language: 'fr',
                 domain: 'INSU',
@@ -201,7 +201,7 @@ describe('Database', function() {
             });
         });
 
-        it('should not proxify url for databaseItem when use_proxy value is false', () => {
+        it('should not proxify url for databaseItem when use_proxy value is false and user is not logged', () => {
             const props = {
                 language: 'fr',
                 domain: 'INSU',
@@ -229,7 +229,7 @@ describe('Database', function() {
                 const itemProps = databaseItem.props();
                 assert.deepEqual(itemProps, {
                     name: expectedItem.name_fr,
-                    url: `http://api.local/oa?url=${expectedItem.url_fr}&sid=bdd&domaine=INSU&doi=null`,
+                    url: `http://api.local/oa_database?url=${expectedItem.url_fr}&sid=bdd&domaine=INSU&doi=null`,
                     title: expectedItem.text_fr,
                     image: expectedItem.image,
                     domain: 'INSU',
