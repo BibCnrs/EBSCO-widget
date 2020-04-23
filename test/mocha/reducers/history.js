@@ -306,7 +306,12 @@ describe('reducer history', function() {
                 {
                     queries: [
                         { id: 4 },
-                        { id: 5, frequence: 'month', hasAlert: true },
+                        {
+                            id: 5,
+                            frequence: 'month',
+                            hasAlert: true,
+                            active: true,
+                        },
                         { id: 6 },
                     ],
                 },
@@ -330,7 +335,7 @@ describe('reducer history', function() {
                 {
                     queries: [
                         { id: 4 },
-                        { id: 5, frequence: 'none', hasAlert: false },
+                        { id: 5, frequence: 'week', hasAlert: false },
                         { id: 6 },
                     ],
                 },
