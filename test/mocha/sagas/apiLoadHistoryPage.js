@@ -71,7 +71,7 @@ describe('sagas apiLoadHistoryPage', function() {
 
         assert.deepEqual(
             next.value,
-            put(actions.loadHistoryPageSuccess('response', 10)),
+            put(actions.loadHistoryPageSuccess(['response', []], 10)),
         );
     });
 });
