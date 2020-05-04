@@ -66,7 +66,7 @@ describe('index reducers', function() {
                         },
                         1,
                     ),
-                    'http://api/insb/article/retrieve/dbId/an',
+                    'http://api/insb/article/retrieve?dbid=dbId&an=an',
                 );
             });
 
