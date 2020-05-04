@@ -7,7 +7,7 @@ describe('articleSearchResult', function() {
         client.start(done);
     });
 
-    it('should retrieve clicked article', function(done) {
+    it.skip('should retrieve clicked article', function(done) {
         browser
             .waitForElementVisible('.record', 1000)
             .click('.record_list .notice-opener')
