@@ -67,12 +67,11 @@ app.use(
 );
 
 app.use(
-    route.get(
-        '/:domainName/article/retrieve/:dbId/:an',
-        function* articleRetrieve(domainName) {
-            this.body = require(`./jsonResponse/${domainName}/article/retrieve/aids01.json`);
-        },
-    ),
+    route.get('/:domainName/article/retrieve', function* articleRetrieve(
+        domainName,
+    ) {
+        this.body = require(`./jsonResponse/${domainName}/article/retrieve/aids01.json`);
+    }),
 );
 
 app.use(
