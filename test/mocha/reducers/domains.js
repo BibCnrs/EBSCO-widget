@@ -180,7 +180,6 @@ describe('reducer domains', function() {
                     article: null,
                     favoriteDomain: null,
                     database: null,
-                    publication: null,
                 },
             );
         });
