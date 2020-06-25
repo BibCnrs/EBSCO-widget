@@ -28,6 +28,10 @@
             flex: -moz-available;
             @include justify-content(space-between);
         }
+        .after1{
+            @include flex(1);
+            vertical-align: middle;
+        }
         .after, .before {
             @include flex(1);
             vertical-align: top;
