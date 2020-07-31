@@ -89,6 +89,7 @@ describe('reducer domains', function() {
                         },
                         database: 'INSB',
                         favoriteDomain: 'INSB',
+                        publication: 'INSB',
                     },
                 );
             });
@@ -123,6 +124,7 @@ describe('reducer domains', function() {
                         rights: ['INSB', 'INSHS'],
                         database: 'INSHS',
                         favoriteDomain: 'INSHS',
+                        publication: 'INSB',
                     },
                 );
             });
@@ -157,6 +159,7 @@ describe('reducer domains', function() {
                         rights: ['INSB', 'IOP', 'INSHS', 'REAXYS'],
                         database: 'INSHS',
                         favoriteDomain: 'INSHS',
+                        publication: 'INSB',
                     },
                 );
             });
@@ -180,6 +183,7 @@ describe('reducer domains', function() {
                     article: null,
                     favoriteDomain: null,
                     database: null,
+                    publication: 'INSHS',
                 },
             );
         });
