@@ -1,4 +1,4 @@
-name: "Test - action"
+name: "Test - EBSCO-widget"
 
 on: [push]
 
@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
-    - name: Unit Tests
+    - name: Tests
       run: make test
       env:
         CI: true
