@@ -76,7 +76,7 @@
     "koa-route": "2.4.2",
     "mocha": "7.1.2",
     "nightwatch": "0.9.21",
-    "node-sass": "4.14.1",
+    "node-sass": "7.0.0",
     "prettier": "1.19.1",
     "pre-commit": "1.2.2",
     "react-addons-test-utils": "15.6.2",
