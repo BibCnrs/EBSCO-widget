@@ -70,7 +70,7 @@
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "3.2.0",
-    "jsdom": "9.6.0",
+    "jsdom": "16.5.0",
     "koa": "1.2.5",
     "koa-cors": "0.0.16",
     "koa-route": "2.4.2",
