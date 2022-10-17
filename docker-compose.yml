@@ -38,4 +38,4 @@ services:
     working_dir: /app
     environment:
       NODE_ENV: test
-    command: node_modules/mocha/bin/mocha test/mocha test/mocha/**/*.js
+    command: node_modules/mocha/bin/mocha --exit test/mocha test/mocha/**/*.js

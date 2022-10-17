@@ -8,7 +8,11 @@ services:
     working_dir: /app
     environment:
       server_url: 'http://server'
+    ports:
+      - 80:80
     command: node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.test.js --port 80 --host 0.0.0.0
+    depends_on:
+      - server
 
   server:
     image: node:16-alpine
@@ -18,13 +22,34 @@ services:
     command: node mock/launcher.js
 
   hub:
-    image: selenium/hub:2.53.0
+    image: selenium/hub:4.5.0-20221004
+    container_name: hub
+    ports:
+      - "4444:4444"
 
   chrome:
-    image: selenium/node-chrome:2.53.0
+    image: selenium/node-chrome:4.5.0-20221004
+    shm_size: 2gb
+    depends_on:
+      - hub
+      - app
+    environment:
+      - SE_EVENT_BUS_HOST=hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "7900:7900"
 
   chromedebug:
-    image: selenium/node-chrome-debug:2.53.0
+    image: selenium/node-chrome-debug:latest
+    shm_size: 2gb
+    depends_on:
+      - hub
+      - app
+    environment:
+      - SE_EVENT_BUS_HOST=hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     ports:
       - 5900:5900
 
@@ -37,3 +62,6 @@ services:
       NODE_ENV: test
       server_url: http://server
     command: node_modules/mocha/bin/mocha test/e2e test/e2e/test/*.js
+    depends_on:
+      - app
+      - hub
