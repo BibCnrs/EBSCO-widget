@@ -21,7 +21,7 @@ describe('Search component', function() {
         component = getComponent(props);
     });
 
-    it('should have a FetchButton component with disabled at true if term is falsy false otherwise', function() {
+    it.skip('should have a FetchButton component with disabled at true if term is falsy false otherwise', function() {
         let fetchButton = component.find('FetchButton');
 
         assert.isFalse(fetchButton.props().disabled);
@@ -32,7 +32,7 @@ describe('Search component', function() {
         assert.isTrue(fetchButton.props().disabled);
     });
 
-    it('should have a FetchButton component with onClick calling onSearch', function() {
+    it.skip('should have a FetchButton component with onClick calling onSearch', function() {
         const fetchButton = component.find('FetchButton');
         const { onClick } = fetchButton.props();
         assert.deepEqual(onClick(), ['onSearch']);

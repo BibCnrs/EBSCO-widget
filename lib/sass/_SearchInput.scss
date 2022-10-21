@@ -1,81 +1,119 @@
 $radius: 20px;
 
 .search-input {
-    @include flex(1);
-    height: 50px;
+  @include flex(1);
+  height: 50px;
+  background-color: #fff;
+  border-radius: $radius;
+  max-width: 800px;
+  width: 100%;
 
-    .input-group {
-        height:100%;
+  .input-group {
+    height: 100%;
 
-        .before {
-            background-color: #fff;
-            border-top-left-radius: $radius;
-            border-bottom-left-radius: $radius;
-            height:100%;
-            min-width: 50px;
-
-            .dropdown {
-                height:100%;
-
-                button#domain {
-                    border: 0;
-                    box-shadow: none;;
-                    height: 100%;
-                    border-top-left-radius: $radius;
-                    border-bottom-left-radius: $radius;
-                }
-            }
-        }
-
-        .term {
-            position: relative;
-            height:100%;
-
-            .form-control {
-                border: 0;
-                height: 100%;
-
-                &:focus {
-                    box-shadow: none;
-                }
-            }
-        }
-
-        .search-clear {
-            padding-right: 10px;
-            padding-left: 1px;
-            font-size: 18px;
-            color: grey;
-            cursor: pointer;
-            background-color: #fff;
-            border: 0;
-            border-top-right-radius: $radius;
-            border-bottom-right-radius: $radius;
-        }
-    }
-
-    .autocompletion {
-        @include flexbox((
-            display: flex,
-            flex-direction: column
-        ));
-        .suggestion {
-            width: 100%;
-            @include display-flex;
-            .suggested-term {
-                float: left;
-            }
-        }
+    .before {
+      height: 100%;
+      min-width: 50px;
+      &.border::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 80%;
+        background-color: grey;
         position: absolute;
-        left: 0;
+        top: 10%;
         right: 0;
-        top: 50px;
-        z-index: 10;
-        border: 1px solid #ccc;
-        background-color: #fff;
+      }
+
+      .dropdown {
+        height: 100%;
+
+        button#domain {
+          border: 0;
+          box-shadow: none;
+          height: 100%;
+        }
+      }
     }
 
-    .open.dropdown.btn-group {
-        z-index: 3;
+    .term {
+      position: relative;
+      height: 100%;
+
+      .form-control {
+        border: 0;
+        height: 100%;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
     }
+
+    .search-clear {
+      padding-right: 10px;
+      padding-left: 1px;
+      font-size: 18px;
+      color: grey;
+      cursor: pointer;
+      border: 0;
+    }
+
+    .search-fetch {
+      color: grey;
+      border: 0;
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 80%;
+        background-color: grey;
+        position: absolute;
+        top: 10%;
+        left: 0;
+      }
+      .btn {
+        font-size: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        height: 100%;
+        width: 100%;
+        background: transparent;
+      }
+    }
+  }
+
+  .autocompletion {
+    @include flexbox(
+      (
+        display: flex,
+        flex-direction: column,
+      )
+    );
+    .suggestion {
+      width: 100%;
+      @include display-flex;
+      .suggested-term {
+        float: left;
+      }
+    }
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    z-index: 10;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+
+  .open.dropdown.btn-group {
+    z-index: 3;
+  }
+  .dropdown {
+    height: 100%;
+    .field {
+      border: none;
+      height: 100%;
+    }
+  }
 }
