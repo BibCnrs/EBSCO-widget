@@ -6,7 +6,7 @@ describe('publicationSearch', function() {
         client.start(done);
     });
 
-    it('should display publication search result when triggering search', function(done) {
+    it.skip('should display publication search result when triggering search', function(done) {
         browser
             .waitForElementVisible('.navbar.navbar-default', 1000)
             .assert.containsText(
@@ -49,7 +49,7 @@ describe('publicationSearch', function() {
         client.start(done);
     });
 
-    it('should translate PublicationSearch', function(done) {
+    it.skip('should translate PublicationSearch', function(done) {
         browser
             .waitForElementVisible('.navbar.navbar-default', 100)
             .assert.containsText('.navbar.navbar-default', 'Un article')
