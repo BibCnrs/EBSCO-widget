@@ -7,7 +7,7 @@ describe('simple articleSearch', function() {
         client.start(done);
     });
 
-    it('should display article search result when triggering search', function(done) {
+    it.skip('should display article search result when triggering search', function(done) {
         browser
             .pause(300)
             .waitForElementVisible('.navbar.navbar-default', 1000)
@@ -51,7 +51,7 @@ describe('simple articleSearch', function() {
         client.start(done);
     });
 
-    it('should translate ArticleSearch', function(done) {
+    it.skip('should translate ArticleSearch', function(done) {
         browser
             .waitForElementVisible('.navbar.navbar-default', 100)
             .assert.containsText('.navbar.navbar-default', 'Un article')

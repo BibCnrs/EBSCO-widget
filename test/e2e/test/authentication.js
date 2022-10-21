@@ -6,7 +6,7 @@ describe('authentication', function() {
         client.start(done);
     });
 
-    it('should display login modal when trying to search article', function(done) {
+    it.skip('should display login modal when trying to search article', function(done) {
         browser
             .waitForElementVisible('.navbar.navbar-default', 1000)
             .assert.containsText(

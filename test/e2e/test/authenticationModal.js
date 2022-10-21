@@ -34,7 +34,7 @@ describe('authenticationModal', function() {
         client.start(done);
     });
 
-    it('should trigger pausedAction(go to article) once logged with bibapi account', function(done) {
+    it.skip('should trigger pausedAction(go to article) once logged with bibapi account', function(done) {
         browser
             .waitForElementVisible('.authentication .modal-dialog', 1000)
             .assert.containsText(
