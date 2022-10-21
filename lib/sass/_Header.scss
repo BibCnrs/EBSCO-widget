@@ -3,8 +3,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-right: 30px;
+    justify-content: space-between;    
     .infos {
         display: flex;
         flex-direction: column;
@@ -18,7 +17,7 @@
             }
         }
     }
-    .login-button, .profile-button {
+    .login-button {
         cursor: auto;
         border-radius: 15px;
         border: 1px transparent;
@@ -34,6 +33,51 @@
             background-color: white !important;
         }
     }
+
+     .profile-button {
+        cursor: auto;
+        border: 1px transparent;
+        font-weight: bold;
+        color: #034FA0;
+        white-space: normal;
+        background-color: transparent;
+
+        hr {
+            margin-bottom: 5px;
+        }
+
+        .arrow {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            margin-left: 5px;
+        }
+          
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+   
+        img {
+            width: 35px;
+            height: 35px;
+            padding: 5px;
+            background-color: white;
+        }
+
+        .text{
+            font-weight: bold;
+            color: #034FA0;
+        }
+        &:active, &:hover, &:focus {
+            cursor: pointer;
+        }
+        .logout {
+            color: red !important;
+            padding: 5px;
+        }
+    }
 }
 
 .connection {
@@ -42,4 +86,9 @@
     .logout {
         color: white;
     }
+}
+
+.header-login {
+    position: absolute;
+    right: 80px;
 }
