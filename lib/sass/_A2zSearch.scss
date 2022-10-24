@@ -23,4 +23,9 @@
             background-color: $primary-blue-alt;
         }
     }
+
+    > div {
+        max-width: 800px;
+        margin: 0 auto;
+    }
 }
