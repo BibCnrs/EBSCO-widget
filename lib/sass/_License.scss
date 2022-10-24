@@ -1,10 +1,17 @@
+.licenses_not_found, .licenses_loading {
+  padding: 40px 0px;
+  font-weight: bold;
+}
+
 .licenses {
     display: flex;
     margin-top: 2rem;
     margin-bottom: 2rem;
 
+
     .licenses__list {
         border: 2px solid #0050A0;
+        height: 100%;
         
         .licenses__list__item {
             padding: 20px 40px;

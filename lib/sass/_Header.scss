@@ -31,6 +31,7 @@
         }
         &:active, &:hover, &:focus {
             background-color: white !important;
+            outline: none;
         }
     }
 
@@ -43,7 +44,8 @@
         background-color: transparent;
 
         hr {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            margin-top: 5px;
         }
 
         .arrow {
@@ -72,6 +74,18 @@
         }
         &:active, &:hover, &:focus {
             cursor: pointer;
+            outline: none;
+        }
+
+        h5 {
+            b {
+                color: #034FA0;
+                text-align: center;
+            }
+            
+        }
+        .license {
+            padding: 5px;
         }
         .logout {
             color: red !important;
@@ -82,13 +96,11 @@
 
 .connection {
     display: inline;
-    margin-right: 15px;
     .logout {
         color: white;
     }
 }
 
 .header-login {
-    position: absolute;
-    right: 80px;
+    margin-right: '10px';
 }
