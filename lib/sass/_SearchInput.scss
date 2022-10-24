@@ -14,19 +14,19 @@ $radius: 20px;
     .before {
       height: 100%;
       min-width: 50px;
-      &.border::after {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 80%;
-        background-color: grey;
-        position: absolute;
-        top: 10%;
-        right: 0;
-      }
 
       .dropdown {
         height: 100%;
+        &::after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 80%;
+          background-color: grey;
+          position: absolute;
+          top: 10%;
+          right: 1px;
+        }
 
         button#domain {
           border: 0;
