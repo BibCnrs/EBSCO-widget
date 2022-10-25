@@ -13,7 +13,7 @@ describe('authenticationModal', function() {
             .waitForElementVisible('.authentication .modal-dialog', 1000)
             .assert.containsText(
                 '.navbar.navbar-default .active',
-                'Une revue, un ouvrage',
+                'Revue, ouvrage',
             )
             .assert.containsText(
                 '.janus .panel-title',
@@ -26,10 +26,7 @@ describe('authenticationModal', function() {
             .click('button.janus')
             .pause(1000)
             .waitForElementVisible('.navbar.navbar-default', 1000)
-            .assert.containsText(
-                '.navbar.navbar-default .active',
-                'Un article',
-            );
+            .assert.containsText('.navbar.navbar-default .active', 'Article');
 
         client.start(done);
     });
@@ -39,7 +36,7 @@ describe('authenticationModal', function() {
             .waitForElementVisible('.authentication .modal-dialog', 1000)
             .assert.containsText(
                 '.navbar.navbar-default .active',
-                'Une revue, un ouvrage',
+                'Revue, ouvrage',
             )
             .assert.containsText(
                 '.janus',
@@ -55,10 +52,7 @@ describe('authenticationModal', function() {
             .setValue('.password', 'secret')
             .click('button.api')
             .waitForElementVisible('.navbar.navbar-default', 1000)
-            .assert.containsText(
-                '.navbar.navbar-default .active',
-                'Un article',
-            );
+            .assert.containsText('.navbar.navbar-default .active', 'Article');
 
         client.start(done);
     });
@@ -78,7 +72,7 @@ describe('authenticationModal', function() {
             )
             .assert.containsText(
                 '.navbar.navbar-default .active',
-                'Une revue, un ouvrage',
+                'Revue, ouvrage',
             );
         client.start(done);
     });

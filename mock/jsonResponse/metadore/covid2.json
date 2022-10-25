@@ -1,0 +1,354 @@
+{
+	"results": [
+		{
+			"id": 21,
+			"doi": "10.17632/2fxz4px6d8.3",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Augmented COVID-19 X-ray Images Dataset"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "This Dataset Contains augmented X-ray Images for COVID-19 for COVID-19 Disease Detection Using Chest X-Ray images. The dataset is collected from two online available datasets (https://github.com/ieee8023/covid-chestxray-dataset and https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)."
+				}
+			],
+			"url": "https://data.mendeley.com/datasets/2fxz4px6d8/3"
+		},
+		{
+			"id": 22,
+			"doi": "10.25796/bdd.v3i1.54503",
+			"type": "Article",
+			"titles": [
+				{
+					"title": "First viral replication of Covid-19 identified in the peritoneal dialysis fluid of a symptomatic patient"
+				},
+				{
+					"title": "Première réplication virale du Covid-19 identifiée dans le liquide de dialyse péritonéale d’un patient symptomatique"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "The COVID-19 pandemic is characterized by a disease with mainly respiratory tropism and varying severity. Viral excretion of COVID-19 has been described in both urine and stool with the risk of contamination by stool. No viral replication in the peritoneal dialysis fluid has been reported to date. We report an observation demonstrating the presence of the virus in the peritoneal dialysis drainage fluid of a COVID-19 patient. This underlines the importance in COVID-19 patients of considering dialysis fluid as a possible source of contamination."
+				},
+				{
+					"descriptionType": "SeriesInformation",
+					"description": "Bulletin de la Dialyse à Domicile, Vol 3 No 1 (2020): Bulletin de la Dialyse à Domicile"
+				}
+			],
+			"url": "https://bdd.rdplf.org/index.php/bdd/article/view/54503"
+		},
+		{
+			"id": 23,
+			"doi": "10.17632/h9kdchv6by",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Data for: WHEN HEALTH PROFESSIONALS LOOK DEATH IN THE EYE: THE MENTAL HEALTH OF PROFESSIONALS WHO DEAL DAILY WITH THE 2019 CORONAVIRUS OUTBREAK"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "Nurses, doctors, healthcare workers, and other medical professionals who are testing for and treating patients with COVID-19 are at a higher risk of contracting it than the general public. The combination of stress and possible exposure puts healthcare professionals, from physicians and nurses, to specialists, at greater risk of contracting COVID-19 and potentially spreading it to others. Health professionals directly involved in the diagnosis, treatment, and care of patients with COVID-19 develop the insertion of psychic spaces for the installation of pain and psychological suffering and other mental health symptoms. The foreseeable shortage of supplies and an increasing flow of suspected and real cases of COVID-19 contribute to the pressures and concerns of health professionals."
+				}
+			],
+			"url": "https://data.mendeley.com/datasets/h9kdchv6by"
+		},
+		{
+			"id": 24,
+			"doi": "10.6084/m9.figshare.11961063",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Dimensions COVID-19 publications, datasets and clinical trials"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "This file contains all relevant publications, datasets and clinical trials from Dimensions that are related to COVID-19. The content has been exported from Dimensions using a query in the openly accessible Dimensions application, which you can access at https://covid-19.dimensions.ai/.<br> Dimensions is updated once every 24 hours, so the latest research can be viewed alongside existing information. With its range of research outputs including datasets and clinical trials, both of which are just as important as journal articles in the face of a potential pandemic, Dimensions is a one-stop shop for all COVID-19 related information. <br>Please share this information with anyone you think would benefit from it. If you have any suggestions as to how we can improve our search terms to maximise the volume of research related to COVID-19, please contact us at support@dimensions.ai.<br>Please note: From October 2021 on the Dimensions COVID-19 dataset will continue to be updated only on Google BigQuery going forward. Please visit https://www.dimensions.ai/covid19/ on how to access the most current dataset.<br>"
+				}
+			],
+			"url": "https://dimensions.figshare.com/articles/dataset/Dimensions_COVID-19_publications_datasets_and_clinical_trials/11961063"
+		},
+		{
+			"id": 25,
+			"doi": "10.6084/m9.figshare.12057951",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Dynamic change of lymphocyte count in COVID-19 patients"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "Lymphopenia is associated with COVID-19 severity. Herein we describe the dynamic changes in lymphocyte count during hospitalization and explore a possible association with the severity of COVID-19.In this retrospective study, 13 non-severe COVID-19 patients diagnosed at admission were enrolled. One patient progressed to severe disease. Dynamic changes in lymphocyte count and CT score of all patients were analyzed."
+				}
+			],
+			"url": "https://figshare.com/articles/Dynamic_change_of_lymphocyte_count_in_COVID-19_patients/12057951"
+		},
+		{
+			"id": 26,
+			"doi": "10.6084/m9.figshare.12052380",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Supplementary Material for: Coronavirus Disease 19 Infection Does Not Result in Acute Kidney Injury: An Analysis of 116 Hospitalized Patients from Wuhan, China"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "<b><i>Background:</i></b> Whether the patients with coronavirus disease 19 (COVID-19) infected by severe acute respiratory syndrome (SARS)-CoV-2 would commonly develop acute kidney injury (AKI) is an important issue worthy of clinical attention. This study aimed to explore the effects of SARS-CoV-2 infection on renal function through analyzing the clinical data of 116 hospitalized COVID-19-confirmed patients. <b><i>Methods:</i></b> One hundred sixteen COVID-19-confirmed patients enrolled in this study were hospitalized in the Department of Infectious Diseases, Renmin Hospital of Wuhan University from January 14 to February 13, 2020. The recorded information includes demographic data, medical history, contact history, potential comorbidities, symptoms, signs, laboratory test results, chest computer tomography scans, and treatment measures. SARS-CoV-2 RNA in 53 urine sediments of enrolled patients was detected by real-time reverse transcription-polymerase chain reaction. <b><i>Results:</i></b> Twelve (10.8%) patients showed mild increase of blood urea nitrogen or creatinine (&lt;26 μmol/L within 48 h), and 8 (7.2%) patients showed trace or 1+ albuminuria in 111 COVID-19-confirmed patients without chronic kidney disease (CKD). All these patients did not meet the diagnostic criteria of AKI. In addition, 5 patients with CKD who were undergone regular continuous renal replacement therapy (CRRT) before admission were confirmed infection of SARS-CoV-2 and diagnosed as COVID-19. In addition to therapy for COVID-19, CRRT was also applied 3 times weekly during hospitalization for these 5 patients with CKD. In the course of treatment, the renal function indicators showed stable state in all 5 patients with CKD, without exacerbation of CKD, and pulmonary inflammation was gradually absorbed. All 5 patients with CKD were survived. Moreover, SARS-CoV-2 RNA in urine sediments was positive only in 3 patients from 48 cases without CKD, and 1 patient had a positive for SARS-CoV-2 open reading frame 1ab from 5 cases with CKD. <b><i>Conclusion:</i></b> AKI was uncommon in COVID-19. SARS-CoV-2 infection does not result in AKI, or aggravate CKD in the COVID-19 patients."
+				}
+			],
+			"url": "https://karger.figshare.com/articles/Supplementary_Material_for_Coronavirus_Disease_19_Infection_Does_Not_Result_in_Acute_Kidney_Injury_An_Analysis_of_116_Hospitalized_Patients_from_Wuhan_China/12052380"
+		},
+		{
+			"id": 27,
+			"doi": "10.6084/m9.figshare.12052380.v1",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Supplementary Material for: Coronavirus Disease 19 Infection Does Not Result in Acute Kidney Injury: An Analysis of 116 Hospitalized Patients from Wuhan, China"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "<b><i>Background:</i></b> Whether the patients with coronavirus disease 19 (COVID-19) infected by severe acute respiratory syndrome (SARS)-CoV-2 would commonly develop acute kidney injury (AKI) is an important issue worthy of clinical attention. This study aimed to explore the effects of SARS-CoV-2 infection on renal function through analyzing the clinical data of 116 hospitalized COVID-19-confirmed patients. <b><i>Methods:</i></b> One hundred sixteen COVID-19-confirmed patients enrolled in this study were hospitalized in the Department of Infectious Diseases, Renmin Hospital of Wuhan University from January 14 to February 13, 2020. The recorded information includes demographic data, medical history, contact history, potential comorbidities, symptoms, signs, laboratory test results, chest computer tomography scans, and treatment measures. SARS-CoV-2 RNA in 53 urine sediments of enrolled patients was detected by real-time reverse transcription-polymerase chain reaction. <b><i>Results:</i></b> Twelve (10.8%) patients showed mild increase of blood urea nitrogen or creatinine (&lt;26 μmol/L within 48 h), and 8 (7.2%) patients showed trace or 1+ albuminuria in 111 COVID-19-confirmed patients without chronic kidney disease (CKD). All these patients did not meet the diagnostic criteria of AKI. In addition, 5 patients with CKD who were undergone regular continuous renal replacement therapy (CRRT) before admission were confirmed infection of SARS-CoV-2 and diagnosed as COVID-19. In addition to therapy for COVID-19, CRRT was also applied 3 times weekly during hospitalization for these 5 patients with CKD. In the course of treatment, the renal function indicators showed stable state in all 5 patients with CKD, without exacerbation of CKD, and pulmonary inflammation was gradually absorbed. All 5 patients with CKD were survived. Moreover, SARS-CoV-2 RNA in urine sediments was positive only in 3 patients from 48 cases without CKD, and 1 patient had a positive for SARS-CoV-2 open reading frame 1ab from 5 cases with CKD. <b><i>Conclusion:</i></b> AKI was uncommon in COVID-19. SARS-CoV-2 infection does not result in AKI, or aggravate CKD in the COVID-19 patients."
+				}
+			],
+			"url": "https://karger.figshare.com/articles/Supplementary_Material_for_Coronavirus_Disease_19_Infection_Does_Not_Result_in_Acute_Kidney_Injury_An_Analysis_of_116_Hospitalized_Patients_from_Wuhan_China/12052380/1"
+		},
+		{
+			"id": 28,
+			"doi": "10.5281/zenodo.3731224",
+			"type": "Preprint",
+			"titles": [
+				{
+					"title": "First reported case of MRSA bacteremia in a patient with COVID-19"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "Case of COVID-19 with positive blood culture for MRSA COVID-19 is caused by a novel beta coronavirus, now known as severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). Bacterial co-infection of influenza with Staphylococcus aureus is well known, but there are no reported cases for SARS-Cov-2. We present a case of COVID-19 who had positive blood culture for MRSA."
+				}
+			],
+			"url": "https://zenodo.org/record/3731224"
+		},
+		{
+			"id": 29,
+			"doi": "10.5281/zenodo.3731223",
+			"type": "Preprint",
+			"titles": [
+				{
+					"title": "First reported case of MRSA bacteremia in a patient with COVID-19"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "Case of COVID-19 with positive blood culture for MRSA COVID-19 is caused by a novel beta coronavirus, now known as severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). Bacterial co-infection of influenza with Staphylococcus aureus is well known, but there are no reported cases for SARS-Cov-2. We present a case of COVID-19 who had positive blood culture for MRSA."
+				}
+			],
+			"url": "https://zenodo.org/record/3731223"
+		},
+		{
+			"id": 30,
+			"doi": "10.5281/zenodo.3727291",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "COVID-19 Open Research Dataset (CORD-19)"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "A full description of this dataset along with updated information can be found here. In response to the COVID-19 pandemic, the Allen Institute for AI has partnered with leading research groups to prepare and distribute the COVID-19 Open Research Dataset (CORD-19), a free resource of scholarly articles, including full text content, about COVID-19 and the coronavirus family of viruses for use by the global research community. This dataset is intended to mobilize researchers to apply recent advances in natural language processing to generate new insights in support of the fight against this infectious disease. The corpus will be updated weekly as new research is published in peer-reviewed publications and archival services like bioRxiv, medRxiv, and others. By downloading this dataset you are agreeing to the Dataset license. Specific licensing information for individual articles in the dataset is available in the metadata file. Additional licensing information is available on the PMC website, medRxiv website and bioRxiv website. <strong>Dataset content:</strong> Commercial use subset Non-commercial use subset PMC custom license subset bioRxiv/medRxiv subset (pre-prints that are not peer reviewed) Metadata file Readme Each paper is represented as a single JSON object (see schema file for details). <strong>Description:</strong> The dataset contains all COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from the following sources: PubMed's PMC open access corpus using this query (COVID-19 and coronavirus research) Additional COVID-19 research articles from a corpus maintained by the WHO bioRxiv and medRxiv pre-prints using the same query as PMC (COVID-19 and coronavirus research) We also provide a comprehensive metadata file of coronavirus and COVID-19 research articles with links to PubMed, Microsoft Academic and the WHO COVID-19 database of publications (includes articles without open access full text). We recommend using metadata from the comprehensive file when available, instead of parsed metadata in the dataset. Please note the dataset may contain multiple entries for individual PMC IDs in cases when supplementary materials are available. This repository is linked to the WHO database of publications on coronavirus disease and other resources, such as Microsoft Academic Graph, PubMed, and Semantic Scholar. A coalition including the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health came together to provide this service. <strong>Citation:</strong> When including CORD-19 data in a publication or redistribution, please cite the dataset as follows: In bibliography: <pre><code>COVID-19 Open Research Dataset (CORD-19). 2020. Version 2020-MM-DD. Retrieved from https://pages.semanticscholar.org/coronavirus-research. Accessed YYYY-MM-DD. 10.5281/zenodo.3715505</code></pre> In text: <pre><code>(CORD-19, 2020)</code></pre> The Allen Institute for AI and particularly the Semantic Scholar team will continue to provide updates to this dataset as the situation evolves and new research is released."
+				}
+			],
+			"url": "https://zenodo.org/record/3727291"
+		},
+		{
+			"id": 31,
+			"doi": "10.5281/zenodo.3731937",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "COVID-19 Open Research Dataset (CORD-19)"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "A full description of this dataset along with updated information can be found here. In response to the COVID-19 pandemic, the Allen Institute for AI has partnered with leading research groups to prepare and distribute the COVID-19 Open Research Dataset (CORD-19), a free resource of scholarly articles, including full text content, about COVID-19 and the coronavirus family of viruses for use by the global research community. This dataset is intended to mobilize researchers to apply recent advances in natural language processing to generate new insights in support of the fight against this infectious disease. The corpus will be updated weekly as new research is published in peer-reviewed publications and archival services like bioRxiv, medRxiv, and others. By downloading this dataset you are agreeing to the Dataset license. Specific licensing information for individual articles in the dataset is available in the metadata file. Additional licensing information is available on the PMC website, medRxiv website and bioRxiv website. <strong>Dataset content:</strong> Commercial use subset Non-commercial use subset PMC custom license subset bioRxiv/medRxiv subset (pre-prints that are not peer reviewed) Metadata file Readme Each paper is represented as a single JSON object (see schema file for details). <strong>Description:</strong> The dataset contains all COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from the following sources: PubMed's PMC open access corpus using this query (COVID-19 and coronavirus research) Additional COVID-19 research articles from a corpus maintained by the WHO bioRxiv and medRxiv pre-prints using the same query as PMC (COVID-19 and coronavirus research) We also provide a comprehensive metadata file of coronavirus and COVID-19 research articles with links to PubMed, Microsoft Academic and the WHO COVID-19 database of publications (includes articles without open access full text). We recommend using metadata from the comprehensive file when available, instead of parsed metadata in the dataset. Please note the dataset may contain multiple entries for individual PMC IDs in cases when supplementary materials are available. This repository is linked to the WHO database of publications on coronavirus disease and other resources, such as Microsoft Academic Graph, PubMed, and Semantic Scholar. A coalition including the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health came together to provide this service. <strong>Citation:</strong> When including CORD-19 data in a publication or redistribution, please cite the dataset as follows: In bibliography: <pre><code>COVID-19 Open Research Dataset (CORD-19). 2020. Version 2020-MM-DD. Retrieved from https://pages.semanticscholar.org/coronavirus-research. Accessed YYYY-MM-DD. 10.5281/zenodo.3715505</code></pre> In text: <pre><code>(CORD-19, 2020)</code></pre> The Allen Institute for AI and particularly the Semantic Scholar team will continue to provide updates to this dataset as the situation evolves and new research is released."
+				}
+			],
+			"url": "https://zenodo.org/record/3731937"
+		},
+		{
+			"id": 32,
+			"doi": "10.5281/zenodo.3739581",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "COVID-19 Open Research Dataset (CORD-19)"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "A full description of this dataset along with updated information can be found here. In response to the COVID-19 pandemic, the Allen Institute for AI has partnered with leading research groups to prepare and distribute the COVID-19 Open Research Dataset (CORD-19), a free resource of scholarly articles, including full text content, about COVID-19 and the coronavirus family of viruses for use by the global research community. This dataset is intended to mobilize researchers to apply recent advances in natural language processing to generate new insights in support of the fight against this infectious disease. The corpus will be updated weekly as new research is published in peer-reviewed publications and archival services like bioRxiv, medRxiv, and others. By downloading this dataset you are agreeing to the Dataset license. Specific licensing information for individual articles in the dataset is available in the metadata file. Additional licensing information is available on the PMC website, medRxiv website and bioRxiv website. <strong>Dataset content:</strong> Commercial use subset Non-commercial use subset PMC custom license subset bioRxiv/medRxiv subset (pre-prints that are not peer reviewed) Metadata file Readme Each paper is represented as a single JSON object (see schema file for details). <strong>Description:</strong> The dataset contains all COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from the following sources: PubMed's PMC open access corpus using this query (COVID-19 and coronavirus research) Additional COVID-19 research articles from a corpus maintained by the WHO bioRxiv and medRxiv pre-prints using the same query as PMC (COVID-19 and coronavirus research) We also provide a comprehensive metadata file of coronavirus and COVID-19 research articles with links to PubMed, Microsoft Academic and the WHO COVID-19 database of publications (includes articles without open access full text). We recommend using metadata from the comprehensive file when available, instead of parsed metadata in the dataset. Please note the dataset may contain multiple entries for individual PMC IDs in cases when supplementary materials are available. This repository is linked to the WHO database of publications on coronavirus disease and other resources, such as Microsoft Academic Graph, PubMed, and Semantic Scholar. A coalition including the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health came together to provide this service. <strong>Citation:</strong> When including CORD-19 data in a publication or redistribution, please cite the dataset as follows: In bibliography: <pre><code>COVID-19 Open Research Dataset (CORD-19). 2020. Version 2020-MM-DD. Retrieved from https://pages.semanticscholar.org/coronavirus-research. Accessed YYYY-MM-DD. 10.5281/zenodo.3715505</code></pre> In text: <pre><code>(CORD-19, 2020)</code></pre> The Allen Institute for AI and particularly the Semantic Scholar team will continue to provide updates to this dataset as the situation evolves and new research is released."
+				}
+			],
+			"url": "https://zenodo.org/record/3739581"
+		},
+		{
+			"id": 33,
+			"doi": "10.5281/zenodo.3748055",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "COVID-19 Open Research Dataset (CORD-19)"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "A full description of this dataset along with updated information can be found here. In response to the COVID-19 pandemic, the Allen Institute for AI has partnered with leading research groups to prepare and distribute the COVID-19 Open Research Dataset (CORD-19), a free resource of scholarly articles, including full text content, about COVID-19 and the coronavirus family of viruses for use by the global research community. This dataset is intended to mobilize researchers to apply recent advances in natural language processing to generate new insights in support of the fight against this infectious disease. The corpus will be updated weekly as new research is published in peer-reviewed publications and archival services like bioRxiv, medRxiv, and others. By downloading this dataset you are agreeing to the Dataset license. Specific licensing information for individual articles in the dataset is available in the metadata file. Additional licensing information is available on the PMC website, medRxiv website and bioRxiv website. <strong>Dataset content:</strong> Commercial use subset Non-commercial use subset PMC custom license subset bioRxiv/medRxiv subset (pre-prints that are not peer reviewed) Metadata file Readme Each paper is represented as a single JSON object (see schema file for details). <strong>Description:</strong> The dataset contains all COVID-19 and coronavirus-related research (e.g. SARS, MERS, etc.) from the following sources: PubMed's PMC open access corpus using this query (COVID-19 and coronavirus research) Additional COVID-19 research articles from a corpus maintained by the WHO bioRxiv and medRxiv pre-prints using the same query as PMC (COVID-19 and coronavirus research) We also provide a comprehensive metadata file of coronavirus and COVID-19 research articles with links to PubMed, Microsoft Academic and the WHO COVID-19 database of publications (includes articles without open access full text). We recommend using metadata from the comprehensive file when available, instead of parsed metadata in the dataset. Please note the dataset may contain multiple entries for individual PMC IDs in cases when supplementary materials are available. This repository is linked to the WHO database of publications on coronavirus disease and other resources, such as Microsoft Academic Graph, PubMed, and Semantic Scholar. A coalition including the Chan Zuckerberg Initiative, Georgetown University’s Center for Security and Emerging Technology, Microsoft Research, and the National Library of Medicine of the National Institutes of Health came together to provide this service. <strong>Citation:</strong> When including CORD-19 data in a publication or redistribution, please cite the dataset as follows: In bibliography: <pre><code>COVID-19 Open Research Dataset (CORD-19). 2020. Version 2020-MM-DD. Retrieved from https://pages.semanticscholar.org/coronavirus-research. Accessed YYYY-MM-DD. 10.5281/zenodo.3715505</code></pre> In text: <pre><code>(CORD-19, 2020)</code></pre> The Allen Institute for AI and particularly the Semantic Scholar team will continue to provide updates to this dataset as the situation evolves and new research is released."
+				}
+			],
+			"url": "https://zenodo.org/record/3748055"
+		},
+		{
+			"id": 34,
+			"doi": "10.25373/ctsnet.12081723",
+			"type": "Media",
+			"titles": [
+				{
+					"title": "COVID-19: Teaching Points From the South Korean Experience"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "Filmed on March 25, 2020, Drs Elizabeth David and Anthony Kim discuss the experience of caring for COVID-19 patients in South Korea with thoracic surgeons and intensivists on the frontline of the pandemic. They are joined by Drs Young Tae Kim and Samina Park, thoracic surgeons, and Drs. Sang-Min Lee and Hogeol Ryu, critical care specialists, all from Seoul National University. The discussion centers around frontline critical care and surgical experience during the COVID-19 pandemic. Topics include the global importance of social distancing, the role of proceduralists and trainees with patients who need interventions, and the critical need for hospitals to learn to function as two separate facilities (one for COVID-positive patients and one for COVID-negative patients). <br> <br> Part 1: Initial Impact of the Pandemic, Disruption of Normal Hospital Practice, Limitations of Hospital Personnel, and PPE<br> Part 2: Healthcare Worker Exposure and Infection, Involvement of Trainees in Invasive Procedures, Is there a Cyclic Nature to this Pandemic?<br> Part 3: The Role of Tracheostomy for COVID-19, The Importance of Social Distancing, “The Hospital Must Function as Two Hospitals”"
+				}
+			],
+			"url": "https://ctsnet.figshare.com/articles/COVID-19_Teaching_Points_From_the_South_Korean_Experience/12081723"
+		},
+		{
+			"id": 35,
+			"doi": "10.25373/ctsnet.12081723.v1",
+			"type": "Media",
+			"titles": [
+				{
+					"title": "COVID-19: Teaching Points From the South Korean Experience"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "Filmed on March 25, 2020, Drs Elizabeth David and Anthony Kim discuss the experience of caring for COVID-19 patients in South Korea with thoracic surgeons and intensivists on the frontline of the pandemic. They are joined by Drs Young Tae Kim and Samina Park, thoracic surgeons, and Drs. Sang-Min Lee and Hogeol Ryu, critical care specialists, all from Seoul National University. The discussion centers around frontline critical care and surgical experience during the COVID-19 pandemic. Topics include the global importance of social distancing, the role of proceduralists and trainees with patients who need interventions, and the critical need for hospitals to learn to function as two separate facilities (one for COVID-positive patients and one for COVID-negative patients). <br> <br> Part 1: Initial Impact of the Pandemic, Disruption of Normal Hospital Practice, Limitations of Hospital Personnel, and PPE<br> Part 2: Healthcare Worker Exposure and Infection, Involvement of Trainees in Invasive Procedures, Is there a Cyclic Nature to this Pandemic?<br> Part 3: The Role of Tracheostomy for COVID-19, The Importance of Social Distancing, “The Hospital Must Function as Two Hospitals”"
+				}
+			],
+			"url": "https://ctsnet.figshare.com/articles/COVID-19_Teaching_Points_From_the_South_Korean_Experience/12081723/1"
+		},
+		{
+			"id": 36,
+			"doi": "10.5281/zenodo.3747245",
+			"type": "Journal article",
+			"titles": [
+				{
+					"title": "COVID-19 A NEW PANDEMIC"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "<em>On 11 march WHO called covid-19 a pandemic because, the disease first reported in wuhan china was now spreading to many countries of the world. A pneumonia like disease first reported in December 2019 in wuhan province in china later on investigated and called as covid-19 because the causative organism is a novel corona virus having similarities with SARS-coV AND MERS-coV, till now (16<sup>th</sup> march 2020) WHO reported 164837 confirmed cases in 146 countries and 6470 deaths from COVID-19.</em> <em>In this mini review we are discussing what we know till now, a brief introduction of this novel corona virus and the diseas(COVID-19) caused by this virus,its general features,its genomic structure, mode of transmission, clinical features,prevention and treatment .</em>"
+				}
+			],
+			"url": "https://zenodo.org/record/3747245"
+		},
+		{
+			"id": 37,
+			"doi": "10.17181/cds.2714939",
+			"type": "Audiovisual",
+			"titles": [
+				{
+					"title": "Interview of Beniamino Di Girolamo CERN against COVID-19"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "CERN against COVID-19 is coordinated by Beniamino Di Girolamo (CERN, ATS-DO)<br> CERN’s Director-General established the <strong><em>CERN against COVID-19</em></strong> task force in March 2020 to collect and coordinate ideas and contributions from the CERN community of over 18 000 people worldwide to the societal fight against the COVID-19 pandemic. These initiatives will draw on scientific and technical expertise and facilities at CERN, in the Member State countries and beyond, and will be carried out with that community and in close contacts with the relevant health institutions and experts from other fields.<br> We have been very encouraged by the hundreds of emails we have received, and the enthusiasm of the community to make a positive difference. Ideas range from the deployment of CERN’s powerful computing, engineering and technical resources to contribute to the global fight against COVID-19, to assisting the local effort through logistical and emergency response support.<br> The objective of the <strong><em>CERN against COVID-19</em> </strong>initiative is to ensure effective and well-coordinated action, drawing on CERN’s many competencies and advanced technologies and working closely with experts in healthcare, drug development, epidemiology and emergency response so as to maximise the impact of our contributions. Proposals and ideas for this group can be made by members of the CERN community via the form at the bottom of this page. Questions for the task force may be submitted via email to fight-covid@cern.ch. We will do our best to answer all of them."
+				}
+			],
+			"url": "https://videos.cern.ch/record/2714939"
+		},
+		{
+			"id": 38,
+			"doi": "10.6084/m9.figshare.11961063.v12",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Dimensions COVID-19 publications, datasets and clinical trials"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "This file contains all relevant publications, datasets and clinical trials from Dimensions that are related to COVID-19. The content has been exported from Dimensions using a query in the openly accessible Dimensions application, which you can access at https://covid-19.dimensions.ai/. Dimensions is updated once every 24 hours, so the latest research can be viewed alongside existing information. With its range of research outputs including datasets and clinical trials, both of which are just as important as journal articles in the face of a potential pandemic, Dimensions is a one-stop shop for all COVID-19 related information. <br>Please share this information with anyone you think would benefit from it. If you have any suggestions as to how we can improve our search terms to maximise the volume of research related to COVID-19, please contact us at support@dimensions.ai."
+				}
+			],
+			"url": "https://dimensions.figshare.com/articles/Dimensions_COVID-19_publications_datasets_and_clinical_trials/11961063/12"
+		},
+		{
+			"id": 39,
+			"doi": "10.6084/m9.figshare.11961063.v1",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Dimensions COVID-19 publications, datasets and clinical trials"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "This file contains all relevant publications, datasets and clinical trials from Dimensions that are related to COVID-19. The content has been exported from Dimensions using a query in the openly accessible Dimensions application, which you can access at https://covid-19.dimensions.ai/. Dimensions is updated once every 24 hours, so the latest research can be viewed alongside existing information. With its range of research outputs including datasets and clinical trials, both of which are just as important as journal articles in the face of a potential pandemic, Dimensions is a one-stop shop for all COVID-19 related information. <br>Please share this information with anyone you think would benefit from it. If you have any suggestions as to how we can improve our search terms to maximise the volume of research related to COVID-19, please contact us at support@dimensions.ai."
+				}
+			],
+			"url": "https://dimensions.figshare.com/articles/Dimensions_COVID-19_publications_datasets_and_clinical_trials/11961063/1"
+		},
+		{
+			"id": 40,
+			"doi": "10.6084/m9.figshare.11961063.v10",
+			"type": "Dataset",
+			"titles": [
+				{
+					"title": "Dimensions COVID-19 publications, datasets and clinical trials"
+				}
+			],
+			"descriptions": [
+				{
+					"descriptionType": "Abstract",
+					"description": "This file contains all relevant publications, datasets and clinical trials from Dimensions that are related to COVID-19. The content has been exported from Dimensions using a query in the openly accessible Dimensions application, which you can access at https://covid-19.dimensions.ai/. Dimensions is updated once every 24 hours, so the latest research can be viewed alongside existing information. With its range of research outputs including datasets and clinical trials, both of which are just as important as journal articles in the face of a potential pandemic, Dimensions is a one-stop shop for all COVID-19 related information. <br>Please share this information with anyone you think would benefit from it. If you have any suggestions as to how we can improve our search terms to maximise the volume of research related to COVID-19, please contact us at support@dimensions.ai."
+				}
+			],
+			"url": "https://dimensions.figshare.com/articles/Dimensions_COVID-19_publications_datasets_and_clinical_trials/11961063/10"
+		}
+	],
+	"totalHits": 5275,
+	"maxPage": 264,
+	"currentPage": 2
+}

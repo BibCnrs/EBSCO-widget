@@ -92,4 +92,11 @@ app.use(
     ),
 );
 
+app.use(
+    route.get('/metadore/search', function* metadoreSearch() {
+        this.body = require(`./jsonResponse/metadore/covid${this.query
+            .currentPage || 1}.json`);
+    }),
+);
+
 module.exports = app;
