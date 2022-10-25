@@ -11,6 +11,9 @@
     padding-left: $body-padding-x;
     padding-right: $body-padding-x;
     padding-bottom: 5px;
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
 
     button {
         color: #fff;

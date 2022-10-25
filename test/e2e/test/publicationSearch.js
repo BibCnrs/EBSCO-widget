@@ -6,16 +6,16 @@ describe('publicationSearch', function() {
         client.start(done);
     });
 
-    it.skip('should display publication search result when triggering search', function(done) {
+    it('should display publication search result when triggering search', function(done) {
         browser
             .waitForElementVisible('.navbar.navbar-default', 1000)
             .assert.containsText(
                 '.navbar.navbar-default .active',
-                'Une revue, un ouvrage',
+                'Revue, ouvrage',
             )
             .setValue('.search-input .term input', 'study')
-            .waitForElementVisible('.fetch-button', 100)
-            .click('.fetch-button')
+            .waitForElementVisible('.search-fetch button', 100)
+            .click('.search-fetch button')
             .pause(300)
             .waitForElementVisible('.search-result', 1000)
             .assert.elementCount('.record', 20);
@@ -28,7 +28,7 @@ describe('publicationSearch', function() {
             .waitForElementVisible('.navbar.navbar-default', 1000)
             .assert.containsText(
                 '.navbar.navbar-default .active',
-                'Une revue, un ouvrage',
+                'Revue, ouvrage',
             )
             .assert.containsText(
                 '.a2z-search .first.letters',
@@ -49,21 +49,22 @@ describe('publicationSearch', function() {
         client.start(done);
     });
 
-    it.skip('should translate PublicationSearch', function(done) {
+    it('should translate PublicationSearch', function(done) {
         browser
             .waitForElementVisible('.navbar.navbar-default', 100)
-            .assert.containsText('.navbar.navbar-default', 'Un article')
-            .assert.containsText(
-                '.navbar.navbar-default',
-                'Une revue, un ouvrage',
-            )
+            .assert.containsText('.navbar.navbar-default', 'Article')
+            .assert.containsText('.navbar.navbar-default', 'Revue, ouvrage')
             .assert.containsText('.navbar.navbar-default .language', 'fr')
             .assert.attributeEquals(
                 '.search .search-input .term input',
                 'placeholder',
                 'Rechercher des titres de revues, de livres...',
             )
-            .assert.containsText('.fetch-button', 'Rechercher')
+            .assert.attributeEquals(
+                '.search-fetch button',
+                'aria-label',
+                'Rechercher',
+            )
             .click('.navbar.navbar-default .language')
             .waitForElementVisible('#en', 1000)
             .click('.navbar.navbar-default #en')
@@ -74,7 +75,11 @@ describe('publicationSearch', function() {
                 'placeholder',
                 'Search journal titles, book titles...',
             )
-            .assert.containsText('.fetch-button', 'Search');
+            .assert.attributeEquals(
+                '.search-fetch button',
+                'aria-label',
+                'Search',
+            );
 
         client.start(done);
     });
