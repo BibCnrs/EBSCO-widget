@@ -20,25 +20,25 @@ describe('profile', function() {
             .pause(1000)
             .waitForElementVisible('.profile-button', 1000)
             .click('.profile-button')
-            .waitForElementVisible('.favourite-resource-list', 1000)
+            .waitForElementVisible('.favourite-resource__list', 1000)
             .assert.containsText(
-                '.favourite-resource-item:nth-child(1)',
+                '.favourite-resource__item:nth-child(1)',
                 'Test add',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(2)',
+                '.favourite-resource__item:nth-child(2)',
                 '.Test : CNRS',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(3)',
+                '.favourite-resource__item:nth-child(3)',
                 'Wikipedia',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(4)',
+                '.favourite-resource__item:nth-child(4)',
                 'google',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(5)',
+                '.favourite-resource__item:nth-child(5)',
                 'bibcnrs',
             )
             .end();
@@ -60,25 +60,25 @@ describe('profile', function() {
             .pause(1000)
             .waitForElementVisible('.profile-button', 1000)
             .click('.profile-button')
-            .waitForElementVisible('.favourite-resource-list', 1000)
+            .waitForElementVisible('.favourite-resource__list', 1000)
             .assert.containsText(
-                '.favourite-resource-item:nth-child(1)',
+                '.favourite-resource__item:nth-child(1)',
                 'The hitchhiker guide to the galaxy',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(2)',
+                '.favourite-resource__item:nth-child(2)',
                 '.Test : CNRS',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(3)',
+                '.favourite-resource__item:nth-child(3)',
                 'Wikipedia',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(4)',
+                '.favourite-resource__item:nth-child(4)',
                 'google',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(5)',
+                '.favourite-resource__item:nth-child(5)',
                 'bibcnrs',
             )
             .end();
@@ -96,17 +96,17 @@ describe('profile', function() {
             .click('.letter_w .bookmark-button')
             .pause(1000)
             .waitForElementVisible('.profile', 1000)
-            .waitForElementVisible('.favourite-resource-list', 1000)
+            .waitForElementVisible('.favourite-resource__list', 1000)
             .assert.containsText(
-                '.favourite-resource-item:nth-child(1)',
+                '.favourite-resource__item:nth-child(1)',
                 '.Test : CNRS',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(2)',
+                '.favourite-resource__item:nth-child(2)',
                 'google',
             )
             .assert.containsText(
-                '.favourite-resource-item:nth-child(3)',
+                '.favourite-resource__item:nth-child(3)',
                 'bibcnrs',
             )
             .end();
