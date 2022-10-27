@@ -3,7 +3,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;    
+    justify-content: flex-end;    
     .infos {
         display: flex;
         flex-direction: column;
@@ -99,8 +99,4 @@
     .logout {
         color: white;
     }
-}
-
-.header-login {
-    margin-right: '10px';
 }
