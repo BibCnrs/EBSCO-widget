@@ -113,6 +113,7 @@ describe('reducers createSearch', function() {
                 assert.deepEqual(searchState, {
                     status: 'DONE',
                     term: 'aids',
+                    previousQuery: undefined,
                     dateRange: 'date range',
                 });
             });
