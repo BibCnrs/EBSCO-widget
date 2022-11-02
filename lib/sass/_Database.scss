@@ -1,3 +1,11 @@
+.database-block__filter {
+    display: flex;
+    align-items: center;
+    .database-block__filter-checkbox {
+        margin-left: 1rem;
+    }
+}
+
 .databases {
     column-count: auto;
     -moz-column-count: auto;
@@ -10,6 +18,8 @@
     -webkit-column-gap: 2rem;
     list-style-type: none;
     -webkit-padding-start: 0;
+
+
     ul {
         list-style: none;
         -webkit-padding-start :0;
