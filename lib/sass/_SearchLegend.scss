@@ -1,0 +1,19 @@
+.search-legend {
+    margin: 10px 20px;
+    display: flex;
+    align-items: center;
+
+    .search-legend__item {
+        margin-right: 2rem;
+    }
+
+    .search-legend__overlay-trigger {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        img {
+            height: 19px;
+            margin-right: 0.5rem;
+        }
+    }
+}
