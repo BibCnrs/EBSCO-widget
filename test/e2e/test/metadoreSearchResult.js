@@ -22,7 +22,15 @@ describe('metadore Search result', function() {
             .assert.containsText('.notice dl span:nth-child(2) dt', 'Type')
             .assert.containsText(
                 '.notice dl span:nth-child(3) dt',
+                'Année de publication',
+            )
+            .assert.containsText(
+                '.notice dl span:nth-child(4) dt',
                 'Description',
+            )
+            .assert.containsText(
+                '.notice dl span:nth-child(5) dt',
+                'Mots clés',
             );
 
         client.start(done);
