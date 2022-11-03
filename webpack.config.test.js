@@ -47,7 +47,7 @@ module.exports = {
         app: [
             './lib/index.js',
             './lib/sass/style.scss',
-            'webpack-dev-server/client?http://app',
+            'webpack-dev-server/client?http://localhost:3001',
         ],
     },
     output: {
@@ -55,7 +55,7 @@ module.exports = {
         //  when using multiple entry points
         filename: 'main.js',
         chunkFilename: '[id].bundle.js',
-        publicPath: 'http://app/',
+        publicPath: 'http://localhost:3001/',
     },
     plugins: [
         new HtmlWebpackPlugin({

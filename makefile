@@ -10,8 +10,10 @@ ifneq "$(SUPPORTS_MAKE_ARGS)" ""
     $(eval $(COMMAND_ARGS):;@:)
 endif
 
+DOCKER_COMPOSE_E2E = docker-compose -p bibCnrs-e2e -f docker-compose.e2e.yml
+
 install:
-	docker-compose run --rm npm install
+	docker-compose run --rm npm install --legacy-peer-deps
 
 build:
 	docker-compose run --rm build
@@ -44,3 +46,13 @@ npm:
 
 serve:
 	docker-compose -f docker-compose.serve.yml up --force-recreate;
+
+e2e-local: ## Start tests for admin
+	$(DOCKER_COMPOSE_E2E) down
+	$(DOCKER_COMPOSE_E2E) up --force-recreate -d app server
+
+e2e-local-test: ## Start tests for admin
+	$(DOCKER_COMPOSE_E2E) down
+	$(DOCKER_COMPOSE_E2E) up --force-recreate -d app server
+	$(DOCKER_COMPOSE_E2E) run --rm --no-deps e2e "npm run cypress:open"
+	$(DOCKER_COMPOSE_E2E) down

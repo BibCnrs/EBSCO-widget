@@ -1,0 +1,125 @@
+{
+	"login": {
+		"status": "SUCCESS",
+		"token": "token",
+		"username": "",
+		"password": "",
+		"mode": "labintel"
+	},
+	"userInterface": {
+		"limiterShown": true,
+		"loading": false,
+		"resultShown": false,
+		"historyShown": false,
+		"location": "article",
+		"language": "fr",
+		"showLogin": false,
+		"noticeBeingExported": []
+	},
+	"error": {},
+	"url": "http://localhost:3000",
+	"domains": {
+		"all": ["vie", "shs"],
+		"available": ["vie", "shs"],
+		"rights": ["vie", "shs"],
+		"byName": {
+			"vie": "vie.bib.cnrs.fr",
+			"shs": "vie.bib.cnrs.fr"
+		},
+		"article": "vie",
+		"publication": "vie"
+	},
+	"selectedRecord": {
+		"article": [],
+		"publication": []
+	},
+	"notice": {
+		"article": {
+			"byId": {},
+			"noticeShown": []
+		},
+		"publication": {
+			"byId": {},
+			"noticeShown": []
+		}
+	},
+	"facets": {
+		"article": {
+			"active": {},
+			"available": []
+		},
+		"publication": {
+			"active": {},
+			"available": []
+		}
+	},
+	"limiters": {
+		"article": {
+			"fullText": true,
+			"publicationDate": {
+				"from": null,
+				"to": null
+			},
+			"peerReviewed": false
+		},
+		"publication": {
+			"peerReviewed": false
+		}
+	},
+	"searchResult": {
+		"article": {
+			"maxPage": 0,
+			"byId": {}
+		},
+		"publication": {
+			"maxPage": 0,
+			"byId": {}
+		}
+	},
+	"search": {
+		"article": {
+			"status": "NONE",
+			"sort": "relevance",
+			"resultsPerPage": 20,
+			"dateRange": {
+				"min": 1000,
+				"max": 2017
+			}
+		},
+		"publication": {
+			"status": "NONE",
+			"sort": "relevance",
+			"resultsPerPage": 20
+		}
+	},
+	"queryList": {
+		"article": [{
+			"boolean": "AND",
+			"term": "",
+			"field": null,
+			"key": "initial"
+		}],
+		"publication": [{
+			"boolean": "AND",
+			"term": "",
+			"field": null,
+			"key": "initial"
+		}]
+	},
+	"history": { "queries": [] },
+	"pausedAction": {
+		"type": "NAVIGATE",
+		"location": "article"
+	},
+	"exactMatch": {
+		"publication": null,
+		"notice": null,
+		"noticeShown": false
+	},
+    "profile": {
+        "username": "Frodo",
+        "domains": ["vie", "shs"],
+        "favorite_domain": "vie",
+        "origin": "inist"
+    }
+}
