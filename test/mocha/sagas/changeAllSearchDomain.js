@@ -27,6 +27,11 @@ describe('sagas changeAllSearchDomain', function() {
             put(actions.changeDomain('publication', 'INSHS')),
         );
         next = iterator.next();
+        assert.deepEqual(
+            next.value,
+            put(actions.changeDomain('database', 'INSHS')),
+        );
+        next = iterator.next();
         assert.isTrue(next.done);
     });
 });
