@@ -1,8 +1,9 @@
-import { put } from 'redux-saga/effects';
+import { put, select } from 'redux-saga/effects';
 
 import { changeAllSearchDomain } from '../../../lib/sagas/changeAllSearchDomain';
 
 import actions, { CHANGE_ALL_SEARCH_DOMAIN } from '../../../lib/actions';
+import * as fromState from '../../../lib/selectors';
 
 describe('sagas changeAllSearchDomain', function() {
     let iterator;
@@ -31,6 +32,9 @@ describe('sagas changeAllSearchDomain', function() {
             next.value,
             put(actions.changeDomain('database', 'INSHS')),
         );
+        next = iterator.next();
+        assert.deepEqual(next.value, select(fromState.getLocation));
+
         next = iterator.next();
         assert.isTrue(next.done);
     });
