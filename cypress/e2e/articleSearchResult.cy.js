@@ -3,8 +3,11 @@ import initialState from '../data/articleSearchResult.json';
 
 describe('articleSearchResult', () => {
     beforeEach(function() {
-        cy.visit('/');
-        cy.loadState(initialState);
+        cy.visit('/', {
+            onBeforeLoad: win => {
+                win.initialState = initialState;
+            },
+        });
     });
 
     it('should retrieve clicked article', () => {
@@ -68,77 +71,56 @@ describe('articleSearchResult', () => {
         ).should('have.length', 3);
         cy.get('.available_facets .facet:nth-child(1) .facet_values', {
             timeout: 2000,
-        }).should(
-            'contain',
-            'Academic Journals (237702)',
-        );
+        }).should('contain', 'Academic Journals (237702)');
         cy.get('.available_facets .facet:nth-child(1) .header .more').click();
-        cy.get('.available_facets', {timeout: 5000}).should('be.visible');
+        cy.get('.available_facets', { timeout: 5000 }).should('be.visible');
         cy.get(
             '.available_facets .facet:nth-child(1) .facet_values .facet_value',
         ).should('have.length', 14);
         cy.get(
             '.available_facets .facet:nth-child(1) .facet_values .facet_value:nth-child(1)',
         ).click();
-        cy.get('.available_facets', {timeout: 5000}).should('be.visible');
+        cy.get('.available_facets', { timeout: 5000 }).should('be.visible');
         cy.get('.active_facet .header .title').should(
             'contain',
             'Réinitialiser vos filtres',
         );
-        cy.get('.active_facet .facet_values .facet_value', {timeout: 5000}).should(
-            'have.length',
-            1,
-        );
+        cy.get('.active_facet .facet_values .facet_value', {
+            timeout: 5000,
+        }).should('have.length', 1);
         cy.get('.active_facet .facet_values').should(
             'contain',
             'Academic Journals',
         );
     });
 
-    it.only('should translate articleSearchResult', () => {
-            // .waitForElementVisible('.navbar.navbar-default', 1000)
-            // .assert.containsText('.limiters', 'Texte Intégral')
-            // .assert.containsText('.limiters', 'Relu par un comité de lecture')
-            // .assert.containsText(
-            //     '.limiters .publication-date-limiter .boundaries .to',
-            //     'à',
-            // )
-            // .assert.containsText('.navbar.navbar-default .language', 'fr')
-            // .assert.containsText('.sidebar h3', 'Affiner votre recherche')
-            // .click('.navbar.navbar-default .language')
-            // .waitForElementVisible('#en', 1000)
-            // .click('.navbar.navbar-default #en')
-            // .waitForElementVisible('.navbar.navbar-default .language', 1000)
-            // .assert.containsText('.navbar.navbar-default .language', 'en')
-            // .assert.containsText('.limiters', 'Full text')
-            // .assert.containsText('.limiters', 'Peer reviewed')
-            // .assert.containsText(
-            //     '.limiters .publication-date-limiter .boundaries .to',
-            //     'to',
-            // )
-            // .assert.containsText('.sidebar h3', 'Refine your search');
-        
-            cy.get('.record').should('be.visible');
-            cy.findByText('Texte Intégral').should('exist');;
-            cy.findByText('Relu par un comité de lecture').should('exist');
-            cy.get('.limiters .publication-date-limiter .boundaries .to').should(
-                'contain',
-                'à',
-            );
-            cy.get('.navbar.navbar-default .language').should('contain', 'fr');
-            cy.findByText('Affiner votre recherche').should('exist');;
-            
-            cy.get('.navbar.navbar-default .language', {timeout: 1000}).click();
-            cy.findByText('english', {timeout: 1000}).should('exist');
-            cy.findByText('english', {timeout: 1000}).click();
-            cy.get('.navbar.navbar-default .language', {timeout: 1000}).contains('en');
-            
-            cy.findByText('Full text').should('exist');
-            cy.findByText('Peer reviewed').should('exist');
-            cy.get('.limiters .publication-date-limiter .boundaries .to').should(
-                'contain',
-                'to',
-            );
-            cy.get('.sidebar h3', {timeout: 10000}).should('contain', 'Refine your search');
+    it('should translate articleSearchResult', () => {
+        cy.get('.record').should('be.visible');
+        cy.findByText('Texte Intégral').should('exist');
+        cy.findByText('Relu par un comité de lecture').should('exist');
+        cy.get('.limiters .publication-date-limiter .boundaries .to').should(
+            'contain',
+            'à',
+        );
+        cy.get('.navbar.navbar-default .language').should('contain', 'fr');
+        cy.findByText('Affiner votre recherche').should('exist');
+
+        cy.get('.navbar.navbar-default .language', { timeout: 1000 }).click();
+        cy.findByText('english', { timeout: 1000 }).should('exist');
+        cy.findByText('english', { timeout: 1000 }).click();
+        cy.get('.navbar.navbar-default .language', { timeout: 1000 }).contains(
+            'en',
+        );
+
+        cy.findByText('Full text').should('exist');
+        cy.findByText('Peer reviewed').should('exist');
+        cy.get('.limiters .publication-date-limiter .boundaries .to').should(
+            'contain',
+            'to',
+        );
+        cy.get('.sidebar h3', { timeout: 10000 }).should(
+            'contain',
+            'Refine your search',
+        );
     });
 });

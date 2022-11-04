@@ -17,7 +17,7 @@
 		"noticeBeingExported": []
 	},
 	"error": {},
-	"url": "http://localhost:3000",
+	"url": "http://server:3000",
 	"domains": {
 		"all": ["vie", "shs"],
 		"available": ["vie", "shs"],
