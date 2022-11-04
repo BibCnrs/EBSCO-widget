@@ -1,6 +1,6 @@
 import { Database, DatabaseLetter } from '../../../lib/components/Database';
 
-describe.only('Database', function() {
+describe('Database', function() {
     it('should render one DatabaseLetter for eack key in databases', function() {
         const props = {
             language: 'fr',
