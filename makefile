@@ -1,5 +1,11 @@
 .PHONY: default install run test build
 
+UID = $(shell id -u)
+GID = $(shell id -g)
+
+export UID
+export GID
+
 # If the first argument is one of the supported commands...
 SUPPORTED_COMMANDS := npm
 SUPPORTS_MAKE_ARGS := $(findstring $(firstword $(MAKECMDGOALS)), $(SUPPORTED_COMMANDS))
