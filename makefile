@@ -60,5 +60,5 @@ e2e-local: ## Start tests for admin
 e2e-local-test: ## Start tests for admin
 	$(DOCKER_COMPOSE_E2E) down
 	$(DOCKER_COMPOSE_E2E) up --force-recreate -d app server
-	$(DOCKER_COMPOSE_E2E) run --rm --no-deps e2e "npm run cypress:open"
+	$(DOCKER_COMPOSE_E2E) run --rm --no-deps e2e
 	$(DOCKER_COMPOSE_E2E) down
