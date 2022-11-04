@@ -31,21 +31,14 @@ test-mocha:
 	docker-compose run --rm test
 
 test-e2e:
-	docker-compose -f docker-compose.e2e.yml run --rm test
-
-selenium:
-	docker-compose -f docker-compose.e2e.yml up --force-recreate -d chrome
-
-selenium-debug:
-	docker-compose -f docker-compose.e2e.yml up --force-recreate -d chromedebug
-
-cleanup-e2e:
-	docker-compose -f docker-compose.e2e.yml stop
-	docker-compose -f docker-compose.e2e.yml rm -vf
+	$(DOCKER_COMPOSE_E2E) down
+	$(DOCKER_COMPOSE_E2E) up --force-recreate -d app server
+	$(DOCKER_COMPOSE_E2E) run --rm --no-deps e2e
+	$(DOCKER_COMPOSE_E2E) down
 
 test : install test2
 
-test2: test-mocha selenium test-e2e
+test2: test-mocha test-e2e
 
 npm:
 	docker-compose run --rm npm $(COMMAND_ARGS)
@@ -53,12 +46,6 @@ npm:
 serve:
 	docker-compose -f docker-compose.serve.yml up --force-recreate;
 
-e2e-local: ## Start tests for admin
+e2e-local:
 	$(DOCKER_COMPOSE_E2E) down
 	$(DOCKER_COMPOSE_E2E) up --force-recreate -d app server
-
-e2e-local-test: ## Start tests for admin
-	$(DOCKER_COMPOSE_E2E) down
-	$(DOCKER_COMPOSE_E2E) up --force-recreate -d app server
-	$(DOCKER_COMPOSE_E2E) run --rm --no-deps e2e
-	$(DOCKER_COMPOSE_E2E) down
