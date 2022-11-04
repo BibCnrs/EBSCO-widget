@@ -1,0 +1,613 @@
+{
+	"login": {
+		"status": "NONE",
+		"token": null,
+		"username": "",
+		"password": "",
+		"mode": "labintel"
+	},
+	"userInterface": {
+		"limiterShown": true,
+		"loading": false,
+		"resultShown": true,
+		"historyShown": false,
+		"location": "publication",
+		"language": "fr",
+		"loginShown": false,
+		"noticeBeingExported": []
+	},
+	"error": {},
+	"url": "http://server:3000",
+	"dbUrl": "http://google.fr",
+	"domains": {
+		"all": ["vie", "shs"],
+		"byName": {
+			"vie": "vie.bib.cnrs.fr",
+			"shs": "vie.bib.cnrs.fr"
+		},
+		"available": [],
+		"rights": [],
+		"article": null,
+		"publication": "vie"
+	},
+	"selectedRecord": {
+		"article": [],
+		"publication": []
+	},
+	"notice": {
+		"article": {
+			"byId": {},
+			"noticeShown": []
+		},
+		"publication": {
+			"byId": {},
+			"noticeShown": []
+		}
+	},
+	"facets": {
+		"article": {
+			"active": {},
+			"available": []
+		},
+		"publication": {
+			"available": [{
+				"id": "SubjectPubDb",
+				"label": "",
+				"availableFacetValues": [{
+					"value": "technology & engineering / electronics / circuits / general",
+					"count": 5,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / electronics / circuits / general)"
+				}, {
+					"value": "academic testing",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectPubDb:academic testing)"
+				}, {
+					"value": "technology & engineering / electronics / circuits / integrated",
+					"count": 3,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / electronics / circuits / integrated)"
+				}, {
+					"value": "electronics",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectPubDb:electronics)"
+				}, {
+					"value": "pharmacology",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectPubDb:pharmacology)"
+				}, {
+					"value": "technology & engineering / electronics / general",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / electronics / general)"
+				}, {
+					"value": "technology & engineering / industrial design / product",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / industrial design / product)"
+				}, {
+					"value": "technology & engineering / mechanical",
+					"count": 2,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / mechanical)"
+				}, {
+					"value": "academic writing",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:academic writing)"
+				}, {
+					"value": "architecture / design, drafting, drawing & presentation",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:architecture / design\\, drafting\\, drawing & presentation)"
+				}, {
+					"value": "automation",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:automation)"
+				}, {
+					"value": "business & economics / distribution",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:business & economics / distribution)"
+				}, {
+					"value": "business & economics / marketing / general",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:business & economics / marketing / general)"
+				}, {
+					"value": "computer engineering",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:computer engineering)"
+				}, {
+					"value": "computer hardware",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:computer hardware)"
+				}, {
+					"value": "computers / cad-cam",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:computers / cad-cam)"
+				}, {
+					"value": "computers / hardware / general",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:computers / hardware / general)"
+				}, {
+					"value": "computers / logic design",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:computers / logic design)"
+				}, {
+					"value": "computers / programming / general",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:computers / programming / general)"
+				}, {
+					"value": "consumer behavior & theory",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:consumer behavior & theory)"
+				}, {
+					"value": "databases & database management",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:databases & database management)"
+				}, {
+					"value": "drug therapy",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:drug therapy)"
+				}, {
+					"value": "economics",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:economics)"
+				}, {
+					"value": "education / educational psychology",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:education / educational psychology)"
+				}, {
+					"value": "educational psychology",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:educational psychology)"
+				}, {
+					"value": "electronics industry",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:electronics industry)"
+				}, {
+					"value": "fluid mechanics",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:fluid mechanics)"
+				}, {
+					"value": "immunology",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:immunology)"
+				}, {
+					"value": "materials engineering",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:materials engineering)"
+				}, {
+					"value": "medical / drug guides",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:medical / drug guides)"
+				}, {
+					"value": "neurology",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:neurology)"
+				}, {
+					"value": "psychology",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:psychology)"
+				}, {
+					"value": "science / physics / condensed matter",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:science / physics / condensed matter)"
+				}, {
+					"value": "science education",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:science education)"
+				}, {
+					"value": "technology & engineering / electrical",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / electrical)"
+				}, {
+					"value": "technology & engineering / electronics / circuits / logic",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / electronics / circuits / logic)"
+				}, {
+					"value": "technology & engineering / electronics / circuits / vlsi & ulsi",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / electronics / circuits / vlsi & ulsi)"
+				}, {
+					"value": "technology & engineering / electronics / semiconductors",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / electronics / semiconductors)"
+				}, {
+					"value": "technology & engineering / electronics / solid state",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / electronics / solid state)"
+				}, {
+					"value": "technology & engineering / general",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / general)"
+				}, {
+					"value": "technology & engineering / materials science",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / materials science)"
+				}, {
+					"value": "technology & engineering / nanotechnology & mems",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:technology & engineering / nanotechnology & mems)"
+				}, {
+					"value": "written language",
+					"count": 1,
+					"addAction": "addfacetfilter(SubjectPubDb:written language)"
+				}]
+			}, {
+				"id": "TypePublicationPubD",
+				"label": "",
+				"availableFacetValues": [{
+					"value": "journal",
+					"count": 20,
+					"addAction": "addfacetfilter(TypePublicationPubD:journal)"
+				}, {
+					"value": "proceedings",
+					"count": 1,
+					"addAction": "addfacetfilter(TypePublicationPubD:proceedings)"
+				}]
+			}, {
+				"id": "PublisherPubDb",
+				"label": "",
+				"availableFacetValues": [{
+					"value": "unspecified",
+					"count": 173,
+					"addAction": "addfacetfilter(PublisherPubDb:unspecified)"
+				}, {
+					"value": "springer",
+					"count": 6,
+					"addAction": "addfacetfilter(PublisherPubDb:springer)"
+				}, {
+					"value": "great neck publishing",
+					"count": 5,
+					"addAction": "addfacetfilter(PublisherPubDb:great neck publishing)"
+				}, {
+					"value": "elsevier",
+					"count": 3,
+					"addAction": "addfacetfilter(PublisherPubDb:elsevier)"
+				}, {
+					"value": "springer netherlands",
+					"count": 3,
+					"addAction": "addfacetfilter(PublisherPubDb:springer netherlands)"
+				}, {
+					"value": "springer verlag",
+					"count": 3,
+					"addAction": "addfacetfilter(PublisherPubDb:springer verlag)"
+				}, {
+					"value": "springer verlag london ltd",
+					"count": 3,
+					"addAction": "addfacetfilter(PublisherPubDb:springer verlag london ltd)"
+				}, {
+					"value": "wiley-blackwell",
+					"count": 3,
+					"addAction": "addfacetfilter(PublisherPubDb:wiley-blackwell)"
+				}, {
+					"value": "gernsback publications incorporated",
+					"count": 2,
+					"addAction": "addfacetfilter(PublisherPubDb:gernsback publications incorporated)"
+				}, {
+					"value": "bmj publishing group",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:bmj publishing group)"
+				}, {
+					"value": "consumers' research incorporated",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:consumers' research incorporated)"
+				}, {
+					"value": "elsevier science limited",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:elsevier science limited)"
+				}, {
+					"value": "information today incorporated",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:information today incorporated)"
+				}, {
+					"value": "institution of engineering & technology",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:institution of engineering & technology)"
+				}, {
+					"value": "institution of engineering and technology - iet",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:institution of engineering and technology - iet)"
+				}, {
+					"value": "john wiley & sons",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:john wiley & sons)"
+				}, {
+					"value": "john wiley & sons incorporated",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:john wiley & sons incorporated)"
+				}, {
+					"value": "sage publications",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:sage publications)"
+				}, {
+					"value": "springer berlin heidelberg",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:springer berlin heidelberg)"
+				}, {
+					"value": "springer milan",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:springer milan)"
+				}, {
+					"value": "wiley",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:wiley)"
+				}, {
+					"value": "wolters kluwer health",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:wolters kluwer health)"
+				}, {
+					"value": "world health organization",
+					"count": 1,
+					"addAction": "addfacetfilter(PublisherPubDb:world health organization)"
+				}]
+			}],
+			"active": {}
+		}
+	},
+	"limiters": {
+		"article": {
+			"fullText": true,
+			"publicationDate": {
+				"from": null,
+				"to": null
+			},
+			"peerReviewed": false
+		},
+		"publication": {
+			"peerReviewed": false
+		}
+	},
+	"searchResult": {
+		"article": {
+			"maxPage": 0,
+			"byId": {}
+		},
+		"publication": {
+			"1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			"maxPage": 22,
+			"byId": {
+				"1": {
+					"id": 1,
+					"publicationId": "edp297646",
+					"issnOnline": ["18638260"],
+					"issnPrint": ["11330686"],
+					"isbnOnline": [],
+					"isbnPrint": [],
+					"type": "Journal",
+					"title": "TEST",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://www.springerlink.com/openurl.asp?genre=journal&issn=1133-0686",
+						"name": "Springer Journal Archives (Licence Nationale France)",
+						"coverage": [{
+							"start": "19920101",
+							"end": "19961231"
+						}]
+					}, {
+						"url": "http://chimie.gate.inist.fr/login?url=http://link.springer.com/journal/11749",
+						"name": "Springer Online Archives Collection",
+						"coverage": [{
+							"start": "19920101",
+							"end": "19961231"
+						}]
+					}, {
+						"url": "http://chimie.gate.inist.fr/login?url=http://link.springer.com/journal/11749",
+						"name": "SpringerLINK Journals",
+						"coverage": [{
+							"start": "19970101",
+							"end": "20121231"
+						}]
+					}]
+				},
+				"2": {
+					"id": 2,
+					"publicationId": "edp321904",
+					"issnOnline": [],
+					"issnPrint": [],
+					"isbnOnline": ["9780585492735", "9781280011559"],
+					"isbnPrint": ["9789241545365"],
+					"type": "Book",
+					"title": "International Pharmacopoeia = Volume 5, Tests and General Requirements for Dosage Forms ; Quality Specifications for Pharmaceutical Substances and Tablets: Pharmacopoea Internationalis",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=a9h&jid=22GB&scope=site",
+						"name": "Academic Search Complete",
+						"coverage": [{
+							"start": "20030101",
+							"end": "20031231"
+						}]
+					}]
+				},
+				"3": {
+					"id": 3,
+					"publicationId": "edp571061",
+					"issnOnline": null,
+					"issnPrint": null,
+					"isbnOnline": null,
+					"isbnPrint": null,
+					"type": "Book",
+					"title": "Medical Tests (ELL)",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=elr&jid=82JD&scope=site",
+						"name": "Read It!",
+						"coverage": [{
+							"start": "20090101",
+							"end": "20091231"
+						}]
+					}]
+				},
+				"4": {
+					"id": 4,
+					"publicationId": "edp570467",
+					"issnOnline": null,
+					"issnPrint": null,
+					"isbnOnline": null,
+					"isbnPrint": null,
+					"type": "Book",
+					"title": "Understanding Standardized Tests (ELL)",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://search.ebscohost.com/direct.asp?db=elr&jid=82KH&scope=site",
+						"name": "Read It!",
+						"coverage": [{
+							"start": "20090101",
+							"end": "20091231"
+						}]
+					}]
+				},
+				"5": {
+					"id": 5,
+					"publicationId": "edp285031",
+					"issnOnline": [],
+					"issnPrint": [],
+					"isbnOnline": ["9781281328700", "9781846281730"],
+					"isbnPrint": ["9781846280238"],
+					"type": "Book",
+					"title": "Integrated Circuit Test Engineering",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://link.springer.com/openurl?genre=book&isbn=978-1-84628-023-8",
+						"name": "Springer eBooks (Engineering 2006)",
+						"coverage": [{
+							"start": "20060101",
+							"end": "20061231"
+						}]
+					}]
+				},
+				"6": {
+					"id": 6,
+					"publicationId": "edp780284",
+					"issnOnline": [],
+					"issnPrint": [],
+					"isbnOnline": ["9783540481638"],
+					"isbnPrint": ["9783540665410"],
+					"type": "Book",
+					"title": "Electroweak Precision Tests at LEP",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://link.springer.com/openurl.asp?id=doi:10.1007/BFb0109529",
+						"name": "Springer e-Books (Licence Nationale France)",
+						"coverage": [{
+							"start": "20000101",
+							"end": "20001231"
+						}]
+					}]
+				},
+				"7": {
+					"id": 7,
+					"publicationId": "edp1546513",
+					"issnOnline": null,
+					"issnPrint": null,
+					"isbnOnline": null,
+					"isbnPrint": null,
+					"type": "Book",
+					"title": "A new test in lieu of the old one, by way of supposition, or, A satisfactory answer to that great and common question viz. if the penal laws and tests should be abolished, how shall the Protestant rel",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://gateway.proquest.com/openurl?ctx_ver=Z39.88-2003&res_id=xri:eebo&rft_id=xri:eebo:citation:14153865",
+						"name": "Early English Books Online (EEBO)",
+						"coverage": [{
+							"start": "16880101",
+							"end": "16881231"
+						}]
+					}]
+				},
+				"8": {
+					"id": 8,
+					"publicationId": "edp1546493",
+					"issnOnline": null,
+					"issnPrint": null,
+					"isbnOnline": null,
+					"isbnPrint": null,
+					"type": "Book",
+					"title": "A new naked truth, or, The sandy foundation of the Sacramental test shaken, by a warning-piece discharged from heaven against all sorts of persecutors wherein you may hold Christ crucified mystically",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://gateway.proquest.com/openurl?ctx_ver=Z39.88-2003&res_id=xri:eebo&rft_id=xri:eebo:citation:11910433",
+						"name": "Early English Books Online (EEBO)",
+						"coverage": [{
+							"start": "16880101",
+							"end": "16881231"
+						}]
+					}]
+				},
+				"9": {
+					"id": 9,
+					"publicationId": "edp1539470",
+					"issnOnline": null,
+					"issnPrint": null,
+					"isbnOnline": null,
+					"isbnPrint": null,
+					"type": "Book",
+					"title": "A proclamation, allowing a further dyet to the Commons for taking the Test, and indemnifying the heretors guilty of harbouring, or resetting of rebels who have taken the Test at the late Justice-Aires",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://gateway.proquest.com/openurl?ctx_ver=Z39.88-2003&res_id=xri:eebo&rft_id=xri:eebo:citation:99890865",
+						"name": "Early English Books Online (EEBO)",
+						"coverage": [{
+							"start": "16830101",
+							"end": "16831231"
+						}]
+					}]
+				},
+				"10": {
+					"id": 10,
+					"publicationId": "edp1539440",
+					"issnOnline": null,
+					"issnPrint": null,
+					"isbnOnline": null,
+					"isbnPrint": null,
+					"type": "Book",
+					"title": "A proclamation allowing a further diet to the Commons for taking the Test, and indemnifying the heretors guilty of harbouring, or resetting of rebels who have taken the Test at the late Justice-Aires,",
+					"fullTextHoldings": [{
+						"url": "http://chimie.gate.inist.fr/login?url=http://gateway.proquest.com/openurl?ctx_ver=Z39.88-2003&res_id=xri:eebo&rft_id=xri:eebo:citation:53299263",
+						"name": "Early English Books Online (EEBO)",
+						"coverage": [{
+							"start": "16830101",
+							"end": "16831231"
+						}]
+					}]
+				}
+			},
+			"currentPage": 1,
+			"totalHits": 215
+		}
+	},
+	"search": {
+		"article": {
+			"status": "NONE",
+			"sort": "relevance",
+			"resultsPerPage": 20,
+			"dateRange": {
+				"min": 1000,
+				"max": 2017
+			}
+		},
+		"publication": {
+			"status": "DONE",
+			"sort": "relevance",
+			"resultsPerPage": 10,
+			"dateRange": {
+				"min": 1,
+				"max": 1
+			}
+		}
+	},
+	"queryList": {
+		"article": [{
+			"boolean": "AND",
+			"term": "",
+			"field": null,
+			"key": "initial"
+		}],
+		"publication": [{
+			"boolean": "AND",
+			"term": "test",
+			"field": null,
+			"key": "initial"
+		}]
+	},
+	"history": { "queries": [] },
+	"pausedAction": {
+		"type": "NONE"
+	},
+	"exactMatch": {
+		"publication": null,
+		"notice": null,
+		"noticeShown": false
+	},
+	"profile": {
+		"username": null,
+		"domains": [],
+		"favorite_domain": null,
+		"origin": null,
+		"id": 1
+	},
+	"favouriteResources": []
+}
