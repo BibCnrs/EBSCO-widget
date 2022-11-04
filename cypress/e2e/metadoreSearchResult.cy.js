@@ -1,3 +1,4 @@
+// This file is not compliant with the testing-library doctrine. Should be refactored to be more user-centric.
 import initialState from '../data/metadoreSearchResult.json';
 
 describe('metadore Search result', () => {
@@ -10,23 +11,8 @@ describe('metadore Search result', () => {
     });
 
     it('should retrieve clicked more details', () => {
-        // .waitForElementVisible('.record', 1000)
-        // .waitForElementVisible(
-        //     '.record:nth-child(1) button.notice-opener',
-        //     100,
-        // )
-        // .click('.record:nth-child(1) button.notice-opener')
-        // .pause(300)
-        // .waitForElementVisible('.notice', 1000)
-        // .pause(300)
-        // .assert.containsText('.notice dl span:nth-child(1) dt', 'DOI')
-        // .assert.containsText('.notice dl span:nth-child(2) dt', 'Type')
-        // .assert.containsText(
-        //     '.notice dl span:nth-child(3) dt',
-        //     'Description',
-        // );
         cy.get('.record').should('be.visible');
-        cy.get('.record:nth-child(1) button.notice-opener')
+        cy.get('.record_list li:nth-child(1) button.notice-opener')
             .should('be.visible')
             .click();
         cy.get('.notice').should('be.visible');
@@ -51,7 +37,9 @@ describe('metadore Search result', () => {
         cy.get('.search-count').should('contain', '1 - 20 / 5275');
         cy.get('.pagination .current.page').should('contain', '1');
         cy.get('.pagination a.page').should('contain', '2');
-        cy.get('.pagination a.page').click();
+        cy.get('.pagination a.page')
+            .first()
+            .click();
         cy.get('.record').should('be.visible');
         cy.get('.pagination .current.page').should('contain', '2');
         cy.get('.search-count').should('contain', '21 - 40 / 5275');
