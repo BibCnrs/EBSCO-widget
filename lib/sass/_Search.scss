@@ -75,7 +75,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            color: #e0e0e0;
+            color: white;
             padding-top: 10px;
             input[type="checkbox"] {
                 display: none;
@@ -85,14 +85,15 @@
                 transition: all 500ms ease;
                 cursor: pointer;
                 padding: 5px 20px;
-                margin: 0 0 0 5px;
+                margin: 0 0 0 5px;  
                 border-radius: 5px;
                 border: 1px solid #e0e0e0;
-                color: #e0e0e0;
+                color: white;
+                font-weight: 100;
             }
             
             input[type="checkbox"]:checked + label {
-                background-color: #e0e0e0;
+                background-color: white;
                 color: #0050a0;
             }
             
