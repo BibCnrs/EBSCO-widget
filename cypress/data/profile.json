@@ -1,0 +1,289 @@
+{
+    "login": {
+        "status": "SUCCESS",
+        "name": "developer marmelab",
+        "username": "",
+        "password": "",
+        "isLoggingWithRenater": false,
+        "token": "token"
+    },
+    "userInterface": {
+        "limiterShown": true,
+        "resultShown": true,
+        "historyShown": false,
+        "location": "article",
+        "language": "fr",
+        "readOnlyLanguage": false,
+        "loginShown": false,
+        "profileShown": false,
+        "noticeBeingExported": [],
+        "animateProfile": false
+    },
+    "error": {},
+    "url": "http://server:3000",
+    "domains": {
+        "all": [
+            "INSHS",
+            "INSB",
+            "IN2P3",
+            "INEE",
+            "INP",
+            "INSIS",
+            "INSU",
+            "INC",
+            "INS2I",
+            "INSMI"
+        ],
+        "available": [
+            "INSHS",
+            "INSB",
+            "IN2P3",
+            "INEE",
+            "INP",
+            "INSIS",
+            "INSU",
+            "INC",
+            "INS2I",
+            "INSMI"
+        ],
+        "rights": [
+            "INSHS",
+            "INSB",
+            "IN2P3",
+            "INEE",
+            "INP",
+            "INSIS",
+            "INSU",
+            "INC",
+            "INS2I",
+            "INSMI",
+            "IOP",
+            "REAXYS"
+        ],
+        "byName": {
+            "INSHS": "inshs",
+            "INSB": "insb",
+            "IN2P3": "in2p3",
+            "INEE": "inee",
+            "INP": "inp",
+            "INSIS": "insis",
+            "INSU": "insu",
+            "INC": "inc",
+            "INS2I": "ins2i",
+            "INSMI": "insmi"
+        },
+        "article": "INSHS",
+        "publication": "INSHS",
+        "database": "INSHS",
+        "favoriteDomain": "INSHS",
+        "setFromUrl": null
+    },
+    "selectedRecord": {
+        "article": [],
+        "publication": []
+    },
+    "notice": {
+        "article": {
+            "byId": {},
+            "noticeShown": []
+        },
+        "publication": {
+            "byId": {},
+            "noticeShown": []
+        }
+    },
+    "facets": {
+        "article": {
+            "active": {},
+            "available": []
+        },
+        "publication": {
+            "active": {},
+            "available": []
+        }
+    },
+    "limiters": {
+        "article": {
+            "fullText": true,
+            "publicationDate": {
+                "from": null,
+                "to": null
+            },
+            "peerReviewed": false,
+            "publicationId": null
+        },
+        "publication": {
+            "peerReviewed": false
+        }
+    },
+    "searchResult": {
+        "article": {
+            "maxPage": 0,
+            "byId": {}
+        },
+        "publication": {
+            "maxPage": 1,
+            "currentPage": "1",
+            "totalHits": "1",
+            "1": ["1"],
+            "byId": {
+                "1": {
+                    "id": 1,
+                    "publicationId": "publicationId",
+                    "issnOnline": [],
+                    "issnPrint": [],
+                    "isbnOnline": [],
+                    "isbnPrint": [],
+                    "type": "Book",
+                    "title": "The hitchhiker guide to the galaxy",
+                    "fullTextHoldings": [
+                        {
+                            "url": "http://inshs.bib.cnrs.fr/login?url=https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy",
+                            "name": "J'ai lu",
+                            "isCurrent": false,
+                            "coverage": [
+                                {
+                                    "start": {
+                                        "month": "01",
+                                        "day": "01",
+                                        "year": "2008"
+                                    },
+                                    "end": {
+                                        "month": "12",
+                                        "day": "31",
+                                        "year": "2008"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "search": {
+        "article": {
+            "status": "NONE",
+            "sort": "relevance",
+            "resultsPerPage": 20,
+            "dateRange": {
+                "min": 1000,
+                "max": 2019
+            }
+        },
+        "publication": {
+            "status": "NONE",
+            "sort": "relevance",
+            "resultsPerPage": 20,
+            "previousQuery": {
+                "queries": [
+                    {
+                        "boolean": "AND",
+                        "term": "",
+                        "suggestedTerms": [],
+                        "field": null,
+                        "key": "initial"
+                    }
+                ],
+                "limiters": {
+                    "peerReviewed": false
+                },
+                "activeFacets": {},
+                "sort": "relevance",
+                "resultsPerPage": 20,
+                "domain": "INSHS"
+            }
+        }
+    },
+    "queryList": {
+        "article": [
+            {
+                "boolean": "AND",
+                "term": "",
+                "suggestedTerms": [],
+                "field": null,
+                "key": "initial"
+            }
+        ],
+        "publication": [
+            {
+                "boolean": "AND",
+                "term": "",
+                "suggestedTerms": [],
+                "field": null,
+                "key": "initial"
+            }
+        ]
+    },
+    "history": {
+        "queries": [],
+        "currentPage": 1,
+        "maxPage": 1,
+        "totalcount": 0
+    },
+    "pausedAction": {
+        "type": "NONE"
+    },
+    "exactMatch": {
+        "publication": null,
+        "notice": null,
+        "noticeShown": false
+    },
+    "profile": {
+        "favorite_domain": "INSHS",
+        "username": "developer marmelab",
+        "status": "NONE",
+        "origin": "janus",
+        "id": 118817
+    },
+    "databases": [
+        {
+            "id": 2,
+            "name_fr": "Test add",
+            "name_en": "Test add",
+            "text_fr": "Here for test",
+            "text_en": "here for test",
+            "url_fr": "http://www.test.com",
+            "url_en": "http://www.test.com",
+            "image": "data:image/jpeg;base64,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",
+            "active": true,
+            "oa": false,
+            "use_proxy": false,
+            "domains": ["INSHS"],
+            "totalcount": "2"
+        },
+        {
+            "id": 3,
+            "name_fr": "Wikipedia",
+            "name_en": "Wikipedia",
+            "text_fr": "Wikipedia",
+            "text_en": "Wikipedia",
+            "url_fr": "http://www.wikipedia.com",
+            "url_en": "http://www.wikipedia.com",
+            "image": "data:image/jpeg;base64,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",
+            "active": true,
+            "oa": true,
+            "use_proxy": true,
+            "domains": ["INSHS"],
+            "totalcount": "2"
+        }
+    ],
+    "favouriteResources": [
+        {
+            "title": ".Test : CNRS",
+            "url": "https://inshs.bib.cnrs.fr/login?url=http://www.cnrs.fr/"
+        },
+        {
+            "title": "Wikipedia",
+            "url": "https://inshs.bib.cnrs.fr/login?url=http://www.wikipedia.com"
+        },
+        {
+            "title": "google",
+            "url": "http://inshs.bib.cnrs.fr/login?url=www.google.fr"
+        },
+        {
+            "title": "bibcnrs",
+            "url": "http://insb.bib.cnrs.fr/login?url=bib.cnrs.fr"
+        }
+    ]
+}

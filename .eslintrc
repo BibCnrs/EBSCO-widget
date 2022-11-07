@@ -12,7 +12,8 @@
         "plugin:import/warnings",
         "plugin:react/recommended",
         "prettier",
-        "prettier/react"
+        "prettier/react",
+        "plugin:cypress/recommended"
     ],
     "plugins": [
         "import",

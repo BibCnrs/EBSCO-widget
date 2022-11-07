@@ -1,38 +1,43 @@
-node:
-  image: node:12.16.3-alpine
-  volumes:
-    - .:/app
-  working_dir: /app
+version: '3.5'
 
-npm:
-  extends:
-    file: ./docker-compose.yml
-    service: node
-  environment:
-    http_proxy: ${http_proxy}
-    https_proxy: ${http_proxy}
-  entrypoint: ['npm']
+services:
+    npm:
+        image: node:16-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        user: ${UID}:${GID}
+        environment:
+            http_proxy: ${http_proxy}
+            https_proxy: ${https_proxy}
+            HOME: /tmp
+        entrypoint: ['npm']
 
-devserver:
-  extends:
-    file: ./docker-compose.yml
-    service: node
-  environment:
-    server_url: http://localhost:3000/ebsco
-  ports:
-    - 3001:3001
-  command: node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js --port 3001 --host 0.0.0.0
+    devserver:
+        image: node:16-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        environment:
+            server_url: http://localhost:3000/ebsco
+        ports:
+            - 3001:3001
+        command: node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js --port 3001 --host 0.0.0.0
 
-build:
-  extends:
-    file: ./docker-compose.yml
-    service: node
-  command: node node_modules/webpack/bin/webpack.js --config webpack.config.prod.js -p
+    build:
+        image: node:16-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        environment:
+            NODE_ENV: production
+        command: node node_modules/webpack/bin/webpack.js --config webpack.config.prod.js -p
 
-test:
-  extends:
-    file: ./docker-compose.yml
-    service: node
-  environment:
-    NODE_ENV: test
-  command: node_modules/mocha/bin/mocha test/mocha test/mocha/**/*.js
+    test:
+        image: node:16-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        environment:
+            NODE_ENV: test
+        command: node_modules/mocha/bin/mocha --exit test/mocha test/mocha/**/*.js
