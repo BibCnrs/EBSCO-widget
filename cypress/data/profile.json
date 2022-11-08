@@ -219,7 +219,7 @@
         "queries": [],
         "currentPage": 1,
         "maxPage": 1,
-        "totalcount": 0
+        "totalCount": 0
     },
     "pausedAction": {
         "type": "NONE"
@@ -250,7 +250,7 @@
             "oa": false,
             "use_proxy": false,
             "domains": ["INSHS"],
-            "totalcount": "2"
+            "totalCount": "2"
         },
         {
             "id": 3,
@@ -265,7 +265,7 @@
             "oa": true,
             "use_proxy": true,
             "domains": ["INSHS"],
-            "totalcount": "2"
+            "totalCount": "2"
         }
     ],
     "favouriteResources": [
