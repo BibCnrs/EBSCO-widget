@@ -13,11 +13,6 @@ describe('sagas search', function() {
         iterator = search(action);
     });
 
-    it('should select canUserSearch', function() {
-        const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.canUserSearch));
-    });
-
     it('should select isUserLogged if user cannot search', function() {
         iterator.next();
         const next = iterator.next(false);
