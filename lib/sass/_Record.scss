@@ -12,7 +12,16 @@
     width: 100%;
     max-width: 1428px;
 
+    .open-access {
+        cursor: help;
+        margin-left: 10px;
+        img {
+            height: 19px;
+        }
+    }
+
     .diamond {
+        cursor: help;
         margin-left: 10px;
         img {
             height: 19px;
