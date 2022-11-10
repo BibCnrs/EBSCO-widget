@@ -13,54 +13,19 @@ describe('sagas search', function() {
         iterator = search(action);
     });
 
-    it('should select canUserSearch', function() {
+    it('should select isQueryReady', function() {
         const next = iterator.next();
-        assert.deepEqual(next.value, select(fromState.canUserSearch));
-    });
-
-    it('should select isUserLogged if user cannot search', function() {
-        iterator.next();
-        const next = iterator.next(false);
-        assert.deepEqual(next.value, select(fromState.isUserLogged));
-    });
-
-    it('should put pauseAction and showLogin and then return if user is not logged', function() {
-        iterator.next();
-        iterator.next(false);
-        let next = iterator.next(false);
-        assert.deepEqual(next.value, put(actions.pauseAction(action)));
-        next = iterator.next();
-        assert.deepEqual(next.value, put(actions.showLogin()));
-        next = iterator.next();
-        assert.isTrue(next.done);
-    });
-
-    it('should put forbidAccess if user is logged', function() {
-        iterator.next();
-        iterator.next(false);
-        let next = iterator.next(true);
-        assert.deepEqual(
-            next.value,
-            put(actions.forbidAccess(action.category)),
-        );
-    });
-
-    it('should select isQueryReady if user can search', function() {
-        iterator.next();
-        const next = iterator.next(true);
         assert.deepEqual(next.value, select(fromState.isQueryReady));
     });
 
     it('should end if isQueryReady is false', function() {
         iterator.next();
-        iterator.next(true);
         const next = iterator.next(false);
         assert.isTrue(next.done);
     });
 
     it('should put searchPending, loading, select searchQuery, select searchRequest and then call fetch with searchrequest if isQueryReady is true', function() {
         iterator.next();
-        iterator.next(true);
         let next = iterator.next(true);
         assert.deepEqual(
             next.value,
@@ -80,7 +45,6 @@ describe('sagas search', function() {
     it('should put action searchCancel and return if receiving cancel key', function() {
         iterator.next();
         iterator.next(true);
-        iterator.next(true);
         iterator.next();
         iterator.next({ search: 'query' });
         iterator.next({ search: 'request' });
@@ -96,7 +60,6 @@ describe('sagas search', function() {
     it('should put searchError and return if receiving error key', function() {
         iterator.next();
         iterator.next(true);
-        iterator.next(true);
         iterator.next();
         iterator.next({ search: 'query' });
         iterator.next({ search: 'request' });
@@ -111,7 +74,6 @@ describe('sagas search', function() {
 
     it('should put searchSuccess, loaded, call trackSearch and return if receiving response key', function() {
         iterator.next();
-        iterator.next(true);
         iterator.next(true);
         iterator.next();
         iterator.next({ search: 'query', domain: 'domain' });

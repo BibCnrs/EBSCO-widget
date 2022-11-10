@@ -10,15 +10,8 @@ describe('authentication', () => {
         });
     });
 
-    it('should display login modal when trying to search article', () => {
-        cy.get('.navbar.navbar-default').should('be.visible');
-        cy.get('.navbar.navbar-default .active').should(
-            'contain',
-            'Revue, ouvrage',
-        );
-        cy.get('.nav-article').click();
-        cy.get('.term input').type('aids');
-        cy.get('.search-fetch button').click();
+    it('should display login modal', () => {
+        cy.findByText('Connexion').click();
         cy.get('.authentication .modal-dialog').should('be.visible');
         cy.get('.janus').should(
             'contain',
@@ -31,6 +24,5 @@ describe('authentication', () => {
         cy.get('.password').type('secret');
         cy.get('button.api').click();
         cy.get('.navbar.navbar-default').should('be.visible');
-        cy.get('.navbar.navbar-default .active').should('contain', 'Article');
     });
 });
