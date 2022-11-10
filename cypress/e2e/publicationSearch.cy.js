@@ -56,7 +56,7 @@ describe('publicationSearch', () => {
         cy.get('.search-fetch button').should(
             'have.attr',
             'aria-label',
-            'Rechercher',
+            'Lancer la recherche',
         );
         cy.get('.navbar.navbar-default .language').click();
         cy.get('#en').should('be.visible');
@@ -70,7 +70,7 @@ describe('publicationSearch', () => {
         cy.get('.search-fetch button').should(
             'have.attr',
             'aria-label',
-            'Search',
+            'Launch search',
         );
     });
 });
