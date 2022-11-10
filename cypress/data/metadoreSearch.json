@@ -139,9 +139,9 @@
     "queries": [],
     "currentPage": 1,
     "maxPage": 1,
-    "totalcount": 0,
-    "totalcountSearch": 0,
-    "totalcountAlert": 0
+    "totalCount": 0,
+    "totalCountSearch": 0,
+    "totalCountAlert": 0
   },
   "pausedAction": {
     "type": "NONE"

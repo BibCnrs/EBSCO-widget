@@ -162,7 +162,7 @@
 		"queries": [],
 		"currentPage": 1,
 		"maxPage": 1,
-		"totalcount": 0
+		"totalCount": 0
 	},
 	"pausedAction": {
 		"type": "NONE"
@@ -193,7 +193,7 @@
 			"domains": [
 				"INSHS"
 			],
-			"totalcount": "1"
+			"totalCount": "1"
 		}
 	],
 	"favouriteResources": []
