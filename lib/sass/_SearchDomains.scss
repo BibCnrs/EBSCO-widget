@@ -1,0 +1,20 @@
+.search-domains {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  .search-domains_chip {
+    padding: 5px 20px;
+    margin: 5px 5px 0 0;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+
+    &.active {
+      background-color: white;
+      color: #0050a0;
+    }
+  }
+}

@@ -227,9 +227,9 @@ describe('reducer history', function() {
                     queries: [],
                     currentPage: 1,
                     maxPage: 1,
-                    totalcount: 0,
-                    totalcountSearch: 0,
-                    totalcountAlert: 0,
+                    totalCount: 0,
+                    totalCountSearch: 0,
+                    totalCountAlert: 0,
                 },
             );
         });
@@ -268,12 +268,12 @@ describe('reducer history', function() {
                             {
                                 id: 42,
                                 event: { foo: 42 },
-                                totalcount: 12,
+                                totalCount: 12,
                             },
                             {
                                 id: 14,
                                 event: { foo: 14 },
-                                totalcount: 12,
+                                totalCount: 12,
                             },
                         ],
                     },
@@ -285,12 +285,12 @@ describe('reducer history', function() {
                         {
                             id: 42,
                             foo: 42,
-                            totalcount: 12,
+                            totalCount: 12,
                         },
                         {
                             id: 14,
                             foo: 14,
-                            totalcount: 12,
+                            totalCount: 12,
                         },
                     ],
                 },

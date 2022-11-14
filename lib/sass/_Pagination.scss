@@ -1,9 +1,14 @@
 .pagination {
-    margin: 20px 5px;
+    margin: 20px;
     a {
         margin: 5px;
     }
     input {
         width: 50px;
+    }
+
+    .current {
+        font-weight: bold;
+        margin: 5px;
     }
 }

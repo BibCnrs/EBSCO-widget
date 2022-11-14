@@ -1,45 +1,45 @@
-app:
-  extends:
-    file: ./docker-compose.yml
-    service: node
-  environment:
-    server_url: 'http://server'
-  links:
-    - server
-  command: node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.test.js --port 80 --host 0.0.0.0
+version: '3.5'
 
-server:
-  extends:
-    file: ./docker-compose.yml
-    service: node
-  command: node mock/launcher.js
+services:
+    app:
+        image: node:16-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        ports:
+            - 3001:3001
+        environment:
+            server_url: http://server:3000
+        command: node node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.test.js --port 3001 --host 0.0.0.0
 
-hub:
-  image: selenium/hub:2.53.0
+    server:
+        image: node:16-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        ports:
+            - 3000:3000
+        command: node mock/launcher.js
 
-chrome:
-  image: selenium/node-chrome:2.53.0
-  links:
-    - hub
-    - app
-    - server
+    e2e:
+        image: cypress/included:10.3.1-typescript
+        working_dir: /app
+        environment:
+            - CYPRESS_baseUrl=http://app:3001
+        depends_on:
+            - app
+        volumes:
+            - .:/app
 
-chromedebug:
-  image: selenium/node-chrome-debug:2.53.0
-  links:
-    - hub
-    - app
-    - server
-  ports:
-    - 5900:5900
-
-test:
-  extends:
-    file: ./docker-compose.yml
-    service: node
-  links:
-    - hub
-  environment:
-    NODE_ENV: test
-    server_url: http://server
-  command: node_modules/mocha/bin/mocha test/e2e test/e2e/test/*.js
+    test:
+        image: node:16-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        environment:
+            NODE_ENV: test
+            server_url: http://server:3000
+        command: node_modules/mocha/bin/mocha
+        depends_on:
+            - app
+            - server

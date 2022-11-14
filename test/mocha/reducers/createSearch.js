@@ -99,7 +99,7 @@ describe('reducers createSearch', function() {
         });
 
         describe('SEARCH_SUCCESS', function() {
-            it('should return DONE and set daterange if action is SEARCH_SUCCESS', function() {
+            it('should return DONE and set daterange and set previousQuery if action is SEARCH_SUCCESS', function() {
                 const searchState = categorySearch(
                     { status: 'NONE', term: 'aids' },
                     {
@@ -108,11 +108,43 @@ describe('reducers createSearch', function() {
                         response: {
                             dateRange: 'date range',
                         },
+                        query: {
+                            queries: [
+                                {
+                                    boolean: 'AND',
+                                    term: 'aids',
+                                    suggestedTerms: [],
+                                    field: null,
+                                    key: 'initial',
+                                },
+                            ],
+                            limiters: {},
+                            activeFacets: {},
+                            sort: 'relevance',
+                            resultsPerPage: 20,
+                            domain: 'INSHS',
+                        },
                     },
                 );
                 assert.deepEqual(searchState, {
                     status: 'DONE',
                     term: 'aids',
+                    previousQuery: {
+                        queries: [
+                            {
+                                boolean: 'AND',
+                                term: 'aids',
+                                suggestedTerms: [],
+                                field: null,
+                                key: 'initial',
+                            },
+                        ],
+                        limiters: {},
+                        activeFacets: {},
+                        sort: 'relevance',
+                        resultsPerPage: 20,
+                        domain: 'INSHS',
+                    },
                     dateRange: 'date range',
                 });
             });

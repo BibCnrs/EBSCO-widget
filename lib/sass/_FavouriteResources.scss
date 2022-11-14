@@ -1,51 +1,58 @@
 @import "./_variables.scss";
 
 $pagination-arrow-margin: 50px;
+.favourite-resource {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.favourite-resource-item {
-    display: flex;
-    align-items: center;
-    padding-left: 0;
-    position: static;
-    a {
-        display: block;
+    &__item {
+        display: flex;
+        align-items: center;
+        padding-left: 0;
+        position: static;
+        a {
+            display: block;
+            width: 100%;
+        }
+        .drag-button {
+            padding: 0 15px;
+            cursor: row-resize !important;
+            user-select: none;
+        }
+        z-index: 10000;
+    }
+
+    &__pagination {
+        @include display-flex;
+        @include align-items(center);
+        @include justify-content(center);
+
         width: 100%;
-    }
-    .drag-button {
-        padding: 0 15px;
-        cursor: row-resize !important;
-        user-select: none;
-    }
-    z-index: 10000;
-}
 
-.favourite-resource-pagination {
-    @include display-flex;
-    @include align-items(center);
-    @include justify-content(center);
+        .fa {
+            color: $primary-blue;
+            cursor: pointer;
+            margin: 0 5px;
 
-    width: 100%;
+            &.arrow {
+                font-size: 20px;
+                font-weight: bold;
 
-    .fa {
-        color: $primary-blue;
-        cursor: pointer;
-        margin: 0 5px;
+                &:first-child {
+                    margin-right: $pagination-arrow-margin;
+                }
 
-        &.arrow {
-            font-size: 20px;
-            font-weight: bold;
+                &:last-child {
+                    margin-left: $pagination-arrow-margin;
+                }
 
-            &:first-child {
-                margin-right: $pagination-arrow-margin;
-            }
-
-            &:last-child {
-                margin-left: $pagination-arrow-margin;
-            }
-
-            &.disabled {
-                cursor: initial;
-                color: $deactivated
+                &.disabled {
+                    cursor: initial;
+                    color: $deactivated
+                }
             }
         }
     }

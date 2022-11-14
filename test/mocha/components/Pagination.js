@@ -1,4 +1,4 @@
-import Pagination from '../../../lib/components/Pagination';
+import { Pagination } from '../../../lib/components/Pagination';
 
 describe('Pagination', function() {
     let loadPageCall;

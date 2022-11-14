@@ -300,6 +300,46 @@ describe('parseFullTextHoldings', function() {
         );
     });
 
+    it('should handle same end dates but one with embargo', () => {
+        assert.deepEqual(
+            parseFullTextHoldings([
+                {
+                    id: 1,
+                    coverage: [
+                        {
+                            end: { day: 2, month: 4, year: 9999 },
+                            start: { day: 1, month: 3, year: 2019 },
+                        },
+                    ],
+                    embargo: {
+                        unit: 'month',
+                        value: 3,
+                    },
+                },
+                {
+                    id: 2,
+                    coverage: [
+                        {
+                            end: { day: 2, month: 4, year: 9999 },
+                            start: { day: 1, month: 2, year: 2019 },
+                        },
+                    ],
+                },
+            ]),
+            [
+                {
+                    id: 2,
+                    coverage: [
+                        {
+                            end: { day: 2, month: 4, year: 9999 },
+                            start: { day: 1, month: 2, year: 2019 },
+                        },
+                    ],
+                },
+            ],
+        );
+    });
+
     it('should handle overlapping dates', () => {
         assert.deepEqual(
             parseFullTextHoldings([

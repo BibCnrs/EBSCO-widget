@@ -17,8 +17,8 @@
     .search {
         @include flex(5);
         @include display-flex;
-        @include align-items(flex-start); // to align with the top block containing the navbar
-        @include justify-content(space-between);
+        @include flex-direction(column);
+        @include align-items(center);
         .query-list {
             @include flex(12);
             @include flexbox((
@@ -44,9 +44,6 @@
             ));
             @include flex-wrap(wrap);
             margin-bottom: 10px;
-            .search-input {
-                @include flex(11);
-            }
             .action {
                 @include flex(1);
                 @include display-flex;
@@ -55,30 +52,53 @@
         }
 
         .search-input {
-            @include flex(11); // on publication tab this is not inside a .query element, needs investigation
+            @include flex-basis(50px);
         }
 
         .buttons {
+            @include align-self(end);
             @include display-flex;
             @include justify-content(flex-start);
             @include align-items(flex-start);
             @include flex-direction(column);
             @include flex(4);
+            @include flex-basis(2rem);
             margin-left: 20px;
 
 
             button {
                 color: #fff !important;
             }
+        }
 
-            .search-button {
-                background-color: transparent;
-                border: 2px solid #fff;
-                color:#fff;
-                font-size: 16px;
-                height: 50px;
-                width: 100%;
+        .metadore-field-selector {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: white;
+            padding-top: 10px;
+            input[type="checkbox"] {
+                opacity: 0;
+                width: 1px;
+                height: 1px;
             }
+              
+            input[type="checkbox"] + label {
+                transition: all 500ms ease;
+                cursor: pointer;
+                padding: 5px 20px;
+                margin: 0 0 0 5px;  
+                border-radius: 5px;
+                border: 1px solid #e0e0e0;
+                color: white;
+                font-weight: 100;
+            }
+            
+            input[type="checkbox"]:checked + label {
+                background-color: white;
+                color: #0050a0;
+            }
+            
         }
     }
 }
