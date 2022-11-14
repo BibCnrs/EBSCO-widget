@@ -50,36 +50,29 @@ $radius: 20px;
       }
     }
 
-    .search-clear {
-      padding-right: 10px;
-      padding-left: 1px;
-      font-size: 18px;
+    .search-clear, .search-fetch {
       color: grey;
-      cursor: pointer;
       border: 0;
     }
 
-    .search-fetch {
-      color: grey;
-      border: 0;
-      &::before {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 80%;
-        background-color: grey;
-        position: absolute;
-        top: 10%;
-        left: 0;
-      }
-      .btn {
-        font-size: 20px;
-        padding-right: 20px;
-        padding-left: 20px;
-        height: 100%;
-        width: 100%;
-        background: transparent;
-      }
+    .search-fetch::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 80%;
+      background-color: grey;
+      position: absolute;
+      top: 10%;
+      left: 0;
+    }
+
+    .btn {
+      font-size: 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+      height: 100%;
+      width: 100%;
+      background: transparent;
     }
   }
 

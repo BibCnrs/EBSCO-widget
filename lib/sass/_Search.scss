@@ -78,7 +78,9 @@
             color: white;
             padding-top: 10px;
             input[type="checkbox"] {
-                display: none;
+                opacity: 0;
+                width: 1px;
+                height: 1px;
             }
               
             input[type="checkbox"] + label {

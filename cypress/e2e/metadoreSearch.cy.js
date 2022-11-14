@@ -34,7 +34,7 @@ describe('metadoreSearch', () => {
             'placeholder',
             'Recherche',
         );
-        cy.findByLabelText('Rechercher').should('exist');
+        cy.findByLabelText('Lancer la recherche').should('exist');
         cy.get('.navbar.navbar-default .language').click();
         cy.get('#en').should('be.visible');
         cy.get('#en').click();
@@ -45,6 +45,6 @@ describe('metadoreSearch', () => {
             'placeholder',
             'Search',
         );
-        cy.findByLabelText('Search').should('exist');
+        cy.findByLabelText('Launch search').should('exist');
     });
 });

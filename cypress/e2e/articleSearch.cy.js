@@ -31,7 +31,9 @@ describe('articleSearch', () => {
             'placeholder',
             'Rechercher des articles, des chapitres de livre, des DOIs, des auteurs, des mots du résumé du titre, ISSN, ISBN.',
         );
-        cy.findByLabelText('Rechercher', { timeout: 1000 }).should('exist');
+        cy.findByLabelText('Lancer la recherche', { timeout: 1000 }).should(
+            'exist',
+        );
 
         cy.get('.navbar.navbar-default .language', { timeout: 1000 }).click();
         cy.findByText('english', { timeout: 1000 }).should('exist');
@@ -49,6 +51,6 @@ describe('articleSearch', () => {
             'placeholder',
             'Search articles, book chapters, DOIs, authors, words from the title abstract, ISSN, ISBN.',
         );
-        cy.findByLabelText('Search', { timeout: 1000 }).should('exist');
+        cy.findByLabelText('Launch search', { timeout: 1000 }).should('exist');
     });
 });
