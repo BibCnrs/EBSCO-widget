@@ -30,7 +30,6 @@ describe('reducer domains', function() {
                         INSHS: 'inshs.gate',
                     },
                     publication: 'INSB',
-                    article: 'INSB',
                 },
             );
         });
@@ -56,7 +55,6 @@ describe('reducer domains', function() {
                         INSHS: 'inshs.gate',
                     },
                     publication: 'INSHS',
-                    article: 'INSHS',
                     defaultDomain: 'INSHS',
                 },
             );
@@ -167,7 +165,7 @@ describe('reducer domains', function() {
             });
         });
 
-        it('should set available to [], and article to INSHS when action is LOGOUT', function() {
+        it('should set available to [], and article to null when action is LOGOUT', function() {
             assert.deepEqual(
                 domains(
                     {
@@ -182,7 +180,7 @@ describe('reducer domains', function() {
                 {
                     available: [],
                     rights: [],
-                    article: 'INSHS',
+                    article: null,
                     favoriteDomain: null,
                     database: null,
                     publication: 'INSHS',
