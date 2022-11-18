@@ -1,4 +1,5 @@
-import { put, call } from 'redux-saga/effects';
+import { put, call, select } from 'redux-saga/effects';
+import * as fromState from '../../../lib/selectors';
 
 import {
     autoComplete,
@@ -6,7 +7,7 @@ import {
 } from '../../../lib/sagas/autoComplete';
 import fetch from '../../../lib/sagas/fetch';
 import actions, {
-    CHANGE_TERM,
+    CHANGE_ALL_TERM,
     SEARCH,
     SEARCH_PENDING,
     SEARCH_SUCCESS,
@@ -38,7 +39,7 @@ describe('sagas autoComplete', function() {
                         '%2B',
                     )}`,
                 },
-                [CHANGE_TERM, SEARCH, SEARCH_PENDING, SEARCH_SUCCESS],
+                [CHANGE_ALL_TERM, SEARCH, SEARCH_PENDING, SEARCH_SUCCESS],
                 false,
             ),
         );
@@ -68,11 +69,18 @@ describe('sagas autoComplete', function() {
         assert.deepEqual(next.value, call(window.console.error, 'Boom'));
     });
 
-    it('should call parseAutoComplete with fetch reponse', function() {
+    it('should select current location from state', function() {
         iterator.next();
         iterator.next();
         const next = iterator.next({ response: 'autocomplete response' });
+        assert.deepEqual(next.value, select(fromState.getLocation));
+    });
 
+    it('should call parseAutoComplete with fetch reponse', function() {
+        iterator.next();
+        iterator.next();
+        iterator.next({ response: 'autocomplete response' });
+        const next = iterator.next('article');
         assert.deepEqual(
             next.value,
             call(parseAutoComplete, 'autocomplete response'),
@@ -95,13 +103,14 @@ describe('sagas autoComplete', function() {
         iterator.next();
         iterator.next();
         iterator.next({ response: 'autocomplete response' });
+        iterator.next('article');
         let next = iterator.next('parseAutoComplete result');
 
         assert.deepEqual(
             next.value,
             put(
                 actions.suggestTerms(
-                    action.category,
+                    'article',
                     'parseAutoComplete result',
                     action.index,
                 ),
