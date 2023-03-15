@@ -438,4 +438,43 @@ describe('parseFullTextHoldings', function() {
             ],
         );
     });
+
+    it('should return open access document', () => {
+        assert.deepEqual(
+            parseFullTextHoldings([
+                {
+                    id: 1,
+                    url: 'https://open-access-url.notadomain/document-data',
+                    coverage: [
+                        {
+                            end: { day: 3, month: 4, year: 2019 },
+                            start: { day: 2, month: 3, year: 2019 },
+                        },
+                    ],
+                },
+                {
+                    id: 2,
+                    url: 'https://pay-access.bib.cnrs.fr/document-data',
+                    coverage: [
+                        {
+                            end: { day: 3, month: 4, year: 2019 },
+                            start: { day: 2, month: 3, year: 2019 },
+                        },
+                    ],
+                },
+            ]),
+            [
+                {
+                    id: 1,
+                    url: 'https://open-access-url.notadomain/document-data',
+                    coverage: [
+                        {
+                            end: { day: 3, month: 4, year: 2019 },
+                            start: { day: 2, month: 3, year: 2019 },
+                        },
+                    ],
+                },
+            ],
+        );
+    });
 });
