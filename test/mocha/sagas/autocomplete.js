@@ -34,7 +34,7 @@ describe('sagas autoComplete', function() {
             call(
                 fetch,
                 {
-                    url: `https://widgets.ebscohost.com/prod/simplekey/autocomplete/autocomp.php?q=${action.term.replace(
+                    url: `https://widgets.ebscohost.com/prod/simplekey/autocomplete/autocomplete.php?userid=!Qw0.nnkOvwtnfBHjZ37&q=${action.term.replace(
                         /\s/,
                         '%2B',
                     )}`,
