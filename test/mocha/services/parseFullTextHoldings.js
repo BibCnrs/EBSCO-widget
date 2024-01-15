@@ -176,6 +176,19 @@ describe('parseFullTextHoldings', function() {
                         },
                     ],
                 },
+                {
+                    embargo: {
+                        unit: 'month',
+                        value: 3,
+                    },
+                    id: 3,
+                    coverage: [
+                        {
+                            end: { day: 3, month: 4, year: 9999 },
+                            start: { day: 2, month: 3, year: 2019 },
+                        },
+                    ],
+                },
             ],
         );
     });
